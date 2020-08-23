@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:40-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Choose \(\eps &gt; 0.\) Recall that we want to show that all nearby points \(ky\) have norm within \(\eps\) of \(c x\text{.}\) We'll choose neighborhoods of \(c\) and \(x\) in the following way:</p>
+<div class="displaymath">
+\begin{align*}
+A_c \amp = \left\{ k \in \F: \abs{k - c} \lt \min\left(\frac{\eps}{2(1 + \norm{x})}, 1\right)\right\},\\
+B_x \amp = \left\{y \in V: \norm{y - x} \lt \frac{\eps}{2(1 + \abs{c})}\right\}
+\end{align*}
+</div>
+<p>Then \(A_c \times B_x\) is an open neighborhood of \((c, x) \in \F \times V\text{.}\) For \((k,y) \in A_c \times B_x\text{,}\) we know by construction that</p>
+<div class="displaymath">
+\begin{equation*}
+\abs{k} \lt 1 + \abs{c}.
+\end{equation*}
+</div>
+<p>Then by <a data-knowl="./knowl/norm-pf-1.html" title="Equation 3.1.1">(3.1.1)</a>, we have</p>
+<div class="displaymath">
+\begin{align*}
+\norm{cx - ky} \amp \leq  \abs{c-k}\norm{x} + \abs{k}\norm{x - y}\\
+\amp \leq \frac{\eps}{2(1 + \norm{x})} \norm{x} + (1+ \abs{c})\frac{\eps}{2(1 + \abs{c})}\\
+\amp = \eps.
+\end{align*}
+</div>
+<span class="incontext"><a href="norm-1.html#p-108">in-context</a></span>
+</body>
+</html>

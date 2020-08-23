@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:40-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>\((1) \Rightarrow (2)\) and \((1) \Rightarrow (3)\) follow immediately from <a data-knowl="./knowl/thm-infinite-coords.html" title="Theorem 5.4.2">Theorem 5.4.2</a>. As series convergence is convergence of the sequence of partial sums, and each partial sum is in \(\cl \span \{e_n: n \in \mathbb{N}\}\text{,}\) closure gives</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty \ip{x}{e_n} e_n \in \cl \span \{e_n: n \in \mathbb{N}\}
+\end{equation*}
+</div>
+<p>for all \(x \in \hilbert\text{.}\)</p>
+<p>\((3) \Rightarrow (1)\text{:}\) Suppose that \((e_n)\) is not complete, which is to say that there exists some non-zero vector \(y\) with \(y\perp e_n\) for all \(n\text{.}\) Then \(\norm{x} \neq 0\text{,}\) but \(\ip{x}{e_n} = 0\) for all \(n\) and so</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2 = 0,
+\end{equation*}
+</div>
+<p>which contradicts \((3)\text{.}\)</p>
+<p>\((2) \Rightarrow (1)\text{:}\) Suppose that \((2)\) holds. Let \(x \in \hilbert\) be any vector that is orthogonal to every \(e_n\text{.}\) Now construct the set of vectors orthogonal to \(x\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\M  = \{y: \ip{x}{y} = 0\}.
+\end{equation*}
+</div>
+<p>Linearity of the inner product gives that \(\M\) is a subspace of \(\hilbert\text{,}\) and continuity of the inner product gives that \(\M\) is closed. Also, by assumption, every \(e_n \in \M\text{,}\) and thus \(\cl \span\{e_n\} \subseteq \M\text{.}\)and so (2) implies that \(\hilbert = \M\text{.}\) But then in particular \(x \in \M\text{,}\) and so \(\ip{x}{x} = 0\) by the definition of \(\M\text{,}\) which gives that \(x=0\text{.}\) Thus, \((e_n)\) is complete.</p></article><span class="incontext"><a href="ortho-4.html#proof-19">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,572 @@
+%**************************************%
+%*    Generated from PreTeXt source   *%
+%*    on 2020-05-07T14:45:12-04:00    *%
+%*                                    *%
+%*      https://pretextbook.org       *%
+%*                                    *%
+%**************************************%
+\documentclass[oneside,10pt,]{book}
+%% Custom Preamble Entries, early (use latex.preamble.early)
+%% Default LaTeX packages
+%%   1.  always employed (or nearly so) for some purpose, or
+%%   2.  a stylewriter may assume their presence
+\usepackage{geometry}
+%% Some aspects of the preamble are conditional,
+%% the LaTeX engine is one such determinant
+\usepackage{ifthen}
+%% etoolbox has a variety of modern conveniences
+\usepackage{etoolbox}
+\usepackage{ifxetex,ifluatex}
+%% Raster graphics inclusion
+\usepackage{graphicx}
+%% Color support, xcolor package
+%% Always loaded, for: add/delete text, author tools
+%% Here, since tcolorbox loads tikz, and tikz loads xcolor
+\PassOptionsToPackage{usenames,dvipsnames,svgnames,table}{xcolor}
+\usepackage{xcolor}
+%% Colored boxes, and much more, though mostly styling
+%% skins library provides "enhanced" skin, employing tikzpicture
+%% boxes may be configured as "breakable" or "unbreakable"
+%% "raster" controls grids of boxes, aka side-by-side
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\tcbuselibrary{raster}
+%% We load some "stock" tcolorbox styles that we use a lot
+%% Placement here is provisional, there will be some color work also
+%% First, black on white, no border, transparent, but no assumption about titles
+\tcbset{ bwminimalstyle/.style={size=minimal, boxrule=-0.3pt, frame empty,
+colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
+%% Second, bold title, run-in to text/paragraph/heading
+%% Space afterwards will be controlled by environment,
+%% dependent of constructions of the tcb title
+\tcbset{ runintitlestyle/.style={fonttitle=\normalfont\bfseries, attach title to upper} }
+%% Spacing prior to each exercise, anywhere
+\tcbset{ exercisespacingstyle/.style={before skip={1.5ex plus 0.5ex}} }
+%% Spacing prior to each block
+\tcbset{ blockspacingstyle/.style={before skip={2.0ex plus 0.5ex}} }
+%% xparse allows the construction of more robust commands,
+%% this is a necessity for isolating styling and behavior
+%% The tcolorbox library of the same name loads the base library
+\tcbuselibrary{xparse}
+%% Hyperref should be here, but likes to be loaded late
+%%
+%% Inline math delimiters, \(, \), need to be robust
+%% 2016-01-31:  latexrelease.sty  supersedes  fixltx2e.sty
+%% If  latexrelease.sty  exists, bugfix is in kernel
+%% If not, bugfix is in  fixltx2e.sty
+%% See:  https://tug.org/TUGboat/tb36-3/tb114ltnews22.pdf
+%% and read "Fewer fragile commands" in distribution's  latexchanges.pdf
+\IfFileExists{latexrelease.sty}{}{\usepackage{fixltx2e}}
+%% Text height identically 9 inches, text width varies on point size
+%% See Bringhurst 2.1.1 on measure for recommendations
+%% 75 characters per line (count spaces, punctuation) is target
+%% which is the upper limit of Bringhurst's recommendations
+\geometry{letterpaper,total={340pt,9.0in}}
+%% Custom Page Layout Adjustments (use latex.geometry)
+%% This LaTeX file may be compiled with pdflatex, xelatex, or lualatex executables
+%% LuaTeX is not explicitly supported, but we do accept additions from knowledgeable users
+%% The conditional below provides  pdflatex  specific configuration last
+%% The following provides engine-specific capabilities
+%% Generally, xelatex is necessary non-Western fonts
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: xelatex and lualatex-specific configuration
+\ifxetex\usepackage{xltxtra}\fi
+%% realscripts is the only part of xltxtra relevant to lualatex 
+\ifluatex\usepackage{realscripts}\fi
+%% fontspec package provides extensive control of system fonts,
+%% meaning *.otf (OpenType), and apparently *.ttf (TrueType)
+%% that live *outside* your TeX/MF tree, and are controlled by your *system*
+%% fontspec will make Latin Modern (lmodern) the default font
+\usepackage{fontspec}
+%% 
+%% Extensive support for other languages
+\usepackage{polyglossia}
+%% Set main/default language based on pretext/@xml:lang value
+%% document language code is "en-US", US English
+%% usmax variant has extra hypenation
+\setmainlanguage[variant=usmax]{english}
+%% Enable secondary languages based on discovery of @xml:lang values
+%% Enable fonts/scripts based on discovery of @xml:lang values
+%% Western languages should be ably covered by Latin Modern Roman
+%% end: xelatex and lualatex-specific configuration
+}{%
+%% begin: pdflatex-specific configuration
+\usepackage[utf8]{inputenc}
+%% PreTeXt will create a UTF-8 encoded file
+%% begin: font setup and configuration for use with pdflatex
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%% end: font setup and configuration for use with pdflatex
+%% end: pdflatex-specific configuration
+}
+%% Symbols, align environment, bracket-matrix
+\usepackage{amsmath}
+\usepackage{amssymb}
+%% allow page breaks within display mathematics anywhere
+%% level 4 is maximally permissive
+%% this is exactly the opposite of AMSmath package philosophy
+%% there are per-display, and per-equation options to control this
+%% split, aligned, gathered, and alignedat are not affected
+\allowdisplaybreaks[4]
+%% allow more columns to a matrix
+%% can make this even bigger by overriding with  latex.preamble.late  processing option
+\setcounter{MaxMatrixCols}{30}
+%%
+%%
+%% Division Titles, and Page Headers/Footers
+%% titlesec package, loading "titleps" package cooperatively
+%% See code comments about the necessity and purpose of "explicit" option
+\usepackage[explicit, pagestyles]{titlesec}
+\newtitlemark{\chaptertitlename}
+%% Set global/default page style for document due
+%% to potential re-definitions after documentclass
+\pagestyle{headings}
+%%
+%% Create globally-available macros to be provided for style writers
+%% These are redefined for each occurence of each division
+\newcommand{\divisionnameptx}{\relax}%
+\newcommand{\titleptx}{\relax}%
+\newcommand{\subtitleptx}{\relax}%
+\newcommand{\shortitleptx}{\relax}%
+\newcommand{\authorsptx}{\relax}%
+\newcommand{\epigraphptx}{\relax}%
+%% Create environments for possible occurences of each division
+%% Environment for a PTX "chapter" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{chapterptx}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Chapter}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\chapter[{#3}]{#1}%
+\label{#6}%
+}{}%
+%% Environment for a PTX "section" at the level of a LaTeX "section"
+\NewDocumentEnvironment{sectionptx}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Section}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\section[{#3}]{#1}%
+\label{#6}%
+}{}%
+%%
+%% Styles for six traditional LaTeX divisions
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\divisionnameptx\space\thechapter}{20pt}{\Huge#1}
+[{\Large\authorsptx}]
+\titleformat{name=\chapter,numberless}[display]
+{\normalfont\huge\bfseries}{}{0pt}{#1}
+[{\Large\authorsptx}]
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+\titleformat{\section}[hang]
+{\normalfont\Large\bfseries}{\thesection}{1ex}{#1}
+[{\large\authorsptx}]
+\titleformat{name=\section,numberless}[block]
+{\normalfont\Large\bfseries}{}{0pt}{#1}
+[{\large\authorsptx}]
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titleformat{\subsection}[hang]
+{\normalfont\large\bfseries}{\thesubsection}{1ex}{#1}
+[{\normalsize\authorsptx}]
+\titleformat{name=\subsection,numberless}[block]
+{\normalfont\large\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\subsubsection}[hang]
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\subsubsection,numberless}[block]
+{\normalfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\paragraph}[hang]
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\paragraph,numberless}[block]
+{\normalfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5em}
+%%
+%% Semantic Macros
+%% To preserve meaning in a LaTeX file
+%%
+%% \mono macro for content of "c", "cd", "tag", etc elements
+%% Also used automatically in other constructions
+%% Simply an alias for \texttt
+%% Always defined, even if there is no need, or if a specific tt font is not loaded
+\newcommand{\mono}[1]{\texttt{#1}}
+%%
+%% Following semantic macros are only defined here if their
+%% use is required only in this specific document
+%%
+%% Used for inline definitions of terms
+\newcommand{\terminology}[1]{\textbf{#1}}
+%% Division Numbering: Chapters, Sections, Subsections, etc
+%% Division numbers may be turned off at some level ("depth")
+%% A section *always* has depth 1, contrary to us counting from the document root
+%% The latex default is 3.  If a larger number is present here, then
+%% removing this command may make some cross-references ambiguous
+%% The precursor variable $numbering-maxlevel is checked for consistency in the common XSL file
+\setcounter{secnumdepth}{3}
+%%
+%% AMS "proof" environment is no longer used, but we leave previously
+%% implemented \qedhere in place, should the LaTeX be recycled
+\newcommand{\qedhere}{\relax}
+%%
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for most blocks (possibly not projects, 2D displays)
+%% Controlled by  numbering.theorems.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{block}{}
+%%
+%% This document is set to number PROJECT-LIKE on a separate numbering scheme
+%% So, a faux tcolorbox whose only purpose is to provide this numbering
+%% Controlled by  numbering.projects.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{project-distinct}{}
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for 2D displays which are subnumbered as part of a "sidebyside"
+\newtcolorbox[auto counter, number within=tcb@cnt@block, number freestyle={\noexpand\thetcb@cnt@block(\noexpand\alph{\tcbcounter})}]{subdisplay}{}
+%%
+%% tcolorbox, with styles, for THEOREM-LIKE
+%%
+%% theorem: fairly simple numbered block/structure
+\tcbset{ theoremstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{theorem}[3]{title={{Theorem~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, fontupper=\itshape, theoremstyle, }
+%% Localize LaTeX supplied names (possibly none)
+\renewcommand*{\chaptername}{Chapter}
+%% Equation Numbering
+%% Controlled by  numbering.equations.level  processing parameter
+%% No adjustment here implies document-wide numbering
+\numberwithin{equation}{section}
+%% "tcolorbox" environment for a single image, occupying entire \linewidth
+%% arguments are left-margin, width, right-margin, as multiples of
+%% \linewidth, and are guaranteed to be positive and sum to 1.0
+\tcbset{ imagestyle/.style={bwminimalstyle} }
+\NewTColorBox{image}{mmm}{imagestyle,left skip=#1\linewidth,width=#2\linewidth}
+%% More flexible list management, esp. for references
+%% But also for specifying labels (i.e. custom order) on nested lists
+\usepackage{enumitem}
+%% hyperref driver does not need to be specified, it will be detected
+%% Footnote marks in tcolorbox have broken linking under
+%% hyperref, so it is necessary to turn off all linking
+%% It *must* be given as a package option, not with \hypersetup
+\usepackage[hyperfootnotes=false]{hyperref}
+%% configure hyperref's  \url  to match listings' inline verbatim
+\renewcommand\UrlFont{\small\ttfamily}
+%% Hyperlinking active in electronic PDFs, all links solid and blue
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+\hypersetup{pdftitle={Hilbert Spaces - Sequel to Linear Algebra}}
+%% If you manually remove hyperref, leave in this next command
+\providecommand\phantomsection{}
+%% Graphics Preamble Entries
+\usepackage{tikz-cd}
+\usepackage{amscd}
+\usepackage[all]{xy}
+%% If tikz has been loaded, replace ampersand with \amp macro
+\ifdefined\tikzset
+    \tikzset{ampersand replacement = \amp}
+\fi
+%% extpfeil package for certain extensible arrows,
+%% as also provided by MathJax extension of the same name
+%% NB: this package loads mtools, which loads calc, which redefines
+%%     \setlength, so it can be removed if it seems to be in the 
+%%     way and your math does not use:
+%%     
+%%     \xtwoheadrightarrow, \xtwoheadleftarrow, \xmapsto, \xlongequal, \xtofrom
+%%     
+%%     we have had to be extra careful with variable thickness
+%%     lines in tables, and so also load this package late
+\usepackage{extpfeil}
+%% Custom Preamble Entries, late (use latex.preamble.late)
+%% Begin: Author-provided packages
+%% (From  docinfo/latex-preamble/package  elements)
+%% End: Author-provided packages
+%% Begin: Author-provided macros
+%% (From  docinfo/macros  element)
+%% Plus three from MBX for XML characters
+\DeclareMathOperator{\RE}{Re}
+  \DeclareMathOperator{\IM}{Im}
+  \DeclareMathOperator{\ess}{ess}
+  \DeclareMathOperator{\intr}{int}
+  \DeclareMathOperator{\dist}{dist}
+  \DeclareMathOperator{\dom}{dom}
+  \DeclareMathOperator{\diag}{diag}
+  \DeclareMathOperator\re{\mathrm {Re~}}
+  \DeclareMathOperator\im{\mathrm {Im~}}
+  
+  \newcommand\dd{\mathrm d}
+  \newcommand{\eps}{\varepsilon}
+  \newcommand{\To}{\longrightarrow}
+  \newcommand{\hilbert}{\mathcal{H}}
+  \newcommand{\s}{\mathcal{S}_2}
+  \newcommand{\A}{\mathcal{A}}
+  \newcommand\h{\mathcal{H}}
+  \newcommand{\J}{\mathcal{J}}
+  \newcommand{\M}{\mathcal{M}}
+  \newcommand{\F}{\mathbb{F}}
+  \newcommand{\N}{\mathcal{N}}
+  \newcommand{\T}{\mathbb{T}}
+  \newcommand{\W}{\mathcal{W}}
+  \newcommand{\X}{\mathcal{X}}
+  \newcommand{\D}{\mathbb{D}}
+  \newcommand{\C}{\mathbb{C}}
+  \newcommand{\BOP}{\mathbf{B}}
+  \newcommand{\Z}{\mathbb{Z}}
+  \newcommand{\BH}{\mathbf{B}(\mathcal{H})}
+  \newcommand{\KH}{\mathcal{K}(\mathcal{H})}
+  \newcommand{\pick}{\mathcal{P}_2}
+  \newcommand{\schur}{\mathcal{S}_2}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Complex}{\mathbb{C}}
+  \newcommand{\Field}{\mathbb{F}}
+  \newcommand{\RPlus}{\Real^{+}}
+  \newcommand{\Polar}{\mathcal{P}_{\s}}
+  \newcommand{\Poly}{\mathcal{P}(E)}
+  \newcommand{\EssD}{\mathcal{D}}
+  \newcommand{\Lop}{\mathcal{L}}
+  \newcommand{\cc}[1]{\overline{#1}}
+  \newcommand{\abs}[1]{\left\vert#1\right\vert}
+  \newcommand{\set}[1]{\left\{#1\right\}}
+  \newcommand{\seq}[1]{\left\lt#1\right>}
+  \newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+  \newcommand{\essnorm}[1]{\norm{#1}_{\ess}}
+  \newcommand{\tr}{\operatorname{tr}}
+  \newcommand{\ran}[1]{\operatorname{ran}#1}
+  \newcommand{\nt}{\stackrel{\mathrm {nt}}{\to}}
+  \newcommand{\pnt}{\xrightarrow{pnt}}
+  \newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
+  \newcommand{\ad}{^\ast}
+  \newcommand{\inv}{^{-1}}
+  \newcommand{\adinv}{^{\ast -1}}
+  \newcommand{\invad}{^{-1 \ast}}
+  \newcommand\Pick{\mathcal P}
+  \newcommand\Ha{\mathbb{H}}
+  \newcommand{\HH}{\Ha\times\Ha}
+  \newcommand\Htau{\mathbb{H}(\tau)}
+  \newcommand{\vp}{\varphi}
+  \newcommand{\ph}{\varphi}
+  \newcommand\al{\alpha}
+  \newcommand\ga{\gamma}
+  \newcommand\de{\delta}
+  \newcommand\ep{\varepsilon}
+  \newcommand\la{\lambda}
+  \newcommand\up{\upsilon}
+  \newcommand\si{\sigma}
+  \newcommand\beq{\begin{equation}}
+  \newcommand\ds{\displaystyle}
+  \newcommand\eeq{\end{equation}}
+  \newcommand\df{\stackrel{\rm def}{=}}
+  \newcommand\ii{\mathrm i}
+  \newcommand{\vectwo}[2]
+  {
+     \begin{pmatrix} #1 \\ #2 \end{pmatrix}
+  }
+  \newcommand{\vecthree}[3]
+  {
+     \begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}
+  }
+  \newcommand\blue{\color{blue}}
+  \newcommand\black{\color{black}}
+  \newcommand\red{\color{red}}
+  
+  \newcommand\nn{\nonumber}
+  \newcommand\bbm{\begin{bmatrix}}
+  \newcommand\ebm{\end{bmatrix}}
+  \newcommand\bpm{\begin{pmatrix}}
+  \newcommand\epm{\end{pmatrix}}
+  \numberwithin{equation}{section}
+  \newcommand\nin{\noindent}
+  \newcommand{\nCr}[2]{\,_{#1}C_{#2}} 
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+%% End: Author-provided macros
+\begin{document}
+\frontmatter
+%% begin: half-title
+\thispagestyle{empty}
+{\centering
+\vspace*{0.28\textheight}
+{\Huge Hilbert Spaces - Sequel to Linear Algebra}\\}
+\clearpage
+%% end:   half-title
+%% begin: adcard
+\thispagestyle{empty}
+\null%
+\clearpage
+%% end:   adcard
+%% begin: title page
+%% Inspired by Peter Wilson's "titleDB" in "titlepages" CTAN package
+\thispagestyle{empty}
+{\centering
+\vspace*{0.14\textheight}
+%% Target for xref to top-level element is ToC
+\addtocontents{toc}{\protect\hypertarget{x:book:hilbert}{}}
+{\Huge Hilbert Spaces - Sequel to Linear Algebra}\\[3\baselineskip]
+{\Large Ryan Tully-Doyle}\\[0.5\baselineskip]
+{\Large University of New Haven}\\[3\baselineskip]
+{\Large May 7, 2020}\\}
+\clearpage
+%% end:   title page
+%% begin: copyright-page
+\thispagestyle{empty}
+\vspace*{\stretch{2}}
+\vspace*{\stretch{1}}
+\null\clearpage
+%% end:   copyright-page
+%% begin: table of contents
+%% Adjust Table of Contents
+\setcounter{tocdepth}{1}
+\renewcommand*\contentsname{Contents}
+\tableofcontents
+%% end:   table of contents
+\mainmatter
+%
+%
+\typeout{************************************************}
+\typeout{Chapter 1 Introduction}
+\typeout{************************************************}
+%
+\begin{chapterptx}{Introduction}{}{Introduction}{}{}{x:chapter:ch-intro}
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.1 Motivation}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Motivation}{}{Motivation}{}{}{x:section:sec-intro-1}
+One of the most profound ideas of linear algebra is that \emph{any finite dimensional vector space over \(\R\) or \(\C\) is secretly \(\R^n\) or \(\C^n\)}. This insight allows us to reduce the study of vector spaces and the maps between them to the study of matrices.%
+\par
+The key idea is that every finite dimensional vector space can be represented in coordinates once we choose a basis. We denote the representation of a vector \(v \in V\) with respect to a basis \(\mathcal V\) by \(v_\mathcal{V}\). Better yet, that basis can be chosen to be orthonormal by way of the Gram-Schmidt process and the dot product structure of Euclidean space. The coordinatization of \(V\) also gives unique representations of linear maps betwen those spaces.%
+\begin{theorem}{}{}{g:theorem:idm45996760332576}%
+Let \(V, W\) be finite dimensional vector spaces with bases \(\mathcal V, \mathcal W\). Then any linear map \(T: V \to W\) has a unique matrix representation with respect to \(\mathcal V, \mathcal W\) by%
+\begin{equation*}
+T(x) = A x
+\end{equation*}
+with%
+\begin{equation*}
+A = \bbm T(v_1)_{\mathcal W} \amp \ldots \amp T(v_n)_{\mathcal W} \ebm
+\end{equation*}
+%
+\end{theorem}
+Typical examples introduced in a linear algebra course include the space of polynomials of degree less than or equal to \(n\). At the same time, we usually also get to see a very suggestive example of a useful linear map and the representation of that map in matrix form.%
+\par
+Let \(P_n\) denote the space of polynomials of degree \(\leq n\). Consider the map \(D: P_3 \to P_2\) defined by%
+\begin{equation*}
+D(a_0 + a_1 t + a_2 t^2 + a_3 t^3) = a_1 + 2 a_2 t + 3 a_3 t^2.
+\end{equation*}
+That is, \(D\) is the map that takes the derivative of a polynomial. It isn't hard to use the standard basis for \(P_n\) to get the matrix representation%
+\begin{equation*}
+D(p) = \bbm 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 0 \amp 3 \ebm \bbm a_0 \\ a_1 \\ a_2 \\ a_3 \ebm
+\end{equation*}
+for the action of \(D\) on \(P_3\).%
+\par
+This example is a good place to begin asking questions about how far we can push finite dimensional linear algebra. The fact that differentiation of polynomials is wonderful - but what else can we apply it to? Nice functions have power series that converge absolutely, and we like to think of an absolutely convergent power series as sort of an ``infinite polynomial''. Our intution might lead us to make a connection with calculus at this point. When we learn to work with power series, we learn that for a convergent power series,%
+\begin{equation*}
+\frac{d}{dx} \sum a_n (x-a)^n = \sum n a_n (x-a)^{n-1}.
+\end{equation*}
+In analogy with our example about polynomials above, we're tempted to write, for a function \(f\) defined by a convergent power series, that%
+\begin{equation*}
+D(f) =  \underbrace{\bbm 0 \amp 1 \amp 0 \amp 0 \amp \ldots \\ 0 \amp 0 \amp 2 \amp 0 \amp \ldots \\ 0 \amp 0 \amp 0 \amp 3 \amp \ldots \\ \vdots \amp \amp \amp \amp \ddots \ebm}_{A} \bbm a_0 \\ a_1 \\ a_2 \\ a_3 \\ \vdots \ebm = a_1 + 2a_2 (x - a) + 3 a_3 (x-1)^2 + \ldots.
+\end{equation*}
+%
+\par
+This idea is shot through with issues that need to be addressed.%
+\begin{itemize}[label=\textbullet]
+\item{}The object \(A\) is some kind of \(\infty \times \infty\) matrix. How does that make sense?%
+\item{}What are the vector spaces that \(D\) is mapping between?%
+\item{}Does the idea of coordinitization still work?%
+\item{}If it does, what exactly is ``\(\R^\infty\)'' supposed to be?%
+\item{}Do infinite dimensional vector spaces and bases make sense at all?%
+\end{itemize}
+%
+\par
+The answers to these questions are the heart of what is known as the theory of \terminology{Hilbert spaces}, which naturally envelop and extend finite dimensional vector space theory. Hilbert spaces are the key objects used to study functions with various kinds of infinite series representations, which is a vast area of mathematics known as \terminology{functional analysis}. The objects \(A\) are called \terminology{operators}, and are the central object of study in \terminology{operator theory}.%
+\par
+The rest of this introductory chapter will review important parts of linear algebra in finite dimensions that we need to motivate and understand Hilbert spaces.%
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.2 Inner products}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Inner products}{}{Inner products}{}{}{g:section:idm45996760055072}
+The \terminology{dot product} of two vectors in \(\C^n\) is%
+\begin{equation}
+x \cdot y = \sum_{i=1}^n \cc y_i x_i.\label{x:men:def-dot}
+\end{equation}
+Standard notation for the dot product is \(\ip{x}{y}\) and in \(\C^n\) is equivalent to \(y\ad x\), where \(\ad\) designates the conjugate transpose of a matrix. The dot product has the following properties:%
+\begin{enumerate}
+\item{}\(\ip{x}{y} = \cc{\ip{y}{x}} \hspace{.2in} \text{conjugate symmetry}\)%
+\item{}\(\ip{x + y}{z} = \ip{x}{y} + \ip{y}{z} \hspace{.2in} \text{linearity in the first term}\)%
+\item{}\(\ip{x}{x} \geq 0 \hspace{.2in} \text{non-negativity}\)%
+\end{enumerate}
+%
+\par
+Once we have the dot product, we can start building the geometry of \(\C^n\). First, note that%
+\begin{equation}
+\norm{x}^2 = \ip{x}{x}.\label{g:men:idm45996759965248}
+\end{equation}
+Motivated by the real case, we say that two vectors \(x, y\) are \terminology{orthogonal} and write \(x \perp y\) if \(\ip{x}{y} = 0\).%
+\par
+Another important inequality is indicated by the relationship between angles and the dot product in \(\R^n\), where we have%
+\begin{equation*}
+\ip{x}{y} = \norm{x}\norm{y}\cos \theta,
+\end{equation*}
+where \(\theta\) is the angle between the vectors. While the idea of ``angle'' doesn't make sense in \(\C^n\) (at least in the same way), we still have the \terminology{Cauchy-Schwarz} inequality%
+\begin{equation}
+\abs{\ip{x}{y}} \leq \norm{x}\norm{y}.\label{g:men:idm45996759830512}
+\end{equation}
+%
+\par
+Orthogonality also underlies the vector version of the \terminology{Pythagorean theorem},%
+\begin{equation}
+\norm{x}^2 + \norm{y}^2 = \norm{x+ y}^2 \iff x\perp y.\label{g:men:idm45996759842752}
+\end{equation}
+%
+\par
+Finally, it would be remiss to leave out the single most important inequality in mathematics, our old friend the \terminology{triangle inequality}, which in vector terms can be expressed%
+\begin{equation}
+\norm{x + y} \leq \norm{x} + \norm{y}\label{g:men:idm45996759854272}
+\end{equation}
+%
+\par
+Because finite dimensional vector spaces have representations in coordinates as \(\R^n\) or \(\C^n\), all finite dimensional vector spaces carry the geometric structure delineated above.%
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.3 Basis and coordinates}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Basis and coordinates}{}{Basis and coordinates}{}{}{g:section:idm45996759870032}
+Let \(V\) be a vector space over a field \(\F\). Recall that a (finite) set of vectors \(S \subset V\) is \terminology{linearly independent} if only the trivial solution exists for the equation%
+\begin{equation}
+0 = \sum_\mathcal{I} c_i v_i.\label{g:men:idm45996759898992}
+\end{equation}
+A set \(S\) of vectors in \(V\) is said to \terminology{span} \(V\) if every vector in \(V\) can be realized as a linear combination of vectors in \(S\). That is, given \(v \in V\), there exist coefficients \(c_i\) so that%
+\begin{equation*}
+v = \sum_{\mathcal I} c_i v_i.
+\end{equation*}
+%
+\par
+A basis \(\mathcal V\) for \(V\) is a subset of \(V\) so that \(\mathcal V\) is linearly independent and \(\mathcal V\) spans \(V\). It is a major result that every vector space has a basis. The full result requires the invocation of \href{https://en.wikipedia.org/wiki/Zorn\%27s_lemma}{Zorn's Lemma} or other equivalents of the \href{https://en.wikipedia.org/wiki/Axiom_of_choice}{axiom of choice} and will not be proven here. (A nice argument can be found \href{http://www.math.lsa.umich.edu/\~kesmith/infinite.pdf}{here}.) Our interest is in modeling vector spaces the carry the logic and structure of Euclidean space. The \terminology{dimension} of \(V\) is the order of a basis \(\mathcal V\). If the basis has a finite number of elements, say \(n\), then \(V\) is called finite dimensional. In particular, (and clearly providing motivation for the definition), \(\dim \R^n = n\).%
+\par
+Suppose that \(V\) is a finite dimensional vector space with a basis \(\mathcal V\). Let \(v\) be a vector in \(V\). Then the \terminology{coordinates of \(v\) with respect to \(\mathcal V\)} are the constants \(c_i\) so that \(v = \sum_{\mathcal I} c_i v_i\). These coordinates are \emph{unique} once we have fixed a basis \(\mathcal V\). That is, we have a bijective relationship between the vectors \(v \in V\) and the coordinate representations \(\bbm c_1 \\ \vdots \\ c_n \ebm \in \F^n\).%
+\par
+Furthermore, we can use the coordinate representation to write representing matrices for linear functions \(T:V \to W\). Suppose that \(V, W\) are vector spaces of dimension \(m,n\) respectively over \(\F\). Then \begin{image}{0}{1}{0}%
+\resizebox{\linewidth}{!}{%
+\xymatrix{G\ar[rr]^{\phi}\ar[dr]_{\Psi}&&G'\\&G/N\ar@{.>}[ur]_{\phibar}&}
+}%
+\end{image}%
+%
+\end{sectionptx}
+\end{chapterptx}
+\end{document}

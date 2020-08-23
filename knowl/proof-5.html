@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:40-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>We will show that \(d\) satisifes the four properties of <a data-knowl="./knowl/def-metric.html" title="Definition 3.1.2">Definition 3.1.2</a><p>(1): From <a data-knowl="./knowl/def-norm.html" title="Definition 3.1.3">Definition 3.1.3</a> (1), we have</p>
+<div class="displaymath">
+\begin{equation*}
+d(x, y) = \norm{x - y} &gt; 0.
+\end{equation*}
+</div>
+<p>when \(x \neq 0\text{.}\)</p>
+<p>(2):</p>
+<div class="displaymath">
+\begin{equation*}
+d(x,x) = \norm{x - x} = \norm{0} = 0.
+\end{equation*}
+</div>
+<p>(3):</p>
+<div class="displaymath">
+\begin{equation*}
+d(x, y) = \norm{x - y} = \abs{-1}\norm{y - x} = \norm{y - x} = d(y,x).
+\end{equation*}
+</div>
+<p>(4): From <a data-knowl="./knowl/def-norm.html" title="Definition 3.1.3">Definition 3.1.3</a> (3), we have for all \(y \in V\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+d(x,z) \amp= \norm{x - z}\\
+\amp = \norm{x - y + y - z}\\
+\amp \leq \norm{x - y} + \norm{y - z}\\
+\amp = d(x,y) + d(y,z)
+\end{align*}
+</div>
+<p>That \(d\) is translation invariance is straightforward and left to the reader.</p></article><span class="incontext"><a href="norm-1.html#proof-5">in-context</a></span>
+</body>
+</html>

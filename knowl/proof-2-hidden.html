@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:40-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>First, suppose that \(x\) and \(y\) are linearly dependent so that \(x = c y\) for some \(c \in \C\text{.}\) Then by <a data-knowl="./knowl/thm-norm.html" title="Theorem 2.2.2">Theorem 2.2.2</a> and <a data-knowl="./knowl/def-innerproduct.html" title="Definition 2.1.1">Definition 2.1.1</a>, the left and right sides of <a data-knowl="./knowl/eq-cs.html" title="Equation 2.2.1">(2.2.1)</a> are both equal to \(\abs{c}\norm{y}\text{.}\)</p>
+<p>On the other hand, if \(x, y\) are linearly independent, then for any \(c \in \C\text{,}\) it must be that \(x + c y \neq 0\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+0 \amp \lt \ip{x+cy}{x+cy}\\
+\amp = \ip{x}{ x + c y} + \ip{c y}{x + cy}\\
+\amp = \ip{x}{x} + \cc{c}\ip{x}{y} + c\ip{y}{x} + c \cc{c} \ip{y}{y}\\
+\amp = \norm{x}^2 + \cc{c}\ip{x}{y} + c \cc{\ip{x}{y}} + \abs{c}^2 \norm{y}^2\\
+\amp = \norm{x}^2 + 2 \RE\left[ \cc{c} \ip{x}{y} \right] + \abs{c}^2 \norm{y}^2.
+\end{align*}
+</div>
+<p>To get the real part of the complex number out of the quadratic expression, let \(\omega\) be a unimodular constant so that \(\cc \omega \ip{x}{y} = \abs{\ip{x}{y}}\text{.}\) Now let \(c = t\omega\) and substitute to conclude that for all \(t \in \R\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+0 \lt \norm{x}^2 + 2t\abs{\ip{x}{y}} + t^2 \norm{y}^2.
+\end{equation*}
+</div>
+<p>That is, a quadratic polynomial in \(t\) is strictly positive. This can only happen if the discriminant is negative, which gives</p>
+<div class="displaymath">
+\begin{equation*}
+4 \ip{x}{y}^2 - 4 \norm{x}^2\norm{y}^2 \lt 0,
+\end{equation*}
+</div>
+<p>and so</p>
+<div class="displaymath">
+\begin{equation*}
+\ip{x}{y} \lt \norm{x}\norm{y}.
+\end{equation*}
+</div></article></body>
+</html>

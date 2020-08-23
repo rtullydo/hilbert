@@ -1,0 +1,225 @@
+<chapter xml:id="ch-intro">
+    <title>
+        Introduction
+    </title>
+    <section xml:id="sec-intro-1"><title>Motivation</title>
+        <p>One of the most profound ideas of linear algebra is that <em>any finite dimensional vector space over <m>\R</m> or <m>\C</m> is secretly <m>\R^n</m> or <m>\C^n</m></em>. This insight allows us to reduce the study of vector spaces and the maps between them to the study of matrices.</p>
+
+        <p>The key idea is that every finite dimensional vector space can be represented in coordinates once we choose a basis. We denote the representation of a vector <m>v \in V</m> with respect to a basis <m>\mathcal V</m> by <m>v_\mathcal{V}</m>. Better yet, that basis can be chosen to be orthonormal by way of the Gram-Schmidt process and the dot product structure of Euclidean space. The coordinatization of <m>V</m> also gives unique representations of linear maps betwen those spaces.</p>
+
+        <theorem>
+            <p>Let <m>V, W</m> be finite dimensional vector spaces with bases <m>\mathcal V, \mathcal W</m>. Then any linear map <m>T: V \to W</m> has a unique matrix representation with respect to <m>\mathcal V, \mathcal W</m> by
+                <me>
+                    T(x) = A x
+                </me>
+            with
+                <me>
+                    A = \bbm T(v_1)_{\mathcal W} \amp \ldots \amp T(v_n)_{\mathcal W} \ebm
+                </me>
+            </p>
+        </theorem>
+
+        <p>Typical examples introduced in a linear algebra course include the space of polynomials of degree less than or equal to <m>n</m>. At the same time, we usually also get to see a very suggestive example of a useful linear map and the representation of that map in matrix form.</p>
+
+        <p>Let <m>P_n</m> denote the space of polynomials of degree <m>\leq n</m>. Consider the map <m>D: P_3 \to P_2</m> defined by 
+            <me>
+                D(a_0 + a_1 t + a_2 t^2 + a_3 t^3) = a_1 + 2 a_2 t + 3 a_3 t^2.
+            </me>
+        That is, <m>D</m> is the map that takes the derivative of a polynomial. It isn't hard to use the standard basis for <m>P_n</m> to get the matrix representation
+            <me>
+                D(p) = \bbm 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 0 \amp 3 \ebm \bbm a_0 \\ a_1 \\ a_2 \\ a_3 \ebm
+            </me>
+        for the action of <m>D</m> on <m>P_3</m>. 
+        </p>
+
+        <p>This example is a good place to begin asking questions about how far we can push finite dimensional linear algebra. The fact that differentiation of polynomials is wonderful - but what else can we apply it to? Nice functions have power series that converge absolutely, and we like to think of an absolutely convergent power series as sort of an <q>infinite polynomial</q>. Our intution might lead us to make a connection with calculus at this point. When we learn to work with power series, we learn that for a convergent power series,
+            <me>
+                \frac{d}{dx} \sum a_n (x-a)^n = \sum n a_n (x-a)^{n-1}.
+            </me>
+        In analogy with our example about polynomials above, we're tempted to write, for a function <m>f</m> defined by a convergent power series, that
+            <me>
+                D(f) =  \underbrace{\bbm 0 \amp 1 \amp 0 \amp 0 \amp \ldots \\ 0 \amp 0 \amp 2 \amp 0 \amp \ldots \\ 0 \amp 0 \amp 0 \amp 3 \amp \ldots \\ \vdots \amp \amp \amp \amp \ddots \ebm}_{A} \bbm a_0 \\ a_1 \\ a_2 \\ a_3 \\ \vdots \ebm = a_1 + 2a_2 (x - a) + 3 a_3 (x-1)^2 + \ldots.
+            </me>
+        </p>
+
+        <p>This idea is shot through with issues that need to be addressed. 
+            <ul>
+                <li>The object <m>A</m> is some kind of <m>\infty \times \infty</m> matrix. How does that make sense?</li>
+                <li> What are the vector spaces that <m>D</m> is mapping between?</li>
+                <li> Does the idea of coordinitization still work?</li>
+                <li>If it does, what exactly is <q><m>\R^\infty</m></q> supposed to be?</li> 
+                <li>Do infinite dimensional vector spaces and bases make sense at all?</li>
+            </ul>
+        </p>
+
+        <p>The answers to these questions are the heart of what is known as the theory of <term>Hilbert spaces</term>, which naturally envelop and extend finite dimensional vector space theory. Hilbert spaces are the key objects used to study functions with various kinds of infinite series representations, which is a vast area of mathematics known as <term>functional analysis</term>. The objects <m>A</m> are called <term>operators</term>, and are the central object of study in <term>operator theory</term>.</p>
+
+        <p>The rest of this introductory chapter will review important parts of linear algebra in finite dimensions that we need to motivate and understand Hilbert spaces.</p>
+    </section>
+
+    <section><title>Inner products</title>
+        <p>The <term>dot product</term> of two vectors in <m>\C^n</m> is
+        <men xml:id="def-dot">
+            x \cdot y = \sum_{i=1}^n \cc y_i x_i.
+        </men>
+        Standard notation for the dot product is <m>\ip{x}{y}</m> and in <m>\C^n</m> is equivalent to <m>y\ad x</m>, where <m>\ad</m> designates the conjugate transpose of a matrix. The dot product has the following properties:
+        <ol>
+            <li>
+                <m>\ip{x}{y} = \cc{\ip{y}{x}} \hspace{.2in} \text{conjugate symmetry}</m>
+            </li>
+            <li>
+                <m>\ip{x + y}{z} = \ip{x}{y} + \ip{y}{z} \hspace{.2in} \text{linearity in the first term}</m>
+            </li>
+            <li>
+                <m>\ip{x}{x} \geq 0 \hspace{.2in} \text{non-negativity}</m>
+            </li>
+        </ol>
+        </p>
+
+        <p>Once we have the dot product, we can start building the geometry of <m>\C^n</m>. First, note that 
+        <men xml:id="eq-Euclidean-norm">
+            \norm{x}^2 = \ip{x}{x} = \sum_{i=1}^n \abs{x}^2.
+        </men>
+        Motivated by the real case, we say that two vectors <m>x, y</m> are <term>orthogonal</term> and write <m>x \perp y</m> if <m>\ip{x}{y} = 0</m>. 
+        </p>
+
+        <p>Another important inequality is indicated by the relationship between angles and the dot product in <m>\R^n</m>, where we have
+        <me>
+            \ip{x}{y} = \norm{x}\norm{y}\cos \theta,
+        </me>
+        where <m>\theta</m> is the angle between the vectors. While the idea of <q>angle</q> doesn't make sense in <m>\C^n</m> (at least in the same way), we still have the <term>Cauchy-Schwarz</term> inequality
+        <men>
+            \abs{\ip{x}{y}} \leq \norm{x}\norm{y}.
+        </men></p>
+
+        <p>Orthogonality also underlies the vector version of the <term>Pythagorean theorem</term>, 
+        <men>
+            \norm{x}^2 + \norm{y}^2 = \norm{x+ y}^2 \iff x\perp y.
+        </men></p>
+
+        <p>Finally, it would be remiss to leave out the single most important inequality in mathematics, our old friend the <term>triangle inequality</term>, which in vector terms can be expressed
+        <men>
+            \norm{x + y} \leq \norm{x} + \norm{y}
+        </men>
+        </p>
+
+        <p>Because finite dimensional vector spaces have representations in coordinates as <m>\R^n</m> or <m>\C^n</m>, all finite dimensional vector spaces carry the geometric structure delineated above.</p>
+    </section>
+
+    <section xml:id="intro-2"><title>Basis and coordinates</title>
+        <p>Let <m>V</m> be a vector space over a field <m>\F</m>. Recall that a (finite) set of vectors <m>S \subset V</m> is <term>linearly independent</term> if only the trivial solution exists for the equation
+        <men>
+            0 = \sum_\mathcal{I} c_i v_i.
+        </men>
+        A set <m>S</m> of vectors in <m>V</m> is said to <term>span</term> <m>V</m> if every vector in <m>V</m> can be realized as a linear combination of vectors in <m>S</m>. That is, given <m>v \in V</m>, there exist coefficients <m>c_i</m> so that 
+        <me>
+            v = \sum_{\mathcal I} c_i v_i.
+        </me>
+        </p>
+
+
+        <p>A basis <m>\mathcal V</m> for <m>V</m> is a subset of <m>V</m>
+        so that <m>\mathcal V</m> is linearly independent and <m>\mathcal V</m> spans <m>V</m>. It is a major result that every vector space has a basis. The full result requires the invocation of <url href="https://en.wikipedia.org/wiki/Zorn%27s_lemma">Zorn's Lemma</url> or other equivalents of the <url href="https://en.wikipedia.org/wiki/Axiom_of_choice">axiom of choice</url> and will not be proven here. (A nice argument can be found <url href="http://www.math.lsa.umich.edu/~kesmith/infinite.pdf">here</url>.) Our interest is in modeling vector spaces the carry the logic and structure of Euclidean space. The <term>dimension</term> of <m>V</m> is the order of a basis <m>\mathcal V</m>. If the basis has a finite number of elements, say <m>n</m>, then <m>V</m> is called finite dimensional. In particular, (and clearly providing motivation for the definition), <m>\dim \R^n = n</m>.</p>
+
+        <p>Suppose that <m>V</m> is a finite dimensional vector space with a basis <m>\mathcal V</m>. Let <m>v</m> be a vector in <m>V</m>. Then the <term>coordinates of <m>v</m> with respect to <m>\mathcal V</m></term> are the constants <m>c_i</m> so that <m>v = \sum_{\mathcal I} c_i v_i</m>. These coordinates are <em>unique</em> once we have fixed a basis <m>\mathcal V</m>. That is, we have a bijective relationship between the vectors <m>v \in V</m> and the coordinate representations <m>\bbm c_1 \\ \vdots \\ c_n \ebm \in \F^n</m>. In <m>\F^n</m>, the coordinate representation of a vector is straightforward to compute using the dot product.</p>
+
+        <theorem xml:id="thm-finite-coords">
+            <p>Let <m>e_1, \ldots e_m</m> be an orthonormal basis for <m>\F^m</m> and <m>v \in \F^n</m>. Then the <m>n</m>th coordinate of <m>v</m> with respect to the basis is <m>\ip{v}{e_n}</m>, and the expansion of <m>v</m> with respect to the basis is
+            <me>
+                v = \sum_{1}^m \ip{v}{e_i} e_i.
+            </me></p>
+        </theorem>
+
+        <p>Furthermore, we can use the coordinate representation to write representing matrices for linear functions <m>T:V \to W</m>. Suppose that <m>V, W</m> are vector spaces of dimension <m>m,n</m> respectively over <m>\F</m>. Then
+            <sidebyside width="30%">
+            <image>
+            <latex-image >
+            \begin{tikzcd}
+                V \arrow[r,"T"] \arrow{d}{i_V} \amp W \\
+                \F^m \arrow[r,"A"] \amp \F^n \arrow{u}{i_W \inv}
+            \end{tikzcd}
+            </latex-image>
+            </image>
+            </sidebyside>
+        where <m>A</m> is the matrix that represents <m>T</m> and <m>i</m> is the natural bijection- the coordinatization - between <m>V, W</m> and <m>\F^m, \F^n</m> respectively. We should note that matrix multiplication is defined so that
+            <sidebyside width="40%">
+            <image>
+            <latex-image >
+            \begin{tikzcd}
+                U \arrow{r}{S} \arrow{d}{i_U} \amp V \arrow[r,"T"]  \amp W \\
+                \F^r \arrow{r}{A} \amp \F^m \arrow[r,"B"] \amp \F^n \arrow{u}{i_W \inv}
+            \end{tikzcd}
+            </latex-image>
+            </image>
+            </sidebyside>
+            reduces to the diagram
+            <sidebyside width="30%">
+            <image>
+            <latex-image >
+            \begin{tikzcd}
+                U \arrow[r,"S \circ T"] \arrow{d}{i_U} \amp W \\
+                \F^r \arrow[r,"BA"] \amp \F^n \arrow{u}{i_W \inv}
+            \end{tikzcd}
+            </latex-image>
+            </image>
+            </sidebyside>
+        That is, the representing matrix of a composition is the product of the representing matrices of the functions.
+        </p>
+
+        <p>Any basis of a vector space can be replaced with an equivalent basis of orthonormal vectors - the algorithm for creating an orthonormal basis from a basis is called the <term><url href="https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process">Gram-Schmidt process</url></term>.</p>
+    </section>
+
+    <section><title>Operators</title>
+        <p>When a linear function maps <m>V</m> into itself, special things happen. First, the matrix that represents <m>T: \F^n \to \F^n</m> is square. There are a large number of equivalences between the structure of square matrices, linear maps, and sets of vectors. Many of these are captured in the <term>invertible matrix theorem</term>, one of the central objects of study in elementary linear algebra.
+        </p>
+
+        <theorem xml:id="thminvmat1">
+        <title>Invertible matrix theorem</title>
+        <p>Let <m>A</m> be an <m>n \times n</m> matrix. If any of the following conditions hold, all of them do. If any of them are false, they are all.
+        <ol>
+          <li><m>A</m> is invertible.</li>
+          <li><m>A</m> row reduces to the identity matrix <m>I</m>.</li>
+          <li><m>A</m> has <m>n</m> pivot positions.</li>
+          <li><m>rank A = n</m>.</li>
+          <li>The equation <m>A \vec x = \vec 0</m> has only the trivial solution.</li>
+          <li>The columns of <m>A</m> are linearly independent.</li>
+          <li>The function <m>T(\vec x) = A \vec x</m> is one-to-one.</li>
+          <li>The equation <m>A \vec x = \vec v</m> is consistent for all <m>b \in \F^n</m>.</li>
+          <li>The columns of <m>A</m> span <m>\F^n</m>.</li>
+          <li>The function <m>T(\vec x) = A \vec x</m> is onto.</li>
+          <li>There is a matrix <m>C</m> so that <m>C A = I</m>. </li>
+          <li>There is a matrix <m>D</m> so that <m>A D = I</m>.</li>
+          <li><m>A^T</m> is invertible.</li>
+          <li><m>\det A \neq 0.</m></li>
+        </ol></p>
+    </theorem>
+
+    <p>Operators contain more information than the invertibility of the functions that they represent. For the following discussion, let us fix a basis of a vector space <m>V</m> and let <m>A</m> be the matrix that represents a function <m>T: V \to V</m>. A scalar <m>\la</m> and a vector <m>v</m> are said to be an <term>eigenpair</term> for <m>A</m> if
+    <me>
+        A v = \la v.
+    </me>
+    It is straightforward to see that the set of all vectors <m>v</m> for which the eigenvector equation holds is a subspace of <m>V</m>, called the <term>eigenspace</term> associated with <m>\la</m>. The eigenspaces of the matrix <m>A</m> are its <term>invariant subspaces</term>, which is to say that a vector in an eigenspace is mapped by <m>A</m> to the same eigenspace. It turns out that knowing the invariant subspaces of <m>A</m> are often enough to completely characterize <m>A</m>. If <m>A</m> is <m>n\times n</m> and <m>A</m> has <m>n</m> linearly independent eigenvectors (that is, one can find a basis of <m>\F^n</m> consisting of eigenvectors of <m>A</m>), then 
+    <me>
+        A = S D S\inv,
+    </me>
+    where <m>S</m> is a matrix of eigenvectors and <m>D</m> is a diagonal matrix of the associated eigenvalues (including repetition of course). (One should think of <m>S</m> as a change of basis matrix under which the operator <m>A</m> becomes diagonal.) </p>
+
+    <p>Many operators are not diagonalizable, even very simple ones. For example, <m>A = \bbm 1 \amp 1 \\ 0 \amp 1 \ebm</m> only has a one-dimensional eigenspace. Diagonalizability is so useful that we give characterizations of those operators a special name, the <term>Spectral Theorem</term>. An operator on a real vector space is called <term>symmetric</term> if <m>A^T = A</m>. An operator on a complex vector space is called <term>Hermitian</term> (or conjugate symmetric) if <m>A\ad = \cc{A^T} = A</m>. One of the major theorems of elementary linear algebra is that such operators are diagonalizable and that there exists an orthonormal basis of eigenvectors for <m>V</m>. </p>
+
+    <theorem>
+        <p>Let <m>A</m> be an <m>n \times n</m> real (complex) matrix. Then <m>A</m> is diagonalizable with respect to an orthonormal basis of eigenvectors if and only if <m>A</m> is symmetric (hermitian).</p>
+    </theorem>
+
+    <p>For complex operators, one can say more. <m>A</m> is called <term>normal</term> if <m>A A\ad = A\ad A</m>. One reason that complex vector spaces are so much nicer than real vector spaces is that normal operators turn out to have orthonormal diagonalizations.</p>
+
+    <theorem><title>Complex (finite) spectral theorem</title>
+        <p>Let <m>A</m> be an operator on a finite dimensional Hilbert space <m>V</m>. Then <m>A</m> is normal if and only if <m>A</m> can be diagonalized with respect to an orthonormal basis of eigenvectors for <m>V</m>.</p>
+    </theorem>
+
+    <p>One of the goals of Hilbert space theory is to capture these kinds of structural results in the context of infinite dimensional Hilbert spaces and operators on them.</p>
+
+
+
+    </section>
+
+</chapter>

@@ -1,0 +1,356 @@
+<chapter>
+    <title>Orthogonal expansions</title>
+    <section>
+        <title>Geometry in Hilbert space</title>
+        <p>As we discussed in the introductory chapter, <xref ref="intro-2"/>, one of the key ideas of finite dimensional linear algebra is to use a basis for a vector space to move back and forth between the vectors themselves (say <m>v \in V</m>) and their coordinate representations with respect to those bases. This move lets us consider a vector space of dimension <m>n</m> as essentially just a renaming of Euclidean space <m>\R^n</m>. We are now ready to try to capture this geometry in the context of Hilbert space.</p>
+
+        <definition xml:id="def-orthogonal-system">
+            <p>Vectors in an inner product space are <term>orthogonal</term>, denoted <m>x \perp y</m>, if <m>\ip{x}{y} = 0</m>.</p>
+            <p> A family <m>(e_\alpha)_{\alpha \in A}</m> in <m>V - \{0\}</m> is called an <term>orthogonal system</term> if <m>e_\alpha \perp e_\beta</m> when <m>\alpha \neq \beta</m>. If further, <m>\norm{e_\alpha} = 1</m> for all <m>\alpha \in A</m>, then <m>(e_\alpha)_\alpha</m> is called an <term>orthonormal system</term>.</p>
+
+            <p>An orthonormal system is called an <term>orthonormal sequence</term> if it can be indexed by <m>\mathbb{N}</m>.</p>
+        </definition>
+
+        <p>Make note: we have <em>not</em> defined what it means to be a basis yet in the context of Hilbert spaces - that remains to be developed later in this chapter. Note also that a system index by <m>\mathbb{Z}</m> can be reindexed in terms of <m>\mathbb{N}</m>, and so we can take a typical orthonormal system to be indexed by <m>\mathbb{N}</m> without loss of generality.</p>
+
+        <example>
+            <p>In <m>\C^n</m> the standard basis vectors constitute an orthonormal system; so does any subset of them.</p>
+
+            <p>In <m>\ell^2</m>, the standard unit vectors <m>(e_n)_{n\in\mathbb{N}}</m> is an orthonormal sequence, where <m>e_n</m> has a 1 in the <m>n</m>th position and 0s elsewhere.</p>
+
+            <p>In <m>L^2(-\pi,\pi)</m>, one orthonormal sequence <m>(e_n)_{n \in \mathbb{Z}}</m> is given by 
+                <me>
+                    e_n(t) = \frac{1}{\sqrt{2\pi}} e^{int}
+                </me>
+            in the <m>L^2</m> inner product <xref ref="eq-C-ip"/>. An alternative orthonormal sequence in <m>L^2(-\pi,\pi)</m> is given by the family of functions
+            <me>
+                \frac{1}{\sqrt{2\pi}}, \frac{1}{\sqrt{\pi}} \cos t, \frac{1}{\sqrt{\pi}} \sin t, \frac{1}{\sqrt{\pi}} \cos 2t, \ldots
+            </me>
+            </p>
+        </example>
+
+        <p>These families form the beginnings of <term><url href="https://en.wikipedia.org/wiki/Fourier_analysis">Fourier analysis</url></term>,  which motivates the following definition. (Compare to <xref ref="thm-finite-coords"/>.)</p>
+
+        <definition xml:id="def-fourier">
+            <p>If <m>(e_n)</m> is an orthonormal sequence in a Hilbert space <m>\hilbert</m> then for any <m>x \in \hilbert</m>, the inner product <m>\ip{x}{e_n}</m> is the <term><m>n</m>th Fourier coefficent of <m>x</m></term> with respect to <m>(e_n)</m>. The <term>Fourier series of <m>x</m></term> with respect to <m>(e_n)</m> is the series
+            <me>
+                \sum_{n \in \mathbb{N}} \ip{x}{e_n} e_n.
+            </me></p> 
+        </definition>
+
+        <p>At this point, this is only a formal sum in a formal definition. We want to understand the extent to which orthogonal systems can play the role of coordinate systems in finite dimensions, with the ultimate idea of working in coordinates. First, given our definition of orthogonality, we can generalize the Pythagorean theorem.</p>
+
+        <theorem xml:id="thm-ortho-pythagorean">
+            <p>If <m>x_1, \ldots, x_n</m> is a (finite) orthogonalsystem in an inner product space, then
+            <me>
+                \norm{\sum_{i=1}^n x_i}^2 = \sum_{i=1}^n \norm{x_i}^2.
+            </me></p>
+        </theorem>
+
+        <exercise>
+            <p>Prove <xref ref="thm-ortho-pythagorean"/>.</p>
+        </exercise>
+
+        <p>The basic properties of orthogonal expansions are mainly derived from the following geometric identity. Note that it applies to <em>finite</em> orthonormal systems.</p>
+
+        <lemma xml:id="lemma-ortho">
+            <p>Let <m>e_1, \ldots, e_n</m> be an orthonormal system in an inner product space <m>\hilbert</m>, let <m>\la_1, \ldots, \la_n \in \C</m> and suppose that <m>x \in \hilbert</m>. Then
+            <me>
+                \norm{x - \sum_{i=1}^n \la_i e_i}^2 = \norm{x}^2 + \sum_{i=1}^n\abs{\la_i - c_i}^2 - \sum_{i=1}^n \abs{c_i}^2
+            </me>
+            where <m>c_i = \ip{x}{e_i}</m>.</p>
+        </lemma>
+
+        <proof>
+            <p>By <xref ref="thm-ortho-pythagorean"/>, 
+                <me>
+                    \ip{\sum \la_i e_i}{\sum \la_i e_i} = \norm{\sum \la_i e_i}^2 = \sum \norm{\la_i e_i}^2 = \sum \abs{\la_i}^2 = \sum \la_i \cc{\la_i}.
+                </me>
+                Then
+                <md>
+                    <mrow>\norm{x - \sum \la_i e_i}^2 \amp = \ip{x - \sum \la_i e_i}{x - \sum \la_i e_i}</mrow>
+                    <mrow>\amp= \ip{x}{x} - \sum\la_i\ip{e_i}{x} - \sum\cc{\la_i}\ip{x}{e_i} + \sum \la_i \cc{\la_i}</mrow>
+                    <mrow>\amp= \norm{x}^2 - \sum \la_i \cc{c_i} - \sum \cc{\la_i} c_i + \sum \la_i \cc{\la_i}</mrow>
+                    <mrow>\amp= \norm{x}^2 + \sum (\la_i \cc{\la_i} -  \la_i \cc{c_i} - \cc{\la_i}c_i + c_i \cc{c_i}) + \sum c_i \cc{c_i}</mrow>
+                    <mrow>\amp= \norm{x}^2 + \sum \ip{\la_i - c_i}{\la_i - c_i} - \sum\abs{c_i}^2</mrow>
+                    <mrow>\amp= \norm{x}^2 + \sum \abs{\la_i - c_i}^2 - \sum\abs{c_i}^2.</mrow>
+                </md>
+            </p>
+        </proof>
+
+        <p>Now suppose that <m>x</m> and the orthonormal system <m>e_i</m> are fixed. Varying <m>\la_i</m> on the expression <m>\sum \la_i e_i</m> will trace out the linear span of the <m>e_i</m> (as it runs through all linear combinations). Since <m>c_i = \ip{x}{e_i}</m> are fixed, <xref ref="lemma-ortho"/> implies that quantity <m>\norm{x - \sum \la_i e_i}</m> is minimized when <m>\la_i = c_i</m> for <m>1 \leq i \leq n</m> (killing the middle term). This gives the following theorem.</p>
+
+        <theorem xml:id="thm-ortho-closest-finite">
+            <p>Let <m>e_1, \ldots, e_n</m> be an orthonormal system in an inner product space <m>\hilbert</m> and let <m>x \in \hilbert</m>. The closest point <m>y</m> of <m>\span\{e_1, \ldots, e_n\}</m> to <m>x</m> is
+            <me>
+                y = \sum_{i=1}^n \ip{x}{e_i} e_i,
+            </me>
+            and the distance <m>d = \norm{x-y}</m> from <m>x</m> to <m>\span\{e_1, \ldots, e_n\}</m> is given by
+            <me>
+                d^2 = \norm{x}^2 - \sum_{i=1}^n \abs{\ip{x}{e_i}}^2.
+            </me></p>
+        </theorem>
+
+        <p>We finish with a corollary that resembles (and recovers) the orthonormal expansion of a vector in <m>\R^n</m>.</p>
+
+        <corollary>
+            <p>If <m>x \in \span\{e_1, \ldots, e_n\}</m> then
+            <me>
+                x = \sum_{i=1}^n \ip{x}{e_i} e_i.
+            </me></p>
+        </corollary>
+
+        <exercise>
+            <p>In <m>L^2[0,1]</m> let <m>e_0(t) = 1, e_1(t) = \sqrt{3}(2t -1)</m> for all <m>t \in (0,1)</m>. Show that <m>e_0, e_1</m> is an orthonormal system in <m>L^2(0,1)</m> and show that the polynomial <m>y</m> of degree 1 which is closest to the function <m>x(t) = t^2</m> is given by <m>y(t) = t - 1/6</m>. What is <m>\norm{x - y}</m>?</p>
+        </exercise>
+    </section>
+
+    <section xml:id="ortho-2">
+        <title>Bessel's inequality</title>
+        <p>The following inequality is one of the bedrock observations of Hilbert spaces. With it, we can begin the move from finite to infinite sums of vectors as appear in orthogonal expansions.</p>
+
+        <theorem xml:id="thm-bessel"><title>Bessel's inequality</title>
+            <p>If <m>(e_n)_{n \in \mathbb{N}}</m> is an orthonormal sequence in an inner product space <m>\hilbert</m> then, for any <m>x \in \hilbert</m>, 
+            <me>
+                \sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2 \leq \norm{x}^2.
+            </me></p>
+        </theorem>
+
+        <proof>
+            <p>We will show the inequality holds for all finite <m>n \in \mathbb{N}</m> and then apply limits.</p>
+
+            <p>For <m>N \in \mathbb{N}</m>, let <m>y_N</m> be the finite series <m>y_N = \sum_{n=1}^N \ip{x}{e_n} e_n</m>. Noting that <m>d = \norm{x - y_N}</m>, we can apply <xref ref="thm-ortho-closest-finite"/> to get
+            <me>
+                \norm{x - y_N}^2 = \norm{x}^2 - \sum_{n=1}^N \abs{\ip{x}{e_n}}^2.
+            </me>
+            Rearranging gives for all <m>N</m> that
+            <me>
+                \sum_{n=1}^N \abs{\ip{x}{e_n}} = \norm{x}^2 - \norm{x - y_N}^2 \leq \norm{x}^2.
+            </me>
+            Thus in the limit as <m>N \to \infty</m> we have the result.</p>
+        </proof>
+
+        <p>Our goal now is to show that the Fourier series <m>\sum \ip{x}{e_i} e_i</m> actually represents the vector <m>x</m>, and so we need to fix a notion of what it means for an infinite series of vectors to converge in a normed space. The most obvious idea follows directly from the scalar case - we will say that a series conveges to a vector if the partial sums approach <m>x</m> in norm.</p>
+
+        <definition xml:id="def-convergence">
+            <p>Let <m>(V, \norm{\cdot})</m> be a normed space, and let <m>x_n \in V</m> for <m>n \in \mathbb{N}</m> be a sequence. We say that <m>\sum x_n</m> converges and has sum <m>x</m>, and so write <m>\sum x_n = x</m>, if 
+            <me>
+                \sum_{n=1}^k x_n \to x \, \, \, \text{ as } k \to \infty.
+            </me></p>
+        </definition>
+
+        <p>That is, <m>\norm{x - \sum_{n=1}^k x_n} \to 0</m> as <m>k \to \infty</m>.</p>
+
+        <p>One of the difficulties of Banach space is the lack of geometry induced by an inner product - it is difficult to tell in general when a series converges in Banach space. In Hilbert space, there is a neat characterization in terms of the coefficients. (You should once again be reminded of <m>\ell^2</m>, which should continue to make you suspicious.)</p>
+
+        <theorem xml:id="thm-l2-coeffs">
+            <p>Let <m>(e_n)_{n\in \mathbb{N}}</m> be an orthonormal sequence in a Hilbert space <m>\hilbert</m> and let <m>\la_n \in \C, n \in \mathbb{N}</m>. Then <m>\sum_{n=1}^\infty \la_n e_n</m> converges in <m>\hilbert</m> if and only if 
+            <me>
+                \sum_{n=1}^\infty \abs{\la_n}^2 \lt \infty.
+            </me></p>
+        </theorem>
+
+        <proof>
+            <p><m>\Rightarrow:</m> Suppose that <m>\sum_{n=1}^\infty \la_n e_n = x</m>. For a given <m>k</m> and any index <m>m</m> beyond <m>k</m>, orthogonality gives
+            <me>
+                \sum_{n=1}^m \ip{\la_n e_n}{e_k} = \sum_{n=1}^m \la_n \ip{e_n}{e_k} = \la_k.
+            </me>
+            Now let <m>m \to \infty</m>. Continuity of the inner product gives
+            <me>
+                \ip{x}{e_k} = \lim_{m \to \infty} \la_k =\la_k.
+            </me>
+            Then using the equivalence above in Bessel's inequality <xref ref="thm-bessel"/> gives
+            <me>
+                \sum_{n=1}^\infty \abs{\la_n}^2 = \sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2 \leq \norm{x}^2 \lt \infty.
+            </me></p>
+
+            <p><m>\Leftarrow:</m> Suppose that the coefficient sequence satisfies <m>\sum_{n=1}^\infty \abs{\la^2} \lt \infty</m>. Then define a sequence <m>x_m</m> by
+            <me>
+                x_m = \sum_{n=1}^m \la_n e_n.
+            </me>
+            For <m>m, p \in \mathbb{N}</m>, the Pythagorean theorem gives
+            <md>
+                <mrow>\norm{x_{m+p} - x_m}^2 \amp= \norm{\sum_{n=m+1}^{m+p}  \la_n e_n}^2</mrow>
+                <mrow>\amp = \sum_{n=m+1}^{m+p} \abs{\la_n}^2</mrow>
+                <mrow>\amp \to 0 \,\,\, \text{ as } m\to\infty.</mrow>
+            </md>
+            Thus, <m>(x_m)</m> is a Cauchy sequence in <m>\hilbert</m> and therefore converges in <m>\hilbert</m> by completeness.</p>
+        </proof>
+    </section>
+
+    <section xml:id="ortho-3">
+        <title>Modes of convergence</title>
+        <p>A point that we need to pay attention to in more abstract spaces than <m>\R^n</m> is precisely what we mean by convegence. In the previous section, we discussed convergence in <m>L^2(a,b)</m> - i.e. given a sequence <m>f_n</m> in <m>L^2(0,1)</m>, what it means for
+        <me>
+            \sum_{n=1}^\infty f_n = f.
+        </me>
+        Because this mode of <m>L^2</m>-convergence is in norm and incorporates information from the entire domain, we <em>cannot</em> conclude that for a given <m>t</m>, the series
+        <me>
+            \sum_{n=1}^\infty f_n(t) \to f(t).
+        </me>
+        Series that satisfy the above notion are said to <term>converge pointwise</term>, and these two ideas are not equivalent. In fact, a great deal of the nuance of graduate real analysis is in exploring the differences between these and other modes of convergence, usually in the guise of <term>measure theory</term> (here, an extremely well presented introduction can be found in S. Axler' <em>Measure, Integration, and Real Analysis</em> or G. Folland's <em>Real Analysis: Modern Techniques and Their Applications</em>).</p>
+
+        <p>Because series convergence is really just convergence of the sequence of partial sums in the senses that we are discussing, we'll look at the difference in convergence modes for several sequences. First, consider the sequence of functions <m>g_n \in L^2[0,1)</m> given by
+            <me>
+                g_n(t) = \sqrt{n}t^n.
+            </me>
+        </p>
+        <exercise>
+            <p>Show that for all <m>t \in [0,1)</m>, <m>g_n(t) \to 0</m>.</p>
+
+            <p>Show that the sequence <m>\norm{g_n - 0}^2_{L^2}</m> does not converge to <m>0</m>.</p>
+
+            <p>Conclude that pointwise convergence does not imply <m>L^2</m> convergence.</p>
+        </exercise>
+
+        <p>Now consider the sequence of functions given by 
+            <me>
+                h_n(t) = \left\{ \begin{array}{ll} \sqrt[3]{n} \amp\mbox{ for } t \in [0,\frac{1}{n}] \\ 0 \amp\mbox{ otherwise}\end{array}\right. .
+            </me></p>
+
+        <exercise>
+            <p>Sketch a graph of <m>h_n</m>.</p>
+
+            <p>Show that the sequence <m>h_n(0)</m> does not converge.</p>
+
+            <p>Show that <m>\norm{h_n - 0}^2 \to 0</m>, and conclude that <m>h_n \to 0</m> in <m>L^2.</m></p>
+
+            <p>Conclude that <m>L^2</m> convergence does not imply pointwise convergence.</p>
+        </exercise>
+
+        <p>The upshot of this discussion is: be cautious. The same problems beset the great mathematicians of the 19th century, so let us strive to learn from their struggles.</p>
+    </section>
+
+    <section xml:id="ortho-4"><title>Complete orthonormal sequences</title>
+        <p>We are now ready to establish a generalization of coordinates and basis appropriate to Hilbert space. That is, we would like to make sense of finding a coordinate expression for a vector <m>x</m> in a Hilbert space <m>\hilbert</m>. The primary geometric difficulty that we have to wrestle with is that we have infinite <q>directions</q> in which extra stuff can hide. We need to know that the orthonormal sequence we're expanding against doesn't leave any directions hidden.</p>
+
+        <p>Given an orthonormal sequence <m>(e_n)</m>, we would like to write (in parallel with <xref ref="thm-finite-coords"/>)
+        <me>
+            x = \sum_{n=1}^\infty \ip{x}{e_n} e_n.
+        </me>
+        <xref ref="thm-bessel"/> and <xref ref="thm-l2-coeffs"/> guarantee that the right hand side makes sense; the series converges to some vector in <m>\hilbert</m>. But there is no way to know without further assumptions on the orthonormal sequence that there aren't directions that are <q>hidden</q> that might make the equation false. That is, we don't know if the limit of the right hand side is actually <m>x</m>.</p>
+
+        <p>We can see the issue if we look at an expansion of a vector <m>x\in \ell^2</m> with respect to the standard orthonormal sequence (much like the standard unit vectors) where <m>e_n</m> has a 1 in the <m>n</m>th position and 0s elsewhere. From this, construct a shifted sequence <m>f_n = e_{n+1}</m>. Then <m>(f_n)_{n\in\mathbb{N}}</m> remains an infinite orthonormal sequence in <m>\ell^2</m>. Now choose <m>x = (x_n) \in \ell^2</m>. Then
+        <md>
+            <mrow>\sum_{n=1}^\infty \ip{x}{f_n}f_n \amp= \sum_{n=2}^\infty \ip{x}{e_n} e_n</mrow>
+            <mrow>\amp = (0, x_2, x_3, \ldots) \neq x.</mrow>
+        </md></p>
+
+        <p>More generally, let us look at the error between <m>x</m> and an orthonormal expansion in terms of an orthonormal sequence <m>(e_n)</m>:
+        <me>
+            y = x - \sum_{n=1}^\infty \ip{x}{e_n}e_n.
+        </me>
+        Then for each <m>j \in \mathbb{N}</m>, linearity of the inner product gives
+        <me>
+            \ip{y}{e_j} = \ip{x}{e_j} - \sum_{n=1}^\infty \ip{x}{e_n}\ip{e_n}{e_j} = 0.
+        </me>
+        That is, the vector <m>y</m> is orthogonal to each member of the orthonormal sequence. (This property is used to compute the distance from a vector to a subspace in finite dimensions.) So if we know that the <em>only</em> vector orthogonal to every <m>e_n</m> is the zero vector, then we can infer that <m>y = 0</m>, which makes the representation valid.</p>
+
+        <definition xml:id="def-complete-ons">
+            <p>An orthonormal sequence <m>(e_n)</m> in a Hilbert space <m>\hilbert</m> is <term>complete</term> if the only member of <m>\hilbert</m> which is orthogonal to every <m>e_n</m> is the zero vector.</p>
+        </definition>
+
+        <p>We are finally ready to prove the Hilbert space analogue of <xref ref="thm-finite-coords"/>.</p>
+
+        <theorem xml:id="thm-infinite-coords">
+            <p>Let <m>(e_n)_{n\in\mathbb{N}}</m> be a complete orthonormal sequence in a Hilbert space <m>\hilbert</m>. For any <m>x \in \hilbert</m>, 
+            <me>
+                x = \sum_{n=1}^\infty \ip{x}{e_n}e_n
+            </me>
+            and
+            <me>
+                \norm{x}^2 = \sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2.
+            </me></p>
+        </theorem>
+
+        <proof>
+            <p>As above, compute
+                <me>
+                    y = x - \sum_{n=1}^\infty \ip{x}{e_n}e_n.
+                </me>
+            Then for each <m>j \in \mathbb{N}</m>, linearity of the inner product gives
+            <me>
+                \ip{y}{e_j} = \ip{x}{e_j} - \sum_{n=1}^\infty \ip{x}{e_n}\ip{e_n}{e_j} = 0.
+            </me>
+            That is, the vector <m>y</m> is orthogonal to each member of the orthonormal sequence. Since by hypothesis <m>(e_n)</m> is complete, we deduce the first statement.</p>
+
+            <p>By <xref ref="thm-ortho-pythagorean"/>, for any <m>N \in \mathbb{N}</m>, 
+            <me>
+                \norm{\sum_{n=1}^N \ip{x}{e_n}e_n}^2 = \sum_{n=1}^N \abs{\ip{x}{e_n}}^2.
+            </me>
+            On letting <m>N\to\infty</m>, continuity of the norm gives the second statement.</p>
+        </proof>
+
+        <p>We have finally arrived at the notion of a basis in a Hilbert space (indexed by <m>\mathbb{N}</m>). A complete orthonormal sequence in <m>\hilbert</m> is also called an <term>orthonormal basis</term> of <m>\hilbert</m>. The issue with identifying a basis is typically not orthogonality or norm, but instead completeness. After all, in infinite dimensions, there are lots of places to hide.</p>
+
+        <p>In finite dimensions, a basis is a minimal spanning set - that is, the span of a basis is the entire space. A similar fact holds in Hilbert space, with the caveat that we have to work with the closed linear span.</p>
+
+        <theorem xml:id="thm-hilbert-span">
+            <p>Let <m>(e_n)_{n\in\mathbb{N}}</m> be an orthonormal sequence in a Hilbert space <m>\hilbert</m>. The following are equivalent:
+            <ol>
+                <li> <m>(e_n)</m> is complete;</li>
+                <li> <m>\cl \span \{e_n: n \in \mathbb{N}\} = \hilbert</m>;</li>
+                <li><me>\norm{x}^2 = \sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2.</me></li>
+            </ol></p>
+        </theorem>
+
+        <proof>
+            <p> <m>(1) \Rightarrow (2)</m> and <m>(1) \Rightarrow (3)</m> follow immediately from <xref ref="thm-infinite-coords"/>. As series convergence is convergence of the sequence of partial sums, and each partial sum is in <m>\cl \span \{e_n: n \in \mathbb{N}\}</m>, closure gives
+            <me>
+                \sum_{n=1}^\infty \ip{x}{e_n} e_n \in \cl \span \{e_n: n \in \mathbb{N}\}
+            </me>
+            for all <m>x \in \hilbert</m>.</p>
+
+            <p><m>(3) \Rightarrow (1)</m>: Suppose that <m>(e_n)</m> is not complete, which is to say that there exists some non-zero vector <m>y</m> with <m>y\perp e_n</m> for all <m>n</m>. Then <m>\norm{x} \neq 0</m>, but <m>\ip{x}{e_n} = 0</m> for all <m>n</m> and so
+            <me>
+                \sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2 = 0,
+            </me> 
+            which contradicts <m>(3)</m>.</p>
+
+            <p><m>(2) \Rightarrow (1)</m>: Suppose that <m>(2)</m> holds. Let <m>x \in \hilbert</m> be any vector that is orthogonal to every <m>e_n</m>. Now construct the set of vectors orthogonal to <m>x</m>:
+            <me>
+                \M  = \{y: \ip{x}{y} = 0\}.
+            </me>
+            Linearity of the inner product gives that <m>\M</m> is a subspace of <m>\hilbert</m>, and continuity of the inner product gives that <m>\M</m> is closed. Also, by assumption, every <m>e_n \in \M</m>, and thus <m>\cl \span\{e_n\} \subseteq \M</m>.and so (2) implies that <m>\hilbert = \M</m>. But then in particular <m>x \in \M</m>, and so <m>\ip{x}{x} = 0</m> by the definition of <m>\M</m>, which gives that <m>x=0</m>. Thus, <m>(e_n)</m> is complete. </p>
+
+
+        </proof>
+
+        <p> While most of the commonly encountered Hilbert spaces possess complete orthonormal sequences, some do not. Fortunately, similar statements to the above apply to orthonormal systems as well, though working with uncountably indexed sets is not something that most readers will encounter until graduate real analysis. It will be sufficient for us to mostly restrict our attention to the rather more easily conceptualized case of sequences.</p>
+
+        <definition xml:id="def-separable">
+            <p>A Hilbert space is called <term>separable</term> if it contains a complete orthonormal sequence (indexed by <m>\mathbb{N}</m> or finite).</p>
+        </definition>
+
+        <p>In the same way that we know from linear algebra that every (complex) finite dimensional Hilbert space is isomorphic to <m>\C^n</m>, so that we think of <q>one</q> vector space of a given dimension with different labelings (see <xref ref="intro-2"/>), we have already met <em>the one separable Hilbert space of infinite dimension</em>, namely <m>\ell^2</m> (and at last our suspicions are confirmed). The next set of arguments will make this rigorous.</p>
+
+        <definition xml:id="def-unitary">
+            <p>A mapping <m>U: \hilbert \to \K</m> between Hilbert spaces <m>\hilbert, \K</m> is a <term>unitary operator</term> if it is linear and bijective and preserves inner products. That is, <m>U</m> satisfies
+            <me>
+                \ip{Ux}{Uy} = \ip{x}{y}
+            </me>
+            for all <m>x, y \in \hilbert.</m></p>
+        </definition>
+
+        <theorem>
+            <p>Let <m>\hilbert</m> be a separable Hilbert space. Then either <m>\hilbert</m> is isomorphic to <m>\C^n</m> for some <m>n \in \mathbb{N}</m> or <m>\hilbert</m> is isomorphic to <m>\ell^2</m>.</p>
+        </theorem>
+
+        <proof>
+            <p>Suppose that <m>\hilbert</m> contains a finite complete orthonormal sequence <m>e_1, \ldots e_n</m>. For any <m>x \in \hilbert</m>, find the error vector
+            <me>
+                y = x - \sum_{i=1}^n \ip{x}{e_i}e_i.
+            </me>
+            Linearity of the inner product gives <m>y \perp e_i</m> for all <m>i</m> and so <m>y=0</m>. Thus <m>e_1, \ldots, e_n</m> is an orthonormal basis for <m>\hilbert</m>. Now define the operator <m>U: \hilbert \to \C^n</m> by
+                <me>
+                    U(\la_1 e_1 + \la_2 e_2 + \ldots + \la_n e_n) = (\la_1, \ldots , \la_n).
+                </me>
+            Then <m>U</m> is linear and bijective. From the fact that <m>\norm{x}^2 = \sum_{i=1}^n \abs{\ip{x}{e_i}}^2</m>, we infer that <m>\norm{Ux} = \norm{x}</m> for all <m>x \in \hilbert.</m> Thus <m>U</m> is a unitary operator, and so <m>\hilbert</m> is isomorphic to <m>\C^n</m>.</p>
+
+            <p>On the other hand, suppose that <m>\hilbert</m> contains a complete orthonormal sequence <m>(e_n)_{n \in \mathbb{N}}</m>. Define the operator <m>U: \hilbert \to \ell^2</m> by <m>Ux = (\la_n)_{n\in \mathbb{N}}</m> where <m>\la_n = \ip{x}{e_n}</m>. By <xref ref="thm-hilbert-span"/> (3), <m>Ux \in \ell^2</m> and moreover <m>\norm{Ux} = \norm{x}</m> for all <m>x \in \hilbert</m>. As <m>U</m> is defined in terms of the inner product, it is clearly linear. If <m>(\la_n) \in \ell^2</m>, then by <xref ref="thm-l2-coeffs"/> the series <m>\sum \la_n e_n</m> converges to a point in <m>\hilbert</m> and by definition <m>Ux = (\la_n)</m>. Thus <m>U</m> is surjective. Hence <m>U</m> is a unitary operator, and so <m>\hilbert</m> is isomorphic to <m>\ell^2</m>.</p>
+        </proof>
+
+        <p>It is important that we not overstate the implications of the theorem above. In finite dimensions, for example, the space of polynomials of degree at most <m>n</m> is isomorphic to <m>\C^n</m> but is also a set of functions with properties that interact with the geometry of <m>\C^n</m>. Both the vector space properties and the functional properties are important - what the isomorphism provides is a set of properties that the space carries by relation with Euclidean space. In the same way, while all separable Hilbert spaces can be thought of as <m>\ell^2</m> in some sense, it is the interplay between, say, analytic properties and the Hilbert space structure that we are interested. However, it is valuable (and useful) to know that we can think of Hilbert space as <m>\C^n</m> or <m>\ell^2</m> when it is convenient.</p>
+    </section>
+
+</chapter>

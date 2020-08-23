@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:40-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><article class="definition-like"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.2.2</span>.</h6>
+<p>Let \(\ell_0\) denote the space of sequences in \(\C^\mathbb{N}\) which have only finitely many non-zero terms. (That is, there is some index \(n\) beyond which the sequence has only \(0\) entries.)</p></article><p>It is straightforward to see that \(\ell_0\) is a linear subspace of \(\ell^2\text{.}\) However, \(\ell_0\) is <em class="emphasis">not</em> a closed set inside \(\ell^2\text{.}\) To see this, we will construct a convergent sequence that converges to a point outside of \(\ell^2\text{.}\) For each \(k \in \mathbb{N}\text{,}\) the sequence</p>
+<div class="displaymath">
+\begin{equation*}
+x^k = \left(1, \frac{1}{2}, \ldots, \frac{1}{k}, 0, \ldots\right)
+\end{equation*}
+</div>
+<p>is an element of \(\ell_0\text{.}\) Considering each \(x^k\) as a vector in \(\ell^2\text{,}\) the sequence of vectors \((x^k)_{k=1}^\infty\) converges to the limit point</p>
+<div class="displaymath">
+\begin{equation*}
+y = \left(\frac{1}{n}\right)_{n=1}^{\infty}
+\end{equation*}
+</div>
+<p>in \(\ell^2\) since</p>
+<div class="displaymath">
+\begin{align*}
+\norm{x^k - y} \amp = \norm{\left(0, \ldots, 0, \frac{1}{k+1}, \ldots \right)}\\
+\amp = \left(\sum_{n = k+1}^\infty \frac{1}{n^2} \right)^{1/2} \to 0.
+\end{align*}
+</div>
+<p>That is, \(x^k \to a\) but \(a \notin \ell_0\text{,}\) and so \(\ell_0\) is not closed in \(\ell^2\text{.}\)</p></article></body>
+</html>

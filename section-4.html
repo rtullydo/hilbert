@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:39-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Operators</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
+  \DeclareMathOperator{\IM}{Im}
+  \DeclareMathOperator{\ess}{ess}
+  \DeclareMathOperator{\intr}{int}
+  \DeclareMathOperator{\dist}{dist}
+  \DeclareMathOperator{\dom}{dom}
+  \DeclareMathOperator{\diag}{diag}
+  \DeclareMathOperator{\cl}{cl}
+  \DeclareMathOperator{\span}{span}
+  \DeclareMathOperator{\proj}{proj}
+  \DeclareMathOperator\trace{trace}
+  \DeclareMathOperator\re{\mathrm {Re~}}
+  \DeclareMathOperator\im{\mathrm {Im~}}
+  
+  \newcommand\dd{\mathrm d}
+  \newcommand{\eps}{\varepsilon}
+  \newcommand{\To}{\longrightarrow}
+  \newcommand{\hilbert}{\mathcal{H}}
+  \newcommand{\s}{\mathcal{S}_2}
+  \newcommand{\A}{\mathcal{A}}
+  \newcommand\h{\mathcal{H}}
+  \newcommand{\J}{\mathcal{J}}
+  \newcommand{\K}{\mathcal{K}}
+  \newcommand{\M}{\mathcal{M}}
+  \newcommand{\F}{\mathbb{F}}
+  \newcommand{\N}{\mathcal{N}}
+  \newcommand{\T}{\mathbb{T}}
+  \newcommand{\W}{\mathcal{W}}
+  \newcommand{\X}{\mathcal{X}}
+  \newcommand{\D}{\mathbb{D}}
+  \newcommand{\C}{\mathbb{C}}
+  \newcommand{\BOP}{\mathbf{B}}
+  \newcommand{\Z}{\mathbb{Z}}
+  \newcommand{\BH}{\mathbf{B}(\mathcal{H})}
+  \newcommand{\KH}{\mathcal{K}(\mathcal{H})}
+  \newcommand{\pick}{\mathcal{P}_2}
+  \newcommand{\schur}{\mathcal{S}_2}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Complex}{\mathbb{C}}
+  \newcommand{\Field}{\mathbb{F}}
+  \newcommand{\RPlus}{\Real^{+}}
+  \newcommand{\Polar}{\mathcal{P}_{\s}}
+  \newcommand{\Poly}{\mathcal{P}(E)}
+  \newcommand{\EssD}{\mathcal{D}}
+  \newcommand{\Lop}{\mathcal{L}}
+  \newcommand{\cc}[1]{\overline{#1}}
+  \newcommand{\abs}[1]{\left\vert#1\right\vert}
+  \newcommand{\set}[1]{\left\{#1\right\}}
+  \newcommand{\seq}[1]{\left\lt#1\right&gt;}
+  \newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+  \newcommand{\essnorm}[1]{\norm{#1}_{\ess}}
+  \newcommand{\tr}{\operatorname{tr}}
+  \newcommand{\ran}[1]{\operatorname{ran}#1}
+  \newcommand{\nt}{\stackrel{\mathrm {nt}}{\to}}
+  \newcommand{\pnt}{\xrightarrow{pnt}}
+  \newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
+  \newcommand{\ad}{^\ast}
+  \newcommand{\inv}{^{-1}}
+  \newcommand{\adinv}{^{\ast -1}}
+  \newcommand{\invad}{^{-1 \ast}}
+  \newcommand\Pick{\mathcal P}
+  \newcommand\Ha{\mathbb{H}}
+  \newcommand{\HH}{\Ha\times\Ha}
+  \newcommand\Htau{\mathbb{H}(\tau)}
+  \newcommand{\vp}{\varphi}
+  \newcommand{\ph}{\varphi}
+  \newcommand\al{\alpha}
+  \newcommand\ga{\gamma}
+  \newcommand\de{\delta}
+  \newcommand\ep{\varepsilon}
+  \newcommand\la{\lambda}
+  \newcommand\up{\upsilon}
+  \newcommand\si{\sigma}
+  \newcommand\beq{\begin{equation}}
+  \newcommand\ds{\displaystyle}
+  \newcommand\eeq{\end{equation}}
+  \newcommand\df{\stackrel{\rm def}{=}}
+  \newcommand\ii{\mathrm i}
+  \newcommand{\vectwo}[2]
+  {
+     \begin{pmatrix} #1 \\ #2 \end{pmatrix}
+  }
+  \newcommand{\vecthree}[3]
+  {
+     \begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}
+  }
+  \newcommand\blue{\color{blue}}
+  \newcommand\black{\color{black}}
+  \newcommand\red{\color{red}}
+  
+  \newcommand\nn{\nonumber}
+  \newcommand\bbm{\begin{bmatrix}}
+  \newcommand\ebm{\end{bmatrix}}
+  \newcommand\bpm{\begin{pmatrix}}
+  \newcommand\epm{\end{pmatrix}}
+  \numberwithin{equation}{section}
+  \newcommand\nin{\noindent}
+  \newcommand{\nCr}[2]{\,_{#1}C_{#2}} 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="hilbert.html"><span class="title">Hilbert Spaces - Sequel to Linear Algebra</span></a></h1>
+<p class="byline">Ryan Tully-Doyle</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="intro-2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-intro.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="inner.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="intro-2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-intro.html" title="Up">Up</a><a class="next-button button toolbar-item" href="inner.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="sec-intro-1.html" data-scroll="sec-intro-1">Motivation</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Inner products</a></li>
+<li><a href="intro-2.html" data-scroll="intro-2">Basis and coordinates</a></li>
+<li><a href="section-4.html" data-scroll="section-4" class="active">Operators</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="inner.html" data-scroll="inner"><span class="codenumber">2</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="inner-1.html" data-scroll="inner-1">Inner products and \(\ell^2\)</a></li>
+<li><a href="inner-2.html" data-scroll="inner-2">Inner products, norms, and metric spaces</a></li>
+<li><a href="inner-3.html" data-scroll="inner-3">Examples of inner product spaces</a></li>
+<li><a href="inner-4.html" data-scroll="inner-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-norm.html" data-scroll="ch-norm"><span class="codenumber">3</span> <span class="title">Normed spaces</span></a><ul>
+<li><a href="norm-1.html" data-scroll="norm-1">Norms</a></li>
+<li><a href="norm-2.html" data-scroll="norm-2">Closed linear subspaces</a></li>
+<li><a href="norm-3.html" data-scroll="norm-3">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a><ul>
+<li><a href="hilbert-1.html" data-scroll="hilbert-1">Limits</a></li>
+<li><a href="hilbert-2.html" data-scroll="hilbert-2">\(L^2[a,b]\)</a></li>
+<li><a href="hilbert-3.html" data-scroll="hilbert-3">The closest point property</a></li>
+<li><a href="hilbert-4.html" data-scroll="hilbert-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Orthogonal expansions</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Geometry in Hilbert space</a></li>
+<li><a href="ortho-2.html" data-scroll="ortho-2">Bessel's inequality</a></li>
+<li><a href="ortho-3.html" data-scroll="ortho-3">Modes of convergence</a></li>
+<li><a href="ortho-4.html" data-scroll="ortho-4">Complete orthonormal sequences</a></li>
+</ul>
+</li>
+<li class="link"><a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Appendix: Results from analysis</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-4"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Operators</span>
+</h2>
+<p id="p-26">When a linear function maps \(V\) into itself, special things happen. First, the matrix that represents \(T: \F^n \to \F^n\) is square. There are a large number of equivalences between the structure of square matrices, linear maps, and sets of vectors. Many of these are captured in the <dfn class="terminology">invertible matrix theorem</dfn>, one of the central objects of study in elementary linear algebra.</p>
+<article class="theorem-like" id="thminvmat1"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.4.1</span>. <span class="title">Invertible matrix theorem.</span>
+</h6>
+<p id="p-27">Let \(A\) be an \(n \times n\) matrix. If any of the following conditions hold, all of them do. If any of them are false, they are all.</p>
+<ol class="decimal">
+<li id="li-9">\(A\) is invertible.</li>
+<li id="li-10">\(A\) row reduces to the identity matrix \(I\text{.}\)</li>
+<li id="li-11">\(A\) has \(n\) pivot positions.</li>
+<li id="li-12">\(rank A = n\text{.}\)</li>
+<li id="li-13">The equation \(A \vec x = \vec 0\) has only the trivial solution.</li>
+<li id="li-14">The columns of \(A\) are linearly independent.</li>
+<li id="li-15">The function \(T(\vec x) = A \vec x\) is one-to-one.</li>
+<li id="li-16">The equation \(A \vec x = \vec v\) is consistent for all \(b \in \F^n\text{.}\)</li>
+<li id="li-17">The columns of \(A\) span \(\F^n\text{.}\)</li>
+<li id="li-18">The function \(T(\vec x) = A \vec x\) is onto.</li>
+<li id="li-19">There is a matrix \(C\) so that \(C A = I\text{.}\)</li>
+<li id="li-20">There is a matrix \(D\) so that \(A D = I\text{.}\)</li>
+<li id="li-21">\(A^T\) is invertible.</li>
+<li id="li-22">\(\det A \neq 0.\)</li>
+</ol></article><p id="p-28">Operators contain more information than the invertibility of the functions that they represent. For the following discussion, let us fix a basis of a vector space \(V\) and let \(A\) be the matrix that represents a function \(T: V \to V\text{.}\) A scalar \(\la\) and a vector \(v\) are said to be an <dfn class="terminology">eigenpair</dfn> for \(A\) if</p>
+<div class="displaymath">
+\begin{equation*}
+A v = \la v.
+\end{equation*}
+</div>
+<p>It is straightforward to see that the set of all vectors \(v\) for which the eigenvector equation holds is a subspace of \(V\text{,}\) called the <dfn class="terminology">eigenspace</dfn> associated with \(\la\text{.}\) The eigenspaces of the matrix \(A\) are its <dfn class="terminology">invariant subspaces</dfn>, which is to say that a vector in an eigenspace is mapped by \(A\) to the same eigenspace. It turns out that knowing the invariant subspaces of \(A\) are often enough to completely characterize \(A\text{.}\) If \(A\) is \(n\times n\) and \(A\) has \(n\) linearly independent eigenvectors (that is, one can find a basis of \(\F^n\) consisting of eigenvectors of \(A\)), then</p>
+<div class="displaymath">
+\begin{equation*}
+A = S D S\inv,
+\end{equation*}
+</div>
+<p>where \(S\) is a matrix of eigenvectors and \(D\) is a diagonal matrix of the associated eigenvalues (including repetition of course). (One should think of \(S\) as a change of basis matrix under which the operator \(A\) becomes diagonal.)</p>
+<p id="p-29">Many operators are not diagonalizable, even very simple ones. For example, \(A = \bbm 1 \amp 1 \\ 0 \amp 1 \ebm\) only has a one-dimensional eigenspace. Diagonalizability is so useful that we give characterizations of those operators a special name, the <dfn class="terminology">Spectral Theorem</dfn>. An operator on a real vector space is called <dfn class="terminology">symmetric</dfn> if \(A^T = A\text{.}\) An operator on a complex vector space is called <dfn class="terminology">Hermitian</dfn> (or conjugate symmetric) if \(A\ad = \cc{A^T} = A\text{.}\) One of the major theorems of elementary linear algebra is that such operators are diagonalizable and that there exists an orthonormal basis of eigenvectors for \(V\text{.}\)</p>
+<article class="theorem-like" id="theorem-4"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.4.2</span>.</h6>
+<p id="p-30">Let \(A\) be an \(n \times n\) real (complex) matrix. Then \(A\) is diagonalizable with respect to an orthonormal basis of eigenvectors if and only if \(A\) is symmetric (hermitian).</p></article><p id="p-31">For complex operators, one can say more. \(A\) is called <dfn class="terminology">normal</dfn> if \(A A\ad = A\ad A\text{.}\) One reason that complex vector spaces are so much nicer than real vector spaces is that normal operators turn out to have orthonormal diagonalizations.</p>
+<article class="theorem-like" id="theorem-5"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.4.3</span>. <span class="title">Complex (finite) spectral theorem.</span>
+</h6>
+<p id="p-32">Let \(A\) be an operator on a finite dimensional Hilbert space \(V\text{.}\) Then \(A\) is normal if and only if \(A\) can be diagonalized with respect to an orthonormal basis of eigenvectors for \(V\text{.}\)</p></article><p id="p-33">One of the goals of Hilbert space theory is to capture these kinds of structural results in the context of infinite dimensional Hilbert spaces and operators on them.</p></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:40-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>We will show the inequality holds for all finite \(n \in \mathbb{N}\) and then apply limits.</p>
+<p>For \(N \in \mathbb{N}\text{,}\) let \(y_N\) be the finite series \(y_N = \sum_{n=1}^N \ip{x}{e_n} e_n\text{.}\) Noting that \(d = \norm{x - y_N}\text{,}\) we can apply <a data-knowl="./knowl/thm-ortho-closest-finite.html" title="Theorem 5.1.7">Theorem 5.1.7</a> to get</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{x - y_N}^2 = \norm{x}^2 - \sum_{n=1}^N \abs{\ip{x}{e_n}}^2.
+\end{equation*}
+</div>
+<p>Rearranging gives for all \(N\) that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^N \abs{\ip{x}{e_n}} = \norm{x}^2 - \norm{x - y_N}^2 \leq \norm{x}^2.
+\end{equation*}
+</div>
+<p>Thus in the limit as \(N \to \infty\) we have the result.</p></article><span class="incontext"><a href="ortho-2.html#proof-16">in-context</a></span>
+</body>
+</html>

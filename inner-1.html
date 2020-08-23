@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:39-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Inner products and \(\ell^2\)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
+  \DeclareMathOperator{\IM}{Im}
+  \DeclareMathOperator{\ess}{ess}
+  \DeclareMathOperator{\intr}{int}
+  \DeclareMathOperator{\dist}{dist}
+  \DeclareMathOperator{\dom}{dom}
+  \DeclareMathOperator{\diag}{diag}
+  \DeclareMathOperator{\cl}{cl}
+  \DeclareMathOperator{\span}{span}
+  \DeclareMathOperator{\proj}{proj}
+  \DeclareMathOperator\trace{trace}
+  \DeclareMathOperator\re{\mathrm {Re~}}
+  \DeclareMathOperator\im{\mathrm {Im~}}
+  
+  \newcommand\dd{\mathrm d}
+  \newcommand{\eps}{\varepsilon}
+  \newcommand{\To}{\longrightarrow}
+  \newcommand{\hilbert}{\mathcal{H}}
+  \newcommand{\s}{\mathcal{S}_2}
+  \newcommand{\A}{\mathcal{A}}
+  \newcommand\h{\mathcal{H}}
+  \newcommand{\J}{\mathcal{J}}
+  \newcommand{\K}{\mathcal{K}}
+  \newcommand{\M}{\mathcal{M}}
+  \newcommand{\F}{\mathbb{F}}
+  \newcommand{\N}{\mathcal{N}}
+  \newcommand{\T}{\mathbb{T}}
+  \newcommand{\W}{\mathcal{W}}
+  \newcommand{\X}{\mathcal{X}}
+  \newcommand{\D}{\mathbb{D}}
+  \newcommand{\C}{\mathbb{C}}
+  \newcommand{\BOP}{\mathbf{B}}
+  \newcommand{\Z}{\mathbb{Z}}
+  \newcommand{\BH}{\mathbf{B}(\mathcal{H})}
+  \newcommand{\KH}{\mathcal{K}(\mathcal{H})}
+  \newcommand{\pick}{\mathcal{P}_2}
+  \newcommand{\schur}{\mathcal{S}_2}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Complex}{\mathbb{C}}
+  \newcommand{\Field}{\mathbb{F}}
+  \newcommand{\RPlus}{\Real^{+}}
+  \newcommand{\Polar}{\mathcal{P}_{\s}}
+  \newcommand{\Poly}{\mathcal{P}(E)}
+  \newcommand{\EssD}{\mathcal{D}}
+  \newcommand{\Lop}{\mathcal{L}}
+  \newcommand{\cc}[1]{\overline{#1}}
+  \newcommand{\abs}[1]{\left\vert#1\right\vert}
+  \newcommand{\set}[1]{\left\{#1\right\}}
+  \newcommand{\seq}[1]{\left\lt#1\right&gt;}
+  \newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+  \newcommand{\essnorm}[1]{\norm{#1}_{\ess}}
+  \newcommand{\tr}{\operatorname{tr}}
+  \newcommand{\ran}[1]{\operatorname{ran}#1}
+  \newcommand{\nt}{\stackrel{\mathrm {nt}}{\to}}
+  \newcommand{\pnt}{\xrightarrow{pnt}}
+  \newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
+  \newcommand{\ad}{^\ast}
+  \newcommand{\inv}{^{-1}}
+  \newcommand{\adinv}{^{\ast -1}}
+  \newcommand{\invad}{^{-1 \ast}}
+  \newcommand\Pick{\mathcal P}
+  \newcommand\Ha{\mathbb{H}}
+  \newcommand{\HH}{\Ha\times\Ha}
+  \newcommand\Htau{\mathbb{H}(\tau)}
+  \newcommand{\vp}{\varphi}
+  \newcommand{\ph}{\varphi}
+  \newcommand\al{\alpha}
+  \newcommand\ga{\gamma}
+  \newcommand\de{\delta}
+  \newcommand\ep{\varepsilon}
+  \newcommand\la{\lambda}
+  \newcommand\up{\upsilon}
+  \newcommand\si{\sigma}
+  \newcommand\beq{\begin{equation}}
+  \newcommand\ds{\displaystyle}
+  \newcommand\eeq{\end{equation}}
+  \newcommand\df{\stackrel{\rm def}{=}}
+  \newcommand\ii{\mathrm i}
+  \newcommand{\vectwo}[2]
+  {
+     \begin{pmatrix} #1 \\ #2 \end{pmatrix}
+  }
+  \newcommand{\vecthree}[3]
+  {
+     \begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}
+  }
+  \newcommand\blue{\color{blue}}
+  \newcommand\black{\color{black}}
+  \newcommand\red{\color{red}}
+  
+  \newcommand\nn{\nonumber}
+  \newcommand\bbm{\begin{bmatrix}}
+  \newcommand\ebm{\end{bmatrix}}
+  \newcommand\bpm{\begin{pmatrix}}
+  \newcommand\epm{\end{pmatrix}}
+  \numberwithin{equation}{section}
+  \newcommand\nin{\noindent}
+  \newcommand{\nCr}[2]{\,_{#1}C_{#2}} 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="hilbert.html"><span class="title">Hilbert Spaces - Sequel to Linear Algebra</span></a></h1>
+<p class="byline">Ryan Tully-Doyle</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="inner.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="inner.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="inner-2.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="inner.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="inner.html" title="Up">Up</a><a class="next-button button toolbar-item" href="inner-2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="sec-intro-1.html" data-scroll="sec-intro-1">Motivation</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Inner products</a></li>
+<li><a href="intro-2.html" data-scroll="intro-2">Basis and coordinates</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Operators</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="inner.html" data-scroll="inner"><span class="codenumber">2</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="inner-1.html" data-scroll="inner-1" class="active">Inner products and \(\ell^2\)</a></li>
+<li><a href="inner-2.html" data-scroll="inner-2">Inner products, norms, and metric spaces</a></li>
+<li><a href="inner-3.html" data-scroll="inner-3">Examples of inner product spaces</a></li>
+<li><a href="inner-4.html" data-scroll="inner-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-norm.html" data-scroll="ch-norm"><span class="codenumber">3</span> <span class="title">Normed spaces</span></a><ul>
+<li><a href="norm-1.html" data-scroll="norm-1">Norms</a></li>
+<li><a href="norm-2.html" data-scroll="norm-2">Closed linear subspaces</a></li>
+<li><a href="norm-3.html" data-scroll="norm-3">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a><ul>
+<li><a href="hilbert-1.html" data-scroll="hilbert-1">Limits</a></li>
+<li><a href="hilbert-2.html" data-scroll="hilbert-2">\(L^2[a,b]\)</a></li>
+<li><a href="hilbert-3.html" data-scroll="hilbert-3">The closest point property</a></li>
+<li><a href="hilbert-4.html" data-scroll="hilbert-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Orthogonal expansions</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Geometry in Hilbert space</a></li>
+<li><a href="ortho-2.html" data-scroll="ortho-2">Bessel's inequality</a></li>
+<li><a href="ortho-3.html" data-scroll="ortho-3">Modes of convergence</a></li>
+<li><a href="ortho-4.html" data-scroll="ortho-4">Complete orthonormal sequences</a></li>
+</ul>
+</li>
+<li class="link"><a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Appendix: Results from analysis</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="inner-1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Inner products and \(\ell^2\)</span>
+</h2>
+<a href="inner-1.html" class="permalink">¶</a><p id="p-34">Recall that the inner product on \(\C^n\) is the familiar expression</p>
+<div class="displaymath">
+\begin{equation*}
+\ip{x}{y} = \sum_i \cc y_i x_i, 
+\end{equation*}
+</div>
+<p>where \(x = (x_1, \ldots, x_n)\text{.}\) How can this be extended to infinte dimensions?</p>
+<article class="definition-like" id="def-innerproduct"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.1.1</span>.</h6>
+<p id="p-35">For a general complex vector space \(V\text{,}\) an <dfn class="terminology">inner product</dfn> is a map \(\ip{\cdot}{\cdot}: V \times V \to \C\) satisfying the following properties for all \(x, y, z \in V\) and scalars \(c \in \C\text{:}\)</p>
+<ol class="decimal">
+<li id="li-23">\(\ip{x}{y} = \cc{\ip{y}{x}}\text{;}\)</li>
+<li id="li-24">\(c\ip{x}{y} = \ip{cx}{y}\text{;}\)</li>
+<li id="li-25">\(\ip{x + y}{z} = \ip{x,z} + \ip{y}{z}\text{;}\)</li>
+<li id="li-26">\(\ip{x}{x} &gt; 0\) if \(x \neq 0\text{.}\)</li>
+</ol>
+<p id="p-36">An <dfn class="terminology">inner product space</dfn> is a pair consisting of a complex vector space \(V\) and an inner product \(\ip{\cdot}{\cdot}\) on \(V\text{.}\) <p id="p-37">An inner product space is can also be called a “pre-Hilbert space”.</p></p></article><article class="exercise-like" id="ex-cont-fun-ip"><a data-knowl="" class="id-ref" data-refid="hk-ex-cont-fun-ip"><h6 class="heading">
+<span class="type">Checkpoint</span> <span class="codenumber">2.1.2</span>.</h6></a></article><div id="hk-ex-cont-fun-ip" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-38">Show that the map</p>
+<div class="displaymath">
+\begin{equation}
+\ip{f}{g} = \int_0^1 f(t)\cc g(t) \, \dd t\label{eq-C-ip}\tag{2.1.1}
+\end{equation}
+</div>
+<p>defines an inner product on \(C[0,1]\text{,}\) the complex vector space of all continuous complex-valued functions on the the interval \([0,1]\) with pointwise addition and scalar multiplication.</p></article></div>
+<article class="exercise-like" id="exercise-2"><a data-knowl="" class="id-ref" data-refid="hk-exercise-2"><h6 class="heading">
+<span class="type">Checkpoint</span> <span class="codenumber">2.1.3</span>.</h6></a></article><div id="hk-exercise-2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-39">Recall that the <a class="external" href="https://en.wikipedia.org/wiki/Trace_(linear_algebra)#Basic_properties" target="_blank">trace</a> of a square matrix is the sum of its diagonal entries. Show that the map</p>
+<div class="displaymath">
+\begin{equation*}
+\ip{A}{B} = \trace(B\ad A)
+\end{equation*}
+</div>
+<p>is an inner product on the vector space \(\C^{m \times n}\) of \(m \times n\) matrices with complex entries, where \(\ad\) denotes the conjugate transpose.</p></article></div>
+<p id="p-40">The basic properties in <a data-knowl="./knowl/def-innerproduct.html" title="Definition 2.1.1">Definition 2.1.1</a> can be used to derive the following statements, which show that a complex inner product is <dfn class="terminology">linear</dfn> in the first argument and <dfn class="terminology">conjugate linear</dfn> in the second.</p>
+<article class="theorem-like" id="thm-innerproduct"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.1.4</span>.</h6>
+<p id="p-41">Let \(V\) be an inner product space. For any \(x, y, z \in V\) and \(c \in \C\text{,}\)</p>
+<ol class="decimal">
+<li id="li-27">\(\ip{x}{y+z} = \ip{x}{y} + \ip{x}{z}\text{;}\)</li>
+<li id="li-28">\(\ip{x}{c y} = \cc{c}\ip{x}{y};\)</li>
+<li id="li-29">\(\ip{x}{0} = 0 = \ip{0}{x}\text{;}\)</li>
+<li id="li-30">if \(\ip{x}{z} = \ip{y}{z}\) for all \(z \in V\text{,}\) then \(x = y\text{.}\)</li>
+</ol></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-1" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-42">(1): By <a data-knowl="./knowl/def-innerproduct.html" title="Definition 2.1.1">Definition 2.1.1</a>,</p>
+<div class="displaymath">
+\begin{align*}
+\ip{x}{y+z} \amp = \cc{\ip{y+z}{x}}\\
+\amp = \cc{(\ip{y}{x} + \ip{z}{x})}\\
+\amp = \cc{\ip{y}{x}} + \cc{\ip{z}{x}}\\
+\amp = \ip{x}{y} + \ip{x}{z}
+\end{align*}
+</div>
+<p id="p-43">Parts 2, 3 are left as an exercise.</p>
+<p id="p-44">(4): If \(\ip{x}{z} = \ip{y}{z}\text{,}\) then</p>
+<div class="displaymath">
+\begin{align*}
+0 \amp = \ip{x}{z} - \ip{y}{z}\\
+\amp = \ip{x}{z} + \ip{-y}{z}\\
+\amp = \ip{x-y}{z}.
+\end{align*}
+</div>
+<p>Assuming that this statement holds for all \(z \in V\) means that it holds for \(z = x-y\text{.}\) But then \(\ip{x-y}{x-y} = 0\text{,}\) so by <a data-knowl="./knowl/def-innerproduct.html" title="Definition 2.1.1">Definition 2.1.1</a> (4), it must be that \(x - y = 0\) and so \(x = y\text{.}\)</p></article></div>
+<article class="exercise-like" id="exercise-3"><a data-knowl="" class="id-ref" data-refid="hk-exercise-3"><h6 class="heading">
+<span class="type">Checkpoint</span> <span class="codenumber">2.1.5</span>.</h6></a></article><div id="hk-exercise-3" class="hidden-content tex2jax_ignore"><article class="exercise-like">Prove part (2) and part (3) of <a data-knowl="./knowl/thm-innerproduct.html" title="Theorem 2.1.4">Theorem 2.1.4</a>.</article></div>
+<p id="p-45">To extend the notion from \(\C^n\) to an infinite dimensional analogue of “infinite vectors”, we might naively propose the inner product</p>
+<div class="displaymath">
+\begin{equation}
+\ip{x}{y} = \sum_{i=1}^\infty \cc y_i x_i,\label{eq-ell2-ip}\tag{2.1.2}
+\end{equation}
+</div>
+<p>though this leaves the question of what space should go with this definition. One major concern is that an infinite sum need not converge, and we would certainly prefer that the inner product be defined on the vectors that we apply it to. We can't use the obvious idea, which is to consider the space \(C^{\mathbb N} = \C \times \C \times \ldots\text{,}\) since it is easy to find many pairs of poorly behaved vectors. (For example, if \(x = (1, 1, \ldots), y = (1, 1, \ldots)\text{,}\) then \(\ip{x}{y} = \sum_{1}^\infty 1\text{.}\))</p>
+<p id="p-46">One solution is to ensure that the sequence of coordinates in vectors that we work with are very well behaved in infinite sums. A very nice subspace of \(\C^\mathbb{N}\) is “little l-two”, denoted \(\ell^2\text{.}\)</p>
+<article class="definition-like" id="definition-2"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.1.6</span>.</h6>
+<p id="p-47">\(\ell^2\) is the complex vector space of all complex sequences \(x = (x_i)_{i=1}^\infty\) which are <dfn class="terminology">square summable</dfn> and equipped with componentwise addition and scalar multiplication; that is,</p>
+<div class="displaymath">
+\begin{equation*}
+x \in \ell^2 \iff \sum_{i=1}^n \abs{x_i}^2 \lt \infty.
+\end{equation*}
+</div>
+<p>\(\ell^2\) is an inner product space with the inner product given by</p>
+<div class="displaymath">
+\begin{equation*}
+\ip{x}{y} = \sum_{i=1}^\infty \cc y_i x_i.
+\end{equation*}
+</div></article></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:40-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The closest point property</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
+  \DeclareMathOperator{\IM}{Im}
+  \DeclareMathOperator{\ess}{ess}
+  \DeclareMathOperator{\intr}{int}
+  \DeclareMathOperator{\dist}{dist}
+  \DeclareMathOperator{\dom}{dom}
+  \DeclareMathOperator{\diag}{diag}
+  \DeclareMathOperator{\cl}{cl}
+  \DeclareMathOperator{\span}{span}
+  \DeclareMathOperator{\proj}{proj}
+  \DeclareMathOperator\trace{trace}
+  \DeclareMathOperator\re{\mathrm {Re~}}
+  \DeclareMathOperator\im{\mathrm {Im~}}
+  
+  \newcommand\dd{\mathrm d}
+  \newcommand{\eps}{\varepsilon}
+  \newcommand{\To}{\longrightarrow}
+  \newcommand{\hilbert}{\mathcal{H}}
+  \newcommand{\s}{\mathcal{S}_2}
+  \newcommand{\A}{\mathcal{A}}
+  \newcommand\h{\mathcal{H}}
+  \newcommand{\J}{\mathcal{J}}
+  \newcommand{\K}{\mathcal{K}}
+  \newcommand{\M}{\mathcal{M}}
+  \newcommand{\F}{\mathbb{F}}
+  \newcommand{\N}{\mathcal{N}}
+  \newcommand{\T}{\mathbb{T}}
+  \newcommand{\W}{\mathcal{W}}
+  \newcommand{\X}{\mathcal{X}}
+  \newcommand{\D}{\mathbb{D}}
+  \newcommand{\C}{\mathbb{C}}
+  \newcommand{\BOP}{\mathbf{B}}
+  \newcommand{\Z}{\mathbb{Z}}
+  \newcommand{\BH}{\mathbf{B}(\mathcal{H})}
+  \newcommand{\KH}{\mathcal{K}(\mathcal{H})}
+  \newcommand{\pick}{\mathcal{P}_2}
+  \newcommand{\schur}{\mathcal{S}_2}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Complex}{\mathbb{C}}
+  \newcommand{\Field}{\mathbb{F}}
+  \newcommand{\RPlus}{\Real^{+}}
+  \newcommand{\Polar}{\mathcal{P}_{\s}}
+  \newcommand{\Poly}{\mathcal{P}(E)}
+  \newcommand{\EssD}{\mathcal{D}}
+  \newcommand{\Lop}{\mathcal{L}}
+  \newcommand{\cc}[1]{\overline{#1}}
+  \newcommand{\abs}[1]{\left\vert#1\right\vert}
+  \newcommand{\set}[1]{\left\{#1\right\}}
+  \newcommand{\seq}[1]{\left\lt#1\right&gt;}
+  \newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+  \newcommand{\essnorm}[1]{\norm{#1}_{\ess}}
+  \newcommand{\tr}{\operatorname{tr}}
+  \newcommand{\ran}[1]{\operatorname{ran}#1}
+  \newcommand{\nt}{\stackrel{\mathrm {nt}}{\to}}
+  \newcommand{\pnt}{\xrightarrow{pnt}}
+  \newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
+  \newcommand{\ad}{^\ast}
+  \newcommand{\inv}{^{-1}}
+  \newcommand{\adinv}{^{\ast -1}}
+  \newcommand{\invad}{^{-1 \ast}}
+  \newcommand\Pick{\mathcal P}
+  \newcommand\Ha{\mathbb{H}}
+  \newcommand{\HH}{\Ha\times\Ha}
+  \newcommand\Htau{\mathbb{H}(\tau)}
+  \newcommand{\vp}{\varphi}
+  \newcommand{\ph}{\varphi}
+  \newcommand\al{\alpha}
+  \newcommand\ga{\gamma}
+  \newcommand\de{\delta}
+  \newcommand\ep{\varepsilon}
+  \newcommand\la{\lambda}
+  \newcommand\up{\upsilon}
+  \newcommand\si{\sigma}
+  \newcommand\beq{\begin{equation}}
+  \newcommand\ds{\displaystyle}
+  \newcommand\eeq{\end{equation}}
+  \newcommand\df{\stackrel{\rm def}{=}}
+  \newcommand\ii{\mathrm i}
+  \newcommand{\vectwo}[2]
+  {
+     \begin{pmatrix} #1 \\ #2 \end{pmatrix}
+  }
+  \newcommand{\vecthree}[3]
+  {
+     \begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}
+  }
+  \newcommand\blue{\color{blue}}
+  \newcommand\black{\color{black}}
+  \newcommand\red{\color{red}}
+  
+  \newcommand\nn{\nonumber}
+  \newcommand\bbm{\begin{bmatrix}}
+  \newcommand\ebm{\end{bmatrix}}
+  \newcommand\bpm{\begin{pmatrix}}
+  \newcommand\epm{\end{pmatrix}}
+  \numberwithin{equation}{section}
+  \newcommand\nin{\noindent}
+  \newcommand{\nCr}[2]{\,_{#1}C_{#2}} 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="hilbert.html"><span class="title">Hilbert Spaces - Sequel to Linear Algebra</span></a></h1>
+<p class="byline">Ryan Tully-Doyle</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="hilbert-2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-4.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="hilbert-4.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="hilbert-2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-4.html" title="Up">Up</a><a class="next-button button toolbar-item" href="hilbert-4.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="sec-intro-1.html" data-scroll="sec-intro-1">Motivation</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Inner products</a></li>
+<li><a href="intro-2.html" data-scroll="intro-2">Basis and coordinates</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Operators</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="inner.html" data-scroll="inner"><span class="codenumber">2</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="inner-1.html" data-scroll="inner-1">Inner products and \(\ell^2\)</a></li>
+<li><a href="inner-2.html" data-scroll="inner-2">Inner products, norms, and metric spaces</a></li>
+<li><a href="inner-3.html" data-scroll="inner-3">Examples of inner product spaces</a></li>
+<li><a href="inner-4.html" data-scroll="inner-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-norm.html" data-scroll="ch-norm"><span class="codenumber">3</span> <span class="title">Normed spaces</span></a><ul>
+<li><a href="norm-1.html" data-scroll="norm-1">Norms</a></li>
+<li><a href="norm-2.html" data-scroll="norm-2">Closed linear subspaces</a></li>
+<li><a href="norm-3.html" data-scroll="norm-3">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a><ul>
+<li><a href="hilbert-1.html" data-scroll="hilbert-1">Limits</a></li>
+<li><a href="hilbert-2.html" data-scroll="hilbert-2">\(L^2[a,b]\)</a></li>
+<li><a href="hilbert-3.html" data-scroll="hilbert-3" class="active">The closest point property</a></li>
+<li><a href="hilbert-4.html" data-scroll="hilbert-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Orthogonal expansions</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Geometry in Hilbert space</a></li>
+<li><a href="ortho-2.html" data-scroll="ortho-2">Bessel's inequality</a></li>
+<li><a href="ortho-3.html" data-scroll="ortho-3">Modes of convergence</a></li>
+<li><a href="ortho-4.html" data-scroll="ortho-4">Complete orthonormal sequences</a></li>
+</ul>
+</li>
+<li class="link"><a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Appendix: Results from analysis</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="hilbert-3"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">The closest point property</span>
+</h2>
+<a href="hilbert-3.html" class="permalink">¶</a><p id="p-180">One of the most useful ideas in linear algebra is projecting onto subspaces - if \(v \in \R^n\) and \(U \subseteq \R^n\) is a subspace, then \(\proj_U v\) is the closest point in \(U\) to \(v\) in the sense that the orthogonal distance from \(v\) to \(U\) is minimized (this is also called least squares approximation).</p>
+<p id="p-181">The same idea holds true in Hilbert space and applies to vectors that are functions. This fact has deep consequences - that functions can be understood through the geometry of vectors is the soul of modern approaches to functional analysis.</p>
+<article class="definition-like" id="def-convex"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">4.3.1</span>.</h6>
+<p id="p-182">A subset \(A\) of a real or complex vector space is <dfn class="terminology">convex</dfn> if, for all \(a, b \in A\) and all \(0 \lt t \lt 1\text{,}\) the point \(ta + (1-t)b \in A\text{.}\)</p></article><p id="p-183">We should think of convex sets \(A\) as those that contain the line segments \(\{ta + (1-t)b: t \in [0,1]\}\) between all points \(a\) and \(b\) in \(A\text{.}\)</p>
+<p id="p-184">First, we show that the closest point property holds - that a given vector \(v \in V\) has a unique closest point in any appropriately “flat” set \(A\) in \(V\) (like a linear subspace).</p>
+<article class="theorem-like" id="thm-closest-point"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">4.3.2</span>. <span class="title">Closest point property.</span>
+</h6>
+<p id="p-185">Let \(A\) be a non-empty closed convex set in a Hilbert space \(\hilbert\text{.}\) For any \(x \in \hilbert\text{,}\) there is a unique point of \(A\) which is closer to \(x\) than any other point in \(A\text{.}\) That is, there is a unique point \(y \in A\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{x - y} = \inf_{a \in A} \norm{x - a}.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-14"><a data-knowl="" class="id-ref" data-refid="hk-proof-14"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-14" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-186">The proof will consist of two parts. First, we show that the infimum of distance between \(x\) and \(A\) is attained. (We should recall that the infimum itself exists is a consequence of the completeness of the real numbers, e.g.<a class="external" href="https://www.math.ucdavis.edu/~hunter/m125b/ch2.pdf" target="_blank">Theorem 2.6</a>.) Second, we show that this point is unique in \(A\text{.}\)</p>
+<p id="p-187">Let</p>
+<div class="displaymath">
+\begin{equation*}
+M = \inf_{a\in A} \norm{x-a}.
+\end{equation*}
+</div>
+<p>We assumed that \(A\) was not empty, and so \(m\) must be some finite number. Since the infimum is a limit point, we can construct a sequence \(\norm{x - y_n}\) tending to \(\norm{x - a}\text{.}\) That is, for each integer \(n\text{,}\) there exists some \(y_n\) so that</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{x - y_n}^2 \lt M^2 + \frac{1}{n}.
+\end{equation*}
+</div>
+<p>We now move from a sequence in norm to a sequence in \(A\) by showing that \(y_n\) is Cauchy in \(A\) - that is, we need to show that \(\norm{y_n - y_m}\) is small. We first apply <a data-knowl="./knowl/thm-parallelogram.html" title="Theorem 2.2.8: Parallelogram identity">Theorem 2.2.8</a> to the sequences \(x - y_n\) and \(x - y_m\text{.}\) For any \(m,n \in \mathbb{N}\text{,}\) we have</p>
+<div class="displaymath">
+\begin{align*}
+\amp\norm{(x - y_n) - (x - y_m)}^2 + \norm{(x - y_n)+(x - y_m)}^2\\
+\amp= 2 \norm{x - y_n}^2 + 2\norm{x - y_m}^2\\
+\amp\lt 4M^2 + 2\left(\frac{1}{n} + \frac{1}{m}\right).
+\end{align*}
+</div>
+<p>The term we are trying to bound is \(\norm{(x - y_n) - (x - y_m)} = \norm{y_n - y_m}\text{.}\) On rearrangement, we get</p>
+<div class="displaymath">
+\begin{align*}
+\norm{y_n - y_m}^2 \amp\lt 4M^2 + 2\left(\frac{1}{n} + \frac{1}{n}\right) - \norm{2x - y_n - y_m}^2\\
+\amp= 4M^2 + 2\left(\frac{1}{n} + \frac{1}{n}\right) - 4\norm{x - \frac{y_n - y_m}{2}}^2
+\end{align*}
+</div>
+<p>Now we will use the convexity of \(A\text{.}\) Since \(y_n, y_m \in A\text{,}\) we know that \(\frac{1}{2} y_n + \frac{1}{2} y_m =\frac{y_n + y_m}{2} \in A\text{,}\) and hence that</p>
+<div class="displaymath">
+\begin{equation*}
+M^2 = \inf_{a \in A} \norm{x - a}^2 \leq \norm{x - \frac{y_n + y_n}{2}}^2.
+\end{equation*}
+</div>
+<p>Consequently,</p>
+<div class="displaymath">
+\begin{align*}
+\norm{y_n - y_m}^2 \amp\leq 4M^2 + 2\left(\frac{1}{n} + \frac{1}{m} - 4M^2\right)\\
+\amp = 2\left(\frac{1}{n} + \frac{1}{m}\right).
+\end{align*}
+</div>
+<p>It follows that \((y_n)\) is a Cauchy sequence in \(A\text{;}\) for a given \(\eps &gt; 0\) (you should verify). Because \(\hilbert\) is a Hilbert space, Cauchy sequences converge, and so \(y_n \to y \in \hilbert\text{.}\) Since \(A\) is closed, \(y \in A\text{.}\) On the one hand, this means that \(\norm{x - y} \geq M\text{,}\) since \(M\) is an infimum. On the other hand, we know that for all \(n\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{x - y_n}^2 \leq M^2 + \frac{1}{n}.
+\end{equation*}
+</div>
+<p>On taking \(n \to \infty\text{,}\) we get \(\norm{x - y} \leq M^2\text{.}\) We conclude that \(\norm{x - y} = M\text{,}\) and so \(y\) is a closest point in \(A\) to \(x\text{.}\)</p>
+<p id="p-188">Now we show that \(y\) is the <em class="emphasis">unique</em> closest point. Suppose that there is some \(w \in A\) with \(\norm{x - w} = M\text{.}\) Convexity gives that \(\frac{y + w}{2} \in A\text{,}\) and so</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{x - \frac{y + w}{2}} \geq M.
+\end{equation*}
+</div>
+<p>Applying <a data-knowl="./knowl/thm-parallelogram.html" title="Theorem 2.2.8: Parallelogram identity">Theorem 2.2.8</a> to \(x-w\) and \(x - y\) gives</p>
+<div class="displaymath">
+\begin{align*}
+\norm{y-w}^2 \amp= 2\norm{x-w}^2 + 2\norm{x-y}^2 - 4\norm{x - \frac{y + w}{2}}^2\\
+\amp \leq 2M^2 + 2M^2 - 4M^2 = 0.
+\end{align*}
+</div>
+<p>Thus, \(y=w\) which gives uniqueness.</p></article></div></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

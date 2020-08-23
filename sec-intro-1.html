@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:39-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Motivation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
+  \DeclareMathOperator{\IM}{Im}
+  \DeclareMathOperator{\ess}{ess}
+  \DeclareMathOperator{\intr}{int}
+  \DeclareMathOperator{\dist}{dist}
+  \DeclareMathOperator{\dom}{dom}
+  \DeclareMathOperator{\diag}{diag}
+  \DeclareMathOperator{\cl}{cl}
+  \DeclareMathOperator{\span}{span}
+  \DeclareMathOperator{\proj}{proj}
+  \DeclareMathOperator\trace{trace}
+  \DeclareMathOperator\re{\mathrm {Re~}}
+  \DeclareMathOperator\im{\mathrm {Im~}}
+  
+  \newcommand\dd{\mathrm d}
+  \newcommand{\eps}{\varepsilon}
+  \newcommand{\To}{\longrightarrow}
+  \newcommand{\hilbert}{\mathcal{H}}
+  \newcommand{\s}{\mathcal{S}_2}
+  \newcommand{\A}{\mathcal{A}}
+  \newcommand\h{\mathcal{H}}
+  \newcommand{\J}{\mathcal{J}}
+  \newcommand{\K}{\mathcal{K}}
+  \newcommand{\M}{\mathcal{M}}
+  \newcommand{\F}{\mathbb{F}}
+  \newcommand{\N}{\mathcal{N}}
+  \newcommand{\T}{\mathbb{T}}
+  \newcommand{\W}{\mathcal{W}}
+  \newcommand{\X}{\mathcal{X}}
+  \newcommand{\D}{\mathbb{D}}
+  \newcommand{\C}{\mathbb{C}}
+  \newcommand{\BOP}{\mathbf{B}}
+  \newcommand{\Z}{\mathbb{Z}}
+  \newcommand{\BH}{\mathbf{B}(\mathcal{H})}
+  \newcommand{\KH}{\mathcal{K}(\mathcal{H})}
+  \newcommand{\pick}{\mathcal{P}_2}
+  \newcommand{\schur}{\mathcal{S}_2}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Complex}{\mathbb{C}}
+  \newcommand{\Field}{\mathbb{F}}
+  \newcommand{\RPlus}{\Real^{+}}
+  \newcommand{\Polar}{\mathcal{P}_{\s}}
+  \newcommand{\Poly}{\mathcal{P}(E)}
+  \newcommand{\EssD}{\mathcal{D}}
+  \newcommand{\Lop}{\mathcal{L}}
+  \newcommand{\cc}[1]{\overline{#1}}
+  \newcommand{\abs}[1]{\left\vert#1\right\vert}
+  \newcommand{\set}[1]{\left\{#1\right\}}
+  \newcommand{\seq}[1]{\left\lt#1\right&gt;}
+  \newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+  \newcommand{\essnorm}[1]{\norm{#1}_{\ess}}
+  \newcommand{\tr}{\operatorname{tr}}
+  \newcommand{\ran}[1]{\operatorname{ran}#1}
+  \newcommand{\nt}{\stackrel{\mathrm {nt}}{\to}}
+  \newcommand{\pnt}{\xrightarrow{pnt}}
+  \newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
+  \newcommand{\ad}{^\ast}
+  \newcommand{\inv}{^{-1}}
+  \newcommand{\adinv}{^{\ast -1}}
+  \newcommand{\invad}{^{-1 \ast}}
+  \newcommand\Pick{\mathcal P}
+  \newcommand\Ha{\mathbb{H}}
+  \newcommand{\HH}{\Ha\times\Ha}
+  \newcommand\Htau{\mathbb{H}(\tau)}
+  \newcommand{\vp}{\varphi}
+  \newcommand{\ph}{\varphi}
+  \newcommand\al{\alpha}
+  \newcommand\ga{\gamma}
+  \newcommand\de{\delta}
+  \newcommand\ep{\varepsilon}
+  \newcommand\la{\lambda}
+  \newcommand\up{\upsilon}
+  \newcommand\si{\sigma}
+  \newcommand\beq{\begin{equation}}
+  \newcommand\ds{\displaystyle}
+  \newcommand\eeq{\end{equation}}
+  \newcommand\df{\stackrel{\rm def}{=}}
+  \newcommand\ii{\mathrm i}
+  \newcommand{\vectwo}[2]
+  {
+     \begin{pmatrix} #1 \\ #2 \end{pmatrix}
+  }
+  \newcommand{\vecthree}[3]
+  {
+     \begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}
+  }
+  \newcommand\blue{\color{blue}}
+  \newcommand\black{\color{black}}
+  \newcommand\red{\color{red}}
+  
+  \newcommand\nn{\nonumber}
+  \newcommand\bbm{\begin{bmatrix}}
+  \newcommand\ebm{\end{bmatrix}}
+  \newcommand\bpm{\begin{pmatrix}}
+  \newcommand\epm{\end{pmatrix}}
+  \numberwithin{equation}{section}
+  \newcommand\nin{\noindent}
+  \newcommand{\nCr}[2]{\,_{#1}C_{#2}} 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="hilbert.html"><span class="title">Hilbert Spaces - Sequel to Linear Algebra</span></a></h1>
+<p class="byline">Ryan Tully-Doyle</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch-intro.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-intro.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-2.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch-intro.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-intro.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="sec-intro-1.html" data-scroll="sec-intro-1" class="active">Motivation</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Inner products</a></li>
+<li><a href="intro-2.html" data-scroll="intro-2">Basis and coordinates</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Operators</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="inner.html" data-scroll="inner"><span class="codenumber">2</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="inner-1.html" data-scroll="inner-1">Inner products and \(\ell^2\)</a></li>
+<li><a href="inner-2.html" data-scroll="inner-2">Inner products, norms, and metric spaces</a></li>
+<li><a href="inner-3.html" data-scroll="inner-3">Examples of inner product spaces</a></li>
+<li><a href="inner-4.html" data-scroll="inner-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-norm.html" data-scroll="ch-norm"><span class="codenumber">3</span> <span class="title">Normed spaces</span></a><ul>
+<li><a href="norm-1.html" data-scroll="norm-1">Norms</a></li>
+<li><a href="norm-2.html" data-scroll="norm-2">Closed linear subspaces</a></li>
+<li><a href="norm-3.html" data-scroll="norm-3">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a><ul>
+<li><a href="hilbert-1.html" data-scroll="hilbert-1">Limits</a></li>
+<li><a href="hilbert-2.html" data-scroll="hilbert-2">\(L^2[a,b]\)</a></li>
+<li><a href="hilbert-3.html" data-scroll="hilbert-3">The closest point property</a></li>
+<li><a href="hilbert-4.html" data-scroll="hilbert-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Orthogonal expansions</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Geometry in Hilbert space</a></li>
+<li><a href="ortho-2.html" data-scroll="ortho-2">Bessel's inequality</a></li>
+<li><a href="ortho-3.html" data-scroll="ortho-3">Modes of convergence</a></li>
+<li><a href="ortho-4.html" data-scroll="ortho-4">Complete orthonormal sequences</a></li>
+</ul>
+</li>
+<li class="link"><a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Appendix: Results from analysis</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-intro-1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Motivation</span>
+</h2>
+<a href="sec-intro-1.html" class="permalink">¶</a><p id="p-5">One of the most profound ideas of linear algebra is that <em class="emphasis">any finite dimensional vector space over \(\R\) or \(\C\) is secretly \(\R^n\) or \(\C^n\)</em>. This insight allows us to reduce the study of vector spaces and the maps between them to the study of matrices.</p>
+<p id="p-6">The key idea is that every finite dimensional vector space can be represented in coordinates once we choose a basis. We denote the representation of a vector \(v \in V\) with respect to a basis \(\mathcal V\) by \(v_\mathcal{V}\text{.}\) Better yet, that basis can be chosen to be orthonormal by way of the Gram-Schmidt process and the dot product structure of Euclidean space. The coordinatization of \(V\) also gives unique representations of linear maps betwen those spaces.</p>
+<article class="theorem-like" id="theorem-1"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.1.1</span>.</h6>
+<p id="p-7">Let \(V, W\) be finite dimensional vector spaces with bases \(\mathcal V, \mathcal W\text{.}\) Then any linear map \(T: V \to W\) has a unique matrix representation with respect to \(\mathcal V, \mathcal W\) by</p>
+<div class="displaymath">
+\begin{equation*}
+T(x) = A x
+\end{equation*}
+</div>
+<p>with</p>
+<div class="displaymath">
+\begin{equation*}
+A = \bbm T(v_1)_{\mathcal W} \amp \ldots \amp T(v_n)_{\mathcal W} \ebm
+\end{equation*}
+</div></article><p id="p-8">Typical examples introduced in a linear algebra course include the space of polynomials of degree less than or equal to \(n\text{.}\) At the same time, we usually also get to see a very suggestive example of a useful linear map and the representation of that map in matrix form.</p>
+<p id="p-9">Let \(P_n\) denote the space of polynomials of degree \(\leq n\text{.}\) Consider the map \(D: P_3 \to P_2\) defined by</p>
+<div class="displaymath">
+\begin{equation*}
+D(a_0 + a_1 t + a_2 t^2 + a_3 t^3) = a_1 + 2 a_2 t + 3 a_3 t^2.
+\end{equation*}
+</div>
+<p>That is, \(D\) is the map that takes the derivative of a polynomial. It isn't hard to use the standard basis for \(P_n\) to get the matrix representation</p>
+<div class="displaymath">
+\begin{equation*}
+D(p) = \bbm 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 0 \amp 3 \ebm \bbm a_0 \\ a_1 \\ a_2 \\ a_3 \ebm
+\end{equation*}
+</div>
+<p>for the action of \(D\) on \(P_3\text{.}\)</p>
+<p id="p-10">This example is a good place to begin asking questions about how far we can push finite dimensional linear algebra. The fact that differentiation of polynomials is wonderful - but what else can we apply it to? Nice functions have power series that converge absolutely, and we like to think of an absolutely convergent power series as sort of an “infinite polynomial”. Our intution might lead us to make a connection with calculus at this point. When we learn to work with power series, we learn that for a convergent power series,</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dx} \sum a_n (x-a)^n = \sum n a_n (x-a)^{n-1}.
+\end{equation*}
+</div>
+<p>In analogy with our example about polynomials above, we're tempted to write, for a function \(f\) defined by a convergent power series, that</p>
+<div class="displaymath">
+\begin{equation*}
+D(f) =  \underbrace{\bbm 0 \amp 1 \amp 0 \amp 0 \amp \ldots \\ 0 \amp 0 \amp 2 \amp 0 \amp \ldots \\ 0 \amp 0 \amp 0 \amp 3 \amp \ldots \\ \vdots \amp \amp \amp \amp \ddots \ebm}_{A} \bbm a_0 \\ a_1 \\ a_2 \\ a_3 \\ \vdots \ebm = a_1 + 2a_2 (x - a) + 3 a_3 (x-1)^2 + \ldots.
+\end{equation*}
+</div>
+<p id="p-11">This idea is shot through with issues that need to be addressed.</p>
+<ul class="disc">
+<li id="li-1">The object \(A\) is some kind of \(\infty \times \infty\) matrix. How does that make sense?</li>
+<li id="li-2">What are the vector spaces that \(D\) is mapping between?</li>
+<li id="li-3">Does the idea of coordinitization still work?</li>
+<li id="li-4">If it does, what exactly is “\(\R^\infty\)” supposed to be?</li>
+<li id="li-5">Do infinite dimensional vector spaces and bases make sense at all?</li>
+</ul>
+<p id="p-12">The answers to these questions are the heart of what is known as the theory of <dfn class="terminology">Hilbert spaces</dfn>, which naturally envelop and extend finite dimensional vector space theory. Hilbert spaces are the key objects used to study functions with various kinds of infinite series representations, which is a vast area of mathematics known as <dfn class="terminology">functional analysis</dfn>. The objects \(A\) are called <dfn class="terminology">operators</dfn>, and are the central object of study in <dfn class="terminology">operator theory</dfn>.</p>
+<p id="p-13">The rest of this introductory chapter will review important parts of linear algebra in finite dimensions that we need to motivate and understand Hilbert spaces.</p></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

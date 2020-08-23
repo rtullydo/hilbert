@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:40-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Closed linear subspaces</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
+  \DeclareMathOperator{\IM}{Im}
+  \DeclareMathOperator{\ess}{ess}
+  \DeclareMathOperator{\intr}{int}
+  \DeclareMathOperator{\dist}{dist}
+  \DeclareMathOperator{\dom}{dom}
+  \DeclareMathOperator{\diag}{diag}
+  \DeclareMathOperator{\cl}{cl}
+  \DeclareMathOperator{\span}{span}
+  \DeclareMathOperator{\proj}{proj}
+  \DeclareMathOperator\trace{trace}
+  \DeclareMathOperator\re{\mathrm {Re~}}
+  \DeclareMathOperator\im{\mathrm {Im~}}
+  
+  \newcommand\dd{\mathrm d}
+  \newcommand{\eps}{\varepsilon}
+  \newcommand{\To}{\longrightarrow}
+  \newcommand{\hilbert}{\mathcal{H}}
+  \newcommand{\s}{\mathcal{S}_2}
+  \newcommand{\A}{\mathcal{A}}
+  \newcommand\h{\mathcal{H}}
+  \newcommand{\J}{\mathcal{J}}
+  \newcommand{\K}{\mathcal{K}}
+  \newcommand{\M}{\mathcal{M}}
+  \newcommand{\F}{\mathbb{F}}
+  \newcommand{\N}{\mathcal{N}}
+  \newcommand{\T}{\mathbb{T}}
+  \newcommand{\W}{\mathcal{W}}
+  \newcommand{\X}{\mathcal{X}}
+  \newcommand{\D}{\mathbb{D}}
+  \newcommand{\C}{\mathbb{C}}
+  \newcommand{\BOP}{\mathbf{B}}
+  \newcommand{\Z}{\mathbb{Z}}
+  \newcommand{\BH}{\mathbf{B}(\mathcal{H})}
+  \newcommand{\KH}{\mathcal{K}(\mathcal{H})}
+  \newcommand{\pick}{\mathcal{P}_2}
+  \newcommand{\schur}{\mathcal{S}_2}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Complex}{\mathbb{C}}
+  \newcommand{\Field}{\mathbb{F}}
+  \newcommand{\RPlus}{\Real^{+}}
+  \newcommand{\Polar}{\mathcal{P}_{\s}}
+  \newcommand{\Poly}{\mathcal{P}(E)}
+  \newcommand{\EssD}{\mathcal{D}}
+  \newcommand{\Lop}{\mathcal{L}}
+  \newcommand{\cc}[1]{\overline{#1}}
+  \newcommand{\abs}[1]{\left\vert#1\right\vert}
+  \newcommand{\set}[1]{\left\{#1\right\}}
+  \newcommand{\seq}[1]{\left\lt#1\right&gt;}
+  \newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+  \newcommand{\essnorm}[1]{\norm{#1}_{\ess}}
+  \newcommand{\tr}{\operatorname{tr}}
+  \newcommand{\ran}[1]{\operatorname{ran}#1}
+  \newcommand{\nt}{\stackrel{\mathrm {nt}}{\to}}
+  \newcommand{\pnt}{\xrightarrow{pnt}}
+  \newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
+  \newcommand{\ad}{^\ast}
+  \newcommand{\inv}{^{-1}}
+  \newcommand{\adinv}{^{\ast -1}}
+  \newcommand{\invad}{^{-1 \ast}}
+  \newcommand\Pick{\mathcal P}
+  \newcommand\Ha{\mathbb{H}}
+  \newcommand{\HH}{\Ha\times\Ha}
+  \newcommand\Htau{\mathbb{H}(\tau)}
+  \newcommand{\vp}{\varphi}
+  \newcommand{\ph}{\varphi}
+  \newcommand\al{\alpha}
+  \newcommand\ga{\gamma}
+  \newcommand\de{\delta}
+  \newcommand\ep{\varepsilon}
+  \newcommand\la{\lambda}
+  \newcommand\up{\upsilon}
+  \newcommand\si{\sigma}
+  \newcommand\beq{\begin{equation}}
+  \newcommand\ds{\displaystyle}
+  \newcommand\eeq{\end{equation}}
+  \newcommand\df{\stackrel{\rm def}{=}}
+  \newcommand\ii{\mathrm i}
+  \newcommand{\vectwo}[2]
+  {
+     \begin{pmatrix} #1 \\ #2 \end{pmatrix}
+  }
+  \newcommand{\vecthree}[3]
+  {
+     \begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}
+  }
+  \newcommand\blue{\color{blue}}
+  \newcommand\black{\color{black}}
+  \newcommand\red{\color{red}}
+  
+  \newcommand\nn{\nonumber}
+  \newcommand\bbm{\begin{bmatrix}}
+  \newcommand\ebm{\end{bmatrix}}
+  \newcommand\bpm{\begin{pmatrix}}
+  \newcommand\epm{\end{pmatrix}}
+  \numberwithin{equation}{section}
+  \newcommand\nin{\noindent}
+  \newcommand{\nCr}[2]{\,_{#1}C_{#2}} 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="hilbert.html"><span class="title">Hilbert Spaces - Sequel to Linear Algebra</span></a></h1>
+<p class="byline">Ryan Tully-Doyle</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="norm-1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-norm.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="norm-3.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="norm-1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-norm.html" title="Up">Up</a><a class="next-button button toolbar-item" href="norm-3.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="sec-intro-1.html" data-scroll="sec-intro-1">Motivation</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Inner products</a></li>
+<li><a href="intro-2.html" data-scroll="intro-2">Basis and coordinates</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Operators</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="inner.html" data-scroll="inner"><span class="codenumber">2</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="inner-1.html" data-scroll="inner-1">Inner products and \(\ell^2\)</a></li>
+<li><a href="inner-2.html" data-scroll="inner-2">Inner products, norms, and metric spaces</a></li>
+<li><a href="inner-3.html" data-scroll="inner-3">Examples of inner product spaces</a></li>
+<li><a href="inner-4.html" data-scroll="inner-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-norm.html" data-scroll="ch-norm"><span class="codenumber">3</span> <span class="title">Normed spaces</span></a><ul>
+<li><a href="norm-1.html" data-scroll="norm-1">Norms</a></li>
+<li><a href="norm-2.html" data-scroll="norm-2" class="active">Closed linear subspaces</a></li>
+<li><a href="norm-3.html" data-scroll="norm-3">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a><ul>
+<li><a href="hilbert-1.html" data-scroll="hilbert-1">Limits</a></li>
+<li><a href="hilbert-2.html" data-scroll="hilbert-2">\(L^2[a,b]\)</a></li>
+<li><a href="hilbert-3.html" data-scroll="hilbert-3">The closest point property</a></li>
+<li><a href="hilbert-4.html" data-scroll="hilbert-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Orthogonal expansions</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Geometry in Hilbert space</a></li>
+<li><a href="ortho-2.html" data-scroll="ortho-2">Bessel's inequality</a></li>
+<li><a href="ortho-3.html" data-scroll="ortho-3">Modes of convergence</a></li>
+<li><a href="ortho-4.html" data-scroll="ortho-4">Complete orthonormal sequences</a></li>
+</ul>
+</li>
+<li class="link"><a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Appendix: Results from analysis</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="norm-2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Closed linear subspaces</span>
+</h2>
+<a href="norm-2.html" class="permalink">¶</a><p id="p-113">In this section we'll note the first major complication that working in infinite dimensions introduces. In particular, we need to be careful about what we mean by the term “closed”. Recall that in finite dimensions, a subset of a vector space is called a <dfn class="terminology">subspace</dfn> if it is closed under arbitrary linear combinations. This is closure under <em class="emphasis">algebra</em> - \(S \subset V\) is a subspace if for all \(x, y \in S\) and \(c_1, c_2 \in \F\text{,}\) we have that \(c_1 x + c_2 y \in S\text{.}\)</p>
+<p id="p-114">On the other hand, in analysis we signify by <em class="emphasis">closed set</em> the idea that any convergent sequence in a set has a limit point in the set. This is <em class="emphasis">topological</em> closure. In finite dimensions, linear subspaces are topologically closed. In infinite dimensions it is easy to demonstrate that this is not true.</p>
+<article class="example-like" id="ex-ell0"><a data-knowl="" class="id-ref" data-refid="hk-ex-ell0"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.2.1</span>.</h6></a></article><div id="hk-ex-ell0" class="hidden-content tex2jax_ignore"><article class="example-like"><article class="definition-like" id="def-ell0"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.2.2</span>.</h6>
+<p id="p-115">Let \(\ell_0\) denote the space of sequences in \(\C^\mathbb{N}\) which have only finitely many non-zero terms. (That is, there is some index \(n\) beyond which the sequence has only \(0\) entries.)</p></article><p id="p-116">It is straightforward to see that \(\ell_0\) is a linear subspace of \(\ell^2\text{.}\) However, \(\ell_0\) is <em class="emphasis">not</em> a closed set inside \(\ell^2\text{.}\) To see this, we will construct a convergent sequence that converges to a point outside of \(\ell^2\text{.}\) For each \(k \in \mathbb{N}\text{,}\) the sequence</p>
+<div class="displaymath">
+\begin{equation*}
+x^k = \left(1, \frac{1}{2}, \ldots, \frac{1}{k}, 0, \ldots\right)
+\end{equation*}
+</div>
+<p>is an element of \(\ell_0\text{.}\) Considering each \(x^k\) as a vector in \(\ell^2\text{,}\) the sequence of vectors \((x^k)_{k=1}^\infty\) converges to the limit point</p>
+<div class="displaymath">
+\begin{equation*}
+y = \left(\frac{1}{n}\right)_{n=1}^{\infty}
+\end{equation*}
+</div>
+<p>in \(\ell^2\) since</p>
+<div class="displaymath">
+\begin{align*}
+\norm{x^k - y} \amp = \norm{\left(0, \ldots, 0, \frac{1}{k+1}, \ldots \right)}\\
+\amp = \left(\sum_{n = k+1}^\infty \frac{1}{n^2} \right)^{1/2} \to 0.
+\end{align*}
+</div>
+<p>That is, \(x^k \to a\) but \(a \notin \ell_0\text{,}\) and so \(\ell_0\) is not closed in \(\ell^2\text{.}\)</p></article></div>
+<p id="p-117">When we use the term subspace, we will always mean linear subspace of a vector space. At least for normed spaces, we can “fill in the edges” of a subspace by including the limit points.</p>
+<article class="theorem-like" id="thm-closed-subspace"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">3.2.3</span>.</h6>
+<p id="p-118">The closure of a normed subspace is a subspace.</p></article><article class="hiddenproof" id="proof-8"><a data-knowl="" class="id-ref" data-refid="hk-proof-8"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-8" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-119">Let \(S\) be a subspace of a normed space \(V\text{,}\) and let \(\cl(S)\) denote its closure. Let \(x,y \in \cl(S)\text{.}\) Then there exist sequences \((x_n), (y_n)\) in \(S\) so that \(x_n \to x\) and \(y_n \to y\text{.}\) As addition is continuous, we get \(x_n + y_n \to x+ y\text{.}\) Because \(S\) is a subspace, \(x_n + y_n\) is in \(S\) for all \(n\text{,}\) and so \(x+y\) must be in \(cl(S)\text{.}\) We conclude that \(S\) is closed under addition. The argument that \(S\) is closed under scalar multiplication is similar. Thus, \(\cl(S)\) is a subspace of \(V\text{.}\)</p></article></div>
+<p id="p-120">We will frequently wish to work with the smallest linear subspace containing a set of vectors \(A \subset V\text{.}\) (This is similar to the notion of the span of a set of vectors in finite dimensional spaces.)</p>
+<article class="definition-like" id="def-linear-span"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.2.4</span>.</h6>
+<p id="p-121">Let \((V, \norm{\cdot})\) be a normed space and let \(A \subseteq V\text{.}\) The <dfn class="terminology">linear span of \(A\)</dfn>, denoted \(\span A\text{,}\) is the intersection of all subspaces of \(V\) that contain \(A\text{.}\) The <dfn class="terminology">closed linear span of \(A\)</dfn>, denoted \(\cl \span A\text{,}\) is the intersection of all closed linear subspaces of \(V\) that contain \(A\text{.}\)</p></article><article class="exercise-like" id="exercise-15"><a data-knowl="" class="id-ref" data-refid="hk-exercise-15"><h6 class="heading">
+<span class="type">Checkpoint</span> <span class="codenumber">3.2.5</span>.</h6></a></article><div id="hk-exercise-15" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-122">Show that \(\span A\) is the unique subspace of \(V\) which contains \(A\) and is in turn contained in every subspace of \(V\) that contains \(A\text{.}\) Likewise, \(\cl \span A\) is the unique closed subspace of \(V\) that contains \(A\) and is in turn contained in every subspace of \(V\) that contains \(A\text{.}\)</p></article></div>
+<p id="p-123">While this might seem different from the notion of span that we learn in elementary linear algebra, these two definitions in fact coincide.</p>
+<article class="theorem-like" id="thm-span-lincomb"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">3.2.6</span>.</h6>
+<p id="p-124">Let \(F\) denote the set of finite linear combinations of elements of \(A\text{;}\) that is,</p>
+<div class="displaymath">
+\begin{equation*}
+F = \left\{\sum_{i=1}^k c_i a_i : n \in \mathbb{N}, c_i \in \F, a_i \in A\right\}.
+\end{equation*}
+</div>
+<p>Then \(F = \span A\text{.}\)</p></article><article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-9" class="hidden-content tex2jax_ignore"><article class="hiddenproof">Exercise.</article></div>
+<p id="p-125">We can think of the elements “missing” from \(\span A\) as the limit points of finite linear combinations of elements in \(A\text{,}\) as the next theorem shows (and which justifies the notation \(\cl \span A\)).</p>
+<article class="theorem-like" id="thm-cl-span"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">3.2.7</span>.</h6>
+<p id="p-126">For any set \(A\) contained in a normed space \(V\text{,}\) \(\cl \span A\) is the closure of \(\span A\text{.}\)</p></article><article class="hiddenproof" id="proof-10"><a data-knowl="" class="id-ref" data-refid="hk-proof-10"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-10" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-127">By <a data-knowl="./knowl/thm-closed-subspace.html" title="Theorem 3.2.3">Theorem 3.2.3</a>, \(\cl (\span A)\) is a subspace of \(V\text{.}\) It is closed and contains \(A\text{,}\) and so by <a data-knowl="./knowl/def-linear-span.html" title="Definition 3.2.4">Definition 3.2.4</a> it must be that \(\cl \span A \subseteq \cl(\span A)\text{.}\)</p>
+<p id="p-128">On the other hand, \(\cl \span A\) is closed and contains \(A\) and so it must be that \(\cl(\span A) \subseteq \cl\span A\text{.}\)</p></article></div>
+<p id="p-129">We should point out again that in some sense, there is one finite dimensional vector space over \(\F\) for each dimension \(n\text{,}\) namely \(\F^n\text{.}\) We can make this more precise by pointing out that we can always induce a Euclidean norm via coordinatization and that the norm on \(V\) is equivalent to a Euclidean norm (by which we mean that they determine the same topology).</p>
+<article class="theorem-like" id="thm-finite-norm-equiv"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">3.2.8</span>.</h6>
+<p id="p-130">Any two norms on a finite dimensional vector space \(V\) are equivalent.</p></article><p id="p-131">The proof of this theorem will require some important results from real analysis. The theorems will be stated in an appendix.</p>
+<article class="hiddenproof" id="proof-11"><a data-knowl="" class="id-ref" data-refid="hk-proof-11"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-11" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-132">Since \(V\) is finite dimensional, let \(\{e_1, \ldots, e_n\}\) be a basis for \(V\) so that every \(v \in V\) has a representation</p>
+<div class="displaymath">
+\begin{equation*}
+v = c_1 e_1 + \ldots c_n e_n.
+\end{equation*}
+</div>
+<p>Define a “coordinate Euclidean norm” \(\rho\) on \(V\) by</p>
+<div class="displaymath">
+\begin{equation*}
+\rho\left(\sum_{i=1}^n c_i e_i \right) = \left(\sum_{i=1}^n \abs{c_i}^2 \right)^{1/2}.
+\end{equation*}
+</div>
+<p id="p-133">We will show that \(\norm{\cdot}\) and \(\rho\) determine the same open sets, and hence the same topology. (That is, we will show that any open \(\rho\)-ball is contained in a \(\norm{\cdot}\)-ball and vice versa.)</p>
+<p id="p-134">Let \(v \in V = \sum_{i=1}^n c_i e_i\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\norm{x} \amp= \norm{\sum_{i=1}^n c_i e_i}\\
+\amp \leq \sum_{i=1}^n \norm{c_i e_i}\\
+\amp = \sum_{i=1}^n \abs{c_i} \norm{e_i}.
+\end{align*}
+</div>
+<p>This is an inner product of vectors in \(\F\text{,}\) and so by <a data-knowl="./knowl/thm-cauchy-schwarz.html" title="Theorem 2.2.4">Cauchy-Schwarz 2.2.4</a>, we get</p>
+<div class="displaymath">
+\begin{align*}
+\norm{x} \amp \leq \sum_{i=1}^n \abs{c_i} \norm{e_i}\\
+\amp \leq \left(\sum_{i=1}^n \abs{c_i}^2 \right)^{1/2} \left(\sum_{i=1}^n \norm{e_i}^2 \right)^{1/2}\\
+\amp = M \rho(x),
+\end{align*}
+</div>
+<p>where \(M\) is the fixed positive constant</p>
+<div class="displaymath">
+\begin{equation*}
+M = \left(\sum_{i=1}^n \norm{e_i}^2 \right)^{1/2}.
+\end{equation*}
+</div>
+<p>Then for any \(\eps &gt; 0\text{,}\) the open \(\norm{\cdot}\)-ball of radius \(\eps\) about \(v \in V\) contains the open \(\rho\)-ball of radius \(\frac{\eps}{M}\) about \(v\text{.}\) We conclude that every \(\norm{\cdot}\)-open set in \(V\) is also \(\rho\)-open.</p>
+<p id="p-135">In the other direction, we exploit properties of the real numbers. Define a function \(f:\F^n \to \R\) by</p>
+<div class="displaymath">
+\begin{equation*}
+f(c_1, \ldots, c_n) = \norm{\sum_{i=1}^n c_i e_i}.
+\end{equation*}
+</div>
+<p>(We can think of this function as taking coordinates back to vectors in \(V\text{.}\)) \(f\) is a clearly a continuous function with respect to the standard topology on \(\F^n\text{.}\) The <a data-knowl="./knowl/thm-heine-borel.html" title="Theorem 6.0.1: Heine-Borel">Heine-Borel theorem 6.0.1</a> gives that the set</p>
+<div class="displaymath">
+\begin{equation*}
+U = \left\{(c_1, \ldots, c_n): \sum_{i=1}^n \abs{c_i}^2 = 1\right\}
+\end{equation*}
+</div>
+<p>is compact in \(\F^n\text{.}\) (This set consists of the coordinates of those points \(v \in V\) for which \(\rho(v) = 1\text{.}\)) Thus, by <a data-knowl="./knowl/thm-comp-inf.html" title="Theorem 6.0.3">Theorem 6.0.3</a>, \(f\) attains its infimum \(m\) on \(U\text{.}\) Since the \(e_i\) are a basis and thus linearly independent, \(m\) cannot be \(0\text{,}\) and so \(m &gt; 0\text{.}\) Thus, we have shown that \(\norm{v} \geq m &gt; 0\) whenever \(\rho(v) = 1\text{.}\) By <a data-knowl="./knowl/def-norm.html" title="Definition 3.1.3">Definition 3.1.3</a> (2), we conclude that</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{v} \geq m \rho(v) \hspace{.1in} \text{ for all } v \in V.
+\end{equation*}
+</div>
+<p>Thus, for any \(\eps &gt; 0\text{,}\) the \(\rho\)-ball of radius \(\eps\) about a point \(v \in V\) contains the \(\norm{\cdot}\)-ball of radius \(m \eps\) about \(v\text{.}\) We conclude that every \(\rho\)-open set is also \(\norm{\cdot}\)-open.</p></article></div>
+<p id="p-136">The correspondence between finite dimensional normed spaces and \(\F^n\) extends to the Heine-Borel theorem itself.</p>
+<article class="theorem-like" id="thm-norm-heine"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">3.2.9</span>.</h6>
+<p id="p-137">Closed and bounded sets in a finite dimensional normed space are compact.</p></article><article class="hiddenproof" id="proof-12"><a data-knowl="" class="id-ref" data-refid="hk-proof-12"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-12" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-138">Let \((V, \norm{\cdot})\) be a finite-dimensional normed space. Suppose that \(K \subseteq V\) is closed and bounded. Then, since \(\rho(x) \leq \frac{1}{m} \norm{v}\) for all \(v \in V\text{,}\) \(K\) is also \(\rho\)-bounded. Because \(\norm{\cdot}\) and \(\rho\) are equivalent norms, they determine the same topology, and so \(K\) is also \(\rho\)-closed. Thus, in the Euclidean space \((V, \rho)\text{,}\) \(K\) is closed and bounded and thus compact by the <a data-knowl="./knowl/thm-heine-borel.html" title="Theorem 6.0.1: Heine-Borel">Heine-Borel theorem 6.0.1</a>.</p></article></div></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:40-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>Suppose that \(\hilbert\) contains a finite complete orthonormal sequence \(e_1, \ldots e_n\text{.}\) For any \(x \in \hilbert\text{,}\) find the error vector</p>
+<div class="displaymath">
+\begin{equation*}
+y = x - \sum_{i=1}^n \ip{x}{e_i}e_i.
+\end{equation*}
+</div>
+<p>Linearity of the inner product gives \(y \perp e_i\) for all \(i\) and so \(y=0\text{.}\) Thus \(e_1, \ldots, e_n\) is an orthonormal basis for \(\hilbert\text{.}\) Now define the operator \(U: \hilbert \to \C^n\) by</p>
+<div class="displaymath">
+\begin{equation*}
+U(\la_1 e_1 + \la_2 e_2 + \ldots + \la_n e_n) = (\la_1, \ldots , \la_n).
+\end{equation*}
+</div>
+<p>Then \(U\) is linear and bijective. From the fact that \(\norm{x}^2 = \sum_{i=1}^n \abs{\ip{x}{e_i}}^2\text{,}\) we infer that \(\norm{Ux} = \norm{x}\) for all \(x \in \hilbert.\) Thus \(U\) is a unitary operator, and so \(\hilbert\) is isomorphic to \(\C^n\text{.}\)</p>
+<p>On the other hand, suppose that \(\hilbert\) contains a complete orthonormal sequence \((e_n)_{n \in \mathbb{N}}\text{.}\) Define the operator \(U: \hilbert \to \ell^2\) by \(Ux = (\la_n)_{n\in \mathbb{N}}\) where \(\la_n = \ip{x}{e_n}\text{.}\) By <a data-knowl="./knowl/thm-hilbert-span.html" title="Theorem 5.4.3">Theorem 5.4.3</a> (3), \(Ux \in \ell^2\) and moreover \(\norm{Ux} = \norm{x}\) for all \(x \in \hilbert\text{.}\) As \(U\) is defined in terms of the inner product, it is clearly linear. If \((\la_n) \in \ell^2\text{,}\) then by <a data-knowl="./knowl/thm-l2-coeffs.html" title="Theorem 5.2.3">Theorem 5.2.3</a> the series \(\sum \la_n e_n\) converges to a point in \(\hilbert\) and by definition \(Ux = (\la_n)\text{.}\) Thus \(U\) is surjective. Hence \(U\) is a unitary operator, and so \(\hilbert\) is isomorphic to \(\ell^2\text{.}\)</p></article></body>
+</html>

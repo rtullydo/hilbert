@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:40-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>We need to show that any Cauchy sequence in \(\ell^2\) is convergent to another \(\ell^2\) sequence. First, we propose a candidate for the limit of a Cauchy sequence of vectors in \(\ell^2\text{.}\) To do so, we'll need to take advantage of the fact that vectors in \(\ell^2\) are themselves sequences.</p>
+<p>Consider the array we can construct by arranging the vectors \(x^k\) as rows -</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccccc}
+x^1 \amp = \amp (x^1_1, \amp x^1_2, \amp x^1_3, \amp \ldots)\\
+x^2 \amp = \amp (x^2_1, \amp x^2_2, \amp x^2_3, \amp \ldots)\\
+x^3 \amp = \amp (x^3_1, \amp x^3_2, \amp x^3_3, \amp \ldots)\\
+\vdots \amp \amp \vdots \amp \vdots \amp \vdots \amp \vdots \amp \\ \hline
+(x^k) \amp \amp (x^k_1) \amp (x^k_2) \amp (x^k_3) \amp 
+\end{array}
+\end{equation*}
+</div>
+<p>We are going to argue that the column sequences in the array above are convergent. Consider the \(j\)-th column sequence \((x^k_j)\text{.}\) Choose \(\eps &gt; 0.\) Because \(x^k\) is a Cauchy sequence of vectors, there exists some \(K\) so that \(k, l &gt; K\) implies that \(\norm{x^k - x^l} \lt \eps\text{.}\) But since</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{x^k - x^l} = \left(\sum \abs{x_i^k - x_i^l}^2\right)^{1/2} \lt \eps
+\end{equation*}
+</div>
+<p>and each term in the sum is positive, we get \(\abs{x^k_j - x^l_j} \lt \eps\) when \(k, l &gt; K\text{.}\) This shows that \((x^k_j)\) is a Cauchy sequence in \(\C\text{,}\) which is a complete metric space, and so \((x^k_j) \to y_j\) for some limit \(y_j \in \C\) as \(j \to \infty\text{.}\) Let \(y = (y_j)\) be the sequence of column limits. This is our candidate limit in \(\ell^2\) for the sequence of vectors \(x^k\text{.}\)</p>
+<p>Let us show that \(y \in \ell^2\text{.}\) To do so, we will show that \(x^k - y\) is in \(\ell^2\) for some \(k\) and use the vector space structure of \(\ell^2\text{.}\) Let \(\eps &gt; 0\) be given. Since \(x^k\) is Cauchy, there exists \(K\) so that \(\norm{x^k - x^l} \lt \eps\) for all \(k, l &gt; K\text{.}\) Noting again that the terms are positive, it is clear that for \(k, l &gt; K\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{i=1}^N \abs{x_i^k - x_i^l}^2 \leq \sum_{i=1}^{\infty} \abs{x_i^k - x_i^l}^2 \leq \eps^2.
+\end{equation*}
+</div>
+<p>We previously showed that the sequences \(x_i^l\) converge to \(y_i\text{,}\) so taking a limit as \(l \to \infty\) on the left-hand side of the inequalty gives</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{i=1}^N \abs{x_i^k - y_i}^2 \leq \eps^2.
+\end{equation*}
+</div>
+<p>This statement holds for all \(n \in \mathbb{N}\text{,}\) and so letting \(N\) tend to \(\infty\) gives us</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{i=1}^\infty \abs{x_i^k - y_i}^2 \leq \eps^2,
+\end{equation*}
+</div>
+<p>which is to say that \(\norm{x^k - y} \lt \eps\text{.}\) Having shown that \(x^k - y\) is in \(\ell^2\text{,}\) we note that \(y = x^k - (x^k - y) \in \ell^2\text{,}\) which concludes this step of the proof.</p>
+<p>The final step is to argue that the sequence \(x^k \to y\text{.}\) In the previous step, we showed that for a given \(\eps\text{,}\) there exists \(K\) so that \(k &gt; K\) implies that \(\norm{x^k - y} \lt \eps\text{.}\) Thus, \(x^k\) converges to the \(\ell^2\) sequence \(y\text{.}\) Since every Cauchy sequence converges to a limit in \(\ell^2\text{,}\) we conclude that \(\ell^2\) is a complete metric space.</p></article><span class="incontext"><a href="hilbert-1.html#proof-13">in-context</a></span>
+</body>
+</html>

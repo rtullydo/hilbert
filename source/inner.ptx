@@ -1,0 +1,357 @@
+<chapter xml:id="inner"><title>Inner product spaces</title>
+    <section xml:id="inner-1"><title>Inner products and <m>\ell^2</m></title>
+        <p>Recall that the inner product on <m>\C^n</m> is the familiar expression
+        <me>
+            \ip{x}{y} = \sum_i \cc y_i x_i, 
+        </me>
+        where <m>x = (x_1, \ldots, x_n)</m>. How can this be extended to infinte dimensions?</p>
+
+        <definition xml:id="def-innerproduct">
+            <p>For a general complex vector space <m>V</m>, an <term>inner product</term> is a map <m>\ip{\cdot}{\cdot}: V \times V \to \C</m> satisfying the following properties for all <m>x, y, z \in V</m> and scalars <m>c \in \C</m>:
+            <ol>
+                <li><m>\ip{x}{y} = \cc{\ip{y}{x}}</m>;</li>
+                <li><m>c\ip{x}{y} = \ip{cx}{y}</m>;</li>
+                <li><m>\ip{x + y}{z} = \ip{x,z} + \ip{y}{z}</m>;</li>
+                <li><m>\ip{x}{x} > 0</m> if <m>x \neq 0</m>.</li>
+            </ol></p>
+            <p>An <term>inner product space</term> is a pair consisting of a complex vector space <m>V</m> and an inner product <m>\ip{\cdot}{\cdot}</m> on <m>V</m>. <p>An inner product space is can also be called a <q>pre-Hilbert space</q>.</p></p>
+        </definition>
+
+        <exercise xml:id="ex-cont-fun-ip">
+            <p>Show that the map
+            <men xml:id="eq-C-ip">
+                \ip{f}{g} = \int_0^1 f(t)\cc g(t) \, \dd t
+            </men>
+            defines an inner product on <m>C[0,1]</m>, the complex vector space of all continuous complex-valued functions on the the interval <m>[0,1]</m> with pointwise addition and scalar multiplication.</p>
+        </exercise>
+
+        <exercise>
+            <p>Recall that the <url href="https://en.wikipedia.org/wiki/Trace_(linear_algebra)#Basic_properties">trace</url> of a square matrix is the sum of its diagonal entries. Show that the map
+            <me>
+                \ip{A}{B} = \trace(B\ad A)
+            </me>
+            is an inner product on the vector space <m>\C^{m \times n}</m> of <m>m \times n</m> matrices with complex entries, where <m>\ad</m> denotes the conjugate transpose.</p>
+        </exercise>
+
+        <p>The basic properties in <xref ref="def-innerproduct"/> can be used to derive the following statements, which show that a complex inner product is <term>linear</term> in the first argument and <term>conjugate linear</term> in the second.</p>
+
+        <theorem xml:id="thm-innerproduct">
+            <p>Let <m>V</m> be an inner product space. For any <m>x, y, z \in V</m> and <m>c \in \C</m>, 
+            <ol>
+                <li><m>\ip{x}{y+z} = \ip{x}{y} + \ip{x}{z}</m>;</li>
+                <li><m>\ip{x}{c y} = \cc{c}\ip{x}{y};</m></li>
+                <li><m>\ip{x}{0} = 0 = \ip{0}{x}</m>;</li>
+                <li>if <m>\ip{x}{z} = \ip{y}{z}</m> for all <m>z \in V</m>, then <m>x = y</m>.</li>
+            </ol>
+            </p>
+        </theorem>
+
+        <proof>
+            <p>(1): By <xref ref="def-innerproduct"/>,
+                <md>
+                    <mrow>\ip{x}{y+z} \amp = \cc{\ip{y+z}{x}}</mrow> 
+                    <mrow>\amp = \cc{(\ip{y}{x} + \ip{z}{x})}</mrow>
+                    <mrow>\amp = \cc{\ip{y}{x}} + \cc{\ip{z}{x}}</mrow>
+                    <mrow>\amp = \ip{x}{y} + \ip{x}{z}</mrow>
+                </md>
+            </p>
+
+            <p>Parts 2, 3 are left as an exercise.</p>
+
+            <p>(4): If <m>\ip{x}{z} = \ip{y}{z}</m>, then
+                <md>
+                    <mrow>0 \amp = \ip{x}{z} - \ip{y}{z}</mrow>
+                    <mrow>\amp = \ip{x}{z} + \ip{-y}{z}</mrow>
+                    <mrow>\amp = \ip{x-y}{z}.</mrow>
+                </md>
+                Assuming that this statement holds for all <m>z \in V</m> means that it holds for <m>z = x-y</m>. But then <m>\ip{x-y}{x-y} = 0</m>, so by <xref ref="def-innerproduct"/> (4), it must be that <m>x - y = 0</m> and so <m>x = y</m>.
+            </p>
+        </proof>
+
+        <exercise>
+            Prove part (2) and part (3) of <xref ref="thm-innerproduct"/>.
+        </exercise>
+
+
+
+
+
+
+        <p>To extend the notion from <m>\C^n</m> to an infinite dimensional analogue of <q>infinite vectors</q>, we might naively propose the inner product 
+        <men xml:id="eq-ell2-ip">
+            \ip{x}{y} = \sum_{i=1}^\infty \cc y_i x_i,
+        </men>
+        though this leaves the question of what space should go with this definition. One major concern is that an infinite sum need not converge, and we would certainly prefer that the inner product be defined on the vectors that we apply it to. We can't use the obvious idea, which is to consider the space <m>C^{\mathbb N} = \C \times \C \times \ldots</m>, since it is easy to find many pairs of poorly behaved vectors. (For example, if <m>x = (1, 1, \ldots), y = (1, 1, \ldots)</m>, then <m>\ip{x}{y} = \sum_{1}^\infty 1</m>.)
+        </p>
+
+        <p>One solution is to ensure that the sequence of coordinates in vectors that we work with are very well behaved in infinite sums. A very nice subspace of <m>\C^\mathbb{N}</m> is <q>little l-two</q>, denoted <m>\ell^2</m>.</p>
+
+        <definition>
+            <p><m>\ell^2</m> is the complex vector space of all complex sequences <m>x = (x_i)_{i=1}^\infty</m> which are <term>square summable</term> and equipped with componentwise addition and scalar multiplication; that is,
+            <me>
+                x \in \ell^2 \iff \sum_{i=1}^n \abs{x_i}^2 \lt \infty.
+            </me>
+            <m>\ell^2</m> is an inner product space with the inner product given by
+            <me>
+                \ip{x}{y} = \sum_{i=1}^\infty \cc y_i x_i.
+            </me></p>
+        </definition>
+    </section>
+
+    <section xml:id="inner-2"><title>Inner products, norms, and metric spaces</title>
+        <p>A <term>metric</term> is a function that measures distance in a space. The most obvious example of a metric that we encounter in elementary mathematics is the <term>Euclidean metric</term>, which arises from the expression for the magnitude of a vector in, e.g., <m>\R^2</m>: 
+        <me>
+            \abs{x} = \sqrt{x_1^2 + x_2^2} = \ip{x}{x}^{1/2}.
+        </me>
+        This relation underlies the <term>distance formula</term>
+        <me>
+            d(x,y) = \abs{x - y} = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2}
+        </me>
+        which is the Euclidean metric on <m>\R^2</m>. This relationship between magnitude (in terms of an inner product) and distance between vectors can be generalized to any vector space that has an inner product. </p>
+
+        <definition xml:id="def-norm-ip">
+            <p>The <term>norm</term> of a vector <m>x</m> in an inner product space <m>V</m>, denoted <m>\norm{x}</m> is defined to be
+            <me>
+                \norm{x} = \ip{x}{x}^{1/2}
+            </me></p>
+        </definition>
+
+        <p>That is, in an inner product space, the inner product gives a natural method for evaluating magnitude of a vector. So with the dot product on <m>\C^n</m>, we get
+        <me>
+            \norm{x} = \sqrt{\abs{x_1}^2 + \ldots + \abs{x_n}^2}.
+        </me></p>
+
+        <p>Using the inner product set out in <xref ref="ex-cont-fun-ip"/>, for <m>f \in C[0,1]</m>, 
+        <me>
+            \norm{f} = \left( \int_0^1 \abs{f(t)}^2 \, \dd t \right)^{1/2}.
+        </me>
+        (At this point, you might be suspicious that there is a relationship between functions that are square integrable and sequences that are square summable. Keep that suspicion close!)</p>
+
+        <p>Some basic facts about the behavior of norms induced by inner products follow.</p>
+
+        <theorem xml:id="thm-norm">
+            <p>Let <m>V</m> be a inner product space. For any <m>x \in V</m> and <m>c \in \C</m>,
+            <ol>
+                <li><m>\norm{x} \geq 0</m> and <m>\norm{x} = 0</m> if and only if <m>x = 0</m>;</li>
+                <li><m>\norm{cx} = \abs{c}\norm{x}</m>.</li>
+            </ol></p>
+        </theorem>
+
+        <exercise>
+            <p>Prove <xref ref="thm-norm"/>.</p>
+        </exercise>
+
+        <p>In Euclidean space, we get a suite of geometric relations that we can use to work with vectors. In a general inner product space, we recover some of the same. In <m>\R^2</m>, the dot product contains information about the angle <m>\theta</m> between two vectors:
+        <me>
+            \ip{x}{y} = \norm{x}\norm{y} \cos \theta.
+        </me>
+        In the complex or abstract setting, the notion of angle between vectors no longer makes sense, but the relationship of the magnitudes still holds in the form of the <term>Cauchy-Schwarz inequality.</term></p>
+
+        <theorem xml:id="thm-cauchy-schwarz">
+            <p>For any <m>x, y</m> in an inner product space <m>V</m>,
+                <men xml:id="eq-cs">
+                    \abs{\ip{x}{y}} \leq \norm{x}\norm{y}.
+                </men>
+                Equality holds if and only if <m>x</m> and <m>y</m> are linearly dependent.
+            </p>
+        </theorem>
+
+        <proof>
+            <p>First, suppose that <m>x</m> and <m>y</m> are linearly dependent so that <m>x = c y</m> for some <m>c \in \C</m>. Then by <xref ref="thm-norm"/> and <xref ref="def-innerproduct"/>, the left and right sides of <xref ref="eq-cs"/> are both equal to <m>\abs{c}\norm{y}</m>.</p>
+
+            <p>On the other hand, if <m>x, y</m> are linearly independent, then for any <m>c \in \C</m>, it must be that <m>x + c y \neq 0</m>. Then
+            <md>
+                <mrow>0 \amp \lt \ip{x+cy}{x+cy}</mrow>
+                <mrow>\amp = \ip{x}{ x + c y} + \ip{c y}{x + cy}</mrow>
+                <mrow>\amp = \ip{x}{x} + \cc{c}\ip{x}{y} + c\ip{y}{x} + c \cc{c} \ip{y}{y}</mrow>
+                <mrow>\amp = \norm{x}^2 + \cc{c}\ip{x}{y} + c \cc{\ip{x}{y}} + \abs{c}^2 \norm{y}^2</mrow>
+                <mrow>\amp = \norm{x}^2 + 2 \RE\left[ \cc{c} \ip{x}{y} \right] + \abs{c}^2 \norm{y}^2.</mrow>
+            </md>
+            To get the real part of the complex number out of the quadratic expression, let <m>\omega</m> be a unimodular constant so that <m>\cc \omega \ip{x}{y} = \abs{\ip{x}{y}}</m>. Now let <m>c = t\omega</m> and substitute to conclude that for all <m>t \in \R</m>, 
+            <me>
+                0 \lt \norm{x}^2 + 2t\abs{\ip{x}{y}} + t^2 \norm{y}^2.
+            </me>
+            That is, a quadratic polynomial in <m>t</m> is strictly positive. This can only happen if the discriminant is negative, which gives
+            <me>
+                4 \ip{x}{y}^2 - 4 \norm{x}^2\norm{y}^2 \lt 0,
+            </me>
+            and so 
+            <me>
+                \ip{x}{y} \lt \norm{x}\norm{y}.
+            </me>
+            </p>
+        </proof>
+
+        <exercise>
+            <p>Prove that for any <m>f\in C[0,1]</m>,
+            <me>
+                \abs{\int_0^1 f(t) \sin \pi t\, \dd t} \leq \frac{1}{\sqrt{2}} \left(\int_0^1 \abs{f(t)}^2 \, \dd t \right)^{1/2},
+            </me>
+            and find the functions <m>f</m> for which equality holds.
+            </p>
+        </exercise>
+
+        <p>The Cauchy-Schwarz inequality is the first of a murderers row of important geometric inequalities. The next is probably the single most important inequality in mathematical analysis.</p>
+
+        <theorem xml:id="thm-triangle"><title>Triangle inequality</title>
+            <p>For any <m>x, y</m> in <m>V</m>, 
+            <me>
+                \norm{x + y} \leq \norm{x} + \norm{y}.
+            </me>
+            </p>
+        </theorem>
+
+        <proof>
+            <p>A typical trick is to avoid square roots by using the squares of norms when working with inner products. Hence,
+            <md>
+                <mrow>\norm{x + y}^2 \amp = \norm{x}^2 + 2 \RE \ip{x}{y} +\norm{y}^2</mrow>
+                <mrow>\amp \leq \norm{x}^2 + 2 \abs{\ip{x}{y}} + \norm{y^2}</mrow>
+                <mrow>\amp \leq \norm{x}^2 + 2 \norm{x}\norm{y} + \norm{y}^2</mrow>
+                <mrow>\amp = (\norm{x} + \norm{y})^2.</mrow>
+            </md>
+            Monotonicity of the square root gives the result.
+            </p>
+        </proof>
+
+        <exercise>
+            <p>Use <xref ref="thm-triangle"/> to show that <m>\ell^2</m> is closed under addition.</p>
+        </exercise>
+
+        <theorem xml:id="thm-parallelogram"><title>Parallelogram identity</title>
+            <p>For <m>x, y \in V</m>, 
+            <men>
+                \norm{x + y}^2 + \norm{x - y}^2 = 2 \norm{x}^2 + 2 \norm{y}^2.
+            </men></p>
+        </theorem>
+
+        <proof>
+            <p>Using <xref ref="def-norm-ip"/>, it is straightforward to compute that
+            <md>
+                <mrow>\norm{x + y}^2 \amp = \norm{x}^2 + \ip{x}{y} + \ip{y}{x} + \norm{y}^2,</mrow>
+                <mrow>\norm{x - y}^2 \amp = \norm{x}^2 - \ip{x}{y} - \ip{y}{x} + \norm{y}^2.</mrow>
+            </md>
+            Adding the expressions above gives the result.</p>
+        </proof>
+
+        <p>So far, we've used the inner product to compute a norm on an inner product space. If on the other hand we know how to compute norms, we can recover the inner product, should it exist (e.g. if we know that we are in an inner product space). </p>
+
+        <theorem xml:id="thm-polarization"><title>Polarization identity</title>
+            <p>For <m>x, y</m> in an inner product space <m>V</m>,
+            <men>
+                \ip{x}{y} = \frac{1}{4} \left(\norm{x + y}^2 - \norm{x - y}^2 + i \norm{x - iy}^2 - i\norm{x + iy}^2\right)
+            </men></p>
+        </theorem>
+
+        <exercise>
+            <p>Prove <xref ref="thm-polarization"/>.</p>
+        </exercise>
+
+        <p>(<url href="https://en.wikipedia.org/wiki/Polarization_identity#Theorem">A larger result</url>, not proven here, is due to Frechet, von Neumann, and Jordan and states that in a <term>normed space</term> <m>(V, \norm{\cdot})</m>, if the parallelogram law holds, then there is an inner product on <m>V</m> so that <m>\norm{x} = \ip{x}{x}</m>. We will see soon that while every inner product space carries a norm, the converse statement is not true. )</p>
+
+
+    </section>
+
+    <section xml:id="inner-3"><title>Examples of inner product spaces</title>
+        <p>So far, our examples of inner product spaces have been:
+            <ol>
+                <li><m>\C^n</m>: the space of <m>n</m> dimensional complex vectors equipped with the inner product
+                <me>
+                    \ip{x}{y} = \sum_{i=1}^n \cc{y}_i x_i
+                </me>;</li>
+                <li><m>\ell^2</m>: the space of square summable infinite sequences equipped with the inner product
+                <me>
+                    \ip{x}{y} = \sum_{i=1}^\infty \cc{y_i} x_i;
+                </me></li>
+                <li><m>\C^{m\times n}</m>: the space of <m>m \times n</m> complex matrices equipped with the inner product 
+                <me>
+                    \ip{A}{B} = \trace (B\ad A);
+                </me></li>
+                <li><m>C[0,1]</m>: the space of complex-valued continuous functions on the interval <m>[0,1]</m> equipped with the inner product 
+                <me>
+                    \ip{f}{g} = \int_0^1 f(t) \cc{g(t)} \, \dd t;
+                </me></li>
+            </ol></p>
+
+        <p>To develop intuition and to show how inner product gemetry interacts with other mathematical structures, particularly those of analysis, we need more examples. The first three spaces in some sense very much resemble Euclidean space. They are easy to work with but don't reveal the more nuanced structure of Hilbert spaces. On the other hand, general continuous functions are about as hard to grasp a collection of objects as exists in mathematics (<url href="http://nautil.us/issue/11/light/maths-beautiful-monsters"><q>I turn away with fear and horrow from the lamentable plague of continuous functions which do not have derivatives...</q> Hermite to Stieltjes, 1893</url> - unfortunately, <url  href="http://homepages.math.uic.edu/~marker/math414/fs.pdf">most continuous functions are pathological in this sense</url>).</p>
+
+        <p>Examples of inner product spaces with non-trivial geometry include spaces of rational functions (that is, quotients of complex polynomials), which provide interesting examples and turn out to be of importance in applications. Rational functions also provide a foundation for the study of functions evaluated on matrix inputs, which will be considered much later in this text.</p>
+
+        <p>Recall that a function <m>f:D \to \C</m> is <url href="https://en.wikipedia.org/wiki/Analytic_function">analytic</url> if <m>f</m> has a power series that converges in a neighborhood of every <m>x_0 \in D</m>. Denote by <m>RL^2</m> the space of rational functions that are analytic on the unit circle <m>\T = \partial \D = \{z\in \C: \abs{z} = 1\},</m> equipped with pointwise addition and scalar multiplication. <m>RL^2</m> is an inner product space with the inner product
+            <men xml:id="eq-RL-ip">
+                \ip{f}{g} = \frac{1}{2\pi i} \int_\T f(z) \cc{g(z)} \frac{\dd z}{z},
+            </men>
+        with the integral taken as <m>z</m> travels around <m>\T</m> counterclockwise. <m>RL^2</m> is those rational functions with no <url href="https://en.wikipedia.org/wiki/Zeros_and_poles">pole</url> on the unit circle <m>\T</m>.</p>
+
+        <p>We can restrict <m>RL^2</m> to the subspace of functions that are analytic on the closed unit disk <m>\cl{\D}</m>, where <m>\D = \{z: \abs{z} \lt 1\}</m>. We will denote this space of functions <m>RH^2</m>. It is an inner product space with the same inner product as <m>RL^2</m>. These spaces are subspaces of the larger spaces of functions <m>L^2</m> and <m>H^2</m>, which will be discussed detail as we proceed.</p>
+
+        <p>Another family of important function spaces are called <term>Sobolev spaces</term>. The simplest example is the space <m>W[a,b]</m> of continuously differentiable functions with values in <m>\C</m> with the inner product 
+            <men xml:id="eq-W-ip">
+                \ip{f}{g} = \int_a^b f(t) \cc{g(t)} + f'(t) \cc{g'(t)} \, \dd t.
+            </men>
+        Including the derivative in the inner product gives control over the behavior of both the function and the derivative. <m>W</m> and the broader family of Sobolev spaces are central to the study of differential equations.</p>
+
+        <p>Of central importance in engineering and the sciences is the space of <term>trigonometric polynomials</term>, which are functions of the form
+            <me>
+                T(x) = a_0 + \sum_{n=0}^N a_n \cos(nx) + i\sum_{n=1}^N b_n \sin nx,
+            </me>
+        where <m>a_n, b_n \in \C</m> and <m>1 \leq n \leq N</m>. Using Euler's identity, it is computationally efficient to use the equivalent characterization
+            <me>
+                f(x) = \sum_{n=-N}^N c_n e^{inx}.
+            </me> 
+        The space <m>TP</m> of trigonometric polynomials is a complex vector space with pointwise addition and scalar multiplication. That the relation
+            <men xml:id="eq-TP-ip">
+                \ip{f}{g} = \frac{1}{2\pi} \int_{-T}^T f(x) \cc{g(x)} \, \dd x
+            </men>
+        is an an inner product on <m>TP</m> is left as an exercise.</p>
+
+        <assemblage xml:id = "table-ipspaces">
+            <p><me>
+                \begin{array}{l|l|l}
+                    \text{Space} \amp \text{Elements} \amp \text{Inner product} \\ \hline
+                    \C^n \amp x = (x_1, \ldots, x_n), \, x_i \in \C \amp \ip{x}{y} = \sum x_i \cc{y}_i\\
+                    \C^{m\times n} \amp x = (x_{ij})_{i = 1, j=1}^{m, n}, \, x_{ij} \in \C \amp \ip{A}{B} = \trace(B\ad A)\\
+                    \ell^2 \amp x = (x_i)_{i=1}^\infty, \, x_i \in \C,  \, \sum \abs{x_i}^2 \lt \infty \amp \ip{x}{y} = \sum_1^\infty x_i \cc{y_i} \\
+                    C[a, b] \amp f:[a,b] \to \C \text{ continuous} \amp \ip{f}{g} = \int_a^b f(t) \cc{g(t)} \, \dd t \\
+                    RL^2 \amp f \text{ rational, analytic on } \T \amp \ip{f}{g} = \frac{1}{2 \pi i} \int_\T f(z) \cc{g(z)}\, \frac{\dd z}{z} \\
+                    RH^2 \amp f \text{ rational, analytic on } \cl \D \amp \ip{f}{g} = \frac{1}{2 \pi i} \int_\T f(z) \cc{g(z)}\, \frac{\dd z}{z} \\
+                    TP \amp f(x) = \sum_{-N}^N c_n e^{inx} \amp \ip{f}{g} = \frac{1}{2\pi} \int_{-T}^T f(x)\cc{g(x)}\, \dd x
+                \end{array}
+            </me></p>
+        </assemblage>
+
+    </section>
+
+    <section xml:id="inner-4"><title>Exercises</title>
+        <exercises>
+            <exercise>
+                <p>Prove that <xref ref="eq-RL-ip"/> is an an inner product on <m>RL^2</m>. (Hint: parametrize <m>\T</m> by <m>z = e^{i\theta}</m> for <m>-\pi \lt \theta \leq \pi</m>).</p>
+            </exercise>
+            <exercise xml:id="pr-1-1">
+                <p>Prove that <xref ref="eq-W-ip"/> is an inner product on <m>W[a,b]</m>.</p>
+            </exercise>
+            <exercise>
+                <p>Prove that <xref ref="eq-TP-ip"/> is an inner product on <m>TP</m>.</p>
+            </exercise>
+            <exercise>
+                <p>Prove the Pythagorean theorem in an inner product space <m>V</m>; that is, show that if <m>\ip{x}{y} = 0</m> for <m>x, y \in V</m> then  
+                    <me>
+                        \norm{x}^2 + \norm{y}^2 = \norm{x + y}^2.
+                    </me>
+                </p>
+            </exercise>
+            <exercise>
+                <p>Define the elementary functions
+                    <me>
+                        e_n(t) = e^{2\pi i n t}
+                    </me>
+                    where <m>n \in \Z</m> and for values of <m>t \in [0,1]</m>.</p>
+
+                <p>Prove that <m>e_n \perp e_m</m> when <m>m \neq n</m> as elements of <m>C[0,1]</m> and as elements of <m>W[0,1]</m> (that is, with respect to <xref ref="eq-C-ip"/> and <xref ref="eq-W-ip"/>). (This is precursor work to the development of <em>orthonormal systems</em>, which we will meet shortly.)</p>
+            </exercise>
+        </exercises>
+    </section>
+
+
+
+
+</chapter>

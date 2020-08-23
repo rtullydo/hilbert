@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-30T17:45:40-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Limits</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
+  \DeclareMathOperator{\IM}{Im}
+  \DeclareMathOperator{\ess}{ess}
+  \DeclareMathOperator{\intr}{int}
+  \DeclareMathOperator{\dist}{dist}
+  \DeclareMathOperator{\dom}{dom}
+  \DeclareMathOperator{\diag}{diag}
+  \DeclareMathOperator{\cl}{cl}
+  \DeclareMathOperator{\span}{span}
+  \DeclareMathOperator{\proj}{proj}
+  \DeclareMathOperator\trace{trace}
+  \DeclareMathOperator\re{\mathrm {Re~}}
+  \DeclareMathOperator\im{\mathrm {Im~}}
+  
+  \newcommand\dd{\mathrm d}
+  \newcommand{\eps}{\varepsilon}
+  \newcommand{\To}{\longrightarrow}
+  \newcommand{\hilbert}{\mathcal{H}}
+  \newcommand{\s}{\mathcal{S}_2}
+  \newcommand{\A}{\mathcal{A}}
+  \newcommand\h{\mathcal{H}}
+  \newcommand{\J}{\mathcal{J}}
+  \newcommand{\K}{\mathcal{K}}
+  \newcommand{\M}{\mathcal{M}}
+  \newcommand{\F}{\mathbb{F}}
+  \newcommand{\N}{\mathcal{N}}
+  \newcommand{\T}{\mathbb{T}}
+  \newcommand{\W}{\mathcal{W}}
+  \newcommand{\X}{\mathcal{X}}
+  \newcommand{\D}{\mathbb{D}}
+  \newcommand{\C}{\mathbb{C}}
+  \newcommand{\BOP}{\mathbf{B}}
+  \newcommand{\Z}{\mathbb{Z}}
+  \newcommand{\BH}{\mathbf{B}(\mathcal{H})}
+  \newcommand{\KH}{\mathcal{K}(\mathcal{H})}
+  \newcommand{\pick}{\mathcal{P}_2}
+  \newcommand{\schur}{\mathcal{S}_2}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Complex}{\mathbb{C}}
+  \newcommand{\Field}{\mathbb{F}}
+  \newcommand{\RPlus}{\Real^{+}}
+  \newcommand{\Polar}{\mathcal{P}_{\s}}
+  \newcommand{\Poly}{\mathcal{P}(E)}
+  \newcommand{\EssD}{\mathcal{D}}
+  \newcommand{\Lop}{\mathcal{L}}
+  \newcommand{\cc}[1]{\overline{#1}}
+  \newcommand{\abs}[1]{\left\vert#1\right\vert}
+  \newcommand{\set}[1]{\left\{#1\right\}}
+  \newcommand{\seq}[1]{\left\lt#1\right&gt;}
+  \newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+  \newcommand{\essnorm}[1]{\norm{#1}_{\ess}}
+  \newcommand{\tr}{\operatorname{tr}}
+  \newcommand{\ran}[1]{\operatorname{ran}#1}
+  \newcommand{\nt}{\stackrel{\mathrm {nt}}{\to}}
+  \newcommand{\pnt}{\xrightarrow{pnt}}
+  \newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
+  \newcommand{\ad}{^\ast}
+  \newcommand{\inv}{^{-1}}
+  \newcommand{\adinv}{^{\ast -1}}
+  \newcommand{\invad}{^{-1 \ast}}
+  \newcommand\Pick{\mathcal P}
+  \newcommand\Ha{\mathbb{H}}
+  \newcommand{\HH}{\Ha\times\Ha}
+  \newcommand\Htau{\mathbb{H}(\tau)}
+  \newcommand{\vp}{\varphi}
+  \newcommand{\ph}{\varphi}
+  \newcommand\al{\alpha}
+  \newcommand\ga{\gamma}
+  \newcommand\de{\delta}
+  \newcommand\ep{\varepsilon}
+  \newcommand\la{\lambda}
+  \newcommand\up{\upsilon}
+  \newcommand\si{\sigma}
+  \newcommand\beq{\begin{equation}}
+  \newcommand\ds{\displaystyle}
+  \newcommand\eeq{\end{equation}}
+  \newcommand\df{\stackrel{\rm def}{=}}
+  \newcommand\ii{\mathrm i}
+  \newcommand{\vectwo}[2]
+  {
+     \begin{pmatrix} #1 \\ #2 \end{pmatrix}
+  }
+  \newcommand{\vecthree}[3]
+  {
+     \begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}
+  }
+  \newcommand\blue{\color{blue}}
+  \newcommand\black{\color{black}}
+  \newcommand\red{\color{red}}
+  
+  \newcommand\nn{\nonumber}
+  \newcommand\bbm{\begin{bmatrix}}
+  \newcommand\ebm{\end{bmatrix}}
+  \newcommand\bpm{\begin{pmatrix}}
+  \newcommand\epm{\end{pmatrix}}
+  \numberwithin{equation}{section}
+  \newcommand\nin{\noindent}
+  \newcommand{\nCr}[2]{\,_{#1}C_{#2}} 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="hilbert.html"><span class="title">Hilbert Spaces - Sequel to Linear Algebra</span></a></h1>
+<p class="byline">Ryan Tully-Doyle</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter-4.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-4.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="hilbert-2.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-4.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-4.html" title="Up">Up</a><a class="next-button button toolbar-item" href="hilbert-2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="sec-intro-1.html" data-scroll="sec-intro-1">Motivation</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Inner products</a></li>
+<li><a href="intro-2.html" data-scroll="intro-2">Basis and coordinates</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Operators</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="inner.html" data-scroll="inner"><span class="codenumber">2</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="inner-1.html" data-scroll="inner-1">Inner products and \(\ell^2\)</a></li>
+<li><a href="inner-2.html" data-scroll="inner-2">Inner products, norms, and metric spaces</a></li>
+<li><a href="inner-3.html" data-scroll="inner-3">Examples of inner product spaces</a></li>
+<li><a href="inner-4.html" data-scroll="inner-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-norm.html" data-scroll="ch-norm"><span class="codenumber">3</span> <span class="title">Normed spaces</span></a><ul>
+<li><a href="norm-1.html" data-scroll="norm-1">Norms</a></li>
+<li><a href="norm-2.html" data-scroll="norm-2">Closed linear subspaces</a></li>
+<li><a href="norm-3.html" data-scroll="norm-3">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a><ul>
+<li><a href="hilbert-1.html" data-scroll="hilbert-1" class="active">Limits</a></li>
+<li><a href="hilbert-2.html" data-scroll="hilbert-2">\(L^2[a,b]\)</a></li>
+<li><a href="hilbert-3.html" data-scroll="hilbert-3">The closest point property</a></li>
+<li><a href="hilbert-4.html" data-scroll="hilbert-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Orthogonal expansions</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Geometry in Hilbert space</a></li>
+<li><a href="ortho-2.html" data-scroll="ortho-2">Bessel's inequality</a></li>
+<li><a href="ortho-3.html" data-scroll="ortho-3">Modes of convergence</a></li>
+<li><a href="ortho-4.html" data-scroll="ortho-4">Complete orthonormal sequences</a></li>
+</ul>
+</li>
+<li class="link"><a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Appendix: Results from analysis</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="hilbert-1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Limits</span>
+</h2>
+<a href="hilbert-1.html" class="permalink">¶</a><p id="p-150">With the inner product given by <a data-knowl="./knowl/eq-ell2-ip.html" title="Equation 2.1.2">(2.1.2)</a>, the space \(\ell^2\) of sequences of square summable functions acts much like \(\C^n\text{.}\) We can extend this analogy further. In Euclidean space, a sequence that looks convergent is convergent. (This shows up in theorems like "Cauchy sequences are convergent", e.g.) Much of our intuition from real analysis is based on this property. Spaces on which sequences converge to points outside the space are very difficult to do analysis on! (Consider trying to do calculus on the rational numbers, for example.)</p>
+<p id="p-151">On the other hand, recall the space \(\ell_0\) <a data-knowl="./knowl/def-ell0.html" title="Definition 3.2.2">Definition 3.2.2</a>. In <a data-knowl="./knowl/ex-ell0.html" title="Example 3.2.1">Example 3.2.1</a>, we constructed a sequence of vectors in \(\ell_0\) that converged in \(\ell^2\) but not in \(\ell_0\text{.}\) That is, if we restricted our attention to the inner product space \(\ell_0\text{,}\) we could not perform any analysis using limits, because we might leave the space.</p>
+<p id="p-152">As our ultimate interest is in examining function spaces, we can also consider an example in \(C[0,1]\text{.}\) A natural norm on \(C[0,1]\) is induced by the inner product <a data-knowl="./knowl/eq-C-ip.html" title="Equation 2.1.1">(2.1.1)</a>, so that</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{f} = \int_0^1 \abs{f(x)}^2 \, dx.
+\end{equation*}
+</div>
+<p>With respect the norm above, consider the sequence</p>
+<div class="displaymath">
+\begin{equation*}
+f_k(x) = \min ((2x)^k, 1).
+\end{equation*}
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-4.svg" style="width: 100%; height: auto;" alt=""></div>
+<p id="p-153">It isn't difficult to show that the elements in this sequence of functions grow arbitrarily close as \(k \to \infty\) with respect to \(\norm{\cdot}\text{.}\) It should also be clear from the figure above that this sequence of continuous functions is approaching a discontinuous function in the limit. (What is it?) That is, \(C[0,1]\) is evidently not closed with respect to \(\norm{\cdot}\text{.}\)</p>
+<p id="p-154">We would very much like to work in spaces where limits make sense. So we'll introduce some machinery that will guarantee that this is the case.</p>
+<article class="definition-like" id="def-cauchy-seq"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">4.1.1</span>.</h6>
+<p id="p-155">Let \((M, d)\) be a metric space with distance function \(d\text{.}\) A sequence \((x^k)\) in \(M\) is called a <dfn class="terminology">Cauchy sequence</dfn> if for every \(\eps &gt; 0\text{,}\) there exists an integer \(K\) so that \(k, l &gt; K\) implies that \(d(x^k, x^l) \lt \eps\text{.}\)</p>
+<p id="p-156">If every Cauchy sequence in \(M\) converges to a limit in \(M\text{,}\) then \(M\) is called a <dfn class="terminology">complete metric space</dfn>.</p></article><p id="p-157">Some metric spaces come complete. The prototypical space is \(\R\text{,}\) where the result that Cauchy sequences are convergent is a standard test question in real analysis. (Can you prove it?). Completeness of \(\R\) implies completeness of \(\C\text{.}\) (Do it.) More complicated spaces take more work.  We've already seen examples of spaces that are not complete.</p>
+<article class="theorem-like" id="thm-ell2-complete"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">4.1.2</span>.</h6>
+<p id="p-158">The space \(\ell^2\) is a complete metric space with the metric induced by the inner product <a data-knowl="./knowl/eq-ell2-ip.html" title="Equation 2.1.2">(2.1.2)</a>.</p></article><article class="hiddenproof" id="proof-13"><a data-knowl="" class="id-ref" data-refid="hk-proof-13"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-13" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-159">We need to show that any Cauchy sequence in \(\ell^2\) is convergent to another \(\ell^2\) sequence. First, we propose a candidate for the limit of a Cauchy sequence of vectors in \(\ell^2\text{.}\) To do so, we'll need to take advantage of the fact that vectors in \(\ell^2\) are themselves sequences.</p>
+<p id="p-160">Consider the array we can construct by arranging the vectors \(x^k\) as rows -</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccccc}
+x^1 \amp = \amp (x^1_1, \amp x^1_2, \amp x^1_3, \amp \ldots)\\
+x^2 \amp = \amp (x^2_1, \amp x^2_2, \amp x^2_3, \amp \ldots)\\
+x^3 \amp = \amp (x^3_1, \amp x^3_2, \amp x^3_3, \amp \ldots)\\
+\vdots \amp \amp \vdots \amp \vdots \amp \vdots \amp \vdots \amp \\ \hline
+(x^k) \amp \amp (x^k_1) \amp (x^k_2) \amp (x^k_3) \amp 
+\end{array}
+\end{equation*}
+</div>
+<p id="p-161">We are going to argue that the column sequences in the array above are convergent. Consider the \(j\)-th column sequence \((x^k_j)\text{.}\) Choose \(\eps &gt; 0.\) Because \(x^k\) is a Cauchy sequence of vectors, there exists some \(K\) so that \(k, l &gt; K\) implies that \(\norm{x^k - x^l} \lt \eps\text{.}\) But since</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{x^k - x^l} = \left(\sum \abs{x_i^k - x_i^l}^2\right)^{1/2} \lt \eps
+\end{equation*}
+</div>
+<p>and each term in the sum is positive, we get \(\abs{x^k_j - x^l_j} \lt \eps\) when \(k, l &gt; K\text{.}\) This shows that \((x^k_j)\) is a Cauchy sequence in \(\C\text{,}\) which is a complete metric space, and so \((x^k_j) \to y_j\) for some limit \(y_j \in \C\) as \(j \to \infty\text{.}\) Let \(y = (y_j)\) be the sequence of column limits. This is our candidate limit in \(\ell^2\) for the sequence of vectors \(x^k\text{.}\)</p>
+<p id="p-162">Let us show that \(y \in \ell^2\text{.}\) To do so, we will show that \(x^k - y\) is in \(\ell^2\) for some \(k\) and use the vector space structure of \(\ell^2\text{.}\) Let \(\eps &gt; 0\) be given. Since \(x^k\) is Cauchy, there exists \(K\) so that \(\norm{x^k - x^l} \lt \eps\) for all \(k, l &gt; K\text{.}\) Noting again that the terms are positive, it is clear that for \(k, l &gt; K\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{i=1}^N \abs{x_i^k - x_i^l}^2 \leq \sum_{i=1}^{\infty} \abs{x_i^k - x_i^l}^2 \leq \eps^2.
+\end{equation*}
+</div>
+<p>We previously showed that the sequences \(x_i^l\) converge to \(y_i\text{,}\) so taking a limit as \(l \to \infty\) on the left-hand side of the inequalty gives</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{i=1}^N \abs{x_i^k - y_i}^2 \leq \eps^2.
+\end{equation*}
+</div>
+<p>This statement holds for all \(n \in \mathbb{N}\text{,}\) and so letting \(N\) tend to \(\infty\) gives us</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{i=1}^\infty \abs{x_i^k - y_i}^2 \leq \eps^2,
+\end{equation*}
+</div>
+<p>which is to say that \(\norm{x^k - y} \lt \eps\text{.}\) Having shown that \(x^k - y\) is in \(\ell^2\text{,}\) we note that \(y = x^k - (x^k - y) \in \ell^2\text{,}\) which concludes this step of the proof.</p>
+<p id="p-163">The final step is to argue that the sequence \(x^k \to y\text{.}\) In the previous step, we showed that for a given \(\eps\text{,}\) there exists \(K\) so that \(k &gt; K\) implies that \(\norm{x^k - y} \lt \eps\text{.}\) Thus, \(x^k\) converges to the \(\ell^2\) sequence \(y\text{.}\) Since every Cauchy sequence converges to a limit in \(\ell^2\text{,}\) we conclude that \(\ell^2\) is a complete metric space.</p></article></div>
+<article class="exercise-like" id="exercise-27"><a data-knowl="" class="id-ref" data-refid="hk-exercise-27"><h6 class="heading">
+<span class="type">Checkpoint</span> <span class="codenumber">4.1.3</span>.</h6></a></article><div id="hk-exercise-27" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-164">Show that \(\ell^\infty\text{,}\) the space of bounded sequences of complex numbers with the supremum norm is complete.</p></article></div>
+<p id="p-165">We are now (finally) ready to define Hilbert spaces. The distinction between Hilbert spaces and inner product spaces is important to keep in mind.</p>
+<article class="definition-like" id="def-hilbert-space"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">4.1.4</span>.</h6>
+<p id="p-166">A <dfn class="terminology">Hilbert space</dfn> is an inner product space which is a complete metric space with respect to the metric induced by its inner product.</p></article><article class="definition-like" id="def-banach-space"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">4.1.5</span>.</h6>
+<p id="p-167">A <dfn class="terminology">Banach space</dfn> is a normed space which is complete with respect to the metric induced by its norm.</p></article><p id="p-168">As inner products induce norms, every Hilbert space is a Banach space. The converse statement is not true. Examples abound of complete normed spaces in which the parallelogram rule fails to hold (and thus there can exist no inner product that induces the norm.) In fact, our results to now show that \(\ell^\infty\) is an example of a Banach space that is not a Hilbert space. Banach spaces are an area of wide interest in mathematics, but the lack of an inner product makes the structure much more delicate to parse. The central spaces of functional analysis are Hilbert spaces, where the inner product gives useful geometry not available in the more general setting of Banach spaces.</p>
+<p id="p-169">We'll continue by looking at perhaps the single most important Hilbert space of functions.</p></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

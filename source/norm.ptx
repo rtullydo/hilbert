@@ -1,0 +1,367 @@
+<chapter xml:id="ch-norm"><title>Normed spaces</title>
+    <section xml:id="norm-1"><title>Norms</title>
+        <p>When we think about basic notions of open sets in Euclidean space <m>\R^n</m>, we typically consider <term>open balls</term> - that is, sets of the form
+            <me>
+                B_r(a) = \{x \in \R^n: \norm{x - a} \lt r\}
+            </me>
+            using the standard norm Euclidean norm <xref ref="eq-Euclidean-norm"/> to define the notion of distance.
+        </p>
+
+        <p>Of course, there are other ways to measure the distance between vectors that are consistent with the properties that we associate with metrics. The metric used will change the elements that fall into a <q>ball of radius <m>r</m> centered at <m>a</m></q>. For example, on <m>\R^2</m>, we can define the <term>taxicab metric</term>
+            <me>
+                d_{tc}(x, y) = \abs{x_1 - y_1} + \abs{x_2 - y_2}.
+            </me>
+        </p>
+
+        <exercise>
+            <p>Describe the sets 
+                <me>
+                    B_r(0) = \{x \in \R^2: d_{tc}(x,0) \lt r\}.
+                </me>
+            </p>
+        </exercise>
+
+        <p>We formalize the notion of metric in the following definition.</p>
+        <definition xml:id="def-metric">
+            <p>Let <m>X</m> be a set. A metric is a map <m>d:X\times X \to \R</m> which satisfies for all <m>x, y, z \in X</m>
+            <ol>
+                <li><m>d(x,y) \geq 0</m>;</li>
+                <li><m>d(x,y) = 0</m> if and only if <m>x = y</m>;</li>
+                <li><m>d(x,y) = d(y,x)</m>;</li>
+                <li><m>d(x,z) \leq d(x,y) + d(y,z)</m> for all <m>y</m>.</li>
+            </ol>
+            </p>
+        </definition> 
+
+        <p>Our focus is going to be on the analysis of inner product spaces of functions. But many spaces of functions can be equipped with metrics that do not arise from inner products. We've already seen <m>C[a,b]</m>, the space of continuous functions on <m>[a,b]</m>, which is an inner product space with inner product <xref ref="eq-C-ip"/>. Another natural notion of distance in this space is to measure the maximum modulus of the pointwise distace between the functions:
+        <me>
+            d_{\sup}(f,g) = \sup_{[a,b]} \abs{f(x) - g(x)}.
+        </me> 
+        This is the metric that corresponds to <url href="https://en.wikipedia.org/wiki/Uniform_convergence">uniform convergence</url> of sequences of functions in <m>C[a,b]</m> and thus is natural and useful. However, the open sets in this metric do not coincide with the open sets in the inner product topology. In fact, there is no inner product on <m>C[a,b]</m> that corresponds to the maximum modulus metric. </p>
+
+        <p>Because we are ultimately interested in analysis involving vector spaces of functions, we will need to consider a broader range of metrics than those strictly arising from inner products. We wish to replicate the properties that a norm inherits from inner product as seen in <xref ref="thm-norm"/> and in <xref ref="thm-triangle"/>. (These are the properties that make it possible do to analysis!)</p>
+
+        <definition xml:id="def-norm">
+            <p>Let <m>V</m> be a real or complex vector space. A <term>norm</term> on <m>V</m> is a map <m>\norm{\cdot}: V \to \R</m> which satisfies
+            <ol>
+                <li><m>\norm{x} > 0</m> if <m>x \neq 0</m>;</li>
+                <li><m>\norm{c x} = \abs{c}\norm{x}</m> for all <m>c \in \F</m> and <m>x \in V</m>;</li>
+                <li><m>\norm{x + y} \leq \norm{x} + \norm{y}</m> for all <m>x, y \in V</m>.</li>
+            </ol></p>
+
+            <p>A <term>normed space</term> is a pair <m>(V, \norm{\cdot})</m> where <m>V</m> is a real or complex vector space and <m>\norm{\cdot}</m> is a norm.</p>
+        </definition>
+
+        <p>We should observe that setting <m>c = 0</m> into property (2) above gives that <m>\norm{0} = 0</m> in a normed space.</p>
+
+        <exercise xml:id="ex-CX">
+            Show that the <term>supremum norm</term>  <m>\norm{\cdot}_\infty</m> on the complex vector space <m>C[a,b]</m> of all continuous complex valued functions on <m>[a,b]</m> defined by 
+            <me>
+                \norm{f}_\infty = \sup_{[a,b]} \abs{f(x)}
+            </me>
+            satisfies conditions 1-3 in <xref ref="def-norm"/>.
+        </exercise>
+
+        <p>In the same way that inner products give rise to norms, norms give rise to metrics.</p>
+        <theorem xml:id="thm-metric">
+            <p>In a normed space <m>(V, \norm{\cdot})</m>, the (distance) function <m>d: V \times V \to \R</m> induced by the norm <m>\norm{\cdot}</m> and defined by 
+            <me>
+                d(x, y) = \norm{x - y}
+            </me>
+            is a translation-invariant metric.</p>
+
+            <p>To say that a metric is translation-invariant is to say that <m>d(x + z, y+ z) = d(x,y)</m> for any <m>z \in V</m>.</p>
+        </theorem>
+
+        <proof>
+            We will show that <m>d</m> satisifes the four properties of <xref ref="def-metric"/>
+            <p>(1): From <xref ref="def-norm"/> (1), we have
+                <me>
+                    d(x, y) = \norm{x - y} > 0.
+                </me>
+                when <m>x \neq 0</m>.
+            </p>
+            <p>(2):
+                <me>
+                    d(x,x) = \norm{x - x} = \norm{0} = 0.
+                </me>
+            </p>
+            <p>(3): 
+                <me>
+                    d(x, y) = \norm{x - y} = \abs{-1}\norm{y - x} = \norm{y - x} = d(y,x).
+                </me>
+            </p>
+            <p>(4): From <xref ref="def-norm"/> (3), we have for all <m>y \in V</m>, 
+            <md>
+                <mrow>d(x,z) \amp= \norm{x - z}</mrow>
+                <mrow>\amp = \norm{x - y + y - z}</mrow>
+                <mrow>\amp \leq \norm{x - y} + \norm{y - z}</mrow>
+                <mrow>\amp = d(x,y) + d(y,z)</mrow>
+            </md></p>
+            <p>That <m>d</m> is translation invariance is straightforward and left to the reader.</p>
+
+        </proof>
+
+        <p>What we've developed so far gives a hierarchy of structured spaces, each category enveloping the previous; inner product spaces are normed spaces, and normed spaces are metric spaces. We can go one step further and consider more generally linear spaces that have a toplogy but not necessarily a metric. These spaces are called <term><url href="https://en.wikipedia.org/wiki/Topological_vector_space">topological vector spaces</url></term>, which are foundationally important in their own right, but well beyond the scope of this text. If you continue on your journey into Hilbert space theory, you'll meet them in functional analysis.</p>
+
+        <p>Analysis, particularly at the undergraduate level, can be lampooned as the art of reducing a problem to the triangle inequality and then taking limits. Even this gentle mockery includes a major mathematical idea - namely, that absolute values (and more generally norms) are well-behaved under limits. That is, in normed spaces the basic operators are <term>continuous</term> in the sense that small changes in input objects result in small changes in norm.</p>
+
+        <theorem xml:id="thm-norm-cont">
+            <p>In a normed space <m>(V, \norm{\cdot})</m>, the map <m>\norm{\cdot}:V \to \R</m> is continuous.</p>
+        </theorem>
+        <proof>
+            <p>Exercise.</p>
+        </proof>
+
+        <theorem xml:id="thm-algop-cont">
+            <p>In a normed space <m>(V,\norm{\cdot})</m>, the algebraic operations on <m>V</m> are continuous. That is, the maps
+            <md>
+                <mrow>+: V \times V \to V,</mrow>
+                <mrow>\cdot: \F \times V \to V,</mrow>
+            </md>
+            where <m>\F</m> denotes the scalar field, are continuous in the respective product topologies.</p>
+        </theorem>
+        <proof>
+            <p>We will show that scalar multiplication is continuous at an arbitrary point <m>(c, x) \in \F \times V</m>. For any <m>k \in \F, y \in V</m>, we have
+            <md>
+                <mrow>\norm{cx - ky} \amp = \norm{cx - kx + kx - ky}</mrow>
+                <mrow>\amp \leq \norm{cx - kx} + \norm{kx - ky}</mrow>
+                <mrow number="yes" xml:id="norm-pf-1">\amp = \abs{c-k}\norm{x} + \abs{k}\norm{x - y}.</mrow>
+            </md></p>
+            <p>Choose <m>\eps > 0.</m> Recall that we want to show that all nearby points <m>ky</m> have norm within <m>\eps</m> of <m>c x</m>. We'll choose neighborhoods of <m>c</m> and <m>x</m> in the following way:
+            <md>
+                <mrow>A_c \amp = \left\{ k \in \F: \abs{k - c} \lt \min\left(\frac{\eps}{2(1 + \norm{x})}, 1\right)\right\},</mrow>
+                <mrow>B_x \amp = \left\{y \in V: \norm{y - x} \lt \frac{\eps}{2(1 + \abs{c})}\right\}</mrow>
+            </md>
+            Then <m>A_c \times B_x</m> is an open neighborhood of <m>(c, x) \in \F \times V</m>. For <m>(k,y) \in A_c \times B_x</m>, we know by construction that
+            <me>
+                \abs{k} \lt 1 + \abs{c}.
+            </me>
+            Then by <xref ref="norm-pf-1"/>, we have
+            <md>
+                <mrow>\norm{cx - ky} \amp \leq  \abs{c-k}\norm{x} + \abs{k}\norm{x - y}</mrow>
+                <mrow> \amp \leq \frac{\eps}{2(1 + \norm{x})} \norm{x} + (1+ \abs{c})\frac{\eps}{2(1 + \abs{c})}</mrow>
+                <mrow>\amp = \eps.</mrow>
+            </md>
+            </p>
+
+            <p>The remaining part of the proof is similar and left as an exercise.</p> 
+        </proof>
+
+        <p>Finally, we note that (unsurprisingly), inner products are continuous on inner product spaces.</p>
+
+        <theorem xml:id="thm-ip-cont">
+            <p>In an inner product space <m>(V, \ip{\cdot}{\cdot})</m>, the inner product is continuous. That is, the map
+            <me>
+                \ip{\cdot}{\cdot}: V\times V \to \C
+            </me> 
+            is continuous in the product topology.</p>
+        </theorem>
+
+        <p>The proof is similar to the proof of <xref ref="thm-algop-cont"/> and is left as an exercise.</p>
+
+    </section>
+
+    <section xml:id="norm-2"><title>Closed linear subspaces</title>
+        <p>In this section we'll note the first major complication that working in infinite dimensions introduces. In particular, we need to be careful about what we mean by the term <q>closed</q>. Recall that in finite dimensions, a subset of a vector space is called a <term>subspace</term> if it is closed under arbitrary linear combinations. This is closure under <em>algebra</em> - <m>S \subset V</m> is a subspace if for all <m>x, y \in S</m> and <m>c_1, c_2 \in \F</m>, we have that <m>c_1 x + c_2 y \in S</m>.</p>
+
+        <p>On the other hand, in analysis we signify by <em>closed set</em> the idea that any convergent sequence in a set has a limit point in the set. This is <em>topological</em> closure. In finite dimensions, linear subspaces are topologically closed. In infinite dimensions it is easy to demonstrate that this is not true.</p>
+
+        <example xml:id="ex-ell0">
+            
+            
+                <definition xml:id="def-ell0"><p>Let <m>\ell_0</m> denote the space of sequences in <m>\C^\mathbb{N}</m> which have only finitely many non-zero terms. (That is, there is some index <m>n</m> beyond which the sequence has only <m>0</m> entries.)</p></definition> 
+                <p>It is straightforward to see that <m>\ell_0</m> is a linear subspace of <m>\ell^2</m>. However, <m>\ell_0</m> is <em>not</em> a closed set inside <m>\ell^2</m>. To see this, we will construct a convergent sequence that converges to a point outside of <m>\ell^2</m>. For each <m>k \in \mathbb{N}</m>, the sequence
+            <me>
+                x^k = \left(1, \frac{1}{2}, \ldots, \frac{1}{k}, 0, \ldots\right)
+            </me>
+            is an element of <m>\ell_0</m>. Considering each <m>x^k</m> as a vector in <m>\ell^2</m>, the sequence of vectors <m>(x^k)_{k=1}^\infty</m> converges to the limit point
+            <me>
+                y = \left(\frac{1}{n}\right)_{n=1}^{\infty}
+            </me>
+            in <m>\ell^2</m> since
+            <md>
+                <mrow>\norm{x^k - y} \amp = \norm{\left(0, \ldots, 0, \frac{1}{k+1}, \ldots \right)}</mrow>
+                <mrow>\amp = \left(\sum_{n = k+1}^\infty \frac{1}{n^2} \right)^{1/2} \to 0.</mrow>
+            </md>
+            That is, <m>x^k \to a</m> but <m>a \notin \ell_0</m>, and so <m>\ell_0</m> is not closed in <m>\ell^2</m>.</p>
+        </example>
+
+        <p>When we use the term subspace, we will always mean linear subspace of a vector space. At least for normed spaces, we can <q>fill in the edges</q> of a subspace by including the limit points.</p>
+
+        <theorem xml:id="thm-closed-subspace">
+            <p>The closure of a normed subspace is a subspace.</p>
+        </theorem>
+        <proof>
+            <p>Let <m>S</m> be a subspace of a normed space <m>V</m>, and let <m>\cl(S)</m> denote its closure. Let <m>x,y \in \cl(S)</m>. Then there exist sequences <m>(x_n), (y_n)</m> in <m>S</m> so that <m>x_n \to x</m> and <m>y_n \to y</m>. As addition is continuous, we get <m>x_n + y_n \to x+ y</m>. Because <m>S</m> is a subspace, <m>x_n + y_n</m> is in <m>S</m> for all <m>n</m>, and so <m>x+y</m> must be in <m>cl(S)</m>. We conclude that <m>S</m> is closed under addition. The argument that <m>S</m> is closed under scalar multiplication is similar. Thus, <m>\cl(S)</m> is a subspace of <m>V</m>.</p>
+        </proof>
+
+        <p>We will frequently wish to work with the smallest linear subspace containing a set of vectors <m>A \subset V</m>. (This is similar to the notion of the span of a set of vectors in finite dimensional spaces.)</p>
+
+        <definition xml:id="def-linear-span">
+            <p>Let <m>(V, \norm{\cdot})</m> be a normed space and let <m>A \subseteq V</m>. The <term>linear span of <m>A</m></term>, denoted <m>\span A</m>, is the intersection of all subspaces of <m>V</m> that contain <m>A</m>. The <term>closed linear span of <m>A</m></term>, denoted <m>\cl \span A</m>, is the intersection of all closed linear subspaces of <m>V</m> that contain <m>A</m>.</p>
+        </definition>
+
+        <exercise>
+            <p>Show that <m>\span A</m> is the unique subspace of <m>V</m> which contains <m>A</m> and is in turn contained in every subspace of <m>V</m> that contains <m>A</m>. Likewise, <m>\cl \span A</m> is the unique closed subspace of <m>V</m> that contains <m>A</m> and is in turn contained in every subspace of <m>V</m> that contains <m>A</m>.</p>
+        </exercise>
+
+        <p>While this might seem different from the notion of span that we learn in elementary linear algebra, these two definitions in fact coincide.</p>
+
+        <theorem xml:id="thm-span-lincomb">
+            <p>Let <m>F</m> denote the set of finite linear combinations of elements of <m>A</m>; that is,
+            <me>
+                F = \left\{\sum_{i=1}^k c_i a_i : n \in \mathbb{N}, c_i \in \F, a_i \in A\right\}.
+            </me>
+            Then <m>F = \span A</m>.</p>
+        </theorem>
+        <proof>
+            Exercise.
+        </proof>
+        <p>We can think of the elements <q>missing</q> from <m>\span A</m> as the limit points of finite linear combinations of elements in <m>A</m>, as the next theorem shows (and which justifies the notation <m>\cl \span A</m>).</p>
+
+        <theorem xml:id="thm-cl-span">
+            <p>For any set <m>A</m> contained in a normed space <m>V</m>, <m>\cl \span A</m> is the closure of <m>\span A</m>.</p>
+        </theorem>
+
+        <proof>
+            <p>By <xref ref="thm-closed-subspace"/>, <m>\cl (\span A)</m> is a subspace of <m>V</m>. It is closed and contains <m>A</m>, and so by <xref ref="def-linear-span"/> it must be that <m>\cl \span A \subseteq \cl(\span A)</m>.</p>
+            <p>On the other hand, <m>\cl \span A</m> is closed and contains <m>A</m> and so it must be that <m>\cl(\span A) \subseteq \cl\span A</m>.</p>
+        </proof>
+
+        <p>We should point out again that in some sense, there is one finite dimensional vector space over <m>\F</m> for each dimension <m>n</m>, namely <m>\F^n</m>. We can make this more precise by pointing out that we can always induce a Euclidean norm via coordinatization and that the norm on <m>V</m> is equivalent to a Euclidean norm (by which we mean that they determine the same topology).</p>
+
+        <theorem xml:id="thm-finite-norm-equiv">
+            <p>Any two norms on a finite dimensional vector space <m>V</m> are equivalent.</p>
+        </theorem>
+
+        <p>The proof of this theorem will require some important results from real analysis. The theorems will be stated in an appendix.</p>
+
+        <proof>
+            <p>Since <m>V</m> is finite dimensional, let <m>\{e_1, \ldots, e_n\}</m> be a basis for <m>V</m> so that every <m>v \in V</m> has a representation 
+            <me>
+                v = c_1 e_1 + \ldots c_n e_n.
+            </me> 
+            Define a <q>coordinate Euclidean norm</q> <m>\rho</m> on <m>V</m> by
+            <me>
+                \rho\left(\sum_{i=1}^n c_i e_i \right) = \left(\sum_{i=1}^n \abs{c_i}^2 \right)^{1/2}.
+            </me>
+            </p>
+
+            <p>We will show that <m>\norm{\cdot}</m> and <m>\rho</m> determine the same open sets, and hence the same topology. (That is, we will show that any open <m>\rho</m>-ball is contained in a <m>\norm{\cdot}</m>-ball and vice versa.)</p>
+
+            <p>Let <m>v \in V = \sum_{i=1}^n c_i e_i</m>. Then
+            <md>
+                <mrow>\norm{x} \amp= \norm{\sum_{i=1}^n c_i e_i}</mrow>
+                <mrow>\amp \leq \sum_{i=1}^n \norm{c_i e_i}</mrow>
+                <mrow>\amp = \sum_{i=1}^n \abs{c_i} \norm{e_i}.</mrow>
+            </md>
+            This is an inner product of vectors in <m>\F</m>, and so by <xref ref="thm-cauchy-schwarz"> Cauchy-Schwarz</xref>, we get
+            <md>
+                <mrow>\norm{x} \amp \leq \sum_{i=1}^n \abs{c_i} \norm{e_i}</mrow>
+                <mrow>\amp \leq \left(\sum_{i=1}^n \abs{c_i}^2 \right)^{1/2} \left(\sum_{i=1}^n \norm{e_i}^2 \right)^{1/2}</mrow>
+                <mrow>\amp = M \rho(x),</mrow>
+            </md>
+            where <m>M</m> is the fixed positive constant 
+            <me>
+                M = \left(\sum_{i=1}^n \norm{e_i}^2 \right)^{1/2}.
+            </me>
+            Then for any <m>\eps > 0</m>, the open <m>\norm{\cdot}</m>-ball of radius <m>\eps</m> about <m>v \in V</m> contains the open <m>\rho</m>-ball of radius <m>\frac{\eps}{M}</m> about <m>v</m>. We conclude that every <m>\norm{\cdot}</m>-open set in <m>V</m> is also <m>\rho</m>-open.</p>
+
+            <p>In the other direction, we exploit properties of the real numbers. Define a function <m>f:\F^n \to \R</m> by 
+            <me>
+                f(c_1, \ldots, c_n) = \norm{\sum_{i=1}^n c_i e_i}.
+            </me>
+            (We can think of this function as taking coordinates back to vectors in <m>V</m>.) <m>f</m> is a clearly a continuous function with respect to the standard topology on <m>\F^n</m>. The <xref ref="thm-heine-borel">Heine-Borel theorem</xref> gives that the set
+            <me>
+                U = \left\{(c_1, \ldots, c_n): \sum_{i=1}^n \abs{c_i}^2 = 1\right\}
+            </me> 
+            is compact in <m>\F^n</m>. (This set consists of the coordinates of those points <m>v \in V</m> for which <m>\rho(v) = 1</m>.) Thus, by <xref ref="thm-comp-inf"/>, <m>f</m> attains its infimum <m>m</m> on <m>U</m>. Since the <m>e_i</m> are a basis and thus linearly independent, <m>m</m> cannot be <m>0</m>, and so <m>m > 0</m>. Thus, we have shown that <m>\norm{v} \geq m > 0</m> whenever <m>\rho(v) = 1</m>. By <xref ref="def-norm"/> (2), we conclude that
+            <me>
+                \norm{v} \geq m \rho(v) \hspace{.1in} \text{ for all } v \in V.
+            </me>
+            Thus, for any <m>\eps > 0</m>, the <m>\rho</m>-ball of radius <m>\eps</m> about a point <m>v \in V</m> contains the <m>\norm{\cdot}</m>-ball of radius <m>m \eps</m> about <m>v</m>. We conclude that every <m>\rho</m>-open set is also <m>\norm{\cdot}</m>-open. 
+            </p>
+        </proof>
+
+        <p>The correspondence between finite dimensional normed spaces and <m>\F^n</m> extends to the Heine-Borel theorem itself.</p>
+
+        <corollary xml:id="thm-norm-heine">
+            <p>Closed and bounded sets in a finite dimensional normed space are compact.</p>
+        </corollary>
+
+        <proof>
+            <p>Let <m>(V, \norm{\cdot})</m> be a finite-dimensional normed space. Suppose that <m>K \subseteq V</m> is closed and bounded. Then, since <m>\rho(x) \leq \frac{1}{m} \norm{v}</m> for all <m>v \in V</m>, <m>K</m> is also <m>\rho</m>-bounded. Because <m>\norm{\cdot}</m> and <m>\rho</m> are equivalent norms, they determine the same topology, and so <m>K</m> is also <m>\rho</m>-closed. Thus, in the Euclidean space <m>(V, \rho)</m>, <m>K</m> is closed and bounded and thus compact by the <xref ref="thm-heine-borel">Heine-Borel theorem</xref>.
+            </p>
+        </proof>
+
+    </section>
+
+    <section xml:id="norm-3">
+        <title>Exercises</title>
+        <exercises>
+            <exercise>
+                <p><m>\ell^\infty</m> is the complex vector space of bounded sequences of complex numbers with entrywise addition and scalar multiplication. Verify that the <q>infinity norm</q> 
+                <me>
+                    \norm{x}_\infty = \sup_{n} \abs{x_n}
+                </me>
+                meets the requirements of <xref ref="def-norm"/>.
+                </p>
+            </exercise>
+            <exercise>
+                <p><m>\ell^1</m> is the complex vector space of absolutely summable sequences of complex numbers - that is, all sequences <m>(x_n)</m> such that
+                <me>
+                    \sum_{n=1}^\infty \abs{x_n} \lt \infty,
+                </me>
+                with entrywise addition and scalar multiplication. Show that the <q>1-norm</q>
+                <me>
+                    \norm{x}_1 = \sum_{n = 1}^\infty \abs{x_n}
+                </me>
+                meets the requirements of <xref ref="def-norm"/>.</p>
+            </exercise>
+            <exercise>
+                <p>Prove that the parallelogram law does not hold for <m>\norm{\cdot}_\infty</m> on the space <m>C[0,1]</m>. Conclude that there is no inner product on <m>C[0,1]</m> such that <m>\ip{f}{f}^{1/2} = \norm{f}_\infty</m>.
+                </p>
+            </exercise>
+            <exercise>
+                <p>Prove that, for <m>\alpha \in \D</m>, the set
+                    <me>
+                        \{f \in RH^2: f(\alpha) = 0 \}
+                    </me>
+                is a closed linear subspace of <m>RH^2</m> (see <xref ref="table-ipspaces">Table</xref>).
+                </p>
+            </exercise>
+            <exercise>
+                <p>Show that the subspace of polynomials is not closed in <m>C[0,1]</m> in the supremum norm <m>\norm{\cdot}_\infty</m> or in the inner product <xref ref="eq-C-ip"/>.</p>
+            </exercise>
+            <exercise xml:id="ex-norm-c0">
+                <p><m>c_0</m> denotes the subspace of <m>\ell^\infty</m> consisting of all sequences <m>(x_n)</m> which tend to 0 as <m>n \to \infty</m>. Prove that <m>c_0</m> is closed in <m>\ell^\infty</m> with respect to <m>\norm{\cdot}_\infty</m>.</p>
+            </exercise>
+            <exercise>
+                <p>Guess the closed linear span of the set <m>\{1, x, x^2, \ldots\}</m> in <m>C[0,1]</m>. (We'll see the answer later. This result is fundamental.)</p>
+            </exercise>
+            <exercise>
+                <p>The <term>open ball</term> (of radius 1) in a normed space <m>(V, \norm{\cdot})</m> is the set
+                    <me>
+                        G = \{x \in V: \norm{x} \lt 1\}.
+                    </me>
+                Likewise, the <term>closed ball</term> is
+                    <me>
+                        F = \{x \in V: \norm{x} \leq 1\}.
+                    </me>
+                    Show that the closed ball is the closure of the open ball. (Then argue that the ball of radius <m>r</m> centered at <m>a</m> satisfies the same property.)</p>
+                </exercise>
+                <exercise>
+                    <p>Show that <m>c_0</m> is the closed linear span in <m>\ell^\infty</m> of the set <m>\{e_n: n \in \mathbb{N}\}</m>, where <m>e_n</m> is the sequence with a <m>1</m> in the <m>n</m>th position and <m>0</m> otherwise.</p>
+                </exercise>
+                <exercise>
+                    <p>Give an example of an inner product space <m>V</m> and a dense subspace <m>E</m> of <m>V</m> which is of codimension <m>1</m> in <m>V</m>.</p>
+                </exercise>
+                <exercise>
+                    <p>Prove that every finite dimensional subspace of a normed space is closed.</p>
+                </exercise>
+        </exercises>
+
+    </section>
+
+</chapter>
