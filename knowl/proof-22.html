@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-08-30T17:09:15-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>(\(\Rightarrow\)): If \(x \in E^\perp\text{,}\) then for any \(y \in E\text{,}\) \(x\) and \(y\) are orthogonal. Then <a data-knowl="./knowl/thm-ortho-pythagorean.html" title="Theorem 5.1.4">Theorem 5.1.4</a> gives</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{x - y}^2 = \norm{x}^2 + \norm{y}^2 \geq \norm{x}^2.
+\end{equation*}
+</div>
+<p>(\(\Leftarrow)\text{:}\) Now suppose that the inequality in <a data-knowl="./knowl/eq-norm-ortho.html" title="Equation 5.5.1">(5.5.1)</a> holds. Pick an arbitrary \(y \in E\) and a scalar \(c \in \C\text{.}\) As \(E\) is a linear subspace, \(cy \in E\text{,}\) and so</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{x - cy}^2 \geq \norm{x}^2.
+\end{equation*}
+</div>
+<p>Now we leverage inner product geometry. Notice that</p>
+<div class="displaymath">
+\begin{align*}
+\norm{ x - cy}^2 = \ip{x - cy}{\cc{x - cy}} \amp= \norm{x}^2 - \ip{x}{\cc{cy}} - \ip{cy}{\cc{x}} + \norm{cy}^2\\
+\amp= \norm{x}^2 - 2 \cc{c}\RE \ip{x}{y} + \abs{c}^2 \norm{y}^2.
+\end{align*}
+</div>
+<p>Combining this observation with the previous inequality and canceling the \(\norm{x}^2\text{,}\) we get for all \(c \in \C\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+- 2 \cc{c}\RE \ip{x}{y} + \abs{c}^2 \norm{y}^2 \geq 0.
+\end{equation*}
+</div>
+<p>Now, we'll drop the real part of the inner product. Let \(z\) be a unimodular constant so that \(\cc{z}\ip{x}{y} = \abs{\ip{x}{y}}\) (if you don't see why such a constant should exist, you should think about it). Then the inequality above holds in particular for vectors of the form \(y = tz\) where \(t \in \R^+\text{,}\) which gives</p>
+<div class="displaymath">
+\begin{equation*}
+- 2 t\RE \ip{x}{y} + t^2 \norm{y}^2 \geq 0.
+\end{equation*}
+</div>
+<p>We can rearrange this into</p>
+<div class="displaymath">
+\begin{equation*}
+\abs{\ip{x}{y}} \leq \frac{1}{2} t \norm{y}^2,
+\end{equation*}
+</div>
+<p>for all \(t \in \R^+\text{.}\) Letting \(t \to 0\text{,}\) we conclude that \(x \perp y\) for all \(y \in E\text{,}\) and so \(x \in E^\perp\text{.}\)</p></article><span class="incontext"><a href="ortho-5.html#proof-22">in-context</a></span>
+</body>
+</html>

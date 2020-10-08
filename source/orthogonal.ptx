@@ -41,7 +41,7 @@
         <p>At this point, this is only a formal sum in a formal definition. We want to understand the extent to which orthogonal systems can play the role of coordinate systems in finite dimensions, with the ultimate idea of working in coordinates. First, given our definition of orthogonality, we can generalize the Pythagorean theorem.</p>
 
         <theorem xml:id="thm-ortho-pythagorean">
-            <p>If <m>x_1, \ldots, x_n</m> is a (finite) orthogonalsystem in an inner product space, then
+            <p>If <m>x_1, \ldots, x_n</m> is a (finite) orthogona system in an inner product space, then
             <me>
                 \norm{\sum_{i=1}^n x_i}^2 = \sum_{i=1}^n \norm{x_i}^2.
             </me></p>
@@ -352,5 +352,180 @@
 
         <p>It is important that we not overstate the implications of the theorem above. In finite dimensions, for example, the space of polynomials of degree at most <m>n</m> is isomorphic to <m>\C^n</m> but is also a set of functions with properties that interact with the geometry of <m>\C^n</m>. Both the vector space properties and the functional properties are important - what the isomorphism provides is a set of properties that the space carries by relation with Euclidean space. In the same way, while all separable Hilbert spaces can be thought of as <m>\ell^2</m> in some sense, it is the interplay between, say, analytic properties and the Hilbert space structure that we are interested. However, it is valuable (and useful) to know that we can think of Hilbert space as <m>\C^n</m> or <m>\ell^2</m> when it is convenient.</p>
     </section>
+
+    <section xml:id="ortho-5"><title>Orthogonal complements</title>
+        <p>One of the most useful properties of orthogonality in Euclidean space is to decompose the space into orthogonal subspaces - this allows vectors to be expressed uniquely as sums of components lying in each subspace, for example. (You will have done this implicitly when studying projection onto subspaces, for example.) The same geometric properties hold in Hilbert space.</p>
+
+        <definition xml:id="def-orthocomplement">
+            <p>The <term>orthogonal complement</term> of a subset <m>E</m> of a Hilbert space <m>\hilbert</m> is the set
+                <me>
+                    E^\perp = \{x \in \hilbert: \ip{x}{y} = 0 \text{ for all } y \in E\}.
+                </me>
+            </p>
+        </definition>
+
+        <exercise>
+            <p>Let <me>E = \{f \in L^2(0,1): f(t) = 0 \text{ for } t \in (0, \frac{1}{2})\}.</me>  Describe <m>E^\perp</m> in <m>L^2(0,1)</m>.</p>
+        </exercise>
+
+        <p>It is a useful fact that orthogonal complements are always closed subspaces relative to the larger Hilbert space.</p>
+        <theorem xml:id="thm-perp-closed">
+            <p>For any set <m>E \subset \hilbert</m>, the orthogonal complement <m>E^\perp</m> is a closed linear subspace of <m>\hilbert</m>.</p>
+        </theorem>
+        <proof>
+            Exercise.
+        </proof>
+
+        Elements in an orthgonal complement of a subspace are precisely those that satisfy a sort of <q>least distance</q> property - that is, perturbing <m>x</m> by any vector in <m>E</m> doesn't get you any closed to <m>E</m>. This leads to a nice norm characterization of the orthogonal complement.
+        <lemma xml:id="lemma-norm-ortho">
+            <p>Let <m>E</m> be a linear subspace of an inner produt space <m>\hilbert</m> and let <m>x</m> be a vector in <m>\hilbert</m>. Then <m>x \in E^\perp</m> if and only if 
+            <men xml:id="eq-norm-ortho">
+                \norm{x - y} \geq \norm{x} \text{ for all } y \in E.
+            </men>
+            </p>
+        </lemma>
+
+        <proof>
+            <p>(<m>\Rightarrow</m>): If <m>x \in E^\perp</m>, then for any <m>y \in E</m>, <m>x</m> and <m>y</m> are orthogonal. Then <xref ref="thm-ortho-pythagorean"/> gives
+            <me>
+                \norm{x - y}^2 = \norm{x}^2 + \norm{y}^2 \geq \norm{x}^2.
+            </me></p>
+
+            <p>(<m>\Leftarrow)</m>: Now suppose that the inequality in <xref ref="eq-norm-ortho"/> holds. Pick an arbitrary <m>y \in E</m> and a scalar <m>c \in \C</m>. As <m>E</m> is a linear subspace, <m>cy \in E</m>, and so
+            <me>
+                \norm{x - cy}^2 \geq \norm{x}^2.
+            </me> Now we leverage inner product geometry. Notice that 
+            <md>
+                <mrow>\norm{ x - cy}^2 = \ip{x - cy}{\cc{x - cy}} \amp= \norm{x}^2 - \ip{x}{\cc{cy}} - \ip{cy}{\cc{x}} + \norm{cy}^2</mrow>
+                <mrow>\amp= \norm{x}^2 - 2 \cc{c}\RE \ip{x}{y} + \abs{c}^2 \norm{y}^2.</mrow>
+            </md>
+            Combining this observation with the previous inequality and canceling the <m>\norm{x}^2</m>, we get for all <m>c \in \C</m>,
+            <me>
+                - 2 \cc{c}\RE \ip{x}{y} + \abs{c}^2 \norm{y}^2 \geq 0.
+            </me>
+            Now, we'll drop the real part of the inner product. Let <m>z</m> be a unimodular constant so that <m>\cc{z}\ip{x}{y} = \abs{\ip{x}{y}}</m> (if you don't see why such a constant should exist, you should think about it). Then the inequality above holds in particular for vectors of the form <m>y = tz</m> where <m>t \in \R^+</m>, which gives
+            <me>
+                - 2 t\RE \ip{x}{y} + t^2 \norm{y}^2 \geq 0.
+            </me>
+            We can rearrange this into
+            <me>
+                \abs{\ip{x}{y}} \leq \frac{1}{2} t \norm{y}^2,
+            </me>
+            for all <m>t \in \R^+</m>. Letting <m>t \to 0</m>, we conclude that <m>x \perp y</m> for all <m>y \in E</m>, and so <m>x \in E^\perp</m>.</p>
+        </proof>
+
+        <p>Now we can produce the Hilbert space analogue of decomposing a vector into orthogonal components with repect to orthogonal subspaces.</p>
+
+        <theorem xml:id="thm-hilbert-decomp">
+            <p>Let <m>E</m> be a closed linear subspace of a Hilbert space <m>\hilbert</m>, and suppose that <m>x \in \hilbert</m>. Then there exists <m>y \in E</m> and <m>z \in E^\perp</m> so that <m>x = y + z</m>.</p>
+        </theorem>
+
+        <proof>
+            <p>The main idea of the proof is to take <m>y</m> to be the closest point to <m>x</m> in  <m>E</m>. That is, following <xref ref="thm-closest-point"/>, <m>y</m> is the point in <m>E</m> so that <m>\norm{x - y} \leq \norm{x - v}</m> for all <m>v \in E</m>. Now define <m>z = x - y</m> so that <m>x = y + z</m>. Now, for any <m>v \in E</m>, we know that <m>y + v \in E</m> and so since <m>y</m> is the closest point to <m>x</m>, we have
+            <me>
+                \norm{z} = \norm{x - y} \leq \norm{x - (y + m)}.</me>
+            That is, for all <m>v \in E</m>, we have
+            <me>
+            \norm {z} \leq \norm {z - m}.
+            </me>
+            By <xref ref="lemma-norm-ortho"/>, we conclude that <m>z \in E^\perp</m>. </p>
+        </proof>
+
+        An immediate consequence is that the orthogonal complement of an orthogonal complement of a closed linear subpsace is the space itself.
+        <corollary xml:id="corr-perp-perp">
+            <p>If <m>E</m> is a closed linear subspace of a Hilbert space <m>\hilbert</m>, then <m>(E^\perp)^\perp = E</m>.</p>
+        </corollary>
+        <proof>
+            <p>Every element of <m>E</m> is orthogonal to <m>E^\perp</m> by definition, and so <m>E \subseteq E^\perp</m>. On the other hand, let <m>x \in (E^\perp)^\perp</m>. Then by <xref ref="thm-hilbert-decomp"/>, <m>x = y + z</m> where <m>y \in E</m> and <m>z \in E^\perp</m>. Because <m>x \in (E^\perp)^\perp</m>, we have <m>\ip{x}{z} = 0</m>. But then
+            <me>
+            0 = \ip{x}{z} = \ip{y + z}{z} = \ip{y}{z} + \ip{z}{z} = \norm{z}^2,
+            </me>
+            and so <m>z = 0</m>. This means that <m>x = y</m> and thus <m>x \in E</m> and <m>(E^\perp)^\perp \subseteq E</m>. The two-way inclusion proves the claim.</p>
+        </proof>
+
+        <definition xml:id="def-direct-sum">
+            <p>Let <m>E, F</m> be subspaces of a vector space <m>V</m>. <m>V</m> is the <term>direct sum</term> of <m>E</m> and <m>F</m>, denoted <m>V = E \oplus F</m>, if <m>M \cap N = \{0\}</m> and every vector in <m>V</m> can be written as a sum of a vector in <m>E</m> and a vector in <m>F</m>. If <m>V</m> is an inner product space and <m>E \perp F</m> (in the sense that <m>\ip{x}{y} = 0</m> for <m>x \in E, y \in F</m> then <m>V</m> is the <term>orthogonal direct sum</term> of <m>E</m> and <m>F</m>.</p>
+        </definition>
+
+        <p>It is immediate that for any closed linear subspace <m>E</m> of a Hilbert space <m>\hilbert</m> that <m>\hilbert</m> is the orthogonal direct sum <m>E \oplus E^\perp</m>.</p>
+
+        <exercise>
+            <p>Show that <m>L^2(-1,1)</m> can be orthongonally decomposed into the direct sum of its subspaces of even and odd functions.</p>
+        </exercise>
+
+    </section>
+
+    <section xml:id="ortho-ex"><title>Exercises</title>
+        <exercises>
+            <exercise>
+                <p>Find a vector in <m>\C^3</m> that is orthogonal to <m>(1,1,1)</m> and <m>(1, \omega, \omega^2)</m> where <m>\omega = e^{2\pi i/3}</m>.</p>
+            </exercise>
+            <exercise>
+                <p>Consider the sequence of functions given by <m>e_j(z) = z^j</m> for <m>z \in \C</m>, <m>j \in \mathbb{Z}</m> (notice that this includes the reciprocals of the monomials). Show that <m>(e_j)_{-\infty}^\infty</m> is an orthonormal sequence in <m>RL^2</m> (recall the definition from the <xref ref="table-ipspaces">Table</xref>).</p>
+            </exercise>
+            <exercise>
+                <p>Consider the family of functions given by <m>f_k(t) = e^{ikt}</m> where <m>t \in \R</m> and the index <m>k \in \R</m>. (Notice that here we are dealing with an uncountable index set, and so this is not a sequence). Show that <m>(f_k)_{k \in \R}</m> is an orthonormal system in <m>TP</m> (recall the definition from the <xref ref="table-ipspaces">Table</xref>).</p>
+            </exercise>
+            <exercise>
+                <p>Let <m>\la_1, \la_2</m> be elements in the complex unit disk <m>\D</m>. Define functions <m>f_1, f_2</m> by 
+                <me>
+                    f_1(z) = \frac{(1 - \abs{\la_1}^2)^{1/2}}{1 - \cc{\la_1} z},
+                </me>
+                <me>
+                    f_2(z) = \frac{z - \la_1}{1 - \cc{\la_1}z} \cdot \frac{(1 - \abs{\la_2}^2)^{1/2}}{1 - \cc{\la_2} z}
+                </me>
+                (the first term in <m>f_2</m> is a special type of function called an <url href="https://www.math3ma.com/blog/automorphisms-of-the-unit-disc">automorphism of the disk</url>). Show that <m>f_1, f_2</m> is an orthonormal system in <m>RH^2</m> (recall the definition from the <xref ref="table-ipspaces">Table</xref>).</p>
+            </exercise>
+            <exercise>
+                <p>Let <m>\alpha \in \C</m> be a complex number off the unit circle, i.e. <m>\abs{\alpha}\neq 1</m>. Find the Fourier coefficients of the function <m>f \in RL^2</m> given by
+                <me>
+                    f(z) = \frac{1}{z - \alpha}
+                </me>
+                with respect to the orthonormal sequence <m>e_j(z) = z^j</m> where <m>j \in \Z</m>. (You need to consider the interior and exterior of the disk separately.)</p>
+            </exercise>
+            <exercise>
+                <p>This exercise extends to infinite dimensions the <term>Gram-Schmidt</term> process. Let <m>x_1, x_2, \ldots</m> be a sequence of linearly independent vectors in an inner product space <m>V</m>. Define new vectors <m>e_n</m> by the recursive relation
+                <md>
+                    <mrow>e_1 \amp= x_1 / \norm{x_1};</mrow>
+                    <mrow>f_n \amp= x_n - \sum_{j=1}^n \ip{x_n}{e_j}e_j \text{ for } n \geq 2;</mrow>
+                    <mrow>e_n \amp= f_n / \norm{f_n}, \text{ for } n \geq 2.</mrow>
+                </md>
+                Show that <m>f_n</m> is an orthonormal sequence with the same closed linear span as <m>x_n</m>.</p>
+            </exercise>
+            <exercise>
+                <p>The first three <url href="https://en.wikipedia.org/wiki/Legendre_polynomials">Legendre polynomials</url> are given by
+                <md>
+                    <mrow>P_0(x) \amp= 1,</mrow>
+                    <mrow>P_1(x) \amp= x,</mrow>
+                    <mrow>P_2(x) \amp= \frac{1}{2}(3x^2 - 1).</mrow>
+                </md>
+                Show that these are scalar multiples of the orthonormal set generated by applying the Gram-Schmidt process to the vectors <m>1, x, x^2</m> in <m>L^2(-1,1)</m>.</p>
+            </exercise>
+            <exercise>
+                <p>Find the closest point to <m>x = (1,-1,1)</m> in the linear span of <m>(1, \omega, \omega^2)</m> and <m>(1, \omega^2, \omega)</m>, where <m>\omega = e^{2\pi i/3}</m>.</p>
+            </exercise>
+            <exercise>
+                <p>Let <m>\hilbert</m> be a Hilbert space, and let <m>M</m> be a closed linear subspace of <m>\hilbert</m>; that is, <m>M</m> is a Hilbert space with respect to restricted inner product from <m>\hilbert</m>. Let <m>(e_n)_1^\infty</m> be a complete orthonormal sequence in <m>M</m>. Show that for any <m>x \in \hilbert</m>, the best approximation to <m>x</m> in <m>M</m> is 
+                <me>
+                    y = \sum_{j = 1}^\infty \ip{x}{e_j} e_j.
+                </me>
+                (Compare to the formula for projecting onto a subspace in Euclidean space <xref ref="thm-finite-coords"/>.)</p>
+            </exercise>
+            <exercise>
+                <p>Prove that the standard orthonormal sequence of <q>coordinate vectors</q> is complete in <m>\ell^2</m>.</p>
+            </exercise>
+            <exercise>
+                <p>Prove that the orthonormal sequence of mononomials <m>(e_j(x))_0^\infty</m> with <m>e_j(z) = z^j</m> is complete in <m>RH^2</m>.</p>
+            </exercise>
+            <exercise>
+                <p>Show that for a fixed <m>n</m>, the orthogonal complement in <m>RH^2</m> of the space given by
+                <me>
+                    M = \{z^n f: f \in RH^2\}
+                </me>
+                is the space of polynomials of degree less than <m>n</m>.</p>
+            </exercise>
+        </exercises>
+    </section>
+
 
 </chapter>
