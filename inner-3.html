@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-30T17:09:14-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-07T17:36:28-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Examples of inner product spaces</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
@@ -24,7 +26,7 @@ MathJax.Hub.Config({
     jax: ["input/AsciiMath"],
     extensions: ["asciimath2jax.js"],
     TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
         equationNumbers: { autoNumber: "none", useLabelIds: true, },
@@ -41,23 +43,21 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
-<script>var logged_in = false;
-var role = 'student';
-var guest_access = true;
-var login_required = false;
-var js_version = 0.12;
-</script>
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
   \DeclareMathOperator{\IM}{Im}
   \DeclareMathOperator{\ess}{ess}
   \DeclareMathOperator{\intr}{int}
@@ -165,7 +165,7 @@ var js_version = 0.12;
 <p class="byline">Ryan Tully-Doyle</p>
 </div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="inner-2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="inner.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="inner-4.html" title="Next">Next</a></span></div>
 </div>
@@ -173,9 +173,9 @@ var js_version = 0.12;
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="inner-2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="inner.html" title="Up">Up</a><a class="next-button button toolbar-item" href="inner-4.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link">
+<li class="link frontmatter">
 <a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
 </li>
 <li class="link">
@@ -219,13 +219,16 @@ var js_version = 0.12;
 <li><a href="ortho-ex.html" data-scroll="ortho-ex">Exercises</a></li>
 </ul>
 </li>
-<li class="link"><a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Appendix: Results from analysis</span></a></li>
+<li class="link">
+<a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Dual spaces</span></a><ul><li><a href="dual-1.html" data-scroll="dual-1">Linear functionals</a></li></ul>
+</li>
+<li class="link"><a href="chapter-7.html" data-scroll="chapter-7"><span class="codenumber">7</span> <span class="title">Appendix: Results from analysis</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="inner-3"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="inner-3"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Examples of inner product spaces</span>
 </h2>
-<a href="inner-3.html" class="permalink">¶</a><p id="p-70">So far, our examples of inner product spaces have been:</p>
+<p id="p-70">So far, our examples of inner product spaces have been:</p>
 <ol class="decimal">
 <li id="li-33">\(\C^n\text{:}\) the space of \(n\) dimensional complex vectors equipped with the inner product<div class="displaymath">
 \begin{equation*}
@@ -260,7 +263,7 @@ var js_version = 0.12;
 \ip{f}{g} = \frac{1}{2\pi i} \int_\T f(z) \cc{g(z)} \frac{\dd z}{z},\label{eq-RL-ip}\tag{2.3.1}
 \end{equation}
 </div>
-<p>with the integral taken as \(z\) travels around \(\T\) counterclockwise. \(RL^2\) is those rational functions with no <a class="external" href="https://en.wikipedia.org/wiki/Zeros_and_poles" target="_blank">pole</a> on the unit circle \(\T\text{.}\)</p>
+<p data-braille="continuation">with the integral taken as \(z\) travels around \(\T\) counterclockwise. \(RL^2\) is those rational functions with no <a class="external" href="https://en.wikipedia.org/wiki/Zeros_and_poles" target="_blank">pole</a> on the unit circle \(\T\text{.}\)</p>
 <p id="p-74">We can restrict \(RL^2\) to the subspace of functions that are analytic on the closed unit disk \(\cl{\D}\text{,}\) where \(\D = \{z: \abs{z} \lt 1\}\text{.}\) We will denote this space of functions \(RH^2\text{.}\) It is an inner product space with the same inner product as \(RL^2\text{.}\) These spaces are subspaces of the larger spaces of functions \(L^2\) and \(H^2\text{,}\) which will be discussed detail as we proceed.</p>
 <p id="p-75">Another family of important function spaces are called <dfn class="terminology">Sobolev spaces</dfn>. The simplest example is the space \(W[a,b]\) of continuously differentiable functions with values in \(\C\) with the inner product</p>
 <div class="displaymath">
@@ -268,27 +271,27 @@ var js_version = 0.12;
 \ip{f}{g} = \int_a^b f(t) \cc{g(t)} + f'(t) \cc{g'(t)} \, \dd t.\label{eq-W-ip}\tag{2.3.2}
 \end{equation}
 </div>
-<p>Including the derivative in the inner product gives control over the behavior of both the function and the derivative. \(W\) and the broader family of Sobolev spaces are central to the study of differential equations.</p>
+<p data-braille="continuation">Including the derivative in the inner product gives control over the behavior of both the function and the derivative. \(W\) and the broader family of Sobolev spaces are central to the study of differential equations.</p>
 <p id="p-76">Of central importance in engineering and the sciences is the space of <dfn class="terminology">trigonometric polynomials</dfn>, which are functions of the form</p>
 <div class="displaymath">
 \begin{equation*}
 T(x) = a_0 + \sum_{n=0}^N a_n \cos(nx) + i\sum_{n=1}^N b_n \sin nx,
 \end{equation*}
 </div>
-<p>where \(a_n, b_n \in \C\) and \(1 \leq n \leq N\text{.}\) Using Euler's identity, it is computationally efficient to use the equivalent characterization</p>
+<p data-braille="continuation">where \(a_n, b_n \in \C\) and \(1 \leq n \leq N\text{.}\) Using Euler's identity, it is computationally efficient to use the equivalent characterization</p>
 <div class="displaymath">
 \begin{equation*}
 f(x) = \sum_{n=-N}^N c_n e^{inx}.
 \end{equation*}
 </div>
-<p>The space \(TP\) of trigonometric polynomials is a complex vector space with pointwise addition and scalar multiplication. That the relation</p>
+<p data-braille="continuation">The space \(TP\) of trigonometric polynomials is a complex vector space with pointwise addition and scalar multiplication. That the relation</p>
 <div class="displaymath">
 \begin{equation}
 \ip{f}{g} = \frac{1}{2\pi} \int_{-T}^T f(x) \cc{g(x)} \, \dd x\label{eq-TP-ip}\tag{2.3.3}
 \end{equation}
 </div>
-<p>is an an inner product on \(TP\) is left as an exercise.</p>
-<article class="assemblage-like" id="table-ipspaces"><div class="displaymath" id="p-77">
+<p data-braille="continuation">is an an inner product on \(TP\) is left as an exercise.</p>
+<article class="assemblage assemblage-like" id="table-ipspaces"><div class="displaymath" id="p-77">
 \begin{equation*}
 \begin{array}{l|l|l}
 \text{Space} \amp \text{Elements} \amp \text{Inner product} \\ \hline
@@ -303,7 +306,5 @@ TP \amp f(x) = \sum_{-N}^N c_n e^{inx} \amp \ip{f}{g} = \frac{1}{2\pi} \int_{-T}
 \end{equation*}
 </div></article></section></div></main>
 </div>
-<div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

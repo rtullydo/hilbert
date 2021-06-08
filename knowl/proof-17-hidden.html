@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-30T17:09:15-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-07T17:36:33-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><article class="hiddenproof"><p>\(\Rightarrow:\) Suppose that \(\sum_{n=1}^\infty \la_n e_n = x\text{.}\) For a given \(k\) and any index \(m\) beyond \(k\text{,}\) orthogonality gives</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \sum_{n=1}^m \ip{\la_n e_n}{e_k} = \sum_{n=1}^m \la_n \ip{e_n}{e_k} = \la_k.
 \end{equation*}
 </div>
-<p>Now let \(m \to \infty\text{.}\) Continuity of the inner product gives</p>
-<div class="displaymath">
+<p data-braille="continuation">Now let \(m \to \infty\text{.}\) Continuity of the inner product gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \ip{x}{e_k} = \lim_{m \to \infty} \la_k =\la_k.
 \end{equation*}
 </div>
-<p>Then using the equivalence above in Bessel's inequality <a data-knowl="./knowl/thm-bessel.html" title="Theorem 5.2.1: Bessel's inequality">Theorem 5.2.1</a> gives</p>
-<div class="displaymath">
+<p data-braille="continuation">Then using the equivalence above in Bessel's inequality <a class="xref" data-knowl="./knowl/thm-bessel.html" title="Theorem 5.2.1: Bessel's inequality">Theorem 5.2.1</a> gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \sum_{n=1}^\infty \abs{\la_n}^2 = \sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2 \leq \norm{x}^2 \lt \infty.
 \end{equation*}
 </div>
 <p>\(\Leftarrow:\) Suppose that the coefficient sequence satisfies \(\sum_{n=1}^\infty \abs{\la^2} \lt \infty\text{.}\) Then define a sequence \(x_m\) by</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 x_m = \sum_{n=1}^m \la_n e_n.
 \end{equation*}
 </div>
-<p>For \(m, p \in \mathbb{N}\text{,}\) the Pythagorean theorem gives</p>
-<div class="displaymath">
+<p data-braille="continuation">For \(m, p \in \mathbb{N}\text{,}\) the Pythagorean theorem gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 \norm{x_{m+p} - x_m}^2 \amp= \norm{\sum_{n=m+1}^{m+p}  \la_n e_n}^2\\
 \amp = \sum_{n=m+1}^{m+p} \abs{\la_n}^2\\
 \amp \to 0 \,\,\, \text{ as } m\to\infty.
 \end{align*}
 </div>
-<p>Thus, \((x_m)\) is a Cauchy sequence in \(\hilbert\) and therefore converges in \(\hilbert\) by completeness.</p></article></body>
+<p data-braille="continuation">Thus, \((x_m)\) is a Cauchy sequence in \(\hilbert\) and therefore converges in \(\hilbert\) by completeness.</p></article></body>
 </html>

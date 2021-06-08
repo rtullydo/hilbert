@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-30T17:09:14-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-07T17:36:29-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Complete orthonormal sequences</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
@@ -24,7 +26,7 @@ MathJax.Hub.Config({
     jax: ["input/AsciiMath"],
     extensions: ["asciimath2jax.js"],
     TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
         equationNumbers: { autoNumber: "none", useLabelIds: true, },
@@ -41,23 +43,21 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
-<script>var logged_in = false;
-var role = 'student';
-var guest_access = true;
-var login_required = false;
-var js_version = 0.12;
-</script>
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
   \DeclareMathOperator{\IM}{Im}
   \DeclareMathOperator{\ess}{ess}
   \DeclareMathOperator{\intr}{int}
@@ -165,7 +165,7 @@ var js_version = 0.12;
 <p class="byline">Ryan Tully-Doyle</p>
 </div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ortho-3.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-5.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ortho-5.html" title="Next">Next</a></span></div>
 </div>
@@ -173,9 +173,9 @@ var js_version = 0.12;
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ortho-3.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-5.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ortho-5.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link">
+<li class="link frontmatter">
 <a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
 </li>
 <li class="link">
@@ -219,20 +219,23 @@ var js_version = 0.12;
 <li><a href="ortho-ex.html" data-scroll="ortho-ex">Exercises</a></li>
 </ul>
 </li>
-<li class="link"><a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Appendix: Results from analysis</span></a></li>
+<li class="link">
+<a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Dual spaces</span></a><ul><li><a href="dual-1.html" data-scroll="dual-1">Linear functionals</a></li></ul>
+</li>
+<li class="link"><a href="chapter-7.html" data-scroll="chapter-7"><span class="codenumber">7</span> <span class="title">Appendix: Results from analysis</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="ortho-4"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="ortho-4"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">Complete orthonormal sequences</span>
 </h2>
-<a href="ortho-4.html" class="permalink">¶</a><p id="p-242">We are now ready to establish a generalization of coordinates and basis appropriate to Hilbert space. That is, we would like to make sense of finding a coordinate expression for a vector \(x\) in a Hilbert space \(\hilbert\text{.}\) The primary geometric difficulty that we have to wrestle with is that we have infinite “directions” in which extra stuff can hide. We need to know that the orthonormal sequence we're expanding against doesn't leave any directions hidden.</p>
-<p id="p-243">Given an orthonormal sequence \((e_n)\text{,}\) we would like to write (in parallel with <a data-knowl="./knowl/thm-finite-coords.html" title="Theorem 1.3.1">Theorem 1.3.1</a>)</p>
+<p id="p-242">We are now ready to establish a generalization of coordinates and basis appropriate to Hilbert space. That is, we would like to make sense of finding a coordinate expression for a vector \(x\) in a Hilbert space \(\hilbert\text{.}\) The primary geometric difficulty that we have to wrestle with is that we have infinite “directions” in which extra stuff can hide. We need to know that the orthonormal sequence we're expanding against doesn't leave any directions hidden.</p>
+<p id="p-243">Given an orthonormal sequence \((e_n)\text{,}\) we would like to write (in parallel with <a class="xref" data-knowl="./knowl/thm-finite-coords.html" title="Theorem 1.3.1">Theorem 1.3.1</a>)</p>
 <div class="displaymath">
 \begin{equation*}
 x = \sum_{n=1}^\infty \ip{x}{e_n} e_n.
 \end{equation*}
 </div>
-<p><a data-knowl="./knowl/thm-bessel.html" title="Theorem 5.2.1: Bessel's inequality">Theorem 5.2.1</a> and <a data-knowl="./knowl/thm-l2-coeffs.html" title="Theorem 5.2.3">Theorem 5.2.3</a> guarantee that the right hand side makes sense; the series converges to some vector in \(\hilbert\text{.}\) But there is no way to know without further assumptions on the orthonormal sequence that there aren't directions that are “hidden” that might make the equation false. That is, we don't know if the limit of the right hand side is actually \(x\text{.}\)</p>
+<p data-braille="continuation"><a class="xref" data-knowl="./knowl/thm-bessel.html" title="Theorem 5.2.1: Bessel's inequality">Theorem 5.2.1</a> and <a class="xref" data-knowl="./knowl/thm-l2-coeffs.html" title="Theorem 5.2.3">Theorem 5.2.3</a> guarantee that the right hand side makes sense; the series converges to some vector in \(\hilbert\text{.}\) But there is no way to know without further assumptions on the orthonormal sequence that there aren't directions that are “hidden” that might make the equation false. That is, we don't know if the limit of the right hand side is actually \(x\text{.}\)</p>
 <p id="p-244">We can see the issue if we look at an expansion of a vector \(x\in \ell^2\) with respect to the standard orthonormal sequence (much like the standard unit vectors) where \(e_n\) has a 1 in the \(n\)th position and 0s elsewhere. From this, construct a shifted sequence \(f_n = e_{n+1}\text{.}\) Then \((f_n)_{n\in\mathbb{N}}\) remains an infinite orthonormal sequence in \(\ell^2\text{.}\) Now choose \(x = (x_n) \in \ell^2\text{.}\) Then</p>
 <div class="displaymath">
 \begin{align*}
@@ -246,53 +249,56 @@ x = \sum_{n=1}^\infty \ip{x}{e_n} e_n.
 y = x - \sum_{n=1}^\infty \ip{x}{e_n}e_n.
 \end{equation*}
 </div>
-<p>Then for each \(j \in \mathbb{N}\text{,}\) linearity of the inner product gives</p>
+<p data-braille="continuation">Then for each \(j \in \mathbb{N}\text{,}\) linearity of the inner product gives</p>
 <div class="displaymath">
 \begin{equation*}
 \ip{y}{e_j} = \ip{x}{e_j} - \sum_{n=1}^\infty \ip{x}{e_n}\ip{e_n}{e_j} = 0.
 \end{equation*}
 </div>
-<p>That is, the vector \(y\) is orthogonal to each member of the orthonormal sequence. (This property is used to compute the distance from a vector to a subspace in finite dimensions.) So if we know that the <em class="emphasis">only</em> vector orthogonal to every \(e_n\) is the zero vector, then we can infer that \(y = 0\text{,}\) which makes the representation valid.</p>
-<article class="definition-like" id="def-complete-ons"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.4.1</span>.</h6>
-<p id="p-246">An orthonormal sequence \((e_n)\) in a Hilbert space \(\hilbert\) is <dfn class="terminology">complete</dfn> if the only member of \(\hilbert\) which is orthogonal to every \(e_n\) is the zero vector.</p></article><p id="p-247">We are finally ready to prove the Hilbert space analogue of <a data-knowl="./knowl/thm-finite-coords.html" title="Theorem 1.3.1">Theorem 1.3.1</a>.</p>
-<article class="theorem-like" id="thm-infinite-coords"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">5.4.2</span>.</h6>
+<p data-braille="continuation">That is, the vector \(y\) is orthogonal to each member of the orthonormal sequence. (This property is used to compute the distance from a vector to a subspace in finite dimensions.) So if we know that the <em class="emphasis">only</em> vector orthogonal to every \(e_n\) is the zero vector, then we can infer that \(y = 0\text{,}\) which makes the representation valid.</p>
+<article class="definition definition-like" id="def-complete-ons"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.1</span><span class="period">.</span>
+</h6>
+<p id="p-246">An orthonormal sequence \((e_n)\) in a Hilbert space \(\hilbert\) is <dfn class="terminology">complete</dfn> if the only member of \(\hilbert\) which is orthogonal to every \(e_n\) is the zero vector.</p></article><p id="p-247">We are finally ready to prove the Hilbert space analogue of <a class="xref" data-knowl="./knowl/thm-finite-coords.html" title="Theorem 1.3.1">Theorem 1.3.1</a>.</p>
+<article class="theorem theorem-like" id="thm-infinite-coords"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.2</span><span class="period">.</span>
+</h6>
 <p id="p-248">Let \((e_n)_{n\in\mathbb{N}}\) be a complete orthonormal sequence in a Hilbert space \(\hilbert\text{.}\) For any \(x \in \hilbert\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 x = \sum_{n=1}^\infty \ip{x}{e_n}e_n
 \end{equation*}
 </div>
-<p>and</p>
+<p data-braille="continuation">and</p>
 <div class="displaymath">
 \begin{equation*}
 \norm{x}^2 = \sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-18"><a data-knowl="" class="id-ref" data-refid="hk-proof-18"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-18" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-249">As above, compute</p>
+</div></article><article class="hiddenproof" id="proof-18"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-18"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-18"><article class="hiddenproof"><p id="p-249">As above, compute</p>
 <div class="displaymath">
 \begin{equation*}
 y = x - \sum_{n=1}^\infty \ip{x}{e_n}e_n.
 \end{equation*}
 </div>
-<p>Then for each \(j \in \mathbb{N}\text{,}\) linearity of the inner product gives</p>
+<p data-braille="continuation">Then for each \(j \in \mathbb{N}\text{,}\) linearity of the inner product gives</p>
 <div class="displaymath">
 \begin{equation*}
 \ip{y}{e_j} = \ip{x}{e_j} - \sum_{n=1}^\infty \ip{x}{e_n}\ip{e_n}{e_j} = 0.
 \end{equation*}
 </div>
-<p>That is, the vector \(y\) is orthogonal to each member of the orthonormal sequence. Since by hypothesis \((e_n)\) is complete, we deduce the first statement.</p>
-<p id="p-250">By <a data-knowl="./knowl/thm-ortho-pythagorean.html" title="Theorem 5.1.4">Theorem 5.1.4</a>, for any \(N \in \mathbb{N}\text{,}\)</p>
+<p data-braille="continuation">That is, the vector \(y\) is orthogonal to each member of the orthonormal sequence. Since by hypothesis \((e_n)\) is complete, we deduce the first statement.</p>
+<p id="p-250">By <a class="xref" data-knowl="./knowl/thm-ortho-pythagorean.html" title="Theorem 5.1.4">Theorem 5.1.4</a>, for any \(N \in \mathbb{N}\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \norm{\sum_{n=1}^N \ip{x}{e_n}e_n}^2 = \sum_{n=1}^N \abs{\ip{x}{e_n}}^2.
 \end{equation*}
 </div>
-<p>On letting \(N\to\infty\text{,}\) continuity of the norm gives the second statement.</p></article></div>
+<p data-braille="continuation">On letting \(N\to\infty\text{,}\) continuity of the norm gives the second statement.</p></article></div>
 <p id="p-251">We have finally arrived at the notion of a basis in a Hilbert space (indexed by \(\mathbb{N}\)). A complete orthonormal sequence in \(\hilbert\) is also called an <dfn class="terminology">orthonormal basis</dfn> of \(\hilbert\text{.}\) The issue with identifying a basis is typically not orthogonality or norm, but instead completeness. After all, in infinite dimensions, there are lots of places to hide.</p>
 <p id="p-252">In finite dimensions, a basis is a minimal spanning set - that is, the span of a basis is the entire space. A similar fact holds in Hilbert space, with the caveat that we have to work with the closed linear span.</p>
-<article class="theorem-like" id="thm-hilbert-span"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">5.4.3</span>.</h6>
+<article class="theorem theorem-like" id="thm-hilbert-span"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.3</span><span class="period">.</span>
+</h6>
 <p id="p-253">Let \((e_n)_{n\in\mathbb{N}}\) be an orthonormal sequence in a Hilbert space \(\hilbert\text{.}\) The following are equivalent:</p>
 <ol class="decimal">
 <li id="li-44">\((e_n)\) is complete;</li>
@@ -302,58 +308,59 @@ y = x - \sum_{n=1}^\infty \ip{x}{e_n}e_n.
 \norm{x}^2 = \sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2.
 \end{equation*}
 </div></li>
-</ol></article><article class="hiddenproof" id="proof-19"><a data-knowl="" class="id-ref" data-refid="hk-proof-19"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-19" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-254">\((1) \Rightarrow (2)\) and \((1) \Rightarrow (3)\) follow immediately from <a data-knowl="./knowl/thm-infinite-coords.html" title="Theorem 5.4.2">Theorem 5.4.2</a>. As series convergence is convergence of the sequence of partial sums, and each partial sum is in \(\cl \span \{e_n: n \in \mathbb{N}\}\text{,}\) closure gives</p>
+</ol></article><article class="hiddenproof" id="proof-19"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-19"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-19"><article class="hiddenproof"><p id="p-254">\((1) \Rightarrow (2)\) and \((1) \Rightarrow (3)\) follow immediately from <a class="xref" data-knowl="./knowl/thm-infinite-coords.html" title="Theorem 5.4.2">Theorem 5.4.2</a>. As series convergence is convergence of the sequence of partial sums, and each partial sum is in \(\cl \span \{e_n: n \in \mathbb{N}\}\text{,}\) closure gives</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{n=1}^\infty \ip{x}{e_n} e_n \in \cl \span \{e_n: n \in \mathbb{N}\}
 \end{equation*}
 </div>
-<p>for all \(x \in \hilbert\text{.}\)</p>
+<p data-braille="continuation">for all \(x \in \hilbert\text{.}\)</p>
 <p id="p-255">\((3) \Rightarrow (1)\text{:}\) Suppose that \((e_n)\) is not complete, which is to say that there exists some non-zero vector \(y\) with \(y\perp e_n\) for all \(n\text{.}\) Then \(\norm{x} \neq 0\text{,}\) but \(\ip{x}{e_n} = 0\) for all \(n\) and so</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2 = 0,
 \end{equation*}
 </div>
-<p>which contradicts \((3)\text{.}\)</p>
+<p data-braille="continuation">which contradicts \((3)\text{.}\)</p>
 <p id="p-256">\((2) \Rightarrow (1)\text{:}\) Suppose that \((2)\) holds. Let \(x \in \hilbert\) be any vector that is orthogonal to every \(e_n\text{.}\) Now construct the set of vectors orthogonal to \(x\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \M  = \{y: \ip{x}{y} = 0\}.
 \end{equation*}
 </div>
-<p>Linearity of the inner product gives that \(\M\) is a subspace of \(\hilbert\text{,}\) and continuity of the inner product gives that \(\M\) is closed. Also, by assumption, every \(e_n \in \M\text{,}\) and thus \(\cl \span\{e_n\} \subseteq \M\text{.}\)and so (2) implies that \(\hilbert = \M\text{.}\) But then in particular \(x \in \M\text{,}\) and so \(\ip{x}{x} = 0\) by the definition of \(\M\text{,}\) which gives that \(x=0\text{.}\) Thus, \((e_n)\) is complete.</p></article></div>
+<p data-braille="continuation">Linearity of the inner product gives that \(\M\) is a subspace of \(\hilbert\text{,}\) and continuity of the inner product gives that \(\M\) is closed. Also, by assumption, every \(e_n \in \M\text{,}\) and thus \(\cl \span\{e_n\} \subseteq \M\text{.}\)and so (2) implies that \(\hilbert = \M\text{.}\) But then in particular \(x \in \M\text{,}\) and so \(\ip{x}{x} = 0\) by the definition of \(\M\text{,}\) which gives that \(x=0\text{.}\) Thus, \((e_n)\) is complete.</p></article></div>
 <p id="p-257">While most of the commonly encountered Hilbert spaces possess complete orthonormal sequences, some do not. Fortunately, similar statements to the above apply to orthonormal systems as well, though working with uncountably indexed sets is not something that most readers will encounter until graduate real analysis. It will be sufficient for us to mostly restrict our attention to the rather more easily conceptualized case of sequences.</p>
-<article class="definition-like" id="def-separable"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.4.4</span>.</h6>
+<article class="definition definition-like" id="def-separable"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span>
+</h6>
 <p id="p-258">A Hilbert space is called <dfn class="terminology">separable</dfn> if it contains a complete orthonormal sequence (indexed by \(\mathbb{N}\) or finite).</p></article><p id="p-259">In the same way that we know from linear algebra that every (complex) finite dimensional Hilbert space is isomorphic to \(\C^n\text{,}\) so that we think of “one” vector space of a given dimension with different labelings (see <a href="intro-2.html" class="internal" title="Section 1.3: Basis and coordinates">Section 1.3</a>), we have already met <em class="emphasis">the one separable Hilbert space of infinite dimension</em>, namely \(\ell^2\) (and at last our suspicions are confirmed). The next set of arguments will make this rigorous.</p>
-<article class="definition-like" id="def-unitary"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.4.5</span>.</h6>
+<article class="definition definition-like" id="def-unitary"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.5</span><span class="period">.</span>
+</h6>
 <p id="p-260">A mapping \(U: \hilbert \to \K\) between Hilbert spaces \(\hilbert, \K\) is a <dfn class="terminology">unitary operator</dfn> if it is linear and bijective and preserves inner products. That is, \(U\) satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 \ip{Ux}{Uy} = \ip{x}{y}
 \end{equation*}
 </div>
-<p>for all \(x, y \in \hilbert.\)</p></article><article class="theorem-like" id="theorem-30"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">5.4.6</span>.</h6>
-<p id="p-261">Let \(\hilbert\) be a separable Hilbert space. Then either \(\hilbert\) is isomorphic to \(\C^n\) for some \(n \in \mathbb{N}\) or \(\hilbert\) is isomorphic to \(\ell^2\text{.}\)</p></article><article class="hiddenproof" id="proof-20"><a data-knowl="" class="id-ref" data-refid="hk-proof-20"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-20" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-262">Suppose that \(\hilbert\) contains a finite complete orthonormal sequence \(e_1, \ldots e_n\text{.}\) For any \(x \in \hilbert\text{,}\) find the error vector</p>
+<p data-braille="continuation">for all \(x, y \in \hilbert.\)</p></article><article class="theorem theorem-like" id="theorem-30"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.6</span><span class="period">.</span>
+</h6>
+<p id="p-261">Let \(\hilbert\) be a separable Hilbert space. Then either \(\hilbert\) is isomorphic to \(\C^n\) for some \(n \in \mathbb{N}\) or \(\hilbert\) is isomorphic to \(\ell^2\text{.}\)</p></article><article class="hiddenproof" id="proof-20"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-20"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-20"><article class="hiddenproof"><p id="p-262">Suppose that \(\hilbert\) contains a finite complete orthonormal sequence \(e_1, \ldots e_n\text{.}\) For any \(x \in \hilbert\text{,}\) find the error vector</p>
 <div class="displaymath">
 \begin{equation*}
 y = x - \sum_{i=1}^n \ip{x}{e_i}e_i.
 \end{equation*}
 </div>
-<p>Linearity of the inner product gives \(y \perp e_i\) for all \(i\) and so \(y=0\text{.}\) Thus \(e_1, \ldots, e_n\) is an orthonormal basis for \(\hilbert\text{.}\) Now define the operator \(U: \hilbert \to \C^n\) by</p>
+<p data-braille="continuation">Linearity of the inner product gives \(y \perp e_i\) for all \(i\) and so \(y=0\text{.}\) Thus \(e_1, \ldots, e_n\) is an orthonormal basis for \(\hilbert\text{.}\) Now define the operator \(U: \hilbert \to \C^n\) by</p>
 <div class="displaymath">
 \begin{equation*}
 U(\la_1 e_1 + \la_2 e_2 + \ldots + \la_n e_n) = (\la_1, \ldots , \la_n).
 \end{equation*}
 </div>
-<p>Then \(U\) is linear and bijective. From the fact that \(\norm{x}^2 = \sum_{i=1}^n \abs{\ip{x}{e_i}}^2\text{,}\) we infer that \(\norm{Ux} = \norm{x}\) for all \(x \in \hilbert.\) Thus \(U\) is a unitary operator, and so \(\hilbert\) is isomorphic to \(\C^n\text{.}\)</p>
-<p id="p-263">On the other hand, suppose that \(\hilbert\) contains a complete orthonormal sequence \((e_n)_{n \in \mathbb{N}}\text{.}\) Define the operator \(U: \hilbert \to \ell^2\) by \(Ux = (\la_n)_{n\in \mathbb{N}}\) where \(\la_n = \ip{x}{e_n}\text{.}\) By <a data-knowl="./knowl/thm-hilbert-span.html" title="Theorem 5.4.3">Theorem 5.4.3</a> (3), \(Ux \in \ell^2\) and moreover \(\norm{Ux} = \norm{x}\) for all \(x \in \hilbert\text{.}\) As \(U\) is defined in terms of the inner product, it is clearly linear. If \((\la_n) \in \ell^2\text{,}\) then by <a data-knowl="./knowl/thm-l2-coeffs.html" title="Theorem 5.2.3">Theorem 5.2.3</a> the series \(\sum \la_n e_n\) converges to a point in \(\hilbert\) and by definition \(Ux = (\la_n)\text{.}\) Thus \(U\) is surjective. Hence \(U\) is a unitary operator, and so \(\hilbert\) is isomorphic to \(\ell^2\text{.}\)</p></article></div>
+<p data-braille="continuation">Then \(U\) is linear and bijective. From the fact that \(\norm{x}^2 = \sum_{i=1}^n \abs{\ip{x}{e_i}}^2\text{,}\) we infer that \(\norm{Ux} = \norm{x}\) for all \(x \in \hilbert.\) Thus \(U\) is a unitary operator, and so \(\hilbert\) is isomorphic to \(\C^n\text{.}\)</p>
+<p id="p-263">On the other hand, suppose that \(\hilbert\) contains a complete orthonormal sequence \((e_n)_{n \in \mathbb{N}}\text{.}\) Define the operator \(U: \hilbert \to \ell^2\) by \(Ux = (\la_n)_{n\in \mathbb{N}}\) where \(\la_n = \ip{x}{e_n}\text{.}\) By <a class="xref" data-knowl="./knowl/thm-hilbert-span.html" title="Theorem 5.4.3">Theorem 5.4.3</a> (3), \(Ux \in \ell^2\) and moreover \(\norm{Ux} = \norm{x}\) for all \(x \in \hilbert\text{.}\) As \(U\) is defined in terms of the inner product, it is clearly linear. If \((\la_n) \in \ell^2\text{,}\) then by <a class="xref" data-knowl="./knowl/thm-l2-coeffs.html" title="Theorem 5.2.3">Theorem 5.2.3</a> the series \(\sum \la_n e_n\) converges to a point in \(\hilbert\) and by definition \(Ux = (\la_n)\text{.}\) Thus \(U\) is surjective. Hence \(U\) is a unitary operator, and so \(\hilbert\) is isomorphic to \(\ell^2\text{.}\)</p></article></div>
 <p id="p-264">It is important that we not overstate the implications of the theorem above. In finite dimensions, for example, the space of polynomials of degree at most \(n\) is isomorphic to \(\C^n\) but is also a set of functions with properties that interact with the geometry of \(\C^n\text{.}\) Both the vector space properties and the functional properties are important - what the isomorphism provides is a set of properties that the space carries by relation with Euclidean space. In the same way, while all separable Hilbert spaces can be thought of as \(\ell^2\) in some sense, it is the interplay between, say, analytic properties and the Hilbert space structure that we are interested. However, it is valuable (and useful) to know that we can think of Hilbert space as \(\C^n\) or \(\ell^2\) when it is convenient.</p></section></div></main>
 </div>
-<div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

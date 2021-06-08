@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-07T17:36:30-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear functionals</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
+  \DeclareMathOperator{\IM}{Im}
+  \DeclareMathOperator{\ess}{ess}
+  \DeclareMathOperator{\intr}{int}
+  \DeclareMathOperator{\dist}{dist}
+  \DeclareMathOperator{\dom}{dom}
+  \DeclareMathOperator{\diag}{diag}
+  \DeclareMathOperator{\cl}{cl}
+  \DeclareMathOperator{\span}{span}
+  \DeclareMathOperator{\proj}{proj}
+  \DeclareMathOperator\trace{trace}
+  \DeclareMathOperator\re{\mathrm {Re~}}
+  \DeclareMathOperator\im{\mathrm {Im~}}
+  
+  \newcommand\dd{\mathrm d}
+  \newcommand{\eps}{\varepsilon}
+  \newcommand{\To}{\longrightarrow}
+  \newcommand{\hilbert}{\mathcal{H}}
+  \newcommand{\s}{\mathcal{S}_2}
+  \newcommand{\A}{\mathcal{A}}
+  \newcommand\h{\mathcal{H}}
+  \newcommand{\J}{\mathcal{J}}
+  \newcommand{\K}{\mathcal{K}}
+  \newcommand{\M}{\mathcal{M}}
+  \newcommand{\F}{\mathbb{F}}
+  \newcommand{\N}{\mathcal{N}}
+  \newcommand{\T}{\mathbb{T}}
+  \newcommand{\W}{\mathcal{W}}
+  \newcommand{\X}{\mathcal{X}}
+  \newcommand{\D}{\mathbb{D}}
+  \newcommand{\C}{\mathbb{C}}
+  \newcommand{\BOP}{\mathbf{B}}
+  \newcommand{\Z}{\mathbb{Z}}
+  \newcommand{\BH}{\mathbf{B}(\mathcal{H})}
+  \newcommand{\KH}{\mathcal{K}(\mathcal{H})}
+  \newcommand{\pick}{\mathcal{P}_2}
+  \newcommand{\schur}{\mathcal{S}_2}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Complex}{\mathbb{C}}
+  \newcommand{\Field}{\mathbb{F}}
+  \newcommand{\RPlus}{\Real^{+}}
+  \newcommand{\Polar}{\mathcal{P}_{\s}}
+  \newcommand{\Poly}{\mathcal{P}(E)}
+  \newcommand{\EssD}{\mathcal{D}}
+  \newcommand{\Lop}{\mathcal{L}}
+  \newcommand{\cc}[1]{\overline{#1}}
+  \newcommand{\abs}[1]{\left\vert#1\right\vert}
+  \newcommand{\set}[1]{\left\{#1\right\}}
+  \newcommand{\seq}[1]{\left\lt#1\right&gt;}
+  \newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+  \newcommand{\essnorm}[1]{\norm{#1}_{\ess}}
+  \newcommand{\tr}{\operatorname{tr}}
+  \newcommand{\ran}[1]{\operatorname{ran}#1}
+  \newcommand{\nt}{\stackrel{\mathrm {nt}}{\to}}
+  \newcommand{\pnt}{\xrightarrow{pnt}}
+  \newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
+  \newcommand{\ad}{^\ast}
+  \newcommand{\inv}{^{-1}}
+  \newcommand{\adinv}{^{\ast -1}}
+  \newcommand{\invad}{^{-1 \ast}}
+  \newcommand\Pick{\mathcal P}
+  \newcommand\Ha{\mathbb{H}}
+  \newcommand{\HH}{\Ha\times\Ha}
+  \newcommand\Htau{\mathbb{H}(\tau)}
+  \newcommand{\vp}{\varphi}
+  \newcommand{\ph}{\varphi}
+  \newcommand\al{\alpha}
+  \newcommand\ga{\gamma}
+  \newcommand\de{\delta}
+  \newcommand\ep{\varepsilon}
+  \newcommand\la{\lambda}
+  \newcommand\up{\upsilon}
+  \newcommand\si{\sigma}
+  \newcommand\beq{\begin{equation}}
+  \newcommand\ds{\displaystyle}
+  \newcommand\eeq{\end{equation}}
+  \newcommand\df{\stackrel{\rm def}{=}}
+  \newcommand\ii{\mathrm i}
+  \newcommand{\vectwo}[2]
+  {
+     \begin{pmatrix} #1 \\ #2 \end{pmatrix}
+  }
+  \newcommand{\vecthree}[3]
+  {
+     \begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}
+  }
+  \newcommand\blue{\color{blue}}
+  \newcommand\black{\color{black}}
+  \newcommand\red{\color{red}}
+  
+  \newcommand\nn{\nonumber}
+  \newcommand\bbm{\begin{bmatrix}}
+  \newcommand\ebm{\end{bmatrix}}
+  \newcommand\bpm{\begin{pmatrix}}
+  \newcommand\epm{\end{pmatrix}}
+  \numberwithin{equation}{section}
+  \newcommand\nin{\noindent}
+  \newcommand{\nCr}[2]{\,_{#1}C_{#2}} 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="hilbert.html"><span class="title">Hilbert Spaces - Sequel to Linear Algebra</span></a></h1>
+<p class="byline">Ryan Tully-Doyle</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter-6.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-6.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter-7.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-6.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-6.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter-7.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="sec-intro-1.html" data-scroll="sec-intro-1">Motivation</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Inner products</a></li>
+<li><a href="intro-2.html" data-scroll="intro-2">Basis and coordinates</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Operators</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="inner.html" data-scroll="inner"><span class="codenumber">2</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="inner-1.html" data-scroll="inner-1">Inner products and \(\ell^2\)</a></li>
+<li><a href="inner-2.html" data-scroll="inner-2">Inner products, norms, and metric spaces</a></li>
+<li><a href="inner-3.html" data-scroll="inner-3">Examples of inner product spaces</a></li>
+<li><a href="inner-4.html" data-scroll="inner-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-norm.html" data-scroll="ch-norm"><span class="codenumber">3</span> <span class="title">Normed spaces</span></a><ul>
+<li><a href="norm-1.html" data-scroll="norm-1">Norms</a></li>
+<li><a href="norm-2.html" data-scroll="norm-2">Closed linear subspaces</a></li>
+<li><a href="norm-3.html" data-scroll="norm-3">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a><ul>
+<li><a href="hilbert-1.html" data-scroll="hilbert-1">Limits</a></li>
+<li><a href="hilbert-2.html" data-scroll="hilbert-2">\(L^2[a,b]\)</a></li>
+<li><a href="hilbert-3.html" data-scroll="hilbert-3">The closest point property</a></li>
+<li><a href="hilbert-4.html" data-scroll="hilbert-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Orthogonal expansions</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Geometry in Hilbert space</a></li>
+<li><a href="ortho-2.html" data-scroll="ortho-2">Bessel's inequality</a></li>
+<li><a href="ortho-3.html" data-scroll="ortho-3">Modes of convergence</a></li>
+<li><a href="ortho-4.html" data-scroll="ortho-4">Complete orthonormal sequences</a></li>
+<li><a href="ortho-5.html" data-scroll="ortho-5">Orthogonal complements</a></li>
+<li><a href="ortho-ex.html" data-scroll="ortho-ex">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Dual spaces</span></a><ul><li><a href="dual-1.html" data-scroll="dual-1" class="active">Linear functionals</a></li></ul>
+</li>
+<li class="link"><a href="chapter-7.html" data-scroll="chapter-7"><span class="codenumber">7</span> <span class="title">Appendix: Results from analysis</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="dual-1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.1</span> <span class="title">Linear functionals</span>
+</h2>
+<p id="p-293">Let us consider an analogy with linear algebra. The space \(\R^n\) can be acted on by a linear transformation, which can be realized as multiplication by a matrix \(M\) that represents the linear transformation. Such an \(M\) can be any size that is compatible with matix mutiplication. If we choose a transformation that is represented by a vector \(y\) of size \(m \times 1\text{,}\) then we've created a function on \(\R^n\) that takes \(\R^n \to \R\text{.}\) The space of all such functions is itself \(n\)-dimensional (since each function arises from a vector in \(\R^n\)). Multiplication of two vectors that results in a scalar output already has a form that we know - namely, we can write any such function in terms of its representing vector \(y\) by</p>
+<div class="displaymath">
+\begin{equation*}
+y: \R^n \mapsto \R \text{ by } y(v) = \ip{v}{y}.
+\end{equation*}
+</div>
+<p data-braille="continuation">This is a simple case of a powerful theorem called the Riesz representation theorem. A function on \(\R^n\) of the form \(\ip{\cdot}{y}\) is called a <dfn class="terminology">linear functional</dfn>. One of the core ideas of functional analysis is that we can often move phenomena and relationships that exist among the elements of a vector space into <dfn class="terminology">dual</dfn> relationships among elements of the space of linear functionals.</p>
+<p id="p-294">While it easy to write down the general linear functional in finite dimensions, in infinite dimensions the problem is significantly harder. One useful restriction is to consider just the family of continuous linear functionals (we are doing analysis, after all!). One reason to study Hilbert spaces is that the inner product geometry allows us to write down then general linear functional (in precisely the same form as the finite dimensional case - \(\ip{\cdot}{y}\) for some vector \(y\)). In Banach spaces, we do not have an inner product and it is quite a bit trickier. This means that in Hilbert spaces, duality works much like it does in finite dimensions. We will now make these notions formal.</p>
+<article class="definition definition-like" id="def-linear-functional"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-295">A linear functional on a vector space \(V\) over a field \(k\) is a mapping \(f:V \to k\) satisfying</p>
+<div class="displaymath">
+\begin{equation*}
+F(\la x + \mu y) = \la f(x) + \mu f(y)
+\end{equation*}
+</div>
+<p data-braille="continuation">for all \(x, y \in V\) and \(\la, \mu \in k\text{.}\)</p></article><article class="example example-like" id="example-4"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-4"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">on \(\C^n\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-4"><article class="example example-like"><p id="p-296">Define \(f: \C^n \to \C\) by</p>
+<div class="displaymath">
+\begin{equation*}
+F(x_1, \ldots, x_n) = c_1 x_1 + \ldots + c_n x_n
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(c_1, \ldots, c_n \in \C\text{.}\)</p></article></div>
+<article class="example example-like" id="example-5"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-5"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">on \(\ell^1\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><p id="p-297">Define \(f_c: \ell^1 \to \C\) by</p>
+<div class="displaymath">
+\begin{equation*}
+F_c((x_n)_{n \in \mathbb{N}}) = \sum_{n=1}^\infty c_n x_n
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(c = (c_n)_{n \in \mathbb{N}} \in \ell^\infty\text{.}\) The space \(\ell^\infty\) is the space of bounded sequences. The space \(\ell^1\) is the space of sequences \((x_n)\) so that \(\sum \abs{x_n}\) is finite. Combining these facts gives that \(\sum c_n x_n\) is absolutely convergent, which ensures that \(f_c\) is a well-defined function.</p></article></div>
+<article class="example example-like" id="example-6"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-6"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">on \(C[0,1]\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-6"><article class="example example-like"><p id="p-298">Define \(f:C[0,1]\to \C\) by</p>
+<div class="displaymath">
+\begin{equation*}
+F(x) = \int_0^1 x(t) \dd \alpha(t)
+\end{equation*}
+</div>
+<p data-braille="continuation">for a function \(x \in C[0,1]\text{,}\) where \(\alpha\) is a function of bounded variation on \([0,1]\text{.}\) (This is called a Stieltjes integral, and used widely in probability theory. It generalizes the Riemann integral - one recovers the Riemann integral by choosing \(\alpha(t) = t\text{.}\))</p></article></div>
+<article class="example example-like" id="example-7"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-7"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">on \(\mathcal H\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-7"><article class="example example-like"><p id="p-299">Let \(\mathcal H\) be a Hilbert space and \(y \in \hilbert\text{.}\) Define \(f_y: \hilbert \to \C\) by</p>
+<div class="displaymath">
+\begin{equation*}
+F_y(x) = \ip{x}{y}.
+\end{equation*}
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-56"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-56"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.1.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-56"><article class="exercise exercise-like"><p id="p-300">Show that each of the above is a linear functional.</p></article></div>
+<p id="p-301">The examples above are also continuous. There is a convenient theorem for checking this fact.</p>
+<article class="theorem theorem-like" id="thm-continuous-linear-functional"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.1.7</span><span class="period">.</span>
+</h6>
+<p id="p-302">Let \(F\) be a linear functional on a normed space \((V, \norm{\cdot})\text{.}\) The following are equivalent:</p>
+<ol class="decimal">
+<li id="li-47">\(F\) is continuous;</li>
+<li id="li-48">\(F\) is continuous at 0;</li>
+<li id="li-49">\(\displaystyle \displaystyle \sup \{\abs{F(x)}: x \in V, \norm{x}\leq 1\} \lt \infty.\)</li>
+</ol></article><p id="p-303">The set \(\{x \in V: \norm{x}\leq 1\}\) is called the <dfn class="terminology">unit ball</dfn> of \(V\text{.}\) So a functional is continuous if and only if it is bounded on the unit ball.</p>
+<article class="hiddenproof" id="proof-25"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-25"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-25"><article class="hiddenproof"><p id="p-304">(1) implies (2) is obvious.</p>
+<p id="p-305">Suppose that (2) holds. Then given \(\eps = 1\text{,}\) there exists \(\delta &gt; 0\) so that \(\abs{x} \lt \delta\) implies that \(\abs{F(x)}\lt1\text{.}\) Now we will use the fact that \(F\) is linear to show that \(F\) is bounded. For any \(x \in V\) with \(\norm{x} \leq 1\text{,}\) \(\norm{\frac{\delta x}{2}} \lt \delta\text{,}\) which means that \(F(\frac{\delta x}{2}) \lt 1\text{.}\) Then linearity gives that \(F(x) \lt \frac{2}{\delta}\) on the unit ball of \(V\text{,}\) and so (3) holds.</p>
+<p id="p-306">Now suppose that (3) holds. Denote the finite supremum of \(F\) on the unit ball of \(V\) by \(M\text{.}\) For any distinct vectors \(x, y \in V\text{,}\) the vector \((x - y)/\norm{x - y)}\) is a unit vector. Then by (iii),</p>
+<div class="displaymath">
+\begin{equation*}
+\abs{F\left( \frac{x-y}{\norm{x-y}}\right)}  \leq M.
+\end{equation*}
+</div>
+<p data-braille="continuation">Because \(F\) is linear, this means that</p>
+<div class="displaymath">
+\begin{equation*}
+\abs{F(x) - F(y)} \leq M \norm{x - y}
+\end{equation*}
+</div>
+<p data-braille="continuation">and so \(F\) is continuous.</p></article></div>
+<article class="exercise exercise-like" id="exercise-57"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-57"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">A discontinous linear functional.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-57"><article class="exercise exercise-like"><p id="p-307">Define a linear functional \(F\) on \(C^1[0,1]\text{,}\) the space of continuously differentiable functions on \([0,1]\text{,}\) by</p>
+<div class="displaymath">
+\begin{equation*}
+F(x) = x'(1).
+\end{equation*}
+</div>
+<p data-braille="continuation">Show that \(F\) is discontinuous with respect to the norm \(\norm{\cdot}_\infty\text{.}\)</p></article></div>
+<p id="p-308">Just as in the finite-dimensional case, the set of continuous linear functionals is a space in its own right, as long as the underlying space is at least a normed space. Surprisingly, even if the underlying space is not complete (i.e., not a Banach space), the set of functionals will be.</p>
+<article class="theorem theorem-like" id="thm-dual-space-banach"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.1.9</span><span class="period">.</span>
+</h6>
+<p id="p-309">The set \(V\ad\) of all continuous linear functionals on a normed space \((V, \norm{\cdot})\) is a Banach space with respect to pointwise algebraic operations and under the norm</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{F} = \sup_{v \in V, \norm{v}\leq 1} \abs{F(v)}.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-26"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-26"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-26"><article class="hiddenproof"><p id="p-310">First, it is straightforward to show that \(V\ad\) is a vector space over the same field as \(V\text{.}\) By <a class="xref" data-knowl="./knowl/thm-continuous-linear-functional.html" title="Theorem 6.1.7">Theorem 6.1.7</a>, \(\norm{F} \lt \infty\) for all \(F \in V\ad\text{,}\) and one can readily verify that \(\norm{\cdot}\) as defined above is a norm (as in <a class="xref" data-knowl="./knowl/def-norm.html" title="Definition 3.1.3">Definition 3.1.3</a>).</p>
+<p id="p-311">We will now show that \(V\ad\) is complete. Let \((F_n)\) denote a Cauchy sequence of linear functionals so that \(\norm{F_n - F_m} \to 0\) as \(n, m \to \infty\text{.}\) Choose \(x \in V\text{.}\) Then the sequence \(\abs{F_n(x) - F_m(x)} \to 0\) as \(n, m \to \infty\text{.}\) As this is a sequence of scalars, it must converge. Denote the limit of this sequence by \(F(x)\text{.}\) Then the map \(F:V \to k\) so pointwise defined is a linear functional (by the properties of limits and the fact that the \(F_n\) are linear functionals). It remains to show that \(F \in V\ad\) and that \(F_n \to F\) with respect to \(\norm{\cdot}\text{.}\)</p>
+<p id="p-312">Let \(\eps &gt; 0\) and choose some \(N\) so that \(n, m \gt N\) implies that \(\norm{F_n - F_m} \lt \eps\) (as \(F_n\) is Cauchy). Then for any \(x \in V\) with \(\norm{x} \lt 1\text{,}\) and for all \(n, m 
+\gt N\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\abs{F_m(x) - F_n(x)} \lt \eps.
+\end{equation*}
+</div>
+<p data-braille="continuation">Taking \(m \to \infty\text{,}\) we get that, for all \(\norm{x}\lt 1\) and \(n &gt; N\text{,}\)</p>
+<div class="displaymath">
+\begin{equation}
+\abs{F(x) - F_n(x)} \leq \eps.\label{eq-banach-1}\tag{6.1.1}
+\end{equation}
+</div>
+<p data-braille="continuation">To complete the proof, note that since \(F - F_N\) and \(F_N\) are bounded on the closed unit ball of \(V\text{,}\) so must be \(F\text{,}\) which by <a class="xref" data-knowl="./knowl/thm-continuous-linear-functional.html" title="Theorem 6.1.7">Theorem 6.1.7</a> means that \(F\) is continuous and so \(F \in V\ad\text{.}\) On the other hand, <a class="xref" data-knowl="./knowl/eq-banach-1.html" title="Equation 6.1.1">(6.1.1)</a> implies that \(\norm{F_n - F} \lt \eps\) for \(n \gt N\text{,}\) and so \(F_n \to F\) in \(V\ad\text{.}\) Thus \(V\ad\) is complete (and hence a Banach space of continuous linear functionals).</p></article></div>
+<p id="p-313">Analysis is built on a backbone of useful inequalities. Let us take note of a nice inequality that is an immediate consequence of the definition of the dual norm.</p>
+<article class="theorem theorem-like" id="thm-norm-split"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.1.10</span><span class="period">.</span>
+</h6>
+<p id="p-314">For any vector \(v\) in a normed space \(V\) and any continuous linear functional \(F\) on \(V\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\abs{F(v)} \leq \norm{F} \abs{v}.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-27"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-27"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-27"><article class="hiddenproof"><p id="p-315">Suppose that \(v \neq 0\text{.}\) Then \(\frac{v}{\norm{v}}\) is a unit vector, and so</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{F} \geq \abs{F(\frac{v}{\norm{v}})} = \frac{\abs{F(v)}}{\abs{v}}.
+\end{equation*}
+</div></article></div></section></div></main>
+</div>
+</body>
+</html>

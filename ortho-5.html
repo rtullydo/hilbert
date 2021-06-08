@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-30T17:09:14-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-07T17:36:30-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Orthogonal complements</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
@@ -24,7 +26,7 @@ MathJax.Hub.Config({
     jax: ["input/AsciiMath"],
     extensions: ["asciimath2jax.js"],
     TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
         equationNumbers: { autoNumber: "none", useLabelIds: true, },
@@ -41,23 +43,21 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
-<script>var logged_in = false;
-var role = 'student';
-var guest_access = true;
-var login_required = false;
-var js_version = 0.12;
-</script>
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
   \DeclareMathOperator{\IM}{Im}
   \DeclareMathOperator{\ess}{ess}
   \DeclareMathOperator{\intr}{int}
@@ -165,7 +165,7 @@ var js_version = 0.12;
 <p class="byline">Ryan Tully-Doyle</p>
 </div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ortho-4.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-5.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ortho-ex.html" title="Next">Next</a></span></div>
 </div>
@@ -173,9 +173,9 @@ var js_version = 0.12;
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ortho-4.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-5.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ortho-ex.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link">
+<li class="link frontmatter">
 <a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
 </li>
 <li class="link">
@@ -219,107 +219,116 @@ var js_version = 0.12;
 <li><a href="ortho-ex.html" data-scroll="ortho-ex">Exercises</a></li>
 </ul>
 </li>
-<li class="link"><a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Appendix: Results from analysis</span></a></li>
+<li class="link">
+<a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Dual spaces</span></a><ul><li><a href="dual-1.html" data-scroll="dual-1">Linear functionals</a></li></ul>
+</li>
+<li class="link"><a href="chapter-7.html" data-scroll="chapter-7"><span class="codenumber">7</span> <span class="title">Appendix: Results from analysis</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="ortho-5"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="ortho-5"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.5</span> <span class="title">Orthogonal complements</span>
 </h2>
-<a href="ortho-5.html" class="permalink">¶</a><p id="p-265">One of the most useful properties of orthogonality in Euclidean space is to decompose the space into orthogonal subspaces - this allows vectors to be expressed uniquely as sums of components lying in each subspace, for example. (You will have done this implicitly when studying projection onto subspaces, for example.) The same geometric properties hold in Hilbert space.</p>
-<article class="definition-like" id="def-orthocomplement"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.5.1</span>.</h6>
+<p id="p-265">One of the most useful properties of orthogonality in Euclidean space is to decompose the space into orthogonal subspaces - this allows vectors to be expressed uniquely as sums of components lying in each subspace, for example. (You will have done this implicitly when studying projection onto subspaces, for example.) The same geometric properties hold in Hilbert space.</p>
+<article class="definition definition-like" id="def-orthocomplement"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.1</span><span class="period">.</span>
+</h6>
 <p id="p-266">The <dfn class="terminology">orthogonal complement</dfn> of a subset \(E\) of a Hilbert space \(\hilbert\) is the set</p>
 <div class="displaymath">
 \begin{equation*}
 E^\perp = \{x \in \hilbert: \ip{x}{y} = 0 \text{ for all } y \in E\}.
 \end{equation*}
-</div></article><article class="exercise-like" id="exercise-42"><a data-knowl="" class="id-ref" data-refid="hk-exercise-42"><h6 class="heading">
-<span class="type">Checkpoint</span> <span class="codenumber">5.5.2</span>.</h6></a></article><div id="hk-exercise-42" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-267">Let</p>
+</div></article><article class="exercise exercise-like" id="exercise-42"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-42"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.5.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-42"><article class="exercise exercise-like"><p id="p-267">Let</p>
 <div class="displaymath">
 \begin{equation*}
 E = \{f \in L^2(0,1): f(t) = 0 \text{ for } t \in (0, \frac{1}{2})\}.
 \end{equation*}
 </div>
-<p>Describe \(E^\perp\) in \(L^2(0,1)\text{.}\)</p></article></div>
+<p data-braille="continuation">Describe \(E^\perp\) in \(L^2(0,1)\text{.}\)</p></article></div>
 <p id="p-268">It is a useful fact that orthogonal complements are always closed subspaces relative to the larger Hilbert space.</p>
-<article class="theorem-like" id="thm-perp-closed"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">5.5.3</span>.</h6>
-<p id="p-269">For any set \(E \subset \hilbert\text{,}\) the orthogonal complement \(E^\perp\) is a closed linear subspace of \(\hilbert\text{.}\)</p></article><article class="hiddenproof" id="proof-21"><a data-knowl="" class="id-ref" data-refid="hk-proof-21"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-21" class="hidden-content tex2jax_ignore"><article class="hiddenproof">Exercise.</article></div> Elements in an orthgonal complement of a subspace are precisely those that satisfy a sort of “least distance” property - that is, perturbing \(x\) by any vector in \(E\) doesn't get you any closed to \(E\text{.}\) This leads to a nice norm characterization of the orthogonal complement. <article class="theorem-like" id="lemma-norm-ortho"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">5.5.4</span>.</h6>
+<article class="theorem theorem-like" id="thm-perp-closed"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="period">.</span>
+</h6>
+<p id="p-269">For any set \(E \subset \hilbert\text{,}\) the orthogonal complement \(E^\perp\) is a closed linear subspace of \(\hilbert\text{.}\)</p></article><article class="hiddenproof" id="proof-21"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-21"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-21"><article class="hiddenproof">Exercise.</article></div> Elements in an orthgonal complement of a subspace are precisely those that satisfy a sort of “least distance” property - that is, perturbing \(x\) by any vector in \(E\) doesn't get you any closed to \(E\text{.}\) This leads to a nice norm characterization of the orthogonal complement. <article class="lemma theorem-like" id="lemma-norm-ortho"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="period">.</span>
+</h6>
 <p id="p-270">Let \(E\) be a linear subspace of an inner produt space \(\hilbert\) and let \(x\) be a vector in \(\hilbert\text{.}\) Then \(x \in E^\perp\) if and only if</p>
 <div class="displaymath">
 \begin{equation}
 \norm{x - y} \geq \norm{x} \text{ for all } y \in E.\label{eq-norm-ortho}\tag{5.5.1}
 \end{equation}
-</div></article><article class="hiddenproof" id="proof-22"><a data-knowl="" class="id-ref" data-refid="hk-proof-22"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-22" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-271">(\(\Rightarrow\)): If \(x \in E^\perp\text{,}\) then for any \(y \in E\text{,}\) \(x\) and \(y\) are orthogonal. Then <a data-knowl="./knowl/thm-ortho-pythagorean.html" title="Theorem 5.1.4">Theorem 5.1.4</a> gives</p>
+</div></article><article class="hiddenproof" id="proof-22"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-22"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-22"><article class="hiddenproof"><p id="p-271">(\(\Rightarrow\)): If \(x \in E^\perp\text{,}\) then for any \(y \in E\text{,}\) \(x\) and \(y\) are orthogonal. Then <a class="xref" data-knowl="./knowl/thm-ortho-pythagorean.html" title="Theorem 5.1.4">Theorem 5.1.4</a> gives</p>
 <div class="displaymath">
 \begin{equation*}
 \norm{x - y}^2 = \norm{x}^2 + \norm{y}^2 \geq \norm{x}^2.
 \end{equation*}
 </div>
-<p id="p-272">(\(\Leftarrow)\text{:}\) Now suppose that the inequality in <a data-knowl="./knowl/eq-norm-ortho.html" title="Equation 5.5.1">(5.5.1)</a> holds. Pick an arbitrary \(y \in E\) and a scalar \(c \in \C\text{.}\) As \(E\) is a linear subspace, \(cy \in E\text{,}\) and so</p>
+<p id="p-272">(\(\Leftarrow)\text{:}\) Now suppose that the inequality in <a class="xref" data-knowl="./knowl/eq-norm-ortho.html" title="Equation 5.5.1">(5.5.1)</a> holds. Pick an arbitrary \(y \in E\) and a scalar \(c \in \C\text{.}\) As \(E\) is a linear subspace, \(cy \in E\text{,}\) and so</p>
 <div class="displaymath">
 \begin{equation*}
 \norm{x - cy}^2 \geq \norm{x}^2.
 \end{equation*}
 </div>
-<p>Now we leverage inner product geometry. Notice that</p>
+<p data-braille="continuation">Now we leverage inner product geometry. Notice that</p>
 <div class="displaymath">
 \begin{align*}
 \norm{ x - cy}^2 = \ip{x - cy}{\cc{x - cy}} \amp= \norm{x}^2 - \ip{x}{\cc{cy}} - \ip{cy}{\cc{x}} + \norm{cy}^2\\
 \amp= \norm{x}^2 - 2 \cc{c}\RE \ip{x}{y} + \abs{c}^2 \norm{y}^2.
 \end{align*}
 </div>
-<p>Combining this observation with the previous inequality and canceling the \(\norm{x}^2\text{,}\) we get for all \(c \in \C\text{,}\)</p>
+<p data-braille="continuation">Combining this observation with the previous inequality and canceling the \(\norm{x}^2\text{,}\) we get for all \(c \in \C\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 - 2 \cc{c}\RE \ip{x}{y} + \abs{c}^2 \norm{y}^2 \geq 0.
 \end{equation*}
 </div>
-<p>Now, we'll drop the real part of the inner product. Let \(z\) be a unimodular constant so that \(\cc{z}\ip{x}{y} = \abs{\ip{x}{y}}\) (if you don't see why such a constant should exist, you should think about it). Then the inequality above holds in particular for vectors of the form \(y = tz\) where \(t \in \R^+\text{,}\) which gives</p>
+<p data-braille="continuation">Now, we'll drop the real part of the inner product. Let \(z\) be a unimodular constant so that \(\cc{z}\ip{x}{y} = \abs{\ip{x}{y}}\) (if you don't see why such a constant should exist, you should think about it). Then the inequality above holds in particular for vectors of the form \(y = tz\) where \(t \in \R^+\text{,}\) which gives</p>
 <div class="displaymath">
 \begin{equation*}
 - 2 t\RE \ip{x}{y} + t^2 \norm{y}^2 \geq 0.
 \end{equation*}
 </div>
-<p>We can rearrange this into</p>
+<p data-braille="continuation">We can rearrange this into</p>
 <div class="displaymath">
 \begin{equation*}
 \abs{\ip{x}{y}} \leq \frac{1}{2} t \norm{y}^2,
 \end{equation*}
 </div>
-<p>for all \(t \in \R^+\text{.}\) Letting \(t \to 0\text{,}\) we conclude that \(x \perp y\) for all \(y \in E\text{,}\) and so \(x \in E^\perp\text{.}\)</p></article></div>
+<p data-braille="continuation">for all \(t \in \R^+\text{.}\) Letting \(t \to 0\text{,}\) we conclude that \(x \perp y\) for all \(y \in E\text{,}\) and so \(x \in E^\perp\text{.}\)</p></article></div>
 <p id="p-273">Now we can produce the Hilbert space analogue of decomposing a vector into orthogonal components with repect to orthogonal subspaces.</p>
-<article class="theorem-like" id="thm-hilbert-decomp"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">5.5.5</span>.</h6>
-<p id="p-274">Let \(E\) be a closed linear subspace of a Hilbert space \(\hilbert\text{,}\) and suppose that \(x \in \hilbert\text{.}\) Then there exists \(y \in E\) and \(z \in E^\perp\) so that \(x = y + z\text{.}\)</p></article><article class="hiddenproof" id="proof-23"><a data-knowl="" class="id-ref" data-refid="hk-proof-23"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-23" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-275">The main idea of the proof is to take \(y\) to be the closest point to \(x\) in  \(E\text{.}\) That is, following <a data-knowl="./knowl/thm-closest-point.html" title="Theorem 4.3.2: Closest point property">Theorem 4.3.2</a>, \(y\) is the point in \(E\) so that \(\norm{x - y} \leq \norm{x - v}\) for all \(v \in E\text{.}\) Now define \(z = x - y\) so that \(x = y + z\text{.}\) Now, for any \(v \in E\text{,}\) we know that \(y + v \in E\) and so since \(y\) is the closest point to \(x\text{,}\) we have</p>
+<article class="theorem theorem-like" id="thm-hilbert-decomp"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.5</span><span class="period">.</span>
+</h6>
+<p id="p-274">Let \(E\) be a closed linear subspace of a Hilbert space \(\hilbert\text{,}\) and suppose that \(x \in \hilbert\text{.}\) Then there exists \(y \in E\) and \(z \in E^\perp\) so that \(x = y + z\text{.}\)</p></article><article class="hiddenproof" id="proof-23"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-23"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-23"><article class="hiddenproof"><p id="p-275">The main idea of the proof is to take \(y\) to be the closest point to \(x\) in  \(E\text{.}\) That is, following <a class="xref" data-knowl="./knowl/thm-closest-point.html" title="Theorem 4.3.2: Closest point property">Theorem 4.3.2</a>, \(y\) is the point in \(E\) so that \(\norm{x - y} \leq \norm{x - v}\) for all \(v \in E\text{.}\) Now define \(z = x - y\) so that \(x = y + z\text{.}\) Now, for any \(v \in E\text{,}\) we know that \(y + v \in E\) and so since \(y\) is the closest point to \(x\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \norm{z} = \norm{x - y} \leq \norm{x - (y + m)}.
 \end{equation*}
 </div>
-<p>That is, for all \(v \in E\text{,}\) we have</p>
+<p data-braille="continuation">That is, for all \(v \in E\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \norm {z} \leq \norm {z - m}.
 \end{equation*}
 </div>
-<p>By <a data-knowl="./knowl/lemma-norm-ortho.html" title="Lemma 5.5.4">Lemma 5.5.4</a>, we conclude that \(z \in E^\perp\text{.}\)</p></article></div> An immediate consequence is that the orthogonal complement of an orthogonal complement of a closed linear subpsace is the space itself. <article class="theorem-like" id="corr-perp-perp"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">5.5.6</span>.</h6>
-<p id="p-276">If \(E\) is a closed linear subspace of a Hilbert space \(\hilbert\text{,}\) then \((E^\perp)^\perp = E\text{.}\)</p></article><article class="hiddenproof" id="proof-24"><a data-knowl="" class="id-ref" data-refid="hk-proof-24"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-24" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-277">Every element of \(E\) is orthogonal to \(E^\perp\) by definition, and so \(E \subseteq E^\perp\text{.}\) On the other hand, let \(x \in (E^\perp)^\perp\text{.}\) Then by <a data-knowl="./knowl/thm-hilbert-decomp.html" title="Theorem 5.5.5">Theorem 5.5.5</a>, \(x = y + z\) where \(y \in E\) and \(z \in E^\perp\text{.}\) Because \(x \in (E^\perp)^\perp\text{,}\) we have \(\ip{x}{z} = 0\text{.}\) But then</p>
+<p data-braille="continuation">By <a class="xref" data-knowl="./knowl/lemma-norm-ortho.html" title="Lemma 5.5.4">Lemma 5.5.4</a>, we conclude that \(z \in E^\perp\text{.}\)</p></article></div> An immediate consequence is that the orthogonal complement of an orthogonal complement of a closed linear subpsace is the space itself. <article class="corollary theorem-like" id="corr-perp-perp"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.5.6</span><span class="period">.</span>
+</h6>
+<p id="p-276">If \(E\) is a closed linear subspace of a Hilbert space \(\hilbert\text{,}\) then \((E^\perp)^\perp = E\text{.}\)</p></article><article class="hiddenproof" id="proof-24"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-24"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-24"><article class="hiddenproof"><p id="p-277">Every element of \(E\) is orthogonal to \(E^\perp\) by definition, and so \(E \subseteq E^\perp\text{.}\) On the other hand, let \(x \in (E^\perp)^\perp\text{.}\) Then by <a class="xref" data-knowl="./knowl/thm-hilbert-decomp.html" title="Theorem 5.5.5">Theorem 5.5.5</a>, \(x = y + z\) where \(y \in E\) and \(z \in E^\perp\text{.}\) Because \(x \in (E^\perp)^\perp\text{,}\) we have \(\ip{x}{z} = 0\text{.}\) But then</p>
 <div class="displaymath">
 \begin{equation*}
 0 = \ip{x}{z} = \ip{y + z}{z} = \ip{y}{z} + \ip{z}{z} = \norm{z}^2,
 \end{equation*}
 </div>
-<p>and so \(z = 0\text{.}\) This means that \(x = y\) and thus \(x \in E\) and \((E^\perp)^\perp \subseteq E\text{.}\) The two-way inclusion proves the claim.</p></article></div>
-<article class="definition-like" id="def-direct-sum"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.5.7</span>.</h6>
+<p data-braille="continuation">and so \(z = 0\text{.}\) This means that \(x = y\) and thus \(x \in E\) and \((E^\perp)^\perp \subseteq E\text{.}\) The two-way inclusion proves the claim.</p></article></div>
+<article class="definition definition-like" id="def-direct-sum"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.7</span><span class="period">.</span>
+</h6>
 <p id="p-278">Let \(E, F\) be subspaces of a vector space \(V\text{.}\) \(V\) is the <dfn class="terminology">direct sum</dfn> of \(E\) and \(F\text{,}\) denoted \(V = E \oplus F\text{,}\) if \(M \cap N = \{0\}\) and every vector in \(V\) can be written as a sum of a vector in \(E\) and a vector in \(F\text{.}\) If \(V\) is an inner product space and \(E \perp F\) (in the sense that \(\ip{x}{y} = 0\) for \(x \in E, y \in F\) then \(V\) is the <dfn class="terminology">orthogonal direct sum</dfn> of \(E\) and \(F\text{.}\)</p></article><p id="p-279">It is immediate that for any closed linear subspace \(E\) of a Hilbert space \(\hilbert\) that \(\hilbert\) is the orthogonal direct sum \(E \oplus E^\perp\text{.}\)</p>
-<article class="exercise-like" id="exercise-43"><a data-knowl="" class="id-ref" data-refid="hk-exercise-43"><h6 class="heading">
-<span class="type">Checkpoint</span> <span class="codenumber">5.5.8</span>.</h6></a></article><div id="hk-exercise-43" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-280">Show that \(L^2(-1,1)\) can be orthongonally decomposed into the direct sum of its subspaces of even and odd functions.</p></article></div></section></div></main>
+<article class="exercise exercise-like" id="exercise-43"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-43"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.5.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-43"><article class="exercise exercise-like"><p id="p-280">Show that \(L^2(-1,1)\) can be orthongonally decomposed into the direct sum of its subspaces of even and odd functions.</p></article></div></section></div></main>
 </div>
-<div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

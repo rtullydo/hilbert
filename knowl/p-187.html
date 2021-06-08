@@ -1,65 +1,67 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-08-30T17:09:15-04:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-07T17:36:33-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
 <p>Let</p>
-<div class="displaymath">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 M = \inf_{a\in A} \norm{x-a}.
 \end{equation*}
 </div>
-<p>We assumed that \(A\) was not empty, and so \(m\) must be some finite number. Since the infimum is a limit point, we can construct a sequence \(\norm{x - y_n}\) tending to \(\norm{x - a}\text{.}\) That is, for each integer \(n\text{,}\) there exists some \(y_n\) so that</p>
-<div class="displaymath">
+<p data-braille="continuation">We assumed that \(A\) was not empty, and so \(m\) must be some finite number. Since the infimum is a limit point, we can construct a sequence \(\norm{x - y_n}\) tending to \(\norm{x - a}\text{.}\) That is, for each integer \(n\text{,}\) there exists some \(y_n\) so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \norm{x - y_n}^2 \lt M^2 + \frac{1}{n}.
 \end{equation*}
 </div>
-<p>We now move from a sequence in norm to a sequence in \(A\) by showing that \(y_n\) is Cauchy in \(A\) - that is, we need to show that \(\norm{y_n - y_m}\) is small. We first apply <a data-knowl="./knowl/thm-parallelogram.html" title="Theorem 2.2.8: Parallelogram identity">Theorem 2.2.8</a> to the sequences \(x - y_n\) and \(x - y_m\text{.}\) For any \(m,n \in \mathbb{N}\text{,}\) we have</p>
-<div class="displaymath">
+<p data-braille="continuation">We now move from a sequence in norm to a sequence in \(A\) by showing that \(y_n\) is Cauchy in \(A\) - that is, we need to show that \(\norm{y_n - y_m}\) is small. We first apply <a class="xref" data-knowl="./knowl/thm-parallelogram.html" title="Theorem 2.2.8: Parallelogram identity">Theorem 2.2.8</a> to the sequences \(x - y_n\) and \(x - y_m\text{.}\) For any \(m,n \in \mathbb{N}\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 \amp\norm{(x - y_n) - (x - y_m)}^2 + \norm{(x - y_n)+(x - y_m)}^2\\
 \amp= 2 \norm{x - y_n}^2 + 2\norm{x - y_m}^2\\
 \amp\lt 4M^2 + 2\left(\frac{1}{n} + \frac{1}{m}\right).
 \end{align*}
 </div>
-<p>The term we are trying to bound is \(\norm{(x - y_n) - (x - y_m)} = \norm{y_n - y_m}\text{.}\) On rearrangement, we get</p>
-<div class="displaymath">
+<p data-braille="continuation">The term we are trying to bound is \(\norm{(x - y_n) - (x - y_m)} = \norm{y_n - y_m}\text{.}\) On rearrangement, we get</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 \norm{y_n - y_m}^2 \amp\lt 4M^2 + 2\left(\frac{1}{n} + \frac{1}{n}\right) - \norm{2x - y_n - y_m}^2\\
 \amp= 4M^2 + 2\left(\frac{1}{n} + \frac{1}{n}\right) - 4\norm{x - \frac{y_n - y_m}{2}}^2
 \end{align*}
 </div>
-<p>Now we will use the convexity of \(A\text{.}\) Since \(y_n, y_m \in A\text{,}\) we know that \(\frac{1}{2} y_n + \frac{1}{2} y_m =\frac{y_n + y_m}{2} \in A\text{,}\) and hence that</p>
-<div class="displaymath">
+<p data-braille="continuation">Now we will use the convexity of \(A\text{.}\) Since \(y_n, y_m \in A\text{,}\) we know that \(\frac{1}{2} y_n + \frac{1}{2} y_m =\frac{y_n + y_m}{2} \in A\text{,}\) and hence that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 M^2 = \inf_{a \in A} \norm{x - a}^2 \leq \norm{x - \frac{y_n + y_n}{2}}^2.
 \end{equation*}
 </div>
-<p>Consequently,</p>
-<div class="displaymath">
+<p data-braille="continuation">Consequently,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
 \norm{y_n - y_m}^2 \amp\leq 4M^2 + 2\left(\frac{1}{n} + \frac{1}{m} - 4M^2\right)\\
 \amp = 2\left(\frac{1}{n} + \frac{1}{m}\right).
 \end{align*}
 </div>
-<p>It follows that \((y_n)\) is a Cauchy sequence in \(A\text{;}\) for a given \(\eps &gt; 0\) (you should verify). Because \(\hilbert\) is a Hilbert space, Cauchy sequences converge, and so \(y_n \to y \in \hilbert\text{.}\) Since \(A\) is closed, \(y \in A\text{.}\) On the one hand, this means that \(\norm{x - y} \geq M\text{,}\) since \(M\) is an infimum. On the other hand, we know that for all \(n\text{,}\)</p>
-<div class="displaymath">
+<p data-braille="continuation">It follows that \((y_n)\) is a Cauchy sequence in \(A\text{;}\) for a given \(\eps &gt; 0\) (you should verify). Because \(\hilbert\) is a Hilbert space, Cauchy sequences converge, and so \(y_n \to y \in \hilbert\text{.}\) Since \(A\) is closed, \(y \in A\text{.}\) On the one hand, this means that \(\norm{x - y} \geq M\text{,}\) since \(M\) is an infimum. On the other hand, we know that for all \(n\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \norm{x - y_n}^2 \leq M^2 + \frac{1}{n}.
 \end{equation*}
 </div>
-<p>On taking \(n \to \infty\text{,}\) we get \(\norm{x - y} \leq M^2\text{.}\) We conclude that \(\norm{x - y} = M\text{,}\) and so \(y\) is a closest point in \(A\) to \(x\text{.}\)</p>
+<p data-braille="continuation">On taking \(n \to \infty\text{,}\) we get \(\norm{x - y} \leq M^2\text{.}\) We conclude that \(\norm{x - y} = M\text{,}\) and so \(y\) is a closest point in \(A\) to \(x\text{.}\)</p>
 <span class="incontext"><a href="hilbert-3.html#p-187">in-context</a></span>
 </body>
 </html>

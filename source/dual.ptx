@@ -1,0 +1,129 @@
+<chapter><title>Dual spaces</title>
+    <section xml:id="dual-1">
+        <title>Linear functionals</title>
+        <p>Let us consider an analogy with linear algebra. The space <m>\R^n</m> can be acted on by a linear transformation, which can be realized as multiplication by a matrix <m>M</m> that represents the linear transformation. Such an <m>M</m> can be any size that is compatible with matix mutiplication. If we choose a transformation that is represented by a vector <m>y</m> of size <m>m \times 1</m>, then we've created a function on <m>\R^n</m> that takes <m>\R^n \to \R</m>. The space of all such functions is itself <m>n</m>-dimensional (since each function arises from a vector in <m>\R^n</m>). Multiplication of two vectors that results in a scalar output already has a form that we know - namely, we can write any such function in terms of its representing vector <m>y</m> by
+        <me>
+            y: \R^n \mapsto \R \text{ by } y(v) = \ip{v}{y}.
+        </me>
+        This is a simple case of a powerful theorem called the Riesz representation theorem. A function on <m>\R^n</m> of the form <m>\ip{\cdot}{y}</m> is called a <term>linear functional</term>. One of the core ideas of functional analysis is that we can often move phenomena and relationships that exist among the elements of a vector space into <term>dual</term> relationships among elements of the space of linear functionals.</p>
+
+        <p>While it easy to write down the general linear functional in finite dimensions, in infinite dimensions the problem is significantly harder. One useful restriction is to consider just the family of continuous linear functionals (we are doing analysis, after all!). One reason to study Hilbert spaces is that the inner product geometry allows us to write down then general linear functional (in precisely the same form as the finite dimensional case - <m>\ip{\cdot}{y}</m> for some vector <m>y</m>). In Banach spaces, we do not have an inner product and it is quite a bit trickier. This means that in Hilbert spaces, duality works much like it does in finite dimensions. We will now make these notions formal.</p>
+
+        <definition xml:id="def-linear-functional">
+            <p>A linear functional on a vector space <m>V</m> over a field <m>k</m> is a mapping <m>f:V \to k</m> satisfying
+            <me>
+                F(\la x + \mu y) = \la f(x) + \mu f(y)
+            </me>
+            for all <m>x, y \in V</m> and <m>\la, \mu \in k</m>.</p>
+        </definition>
+
+        <example><title>on <m>\C^n</m></title>
+            <p>Define <m>f: \C^n \to \C</m> by
+            <me>
+                F(x_1, \ldots, x_n) = c_1 x_1 + \ldots + c_n x_n
+            </me>
+            where <m>c_1, \ldots, c_n \in \C</m>.</p>
+        </example>
+
+        <example><title>on <m>\ell^1</m></title>
+            <p>Define <m>f_c: \ell^1 \to \C</m> by
+            <me>
+                F_c((x_n)_{n \in \mathbb{N}}) = \sum_{n=1}^\infty c_n x_n
+            </me>
+            where <m>c = (c_n)_{n \in \mathbb{N}} \in \ell^\infty</m>. The space <m>\ell^\infty</m> is the space of bounded sequences. The space <m>\ell^1</m> is the space of sequences <m>(x_n)</m> so that <m>\sum \abs{x_n}</m> is finite. Combining these facts gives that <m>\sum c_n x_n</m> is absolutely convergent, which ensures that <m>f_c</m> is a well-defined function.</p>
+        </example>
+
+        <example><title> on <m>C[0,1]</m></title>
+            <p>Define <m>f:C[0,1]\to \C</m> by
+            <me>
+                F(x) = \int_0^1 x(t) \dd \alpha(t)
+            </me>
+            for a function <m>x \in C[0,1]</m>, where <m>\alpha</m> is a function of bounded variation on <m>[0,1]</m>. (This is called a Stieltjes integral, and used widely in probability theory. It generalizes the Riemann integral - one recovers the Riemann integral by choosing <m>\alpha(t) = t</m>.)</p>
+        </example>
+        <example><title>on <m>\mathcal H</m></title>
+            <p>Let <m>\mathcal H</m> be a Hilbert space and <m>y \in \hilbert</m>. Define <m>f_y: \hilbert \to \C</m> by
+            <me>
+                F_y(x) = \ip{x}{y}.
+            </me></p>
+        </example>
+        <exercise>
+            <p>Show that each of the above is a linear functional.</p>
+        </exercise>
+
+        <p>The examples above are also continuous. There is a convenient theorem for checking this fact.</p>
+        <theorem xml:id="thm-continuous-linear-functional">
+            <p>Let <m>F</m> be a linear functional on a normed space <m>(V, \norm{\cdot})</m>. The following are equivalent:
+            <ol>
+                <li><m>F</m> is continuous;</li>
+                <li><m>F</m> is continuous at 0;</li>
+                <li><m>\displaystyle \sup \{\abs{F(x)}: x \in V, \norm{x}\leq 1\} \lt \infty.</m></li>
+            </ol></p>
+        </theorem>
+
+        <p>The set <m>\{x \in V: \norm{x}\leq 1\}</m> is called the <term>unit ball</term> of <m>V</m>. So a functional is continuous if and only if it is bounded on the unit ball.</p>
+
+        <proof>
+            <p>(1) implies (2) is obvious.</p>
+            <p>Suppose that (2) holds. Then given <m>\eps = 1</m>, there exists <m>\delta > 0</m> so that <m>\abs{x} \lt \delta</m> implies that <m>\abs{F(x)}\lt1</m>. Now we will use the fact that <m>F</m> is linear to show that <m>F</m> is bounded. For any <m>x \in V</m> with <m>\norm{x} \leq 1</m>, <m>\norm{\frac{\delta x}{2}} \lt \delta</m>, which means that <m>F(\frac{\delta x}{2}) \lt 1</m>. Then linearity gives that <m>F(x) \lt \frac{2}{\delta}</m> on the unit ball of <m>V</m>, and so (3) holds.</p>
+            <p>Now suppose that (3) holds. Denote the finite supremum of <m>F</m> on the unit ball of <m>V</m> by <m>M</m>. For any distinct vectors <m>x, y \in V</m>, the vector <m>(x - y)/\norm{x - y)}</m> is a unit vector. Then by (iii), 
+            <me>
+                \abs{F\left( \frac{x-y}{\norm{x-y}}\right)}  \leq M.
+            </me> 
+            Because <m>F</m> is linear, this means that 
+            <me>
+                \abs{F(x) - F(y)} \leq M \norm{x - y}
+            </me>
+            and so <m>F</m> is continuous.</p>
+        </proof>
+
+        <exercise><title>A discontinous linear functional</title>
+            <p> Define a linear functional <m>F</m> on <m>C^1[0,1]</m>, the space of continuously differentiable functions on <m>[0,1]</m>, by
+            <me>
+                F(x) = x'(1).
+            </me>
+            Show that <m>F</m> is discontinuous with respect to the norm <m>\norm{\cdot}_\infty</m>.
+            </p>
+        </exercise>
+
+        <p>Just as in the finite-dimensional case, the set of continuous linear functionals is a space in its own right, as long as the underlying space is at least a normed space. Surprisingly, even if the underlying space is not complete (i.e., not a Banach space), the set of functionals will be.</p>
+
+        <theorem xml:id="thm-dual-space-banach">  
+            <p>The set <m>V\ad</m> of all continuous linear functionals on a normed space <m>(V, \norm{\cdot})</m> is a Banach space with respect to pointwise algebraic operations and under the norm 
+            <me>
+                \norm{F} = \sup_{v \in V, \norm{v}\leq 1} \abs{F(v)}.
+            </me></p>
+        </theorem>
+
+        <proof> <p>First, it is straightforward to show that <m>V\ad</m> is a vector space over the same field as <m>V</m>. By <xref ref="thm-continuous-linear-functional"/>, <m>\norm{F} \lt \infty</m> for all <m>F \in V\ad</m>, and one can readily verify that <m>\norm{\cdot}</m> as defined above is a norm (as in <xref ref="def-norm"/>).</p>
+
+            <p>We will now show that <m>V\ad</m> is complete. Let <m>(F_n)</m> denote a Cauchy sequence of linear functionals so that <m>\norm{F_n - F_m} \to 0</m> as <m>n, m \to \infty</m>. Choose <m>x \in V</m>. Then the sequence <m>\abs{F_n(x) - F_m(x)} \to 0</m> as <m>n, m \to \infty</m>. As this is a sequence of scalars, it must converge. Denote the limit of this sequence by <m>F(x)</m>. Then the map <m>F:V \to k</m> so pointwise defined is a linear functional (by the properties of limits and the fact that the <m>F_n</m> are linear functionals). It remains to show that <m>F \in V\ad</m> and that <m>F_n \to F</m> with respect to <m>\norm{\cdot}</m>.</p>
+            <p> Let <m>\eps > 0</m> and choose some <m>N</m> so that <m>n, m \gt N</m> implies that <m>\norm{F_n - F_m} \lt \eps</m> (as <m>F_n</m> is Cauchy). Then for any <m>x \in V</m> with <m>\norm{x} \lt 1</m>, and for all <m>n, m 
+            \gt N</m>, we have
+            <me>
+                \abs{F_m(x) - F_n(x)} \lt \eps.
+            </me>
+            Taking <m>m \to \infty</m>, we get that, for all <m>\norm{x}\lt 1</m> and <m>n > N</m>, 
+            <men xml:id="eq-banach-1">
+                \abs{F(x) - F_n(x)} \leq \eps.
+            </men>
+            To complete the proof, note that since <m>F - F_N</m> and <m>F_N</m> are bounded on the closed unit ball of <m>V</m>, so must be <m>F</m>, which by <xref ref="thm-continuous-linear-functional"/> means that <m>F</m> is continuous and so <m>F \in V\ad</m>. On the other hand, <xref ref="eq-banach-1"/> implies that <m>\norm{F_n - F} \lt \eps</m> for <m>n \gt N</m>, and so <m>F_n \to F</m> in <m>V\ad</m>. Thus <m>V\ad</m> is complete (and hence a Banach space of continuous linear functionals).</p>
+            </proof>
+
+            <p>Analysis is built on a backbone of useful inequalities. Let us take note of a nice inequality that is an immediate consequence of the definition of the dual norm.</p>
+
+            <theorem xml:id="thm-norm-split">
+                <p>For any vector <m>v</m> in a normed space <m>V</m> and any continuous linear functional <m>F</m> on <m>V</m>, 
+                <me>
+                    \abs{F(v)} \leq \norm{F} \abs{v}.
+                </me>
+                </p>
+            </theorem>
+            <proof>
+                <p>Suppose that <m>v \neq 0</m>. Then <m>\frac{v}{\norm{v}}</m> is a unit vector, and so 
+                <me>
+                    \norm{F} \geq \abs{F(\frac{v}{\norm{v}})} = \frac{\abs{F(v)}}{\abs{v}}.
+                </me></p>
+            </proof>
+
+    </section>
+</chapter>

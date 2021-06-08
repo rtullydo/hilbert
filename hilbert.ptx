@@ -143,6 +143,7 @@
       <xi:include href="source/norm.ptx"/>
       <xi:include href="source/hilbert-banach.ptx"/>
       <xi:include href="source/orthogonal.ptx"/>
+      <xi:include href="source/dual.ptx"/>
       <xi:include href="source/analysis.ptx"/>
 
 
