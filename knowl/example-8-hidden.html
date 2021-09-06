@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-09-06T11:51:38-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>We will describe the dual space of \(\ell^1\text{,}\) the space of absolutely summable sequences. It turns out to be the case that one can identify \((\ell^1)\ad\) with \(\ell^\infty\) by way of a map that is an isomorphism of vector spaces and also an isometry (a mapping that preserves norms). Define a map \(T: \ell^\infty \to (\ell^1)\ad\) by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Tc = F_c,
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(F_c\) is the functional defined in <a class="xref" data-knowl="./knowl/ex-ell-1.html" title="Example 6.1.3: on \(\ell^1\)">Example 6.1.3</a>. It is easy to see that \(T\) is linear. To see that \(T\) is surjective, choose an element \(\xi \in (\ell^1)\ad\text{.}\) We need an element \(c \in \ell^\infty\) such that \(Tc = \xi\text{.}\) Let \(e_n\) denote the \(n\)th elementary basis vector in \(\ell^1\) (you can think of this as a vector of 0s with a 1 in the \(n\)th position), and let \(c_n = \xi(e_n)\text{.}\) Now let \(c = (c_n)_{n \in \mathbb{N}}\text{.}\) (Notice that \(F_c(e_n) = c_n\text{.}\)) Since \(e_n\) is a unit vector in \(\ell^1\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\abs{c_n} = \abs{\xi(e_n)} \leq \norm{\xi}\abs{e_n} = \norm{\xi}.
+\end{equation*}
+</div>
+<p data-braille="continuation">This means that \((c_n)\) is a bounded sequence, and so \(c \in \ell^\infty\) with</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+\norm{c}_\infty =  \sup_n \abs{c_n} \leq \norm{\xi}.\tag{6.1.2}
+\end{equation}
+</div>
+<p data-braille="continuation">Now we need to show that \(F_c = \xi\text{.}\) Choose an \(x\in \ell^1\text{,}\) and denote the \(k\)-th partial expansion of \(x\) by \(x^k = \sum_{n = 1}^k x_n e_n\text{.}\) As a sequence, \(x^k \to x\) in \(\ell^1\) as \(k\to \infty\text{.}\)  Then we can evaluate \(F\) and \(\xi\) on the sequence by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+F_c(x^k) - \xi(x^k) = \sum_{n=1}^{k} c_n x_n - \sum_{n = 1}^k x_n \xi(e_n) = 0.
+\end{equation*}
+</div>
+<p data-braille="continuation">In the limit, this shows that \(F_c(x) = \xi(x)\) for arbitrary \(x\text{.}\)</p>
+<p>The last part of the proof is to show that distances are preserved under \(T\text{.}\) By <a class="xref" data-knowl="./knowl/eq-c-bound.html" title="Equation 6.1.2">(6.1.2)</a>, we have \(\norm{c}_\infty \leq \norm{F_c}\text{.}\) On the other hand, for any choice of \(x \in \ell^1\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\abs{F_c(x)} = \abs{\sum_{n=1}^\infty c_n x_n} \leq \sup_n \abs{c_n} \sum\abs{x} = \norm{c}_\infty \norm{x}_1,
+\end{equation*}
+</div>
+<p data-braille="continuation">and so \(\norm{F_c} \leq \norm{c}_\infty\text{.}\) We conclude that \(\norm{F_c} = \norm{c}\text{,}\) and thus that \(T\) is an isometry.</p></article></body>
+</html>

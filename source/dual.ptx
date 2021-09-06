@@ -25,7 +25,7 @@
             where <m>c_1, \ldots, c_n \in \C</m>.</p>
         </example>
 
-        <example><title>on <m>\ell^1</m></title>
+        <example xml:id="ex-ell-1"><title>on <m>\ell^1</m></title>
             <p>Define <m>f_c: \ell^1 \to \C</m> by
             <me>
                 F_c((x_n)_{n \in \mathbb{N}}) = \sum_{n=1}^\infty c_n x_n
@@ -109,6 +109,8 @@
             To complete the proof, note that since <m>F - F_N</m> and <m>F_N</m> are bounded on the closed unit ball of <m>V</m>, so must be <m>F</m>, which by <xref ref="thm-continuous-linear-functional"/> means that <m>F</m> is continuous and so <m>F \in V\ad</m>. On the other hand, <xref ref="eq-banach-1"/> implies that <m>\norm{F_n - F} \lt \eps</m> for <m>n \gt N</m>, and so <m>F_n \to F</m> in <m>V\ad</m>. Thus <m>V\ad</m> is complete (and hence a Banach space of continuous linear functionals).</p>
             </proof>
 
+            <p>The space <m>V\ad</m> is often referred to as the <term>dual space</term> of <m>V</m>.</p>
+
             <p>Analysis is built on a backbone of useful inequalities. Let us take note of a nice inequality that is an immediate consequence of the definition of the dual norm.</p>
 
             <theorem xml:id="thm-norm-split">
@@ -125,5 +127,95 @@
                 </me></p>
             </proof>
 
+            <example><title>The dual of <m>\ell^1</m></title>
+                <p>We will describe the dual space of <m>\ell^1</m>, the space of absolutely summable sequences. It turns out to be the case that one can identify <m>(\ell^1)\ad</m> with <m>\ell^\infty</m> by way of a map that is an isomorphism of vector spaces and also an isometry (a mapping that preserves norms). Define a map <m>T: \ell^\infty \to (\ell^1)\ad</m> by
+                <me>
+                    Tc = F_c,
+                </me>
+                where <m>F_c</m> is the functional defined in <xref ref="ex-ell-1"/>. It is easy to see that <m>T</m> is linear. To see that <m>T</m> is surjective, choose an element <m>\xi \in (\ell^1)\ad</m>. We need an element <m>c \in \ell^\infty</m> such that <m>Tc = \xi</m>. Let <m>e_n</m> denote the <m>n</m>th elementary basis vector in <m>\ell^1</m> (you can think of this as a vector of 0s with a 1 in the <m>n</m>th position), and let <m>c_n = \xi(e_n)</m>. Now let <m>c = (c_n)_{n \in \mathbb{N}}</m>. (Notice that <m>F_c(e_n) = c_n</m>.) Since <m>e_n</m> is a unit vector in <m>\ell^1</m>, 
+                <me>
+                    \abs{c_n} = \abs{\xi(e_n)} \leq \norm{\xi}\abs{e_n} = \norm{\xi}.
+                </me>
+                This means that <m>(c_n)</m> is a bounded sequence, and so <m>c \in \ell^\infty</m> with
+                <men xml:id="eq-c-bound">
+                    \norm{c}_\infty =  \sup_n \abs{c_n} \leq \norm{\xi}.
+                </men>
+                Now we need to show that <m>F_c = \xi</m>. Choose an <m>x\in \ell^1</m>, and denote the <m>k</m>-th partial expansion of <m>x</m> by <m>x^k = \sum_{n = 1}^k x_n e_n</m>. As a sequence, <m>x^k \to x</m> in <m>\ell^1</m> as <m>k\to \infty</m>.  Then we can evaluate <m>F</m> and <m>\xi</m> on the sequence by
+                <me>
+                    F_c(x^k) - \xi(x^k) = \sum_{n=1}^{k} c_n x_n - \sum_{n = 1}^k x_n \xi(e_n) = 0.
+                </me>
+                In the limit, this shows that <m>F_c(x) = \xi(x)</m> for arbitrary <m>x</m>.</p>
+
+                <p>The last part of the proof is to show that distances are preserved under <m>T</m>. By <xref ref="eq-c-bound"/>, we have <m>\norm{c}_\infty \leq \norm{F_c}</m>. On the other hand, for any choice of <m>x \in \ell^1</m>, 
+                <me>
+                    \abs{F_c(x)} = \abs{\sum_{n=1}^\infty c_n x_n} \leq \sup_n \abs{c_n} \sum\abs{x} = \norm{c}_\infty \norm{x}_1,
+                </me>
+                and so <m>\norm{F_c} \leq \norm{c}_\infty</m>. We conclude that <m>\norm{F_c} = \norm{c}</m>, and thus that <m>T</m> is an isometry.</p>
+            </example>
+
     </section>
+
+    <section xml:id="dual-2"><title>The Riesz representation theorem</title>
+
+        <p>In the case of Hilbert space, we recover the characterization of linear functionals as inner products against a representative vector. This powerful idea is one of the central tools of Hilbert space theory.</p>
+
+        <theorem><title>(Riesz-Fréchet)</title>
+            <p>Let <m>\hilbert</m> be a Hilbert space and let <m>F</m> be a continuous linear functional on <m>\hilbert</m>. There exists a unique vector <m>y \in \hilbert</m> so that
+            <me>
+                F(x) = \ip{x}{y}
+            </me>
+            for all <m>x \in \hilbert</m>. Moreover, <m>\norm{y} = \norm{F}</m>. (<m>y</m> is sometimes called the representative vector for <m>F</m>.)</p>
+        </theorem>
+
+        <proof> 
+            <p>We should first observe that if we can find such a <m>y</m>, <xref ref="thm-innerproduct"/> guarantees that it will be unique, as for all <m>x\in \hilbert</m>, we would have
+            <me>
+                \ip{x}{y} = F(x) = \ip{x}{y'}.
+            </me></p>
+
+            <p>If <m>F</m> is the functional that sends every vector to 0, then we can take <m>y = 0</m>. So suppose that <m>F</m> is not the zero functional. In that case, the kernel of <m>F</m>, which we denote by <m>M</m> is a proper closed subspace of <m>\hilbert</m>. Then by<xref ref="thm-hilbert-decomp"/> we can decompose <m>\hilbert</m> as <m>\hilbert = M \oplus M^\perp</m> with <m>M^\perp \neq \{0\}</m>. Now choose a non-zero element <m>z \in M^\perp</m>. We can assume that <m>F(z) = 1</m> by normalizing by a scalar.  Now, for any <m>x \in \hilbert</m>, decompose <m>x</m> into 
+            <me>
+                x = (x - F(x)z) + F(x)z),
+            </me>
+            where <m>F(x)z \in M^\perp</m> and so <m>x - F(x)z \in M</m>. Now, take the inner product of these vectors with <m>z</m>. The result is
+            <md>
+                <mrow>\ip{x}{z} \amp= \ip{(x - F(x)z) + F(x)z)}{z}</mrow>
+                <mrow>\amp= \ip{x - F(x)z}{z} + \ip{F(x)z}{z}</mrow>
+                <mrow>\amp= \ip{F(x)z}{z}</mrow>,
+            </md>
+            since <m>z \perp M</m>. Then we get, for all <m>x \in \hilbert</m>, that
+            <me>
+                \ip{x}{z} = F(x)\norm{z}^2.
+            </me>
+            Now, let <m>y = z/\norm{z}^2</m>. Taking the inner product with <m>x</m>, we compute
+            <me>
+                \ip{x}{y} = \ip{x}{\frac{z}{\norm{z}^2}} = \frac{1}{\norm{z}^2} F(x)\norm{z}^2 = F(x).
+            </me> 
+            This shows that the representing vector for <m>F</m> exists.</p>
+
+            <p>Now, we want to show that <m>\norm{y} = \norm{F}</m>. For any <m>\norm{x} \leq 1</m>, the Cauchy-Schwarz inequality (<xref ref="thm-cauchy-schwarz"/>) gives
+            <me>
+                \abs{F(x)} = \abs{\ip{x}{y}} \leq \norm{x}\norm{y} \leq \norm{y}.
+            </me>
+            On the other hand, choosing the specific unit vector <m>x = \frac{y}{\norm{y}}</m> gives
+            <me>
+                \norm{F} \geq \abs{F(x)} = \frac{\abs{F(y)}}{\norm{y}} = \abs{\ip{y}{y}}/\norm{y} = \norm{y};
+            </me>
+            that is, <m>\norm{F} \geq \norm{y}</m>. We conclude that <m>\norm{F} = \norm{y}</m>, which completes the proof.</p>
+
+        </proof>
+
+        <p>It is worth pointing out that the Riesz representation theorem gives an explicit map <m>T: \hilbert \to \hilbert\ad</m> via 
+        <me>
+            Ty = \ip{\cdot}{y}
+        </me>
+        that is both surjective and isometric. <m>T</m> is also <term>antilinear</term> or <term>conjugate linear</term> in the sense that <m>T(ax + by) = \cc{a}x + \cc{b}{y}</m>. Given the existence of <m>T</m>, Hilbert spaces are in some sense their own dual spaces, in the same way that <m>\R^n</m> is self-dual. (That is to say, Hilbert spaces are in some strong sense the correct notion of <q><m>\R^\infty</m></q>).</p>
+
+        <p>We're arrived at one of the major differences between inner product spaces and normed spaces. While the Riesz representation theorem tells us essentially everything about the continuous linear functionals on a Hilbert space, questions turn out to be significantly more complicated in the realm of Banach space. N. Young points out the following, seemingly easy question - given <m>x, y</m> distinct elements in a normed space <m>E</m>, does there exist a linear functional that <q>separates points</q>; that is, can we find a functional <m>F</m> on <m>E</m> so that <m>F(x) \neq F(y)</m>? In Hilbert space, the answer is immediate: yes, because <m>F = \ip{\cdot}{x - y}</m> will do the job. In a general normed space, the answer is much more subtle and requires the central theorem of functional analysis, the <url href="https://en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem">Hahn-Banach theorem</url>, which is well beyond the scope of these notes and typically introduced in a first course in functional analysis (see e.g. <url href="https://www.springer.com/gp/book/9780387972459"> Conway 2007</url>.).</p>
+    </section>
+
+    <section xml:id="dual-3"><title>Exercises</title>
+        <p>to be added</p>
+    </section>
+
 </chapter>

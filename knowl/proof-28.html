@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-09-06T11:51:38-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
+<p>We should first observe that if we can find such a \(y\text{,}\) <a class="xref" data-knowl="./knowl/thm-innerproduct.html" title="Theorem 2.1.4">Theorem 2.1.4</a> guarantees that it will be unique, as for all \(x\in \hilbert\text{,}\) we would have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\ip{x}{y} = F(x) = \ip{x}{y'}.
+\end{equation*}
+</div>
+<p>If \(F\) is the functional that sends every vector to 0, then we can take \(y = 0\text{.}\) So suppose that \(F\) is not the zero functional. In that case, the kernel of \(F\text{,}\) which we denote by \(M\) is a proper closed subspace of \(\hilbert\text{.}\) Then by<a class="xref" data-knowl="./knowl/thm-hilbert-decomp.html" title="Theorem 5.5.5">Theorem 5.5.5</a> we can decompose \(\hilbert\) as \(\hilbert = M \oplus M^\perp\) with \(M^\perp \neq \{0\}\text{.}\) Now choose a non-zero element \(z \in M^\perp\text{.}\) We can assume that \(F(z) = 1\) by normalizing by a scalar.  Now, for any \(x \in \hilbert\text{,}\) decompose \(x\) into</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x = (x - F(x)z) + F(x)z),
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(F(x)z \in M^\perp\) and so \(x - F(x)z \in M\text{.}\) Now, take the inner product of these vectors with \(z\text{.}\) The result is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\ip{x}{z} \amp= \ip{(x - F(x)z) + F(x)z)}{z}\\
+\amp= \ip{x - F(x)z}{z} + \ip{F(x)z}{z}\\
+\amp= \ip{F(x)z}{z}
+\end{align*}
+</div>
+<p data-braille="continuation">since \(z \perp M\text{.}\) Then we get, for all \(x \in \hilbert\text{,}\) that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\ip{x}{z} = F(x)\norm{z}^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">Now, let \(y = z/\norm{z}^2\text{.}\) Taking the inner product with \(x\text{,}\) we compute</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\ip{x}{y} = \ip{x}{\frac{z}{\norm{z}^2}} = \frac{1}{\norm{z}^2} F(x)\norm{z}^2 = F(x).
+\end{equation*}
+</div>
+<p data-braille="continuation">This shows that the representing vector for \(F\) exists.</p>
+<p>Now, we want to show that \(\norm{y} = \norm{F}\text{.}\) For any \(\norm{x} \leq 1\text{,}\) the Cauchy-Schwarz inequality (<a class="xref" data-knowl="./knowl/thm-cauchy-schwarz.html" title="Theorem 2.2.4">Theorem 2.2.4</a>) gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\abs{F(x)} = \abs{\ip{x}{y}} \leq \norm{x}\norm{y} \leq \norm{y}.
+\end{equation*}
+</div>
+<p data-braille="continuation">On the other hand, choosing the specific unit vector \(x = \frac{y}{\norm{y}}\) gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\norm{F} \geq \abs{F(x)} = \frac{\abs{F(y)}}{\norm{y}} = \abs{\ip{y}{y}}/\norm{y} = \norm{y};
+\end{equation*}
+</div>
+<p data-braille="continuation">that is, \(\norm{F} \geq \norm{y}\text{.}\) We conclude that \(\norm{F} = \norm{y}\text{,}\) which completes the proof.</p></article><span class="incontext"><a href="dual-2.html#proof-28">in-context</a></span>
+</body>
+</html>

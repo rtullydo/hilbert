@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-06-07T17:36:30-07:00       *-->
+<!--*       on 2021-09-06T11:51:33-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -167,10 +167,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter-6.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-6.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter-7.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter-6.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-6.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="dual-2.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-6.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-6.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter-7.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-6.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-6.html" title="Up">Up</a><a class="next-button button toolbar-item" href="dual-2.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -220,9 +220,16 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Dual spaces</span></a><ul><li><a href="dual-1.html" data-scroll="dual-1" class="active">Linear functionals</a></li></ul>
+<a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Dual spaces</span></a><ul>
+<li><a href="dual-1.html" data-scroll="dual-1" class="active">Linear functionals</a></li>
+<li><a href="dual-2.html" data-scroll="dual-2">The Riesz representation theorem</a></li>
+<li><a href="dual-3.html" data-scroll="dual-3">Exercises</a></li>
+</ul>
 </li>
-<li class="link"><a href="chapter-7.html" data-scroll="chapter-7"><span class="codenumber">7</span> <span class="title">Appendix: Results from analysis</span></a></li>
+<li class="link">
+<a href="operators.html" data-scroll="operators"><span class="codenumber">7</span> <span class="title">Linear operators</span></a><ul><li><a href="section-25.html" data-scroll="section-25">Linear operators</a></li></ul>
+</li>
+<li class="link"><a href="chapter-8.html" data-scroll="chapter-8"><span class="codenumber">8</span> <span class="title">Appendix: Results from analysis</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="dual-1"><h2 class="heading hide-type">
@@ -254,9 +261,9 @@ F(x_1, \ldots, x_n) = c_1 x_1 + \ldots + c_n x_n
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(c_1, \ldots, c_n \in \C\text{.}\)</p></article></div>
-<article class="example example-like" id="example-5"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-5"><h6 class="heading">
+<article class="example example-like" id="ex-ell-1"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-ell-1"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">on \(\ell^1\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><p id="p-297">Define \(f_c: \ell^1 \to \C\) by</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-ell-1"><article class="example example-like"><p id="p-297">Define \(f_c: \ell^1 \to \C\) by</p>
 <div class="displaymath">
 \begin{equation*}
 F_c((x_n)_{n \in \mathbb{N}}) = \sum_{n=1}^\infty c_n x_n
@@ -342,21 +349,56 @@ F(x) = x'(1).
 \end{equation}
 </div>
 <p data-braille="continuation">To complete the proof, note that since \(F - F_N\) and \(F_N\) are bounded on the closed unit ball of \(V\text{,}\) so must be \(F\text{,}\) which by <a class="xref" data-knowl="./knowl/thm-continuous-linear-functional.html" title="Theorem 6.1.7">Theorem 6.1.7</a> means that \(F\) is continuous and so \(F \in V\ad\text{.}\) On the other hand, <a class="xref" data-knowl="./knowl/eq-banach-1.html" title="Equation 6.1.1">(6.1.1)</a> implies that \(\norm{F_n - F} \lt \eps\) for \(n \gt N\text{,}\) and so \(F_n \to F\) in \(V\ad\text{.}\) Thus \(V\ad\) is complete (and hence a Banach space of continuous linear functionals).</p></article></div>
-<p id="p-313">Analysis is built on a backbone of useful inequalities. Let us take note of a nice inequality that is an immediate consequence of the definition of the dual norm.</p>
+<p id="p-313">The space \(V\ad\) is often referred to as the <dfn class="terminology">dual space</dfn> of \(V\text{.}\)</p>
+<p id="p-314">Analysis is built on a backbone of useful inequalities. Let us take note of a nice inequality that is an immediate consequence of the definition of the dual norm.</p>
 <article class="theorem theorem-like" id="thm-norm-split"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.1.10</span><span class="period">.</span>
 </h6>
-<p id="p-314">For any vector \(v\) in a normed space \(V\) and any continuous linear functional \(F\) on \(V\text{,}\)</p>
+<p id="p-315">For any vector \(v\) in a normed space \(V\) and any continuous linear functional \(F\) on \(V\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \abs{F(v)} \leq \norm{F} \abs{v}.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-27"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-27"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-27"><article class="hiddenproof"><p id="p-315">Suppose that \(v \neq 0\text{.}\) Then \(\frac{v}{\norm{v}}\) is a unit vector, and so</p>
+</div></article><article class="hiddenproof" id="proof-27"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-27"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-27"><article class="hiddenproof"><p id="p-316">Suppose that \(v \neq 0\text{.}\) Then \(\frac{v}{\norm{v}}\) is a unit vector, and so</p>
 <div class="displaymath">
 \begin{equation*}
 \norm{F} \geq \abs{F(\frac{v}{\norm{v}})} = \frac{\abs{F(v)}}{\abs{v}}.
 \end{equation*}
-</div></article></div></section></div></main>
+</div></article></div>
+<article class="example example-like" id="example-8"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-8"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">The dual of \(\ell^1\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-8"><article class="example example-like"><p id="p-317">We will describe the dual space of \(\ell^1\text{,}\) the space of absolutely summable sequences. It turns out to be the case that one can identify \((\ell^1)\ad\) with \(\ell^\infty\) by way of a map that is an isomorphism of vector spaces and also an isometry (a mapping that preserves norms). Define a map \(T: \ell^\infty \to (\ell^1)\ad\) by</p>
+<div class="displaymath">
+\begin{equation*}
+Tc = F_c,
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(F_c\) is the functional defined in <a class="xref" data-knowl="./knowl/ex-ell-1.html" title="Example 6.1.3: on \(\ell^1\)">Example 6.1.3</a>. It is easy to see that \(T\) is linear. To see that \(T\) is surjective, choose an element \(\xi \in (\ell^1)\ad\text{.}\) We need an element \(c \in \ell^\infty\) such that \(Tc = \xi\text{.}\) Let \(e_n\) denote the \(n\)th elementary basis vector in \(\ell^1\) (you can think of this as a vector of 0s with a 1 in the \(n\)th position), and let \(c_n = \xi(e_n)\text{.}\) Now let \(c = (c_n)_{n \in \mathbb{N}}\text{.}\) (Notice that \(F_c(e_n) = c_n\text{.}\)) Since \(e_n\) is a unit vector in \(\ell^1\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\abs{c_n} = \abs{\xi(e_n)} \leq \norm{\xi}\abs{e_n} = \norm{\xi}.
+\end{equation*}
+</div>
+<p data-braille="continuation">This means that \((c_n)\) is a bounded sequence, and so \(c \in \ell^\infty\) with</p>
+<div class="displaymath">
+\begin{equation}
+\norm{c}_\infty =  \sup_n \abs{c_n} \leq \norm{\xi}.\label{eq-c-bound}\tag{6.1.2}
+\end{equation}
+</div>
+<p data-braille="continuation">Now we need to show that \(F_c = \xi\text{.}\) Choose an \(x\in \ell^1\text{,}\) and denote the \(k\)-th partial expansion of \(x\) by \(x^k = \sum_{n = 1}^k x_n e_n\text{.}\) As a sequence, \(x^k \to x\) in \(\ell^1\) as \(k\to \infty\text{.}\)  Then we can evaluate \(F\) and \(\xi\) on the sequence by</p>
+<div class="displaymath">
+\begin{equation*}
+F_c(x^k) - \xi(x^k) = \sum_{n=1}^{k} c_n x_n - \sum_{n = 1}^k x_n \xi(e_n) = 0.
+\end{equation*}
+</div>
+<p data-braille="continuation">In the limit, this shows that \(F_c(x) = \xi(x)\) for arbitrary \(x\text{.}\)</p>
+<p id="p-318">The last part of the proof is to show that distances are preserved under \(T\text{.}\) By <a class="xref" data-knowl="./knowl/eq-c-bound.html" title="Equation 6.1.2">(6.1.2)</a>, we have \(\norm{c}_\infty \leq \norm{F_c}\text{.}\) On the other hand, for any choice of \(x \in \ell^1\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\abs{F_c(x)} = \abs{\sum_{n=1}^\infty c_n x_n} \leq \sup_n \abs{c_n} \sum\abs{x} = \norm{c}_\infty \norm{x}_1,
+\end{equation*}
+</div>
+<p data-braille="continuation">and so \(\norm{F_c} \leq \norm{c}_\infty\text{.}\) We conclude that \(\norm{F_c} = \norm{c}\text{,}\) and thus that \(T\) is an isometry.</p></article></div></section></div></main>
 </div>
 </body>
 </html>

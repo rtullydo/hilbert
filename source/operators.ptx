@@ -1,0 +1,76 @@
+<chapter xml:id="operators"><title>Linear operators</title>
+    <section><title>Linear operators</title>
+        <p>Linear operators are first encountered by students in calculus and differential equations, though not always with that name. Consider the problem
+            <me>
+                y' = f(x)
+            </me>
+        which can be written
+            <me>
+                \frac{d}{dx} y = f.
+            </me>
+        More generally, we learn that any linear differential equation can be written in the form
+        <me>
+            L y = f
+        </me>
+        for the differential operator <m>L</m>. When we encounter problems like this the first time, we learn a group of recipes that solve the equation for various classes of <m>L</m>, functions <m>f</m> and sets of boundary conditions.</p>
+
+        <p>In another set of classes, the linear algebra sequence, we learn an extensive set of tools for analyzing the matrix problem
+            <me>
+                A x = b
+            </me>
+        in terms of the structure of the matrix <m>A</m>. For example, we learn that the existence of a solution depends on the columnspace of <m>A</m> and that the structure of the solution set depends on the nullspace (or kernel, thinking of <m>A</m> as a function) of <m>A</m>.</p>
+
+        <p>This chapter will examine the relationship between the matrix situation (in finite dimensions) and the linear operator situation (in infinite dimensions). A surprising amount of structure carries from finite to infinite dimensions.</p>
+
+        <definition xml:id="def-linear-operator">
+            <p>If <m>V, W</m> are vector spaces over a field <m>k</m>, a <term>linear operator</term> from <m>V</m> to <m>W</m> is a map <m>T:V \to W</m> such that
+            <me>
+                T(ax + by) = aT(x) + bT(y),
+            </me>
+            for all <m>a, b \in k</m> and <m>x, y \in V</m>. 
+            </p>
+        </definition>
+        <p>A linear operator on <m>V</m> is a linear operator from <m>V</m> to <m>V</m>. (Note: these notes largely follow the same conventions as Axler's Linear Algebra Done Right. There is a difference here - Axler restricts the term operator to only the space <m>\mathcal{L}(V)</m> - that is, maps from <m>V \to V</m>.)</p>
+
+        <p>If <m>V, W</m> are normed spaces, we say that a linear operator <m>T:V \to W</m> is <term>bounded</term> if there exists a constant <m>M \geq 0</m> such that
+        <me>
+            \norm{Tx} \leq M \norm{x}
+        </me>
+        for all <m>x \in V</m>. For a bounded <m>T</m>, we define the <term>operator norm</term> (or just norm when there is no ambiguity) of <m>T</m> to be the non-negative number
+        <me>
+            \norm{T} = \sup{\norm{Tx}:x\in V, \norm{x}\leq 1}.
+        </me></p>
+
+        <p>The <term>kernel</term> of a linear operator <m>T:V\to W</m> is the subspace of <m>V</m> given by <m>\{x: Tx = 0\}</m>. The kernel of <m>T</m> is denoted <m>\ker T</m>. The <term>range</term> of <m>T</m> is the subspace of <m>W</m> given by <m>\{Tx: x \in V\}</m>. The range of <m>T</m> is denoted <m>\ran T</m>.</p>
+
+        <p><m>\norm{T}</m> can be thought of as the largest factor by which <m>T</m> stretches any vector, though it is a supremum, not a maximum. (What does this notion mean for a square matrix?) It also the case that
+        <me>
+            \norm{Tx} \leq \norm{T}\norm{x} \text{ (why?)}
+        </me> </p>
+
+        <example><title>a multiplication operator</title>
+            <p>Choose a function <m>f \in C[a, b]</m> and define the operator <m>M_f</m> on <m>L^2[a,b]</m> by <me>(M_f x)(t) = f(t)x(t).</me> It should be immediately clear that <m>M_f</m> is linear. Recalling the norms on <m>C[a,b]</m> and <m>L^2</m>, for any <m>x\in L^2[a,b]</m> we get
+            <md>
+                <mrow> \norm{Mx}^2 \amp= \int_a^b \abs{f}^2 \abs{x}^2 \, dt </mrow>
+                <mrow> \amp\leq \sup_{t \in [a, b]}\abs{f(t)} \int_a^b \abs{x}^2 \, dt</mrow>
+                <mrow>\amp = \norm{f}_\infty \norm{x}^2.</mrow>
+            </md>
+            Then <m>M_f</m> is a bounded operator and <m>\norm{M} \leq \norm{f}_\infty</m>. It turns out to be the case that (usefully) <m>\norm{M} = \norm{f}_\infty</m>. (Can you prove it?)</p>
+        </example>
+
+        <example><title>an integral operator</title>
+            <p> For real numbers <m>a, b, c, d</m>, let <m>k:[a,b]\times [c,d] \to \C</m> be a continuous map, and define <m>K:L^2[a,b] \to L^2[c,d]</m> by
+            <me>
+                (Kx)(t) = \int_a^b k(t, s) x(s) \, ds
+            </me>
+            for <m>t \in [c,d]</m>. <m>K</m> is linear (as integration is). For any <m>t\in [c,d]</m>, the Cauchy-Schwarz inequality gives
+            <me>
+                \abs{Kx(t)}^2 = \left(\int_a^b \abs{k(t,s)^2} \, ds\right) \left(\int_a^b \abs{x(s)}^2 \, ds\right).
+            </me>
+            Thus <m>K</m> is bounded and
+            <me>
+                \norm{K} \leq \left(\int_c^d \int_a^b \abs{k(t,s)}\, ds \, ds \right)^{1/2}.
+            </me></p>
+        </example>
+    </section>
+</chapter>

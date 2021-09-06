@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-09-06T11:51:33-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear operators</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\DeclareMathOperator{\RE}{Re}
+  \DeclareMathOperator{\IM}{Im}
+  \DeclareMathOperator{\ess}{ess}
+  \DeclareMathOperator{\intr}{int}
+  \DeclareMathOperator{\dist}{dist}
+  \DeclareMathOperator{\dom}{dom}
+  \DeclareMathOperator{\diag}{diag}
+  \DeclareMathOperator{\cl}{cl}
+  \DeclareMathOperator{\span}{span}
+  \DeclareMathOperator{\proj}{proj}
+  \DeclareMathOperator\trace{trace}
+  \DeclareMathOperator\re{\mathrm {Re~}}
+  \DeclareMathOperator\im{\mathrm {Im~}}
+  
+  \newcommand\dd{\mathrm d}
+  \newcommand{\eps}{\varepsilon}
+  \newcommand{\To}{\longrightarrow}
+  \newcommand{\hilbert}{\mathcal{H}}
+  \newcommand{\s}{\mathcal{S}_2}
+  \newcommand{\A}{\mathcal{A}}
+  \newcommand\h{\mathcal{H}}
+  \newcommand{\J}{\mathcal{J}}
+  \newcommand{\K}{\mathcal{K}}
+  \newcommand{\M}{\mathcal{M}}
+  \newcommand{\F}{\mathbb{F}}
+  \newcommand{\N}{\mathcal{N}}
+  \newcommand{\T}{\mathbb{T}}
+  \newcommand{\W}{\mathcal{W}}
+  \newcommand{\X}{\mathcal{X}}
+  \newcommand{\D}{\mathbb{D}}
+  \newcommand{\C}{\mathbb{C}}
+  \newcommand{\BOP}{\mathbf{B}}
+  \newcommand{\Z}{\mathbb{Z}}
+  \newcommand{\BH}{\mathbf{B}(\mathcal{H})}
+  \newcommand{\KH}{\mathcal{K}(\mathcal{H})}
+  \newcommand{\pick}{\mathcal{P}_2}
+  \newcommand{\schur}{\mathcal{S}_2}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Complex}{\mathbb{C}}
+  \newcommand{\Field}{\mathbb{F}}
+  \newcommand{\RPlus}{\Real^{+}}
+  \newcommand{\Polar}{\mathcal{P}_{\s}}
+  \newcommand{\Poly}{\mathcal{P}(E)}
+  \newcommand{\EssD}{\mathcal{D}}
+  \newcommand{\Lop}{\mathcal{L}}
+  \newcommand{\cc}[1]{\overline{#1}}
+  \newcommand{\abs}[1]{\left\vert#1\right\vert}
+  \newcommand{\set}[1]{\left\{#1\right\}}
+  \newcommand{\seq}[1]{\left\lt#1\right&gt;}
+  \newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+  \newcommand{\essnorm}[1]{\norm{#1}_{\ess}}
+  \newcommand{\tr}{\operatorname{tr}}
+  \newcommand{\ran}[1]{\operatorname{ran}#1}
+  \newcommand{\nt}{\stackrel{\mathrm {nt}}{\to}}
+  \newcommand{\pnt}{\xrightarrow{pnt}}
+  \newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
+  \newcommand{\ad}{^\ast}
+  \newcommand{\inv}{^{-1}}
+  \newcommand{\adinv}{^{\ast -1}}
+  \newcommand{\invad}{^{-1 \ast}}
+  \newcommand\Pick{\mathcal P}
+  \newcommand\Ha{\mathbb{H}}
+  \newcommand{\HH}{\Ha\times\Ha}
+  \newcommand\Htau{\mathbb{H}(\tau)}
+  \newcommand{\vp}{\varphi}
+  \newcommand{\ph}{\varphi}
+  \newcommand\al{\alpha}
+  \newcommand\ga{\gamma}
+  \newcommand\de{\delta}
+  \newcommand\ep{\varepsilon}
+  \newcommand\la{\lambda}
+  \newcommand\up{\upsilon}
+  \newcommand\si{\sigma}
+  \newcommand\beq{\begin{equation}}
+  \newcommand\ds{\displaystyle}
+  \newcommand\eeq{\end{equation}}
+  \newcommand\df{\stackrel{\rm def}{=}}
+  \newcommand\ii{\mathrm i}
+  \newcommand{\vectwo}[2]
+  {
+     \begin{pmatrix} #1 \\ #2 \end{pmatrix}
+  }
+  \newcommand{\vecthree}[3]
+  {
+     \begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}
+  }
+  \newcommand\blue{\color{blue}}
+  \newcommand\black{\color{black}}
+  \newcommand\red{\color{red}}
+  
+  \newcommand\nn{\nonumber}
+  \newcommand\bbm{\begin{bmatrix}}
+  \newcommand\ebm{\end{bmatrix}}
+  \newcommand\bpm{\begin{pmatrix}}
+  \newcommand\epm{\end{pmatrix}}
+  \numberwithin{equation}{section}
+  \newcommand\nin{\noindent}
+  \newcommand{\nCr}[2]{\,_{#1}C_{#2}} 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="hilbert.html"><span class="title">Hilbert Spaces - Sequel to Linear Algebra</span></a></h1>
+<p class="byline">Ryan Tully-Doyle</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="operators.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="operators.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter-8.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="operators.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="operators.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter-8.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="sec-intro-1.html" data-scroll="sec-intro-1">Motivation</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Inner products</a></li>
+<li><a href="intro-2.html" data-scroll="intro-2">Basis and coordinates</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Operators</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="inner.html" data-scroll="inner"><span class="codenumber">2</span> <span class="title">Inner product spaces</span></a><ul>
+<li><a href="inner-1.html" data-scroll="inner-1">Inner products and \(\ell^2\)</a></li>
+<li><a href="inner-2.html" data-scroll="inner-2">Inner products, norms, and metric spaces</a></li>
+<li><a href="inner-3.html" data-scroll="inner-3">Examples of inner product spaces</a></li>
+<li><a href="inner-4.html" data-scroll="inner-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-norm.html" data-scroll="ch-norm"><span class="codenumber">3</span> <span class="title">Normed spaces</span></a><ul>
+<li><a href="norm-1.html" data-scroll="norm-1">Norms</a></li>
+<li><a href="norm-2.html" data-scroll="norm-2">Closed linear subspaces</a></li>
+<li><a href="norm-3.html" data-scroll="norm-3">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a><ul>
+<li><a href="hilbert-1.html" data-scroll="hilbert-1">Limits</a></li>
+<li><a href="hilbert-2.html" data-scroll="hilbert-2">\(L^2[a,b]\)</a></li>
+<li><a href="hilbert-3.html" data-scroll="hilbert-3">The closest point property</a></li>
+<li><a href="hilbert-4.html" data-scroll="hilbert-4">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Orthogonal expansions</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Geometry in Hilbert space</a></li>
+<li><a href="ortho-2.html" data-scroll="ortho-2">Bessel's inequality</a></li>
+<li><a href="ortho-3.html" data-scroll="ortho-3">Modes of convergence</a></li>
+<li><a href="ortho-4.html" data-scroll="ortho-4">Complete orthonormal sequences</a></li>
+<li><a href="ortho-5.html" data-scroll="ortho-5">Orthogonal complements</a></li>
+<li><a href="ortho-ex.html" data-scroll="ortho-ex">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Dual spaces</span></a><ul>
+<li><a href="dual-1.html" data-scroll="dual-1">Linear functionals</a></li>
+<li><a href="dual-2.html" data-scroll="dual-2">The Riesz representation theorem</a></li>
+<li><a href="dual-3.html" data-scroll="dual-3">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="operators.html" data-scroll="operators"><span class="codenumber">7</span> <span class="title">Linear operators</span></a><ul><li><a href="section-25.html" data-scroll="section-25" class="active">Linear operators</a></li></ul>
+</li>
+<li class="link"><a href="chapter-8.html" data-scroll="chapter-8"><span class="codenumber">8</span> <span class="title">Appendix: Results from analysis</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-25"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.1</span> <span class="title">Linear operators</span>
+</h2>
+<p id="p-327">Linear operators are first encountered by students in calculus and differential equations, though not always with that name. Consider the problem</p>
+<div class="displaymath">
+\begin{equation*}
+y' = f(x)
+\end{equation*}
+</div>
+<p data-braille="continuation">which can be written</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dx} y = f.
+\end{equation*}
+</div>
+<p data-braille="continuation">More generally, we learn that any linear differential equation can be written in the form</p>
+<div class="displaymath">
+\begin{equation*}
+L y = f
+\end{equation*}
+</div>
+<p data-braille="continuation">for the differential operator \(L\text{.}\) When we encounter problems like this the first time, we learn a group of recipes that solve the equation for various classes of \(L\text{,}\) functions \(f\) and sets of boundary conditions.</p>
+<p id="p-328">In another set of classes, the linear algebra sequence, we learn an extensive set of tools for analyzing the matrix problem</p>
+<div class="displaymath">
+\begin{equation*}
+A x = b
+\end{equation*}
+</div>
+<p data-braille="continuation">in terms of the structure of the matrix \(A\text{.}\) For example, we learn that the existence of a solution depends on the columnspace of \(A\) and that the structure of the solution set depends on the nullspace (or kernel, thinking of \(A\) as a function) of \(A\text{.}\)</p>
+<p id="p-329">This chapter will examine the relationship between the matrix situation (in finite dimensions) and the linear operator situation (in infinite dimensions). A surprising amount of structure carries from finite to infinite dimensions.</p>
+<article class="definition definition-like" id="def-linear-operator"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-330">If \(V, W\) are vector spaces over a field \(k\text{,}\) a <dfn class="terminology">linear operator</dfn> from \(V\) to \(W\) is a map \(T:V \to W\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+T(ax + by) = aT(x) + bT(y),
+\end{equation*}
+</div>
+<p data-braille="continuation">for all \(a, b \in k\) and \(x, y \in V\text{.}\)</p></article><p id="p-331">A linear operator on \(V\) is a linear operator from \(V\) to \(V\text{.}\) (Note: these notes largely follow the same conventions as Axler's Linear Algebra Done Right. There is a difference here - Axler restricts the term operator to only the space \(\mathcal{L}(V)\) - that is, maps from \(V \to V\text{.}\))</p>
+<p id="p-332">If \(V, W\) are normed spaces, we say that a linear operator \(T:V \to W\) is <dfn class="terminology">bounded</dfn> if there exists a constant \(M \geq 0\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{Tx} \leq M \norm{x}
+\end{equation*}
+</div>
+<p data-braille="continuation">for all \(x \in V\text{.}\) For a bounded \(T\text{,}\) we define the <dfn class="terminology">operator norm</dfn> (or just norm when there is no ambiguity) of \(T\) to be the non-negative number</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{T} = \sup{\norm{Tx}:x\in V, \norm{x}\leq 1}.
+\end{equation*}
+</div>
+<p id="p-333">The <dfn class="terminology">kernel</dfn> of a linear operator \(T:V\to W\) is the subspace of \(V\) given by \(\{x: Tx = 0\}\text{.}\) The kernel of \(T\) is denoted \(\ker T\text{.}\) The <dfn class="terminology">range</dfn> of \(T\) is the subspace of \(W\) given by \(\{Tx: x \in V\}\text{.}\) The range of \(T\) is denoted \(\ran T\text{.}\)</p>
+<p id="p-334">\(\norm{T}\) can be thought of as the largest factor by which \(T\) stretches any vector, though it is a supremum, not a maximum. (What does this notion mean for a square matrix?) It also the case that</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{Tx} \leq \norm{T}\norm{x} \text{ (why?)}
+\end{equation*}
+</div>
+<article class="example example-like" id="example-9"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-9"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">a multiplication operator.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-9"><article class="example example-like"><p id="p-335">Choose a function \(f \in C[a, b]\) and define the operator \(M_f\) on \(L^2[a,b]\) by</p>
+<div class="displaymath">
+\begin{equation*}
+(M_f x)(t) = f(t)x(t).
+\end{equation*}
+</div>
+<p data-braille="continuation">It should be immediately clear that \(M_f\) is linear. Recalling the norms on \(C[a,b]\) and \(L^2\text{,}\) for any \(x\in L^2[a,b]\) we get</p>
+<div class="displaymath">
+\begin{align*}
+\norm{Mx}^2 \amp= \int_a^b \abs{f}^2 \abs{x}^2 \, dt \\
+\amp\leq \sup_{t \in [a, b]}\abs{f(t)} \int_a^b \abs{x}^2 \, dt\\
+\amp = \norm{f}_\infty \norm{x}^2.
+\end{align*}
+</div>
+<p data-braille="continuation">Then \(M_f\) is a bounded operator and \(\norm{M} \leq \norm{f}_\infty\text{.}\) It turns out to be the case that (usefully) \(\norm{M} = \norm{f}_\infty\text{.}\) (Can you prove it?)</p></article></div>
+<article class="example example-like" id="example-10"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-10"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">an integral operator.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-10"><article class="example example-like"><p id="p-336">For real numbers \(a, b, c, d\text{,}\) let \(k:[a,b]\times [c,d] \to \C\) be a continuous map, and define \(K:L^2[a,b] \to L^2[c,d]\) by</p>
+<div class="displaymath">
+\begin{equation*}
+(Kx)(t) = \int_a^b k(t, s) x(s) \, ds
+\end{equation*}
+</div>
+<p data-braille="continuation">for \(t \in [c,d]\text{.}\) \(K\) is linear (as integration is). For any \(t\in [c,d]\text{,}\) the Cauchy-Schwarz inequality gives</p>
+<div class="displaymath">
+\begin{equation*}
+\abs{Kx(t)}^2 = \left(\int_a^b \abs{k(t,s)^2} \, ds\right) \left(\int_a^b \abs{x(s)}^2 \, ds\right).
+\end{equation*}
+</div>
+<p data-braille="continuation">Thus \(K\) is bounded and</p>
+<div class="displaymath">
+\begin{equation*}
+\norm{K} \leq \left(\int_c^d \int_a^b \abs{k(t,s)}\, ds \, ds \right)^{1/2}.
+\end{equation*}
+</div></article></div></section></div></main>
+</div>
+</body>
+</html>

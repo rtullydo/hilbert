@@ -131,7 +131,7 @@
 
               <p>Hilbert space theory is a natural bridge between undergraduate and graduate mathematical perspectives. It extends the ideas of finite dimensional linear algebra, blends in ideas from real and complex analysis, and points to a very active area of research in algebra. To get the most out of this text, the reader will need to be familiar with (or be willing to learn) ideas from real and complex analysis (e.g. uniform convergence of sequences of functions, analyticity in the complex plane), linear algebra (e.g. the spectral theorem for symmetric matrices), and basic point-set topology (e.g. metrics).</p>
 
-              <p>Of course the study and use of Hilbert spaces of functions goes well beyond what can be addressed in this text. A reader in need of an advanced course in linear algebra flavored with functional analysis should work through Axler's <em>Linear Algebra Done Right</em>. The reader is also encouraged to work through Halmos's <em>Introduction to Hilbert Space and the Theory of Spectral Multiplicity</em> and especially the <em>Hilbert space problem book</em>, which treat more advanced topics than we consider here. My own path into the study of functional analysis ran through J. B. Conway's <em>A Course in Functional Analysis</em> and P. Lax's <em>Functional Analysis</em>. A reader interested in pursuing research in a modern flavor of Hilbert space theory might look to <em>Pick interpolation and Hilbert function spaces</em> and <em>Operator Analysis</em> by J. Agler, J. E. McCarthy, and N. J. Young. For the interaction of finite dimensional Hilbert spaces (i.e. matrices) and function theory, the reader should seek out Bhatia's excellent <em>Matrix Analysis</em>.</p>
+              <p>Of course the study and use of Hilbert spaces of functions goes well beyond what can be addressed in this text. A reader in need of an advanced course in linear algebra flavored with functional analysis should work through Axler's <em>Linear Algebra Done Right</em>. Axler has also recently published <em>Measure, Integration, \amp Real Analysis</em>, which covers the basics of functional analysis up to the spectral theorem for compact operators. The reader is also encouraged to work through Halmos's <em>Introduction to Hilbert Space and the Theory of Spectral Multiplicity</em> and especially the <em>Hilbert space problem book</em>, which treat more advanced topics than we consider here. My own path into the study of functional analysis ran through J. B. Conway's <em>A Course in Functional Analysis</em> and P. Lax's <em>Functional Analysis</em>. A reader interested in pursuing research in a modern flavor of Hilbert space theory might look to <em>Pick interpolation and Hilbert function spaces</em> and <em>Operator Analysis</em> by J. Agler, J. E. McCarthy, and N. J. Young. For the interaction of finite dimensional Hilbert spaces (i.e. matrices) and function theory, the reader should seek out Bhatia's excellent <em>Matrix Analysis</em>.</p>
 
               <p>Another area of research arises not from studying the spaces but instead the maps that act on them. In this way, Hilbert space theory provides the foundation for the study of linear operators on infinte dimensional spaces.</p>
             </preface>
@@ -144,7 +144,9 @@
       <xi:include href="source/hilbert-banach.ptx"/>
       <xi:include href="source/orthogonal.ptx"/>
       <xi:include href="source/dual.ptx"/>
+      <xi:include href="source/operators.ptx"/>
       <xi:include href="source/analysis.ptx"/>
+
 
 
 
