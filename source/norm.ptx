@@ -199,11 +199,11 @@
         <p>We will frequently wish to work with the smallest linear subspace containing a set of vectors <m>A \subset V</m>. (This is similar to the notion of the span of a set of vectors in finite dimensional spaces.)</p>
 
         <definition xml:id="def-linear-span">
-            <p>Let <m>(V, \norm{\cdot})</m> be a normed space and let <m>A \subseteq V</m>. The <term>linear span of <m>A</m></term>, denoted <m>\span A</m>, is the intersection of all subspaces of <m>V</m> that contain <m>A</m>. The <term>closed linear span of <m>A</m></term>, denoted <m>\cl \span A</m>, is the intersection of all closed linear subspaces of <m>V</m> that contain <m>A</m>.</p>
+            <p>Let <m>(V, \norm{\cdot})</m> be a normed space and let <m>A \subseteq V</m>. The <term>linear span of <m>A</m></term>, denoted <m>\spn A</m>, is the intersection of all subspaces of <m>V</m> that contain <m>A</m>. The <term>closed linear span of <m>A</m></term>, denoted <m>\cl \spn A</m>, is the intersection of all closed linear subspaces of <m>V</m> that contain <m>A</m>.</p>
         </definition>
 
         <exercise>
-            <p>Show that <m>\span A</m> is the unique subspace of <m>V</m> which contains <m>A</m> and is in turn contained in every subspace of <m>V</m> that contains <m>A</m>. Likewise, <m>\cl \span A</m> is the unique closed subspace of <m>V</m> that contains <m>A</m> and is in turn contained in every subspace of <m>V</m> that contains <m>A</m>.</p>
+            <p>Show that <m>\spn A</m> is the unique subspace of <m>V</m> which contains <m>A</m> and is in turn contained in every subspace of <m>V</m> that contains <m>A</m>. Likewise, <m>\cl \spn A</m> is the unique closed subspace of <m>V</m> that contains <m>A</m> and is in turn contained in every subspace of <m>V</m> that contains <m>A</m>.</p>
         </exercise>
 
         <p>While this might seem different from the notion of span that we learn in elementary linear algebra, these two definitions in fact coincide.</p>
@@ -213,20 +213,20 @@
             <me>
                 F = \left\{\sum_{i=1}^k c_i a_i : n \in \mathbb{N}, c_i \in \F, a_i \in A\right\}.
             </me>
-            Then <m>F = \span A</m>.</p>
+            Then <m>F = \spn A</m>.</p>
         </theorem>
         <proof>
             Exercise.
         </proof>
-        <p>We can think of the elements <q>missing</q> from <m>\span A</m> as the limit points of finite linear combinations of elements in <m>A</m>, as the next theorem shows (and which justifies the notation <m>\cl \span A</m>).</p>
+        <p>We can think of the elements <q>missing</q> from <m>\spn A</m> as the limit points of finite linear combinations of elements in <m>A</m>, as the next theorem shows (and which justifies the notation <m>\cl \spn A</m>).</p>
 
         <theorem xml:id="thm-cl-span">
-            <p>For any set <m>A</m> contained in a normed space <m>V</m>, <m>\cl \span A</m> is the closure of <m>\span A</m>.</p>
+            <p>For any set <m>A</m> contained in a normed space <m>V</m>, <m>\cl \spn A</m> is the closure of <m>\spn A</m>.</p>
         </theorem>
 
         <proof>
-            <p>By <xref ref="thm-closed-subspace"/>, <m>\cl (\span A)</m> is a subspace of <m>V</m>. It is closed and contains <m>A</m>, and so by <xref ref="def-linear-span"/> it must be that <m>\cl \span A \subseteq \cl(\span A)</m>.</p>
-            <p>On the other hand, <m>\cl \span A</m> is closed and contains <m>A</m> and so it must be that <m>\cl(\span A) \subseteq \cl\span A</m>.</p>
+            <p>By <xref ref="thm-closed-subspace"/>, <m>\cl (\spn A)</m> is a subspace of <m>V</m>. It is closed and contains <m>A</m>, and so by <xref ref="def-linear-span"/> it must be that <m>\cl \spn A \subseteq \cl(\spn A)</m>.</p>
+            <p>On the other hand, <m>\cl \spn A</m> is closed and contains <m>A</m> and so it must be that <m>\cl(\spn A) \subseteq \cl\spn A</m>.</p>
         </proof>
 
         <p>We should point out again that in some sense, there is one finite dimensional vector space over <m>\F</m> for each dimension <m>n</m>, namely <m>\F^n</m>. We can make this more precise by pointing out that we can always induce a Euclidean norm via coordinatization and that the norm on <m>V</m> is equivalent to a Euclidean norm (by which we mean that they determine the same topology).</p>
