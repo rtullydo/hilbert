@@ -288,11 +288,11 @@
             <men xml:id="eq-W-ip">
                 \ip{f}{g} = \int_a^b f(t) \cc{g(t)} + f'(t) \cc{g'(t)} \, \dd t.
             </men>
-        Including the derivative in the inner product gives control over the behavior of both the function and the derivative. <m>W</m> and the broader family of Sobolev spaces are central to the study of differential equations.</p>
+        Including the derivative in the inner product gives control over the behavior of both the function and the derivative. <m>W</m> and the broader family of Sobolev spaces are important in the study of differential equations.</p>
 
         <p>Of central importance in engineering and the sciences is the space of <term>trigonometric polynomials</term>, which are functions of the form
             <me>
-                T(x) = a_0 + \sum_{n=0}^N a_n \cos(nx) + i\sum_{n=1}^N b_n \sin nx,
+                T(x) = a_0 + \sum_{n=1}^N a_n \cos(nx) + i\sum_{n=1}^N b_n \sin nx,
             </me>
         where <m>a_n, b_n \in \C</m> and <m>1 \leq n \leq N</m>. Using Euler's identity, it is computationally efficient to use the equivalent characterization
             <me>

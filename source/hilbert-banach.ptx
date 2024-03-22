@@ -149,6 +149,8 @@
         <theorem xml:id="thm-cont-dense">
             <p><m>C[a,b]</m> is a dense subspace of <m>L^2[a,b]</m>.</p>
         </theorem>
+
+        <p>The theorem above is a consequence of measure theory, which requires the development of the Lebesgue integral to justify. We must accept the result, for the moment, on faith. The interested reader should look at Lusin's theorem and the Tietze Extension Theorem for a taste of a standard method of proof in the general case.</p>
     </section>
 
     <section xml:id="hilbert-3"><title>The closest point property</title>
