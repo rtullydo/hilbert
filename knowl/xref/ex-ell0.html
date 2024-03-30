@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
+</h3>
+<article class="definition definition-like"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(\ell_0\)</span> denote the space of sequences in <span class="process-math">\(\C^\mathbb{N}\)</span> which have only finitely many non-zero terms. (That is, there is some index <span class="process-math">\(n\)</span> beyond which the sequence has only <span class="process-math">\(0\)</span> entries.)</div></article> <div class="para logical">
+<div class="para">It is straightforward to see that <span class="process-math">\(\ell_0\)</span> is a linear subspace of <span class="process-math">\(\ell^2\text{.}\)</span> However, <span class="process-math">\(\ell_0\)</span> is <em class="emphasis">not</em> a closed set inside <span class="process-math">\(\ell^2\text{.}\)</span> To see this, we will construct a convergent sequence that converges to a point outside of <span class="process-math">\(\ell^2\text{.}\)</span> For each <span class="process-math">\(k \in \mathbb{N}\text{,}\)</span> the sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x^k = \left(1, \frac{1}{2}, \ldots, \frac{1}{k}, 0, \ldots\right)
+\end{equation*}
+</div>
+<div class="para">is an element of <span class="process-math">\(\ell_0\text{.}\)</span> Considering each <span class="process-math">\(x^k\)</span> as a vector in <span class="process-math">\(\ell^2\text{,}\)</span> the sequence of vectors <span class="process-math">\((x^k)_{k=1}^\infty\)</span> converges to the limit point</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y = \left(\frac{1}{n}\right)_{n=1}^{\infty}
+\end{equation*}
+</div>
+<div class="para">in <span class="process-math">\(\ell^2\)</span> since</div>
+<div class="displaymath process-math">
+\begin{align*}
+\norm{x^k - y} \amp = \norm{\left(0, \ldots, 0, \frac{1}{k+1}, \ldots \right)}\\
+\amp = \left(\sum_{n = k+1}^\infty \frac{1}{n^2} \right)^{1/2} \to 0.
+\end{align*}
+</div>
+<div class="para">That is, <span class="process-math">\(x^k \to a\)</span> but <span class="process-math">\(a \notin \ell_0\text{,}\)</span> and so <span class="process-math">\(\ell_0\)</span> is not closed in <span class="process-math">\(\ell^2\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="norm-2.html#ex-ell0">in-context</a></span>
+</body>
+</html>
