@@ -275,18 +275,30 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="hilbert-8.html" class="internal"><span class="codenumber">6</span> <span class="title">Dual spaces</span></a></div>
+<div class="toc-title-box"><a href="hilbert-8.html" class="internal"><span class="codenumber">6</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Linear functionals</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Convolution</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Fejér kernel</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Convergence of classical Fourier series</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="fourier-4.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="fourier-4.html#fourier-4-2" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="operators.html" class="internal"><span class="codenumber">7</span> <span class="title">Linear operators</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear operators</span></a></div></li></ul>
+<div class="toc-title-box"><a href="hilbert-9.html" class="internal"><span class="codenumber">7</span> <span class="title">Dual spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-10.html" class="internal"><span class="codenumber">8</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="operators.html" class="internal"><span class="codenumber">8</span> <span class="title">Linear operators</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Linear operators</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="ortho-4"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">5.4</span><span class="space"> </span><span class="title">Complete orthonormal sequences</span>
@@ -304,15 +316,24 @@ x = \sum_{n=1}^\infty \ip{x}{e_n} e_n.
 </div>
 </div>
 <div class="para logical" id="ortho-4-4">
+<div class="para">The issue of when a Fourier series is equal to the object that generates it is delicate enough that in practice, mathematicians often use <span class="process-math">\(\sim\)</span> instead of <span class="process-math">\(=\)</span> to denote the relationship; that is,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x \sim \sum_{n=1}^\infty \ip{x}{e_n} e_n
+\end{equation*}
+</div>
+<div class="para">means that <span class="process-math">\(x\)</span> has the given Fourier representation, but makes no claims on equality (whatever that might mean).</div>
+</div>
+<div class="para logical" id="ortho-4-5">
 <div class="para">We can see the issue if we look at an expansion of a vector <span class="process-math">\(x\in \ell^2\)</span> with respect to the standard orthonormal sequence (much like the standard unit vectors) where <span class="process-math">\(e_n\)</span> has a 1 in the <span class="process-math">\(n\)</span>th position and 0s elsewhere. From this, construct a shifted sequence <span class="process-math">\(f_n = e_{n+1}\text{.}\)</span> Then <span class="process-math">\((f_n)_{n\in\mathbb{N}}\)</span> remains an infinite orthonormal sequence in <span class="process-math">\(\ell^2\text{.}\)</span> Now choose <span class="process-math">\(x = (x_n) \in \ell^2\text{.}\)</span> Then</div>
-<div class="displaymath process-math" id="ortho-4-4-8">
+<div class="displaymath process-math" id="ortho-4-5-8">
 \begin{align*}
 \sum_{n=1}^\infty \ip{x}{f_n}f_n \amp= \sum_{n=2}^\infty \ip{x}{e_n} e_n\\
 \amp = (0, x_2, x_3, \ldots) \neq x.
 \end{align*}
 </div>
 </div>
-<div class="para logical" id="ortho-4-5">
+<div class="para logical" id="ortho-4-6">
 <div class="para">More generally, let us look at the error between <span class="process-math">\(x\)</span> and an orthonormal expansion in terms of an orthonormal sequence <span class="process-math">\((e_n)\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -331,7 +352,7 @@ y = x - \sum_{n=1}^\infty \ip{x}{e_n}e_n.
 <article class="definition definition-like" id="def-complete-ons"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="def-complete-ons-1">An orthonormal sequence <span class="process-math">\((e_n)\)</span> in a Hilbert space <span class="process-math">\(\hilbert\)</span> is <dfn class="terminology">complete</dfn> if the only member of <span class="process-math">\(\hilbert\)</span> which is orthogonal to every <span class="process-math">\(e_n\)</span> is the zero vector.</div></article><div class="para" id="ortho-4-7">We are finally ready to prove the Hilbert space analogue of <a href="intro-2.html#thm-finite-coords" class="xref" data-knowl="./knowl/xref/thm-finite-coords.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.1">Theorem 1.3.1</a>.</div>
+<div class="para" id="def-complete-ons-1">An orthonormal sequence <span class="process-math">\((e_n)\)</span> in a Hilbert space <span class="process-math">\(\hilbert\)</span> is <dfn class="terminology">complete</dfn> if the only member of <span class="process-math">\(\hilbert\)</span> which is orthogonal to every <span class="process-math">\(e_n\)</span> is the zero vector.</div></article><div class="para" id="ortho-4-8">We are ready to prove the Hilbert space analogue of <a href="intro-2.html#thm-finite-coords" class="xref" data-knowl="./knowl/xref/thm-finite-coords.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.1">Theorem 1.3.1</a>.</div>
 <article class="theorem theorem-like" id="thm-infinite-coords"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.2</span><span class="period">.</span>
 </h3>
@@ -349,7 +370,7 @@ x = \sum_{n=1}^\infty \ip{x}{e_n}e_n
 \norm{x}^2 = \sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2.
 \end{equation*}
 </div>
-</div></article><details id="ortho-4-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-4-9-1">
+</div></article><details id="ortho-4-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-4-10-1">
 <div class="para">As above, compute</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -363,7 +384,7 @@ y = x - \sum_{n=1}^\infty \ip{x}{e_n}e_n.
 \end{equation*}
 </div>
 <div class="para">That is, the vector <span class="process-math">\(y\)</span> is orthogonal to each member of the orthonormal sequence. Since by hypothesis <span class="process-math">\((e_n)\)</span> is complete, we deduce the first statement.</div>
-</div> <div class="para logical" id="ortho-4-9-2">
+</div> <div class="para logical" id="ortho-4-10-2">
 <div class="para">By <a href="hilbert-7-2.html#thm-ortho-pythagorean" class="xref" data-knowl="./knowl/xref/thm-ortho-pythagorean.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.1.4">Theorem 5.1.4</a>, for any <span class="process-math">\(N \in \mathbb{N}\text{,}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ortho-pythagorean.html">
@@ -372,8 +393,8 @@ y = x - \sum_{n=1}^\infty \ip{x}{e_n}e_n.
 \end{equation*}
 </div>
 <div class="para">On letting <span class="process-math">\(N\to\infty\text{,}\)</span> continuity of the norm gives the second statement.</div>
-</div></article></details><div class="para" id="ortho-4-10">We have finally arrived at the notion of a basis in a Hilbert space (indexed by <span class="process-math">\(\mathbb{N}\)</span>). A complete orthonormal sequence in <span class="process-math">\(\hilbert\)</span> is also called an <dfn class="terminology">orthonormal basis</dfn> of <span class="process-math">\(\hilbert\text{.}\)</span> The issue with identifying a basis is typically not orthogonality or norm, but instead completeness. After all, in infinite dimensions, there are lots of places to hide.</div>
-<div class="para" id="ortho-4-11">In finite dimensions, a basis is a minimal spanning set - that is, the span of a basis is the entire space. A similar fact holds in Hilbert space, with the caveat that we have to work with the closed linear span.</div>
+</div></article></details><div class="para" id="ortho-4-11">We have finally arrived at the notion of a basis in a Hilbert space (indexed by <span class="process-math">\(\mathbb{N}\)</span>). A complete orthonormal sequence in <span class="process-math">\(\hilbert\)</span> is also called an <dfn class="terminology">orthonormal basis</dfn> of <span class="process-math">\(\hilbert\text{.}\)</span> The issue with identifying a basis is typically not orthogonality or norm, but instead completeness. After all, in infinite dimensions, there are lots of places to hide. (The study of bases for infinite dimensional spaces is complicated; see this article on the notion of a <a class="external" href="https://en.wikipedia.org/wiki/Schauder_basis" target="_blank">Schauder basis</a><details class="ptx-footnote" aria-live="polite" id="ortho-4-11-6"><summary class="ptx-footnote__number" title="Footnote 5.4.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="ortho-4-11-6"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Schauder_basis</code></div></details> for a first look into the details.)</div>
+<div class="para" id="ortho-4-12">In finite dimensions, a basis is a minimal spanning set - that is, the span of a basis is the entire space. A similar fact holds in Hilbert space, with the caveat that we have to work with the closed linear span.</div>
 <article class="theorem theorem-like" id="thm-hilbert-span"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.3</span><span class="period">.</span>
 </h3>
@@ -382,24 +403,24 @@ y = x - \sum_{n=1}^\infty \ip{x}{e_n}e_n.
 <ol class="decimal">
 <li id="thm-hilbert-span-1-3-1"><div class="para" id="p-derived-thm-hilbert-span-1-3-1">
 <span class="process-math">\((e_n)\)</span> is complete;</div></li>
-<li id="thm-hilbert-span-1-3-2"><div class="para" id="p-derived-thm-hilbert-span-1-3-2"><span class="process-math">\(\cl \span \{e_n: n \in \mathbb{N}\} = \hilbert\text{;}\)</span></div></li>
+<li id="thm-hilbert-span-1-3-2"><div class="para" id="p-derived-thm-hilbert-span-1-3-2"><span class="process-math">\(\cl \spn \{e_n: n \in \mathbb{N}\} = \hilbert\text{;}\)</span></div></li>
 <li id="thm-hilbert-span-1-3-3"><div class="para" id="p-derived-thm-hilbert-span-1-3-3"><div class="displaymath process-math">
 \begin{equation*}
 \norm{x}^2 = \sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2.
 \end{equation*}
 </div></div></li>
 </ol>
-</div></article><details id="ortho-4-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-4-13-1">
+</div></article><details id="ortho-4-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-4-14-1">
 <div class="para">
-<span class="process-math">\((1) \Rightarrow (2)\)</span> and <span class="process-math">\((1) \Rightarrow (3)\)</span> follow immediately from <a href="ortho-4.html#thm-infinite-coords" class="xref" data-knowl="./knowl/xref/thm-infinite-coords.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.2">Theorem 5.4.2</a>. As series convergence is convergence of the sequence of partial sums, and each partial sum is in <span class="process-math">\(\cl \span \{e_n: n \in \mathbb{N}\}\text{,}\)</span> closure gives</div>
+<span class="process-math">\((1) \Rightarrow (2)\)</span> and <span class="process-math">\((1) \Rightarrow (3)\)</span> follow immediately from <a href="ortho-4.html#thm-infinite-coords" class="xref" data-knowl="./knowl/xref/thm-infinite-coords.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.2">Theorem 5.4.2</a>. As series convergence is convergence of the sequence of partial sums, and each partial sum is in <span class="process-math">\(\cl \spn \{e_n: n \in \mathbb{N}\}\text{,}\)</span> closure gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-infinite-coords.html">
 \begin{equation*}
-\sum_{n=1}^\infty \ip{x}{e_n} e_n \in \cl \span \{e_n: n \in \mathbb{N}\}
+\sum_{n=1}^\infty \ip{x}{e_n} e_n \in \cl \spn \{e_n: n \in \mathbb{N}\}
 \end{equation*}
 </div>
 <div class="para">for all <span class="process-math">\(x \in \hilbert\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="ortho-4-13-2">
+</div> <div class="para logical" id="ortho-4-14-2">
 <div class="para">
 <span class="process-math">\((3) \Rightarrow (1)\text{:}\)</span> Suppose that <span class="process-math">\((e_n)\)</span> is not complete, which is to say that there exists some non-zero vector <span class="process-math">\(y\)</span> with <span class="process-math">\(y\perp e_n\)</span> for all <span class="process-math">\(n\text{.}\)</span> Then <span class="process-math">\(\norm{x} \neq 0\text{,}\)</span> but <span class="process-math">\(\ip{x}{e_n} = 0\)</span> for all <span class="process-math">\(n\)</span> and so</div>
 <div class="displaymath process-math">
@@ -409,7 +430,7 @@ y = x - \sum_{n=1}^\infty \ip{x}{e_n}e_n.
 </div>
 <div class="para">which contradicts <span class="process-math">\((3)\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="ortho-4-13-3">
+</div> <div class="para logical" id="ortho-4-14-3">
 <div class="para">
 <span class="process-math">\((2) \Rightarrow (1)\text{:}\)</span> Suppose that <span class="process-math">\((2)\)</span> holds. Let <span class="process-math">\(x \in \hilbert\)</span> be any vector that is orthogonal to every <span class="process-math">\(e_n\text{.}\)</span> Now construct the set of vectors orthogonal to <span class="process-math">\(x\text{:}\)</span>
 </div>
@@ -418,12 +439,12 @@ y = x - \sum_{n=1}^\infty \ip{x}{e_n}e_n.
 \M  = \{y: \ip{x}{y} = 0\}.
 \end{equation*}
 </div>
-<div class="para">Linearity of the inner product gives that <span class="process-math">\(\M\)</span> is a subspace of <span class="process-math">\(\hilbert\text{,}\)</span> and continuity of the inner product gives that <span class="process-math">\(\M\)</span> is closed. Also, by assumption, every <span class="process-math">\(e_n \in \M\text{,}\)</span> and thus <span class="process-math">\(\cl \span\{e_n\} \subseteq \M\text{.}\)</span>and so (2) implies that <span class="process-math">\(\hilbert = \M\text{.}\)</span> But then in particular <span class="process-math">\(x \in \M\text{,}\)</span> and so <span class="process-math">\(\ip{x}{x} = 0\)</span> by the definition of <span class="process-math">\(\M\text{,}\)</span> which gives that <span class="process-math">\(x=0\text{.}\)</span> Thus, <span class="process-math">\((e_n)\)</span> is complete.</div>
-</div></article></details><div class="para" id="ortho-4-14">While most of the commonly encountered Hilbert spaces possess complete orthonormal sequences, some do not. Fortunately, similar statements to the above apply to orthonormal systems as well, though working with uncountably indexed sets is not something that most readers will encounter until graduate real analysis. It will be sufficient for us to mostly restrict our attention to the rather more easily conceptualized case of sequences.</div>
+<div class="para">Linearity of the inner product gives that <span class="process-math">\(\M\)</span> is a subspace of <span class="process-math">\(\hilbert\text{,}\)</span> and continuity of the inner product gives that <span class="process-math">\(\M\)</span> is closed. Also, by assumption, every <span class="process-math">\(e_n \in \M\text{,}\)</span> and thus <span class="process-math">\(\cl \spn\{e_n\} \subseteq \M\text{.}\)</span>and so (2) implies that <span class="process-math">\(\hilbert = \M\text{.}\)</span> But then in particular <span class="process-math">\(x \in \M\text{,}\)</span> and so <span class="process-math">\(\ip{x}{x} = 0\)</span> by the definition of <span class="process-math">\(\M\text{,}\)</span> which gives that <span class="process-math">\(x=0\text{.}\)</span> Thus, <span class="process-math">\((e_n)\)</span> is complete.</div>
+</div></article></details><div class="para" id="ortho-4-15">While most of the commonly encountered Hilbert spaces possess complete orthonormal sequences, some do not. Fortunately, similar statements to the above apply to orthonormal systems as well, though working with uncountably indexed sets is not something that most readers will encounter until graduate real analysis. It will be sufficient for us to mostly restrict our attention to the rather more easily conceptualized case of sequences.</div>
 <article class="definition definition-like" id="def-separable"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span>
 </h3>
-<div class="para" id="def-separable-1">A Hilbert space is called <dfn class="terminology">separable</dfn> if it contains a complete orthonormal sequence (indexed by <span class="process-math">\(\mathbb{N}\)</span> or finite).</div></article><div class="para" id="ortho-4-16">In the same way that we know from linear algebra that every (complex) finite dimensional Hilbert space is isomorphic to <span class="process-math">\(\C^n\text{,}\)</span> so that we think of “one” vector space of a given dimension with different labelings (see <a href="intro-2.html" class="internal" title="Section 1.3: Basis and coordinates">Section 1.3</a>), we have already met <em class="emphasis">the one separable Hilbert space of infinite dimension</em>, namely <span class="process-math">\(\ell^2\)</span> (and at last our suspicions are confirmed). The next set of arguments will make this rigorous.</div>
+<div class="para" id="def-separable-1">A Hilbert space is called <dfn class="terminology">separable</dfn> if it contains a complete orthonormal sequence (indexed by <span class="process-math">\(\mathbb{N}\)</span> or finite).</div></article><div class="para" id="ortho-4-17">In the same way that we know from linear algebra that every (complex) finite dimensional Hilbert space is isomorphic to <span class="process-math">\(\C^n\text{,}\)</span> so that we think of “one” vector space of a given dimension with different labelings (see <a href="intro-2.html" class="internal" title="Section 1.3: Basis and coordinates">Section 1.3</a>), we have already met <em class="emphasis">the one separable Hilbert space of infinite dimension</em>, namely <span class="process-math">\(\ell^2\)</span> (and at last our suspicions are confirmed). The next set of arguments will make this rigorous.</div>
 <article class="definition definition-like" id="def-unitary"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.5</span><span class="period">.</span>
 </h3>
@@ -436,11 +457,11 @@ y = x - \sum_{n=1}^\infty \ip{x}{e_n}e_n.
 </div>
 <div class="para">for all <span class="process-math">\(x, y \in \hilbert.\)</span>
 </div>
-</div></article><article class="theorem theorem-like" id="ortho-4-18"><h3 class="heading">
+</div></article><article class="theorem theorem-like" id="ortho-4-19"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.6</span><span class="period">.</span>
 </h3>
-<div class="para" id="ortho-4-18-1">Let <span class="process-math">\(\hilbert\)</span> be a separable Hilbert space. Then either <span class="process-math">\(\hilbert\)</span> is isomorphic to <span class="process-math">\(\C^n\)</span> for some <span class="process-math">\(n \in \mathbb{N}\)</span> or <span class="process-math">\(\hilbert\)</span> is isomorphic to <span class="process-math">\(\ell^2\text{.}\)</span>
-</div></article><details id="ortho-4-19" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-4-19-1">
+<div class="para" id="ortho-4-19-1">Let <span class="process-math">\(\hilbert\)</span> be a separable Hilbert space. Then either <span class="process-math">\(\hilbert\)</span> is isomorphic to <span class="process-math">\(\C^n\)</span> for some <span class="process-math">\(n \in \mathbb{N}\)</span> or <span class="process-math">\(\hilbert\)</span> is isomorphic to <span class="process-math">\(\ell^2\text{.}\)</span>
+</div></article><details id="ortho-4-20" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-4-20-1">
 <div class="para">Suppose that <span class="process-math">\(\hilbert\)</span> contains a finite complete orthonormal sequence <span class="process-math">\(e_1, \ldots e_n\text{.}\)</span> For any <span class="process-math">\(x \in \hilbert\text{,}\)</span> find the error vector</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -455,8 +476,8 @@ U(\la_1 e_1 + \la_2 e_2 + \ldots + \la_n e_n) = (\la_1, \ldots , \la_n).
 </div>
 <div class="para">Then <span class="process-math">\(U\)</span> is linear and bijective. From the fact that <span class="process-math">\(\norm{x}^2 = \sum_{i=1}^n \abs{\ip{x}{e_i}}^2\text{,}\)</span> we infer that <span class="process-math">\(\norm{Ux} = \norm{x}\)</span> for all <span class="process-math">\(x \in \hilbert.\)</span> Thus <span class="process-math">\(U\)</span> is a unitary operator, and so <span class="process-math">\(\hilbert\)</span> is isomorphic to <span class="process-math">\(\C^n\text{.}\)</span>
 </div>
-</div> <div class="para" id="ortho-4-19-2">On the other hand, suppose that <span class="process-math">\(\hilbert\)</span> contains a complete orthonormal sequence <span class="process-math">\((e_n)_{n \in \mathbb{N}}\text{.}\)</span> Define the operator <span class="process-math">\(U: \hilbert \to \ell^2\)</span> by <span class="process-math">\(Ux = (\la_n)_{n\in \mathbb{N}}\)</span> where <span class="process-math">\(\la_n = \ip{x}{e_n}\text{.}\)</span> By <a href="ortho-4.html#thm-hilbert-span" class="xref" data-knowl="./knowl/xref/thm-hilbert-span.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.3">Theorem 5.4.3</a> (3), <span class="process-math">\(Ux \in \ell^2\)</span> and moreover <span class="process-math">\(\norm{Ux} = \norm{x}\)</span> for all <span class="process-math">\(x \in \hilbert\text{.}\)</span> As <span class="process-math">\(U\)</span> is defined in terms of the inner product, it is clearly linear. If <span class="process-math">\((\la_n) \in \ell^2\text{,}\)</span> then by <a href="ortho-2.html#thm-l2-coeffs" class="xref" data-knowl="./knowl/xref/thm-l2-coeffs.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.3">Theorem 5.2.3</a> the series <span class="process-math">\(\sum \la_n e_n\)</span> converges to a point in <span class="process-math">\(\hilbert\)</span> and by definition <span class="process-math">\(Ux = (\la_n)\text{.}\)</span> Thus <span class="process-math">\(U\)</span> is surjective. Hence <span class="process-math">\(U\)</span> is a unitary operator, and so <span class="process-math">\(\hilbert\)</span> is isomorphic to <span class="process-math">\(\ell^2\text{.}\)</span>
-</div></article></details><div class="para" id="ortho-4-20">It is important that we not overstate the implications of the theorem above. In finite dimensions, for example, the space of polynomials of degree at most <span class="process-math">\(n\)</span> is isomorphic to <span class="process-math">\(\C^n\)</span> but is also a set of functions with properties that interact with the geometry of <span class="process-math">\(\C^n\text{.}\)</span> Both the vector space properties and the functional properties are important - what the isomorphism provides is a set of properties that the space carries by relation with Euclidean space. In the same way, while all separable Hilbert spaces can be thought of as <span class="process-math">\(\ell^2\)</span> in some sense, it is the interplay between, say, analytic properties and the Hilbert space structure that we are interested. However, it is valuable (and useful) to know that we can think of Hilbert space as <span class="process-math">\(\C^n\)</span> or <span class="process-math">\(\ell^2\)</span> when it is convenient.</div></section></div>
+</div> <div class="para" id="ortho-4-20-2">On the other hand, suppose that <span class="process-math">\(\hilbert\)</span> contains a complete orthonormal sequence <span class="process-math">\((e_n)_{n \in \mathbb{N}}\text{.}\)</span> Define the operator <span class="process-math">\(U: \hilbert \to \ell^2\)</span> by <span class="process-math">\(Ux = (\la_n)_{n\in \mathbb{N}}\)</span> where <span class="process-math">\(\la_n = \ip{x}{e_n}\text{.}\)</span> By <a href="ortho-4.html#thm-hilbert-span" class="xref" data-knowl="./knowl/xref/thm-hilbert-span.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.3">Theorem 5.4.3</a> (3), <span class="process-math">\(Ux \in \ell^2\)</span> and moreover <span class="process-math">\(\norm{Ux} = \norm{x}\)</span> for all <span class="process-math">\(x \in \hilbert\text{.}\)</span> As <span class="process-math">\(U\)</span> is defined in terms of the inner product, it is clearly linear. If <span class="process-math">\((\la_n) \in \ell^2\text{,}\)</span> then by <a href="ortho-2.html#thm-l2-coeffs" class="xref" data-knowl="./knowl/xref/thm-l2-coeffs.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.3">Theorem 5.2.3</a> the series <span class="process-math">\(\sum \la_n e_n\)</span> converges to a point in <span class="process-math">\(\hilbert\)</span> and by definition <span class="process-math">\(Ux = (\la_n)\text{.}\)</span> Thus <span class="process-math">\(U\)</span> is surjective. Hence <span class="process-math">\(U\)</span> is a unitary operator, and so <span class="process-math">\(\hilbert\)</span> is isomorphic to <span class="process-math">\(\ell^2\text{.}\)</span>
+</div></article></details><div class="para" id="ortho-4-21">As in undergraduate linear algebra, one might feel a bit of a letdown here. However, just as in finite dimensions, taking different views of the same space provides valuable insight into the objects being studied. In finite dimensions, for example, the space of polynomials of degree at most <span class="process-math">\(n\)</span> is isomorphic to <span class="process-math">\(\C^n\)</span> but is also a set of functions with properties that interact with the geometry of <span class="process-math">\(\C^n\text{.}\)</span> Both the vector space properties and the functional properties are important - what the isomorphism provides is a set of properties that the space carries by relation with Euclidean space. In the same way, while all separable Hilbert spaces can be thought of as <span class="process-math">\(\ell^2\)</span> in some sense, often what we are interested in is the relationship between the functions themselves as functions and the geometry induced by their Fourier (coordinate) representations.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ortho-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ortho-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

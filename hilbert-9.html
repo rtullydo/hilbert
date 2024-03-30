@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Examples of inner product spaces</title>
+<title>Dual spaces</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="inner-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="inner.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="inner-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="fourier-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="hilbert.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="dual-1.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
   \DeclareMathOperator{\IM}{Im}
   \DeclareMathOperator{\ess}{ess}
   \DeclareMathOperator{\intr}{int}
@@ -225,12 +225,12 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-intro-5.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Operators</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="inner.html" class="internal"><span class="codenumber">2</span> <span class="title">Inner product spaces</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="inner-1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Inner products and <span class="process-math">\(\ell^2\)</span></span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="inner-2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Inner products, norms, and metric spaces</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="inner-3.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Examples of inner product spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="inner-3.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Examples of inner product spaces</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="inner-4.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Exercises</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="inner-4.html#inner-4-2" class="internal"><span class="codenumber">2.4</span> <span class="title">Exercises</span></a></div></li></ul>
@@ -286,7 +286,7 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter active">
 <div class="toc-title-box"><a href="hilbert-9.html" class="internal"><span class="codenumber">7</span> <span class="title">Dual spaces</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear functionals</span></a></div></li>
@@ -300,101 +300,16 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="inner-3"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.3</span><span class="space"> </span><span class="title">Examples of inner product spaces</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="hilbert-9"><h2 class="heading">
+<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">7</span><span class="space"> </span><span class="title">Dual spaces</span>
 </h2>
-<div class="para logical" id="inner-3-2">
-<div class="para">So far, our examples of inner product spaces have been:</div>
-<ol class="decimal">
-<li id="inner-3-2-1-1"><div class="para" id="p-derived-inner-3-2-1-1">
-<span class="process-math">\(\C^n\text{:}\)</span> the space of <span class="process-math">\(n\)</span> dimensional complex vectors equipped with the inner product<div class="displaymath process-math">
-\begin{equation*}
-\ip{x}{y} = \sum_{i=1}^n \cc{y}_i x_i\text{;}
-\end{equation*}
-</div>
-</div></li>
-<li id="inner-3-2-1-2"><div class="para" id="p-derived-inner-3-2-1-2">
-<span class="process-math">\(\ell^2\text{:}\)</span> the space of square summable infinite sequences equipped with the inner product<div class="displaymath process-math">
-\begin{equation*}
-\ip{x}{y} = \sum_{i=1}^\infty \cc{y_i} x_i;
-\end{equation*}
-</div>
-</div></li>
-<li id="inner-3-2-1-3"><div class="para" id="p-derived-inner-3-2-1-3">
-<span class="process-math">\(\C^{m\times n}\text{:}\)</span> the space of <span class="process-math">\(m \times n\)</span> complex matrices equipped with the inner product<div class="displaymath process-math">
-\begin{equation*}
-\ip{A}{B} = \trace (B\ad A);
-\end{equation*}
-</div>
-</div></li>
-<li id="inner-3-2-1-4"><div class="para" id="p-derived-inner-3-2-1-4">
-<span class="process-math">\(C[0,1]\text{:}\)</span> the space of complex-valued continuous functions on the interval <span class="process-math">\([0,1]\)</span> equipped with the inner product<div class="displaymath process-math">
-\begin{equation*}
-\ip{f}{g} = \int_0^1 f(t) \cc{g(t)} \, \dd t;
-\end{equation*}
-</div>
-</div></li>
-</ol>
-</div>
-<div class="para" id="inner-3-3">To develop intuition and to show how inner product gemetry interacts with other mathematical structures, particularly those of analysis, we need more examples. The first three spaces in some sense very much resemble Euclidean space. They are easy to work with but don’t reveal the more nuanced structure of Hilbert spaces. On the other hand, general continuous functions are about as hard to grasp a collection of objects as exists in mathematics (<a class="external" href="http://nautil.us/issue/11/light/maths-beautiful-monsters" target="_blank">“I turn away with fear and horrow from the lamentable plague of continuous functions which do not have derivatives...” Hermite to Stieltjes, 1893</a><details class="ptx-footnote" aria-live="polite" id="inner-3-3-2"><summary class="ptx-footnote__number" title="Footnote 2.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="inner-3-3-2"><code class="code-inline tex2jax_ignore">nautil.us/issue/11/light/maths-beautiful-monsters</code></div></details> - unfortunately, <a class="external" href="http://homepages.math.uic.edu/~marker/math414/fs.pdf" target="_blank">most continuous functions are pathological in this sense</a><details class="ptx-footnote" aria-live="polite" id="inner-3-3-4"><summary class="ptx-footnote__number" title="Footnote 2.3.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="inner-3-3-4"><code class="code-inline tex2jax_ignore">homepages.math.uic.edu/~marker/math414/fs.pdf</code></div></details>).</div>
-<div class="para" id="inner-3-4">Examples of inner product spaces with non-trivial geometry include spaces of rational functions (that is, quotients of complex polynomials), which provide interesting examples and turn out to be of importance in applications. Rational functions also provide a foundation for the study of functions evaluated on matrix inputs, which will be considered much later in this text.</div>
-<div class="para logical" id="inner-3-5">
-<div class="para">It is most natural to consider the following examples in the context of complex-valued functions. A function <span class="process-math">\(f:D \to \C\)</span> is <a class="external" href="https://en.wikipedia.org/wiki/Analytic_function" target="_blank">analytic</a><details class="ptx-footnote" aria-live="polite" id="inner-3-5-3"><summary class="ptx-footnote__number" title="Footnote 2.3.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="inner-3-5-3"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Analytic_function</code></div></details> if <span class="process-math">\(f\)</span> has a power series that converges in a neighborhood of every <span class="process-math">\(x_0 \in D\text{.}\)</span> Denote by <span class="process-math">\(RL^2\)</span> the space of rational functions that are analytic on the unit circle <span class="process-math">\(\T = \partial \D = \{z\in \C: \abs{z} = 1\},\)</span> equipped with pointwise addition and scalar multiplication. <span class="process-math">\(RL^2\)</span> is an inner product space with the inner product</div>
-<div class="displaymath process-math" id="eq-RL-ip">
-\begin{equation}
-\ip{f}{g} = \frac{1}{2\pi i} \int_\T f(z) \cc{g(z)} \frac{\dd z}{z},\tag{2.3.1}
-\end{equation}
-</div>
-<div class="para">with the integral taken as <span class="process-math">\(z\)</span> travels around <span class="process-math">\(\T\)</span> counterclockwise. <span class="process-math">\(RL^2\)</span> is those rational functions with no <a class="external" href="https://en.wikipedia.org/wiki/Zeros_and_poles" target="_blank">pole</a><details class="ptx-footnote" aria-live="polite" id="inner-3-5-14"><summary class="ptx-footnote__number" title="Footnote 2.3.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="inner-3-5-14"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Zeros_and_poles</code></div></details> on the unit circle <span class="process-math">\(\T\text{.}\)</span>
-</div>
-</div>
-<div class="para" id="inner-3-6">We can restrict <span class="process-math">\(RL^2\)</span> to the subspace of functions that are analytic on the closed unit disk <span class="process-math">\(\cl{\D}\text{,}\)</span> where <span class="process-math">\(\D = \{z: \abs{z} \lt 1\}\text{.}\)</span> We will denote this space of functions <span class="process-math">\(RH^2\text{.}\)</span> It is an inner product space with the same inner product as <span class="process-math">\(RL^2\text{.}\)</span> These spaces are subspaces of the larger spaces of functions <span class="process-math">\(L^2\)</span> and <span class="process-math">\(H^2\text{,}\)</span> which will be discussed detail as we proceed.</div>
-<div class="para logical" id="inner-3-7">
-<div class="para">Another family of important function spaces are called <dfn class="terminology">Sobolev spaces</dfn>. The simplest example is the space <span class="process-math">\(W[a,b]\)</span> of continuously differentiable functions with values in <span class="process-math">\(\C\)</span> with the inner product</div>
-<div class="displaymath process-math" id="eq-W-ip">
-\begin{equation}
-\ip{f}{g} = \int_a^b f(t) \cc{g(t)} + f'(t) \cc{g'(t)} \, \dd t.\tag{2.3.2}
-\end{equation}
-</div>
-<div class="para">Including the derivative in the inner product gives control over the behavior of both the function and the derivative. <span class="process-math">\(W\)</span> and the broader family of Sobolev spaces are important in the study of differential equations.</div>
-</div>
-<div class="para logical" id="inner-3-8">
-<div class="para">Of central importance in engineering and the sciences is the space of <dfn class="terminology">trigonometric polynomials</dfn>, which are functions of the form</div>
-<div class="displaymath process-math">
-\begin{equation*}
-T(x) = a_0 + \sum_{n=1}^N a_n \cos(nx) + i\sum_{n=1}^N b_n \sin nx,
-\end{equation*}
-</div>
-<div class="para">where <span class="process-math">\(a_n, b_n \in \C\)</span> and <span class="process-math">\(1 \leq n \leq N\text{.}\)</span> Using Euler’s identity, it is computationally efficient to use the equivalent characterization</div>
-<div class="displaymath process-math">
-\begin{equation*}
-f(x) = \sum_{n=-N}^N c_n e^{inx}.
-\end{equation*}
-</div>
-<div class="para">The space <span class="process-math">\(TP\)</span> of trigonometric polynomials is a complex vector space with pointwise addition and scalar multiplication. That the relation</div>
-<div class="displaymath process-math" id="eq-TP-ip">
-\begin{equation}
-\ip{f}{g} = \frac{1}{2\pi} \int_{-T}^T f(x) \cc{g(x)} \, \dd x\tag{2.3.3}
-\end{equation}
-</div>
-<div class="para">is an an inner product on <span class="process-math">\(TP\)</span> is left as an exercise.</div>
-</div>
-<article class="assemblage assemblage-like" id="table-ipspaces"><div class="para logical" id="table-ipspaces-1"><div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{l|l|l}
-\text{Space} \amp \text{Elements} \amp \text{Inner product} \\ \hline
-\C^n \amp x = (x_1, \ldots, x_n), \, x_i \in \C \amp \ip{x}{y} = \sum x_i \cc{y}_i\\
-\C^{m\times n} \amp x = (x_{ij})_{i = 1, j=1}^{m, n}, \, x_{ij} \in \C \amp \ip{A}{B} = \trace(B\ad A)\\
-\ell^2 \amp x = (x_i)_{i=1}^\infty, \, x_i \in \C,  \, \sum \abs{x_i}^2 \lt \infty \amp \ip{x}{y} = \sum_1^\infty x_i \cc{y_i} \\
-C[a, b] \amp f:[a,b] \to \C \text{ continuous} \amp \ip{f}{g} = \int_a^b f(t) \cc{g(t)} \, \dd t \\
-RL^2 \amp f \text{ rational, analytic on } \T \amp \ip{f}{g} = \frac{1}{2 \pi i} \int_\T f(z) \cc{g(z)}\, \frac{\dd z}{z} \\
-RH^2 \amp f \text{ rational, analytic on } \cl \D \amp \ip{f}{g} = \frac{1}{2 \pi i} \int_\T f(z) \cc{g(z)}\, \frac{\dd z}{z} \\
-TP \amp f(x) = \sum_{-N}^N c_n e^{inx} \amp \ip{f}{g} = \frac{1}{2\pi} \int_{-T}^T f(x)\cc{g(x)}\, \dd x
-\end{array}
-\end{equation*}
-</div></div></article></section></div>
+<nav class="summary-links"><ul>
+<li><a href="dual-1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear functionals</span></a></li>
+<li><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></li>
+<li><a href="dual-3.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></li>
+</ul></nav></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="inner-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="inner-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="fourier-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="dual-1.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

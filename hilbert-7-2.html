@@ -275,18 +275,30 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="hilbert-8.html" class="internal"><span class="codenumber">6</span> <span class="title">Dual spaces</span></a></div>
+<div class="toc-title-box"><a href="hilbert-8.html" class="internal"><span class="codenumber">6</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Linear functionals</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Convolution</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Fejér kernel</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Convergence of classical Fourier series</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="fourier-4.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="fourier-4.html#fourier-4-2" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="operators.html" class="internal"><span class="codenumber">7</span> <span class="title">Linear operators</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear operators</span></a></div></li></ul>
+<div class="toc-title-box"><a href="hilbert-9.html" class="internal"><span class="codenumber">7</span> <span class="title">Dual spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-10.html" class="internal"><span class="codenumber">8</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="operators.html" class="internal"><span class="codenumber">8</span> <span class="title">Linear operators</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Linear operators</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="hilbert-7-2"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">5.1</span><span class="space"> </span><span class="title">Geometry in Hilbert space</span>
@@ -300,7 +312,7 @@ window.MathJax = {
 </div></article><div class="para" id="hilbert-7-2-4">Make note: we have <em class="emphasis">not</em> defined what it means to be a basis yet in the context of Hilbert spaces - that remains to be developed later in this chapter. Note also that a system index by <span class="process-math">\(\mathbb{Z}\)</span> can be reindexed in terms of <span class="process-math">\(\mathbb{N}\text{,}\)</span> and so we can take a typical orthonormal system to be indexed by <span class="process-math">\(\mathbb{N}\)</span> without loss of generality.</div>
 <details id="hilbert-7-2-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="hilbert-7-2-5-1">In <span class="process-math">\(\C^n\)</span> the standard basis vectors constitute an orthonormal system; so does any subset of them.</div> <div class="para" id="hilbert-7-2-5-2">In <span class="process-math">\(\ell^2\text{,}\)</span> the standard unit vectors <span class="process-math">\((e_n)_{n\in\mathbb{N}}\)</span> is an orthonormal sequence, where <span class="process-math">\(e_n\)</span> has a 1 in the <span class="process-math">\(n\)</span>th position and 0s elsewhere.</div> <div class="para logical" id="hilbert-7-2-5-3">
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="hilbert-7-2-5-1">In <span class="process-math">\(\C^n\)</span> the standard basis vectors constitute an orthonormal system; so does any subset of them.</div> <div class="para" id="hilbert-7-2-5-2">In <span class="process-math">\(\ell^2\text{,}\)</span> the standard unit vectors <span class="process-math">\((e_n)_{n\in\mathbb{N}}\)</span> form an orthonormal sequence, where <span class="process-math">\(e_n\)</span> has a 1 in the <span class="process-math">\(n\)</span>th position and 0s elsewhere.</div> <div class="para logical" id="hilbert-7-2-5-3">
 <div class="para">In <span class="process-math">\(L^2(-\pi,\pi)\text{,}\)</span> one orthonormal sequence <span class="process-math">\((e_n)_{n \in \mathbb{Z}}\)</span> is given by</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-C-ip.html">
 \begin{equation*}
@@ -329,7 +341,7 @@ e_n(t) = \frac{1}{\sqrt{2\pi}} e^{int}
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="thm-ortho-pythagorean-1">
-<div class="para">If <span class="process-math">\(x_1, \ldots, x_n\)</span> is a (finite) orthogona system in an inner product space, then</div>
+<div class="para">If <span class="process-math">\(x_1, \ldots, x_n\)</span> is a (finite) orthogonal system in an inner product space, then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \norm{\sum_{i=1}^n x_i}^2 = \sum_{i=1}^n \norm{x_i}^2.
@@ -373,13 +385,13 @@ e_n(t) = \frac{1}{\sqrt{2\pi}} e^{int}
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="thm-ortho-closest-finite-1">
-<div class="para">Let <span class="process-math">\(e_1, \ldots, e_n\)</span> be an orthonormal system in an inner product space <span class="process-math">\(\hilbert\)</span> and let <span class="process-math">\(x \in \hilbert\text{.}\)</span> The closest point <span class="process-math">\(y\)</span> of <span class="process-math">\(\span\{e_1, \ldots, e_n\}\)</span> to <span class="process-math">\(x\)</span> is</div>
+<div class="para">Let <span class="process-math">\(e_1, \ldots, e_n\)</span> be an orthonormal system in an inner product space <span class="process-math">\(\hilbert\)</span> and let <span class="process-math">\(x \in \hilbert\text{.}\)</span> The closest point <span class="process-math">\(y\)</span> of <span class="process-math">\(\spn\{e_1, \ldots, e_n\}\)</span> to <span class="process-math">\(x\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 y = \sum_{i=1}^n \ip{x}{e_i} e_i,
 \end{equation*}
 </div>
-<div class="para">and the distance <span class="process-math">\(d = \norm{x-y}\)</span> from <span class="process-math">\(x\)</span> to <span class="process-math">\(\span\{e_1, \ldots, e_n\}\)</span> is given by</div>
+<div class="para">and the distance <span class="process-math">\(d = \norm{x-y}\)</span> from <span class="process-math">\(x\)</span> to <span class="process-math">\(\spn\{e_1, \ldots, e_n\}\)</span> is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
 d^2 = \norm{x}^2 - \sum_{i=1}^n \abs{\ip{x}{e_i}}^2.
@@ -391,7 +403,7 @@ d^2 = \norm{x}^2 - \sum_{i=1}^n \abs{\ip{x}{e_i}}^2.
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="hilbert-7-2-17-1">
-<div class="para">If <span class="process-math">\(x \in \span\{e_1, \ldots, e_n\}\)</span> then</div>
+<div class="para">If <span class="process-math">\(x \in \spn\{e_1, \ldots, e_n\}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x = \sum_{i=1}^n \ip{x}{e_i} e_i.

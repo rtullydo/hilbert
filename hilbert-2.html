@@ -275,18 +275,30 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="hilbert-8.html" class="internal"><span class="codenumber">6</span> <span class="title">Dual spaces</span></a></div>
+<div class="toc-title-box"><a href="hilbert-8.html" class="internal"><span class="codenumber">6</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Linear functionals</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Convolution</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Fejér kernel</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Convergence of classical Fourier series</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="fourier-4.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="fourier-4.html#fourier-4-2" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="operators.html" class="internal"><span class="codenumber">7</span> <span class="title">Linear operators</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear operators</span></a></div></li></ul>
+<div class="toc-title-box"><a href="hilbert-9.html" class="internal"><span class="codenumber">7</span> <span class="title">Dual spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-10.html" class="internal"><span class="codenumber">8</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="operators.html" class="internal"><span class="codenumber">8</span> <span class="title">Linear operators</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Linear operators</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="hilbert-2"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">4.2</span><span class="space"> </span><span class="title"><span class="process-math">\(L^2[a,b]\)</span></span>
@@ -300,7 +312,7 @@ window.MathJax = {
 \int_0^1 \abs{f}^2 \dd t \lt \infty,
 \end{equation*}
 </div>
-<div class="para">than <span class="process-math">\(C[0,1]\text{,}\)</span> and yet even this space is incomplete. We need a better integral. The <dfn class="terminology"><a class="external" href="https://en.wikipedia.org/wiki/Lebesgue_integration" target="_blank">Lesbesgue integral</a><details class="ptx-footnote" aria-live="polite" id="hilbert-2-4-6-2"><summary class="ptx-footnote__number" title="Footnote 4.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="hilbert-2-4-6-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Lebesgue_integration</code></div></details></dfn> is significantly more challenging to develop than the Riemann integral, and we will not attempt that in this course. It is enough for us to accept that a more powerful notion of integration exists so that the space of square-integrable functions is complete with respect to <a href="inner-1.html#eq-C-ip" class="xref" data-knowl="./knowl/xref/eq-C-ip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.1">(2.1.1)</a>.</div>
+<div class="para">than <span class="process-math">\(C[0,1]\text{,}\)</span> and yet even this space is incomplete. (Consider the sequence of Riemann integrable functions <span class="process-math">\(f_n\)</span> on <span class="process-math">\([0,1]\)</span> attained recursively by introducing an additional discontinuity at the <span class="process-math">\(n\)</span>th rational number in <span class="process-math">\([0,1]\)</span> under some enumeration of <span class="process-math">\(\mathbb{Q}\text{.}\)</span> The limit function is the Dirichlet function <span class="process-math">\(s(t)\)</span> defined below.) We need a better integral. The <dfn class="terminology"><a class="external" href="https://en.wikipedia.org/wiki/Lebesgue_integration" target="_blank">Lesbesgue integral</a><details class="ptx-footnote" aria-live="polite" id="hilbert-2-4-12-2"><summary class="ptx-footnote__number" title="Footnote 4.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="hilbert-2-4-12-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Lebesgue_integration</code></div></details></dfn> is significantly more challenging to develop than the Riemann integral, and we will not attempt that in this course. It is enough for us to accept that a more powerful notion of integration exists so that the space of square-integrable functions is complete with respect to <a href="inner-1.html#eq-C-ip" class="xref" data-knowl="./knowl/xref/eq-C-ip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.1">(2.1.1)</a>.</div>
 </div>
 <details id="ex-L2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(L^2(a,b)\)</span>.</span>
@@ -313,7 +325,8 @@ window.MathJax = {
 </div>
 <div class="para">with pointwise operations and inner product <a href="inner-1.html#eq-C-ip" class="xref" data-knowl="./knowl/xref/eq-C-ip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.1">(2.1.1)</a>.</div>
 </div></article></details><div class="para logical" id="hilbert-2-6">
-<div class="para">The condition that <span class="process-math">\(f\)</span> be Lesbesgue measurable is not terribly restrictive. One can study and use the theory of <span class="process-math">\(L^2\)</span> functions in a wide variety of physical and mathematical applications without ever needing to grapple with the oddities of non-measureable functions, which are quite difficult to construct. To get an idea of how bad a function can be and still be Lesbesgue integrable, consider the function</div>
+<div class="para">The condition that <span class="process-math">\(f\)</span> be Lesbesgue measurable is not terribly restrictive. One can study and use the theory of <span class="process-math">\(L^2\)</span> functions in a wide variety of physical and mathematical applications without ever needing to grapple with the oddities of non-measureable functions, which are quite difficult to construct. To get an idea of how bad a function can be and still be Lesbesgue integrable, consider the <a class="external" href="https://en.wikipedia.org/wiki/Dirichlet_function" target="_blank">Dirichlet function</a><details class="ptx-footnote" aria-live="polite" id="hilbert-2-6-4"><summary class="ptx-footnote__number" title="Footnote 4.2.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="hilbert-2-6-4"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Dirichlet_function</code></div></details>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
 s(t) = \left\{
@@ -348,7 +361,7 @@ s(t) = \left\{
 </h3>
 <div class="para" id="thm-cont-dense-1">
 <span class="process-math">\(C[a,b]\)</span> is a dense subspace of <span class="process-math">\(L^2[a,b]\text{.}\)</span>
-</div></article><div class="para" id="hilbert-2-12">The theorem above is a consequence of measure theory, which requires the development of the Lebesgue integral to justify. We must accept the result, for the moment, on faith. The interested reader should look at Lusin’s theorem and the Tietze Extension Theorem for a taste of a standard method of proof in the general case.</div></section></div>
+</div></article><div class="para" id="hilbert-2-12">The theorem above is a consequence of measure theory, which requires the development of the Lebesgue integral to justify. We must accept the result, for the moment, on faith. The interested reader should look at <a class="external" href="https://en.wikipedia.org/wiki/Lusin%27s_theorem" target="_blank">Lusin’s Theorem</a><details class="ptx-footnote" aria-live="polite" id="hilbert-2-12-2"><summary class="ptx-footnote__number" title="Footnote 4.2.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="hilbert-2-12-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Lusin%27s_theorem</code></div></details> and the <a class="external" href="https://en.wikipedia.org/wiki/Tietze_extension_theorem" target="_blank">Tietze Extension Theorem</a><details class="ptx-footnote" aria-live="polite" id="hilbert-2-12-4"><summary class="ptx-footnote__number" title="Footnote 4.2.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="hilbert-2-12-4"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Tietze_extension_theorem</code></div></details> for a taste of a standard method of proof in the general case.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="hilbert-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="hilbert-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

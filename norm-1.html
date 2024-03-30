@@ -275,18 +275,30 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="hilbert-8.html" class="internal"><span class="codenumber">6</span> <span class="title">Dual spaces</span></a></div>
+<div class="toc-title-box"><a href="hilbert-8.html" class="internal"><span class="codenumber">6</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Linear functionals</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Convolution</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Fejér kernel</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Convergence of classical Fourier series</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="fourier-4.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="fourier-4.html#fourier-4-2" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="operators.html" class="internal"><span class="codenumber">7</span> <span class="title">Linear operators</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear operators</span></a></div></li></ul>
+<div class="toc-title-box"><a href="hilbert-9.html" class="internal"><span class="codenumber">7</span> <span class="title">Dual spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-10.html" class="internal"><span class="codenumber">8</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="operators.html" class="internal"><span class="codenumber">8</span> <span class="title">Linear operators</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Linear operators</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="norm-1"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">3.1</span><span class="space"> </span><span class="title">Norms</span>
@@ -364,12 +376,15 @@ d_{\sup}(f,g) = \sup_{[a,b]} \abs{f(x) - g(x)}.
 </div> <div class="para" id="def-norm-2">A <dfn class="terminology">normed space</dfn> is a pair <span class="process-math">\((V, \norm{\cdot})\)</span> where <span class="process-math">\(V\)</span> is a real or complex vector space and <span class="process-math">\(\norm{\cdot}\)</span> is a norm.</div></article><div class="para" id="norm-1-10">We should observe that setting <span class="process-math">\(c = 0\)</span> into property (2) above gives that <span class="process-math">\(\norm{0} = 0\)</span> in a normed space.</div>
 <details id="ex-CX" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
-</h3></summary><article class="exercise exercise-like knowl__content"><dfn class="terminology">supremum norm</dfn><span class="process-math">\(\norm{\cdot}_\infty\)</span><span class="process-math">\(C[a,b]\)</span><span class="process-math">\([a,b]\)</span><div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-norm.html">
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="ex-CX-1">
+<div class="para">Show that the <dfn class="terminology">supremum norm</dfn>  <span class="process-math">\(\norm{\cdot}_\infty\)</span> on the complex vector space <span class="process-math">\(C[a,b]\)</span> of all continuous complex valued functions on <span class="process-math">\([a,b]\)</span> defined by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-norm.html">
 \begin{equation*}
 \norm{f}_\infty = \sup_{[a,b]} \abs{f(x)}
 \end{equation*}
 </div>
-<a href="norm-1.html#def-norm" class="xref" data-knowl="./knowl/xref/def-norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.3">Definition 3.1.3</a></article></details><div class="para" id="norm-1-12">In the same way that inner products give rise to norms, norms give rise to metrics.</div>
+<div class="para">satisfies conditions 1-3 in <a href="norm-1.html#def-norm" class="xref" data-knowl="./knowl/xref/def-norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.3">Definition 3.1.3</a>.</div>
+</div></article></details><div class="para" id="norm-1-12">In the same way that inner products give rise to norms, norms give rise to metrics.</div>
 <article class="theorem theorem-like" id="thm-metric"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
 </h3>
@@ -417,7 +432,7 @@ d(x,z) \amp= \norm{x - z}\\
 \amp = d(x,y) + d(y,z)
 \end{align*}
 </div>
-</div> <div class="para" id="norm-1-14-7">That <span class="process-math">\(d\)</span> is translation invariance is straightforward and left to the reader.</div></article></details><div class="para" id="norm-1-15">What we’ve developed so far gives a hierarchy of structured spaces, each category enveloping the previous; inner product spaces are normed spaces, and normed spaces are metric spaces. We can go one step further and consider more generally linear spaces that have a toplogy but not necessarily a metric. These spaces are called <dfn class="terminology"><a class="external" href="https://en.wikipedia.org/wiki/Topological_vector_space" target="_blank">topological vector spaces</a><details class="ptx-footnote" aria-live="polite" id="norm-1-15-1-2"><summary class="ptx-footnote__number" title="Footnote 3.1.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="norm-1-15-1-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Topological_vector_space</code></div></details></dfn>, which are foundationally important in their own right, but well beyond the scope of this text. If you continue on your journey into Hilbert space theory, you’ll meet them in functional analysis.</div>
+</div> <div class="para" id="norm-1-14-7">That <span class="process-math">\(d\)</span> is translation invariant is straightforward and left as an exercise.</div></article></details><div class="para" id="norm-1-15">What we’ve developed so far gives a hierarchy of structured spaces, each category enveloping the previous; inner product spaces are normed spaces, and normed spaces are metric spaces. We can go one step further and consider more generally linear spaces that have a toplogy but not necessarily a metric. These spaces are called <dfn class="terminology"><a class="external" href="https://en.wikipedia.org/wiki/Topological_vector_space" target="_blank">topological vector spaces</a><details class="ptx-footnote" aria-live="polite" id="norm-1-15-1-2"><summary class="ptx-footnote__number" title="Footnote 3.1.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="norm-1-15-1-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Topological_vector_space</code></div></details></dfn>, which are foundationally important in their own right, but well beyond the scope of this text. If you continue on your journey into Hilbert space theory, you’ll meet them in functional analysis.</div>
 <div class="para" id="norm-1-16">Analysis, particularly at the undergraduate level, can be lampooned as the art of reducing a problem to the triangle inequality and then taking limits. Even this gentle mockery includes a major mathematical idea - namely, that absolute values (and more generally norms) are well-behaved under limits. That is, in normed spaces the basic operators are <dfn class="terminology">continuous</dfn> in the sense that small changes in input objects result in small changes in norm.</div>
 <article class="theorem theorem-like" id="thm-norm-cont"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>

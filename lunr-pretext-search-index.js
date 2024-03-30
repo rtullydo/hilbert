@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Preface",
   "number": "",
   "title": "Preface",
-  "body": " This text is inspired by and adapts the general shape of the excellent but out of print Introduction to Hilbert Space by Nicholas Young. The reader is encouraged to track down a copy - Professor Young's exposition and in particular his presentation of the context and historical development of Hilbert spaces is an outstanding introduction to the origins and applications of the field. I do not attempt to recreate that perspective here.  Hilbert space theory is a natural bridge between undergraduate and graduate mathematical perspectives. It extends the ideas of finite dimensional linear algebra, blends in ideas from real and complex analysis, and points to a very active area of research in algebra. To get the most out of this text, the reader will need to be familiar with (or be willing to learn) ideas from real and complex analysis (e.g. uniform convergence of sequences of functions, analyticity in the complex plane), linear algebra (e.g. the spectral theorem for symmetric matrices), and basic point-set topology (e.g. metrics).  Of course the study and use of Hilbert spaces of functions goes well beyond what can be addressed in this text. A reader in need of an advanced course in linear algebra flavored with functional analysis should work through Axler's Linear Algebra Done Right . Axler has also recently published Measure, Integration, \\amp Real Analysis , which covers the basics of functional analysis up to the spectral theorem for compact operators. The reader is also encouraged to work through Halmos's Introduction to Hilbert Space and the Theory of Spectral Multiplicity and especially the Hilbert space problem book , which treat more advanced topics than we consider here. My own path into the study of functional analysis ran through J. B. Conway's A Course in Functional Analysis and P. Lax's Functional Analysis . A reader interested in pursuing research in a modern flavor of Hilbert space theory might look to Pick interpolation and Hilbert function spaces and Operator Analysis by J. Agler, J. E. McCarthy, and N. J. Young. For the interaction of finite dimensional Hilbert spaces (i.e. matrices) and function theory, the reader should seek out Bhatia's excellent Matrix Analysis .  Another area of research arises not from studying the spaces but instead the maps that act on them. In this way, Hilbert space theory provides the foundation for the study of linear operators on infinte dimensional spaces.  "
+  "body": " This text is inspired by and adapts the general shape of the excellent Introduction to Hilbert Space by Nicholas Young. The reader is encouraged to track down a copy - Professor Young's exposition and in particular his presentation of the context and historical development of Hilbert spaces is an outstanding introduction to the origins and applications of the field. I do not attempt to recreate his deep historical knowledge nor his wide perspective on mathematics here.  Hilbert space theory is a natural bridge between undergraduate and graduate mathematical perspectives. It extends the ideas of finite dimensional linear algebra, blends in ideas from real and complex analysis, and points to a very active area of research in algebra. To get the most out of this text, the reader will need to be familiar with (or be willing to learn) ideas from real and complex analysis (e.g. uniform convergence of sequences of functions, analyticity in the complex plane), linear algebra (e.g. the spectral theorem for symmetric matrices), and basic point-set topology (e.g. metrics).  Of course the study and use of Hilbert spaces of functions goes well beyond what can be addressed in this text. A reader in need of an advanced course in linear algebra flavored with functional analysis should work through Axler's Linear Algebra Done Right . Axler has also recently published Measure, Integration, and Real Analysis , which covers the basics of functional analysis up to the spectral theorem for compact operators. The reader is also encouraged to work through Halmos's Introduction to Hilbert Space and the Theory of Spectral Multiplicity and especially the Hilbert space problem book , which treat more advanced topics than we consider here. My own path into the study of functional analysis ran through J. B. Conway's A Course in Functional Analysis and P. Lax's Functional Analysis . A reader interested in pursuing research in a modern flavor of Hilbert space theory might look to Pick interpolation and Hilbert function spaces and Operator Analysis by J. Agler, J. E. McCarthy, and N. J. Young (the same N. Young we pay homage to here). For the interaction of finite dimensional Hilbert spaces (i.e. matrices) and function theory, the reader should seek out Bhatia's excellent Matrix Analysis .  Another area of research arises not from studying the spaces but instead the maps that act on them. In this way, Hilbert space theory provides the foundation for the study of linear operators on infinte dimensional spaces. There is a major fork in the road here; one branch, concerned with single or classes of related operators and functions becomes operator theory . The study of the algebraic properties of the class of all operators on some space is the beginning of operator algebra . Both fields are vibrant and active.  "
 },
 {
   "id": "sec-intro-1",
@@ -457,7 +457,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.3",
   "title": "Examples of inner product spaces",
-  "body": "Examples of inner product spaces  So far, our examples of inner product spaces have been:  : the space of dimensional complex vectors equipped with the inner product ;  : the space of square summable infinite sequences equipped with the inner product  : the space of complex matrices equipped with the inner product  : the space of complex-valued continuous functions on the interval equipped with the inner product   To develop intuition and to show how inner product gemetry interacts with other mathematical structures, particularly those of analysis, we need more examples. The first three spaces in some sense very much resemble Euclidean space. They are easy to work with but don't reveal the more nuanced structure of Hilbert spaces. On the other hand, general continuous functions are about as hard to grasp a collection of objects as exists in mathematics ( I turn away with fear and horrow from the lamentable plague of continuous functions which do not have derivatives... Hermite to Stieltjes, 1893 - unfortunately, most continuous functions are pathological in this sense ).  Examples of inner product spaces with non-trivial geometry include spaces of rational functions (that is, quotients of complex polynomials), which provide interesting examples and turn out to be of importance in applications. Rational functions also provide a foundation for the study of functions evaluated on matrix inputs, which will be considered much later in this text.  Recall that a function is analytic if has a power series that converges in a neighborhood of every . Denote by the space of rational functions that are analytic on the unit circle equipped with pointwise addition and scalar multiplication. is an inner product space with the inner product with the integral taken as travels around counterclockwise. is those rational functions with no pole on the unit circle .  We can restrict to the subspace of functions that are analytic on the closed unit disk , where . We will denote this space of functions . It is an inner product space with the same inner product as . These spaces are subspaces of the larger spaces of functions and , which will be discussed detail as we proceed.  Another family of important function spaces are called Sobolev spaces . The simplest example is the space of continuously differentiable functions with values in with the inner product Including the derivative in the inner product gives control over the behavior of both the function and the derivative. and the broader family of Sobolev spaces are important in the study of differential equations.  Of central importance in engineering and the sciences is the space of trigonometric polynomials , which are functions of the form where and . Using Euler's identity, it is computationally efficient to use the equivalent characterization The space of trigonometric polynomials is a complex vector space with pointwise addition and scalar multiplication. That the relation is an an inner product on is left as an exercise.     "
+  "body": "Examples of inner product spaces  So far, our examples of inner product spaces have been:  : the space of dimensional complex vectors equipped with the inner product ;  : the space of square summable infinite sequences equipped with the inner product  : the space of complex matrices equipped with the inner product  : the space of complex-valued continuous functions on the interval equipped with the inner product   To develop intuition and to show how inner product gemetry interacts with other mathematical structures, particularly those of analysis, we need more examples. The first three spaces in some sense very much resemble Euclidean space. They are easy to work with but don't reveal the more nuanced structure of Hilbert spaces. On the other hand, general continuous functions are about as hard to grasp a collection of objects as exists in mathematics ( I turn away with fear and horrow from the lamentable plague of continuous functions which do not have derivatives... Hermite to Stieltjes, 1893 - unfortunately, most continuous functions are pathological in this sense ).  Examples of inner product spaces with non-trivial geometry include spaces of rational functions (that is, quotients of complex polynomials), which provide interesting examples and turn out to be of importance in applications. Rational functions also provide a foundation for the study of functions evaluated on matrix inputs, which will be considered much later in this text.  It is most natural to consider the following examples in the context of complex-valued functions. A function is analytic if has a power series that converges in a neighborhood of every . Denote by the space of rational functions that are analytic on the unit circle equipped with pointwise addition and scalar multiplication. is an inner product space with the inner product with the integral taken as travels around counterclockwise. is those rational functions with no pole on the unit circle .  We can restrict to the subspace of functions that are analytic on the closed unit disk , where . We will denote this space of functions . It is an inner product space with the same inner product as . These spaces are subspaces of the larger spaces of functions and , which will be discussed detail as we proceed.  Another family of important function spaces are called Sobolev spaces . The simplest example is the space of continuously differentiable functions with values in with the inner product Including the derivative in the inner product gives control over the behavior of both the function and the derivative. and the broader family of Sobolev spaces are important in the study of differential equations.  Of central importance in engineering and the sciences is the space of trigonometric polynomials , which are functions of the form where and . Using Euler's identity, it is computationally efficient to use the equivalent characterization The space of trigonometric polynomials is a complex vector space with pointwise addition and scalar multiplication. That the relation is an an inner product on is left as an exercise.     "
 },
 {
   "id": "inner-3-7",
@@ -538,7 +538,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Norms",
-  "body": "Norms  When we think about basic notions of open sets in Euclidean space , we typically consider open balls - that is, sets of the form using the standard norm Euclidean norm to define the notion of distance.  Of course, there are other ways to measure the distance between vectors that are consistent with the properties that we associate with metrics. The metric used will change the elements that fall into a ball of radius centered at . For example, on , we can define the taxicab metric    Describe the sets   We formalize the notion of metric in the following definition.   Let be a set. A metric is a map which satisfies for all   ;  if and only if ;  ;  for all .     Our focus is going to be on the analysis of inner product spaces of functions. But many spaces of functions can be equipped with metrics that do not arise from inner products. We've already seen , the space of continuous functions on , which is an inner product space with inner product . Another natural notion of distance in this space is to measure the maximum modulus of the pointwise distace between the functions: This is the metric that corresponds to uniform convergence of sequences of functions in and thus is natural and useful. However, the open sets in this metric do not coincide with the open sets in the inner product topology. In fact, there is no inner product on that corresponds to the maximum modulus metric.  Because we are ultimately interested in analysis involving vector spaces of functions, we will need to consider a broader range of metrics than those strictly arising from inner products. We wish to replicate the properties that a norm inherits from inner product as seen in and in . (These are the properties that make it possible do to analysis!)   Let be a real or complex vector space. A norm on is a map which satisfies  if ;  for all and ;  for all .   A normed space is a pair where is a real or complex vector space and is a norm.   We should observe that setting into property (2) above gives that in a normed space.  supremum norm  In the same way that inner products give rise to norms, norms give rise to metrics.   In a normed space , the (distance) function induced by the norm and defined by is a translation-invariant metric.  To say that a metric is translation-invariant is to say that for any .   We will show that satisifes the four properties of  (1): From (1), we have when .  (2):   (3):   (4): From (3), we have for all ,  That is translation invariance is straightforward and left to the reader.   What we've developed so far gives a hierarchy of structured spaces, each category enveloping the previous; inner product spaces are normed spaces, and normed spaces are metric spaces. We can go one step further and consider more generally linear spaces that have a toplogy but not necessarily a metric. These spaces are called topological vector spaces , which are foundationally important in their own right, but well beyond the scope of this text. If you continue on your journey into Hilbert space theory, you'll meet them in functional analysis.  Analysis, particularly at the undergraduate level, can be lampooned as the art of reducing a problem to the triangle inequality and then taking limits. Even this gentle mockery includes a major mathematical idea - namely, that absolute values (and more generally norms) are well-behaved under limits. That is, in normed spaces the basic operators are continuous in the sense that small changes in input objects result in small changes in norm.   In a normed space , the map is continuous.    Exercise.    In a normed space , the algebraic operations on are continuous. That is, the maps where denotes the scalar field, are continuous in the respective product topologies.    We will show that scalar multiplication is continuous at an arbitrary point . For any , we have  Choose Recall that we want to show that all nearby points have norm within of . We'll choose neighborhoods of and in the following way: Then is an open neighborhood of . For , we know by construction that Then by , we have   The remaining part of the proof is similar and left as an exercise.   Finally, we note that (unsurprisingly), inner products are continuous on inner product spaces.   In an inner product space , the inner product is continuous. That is, the map is continuous in the product topology.   The proof is similar to the proof of and is left as an exercise.  "
+  "body": "Norms  When we think about basic notions of open sets in Euclidean space , we typically consider open balls - that is, sets of the form using the standard norm Euclidean norm to define the notion of distance.  Of course, there are other ways to measure the distance between vectors that are consistent with the properties that we associate with metrics. The metric used will change the elements that fall into a ball of radius centered at . For example, on , we can define the taxicab metric    Describe the sets   We formalize the notion of metric in the following definition.   Let be a set. A metric is a map which satisfies for all   ;  if and only if ;  ;  for all .     Our focus is going to be on the analysis of inner product spaces of functions. But many spaces of functions can be equipped with metrics that do not arise from inner products. We've already seen , the space of continuous functions on , which is an inner product space with inner product . Another natural notion of distance in this space is to measure the maximum modulus of the pointwise distace between the functions: This is the metric that corresponds to uniform convergence of sequences of functions in and thus is natural and useful. However, the open sets in this metric do not coincide with the open sets in the inner product topology. In fact, there is no inner product on that corresponds to the maximum modulus metric.  Because we are ultimately interested in analysis involving vector spaces of functions, we will need to consider a broader range of metrics than those strictly arising from inner products. We wish to replicate the properties that a norm inherits from inner product as seen in and in . (These are the properties that make it possible do to analysis!)   Let be a real or complex vector space. A norm on is a map which satisfies  if ;  for all and ;  for all .   A normed space is a pair where is a real or complex vector space and is a norm.   We should observe that setting into property (2) above gives that in a normed space.  Show that the supremum norm  on the complex vector space of all continuous complex valued functions on defined by satisfies conditions 1-3 in .  In the same way that inner products give rise to norms, norms give rise to metrics.   In a normed space , the (distance) function induced by the norm and defined by is a translation-invariant metric.  To say that a metric is translation-invariant is to say that for any .   We will show that satisifes the four properties of  (1): From (1), we have when .  (2):   (3):   (4): From (3), we have for all ,  That is translation invariant is straightforward and left as an exercise.   What we've developed so far gives a hierarchy of structured spaces, each category enveloping the previous; inner product spaces are normed spaces, and normed spaces are metric spaces. We can go one step further and consider more generally linear spaces that have a toplogy but not necessarily a metric. These spaces are called topological vector spaces , which are foundationally important in their own right, but well beyond the scope of this text. If you continue on your journey into Hilbert space theory, you'll meet them in functional analysis.  Analysis, particularly at the undergraduate level, can be lampooned as the art of reducing a problem to the triangle inequality and then taking limits. Even this gentle mockery includes a major mathematical idea - namely, that absolute values (and more generally norms) are well-behaved under limits. That is, in normed spaces the basic operators are continuous in the sense that small changes in input objects result in small changes in norm.   In a normed space , the map is continuous.    Exercise.    In a normed space , the algebraic operations on are continuous. That is, the maps where denotes the scalar field, are continuous in the respective product topologies.    We will show that scalar multiplication is continuous at an arbitrary point . For any , we have  Choose Recall that we want to show that all nearby points have norm within of . We'll choose neighborhoods of and in the following way: Then is an open neighborhood of . For , we know by construction that Then by , we have   The remaining part of the proof is similar and left as an exercise.   Finally, we note that (unsurprisingly), inner products are continuous on inner product spaces.   In an inner product space , the inner product is continuous. That is, the map is continuous in the product topology.   The proof is similar to the proof of and is left as an exercise.  "
 },
 {
   "id": "norm-1-2",
@@ -592,7 +592,7 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "3.1.4",
   "title": "",
-  "body": "supremum norm "
+  "body": "Show that the supremum norm  on the complex vector space of all continuous complex valued functions on defined by satisfies conditions 1-3 in . "
 },
 {
   "id": "thm-metric",
@@ -610,7 +610,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "3.1.1",
   "title": "",
-  "body": "We will show that satisifes the four properties of  (1): From (1), we have when .  (2):   (3):   (4): From (3), we have for all ,  That is translation invariance is straightforward and left to the reader.  "
+  "body": "We will show that satisifes the four properties of  (1): From (1), we have when .  (2):   (3):   (4): From (3), we have for all ,  That is translation invariant is straightforward and left as an exercise.  "
 },
 {
   "id": "norm-1-15",
@@ -883,9 +883,9 @@ var ptx_lunr_docs = [
   "body": "Guess the closed linear span of the set in . (We'll see the answer later. This result is fundamental.) "
 },
 {
-  "id": "norm-3-2-8",
+  "id": "ex-ball-closure",
   "level": "2",
-  "url": "norm-3.html#norm-3-2-8",
+  "url": "norm-3.html#ex-ball-closure",
   "type": "Exercise",
   "number": "3.3.8",
   "title": "",
@@ -925,7 +925,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.1",
   "title": "Limits",
-  "body": " Limits  With the inner product given by , the space of sequences of square summable functions acts much like . We can extend this analogy further. In Euclidean space, a sequence that looks convergent is convergent. (This shows up in theorems like \"Cauchy sequences are convergent\", e.g.) Much of our intuition from real analysis is based on this property. Spaces on which sequences converge to points outside the space are very difficult to do analysis on! (Consider trying to do calculus on the rational numbers, for example.)  On the other hand, recall the space  . In , we constructed a sequence of vectors in that converged in but not in . That is, if we restricted our attention to the inner product space , we could not perform any analysis using limits, because we might leave the space.  As our ultimate interest is in examining function spaces, we can also consider an example in . A natural norm on is induced by the inner product , so that With respect the norm above, consider the sequence     It isn't difficult to show that the elements in this sequence of functions grow arbitrarily close as with respect to . It should also be clear from the figure above that this sequence of continuous functions is approaching a discontinuous function in the limit. (What is it?) That is, is evidently not closed with respect to .  We would very much like to work in spaces where limits make sense. So we'll introduce some machinery that will guarantee that this is the case.   Let be a metric space with distance function . A sequence in is called a Cauchy sequence if for every , there exists an integer so that implies that .  If every Cauchy sequence in converges to a limit in , then is called a complete metric space .   Some metric spaces come complete. The prototypical space is , where the result that Cauchy sequences are convergent is a standard test question in real analysis. (Can you prove it?). Completeness of implies completeness of . (Do it.) More complicated spaces take more work. We've already seen examples of spaces that are not complete.   The space is a complete metric space with the metric induced by the inner product .    We need to show that any Cauchy sequence in is convergent to another sequence. First, we propose a candidate for the limit of a Cauchy sequence of vectors in . To do so, we'll need to take advantage of the fact that vectors in are themselves sequences.  Consider the array we can construct by arranging the vectors as rows -   We are going to argue that the column sequences in the array above are convergent. Consider the -th column sequence . Choose Because is a Cauchy sequence of vectors, there exists some so that implies that . But since and each term in the sum is positive, we get when . This shows that is a Cauchy sequence in , which is a complete metric space, and so for some limit as . Let be the sequence of column limits. This is our candidate limit in for the sequence of vectors .  Let us show that . To do so, we will show that is in for some and use the vector space structure of . Let be given. Since is Cauchy, there exists so that for all . Noting again that the terms are positive, it is clear that for , We previously showed that the sequences converge to , so taking a limit as on the left-hand side of the inequalty gives This statement holds for all , and so letting tend to gives us which is to say that . Having shown that is in , we note that , which concludes this step of the proof.  The final step is to argue that the sequence . In the previous step, we showed that for a given , there exists so that implies that . Thus, converges to the sequence . Since every Cauchy sequence converges to a limit in , we conclude that is a complete metric space.   Show that , the space of bounded sequences of complex numbers with the supremum norm is complete.  We are now (finally) ready to define Hilbert spaces. The distinction between Hilbert spaces and inner product spaces is important to keep in mind.   A Hilbert space is an inner product space which is a complete metric space with respect to the metric induced by its inner product.    A Banach space is a normed space which is complete with respect to the metric induced by its norm.   As inner products induce norms, every Hilbert space is a Banach space. The converse statement is not true. Examples abound of complete normed spaces in which the parallelogram rule fails to hold (and thus there can exist no inner product that induces the norm.) In fact, our results to now show that is an example of a Banach space that is not a Hilbert space. Banach spaces are an area of wide interest in mathematics, but the lack of an inner product makes the structure much more delicate to parse. The central spaces of functional analysis are Hilbert spaces, where the inner product gives useful geometry not available in the more general setting of Banach spaces.  We'll continue by looking at perhaps the single most important Hilbert space of functions.  "
+  "body": " Limits  With the inner product given by , the space of sequences of square summable functions acts much like . We can extend this analogy further. In Euclidean space, a sequence that looks convergent is convergent. (This shows up in theorems like \"Cauchy sequences are convergent\", e.g., and falls into a larger category we might refer to in a silly but accurate manner as a duck theorem - if it quacks like a duck, then...). Much of our intuition from real analysis is based on this property. Spaces on which sequences converge to points outside the space are very difficult to do analysis on! (Consider trying to do calculus on the rational numbers, for example.)  On the other hand, recall the space we defined in  . In , we constructed a sequence of vectors in that converged in but not in . That is, if we restricted our attention to the inner product space , we could not perform any analysis using limits, because we might leave the space.  As our ultimate interest is in examining function spaces, we can also consider an example in . A natural norm on is induced by the inner product , so that With respect the norm above, consider the sequence     It isn't difficult to show that the elements in this sequence of functions grow arbitrarily close as with respect to . It should also be clear from the figure above that this sequence of continuous functions is approaching a discontinuous function in the limit. (What is it?) That is, is evidently not closed with respect to .  We would very much like to work in spaces where limits make sense. So we'll introduce some machinery that will guarantee that this is the case.   Let be a metric space with distance function . A sequence in is called a Cauchy sequence if for every , there exists an integer so that implies that .  If every Cauchy sequence in converges to a limit in , then is called a complete metric space .   Some metric spaces come complete. The prototypical space is , where the result that Cauchy sequences are convergent is a standard test question in real analysis. (Can you prove it?). Completeness of implies completeness of . (Do it.) More complicated spaces take more work. We've already seen examples of spaces that are not complete.   The space is a complete metric space with the metric induced by the inner product .    We need to show that any Cauchy sequence in is convergent to another sequence. First, we propose a candidate for the limit of a Cauchy sequence of vectors in . To do so, we'll need to take advantage of the fact that vectors in are themselves sequences.  Consider the array we can construct by arranging the vectors as rows -   We are going to argue that the column sequences in the array above are convergent. Consider the -th column sequence . Choose Because is a Cauchy sequence of vectors, there exists some so that implies that . But since and each term in the sum is positive, we get when . This shows that is a Cauchy sequence in , which is a complete metric space, and so for some limit as . Let be the sequence of column limits. This is our candidate limit in for the sequence of vectors .  Let us show that . To do so, we will show that is in for some and use the vector space structure of . Let be given. Since is Cauchy, there exists so that for all . Noting again that the terms are positive, it is clear that for , We previously showed that the sequences converge to , so taking a limit as on the left-hand side of the inequalty gives This statement holds for all , and so letting tend to gives us which is to say that . Having shown that is in , we note that , which concludes this step of the proof.  The final step is to argue that the sequence . In the previous step, we showed that for a given , there exists so that implies that . Thus, converges to the sequence . Since every Cauchy sequence converges to a limit in , we conclude that is a complete metric space.   Show that , the space of bounded sequences of complex numbers with the supremum norm is complete.  We are now (finally) ready to define Hilbert spaces. The distinction between Hilbert spaces and inner product spaces is important to keep in mind.   A Hilbert space is an inner product space which is a complete metric space with respect to the metric induced by its inner product.    A Banach space is a normed space which is complete with respect to the metric induced by its norm.   As inner products induce norms, every Hilbert space is a Banach space. The converse statement is not true. Examples abound of complete normed spaces in which the parallelogram rule fails to hold (and thus there can exist no inner product that induces the norm.) In fact, our results to now show that is an example of a Banach space that is not a Hilbert space. Banach spaces are an area of wide interest in mathematics, but the lack of an inner product makes the structure much more delicate to parse. The central spaces of functional analysis are Hilbert spaces, where the inner product gives useful geometry not available in the more general setting of Banach spaces.  We'll continue by looking at perhaps the single most important Hilbert space of functions.  "
 },
 {
   "id": "def-cauchy-seq",
@@ -988,7 +988,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.2",
   "title": "<span class=\"process-math\">\\(L^2[a,b]\\)<\/span>",
-  "body": " We saw in the previous section that is an inner product space that is not complete. This is unfortunate, as the continuous functions are the foundation of approximation and analysis. The inner product is a natural analogue of the inner product in , considering the extension of sums to integral. It seems a shame to forgo working with the inner product and the space of continuous functions. But if we want to use them, we'll need to come up with a Hilbert space that contains , which is necessarily going to involve discontinuous functions (see the example at the beginning of the previous section, or the exerise in the problem section below).  The move from to provides an analogy - moving to infinite dimensions requires that we use square-summable sequences to get a well-defined inner product. The same turns out to be true here - sums become integrals, so we will work with the square-integrable functions , which we denote . That is, consists of those functions for which the integral of is finite. The sharp-eyed reader may notice that we have not written this in mathematics as and instead used the weasel-word integrable .  At issue is how we define the integral. The Riemann integral is the familiar that we learn in elementary calculus. Many more functions on will satisfy than , and yet even this space is incomplete. We need a better integral. The Lesbesgue integral is significantly more challenging to develop than the Riemann integral, and we will not attempt that in this course. It is enough for us to accept that a more powerful notion of integration exists so that the space of square-integrable functions is complete with respect to .   Let . is the space of Lesbesgue measureable functions which are square-integrable - that is, with pointwise operations and inner product .   The condition that be Lesbesgue measurable is not terribly restrictive. One can study and use the theory of functions in a wide variety of physical and mathematical applications without ever needing to grapple with the oddities of non-measureable functions, which are quite difficult to construct. To get an idea of how bad a function can be and still be Lesbesgue integrable, consider the function which integrates to 1 in the Lesbesgue integral, while the Riemann integral runs screaming in horror.  There is one issue that needs to be addressed when defining membership in a space with an integral condition - when should we consider two functions to be equal? If we take the function and move one point, say when and when , the functions behave identically under the integral and thus in the inner product and the metric in . More precisely, if two functions differ only at a finite set of points in , then and so by (1), and must be equal in .  So how much can two functions differ and still have the same integral? We define a subset of to be a null set if for any there exists a sequence of intervals with and - that is, is a null set if it is contained in the union of a set of intervals of arbitrarily small total length. Two functions are said to be equal almost everywhere if they differ only on a null set. In the Lesbesue integral, if and are equal almost everywhere, then the integral of is zero, and so and must be regarded as equal in . This indicates that the elements of are properly considered as equivalence classes of almost everywhere equal functions. In practice, we still refer to the elements as functions and treat equality as almost everywhere equality. This viewpoint does, however, mean that functions need only be defined almost everywhere to belong to . For example, is in despite the asymptote at .  One of the more useful properties of is that the continuous functions are a dense subspace (that is, every function can be approximated by a sequence of continuous functions). A typical approach in analysis is to show that some property hold on the continuous functions and then extend the result to by approximation.   is a Hilbert space.    is a dense subspace of .   The theorem above is a consequence of measure theory, which requires the development of the Lebesgue integral to justify. We must accept the result, for the moment, on faith. The interested reader should look at Lusin's theorem and the Tietze Extension Theorem for a taste of a standard method of proof in the general case.  "
+  "body": " We saw in the previous section that is an inner product space that is not complete. This is unfortunate, as the continuous functions are the foundation of approximation and analysis. The inner product is a natural analogue of the inner product in , considering the extension of sums to integral. It seems a shame to forgo working with the inner product and the space of continuous functions. But if we want to use them, we'll need to come up with a Hilbert space that contains , which is necessarily going to involve discontinuous functions (see the example at the beginning of the previous section, or the exerise in the problem section below).  The move from to provides an analogy - moving to infinite dimensions requires that we use square-summable sequences to get a well-defined inner product. The same turns out to be true here - sums become integrals, so we will work with the square-integrable functions , which we denote . That is, consists of those functions for which the integral of is finite. The sharp-eyed reader may notice that we have not written this in mathematics as and instead used the weasel-word integrable .  At issue is how we define the integral. The Riemann integral is the familiar that we learn in elementary calculus. Many more functions on will satisfy than , and yet even this space is incomplete. (Consider the sequence of Riemann integrable functions on attained recursively by introducing an additional discontinuity at the th rational number in under some enumeration of . The limit function is the Dirichlet function defined below.) We need a better integral. The Lesbesgue integral is significantly more challenging to develop than the Riemann integral, and we will not attempt that in this course. It is enough for us to accept that a more powerful notion of integration exists so that the space of square-integrable functions is complete with respect to .   Let . is the space of Lesbesgue measureable functions which are square-integrable - that is, with pointwise operations and inner product .   The condition that be Lesbesgue measurable is not terribly restrictive. One can study and use the theory of functions in a wide variety of physical and mathematical applications without ever needing to grapple with the oddities of non-measureable functions, which are quite difficult to construct. To get an idea of how bad a function can be and still be Lesbesgue integrable, consider the Dirichlet function  which integrates to 1 in the Lesbesgue integral, while the Riemann integral runs screaming in horror.  There is one issue that needs to be addressed when defining membership in a space with an integral condition - when should we consider two functions to be equal? If we take the function and move one point, say when and when , the functions behave identically under the integral and thus in the inner product and the metric in . More precisely, if two functions differ only at a finite set of points in , then and so by (1), and must be equal in .  So how much can two functions differ and still have the same integral? We define a subset of to be a null set if for any there exists a sequence of intervals with and - that is, is a null set if it is contained in the union of a set of intervals of arbitrarily small total length. Two functions are said to be equal almost everywhere if they differ only on a null set. In the Lesbesue integral, if and are equal almost everywhere, then the integral of is zero, and so and must be regarded as equal in . This indicates that the elements of are properly considered as equivalence classes of almost everywhere equal functions. In practice, we still refer to the elements as functions and treat equality as almost everywhere equality. This viewpoint does, however, mean that functions need only be defined almost everywhere to belong to . For example, is in despite the asymptote at .  One of the more useful properties of is that the continuous functions are a dense subspace (that is, every function can be approximated by a sequence of continuous functions). A typical approach in analysis is to show that some property hold on the continuous functions and then extend the result to by approximation.   is a Hilbert space.    is a dense subspace of .   The theorem above is a consequence of measure theory, which requires the development of the Lebesgue integral to justify. We must accept the result, for the moment, on faith. The interested reader should look at Lusin's Theorem and the Tietze Extension Theorem for a taste of a standard method of proof in the general case.  "
 },
 {
   "id": "hilbert-2-3",
@@ -1060,7 +1060,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.3",
   "title": "The closest point property",
-  "body": "The closest point property  One of the most useful ideas in linear algebra is projecting onto subspaces - if and is a subspace, then is the closest point in to in the sense that the orthogonal distance from to is minimized (this is also called least squares approximation).  The same idea holds true in Hilbert space and applies to vectors that are functions. This fact has deep consequences - that functions can be understood through the geometry of vectors is the soul of modern approaches to functional analysis.   A subset of a real or complex vector space is convex if, for all and all , the point .   We should think of convex sets as those that contain the line segments between all points and in .  First, we show that the closest point property holds - that a given vector has a unique closest point in any appropriately flat set in (like a linear subspace).  Closest point property  Let be a non-empty closed convex set in a Hilbert space . For any , there is a unique point of which is closer to than any other point in . That is, there is a unique point such that    The proof will consist of two parts. First, we show that the infimum of distance between and is attained. (We should recall that the infimum itself exists is a consequence of the completeness of the real numbers, e.g. Theorem 2.6 .) Second, we show that this point is unique in .  Let We assumed that was not empty, and so must be some finite number. Since the infimum is a limit point, we can construct a sequence tending to . That is, for each integer , there exists some so that We now move from a sequence in norm to a sequence in by showing that is Cauchy in - that is, we need to show that is small. We first apply to the sequences and . For any , we have The term we are trying to bound is . On rearrangement, we get Now we will use the convexity of . Since , we know that , and hence that Consequently, It follows that is a Cauchy sequence in ; for a given (you should verify). Because is a Hilbert space, Cauchy sequences converge, and so . Since is closed, . On the one hand, this means that , since is an infimum. On the other hand, we know that for all , On taking , we get . We conclude that , and so is a closest point in to .  Now we show that is the unique closest point. Suppose that there is some with . Convexity gives that , and so Applying to and gives Thus, which gives uniqueness.   "
+  "body": "The closest point property  One of the most useful ideas in linear algebra is projecting onto subspaces - if and is a subspace, then is the closest point in to in the sense that the orthogonal distance from to is minimized (this is also called least squares approximation).  The same idea holds true in Hilbert space and applies to vectors that are functions. This fact has deep consequences - that functions can be understood through the geometry of vectors is the soul of modern approaches to functional analysis.   A subset of a real or complex vector space is convex if, for all and all , the point .   We should think of convex sets as those that contain the line segments between all points and in .  First, we show that the closest point property holds - that a given vector has a unique closest point in any appropriately flat set in (like a linear subspace). (Compare the proof below with the standard approach in finite dimensions, e.g. in S. Axler's Linear Algebra Done Right (4th ed.), Chapter 6C).  Closest point property  Let be a non-empty closed convex set in a Hilbert space . For any , there is a unique point of which is closer to than any other point in . That is, there is a unique point such that    The proof will consist of two parts. First, we show that the infimum of distance between and is attained. (We should recall that the infimum itself exists is a consequence of the completeness of the real numbers, e.g. Theorem 2.6 .) Second, we show that this point is unique in .  Let We assumed that was not empty, and so must be some finite number. Since the infimum is a limit point, we can construct a sequence tending to . That is, for each integer , there exists some so that We now move from a sequence in norm to a sequence in by showing that is Cauchy in - that is, we need to show that is small. We first apply to the sequences and . For any , we have The term we are trying to bound is . On rearrangement, we get Now we will use the convexity of . Since , we know that , and hence that Consequently, It follows that is a Cauchy sequence in ; for a given (you should verify). Because is a Hilbert space, Cauchy sequences converge, and so . Since is closed, . On the one hand, this means that , since is an infimum. On the other hand, we know that for all , On taking , we get . We conclude that , and so is a closest point in to .  Now we show that is the unique closest point. Suppose that there is some with . Convexity gives that , and so Applying to and gives Thus, which gives uniqueness.   "
 },
 {
   "id": "def-convex",
@@ -1195,7 +1195,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Geometry in Hilbert space",
-  "body": " Geometry in Hilbert space  As we discussed in the introductory chapter, , one of the key ideas of finite dimensional linear algebra is to use a basis for a vector space to move back and forth between the vectors themselves (say ) and their coordinate representations with respect to those bases. This move lets us consider a vector space of dimension as essentially just a renaming of Euclidean space . We are now ready to try to capture this geometry in the context of Hilbert space.   Vectors in an inner product space are orthogonal , denoted , if .  A family in is called an orthogonal system if when . If further, for all , then is called an orthonormal system .  An orthonormal system is called an orthonormal sequence if it can be indexed by .   Make note: we have not defined what it means to be a basis yet in the context of Hilbert spaces - that remains to be developed later in this chapter. Note also that a system index by can be reindexed in terms of , and so we can take a typical orthonormal system to be indexed by without loss of generality.   In the standard basis vectors constitute an orthonormal system; so does any subset of them.  In , the standard unit vectors is an orthonormal sequence, where has a 1 in the th position and 0s elsewhere.  In , one orthonormal sequence is given by in the inner product . An alternative orthonormal sequence in is given by the family of functions    These families form the beginnings of Fourier analysis , which motivates the following definition. (Compare to .)   If is an orthonormal sequence in a Hilbert space then for any , the inner product is the th Fourier coefficent of with respect to . The Fourier series of with respect to is the series   At this point, this is only a formal sum in a formal definition. We want to understand the extent to which orthogonal systems can play the role of coordinate systems in finite dimensions, with the ultimate idea of working in coordinates. First, given our definition of orthogonality, we can generalize the Pythagorean theorem.   If is a (finite) orthogona system in an inner product space, then   Prove .  The basic properties of orthogonal expansions are mainly derived from the following geometric identity. Note that it applies to finite orthonormal systems.   Let be an orthonormal system in an inner product space , let and suppose that . Then where .    By , Then    Now suppose that and the orthonormal system are fixed. Varying on the expression will trace out the linear span of the (as it runs through all linear combinations). Since are fixed, implies that quantity is minimized when for (killing the middle term). This gives the following theorem.   Let be an orthonormal system in an inner product space and let . The closest point of to is and the distance from to is given by   We finish with a corollary that resembles (and recovers) the orthonormal expansion of a vector in .   If then   In let for all . Show that is an orthonormal system in and show that the polynomial of degree 1 which is closest to the function is given by . What is ?  "
+  "body": " Geometry in Hilbert space  As we discussed in the introductory chapter, , one of the key ideas of finite dimensional linear algebra is to use a basis for a vector space to move back and forth between the vectors themselves (say ) and their coordinate representations with respect to those bases. This move lets us consider a vector space of dimension as essentially just a renaming of Euclidean space . We are now ready to try to capture this geometry in the context of Hilbert space.   Vectors in an inner product space are orthogonal , denoted , if .  A family in is called an orthogonal system if when . If further, for all , then is called an orthonormal system .  An orthonormal system is called an orthonormal sequence if it can be indexed by .   Make note: we have not defined what it means to be a basis yet in the context of Hilbert spaces - that remains to be developed later in this chapter. Note also that a system index by can be reindexed in terms of , and so we can take a typical orthonormal system to be indexed by without loss of generality.   In the standard basis vectors constitute an orthonormal system; so does any subset of them.  In , the standard unit vectors form an orthonormal sequence, where has a 1 in the th position and 0s elsewhere.  In , one orthonormal sequence is given by in the inner product . An alternative orthonormal sequence in is given by the family of functions    These families form the beginnings of Fourier analysis , which motivates the following definition. (Compare to .)   If is an orthonormal sequence in a Hilbert space then for any , the inner product is the th Fourier coefficent of with respect to . The Fourier series of with respect to is the series   At this point, this is only a formal sum in a formal definition. We want to understand the extent to which orthogonal systems can play the role of coordinate systems in finite dimensions, with the ultimate idea of working in coordinates. First, given our definition of orthogonality, we can generalize the Pythagorean theorem.   If is a (finite) orthogonal system in an inner product space, then   Prove .  The basic properties of orthogonal expansions are mainly derived from the following geometric identity. Note that it applies to finite orthonormal systems.   Let be an orthonormal system in an inner product space , let and suppose that . Then where .    By , Then    Now suppose that and the orthonormal system are fixed. Varying on the expression will trace out the linear span of the (as it runs through all linear combinations). Since are fixed, implies that quantity is minimized when for (killing the middle term). This gives the following theorem.   Let be an orthonormal system in an inner product space and let . The closest point of to is and the distance from to is given by   We finish with a corollary that resembles (and recovers) the orthonormal expansion of a vector in .   If then   In let for all . Show that is an orthonormal system in and show that the polynomial of degree 1 which is closest to the function is given by . What is ?  "
 },
 {
   "id": "def-orthogonal-system",
@@ -1213,7 +1213,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.1.2",
   "title": "",
-  "body": " In the standard basis vectors constitute an orthonormal system; so does any subset of them.  In , the standard unit vectors is an orthonormal sequence, where has a 1 in the th position and 0s elsewhere.  In , one orthonormal sequence is given by in the inner product . An alternative orthonormal sequence in is given by the family of functions   "
+  "body": " In the standard basis vectors constitute an orthonormal system; so does any subset of them.  In , the standard unit vectors form an orthonormal sequence, where has a 1 in the th position and 0s elsewhere.  In , one orthonormal sequence is given by in the inner product . An alternative orthonormal sequence in is given by the family of functions   "
 },
 {
   "id": "hilbert-7-2-6",
@@ -1240,7 +1240,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "5.1.4",
   "title": "",
-  "body": " If is a (finite) orthogona system in an inner product space, then  "
+  "body": " If is a (finite) orthogonal system in an inner product space, then  "
 },
 {
   "id": "hilbert-7-2-10",
@@ -1393,7 +1393,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.4",
   "title": "Complete orthonormal sequences",
-  "body": "Complete orthonormal sequences  We are now ready to establish a generalization of coordinates and basis appropriate to Hilbert space. That is, we would like to make sense of finding a coordinate expression for a vector in a Hilbert space . The primary geometric difficulty that we have to wrestle with is that we have infinite directions in which extra stuff can hide. We need to know that the orthonormal sequence we're expanding against doesn't leave any directions hidden.  Given an orthonormal sequence , we would like to write (in parallel with )  and guarantee that the right hand side makes sense; the series converges to some vector in . But there is no way to know without further assumptions on the orthonormal sequence that there aren't directions that are hidden that might make the equation false. That is, we don't know if the limit of the right hand side is actually .  We can see the issue if we look at an expansion of a vector with respect to the standard orthonormal sequence (much like the standard unit vectors) where has a 1 in the th position and 0s elsewhere. From this, construct a shifted sequence . Then remains an infinite orthonormal sequence in . Now choose . Then  More generally, let us look at the error between and an orthonormal expansion in terms of an orthonormal sequence : Then for each , linearity of the inner product gives That is, the vector is orthogonal to each member of the orthonormal sequence. (This property is used to compute the distance from a vector to a subspace in finite dimensions.) So if we know that the only vector orthogonal to every is the zero vector, then we can infer that , which makes the representation valid.   An orthonormal sequence in a Hilbert space is complete if the only member of which is orthogonal to every is the zero vector.   We are finally ready to prove the Hilbert space analogue of .   Let be a complete orthonormal sequence in a Hilbert space . For any , and    As above, compute Then for each , linearity of the inner product gives That is, the vector is orthogonal to each member of the orthonormal sequence. Since by hypothesis is complete, we deduce the first statement.  By , for any , On letting , continuity of the norm gives the second statement.   We have finally arrived at the notion of a basis in a Hilbert space (indexed by ). A complete orthonormal sequence in is also called an orthonormal basis of . The issue with identifying a basis is typically not orthogonality or norm, but instead completeness. After all, in infinite dimensions, there are lots of places to hide.  In finite dimensions, a basis is a minimal spanning set - that is, the span of a basis is the entire space. A similar fact holds in Hilbert space, with the caveat that we have to work with the closed linear span.   Let be an orthonormal sequence in a Hilbert space . The following are equivalent:   is complete;   ;       and follow immediately from . As series convergence is convergence of the sequence of partial sums, and each partial sum is in , closure gives for all .  : Suppose that is not complete, which is to say that there exists some non-zero vector with for all . Then , but for all and so which contradicts .  : Suppose that holds. Let be any vector that is orthogonal to every . Now construct the set of vectors orthogonal to : Linearity of the inner product gives that is a subspace of , and continuity of the inner product gives that is closed. Also, by assumption, every , and thus .and so (2) implies that . But then in particular , and so by the definition of , which gives that . Thus, is complete.   While most of the commonly encountered Hilbert spaces possess complete orthonormal sequences, some do not. Fortunately, similar statements to the above apply to orthonormal systems as well, though working with uncountably indexed sets is not something that most readers will encounter until graduate real analysis. It will be sufficient for us to mostly restrict our attention to the rather more easily conceptualized case of sequences.   A Hilbert space is called separable if it contains a complete orthonormal sequence (indexed by or finite).   In the same way that we know from linear algebra that every (complex) finite dimensional Hilbert space is isomorphic to , so that we think of one vector space of a given dimension with different labelings (see ), we have already met the one separable Hilbert space of infinite dimension , namely (and at last our suspicions are confirmed). The next set of arguments will make this rigorous.   A mapping between Hilbert spaces is a unitary operator if it is linear and bijective and preserves inner products. That is, satisfies for all    Let be a separable Hilbert space. Then either is isomorphic to for some or is isomorphic to .    Suppose that contains a finite complete orthonormal sequence . For any , find the error vector Linearity of the inner product gives for all and so . Thus is an orthonormal basis for . Now define the operator by Then is linear and bijective. From the fact that , we infer that for all Thus is a unitary operator, and so is isomorphic to .  On the other hand, suppose that contains a complete orthonormal sequence . Define the operator by where . By (3), and moreover for all . As is defined in terms of the inner product, it is clearly linear. If , then by the series converges to a point in and by definition . Thus is surjective. Hence is a unitary operator, and so is isomorphic to .   It is important that we not overstate the implications of the theorem above. In finite dimensions, for example, the space of polynomials of degree at most is isomorphic to but is also a set of functions with properties that interact with the geometry of . Both the vector space properties and the functional properties are important - what the isomorphism provides is a set of properties that the space carries by relation with Euclidean space. In the same way, while all separable Hilbert spaces can be thought of as in some sense, it is the interplay between, say, analytic properties and the Hilbert space structure that we are interested. However, it is valuable (and useful) to know that we can think of Hilbert space as or when it is convenient.  "
+  "body": "Complete orthonormal sequences  We are now ready to establish a generalization of coordinates and basis appropriate to Hilbert space. That is, we would like to make sense of finding a coordinate expression for a vector in a Hilbert space . The primary geometric difficulty that we have to wrestle with is that we have infinite directions in which extra stuff can hide. We need to know that the orthonormal sequence we're expanding against doesn't leave any directions hidden.  Given an orthonormal sequence , we would like to write (in parallel with )  and guarantee that the right hand side makes sense; the series converges to some vector in . But there is no way to know without further assumptions on the orthonormal sequence that there aren't directions that are hidden that might make the equation false. That is, we don't know if the limit of the right hand side is actually .  The issue of when a Fourier series is equal to the object that generates it is delicate enough that in practice, mathematicians often use instead of to denote the relationship; that is, means that has the given Fourier representation, but makes no claims on equality (whatever that might mean).  We can see the issue if we look at an expansion of a vector with respect to the standard orthonormal sequence (much like the standard unit vectors) where has a 1 in the th position and 0s elsewhere. From this, construct a shifted sequence . Then remains an infinite orthonormal sequence in . Now choose . Then  More generally, let us look at the error between and an orthonormal expansion in terms of an orthonormal sequence : Then for each , linearity of the inner product gives That is, the vector is orthogonal to each member of the orthonormal sequence. (This property is used to compute the distance from a vector to a subspace in finite dimensions.) So if we know that the only vector orthogonal to every is the zero vector, then we can infer that , which makes the representation valid.   An orthonormal sequence in a Hilbert space is complete if the only member of which is orthogonal to every is the zero vector.   We are ready to prove the Hilbert space analogue of .   Let be a complete orthonormal sequence in a Hilbert space . For any , and    As above, compute Then for each , linearity of the inner product gives That is, the vector is orthogonal to each member of the orthonormal sequence. Since by hypothesis is complete, we deduce the first statement.  By , for any , On letting , continuity of the norm gives the second statement.   We have finally arrived at the notion of a basis in a Hilbert space (indexed by ). A complete orthonormal sequence in is also called an orthonormal basis of . The issue with identifying a basis is typically not orthogonality or norm, but instead completeness. After all, in infinite dimensions, there are lots of places to hide. (The study of bases for infinite dimensional spaces is complicated; see this article on the notion of a Schauder basis for a first look into the details.)  In finite dimensions, a basis is a minimal spanning set - that is, the span of a basis is the entire space. A similar fact holds in Hilbert space, with the caveat that we have to work with the closed linear span.   Let be an orthonormal sequence in a Hilbert space . The following are equivalent:   is complete;   ;       and follow immediately from . As series convergence is convergence of the sequence of partial sums, and each partial sum is in , closure gives for all .  : Suppose that is not complete, which is to say that there exists some non-zero vector with for all . Then , but for all and so which contradicts .  : Suppose that holds. Let be any vector that is orthogonal to every . Now construct the set of vectors orthogonal to : Linearity of the inner product gives that is a subspace of , and continuity of the inner product gives that is closed. Also, by assumption, every , and thus .and so (2) implies that . But then in particular , and so by the definition of , which gives that . Thus, is complete.   While most of the commonly encountered Hilbert spaces possess complete orthonormal sequences, some do not. Fortunately, similar statements to the above apply to orthonormal systems as well, though working with uncountably indexed sets is not something that most readers will encounter until graduate real analysis. It will be sufficient for us to mostly restrict our attention to the rather more easily conceptualized case of sequences.   A Hilbert space is called separable if it contains a complete orthonormal sequence (indexed by or finite).   In the same way that we know from linear algebra that every (complex) finite dimensional Hilbert space is isomorphic to , so that we think of one vector space of a given dimension with different labelings (see ), we have already met the one separable Hilbert space of infinite dimension , namely (and at last our suspicions are confirmed). The next set of arguments will make this rigorous.   A mapping between Hilbert spaces is a unitary operator if it is linear and bijective and preserves inner products. That is, satisfies for all    Let be a separable Hilbert space. Then either is isomorphic to for some or is isomorphic to .    Suppose that contains a finite complete orthonormal sequence . For any , find the error vector Linearity of the inner product gives for all and so . Thus is an orthonormal basis for . Now define the operator by Then is linear and bijective. From the fact that , we infer that for all Thus is a unitary operator, and so is isomorphic to .  On the other hand, suppose that contains a complete orthonormal sequence . Define the operator by where . By (3), and moreover for all . As is defined in terms of the inner product, it is clearly linear. If , then by the series converges to a point in and by definition . Thus is surjective. Hence is a unitary operator, and so is isomorphic to .   As in undergraduate linear algebra, one might feel a bit of a letdown here. However, just as in finite dimensions, taking different views of the same space provides valuable insight into the objects being studied. In finite dimensions, for example, the space of polynomials of degree at most is isomorphic to but is also a set of functions with properties that interact with the geometry of . Both the vector space properties and the functional properties are important - what the isomorphism provides is a set of properties that the space carries by relation with Euclidean space. In the same way, while all separable Hilbert spaces can be thought of as in some sense, often what we are interested in is the relationship between the functions themselves as functions and the geometry induced by their Fourier (coordinate) representations.  "
 },
 {
   "id": "def-complete-ons",
@@ -1414,18 +1414,18 @@ var ptx_lunr_docs = [
   "body": " Let be a complete orthonormal sequence in a Hilbert space . For any , and  "
 },
 {
-  "id": "ortho-4-9",
+  "id": "ortho-4-10",
   "level": "2",
-  "url": "ortho-4.html#ortho-4-9",
+  "url": "ortho-4.html#ortho-4-10",
   "type": "Proof",
   "number": "5.4.1",
   "title": "",
   "body": " As above, compute Then for each , linearity of the inner product gives That is, the vector is orthogonal to each member of the orthonormal sequence. Since by hypothesis is complete, we deduce the first statement.  By , for any , On letting , continuity of the norm gives the second statement.  "
 },
 {
-  "id": "ortho-4-10",
+  "id": "ortho-4-11",
   "level": "2",
-  "url": "ortho-4.html#ortho-4-10",
+  "url": "ortho-4.html#ortho-4-11",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1441,9 +1441,9 @@ var ptx_lunr_docs = [
   "body": " Let be an orthonormal sequence in a Hilbert space . The following are equivalent:   is complete;   ;    "
 },
 {
-  "id": "ortho-4-13",
+  "id": "ortho-4-14",
   "level": "2",
-  "url": "ortho-4.html#ortho-4-13",
+  "url": "ortho-4.html#ortho-4-14",
   "type": "Proof",
   "number": "5.4.2",
   "title": "",
@@ -1468,18 +1468,18 @@ var ptx_lunr_docs = [
   "body": " A mapping between Hilbert spaces is a unitary operator if it is linear and bijective and preserves inner products. That is, satisfies for all  "
 },
 {
-  "id": "ortho-4-18",
+  "id": "ortho-4-19",
   "level": "2",
-  "url": "ortho-4.html#ortho-4-18",
+  "url": "ortho-4.html#ortho-4-19",
   "type": "Theorem",
   "number": "5.4.6",
   "title": "",
   "body": " Let be a separable Hilbert space. Then either is isomorphic to for some or is isomorphic to .  "
 },
 {
-  "id": "ortho-4-19",
+  "id": "ortho-4-20",
   "level": "2",
-  "url": "ortho-4.html#ortho-4-19",
+  "url": "ortho-4.html#ortho-4-20",
   "type": "Proof",
   "number": "5.4.3",
   "title": "",
@@ -1720,11 +1720,110 @@ var ptx_lunr_docs = [
   "body": "Show that for a fixed , the orthogonal complement in of the space given by is the space of polynomials of degree less than . "
 },
 {
+  "id": "fourier-1",
+  "level": "1",
+  "url": "fourier-1.html",
+  "type": "Section",
+  "number": "6.1",
+  "title": "Convolution",
+  "body": " Convolution  This chapter will establish the convergence of classical Fourier series in . To do so, we'll use a technique that is one of the basic tools of analysis, the convolution of two functions.   Let and be integrable functions on . The convolution (or convolution product) of and is the function defined by    Let's look at an example that illustrates something of what a convolution can do. Suppose that we're working on a symmetric interval , and for a constant , define a function by Notice that has integral 1 on . Extend to be periodic with period . What will convolving with do? Notice that That is, at each , the value of is the average value of on the -neighborhood near . This has the effect of smoothing the graph of . (Indeed, this smoothing is one of the primary applications of convolution in many fields, including signals and circuits.)  Natural choices for smoothing functions are similar to the that we defined above - we'd like the integral to be 1, and we typically want to be able to concentrate the area of very close to , so that is close to 0 in value away from and is very close to . (Here, one might consider investigating mollifiers .)  Construction of functions via convolution is a frequent approach to solving problems in the fields of harmonic and complex analysis. (See, for example, the solution to the Dirichlet problem on the disk via convolution of a function with the Poisson kernel .)  "
+},
+{
+  "id": "fourier-1-2",
+  "level": "2",
+  "url": "fourier-1.html#fourier-1-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "convolution "
+},
+{
+  "id": "def-convolution",
+  "level": "2",
+  "url": "fourier-1.html#def-convolution",
+  "type": "Definition",
+  "number": "6.1.1",
+  "title": "",
+  "body": " Let and be integrable functions on . The convolution (or convolution product) of and is the function defined by   "
+},
+{
+  "id": "fourier-2",
+  "level": "1",
+  "url": "fourier-2.html",
+  "type": "Section",
+  "number": "6.2",
+  "title": "The Fejér kernel",
+  "body": " The Fejér kernel  Our goal is to establish that classical Fourier series converge, so we need a tool that involves the terms of such series. We're going to be constructing functions by convolution with a function called the Fejér kernel , which is built out of the same complex exponentials that appear in classical Fourier series.   The Fejér kernel is given by    Every good proof hinges on a set of technical lemmas. Here are those that we need to prove that Fourier series converge.   For any that is not an integer multiple of ,     Let and for . Then and Then, by , we can write Proceed by elbow grease. We calculate   Now, we are ready to convert these piles of into sines. First, note that and so . For the term in the numerator, notice that   Then putting the pieces together, we conclude that and so    We can now establish some of the good properties of the Fejér kernel that make it useful in applications involving Fourier series. Essentially, we want to show that has properties similar to the function that we explored in the previous section.   The function satisfies the following properties:  ;     For all with ,       Property 1 follows directly from the form of given in for any not an integer multiple of and at those points by continuity.  To see property 2, observe that Since , expanding the sum and integrating gives   The third property leverages the characterization of in terms of sine functions. Suppose . If or , then By , which notably does not depend on . Then we can estimate the integral by and for any fixed , which establishes property 3.   The content of these Lemmas is that the kernel has the properties that will make it well-behaved in a convolution.  "
+},
+{
+  "id": "def-fejer-kernel",
+  "level": "2",
+  "url": "fourier-2.html#def-fejer-kernel",
+  "type": "Definition",
+  "number": "6.2.1",
+  "title": "",
+  "body": " The Fejér kernel is given by   "
+},
+{
+  "id": "lemma-fejer-sine",
+  "level": "2",
+  "url": "fourier-2.html#lemma-fejer-sine",
+  "type": "Lemma",
+  "number": "6.2.2",
+  "title": "",
+  "body": " For any that is not an integer multiple of ,   "
+},
+{
+  "id": "fourier-2-6",
+  "level": "2",
+  "url": "fourier-2.html#fourier-2-6",
+  "type": "Proof",
+  "number": "6.2.1",
+  "title": "",
+  "body": " Let and for . Then and Then, by , we can write Proceed by elbow grease. We calculate   Now, we are ready to convert these piles of into sines. First, note that and so . For the term in the numerator, notice that   Then putting the pieces together, we conclude that and so   "
+},
+{
+  "id": "lemma-fejer-analytic",
+  "level": "2",
+  "url": "fourier-2.html#lemma-fejer-analytic",
+  "type": "Lemma",
+  "number": "6.2.3",
+  "title": "",
+  "body": " The function satisfies the following properties:  ;     For all with ,     "
+},
+{
+  "id": "fourier-2-9",
+  "level": "2",
+  "url": "fourier-2.html#fourier-2-9",
+  "type": "Proof",
+  "number": "6.2.2",
+  "title": "",
+  "body": " Property 1 follows directly from the form of given in for any not an integer multiple of and at those points by continuity.  To see property 2, observe that Since , expanding the sum and integrating gives   The third property leverages the characterization of in terms of sine functions. Suppose . If or , then By , which notably does not depend on . Then we can estimate the integral by and for any fixed , which establishes property 3.  "
+},
+{
+  "id": "fourier-3",
+  "level": "1",
+  "url": "fourier-3.html",
+  "type": "Section",
+  "number": "6.3",
+  "title": "Convergence of classical Fourier series",
+  "body": " Convergence of classical Fourier series  "
+},
+{
+  "id": "fourier-4",
+  "level": "1",
+  "url": "fourier-4.html",
+  "type": "Section",
+  "number": "6.4",
+  "title": "Exercises",
+  "body": " Exercises    "
+},
+{
   "id": "dual-1",
   "level": "1",
   "url": "dual-1.html",
   "type": "Section",
-  "number": "6.1",
+  "number": "7.1",
   "title": "Linear functionals",
   "body": " Linear functionals  Let us consider an analogy with linear algebra. The space can be acted on by a linear transformation, which can be realized as multiplication by a matrix that represents the linear transformation. Such an can be any size that is compatible with matix mutiplication. If we choose a transformation that is represented by a vector of size , then we've created a function on that takes . The space of all such functions is itself -dimensional (since each function arises from a vector in ). Multiplication of two vectors that results in a scalar output already has a form that we know - namely, we can write any such function in terms of its representing vector by This is a simple case of a powerful theorem called the Riesz representation theorem. A function on of the form is called a linear functional . One of the core ideas of functional analysis is that we can often move phenomena and relationships that exist among the elements of a vector space into dual relationships among elements of the space of linear functionals.  While it easy to write down the general linear functional in finite dimensions, in infinite dimensions the problem is significantly harder. One useful restriction is to consider just the family of continuous linear functionals (we are doing analysis, after all!). One reason to study Hilbert spaces is that the inner product geometry allows us to write down then general linear functional (in precisely the same form as the finite dimensional case - for some vector ). In Banach spaces, we do not have an inner product and it is quite a bit trickier. This means that in Hilbert spaces, duality works much like it does in finite dimensions. We will now make these notions formal.   A linear functional on a vector space over a field is a mapping satisfying for all and .   on  Define by where .   on  Define by where . The space is the space of bounded sequences. The space is the space of sequences so that is finite. Combining these facts gives that is absolutely convergent, which ensures that is a well-defined function.   on  Define by for a function , where is a function of bounded variation on . (This is called a Stieltjes integral, and used widely in probability theory. It generalizes the Riemann integral - one recovers the Riemann integral by choosing .)   on  Let be a Hilbert space and . Define by   Show that each of the above is a linear functional.  The examples above are also continuous. There is a convenient theorem for checking this fact.   Let be a linear functional on a normed space . The following are equivalent:  is continuous;  is continuous at 0;     The set is called the unit ball of . So a functional is continuous if and only if it is bounded on the unit ball.   (1) implies (2) is obvious.  Suppose that (2) holds. Then given , there exists so that implies that . Now we will use the fact that is linear to show that is bounded. For any with , , which means that . Then linearity gives that on the unit ball of , and so (3) holds.  Now suppose that (3) holds. Denote the finite supremum of on the unit ball of by . For any distinct vectors , the vector is a unit vector. Then by (iii), Because is linear, this means that and so is continuous.   A discontinous linear functional Define a linear functional on , the space of continuously differentiable functions on , by Show that is discontinuous with respect to the norm .  Just as in the finite-dimensional case, the set of continuous linear functionals is a space in its own right, as long as the underlying space is at least a normed space. Surprisingly, even if the underlying space is not complete (i.e., not a Banach space), the set of functionals will be.   The set of all continuous linear functionals on a normed space is a Banach space with respect to pointwise algebraic operations and under the norm    First, it is straightforward to show that is a vector space over the same field as . By , for all , and one can readily verify that as defined above is a norm (as in ).  We will now show that is complete. Let denote a Cauchy sequence of linear functionals so that as . Choose . Then the sequence as . As this is a sequence of scalars, it must converge. Denote the limit of this sequence by . Then the map so pointwise defined is a linear functional (by the properties of limits and the fact that the are linear functionals). It remains to show that and that with respect to .  Let and choose some so that implies that (as is Cauchy). Then for any with , and for all , we have Taking , we get that, for all and , To complete the proof, note that since and are bounded on the closed unit ball of , so must be , which by means that is continuous and so . On the other hand, implies that for , and so in . Thus is complete (and hence a Banach space of continuous linear functionals).   The space is often referred to as the dual space of .  Analysis is built on a backbone of useful inequalities. Let us take note of a nice inequality that is an immediate consequence of the definition of the dual norm.   For any vector in a normed space and any continuous linear functional on ,     Suppose that . Then is a unit vector, and so   The dual of  We will describe the dual space of , the space of absolutely summable sequences. It turns out to be the case that one can identify with by way of a map that is an isomorphism of vector spaces and also an isometry (a mapping that preserves norms). Define a map by where is the functional defined in . It is easy to see that is linear. To see that is surjective, choose an element . We need an element such that . Let denote the th elementary basis vector in (you can think of this as a vector of 0s with a 1 in the th position), and let . Now let . (Notice that .) Since is a unit vector in , This means that is a bounded sequence, and so with Now we need to show that . Choose an , and denote the -th partial expansion of by . As a sequence, in as . Then we can evaluate and on the sequence by In the limit, this shows that for arbitrary .  The last part of the proof is to show that distances are preserved under . By , we have . On the other hand, for any choice of , and so . We conclude that , and thus that is an isometry.   "
 },
@@ -1742,7 +1841,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#def-linear-functional",
   "type": "Definition",
-  "number": "6.1.1",
+  "number": "7.1.1",
   "title": "",
   "body": " A linear functional on a vector space over a field is a mapping satisfying for all and .  "
 },
@@ -1751,7 +1850,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#dual-1-5",
   "type": "Example",
-  "number": "6.1.2",
+  "number": "7.1.2",
   "title": "on <span class=\"process-math\">\\(\\C^n\\)<\/span>.",
   "body": "on  Define by where .  "
 },
@@ -1760,7 +1859,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#ex-ell-1",
   "type": "Example",
-  "number": "6.1.3",
+  "number": "7.1.3",
   "title": "on <span class=\"process-math\">\\(\\ell^1\\)<\/span>.",
   "body": "on  Define by where . The space is the space of bounded sequences. The space is the space of sequences so that is finite. Combining these facts gives that is absolutely convergent, which ensures that is a well-defined function.  "
 },
@@ -1769,7 +1868,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#dual-1-7",
   "type": "Example",
-  "number": "6.1.4",
+  "number": "7.1.4",
   "title": "on <span class=\"process-math\">\\(C[0,1]\\)<\/span>.",
   "body": "on  Define by for a function , where is a function of bounded variation on . (This is called a Stieltjes integral, and used widely in probability theory. It generalizes the Riemann integral - one recovers the Riemann integral by choosing .)  "
 },
@@ -1778,7 +1877,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#dual-1-8",
   "type": "Example",
-  "number": "6.1.5",
+  "number": "7.1.5",
   "title": "on <span class=\"process-math\">\\(\\mathcal H\\)<\/span>.",
   "body": "on  Let be a Hilbert space and . Define by  "
 },
@@ -1787,7 +1886,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#dual-1-9",
   "type": "Checkpoint",
-  "number": "6.1.6",
+  "number": "7.1.6",
   "title": "",
   "body": "Show that each of the above is a linear functional. "
 },
@@ -1796,7 +1895,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#thm-continuous-linear-functional",
   "type": "Theorem",
-  "number": "6.1.7",
+  "number": "7.1.7",
   "title": "",
   "body": " Let be a linear functional on a normed space . The following are equivalent:  is continuous;  is continuous at 0;    "
 },
@@ -1814,7 +1913,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#dual-1-13",
   "type": "Proof",
-  "number": "6.1.1",
+  "number": "7.1.1",
   "title": "",
   "body": " (1) implies (2) is obvious.  Suppose that (2) holds. Then given , there exists so that implies that . Now we will use the fact that is linear to show that is bounded. For any with , , which means that . Then linearity gives that on the unit ball of , and so (3) holds.  Now suppose that (3) holds. Denote the finite supremum of on the unit ball of by . For any distinct vectors , the vector is a unit vector. Then by (iii), Because is linear, this means that and so is continuous.  "
 },
@@ -1823,7 +1922,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#dual-1-14",
   "type": "Checkpoint",
-  "number": "6.1.8",
+  "number": "7.1.8",
   "title": "A discontinous linear functional.",
   "body": "A discontinous linear functional Define a linear functional on , the space of continuously differentiable functions on , by Show that is discontinuous with respect to the norm . "
 },
@@ -1832,7 +1931,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#thm-dual-space-banach",
   "type": "Theorem",
-  "number": "6.1.9",
+  "number": "7.1.9",
   "title": "",
   "body": " The set of all continuous linear functionals on a normed space is a Banach space with respect to pointwise algebraic operations and under the norm  "
 },
@@ -1841,7 +1940,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#dual-1-17",
   "type": "Proof",
-  "number": "6.1.2",
+  "number": "7.1.2",
   "title": "",
   "body": " First, it is straightforward to show that is a vector space over the same field as . By , for all , and one can readily verify that as defined above is a norm (as in ).  We will now show that is complete. Let denote a Cauchy sequence of linear functionals so that as . Choose . Then the sequence as . As this is a sequence of scalars, it must converge. Denote the limit of this sequence by . Then the map so pointwise defined is a linear functional (by the properties of limits and the fact that the are linear functionals). It remains to show that and that with respect to .  Let and choose some so that implies that (as is Cauchy). Then for any with , and for all , we have Taking , we get that, for all and , To complete the proof, note that since and are bounded on the closed unit ball of , so must be , which by means that is continuous and so . On the other hand, implies that for , and so in . Thus is complete (and hence a Banach space of continuous linear functionals).  "
 },
@@ -1859,7 +1958,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#thm-norm-split",
   "type": "Theorem",
-  "number": "6.1.10",
+  "number": "7.1.10",
   "title": "",
   "body": " For any vector in a normed space and any continuous linear functional on ,   "
 },
@@ -1868,7 +1967,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#dual-1-21",
   "type": "Proof",
-  "number": "6.1.3",
+  "number": "7.1.3",
   "title": "",
   "body": " Suppose that . Then is a unit vector, and so  "
 },
@@ -1877,7 +1976,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-1.html#dual-1-22",
   "type": "Example",
-  "number": "6.1.11",
+  "number": "7.1.11",
   "title": "The dual of <span class=\"process-math\">\\(\\ell^1\\)<\/span>.",
   "body": "The dual of  We will describe the dual space of , the space of absolutely summable sequences. It turns out to be the case that one can identify with by way of a map that is an isomorphism of vector spaces and also an isometry (a mapping that preserves norms). Define a map by where is the functional defined in . It is easy to see that is linear. To see that is surjective, choose an element . We need an element such that . Let denote the th elementary basis vector in (you can think of this as a vector of 0s with a 1 in the th position), and let . Now let . (Notice that .) Since is a unit vector in , This means that is a bounded sequence, and so with Now we need to show that . Choose an , and denote the -th partial expansion of by . As a sequence, in as . Then we can evaluate and on the sequence by In the limit, this shows that for arbitrary .  The last part of the proof is to show that distances are preserved under . By , we have . On the other hand, for any choice of , and so . We conclude that , and thus that is an isometry.  "
 },
@@ -1886,7 +1985,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "dual-2.html",
   "type": "Section",
-  "number": "6.2",
+  "number": "7.2",
   "title": "The Riesz representation theorem",
   "body": "The Riesz representation theorem  In the case of Hilbert space, we recover the characterization of linear functionals as inner products against a representative vector. This powerful idea is one of the central tools of Hilbert space theory.  (Riesz-Fréchet)  Let be a Hilbert space and let be a continuous linear functional on . There exists a unique vector so that for all . Moreover, . ( is sometimes called the representative vector for .)    We should first observe that if we can find such a , guarantees that it will be unique, as for all , we would have  If is the functional that sends every vector to 0, then we can take . So suppose that is not the zero functional. In that case, the kernel of , which we denote by is a proper closed subspace of . Then by we can decompose as with . Now choose a non-zero element . We can assume that by normalizing by a scalar. Now, for any , decompose into where and so . Now, take the inner product of these vectors with . The result is since . Then we get, for all , that Now, let . Taking the inner product with , we compute This shows that the representing vector for exists.  Now, we want to show that . For any , the Cauchy-Schwarz inequality ( ) gives On the other hand, choosing the specific unit vector gives that is, . We conclude that , which completes the proof.   It is worth pointing out that the Riesz representation theorem gives an explicit map via that is both surjective and isometric. is also antilinear or conjugate linear in the sense that . Given the existence of , Hilbert spaces are in some sense their own dual spaces, in the same way that is self-dual. (That is to say, Hilbert spaces are in some strong sense the correct notion of ).  We're arrived at one of the major differences between inner product spaces and normed spaces. While the Riesz representation theorem tells us essentially everything about the continuous linear functionals on a Hilbert space, questions turn out to be significantly more complicated in the realm of Banach space. N. Young points out the following, seemingly easy question - given distinct elements in a normed space , does there exist a linear functional that separates points ; that is, can we find a functional on so that ? In Hilbert space, the answer is immediate: yes, because will do the job. In a general normed space, the answer is much more subtle and requires the central theorem of functional analysis, the Hahn-Banach theorem , which is well beyond the scope of these notes and typically introduced in a first course in functional analysis (see e.g. Conway 2007 .).  "
 },
@@ -1895,7 +1994,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-2.html#dual-2-3",
   "type": "Theorem",
-  "number": "6.2.1",
+  "number": "7.2.1",
   "title": "(Riesz-Fréchet).",
   "body": "(Riesz-Fréchet)  Let be a Hilbert space and let be a continuous linear functional on . There exists a unique vector so that for all . Moreover, . ( is sometimes called the representative vector for .)  "
 },
@@ -1904,7 +2003,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dual-2.html#dual-2-4",
   "type": "Proof",
-  "number": "6.2.1",
+  "number": "7.2.1",
   "title": "",
   "body": " We should first observe that if we can find such a , guarantees that it will be unique, as for all , we would have  If is the functional that sends every vector to 0, then we can take . So suppose that is not the zero functional. In that case, the kernel of , which we denote by is a proper closed subspace of . Then by we can decompose as with . Now choose a non-zero element . We can assume that by normalizing by a scalar. Now, for any , decompose into where and so . Now, take the inner product of these vectors with . The result is since . Then we get, for all , that Now, let . Taking the inner product with , we compute This shows that the representing vector for exists.  Now, we want to show that . For any , the Cauchy-Schwarz inequality ( ) gives On the other hand, choosing the specific unit vector gives that is, . We conclude that , which completes the proof.  "
 },
@@ -1922,7 +2021,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "dual-3.html",
   "type": "Section",
-  "number": "6.3",
+  "number": "7.3",
   "title": "Exercises",
   "body": "Exercises  to be added  "
 },
@@ -1931,7 +2030,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "operators-2.html",
   "type": "Section",
-  "number": "7.1",
+  "number": "8.1",
   "title": "Linear operators",
   "body": "Linear operators  Linear operators are first encountered by students in calculus and differential equations, though not always with that name. Consider the problem which can be written More generally, we learn that any linear differential equation can be written in the form for the differential operator . When we encounter problems like this the first time, we learn a group of recipes that solve the equation for various classes of , functions and sets of boundary conditions.  In another set of classes, the linear algebra sequence, we learn an extensive set of tools for analyzing the matrix problem in terms of the structure of the matrix . For example, we learn that the existence of a solution depends on the columnspace of and that the structure of the solution set depends on the nullspace (or kernel, thinking of as a function) of .  This chapter will examine the relationship between the matrix situation (in finite dimensions) and the linear operator situation (in infinite dimensions). A surprising amount of structure carries from finite to infinite dimensions.   If are vector spaces over a field , a linear operator from to is a map such that for all and .   A linear operator on is a linear operator from to . (Note: these notes largely follow the same conventions as Axler's Linear Algebra Done Right. There is a difference here - Axler restricts the term operator to only the space - that is, maps from .)  If are normed spaces, we say that a linear operator is bounded if there exists a constant such that for all . For a bounded , we define the operator norm (or just norm when there is no ambiguity) of to be the non-negative number  The kernel of a linear operator is the subspace of given by . The kernel of is denoted . The range of is the subspace of given by . The range of is denoted .  can be thought of as the largest factor by which stretches any vector, though it is a supremum, not a maximum. (What does this notion mean for a square matrix?) It also the case that   a multiplication operator  Choose a function and define the operator on by It should be immediately clear that is linear. Recalling the norms on and , for any we get Then is a bounded operator and . It turns out to be the case that (usefully) . (Can you prove it?)   an integral operator  For real numbers , let be a continuous map, and define by for . is linear (as integration is). For any , the Cauchy-Schwarz inequality gives Thus is bounded and   "
 },
@@ -1940,7 +2039,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "operators-2.html#def-linear-operator",
   "type": "Definition",
-  "number": "7.1.1",
+  "number": "8.1.1",
   "title": "",
   "body": " If are vector spaces over a field , a linear operator from to is a map such that for all and .  "
 },
@@ -1967,7 +2066,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "operators-2.html#operators-2-10",
   "type": "Example",
-  "number": "7.1.2",
+  "number": "8.1.2",
   "title": "a multiplication operator.",
   "body": "a multiplication operator  Choose a function and define the operator on by It should be immediately clear that is linear. Recalling the norms on and , for any we get Then is a bounded operator and . It turns out to be the case that (usefully) . (Can you prove it?)  "
 },
@@ -1976,43 +2075,43 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "operators-2.html#operators-2-11",
   "type": "Example",
-  "number": "7.1.3",
+  "number": "8.1.3",
   "title": "an integral operator.",
   "body": "an integral operator  For real numbers , let be a continuous map, and define by for . is linear (as integration is). For any , the Cauchy-Schwarz inequality gives Thus is bounded and  "
 },
 {
-  "id": "hilbert-10",
+  "id": "hilbert-11",
   "level": "1",
-  "url": "hilbert-10.html",
+  "url": "hilbert-11.html",
   "type": "Chapter",
-  "number": "8",
+  "number": "9",
   "title": "Appendix: Results from analysis",
   "body": "Appendix: Results from analysis  Heine-Borel  A closed and bounded set in or is compact.    Let be metric spaces. Let . If is continuous, then compact implies that is compact.    Suppose that is a non-empty compact set in a metric space and that is continuous. Then attains its infimum and supremum on - that is, has both a minimum and maximum on .   "
 },
 {
   "id": "thm-heine-borel",
   "level": "2",
-  "url": "hilbert-10.html#thm-heine-borel",
+  "url": "hilbert-11.html#thm-heine-borel",
   "type": "Theorem",
-  "number": "8.0.1",
+  "number": "9.0.1",
   "title": "Heine-Borel.",
   "body": "Heine-Borel  A closed and bounded set in or is compact.  "
 },
 {
   "id": "thm-cont-comp",
   "level": "2",
-  "url": "hilbert-10.html#thm-cont-comp",
+  "url": "hilbert-11.html#thm-cont-comp",
   "type": "Theorem",
-  "number": "8.0.2",
+  "number": "9.0.2",
   "title": "",
   "body": " Let be metric spaces. Let . If is continuous, then compact implies that is compact.  "
 },
 {
   "id": "thm-comp-inf",
   "level": "2",
-  "url": "hilbert-10.html#thm-comp-inf",
+  "url": "hilbert-11.html#thm-comp-inf",
   "type": "Theorem",
-  "number": "8.0.3",
+  "number": "9.0.3",
   "title": "",
   "body": " Suppose that is a non-empty compact set in a metric space and that is continuous. Then attains its infimum and supremum on - that is, has both a minimum and maximum on .  "
 }

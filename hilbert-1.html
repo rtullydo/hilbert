@@ -275,24 +275,36 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="hilbert-8.html" class="internal"><span class="codenumber">6</span> <span class="title">Dual spaces</span></a></div>
+<div class="toc-title-box"><a href="hilbert-8.html" class="internal"><span class="codenumber">6</span> <span class="title">Fourier Series</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Linear functionals</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Convolution</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Fejér kernel</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Convergence of classical Fourier series</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="fourier-4.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="fourier-4.html#fourier-4-2" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="operators.html" class="internal"><span class="codenumber">7</span> <span class="title">Linear operators</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear operators</span></a></div></li></ul>
+<div class="toc-title-box"><a href="hilbert-9.html" class="internal"><span class="codenumber">7</span> <span class="title">Dual spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-10.html" class="internal"><span class="codenumber">8</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="operators.html" class="internal"><span class="codenumber">8</span> <span class="title">Linear operators</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Linear operators</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="hilbert-1"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">4.1</span><span class="space"> </span><span class="title">Limits</span>
 </h2>
-<div class="para" id="hilbert-1-2">With the inner product given by <a href="inner-1.html#eq-ell2-ip" class="xref" data-knowl="./knowl/xref/eq-ell2-ip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.2">(2.1.2)</a>, the space <span class="process-math">\(\ell^2\)</span> of sequences of square summable functions acts much like <span class="process-math">\(\C^n\text{.}\)</span> We can extend this analogy further. In Euclidean space, a sequence that looks convergent is convergent. (This shows up in theorems like "Cauchy sequences are convergent", e.g.) Much of our intuition from real analysis is based on this property. Spaces on which sequences converge to points outside the space are very difficult to do analysis on! (Consider trying to do calculus on the rational numbers, for example.)</div>
-<div class="para" id="hilbert-1-3">On the other hand, recall the space <span class="process-math">\(\ell_0\)</span> <a href="norm-2.html#def-ell0" class="xref" data-knowl="./knowl/xref/def-ell0.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.2.2">Definition 3.2.2</a>. In <a href="norm-2.html#ex-ell0" class="xref" data-knowl="./knowl/xref/ex-ell0.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.2.1">Example 3.2.1</a>, we constructed a sequence of vectors in <span class="process-math">\(\ell_0\)</span> that converged in <span class="process-math">\(\ell^2\)</span> but not in <span class="process-math">\(\ell_0\text{.}\)</span> That is, if we restricted our attention to the inner product space <span class="process-math">\(\ell_0\text{,}\)</span> we could not perform any analysis using limits, because we might leave the space.</div>
+<div class="para" id="hilbert-1-2">With the inner product given by <a href="inner-1.html#eq-ell2-ip" class="xref" data-knowl="./knowl/xref/eq-ell2-ip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.2">(2.1.2)</a>, the space <span class="process-math">\(\ell^2\)</span> of sequences of square summable functions acts much like <span class="process-math">\(\C^n\text{.}\)</span> We can extend this analogy further. In Euclidean space, a sequence that looks convergent is convergent. (This shows up in theorems like "Cauchy sequences are convergent", e.g., and falls into a larger category we might refer to in a silly but accurate manner as a “duck theorem” - if it quacks like a duck, then...). Much of our intuition from real analysis is based on this property. Spaces on which sequences converge to points outside the space are very difficult to do analysis on! (Consider trying to do calculus on the rational numbers, for example.)</div>
+<div class="para" id="hilbert-1-3">On the other hand, recall the space we defined in <span class="process-math">\(\ell_0\)</span> <a href="norm-2.html#def-ell0" class="xref" data-knowl="./knowl/xref/def-ell0.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.2.2">Definition 3.2.2</a>. In <a href="norm-2.html#ex-ell0" class="xref" data-knowl="./knowl/xref/ex-ell0.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.2.1">Example 3.2.1</a>, we constructed a sequence of vectors in <span class="process-math">\(\ell_0\)</span> that converged in <span class="process-math">\(\ell^2\)</span> but not in <span class="process-math">\(\ell_0\text{.}\)</span> That is, if we restricted our attention to the inner product space <span class="process-math">\(\ell_0\text{,}\)</span> we could not perform any analysis using limits, because we might leave the space.</div>
 <div class="para logical" id="hilbert-1-4">
 <div class="para">As our ultimate interest is in examining function spaces, we can also consider an example in <span class="process-math">\(C[0,1]\text{.}\)</span> A natural norm on <span class="process-math">\(C[0,1]\)</span> is induced by the inner product <a href="inner-1.html#eq-C-ip" class="xref" data-knowl="./knowl/xref/eq-C-ip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.1">(2.1.1)</a>, so that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-C-ip.html">
