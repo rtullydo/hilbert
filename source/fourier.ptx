@@ -1,0 +1,175 @@
+<chapter><title>Fourier Series</title>
+
+    <section xml:id="fourier-1">
+        <title>Convolution</title>
+        <p>This chapter will establish the convergence of classical Fourier series in <m>L^2</m>. To do so, we'll use a technique that is one of the basic tools of analysis, the <term>convolution</term> of two functions.</p>
+
+        <definition xml:id="def-convolution">
+            <p>Let <m>f</m> and <m>g</m> be integrable functions on <m>[a,b]\subset \R</m>. The convolution (or convolution product) of <m>f</m> and <m>g</m> is the function <m>f * g: [a,b] \to \R</m> defined by
+                <me>
+                    (g * f)(y) = \int_a^b f(x) g(y - x) \, dx.
+                </me> 
+            </p>
+        </definition>
+
+        <p>Let's look at an example that illustrates something of what a convolution can do. Suppose that we're working on a symmetric interval <m>[-a,a]</m>, and for a constant <m>\delta > 0</m>,  define a function <m>g_\delta</m> by
+            <me>
+                g_\delta(y) = \begin{cases} \frac{1}{2 \delta} \amp y \in (-\delta, \delta) \\ 0 \amp y\in [-a, -\delta]\cup [\delta, a] \end{cases}.
+            </me>
+        Notice that <m>g_\delta</m> has integral 1 on <m>[-a,a]</m>. Extend <m>g_\delta</m> to be periodic with period <m>2a</m>. What will convolving <m>f</m> with <m>g</m> do? Notice that
+        <md>
+            <mrow> (g*f)(y) \amp= \int_{-a}^a f(x) g(y-x)\, dx</mrow>
+            <mrow>\amp= \int_{y - \delta}^{y+\delta}f(x) \frac{1}{2\delta}\, dx</mrow>
+            <mrow>\amp= \frac{1}{2\delta} \int_{y-\delta}^{y + \delta} f(x)\, dx.</mrow>
+        </md>
+        That is, at each <m>y</m>, the value of <m>g*f</m> is the average value of <m>f</m> on the <m>\delta</m>-neighborhood near <m>y</m>. This has the effect of smoothing the graph of <m>f</m>. (Indeed, this smoothing is one of the primary applications of convolution in many fields, including signals and circuits.)</p>
+
+        <p>Natural choices for smoothing functions are similar to the <m>g</m> that we defined above - we'd like the integral to be 1, and we typically want to be able to concentrate the area of <m>g</m> very close to <m>0</m>, so that <m>g(x)</m> is close to 0 in value away from <m>x=0</m> and <m>g*f(y)</m> is very close to <m>f(y)</m>. (Here, one might consider investigating <url href="https://en.wikipedia.org/wiki/Mollifier">mollifiers</url>.)</p>
+
+        <p>Construction of functions via convolution is a frequent approach to solving problems in the fields of harmonic and complex analysis. (See, for example, the solution to the <url href="https://en.wikipedia.org/wiki/Dirichlet_problem">Dirichlet problem</url> on the disk via convolution of a function with the <url href="https://en.wikipedia.org/wiki/Poisson_kernel">Poisson kernel</url>.)</p>
+    </section>
+
+    <section xml:id="fourier-2">
+        <title>The Fejér kernel</title>
+        <p>Our goal is to establish that classical Fourier series converge, so we need a tool that involves the terms of such series. We're going to be constructing functions by convolution with a function called the <url href="https://en.wikipedia.org/wiki/Fej%C3%A9r_kernel">Fejér kernel</url>, which is built out of the same complex exponentials that appear in classical Fourier series.</p>
+
+        <definition xml:id="def-fejer-kernel">
+            <p>The Fejér kernel <m>K_m:[-\pi, \pi]\to \C</m> is given by
+                <men xml:id="eq-fejer-def">
+                    K_m(t) = \frac{1}{m+1} \sum_{j=0}^m \sum_{n=-j}^j e^{int}.
+                </men>
+            </p>
+        </definition>
+
+        <p>Every good proof hinges on a set of technical lemmas. Here are those that we need to prove that Fourier series converge.</p>
+
+        <lemma xml:id="lemma-fejer-sine">
+            <p>For any <m>t \in \R</m> that is not an integer multiple of <m>2\pi</m>, 
+                <men xml:id="eq-fejer-eq1">
+                    K_m(t) = \frac{1}{m+1} \frac{\sin^2(\frac{(m+1)t}{2})}{\sin^2(\frac{t}{2})}.
+                </men>
+            </p>
+        </lemma>
+
+        <proof>
+            <p>Let <m>z = e^{it}</m> and <m>\cc{z} = e^{-it}</m> for <m>t \notin 2\pi \mathbb{Z}</m>. Then <m>z \neq 1</m> and
+                <md>
+                    <mrow>\sum_{n=-j}^je^{int} \amp= \cc{z}^j(1 + z + z^2 + \cdots + z^{2j})</mrow>
+                    <mrow>\amp= \cc{z}^j \left(\frac{1 - z^{2j + 1}}{1 - z}\right)</mrow>
+                    <mrow>\amp = \frac{\cc{z}^j - z^{j+1}}{1-z}.</mrow>
+                </md>
+                Then, by <xref ref="eq-fejer-def"/>, we can write
+                    <me>
+                        (m+1) K_m(t) = \sum_{j=0}^m \frac{\cc{z}^j - z^{j+1}}{1-z}.
+                    </me>
+                Proceed by elbow grease. We calculate
+                <md>
+                    <mrow>(m+1) K_m(t) \amp= \sum_{j=0}^m \frac{\cc{z}^j - z^{j+1}}{1-z}</mrow>
+                    <mrow>\amp= \frac{1}{1-z} \sum_{j=0}^m (\cc{z}^j - z^{j+1})</mrow>
+                    <mrow>\amp= \frac{1}{1-z} (\sum_{j=0}^m \cc{z}^j - \sum_{j=0}^m z^{j+1})</mrow>
+                    <mrow>\amp= \frac{1}{1-z} (\frac{1-\cc{z}^{m+1}}{1-\cc{z}} - \frac{z(1 - z^{m+1})}{1-z}</mrow>
+                    <mrow>\amp= \frac{1}{1-z} \left(\frac{1-\cc{z}^{m+1}}{1-\cc{z}} - \frac{z(1 - z^{m+1})}{1-z}\frac{\cc{z}}{\cc{z}}\right)</mrow>
+                    <mrow>\amp= \frac{1}{1-z} \left(\frac{1-\cc{z}^{m+1}}{1-\cc{z}} + \frac{1 - z^{m+1}}{1-\cc{z}}\right)</mrow>
+                    <mrow>\amp= \frac{1}{(1-z)(1-\cc{z})} \left(-\cc{z}^{m+1} - z^{m+1}+ 2\right)</mrow>
+                    <mrow>\amp= \frac{1}{\abs{1-z}^2} \left(-\cc{z}^{m+1} - z^{m+1}+ 2\right).</mrow>
+                </md>
+            </p>
+
+            <p>Now, we are ready to convert these piles of <m>z = e^{it}</m> into sines. First, note that
+                <me>
+                    \abs{1 - z} = \abs{1 - e^{it}} = \abs{e^{it/2}}\abs{e^{-it} - e^{it}} = 2\abs{\sin(t/2)},
+                </me>
+            and so <m>\abs{1 - z}^2 = 4\sin^2(t/2)</m>. For the term in the numerator, notice that
+                <md>
+                    <mrow>z^{m+1} - 2 + \cc{z}^{m+1} \amp= e^{i(m+1)t} - 2 + e^{-i(m+1)t}</mrow>
+                    <mrow>\amp= (e^{i(m+1)t/2} - e^{-i(m+1)t/2})^2</mrow>
+                    <mrow>\amp= -4 \sin^2((m+1)t/2).</mrow>
+                </md>
+            </p>
+
+            <p>Then putting the pieces together, we conclude that
+                <md>
+                    <mrow>(m+1) K_m(t) \amp= \frac{1}{\abs{1-z}^2} \left(-\cc{z}^{m+1} - z^{m+1}+ 2\right)</mrow> 
+                    <mrow>\amp= \frac{4\sin^2((m+1)t/2)}{4\sin^2(t/2)},</mrow>
+                </md>
+                and so
+                <me>
+                    K_m(t) = \frac{1}{m+1} \frac{\sin^2((m+1)t/2)}{\sin^2(t/2)}.
+                </me>
+            </p>
+
+        </proof>
+
+        <p>We can now establish some of the good properties of the Fejér kernel that make it useful in applications involving Fourier series. Essentially, we want to show that <m>K_m</m> has properties similar to the function <m>g_\delta</m> that we explored in the previous section.</p>
+
+        <lemma xml:id="lemma-fejer-analytic">
+            <p>The function <m>K_m</m> satisfies the following properties:
+                <ol>
+                    <li><me>K_m(t) \geq 0, \hspace{1cm} \forall t \in \R, m \in \mathbb{Z}^{\geq 0}</me>;</li>
+                    <li>
+                        <me>
+                            \int_{-\pi}^{\pi} K_m(t) = 2\pi, \hspace{1cm} \forall m \in \mathbb{Z}^{\geq 0};
+                        </me>
+                    </li>
+                    <li>For all <m>\delta</m> with <m>0 \lt \delta \lt \pi</m>, 
+                        <me>
+                            \int_{-\pi}^{-\delta} + \int_{\delta}^{\pi} K_m(t) \, dt \to 0 \text{ as } m \to \infty.
+                        </me>
+                    </li>
+                </ol>
+            </p>
+        </lemma>
+
+        <proof>
+            <p>Property 1 follows directly from the form of <m>K_m</m> given in <xref ref="eq-fejer-eq1"/> for any <m>t</m> not an integer multiple of <m>2\pi</m> and at those points by continuity.</p>
+
+            <p>To see property 2, observe that
+                <me>
+                    \int_{-\pi}^\pi e^{int}\, dt = \begin{cases} 2\pi \amp \text{ if } n = 0 \\ 0 \amp \text{ if } n \neq 0 \end{cases}.
+                </me>
+                Since <m>K_m(t) = \frac{1}{m+1} \sum_{j=0}^m \sum_{n=-j}^j e^{int}</m>, expanding the sum and integrating gives
+                <me>
+                    \int_{-\pi}^\pi K_m(t) \, dt = \frac{1}{m+1} (m+1) 2\pi = 2\pi.
+                </me>
+            </p>
+
+            <p>The third property leverages the characterization of <m>K_m</m> in terms of sine functions. Suppose <m>0 \lt \delta \lt \pi</m>. If <m>-\pi \lt t \lt \delta</m> or <m>\delta \lt t \lt \pi</m>, then
+                <me>
+                    0 \lt \sin^2(t/2) \lt \sin^2(\delta/2).
+                </me>
+                By <xref ref="lemma-fejer-sine"/>,
+                <md>
+                    <mrow> K_m(t) \amp= \frac{1}{m+1} \frac{\sin^2((m+1)t/2)}{\sin^2(t/2)}</mrow>
+                    <mrow>\amp\leq \frac{1}{m+1} \frac{1}{\sin^2(t/2)}</mrow>
+                    <mrow>\amp\leq \frac{1}{m+1} \frac{1}{\sin^2(\delta/2)}</mrow>
+                    <mrow>\amp= \frac{1}{m+1} \csc^2(\delta/2),</mrow>
+                </md>
+                which notably does not depend on <m>t</m>. Then we can estimate the integral by
+                <me>
+                    0 \leq \int_{-\pi}^{-\delta} + \int_\delta^\pi K_m(t) \leq 2\pi \frac{1}{m+1} \csc^2(\delta/2),
+                </me>
+                and for any fixed <m>\delta</m>, 
+                <me>
+                    2\pi \frac{1}{m+1} \csc^2(\delta/2) \to 0, \text{ as } m \to \infty,
+                </me>
+                which establishes property 3.
+            </p>
+        </proof>
+
+        <p>The content of these Lemmas is that the kernel <m>K_m</m> has the properties that will make it well-behaved in a convolution.</p>
+
+    </section>
+
+    <section xml:id="fourier-3">
+        <title>Convergence of classical Fourier series</title>
+    </section>
+
+    <section xml:id="fourier-4">
+        <title>Exercises</title>
+        <exercises>
+
+        </exercises>
+    </section>
+
+
+</chapter>

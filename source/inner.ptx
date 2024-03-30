@@ -276,7 +276,7 @@
 
         <p>Examples of inner product spaces with non-trivial geometry include spaces of rational functions (that is, quotients of complex polynomials), which provide interesting examples and turn out to be of importance in applications. Rational functions also provide a foundation for the study of functions evaluated on matrix inputs, which will be considered much later in this text.</p>
 
-        <p>Recall that a function <m>f:D \to \C</m> is <url href="https://en.wikipedia.org/wiki/Analytic_function">analytic</url> if <m>f</m> has a power series that converges in a neighborhood of every <m>x_0 \in D</m>. Denote by <m>RL^2</m> the space of rational functions that are analytic on the unit circle <m>\T = \partial \D = \{z\in \C: \abs{z} = 1\},</m> equipped with pointwise addition and scalar multiplication. <m>RL^2</m> is an inner product space with the inner product
+        <p>It is most natural to consider the following examples in the context of complex-valued functions. A function <m>f:D \to \C</m> is <url href="https://en.wikipedia.org/wiki/Analytic_function">analytic</url> if <m>f</m> has a power series that converges in a neighborhood of every <m>x_0 \in D</m>. Denote by <m>RL^2</m> the space of rational functions that are analytic on the unit circle <m>\T = \partial \D = \{z\in \C: \abs{z} = 1\},</m> equipped with pointwise addition and scalar multiplication. <m>RL^2</m> is an inner product space with the inner product
             <men xml:id="eq-RL-ip">
                 \ip{f}{g} = \frac{1}{2\pi i} \int_\T f(z) \cc{g(z)} \frac{\dd z}{z},
             </men>

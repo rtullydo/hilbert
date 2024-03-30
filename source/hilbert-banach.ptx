@@ -3,9 +3,9 @@
     <section xml:id="hilbert-1">
         <title>Limits</title>
 
-        <p>With the inner product given by <xref ref="eq-ell2-ip"/>, the space <m>\ell^2</m> of sequences of square summable functions acts much like <m>\C^n</m>. We can extend this analogy further. In Euclidean space, a sequence that looks convergent is convergent. (This shows up in theorems like "Cauchy sequences are convergent", e.g.) Much of our intuition from real analysis is based on this property. Spaces on which sequences converge to points outside the space are very difficult to do analysis on! (Consider trying to do calculus on the rational numbers, for example.)</p>
+        <p>With the inner product given by <xref ref="eq-ell2-ip"/>, the space <m>\ell^2</m> of sequences of square summable functions acts much like <m>\C^n</m>. We can extend this analogy further. In Euclidean space, a sequence that looks convergent is convergent. (This shows up in theorems like "Cauchy sequences are convergent", e.g., and falls into a larger category we might refer to in a silly but accurate manner as a <q>duck theorem</q> - if it quacks like a duck, then...). Much of our intuition from real analysis is based on this property. Spaces on which sequences converge to points outside the space are very difficult to do analysis on! (Consider trying to do calculus on the rational numbers, for example.)</p>
 
-        <p>On the other hand, recall the space <m>\ell_0</m> <xref ref="def-ell0"/>. In <xref ref="ex-ell0"/>, we constructed a sequence of vectors in <m>\ell_0</m> that converged in <m>\ell^2</m> but not in <m>\ell_0</m>. That is, if we restricted our attention to the inner product space <m>\ell_0</m>, we could not perform any analysis using limits, because we might leave the space.</p>
+        <p>On the other hand, recall the space we defined in <m>\ell_0</m> <xref ref="def-ell0"/>. In <xref ref="ex-ell0"/>, we constructed a sequence of vectors in <m>\ell_0</m> that converged in <m>\ell^2</m> but not in <m>\ell_0</m>. That is, if we restricted our attention to the inner product space <m>\ell_0</m>, we could not perform any analysis using limits, because we might leave the space.</p>
 
         <p>As our ultimate interest is in examining function spaces, we can also consider an example in <m>C[0,1]</m>. A natural norm on <m>C[0,1]</m> is induced by the inner product <xref ref="eq-C-ip"/>, so that
             <me>
@@ -87,7 +87,7 @@
             <p>Show that <m>\ell^\infty</m>, the space of bounded sequences of complex numbers with the supremum norm is complete.</p>
         </exercise>
 
-        <p>We are now (finally) ready to define Hilbert spaces. The distinction between Hilbert spaces and inner product spaces is important to keep in mind.</p>
+        <p>We are now (finally) ready to define Hilbert spaces. The distinction between Hilbert spaces and inner product spaces is important to keep in mind. </p>
 
         <definition xml:id="def-hilbert-space">
             <p>A <term>Hilbert space</term> is an inner product space which is a complete metric space with respect to the metric induced by its inner product.</p>
@@ -111,7 +111,7 @@
         <me>
             \int_0^1 \abs{f}^2 \dd t \lt \infty,
         </me>
-        than <m>C[0,1]</m>, and yet even this space is incomplete. We need a better integral. The <term><url href="https://en.wikipedia.org/wiki/Lebesgue_integration">Lesbesgue integral</url></term> is significantly more challenging to develop than the Riemann integral, and we will not attempt that in this course. It is enough for us to accept that a more powerful notion of integration exists so that the space of square-integrable functions is complete with respect to <xref ref="eq-C-ip"/>.</p>
+        than <m>C[0,1]</m>, and yet even this space is incomplete. (Consider the sequence of Riemann integrable functions <m>f_n</m> on <m>[0,1]</m> attained recursively by introducing an additional discontinuity at the <m>n</m>th rational number in <m>[0,1]</m> under some enumeration of <m>\mathbb{Q}</m>. The limit function is the Dirichlet function <m>s(t)</m> defined below.) We need a better integral. The <term><url href="https://en.wikipedia.org/wiki/Lebesgue_integration">Lesbesgue integral</url></term> is significantly more challenging to develop than the Riemann integral, and we will not attempt that in this course. It is enough for us to accept that a more powerful notion of integration exists so that the space of square-integrable functions is complete with respect to <xref ref="eq-C-ip"/>.</p>
 
         <example xml:id="ex-L2"><title><m>L^2(a,b)</m></title>
             <p>Let <m>-\infty\leq a \lt b \leq \infty</m>. <m>L^2(a,b)</m> is the space of Lesbesgue measureable functions <m>f:(a,b)\to \C</m> which are square-integrable - that is,
@@ -121,7 +121,7 @@
             with pointwise operations and inner product <xref ref="eq-C-ip"/>.</p>
         </example>
 
-        <p>The condition that <m>f</m> be Lesbesgue measurable is not terribly restrictive. One can study and use the theory of <m>L^2</m> functions in a wide variety of physical and mathematical applications without ever needing to grapple with the oddities of non-measureable functions, which are quite difficult to construct. To get an idea of how bad a function can be and still be Lesbesgue integrable, consider the function
+        <p>The condition that <m>f</m> be Lesbesgue measurable is not terribly restrictive. One can study and use the theory of <m>L^2</m> functions in a wide variety of physical and mathematical applications without ever needing to grapple with the oddities of non-measureable functions, which are quite difficult to construct. To get an idea of how bad a function can be and still be Lesbesgue integrable, consider the <url href="https://en.wikipedia.org/wiki/Dirichlet_function">Dirichlet function</url>
         <me>
             s(t) = \left\{
                     \begin{array}{ll}
@@ -150,7 +150,7 @@
             <p><m>C[a,b]</m> is a dense subspace of <m>L^2[a,b]</m>.</p>
         </theorem>
 
-        <p>The theorem above is a consequence of measure theory, which requires the development of the Lebesgue integral to justify. We must accept the result, for the moment, on faith. The interested reader should look at Lusin's theorem and the Tietze Extension Theorem for a taste of a standard method of proof in the general case.</p>
+        <p>The theorem above is a consequence of measure theory, which requires the development of the Lebesgue integral to justify. We must accept the result, for the moment, on faith. The interested reader should look at <url href="https://en.wikipedia.org/wiki/Lusin%27s_theorem">Lusin's Theorem</url> and the <url href="https://en.wikipedia.org/wiki/Tietze_extension_theorem">Tietze Extension Theorem</url> for a taste of a standard method of proof in the general case.</p>
     </section>
 
     <section xml:id="hilbert-3"><title>The closest point property</title>
@@ -164,7 +164,7 @@
 
         <p>We should think of convex sets <m>A</m> as those that contain the line segments <m>\{ta + (1-t)b: t \in [0,1]\}</m> between all points <m>a</m> and <m>b</m> in <m>A</m>.</p>
 
-        <p>First, we show that the closest point property holds - that a given vector <m>v \in V</m> has a unique closest point in any appropriately <q>flat</q> set <m>A</m> in <m>V</m> (like a linear subspace).</p>
+        <p>First, we show that the closest point property holds - that a given vector <m>v \in V</m> has a unique closest point in any appropriately <q>flat</q> set <m>A</m> in <m>V</m> (like a linear subspace). (Compare the proof below with the standard approach in finite dimensions, e.g. in S. Axler's Linear Algebra Done Right (4th ed.), Chapter 6C).</p>
         
         <theorem xml:id="thm-closest-point"><title>Closest point property</title>
             <p>Let <m>A</m> be a non-empty closed convex set in a Hilbert space <m>\hilbert</m>. For any <m>x \in \hilbert</m>, there is a unique point of <m>A</m> which is closer to <m>x</m> than any other point in <m>A</m>. That is, there is a unique point <m>y \in A</m> such that
@@ -228,7 +228,7 @@
             </exercise>
             <exercise xml:id="pr-3-2">
                 <p>Show that the sequence <m>(f_n)</m> in <m>C[0,1]</m> given by the graph
-                <image width="60%" source="images/fig-3-2.png">
+                <image width="60%" source="../external/fig-3-2.png">
                 </image>
                 is Cauchy but not convergent in <m>C[0,1]</m>.</p>
             </exercise>
@@ -249,7 +249,7 @@
                 belong to <m>L^2(0,\infty)</m>? When defined, what is <m>\norm{f_\alpha}</m>?</p>
             </exercise>
             <exercise>
-                <p>Prove that the open and closed (unit) balls in a normed space are convex (see <xref provisional="ex2-8"/>).</p>
+                <p>Prove that the open and closed (unit) balls in a normed space are convex (see <xref ref="ex-ball-closure"/>).</p>
             </exercise>
             <exercise>
                 <p>Prove that the closure of a convex set in a normed space is convex.</p>

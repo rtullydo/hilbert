@@ -55,11 +55,11 @@
         <p>We should observe that setting <m>c = 0</m> into property (2) above gives that <m>\norm{0} = 0</m> in a normed space.</p>
 
         <exercise xml:id="ex-CX">
-            Show that the <term>supremum norm</term>  <m>\norm{\cdot}_\infty</m> on the complex vector space <m>C[a,b]</m> of all continuous complex valued functions on <m>[a,b]</m> defined by 
+            <p>Show that the <term>supremum norm</term>  <m>\norm{\cdot}_\infty</m> on the complex vector space <m>C[a,b]</m> of all continuous complex valued functions on <m>[a,b]</m> defined by 
             <me>
                 \norm{f}_\infty = \sup_{[a,b]} \abs{f(x)}
             </me>
-            satisfies conditions 1-3 in <xref ref="def-norm"/>.
+            satisfies conditions 1-3 in <xref ref="def-norm"/>.</p>
         </exercise>
 
         <p>In the same way that inner products give rise to norms, norms give rise to metrics.</p>
@@ -98,7 +98,7 @@
                 <mrow>\amp \leq \norm{x - y} + \norm{y - z}</mrow>
                 <mrow>\amp = d(x,y) + d(y,z)</mrow>
             </md></p>
-            <p>That <m>d</m> is translation invariance is straightforward and left to the reader.</p>
+            <p>That <m>d</m> is translation invariant is straightforward and left as an exercise.</p>
 
         </proof>
 
@@ -340,7 +340,7 @@
             <exercise>
                 <p>Guess the closed linear span of the set <m>\{1, x, x^2, \ldots\}</m> in <m>C[0,1]</m>. (We'll see the answer later. This result is fundamental.)</p>
             </exercise>
-            <exercise>
+            <exercise xml:id="ex-ball-closure">
                 <p>The <term>open ball</term> (of radius 1) in a normed space <m>(V, \norm{\cdot})</m> is the set
                     <me>
                         G = \{x \in V: \norm{x} \lt 1\}.

@@ -16,7 +16,7 @@
         <example>
             <p>In <m>\C^n</m> the standard basis vectors constitute an orthonormal system; so does any subset of them.</p>
 
-            <p>In <m>\ell^2</m>, the standard unit vectors <m>(e_n)_{n\in\mathbb{N}}</m> is an orthonormal sequence, where <m>e_n</m> has a 1 in the <m>n</m>th position and 0s elsewhere.</p>
+            <p>In <m>\ell^2</m>, the standard unit vectors <m>(e_n)_{n\in\mathbb{N}}</m> form an orthonormal sequence, where <m>e_n</m> has a 1 in the <m>n</m>th position and 0s elsewhere.</p>
 
             <p>In <m>L^2(-\pi,\pi)</m>, one orthonormal sequence <m>(e_n)_{n \in \mathbb{Z}}</m> is given by 
                 <me>
@@ -41,7 +41,7 @@
         <p>At this point, this is only a formal sum in a formal definition. We want to understand the extent to which orthogonal systems can play the role of coordinate systems in finite dimensions, with the ultimate idea of working in coordinates. First, given our definition of orthogonality, we can generalize the Pythagorean theorem.</p>
 
         <theorem xml:id="thm-ortho-pythagorean">
-            <p>If <m>x_1, \ldots, x_n</m> is a (finite) orthogona system in an inner product space, then
+            <p>If <m>x_1, \ldots, x_n</m> is a (finite) orthogonal system in an inner product space, then
             <me>
                 \norm{\sum_{i=1}^n x_i}^2 = \sum_{i=1}^n \norm{x_i}^2.
             </me></p>
@@ -81,11 +81,11 @@
         <p>Now suppose that <m>x</m> and the orthonormal system <m>e_i</m> are fixed. Varying <m>\la_i</m> on the expression <m>\sum \la_i e_i</m> will trace out the linear span of the <m>e_i</m> (as it runs through all linear combinations). Since <m>c_i = \ip{x}{e_i}</m> are fixed, <xref ref="lemma-ortho"/> implies that quantity <m>\norm{x - \sum \la_i e_i}</m> is minimized when <m>\la_i = c_i</m> for <m>1 \leq i \leq n</m> (killing the middle term). This gives the following theorem.</p>
 
         <theorem xml:id="thm-ortho-closest-finite">
-            <p>Let <m>e_1, \ldots, e_n</m> be an orthonormal system in an inner product space <m>\hilbert</m> and let <m>x \in \hilbert</m>. The closest point <m>y</m> of <m>\span\{e_1, \ldots, e_n\}</m> to <m>x</m> is
+            <p>Let <m>e_1, \ldots, e_n</m> be an orthonormal system in an inner product space <m>\hilbert</m> and let <m>x \in \hilbert</m>. The closest point <m>y</m> of <m>\spn\{e_1, \ldots, e_n\}</m> to <m>x</m> is
             <me>
                 y = \sum_{i=1}^n \ip{x}{e_i} e_i,
             </me>
-            and the distance <m>d = \norm{x-y}</m> from <m>x</m> to <m>\span\{e_1, \ldots, e_n\}</m> is given by
+            and the distance <m>d = \norm{x-y}</m> from <m>x</m> to <m>\spn\{e_1, \ldots, e_n\}</m> is given by
             <me>
                 d^2 = \norm{x}^2 - \sum_{i=1}^n \abs{\ip{x}{e_i}}^2.
             </me></p>
@@ -94,7 +94,7 @@
         <p>We finish with a corollary that resembles (and recovers) the orthonormal expansion of a vector in <m>\R^n</m>.</p>
 
         <corollary>
-            <p>If <m>x \in \span\{e_1, \ldots, e_n\}</m> then
+            <p>If <m>x \in \spn\{e_1, \ldots, e_n\}</m> then
             <me>
                 x = \sum_{i=1}^n \ip{x}{e_i} e_i.
             </me></p>
@@ -230,6 +230,12 @@
         </me>
         <xref ref="thm-bessel"/> and <xref ref="thm-l2-coeffs"/> guarantee that the right hand side makes sense; the series converges to some vector in <m>\hilbert</m>. But there is no way to know without further assumptions on the orthonormal sequence that there aren't directions that are <q>hidden</q> that might make the equation false. That is, we don't know if the limit of the right hand side is actually <m>x</m>.</p>
 
+        <p>The issue of when a Fourier series is equal to the object that generates it is delicate enough that in practice, mathematicians often use <m>\sim</m> instead of <m>=</m> to denote the relationship; that is, 
+        <me>
+            x \sim \sum_{n=1}^\infty \ip{x}{e_n} e_n
+        </me>
+        means that <m>x</m> has the given Fourier representation, but makes no claims on equality (whatever that might mean).</p>
+
         <p>We can see the issue if we look at an expansion of a vector <m>x\in \ell^2</m> with respect to the standard orthonormal sequence (much like the standard unit vectors) where <m>e_n</m> has a 1 in the <m>n</m>th position and 0s elsewhere. From this, construct a shifted sequence <m>f_n = e_{n+1}</m>. Then <m>(f_n)_{n\in\mathbb{N}}</m> remains an infinite orthonormal sequence in <m>\ell^2</m>. Now choose <m>x = (x_n) \in \ell^2</m>. Then
         <md>
             <mrow>\sum_{n=1}^\infty \ip{x}{f_n}f_n \amp= \sum_{n=2}^\infty \ip{x}{e_n} e_n</mrow>
@@ -250,7 +256,7 @@
             <p>An orthonormal sequence <m>(e_n)</m> in a Hilbert space <m>\hilbert</m> is <term>complete</term> if the only member of <m>\hilbert</m> which is orthogonal to every <m>e_n</m> is the zero vector.</p>
         </definition>
 
-        <p>We are finally ready to prove the Hilbert space analogue of <xref ref="thm-finite-coords"/>.</p>
+        <p>We are ready to prove the Hilbert space analogue of <xref ref="thm-finite-coords"/>.</p>
 
         <theorem xml:id="thm-infinite-coords">
             <p>Let <m>(e_n)_{n\in\mathbb{N}}</m> be a complete orthonormal sequence in a Hilbert space <m>\hilbert</m>. For any <m>x \in \hilbert</m>, 
@@ -281,7 +287,7 @@
             On letting <m>N\to\infty</m>, continuity of the norm gives the second statement.</p>
         </proof>
 
-        <p>We have finally arrived at the notion of a basis in a Hilbert space (indexed by <m>\mathbb{N}</m>). A complete orthonormal sequence in <m>\hilbert</m> is also called an <term>orthonormal basis</term> of <m>\hilbert</m>. The issue with identifying a basis is typically not orthogonality or norm, but instead completeness. After all, in infinite dimensions, there are lots of places to hide.</p>
+        <p>We have finally arrived at the notion of a basis in a Hilbert space (indexed by <m>\mathbb{N}</m>). A complete orthonormal sequence in <m>\hilbert</m> is also called an <term>orthonormal basis</term> of <m>\hilbert</m>. The issue with identifying a basis is typically not orthogonality or norm, but instead completeness. After all, in infinite dimensions, there are lots of places to hide. (The study of bases for infinite dimensional spaces is complicated; see this article on the notion of a <url href="https://en.wikipedia.org/wiki/Schauder_basis">Schauder basis</url> for a first look into the details.) </p>
 
         <p>In finite dimensions, a basis is a minimal spanning set - that is, the span of a basis is the entire space. A similar fact holds in Hilbert space, with the caveat that we have to work with the closed linear span.</p>
 
@@ -289,15 +295,15 @@
             <p>Let <m>(e_n)_{n\in\mathbb{N}}</m> be an orthonormal sequence in a Hilbert space <m>\hilbert</m>. The following are equivalent:
             <ol>
                 <li> <m>(e_n)</m> is complete;</li>
-                <li> <m>\cl \span \{e_n: n \in \mathbb{N}\} = \hilbert</m>;</li>
+                <li> <m>\cl \spn \{e_n: n \in \mathbb{N}\} = \hilbert</m>;</li>
                 <li><me>\norm{x}^2 = \sum_{n=1}^\infty \abs{\ip{x}{e_n}}^2.</me></li>
             </ol></p>
         </theorem>
 
         <proof>
-            <p> <m>(1) \Rightarrow (2)</m> and <m>(1) \Rightarrow (3)</m> follow immediately from <xref ref="thm-infinite-coords"/>. As series convergence is convergence of the sequence of partial sums, and each partial sum is in <m>\cl \span \{e_n: n \in \mathbb{N}\}</m>, closure gives
+            <p> <m>(1) \Rightarrow (2)</m> and <m>(1) \Rightarrow (3)</m> follow immediately from <xref ref="thm-infinite-coords"/>. As series convergence is convergence of the sequence of partial sums, and each partial sum is in <m>\cl \spn \{e_n: n \in \mathbb{N}\}</m>, closure gives
             <me>
-                \sum_{n=1}^\infty \ip{x}{e_n} e_n \in \cl \span \{e_n: n \in \mathbb{N}\}
+                \sum_{n=1}^\infty \ip{x}{e_n} e_n \in \cl \spn \{e_n: n \in \mathbb{N}\}
             </me>
             for all <m>x \in \hilbert</m>.</p>
 
@@ -311,7 +317,7 @@
             <me>
                 \M  = \{y: \ip{x}{y} = 0\}.
             </me>
-            Linearity of the inner product gives that <m>\M</m> is a subspace of <m>\hilbert</m>, and continuity of the inner product gives that <m>\M</m> is closed. Also, by assumption, every <m>e_n \in \M</m>, and thus <m>\cl \span\{e_n\} \subseteq \M</m>.and so (2) implies that <m>\hilbert = \M</m>. But then in particular <m>x \in \M</m>, and so <m>\ip{x}{x} = 0</m> by the definition of <m>\M</m>, which gives that <m>x=0</m>. Thus, <m>(e_n)</m> is complete. </p>
+            Linearity of the inner product gives that <m>\M</m> is a subspace of <m>\hilbert</m>, and continuity of the inner product gives that <m>\M</m> is closed. Also, by assumption, every <m>e_n \in \M</m>, and thus <m>\cl \spn\{e_n\} \subseteq \M</m>.and so (2) implies that <m>\hilbert = \M</m>. But then in particular <m>x \in \M</m>, and so <m>\ip{x}{x} = 0</m> by the definition of <m>\M</m>, which gives that <m>x=0</m>. Thus, <m>(e_n)</m> is complete. </p>
 
 
         </proof>
@@ -350,7 +356,7 @@
             <p>On the other hand, suppose that <m>\hilbert</m> contains a complete orthonormal sequence <m>(e_n)_{n \in \mathbb{N}}</m>. Define the operator <m>U: \hilbert \to \ell^2</m> by <m>Ux = (\la_n)_{n\in \mathbb{N}}</m> where <m>\la_n = \ip{x}{e_n}</m>. By <xref ref="thm-hilbert-span"/> (3), <m>Ux \in \ell^2</m> and moreover <m>\norm{Ux} = \norm{x}</m> for all <m>x \in \hilbert</m>. As <m>U</m> is defined in terms of the inner product, it is clearly linear. If <m>(\la_n) \in \ell^2</m>, then by <xref ref="thm-l2-coeffs"/> the series <m>\sum \la_n e_n</m> converges to a point in <m>\hilbert</m> and by definition <m>Ux = (\la_n)</m>. Thus <m>U</m> is surjective. Hence <m>U</m> is a unitary operator, and so <m>\hilbert</m> is isomorphic to <m>\ell^2</m>.</p>
         </proof>
 
-        <p>It is important that we not overstate the implications of the theorem above. In finite dimensions, for example, the space of polynomials of degree at most <m>n</m> is isomorphic to <m>\C^n</m> but is also a set of functions with properties that interact with the geometry of <m>\C^n</m>. Both the vector space properties and the functional properties are important - what the isomorphism provides is a set of properties that the space carries by relation with Euclidean space. In the same way, while all separable Hilbert spaces can be thought of as <m>\ell^2</m> in some sense, it is the interplay between, say, analytic properties and the Hilbert space structure that we are interested. However, it is valuable (and useful) to know that we can think of Hilbert space as <m>\C^n</m> or <m>\ell^2</m> when it is convenient.</p>
+        <p>As in undergraduate linear algebra, one might feel a bit of a letdown here. However, just as in finite dimensions, taking different views of the same space provides valuable insight into the objects being studied. In finite dimensions, for example, the space of polynomials of degree at most <m>n</m> is isomorphic to <m>\C^n</m> but is also a set of functions with properties that interact with the geometry of <m>\C^n</m>. Both the vector space properties and the functional properties are important - what the isomorphism provides is a set of properties that the space carries by relation with Euclidean space. In the same way, while all separable Hilbert spaces can be thought of as <m>\ell^2</m> in some sense, often what we are interested in is the relationship between the functions themselves as functions and the geometry induced by their Fourier (coordinate) representations.</p>
     </section>
 
     <section xml:id="ortho-5"><title>Orthogonal complements</title>
