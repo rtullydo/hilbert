@@ -4,7 +4,7 @@
         <me>
             \ip{x}{y} = \sum_i \cc y_i x_i, 
         </me>
-        where <m>x = (x_1, \ldots, x_n)</m>. How can this be extended to infinte dimensions?</p>
+        where <m>x = (x_1, \ldots, x_n)</m>. How can this be extended to infinite dimensions?</p>
 
         <definition xml:id="def-innerproduct">
             <p>For a general complex vector space <m>V</m>, an <term>inner product</term> is a map <m>\ip{\cdot}{\cdot}: V \times V \to \C</m> satisfying the following properties for all <m>x, y, z \in V</m> and scalars <m>c \in \C</m>:

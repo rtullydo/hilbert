@@ -187,7 +187,7 @@
             That is, <m>x^k \to a</m> but <m>a \notin \ell_0</m>, and so <m>\ell_0</m> is not closed in <m>\ell^2</m>.</p>
         </example>
 
-        <p>When we use the term subspace, we will always mean linear subspace of a vector space. At least for normed spaces, we can <q>fill in the edges</q> of a subspace by including the limit points.</p>
+        <p>When we use the term subspace, we will always mean linear subspace of a vector space. At least for normed spaces, we can <q>fill in the edges</q> of a subspace by including the limit points. Why should we want to? One of the basic lessons of real analysis in one variable is that <em>completeness</em> is a property of the real numbers that allows analysis to work. What we seek to do is prepare our spaces so that we can work with similar tools for spaces other than <m>\R^n</m>.</p>
 
         <theorem xml:id="thm-closed-subspace">
             <p>The closure of a normed subspace is a subspace.</p>
