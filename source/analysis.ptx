@@ -1,16 +1,24 @@
 <chapter><title>Appendix: Results from analysis</title>
 
-    <theorem xml:id="thm-heine-borel"><title>Heine-Borel</title>
-        <p>A closed and bounded set in <m>\R^n</m> or <m>\C^n</m> is compact.</p>
-    </theorem>
+    <section><title>Results from real analysis</title>
 
-    <theorem xml:id="thm-cont-comp">
-        <p>Let <m>\mathcal X, \mathcal R</m> be metric spaces. Let <m>S \subseteq \mathcal X</m>. If <m>f: S \to \mathcal R</m> is continuous, then <m>S</m> compact implies that <m>f(S)</m> is compact.</p>
-    </theorem>
+        <theorem xml:id="thm-heine-borel"><title>Heine-Borel</title>
+            <p>A closed and bounded set in <m>\R^n</m> or <m>\C^n</m> is compact.</p>
+        </theorem>
 
-    <theorem xml:id="thm-comp-inf">
-        <p>Suppose that <m>K</m> is a non-empty compact set in a metric space <m>\mathcal X</m> and that <m>f:K \to \R</m> is continuous. Then <m>f</m> attains its infimum and supremum on <m>K</m> - that is, <m>f</m> has both a minimum and maximum on <m>K</m>.</p>
-    </theorem>
+        <theorem xml:id="thm-cont-comp">
+            <p>Let <m>\mathcal X, \mathcal R</m> be metric spaces. Let <m>S \subseteq \mathcal X</m>. If <m>f: S \to \mathcal R</m> is continuous, then <m>S</m> compact implies that <m>f(S)</m> is compact.</p>
+        </theorem>
+
+        <theorem xml:id="thm-comp-inf">
+            <p>Suppose that <m>K</m> is a non-empty compact set in a metric space <m>\mathcal X</m> and that <m>f:K \to \R</m> is continuous. Then <m>f</m> attains its infimum and supremum on <m>K</m> - that is, <m>f</m> has both a minimum and maximum on <m>K</m>.</p>
+        </theorem>
+
+    </section>
+
+    <section><title>Results from complex analysis</title>
+        <p>Eventually necessary things will go here.</p>
+    </section>
 
 
 </chapter>

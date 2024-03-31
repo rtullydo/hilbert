@@ -162,6 +162,38 @@
 
     <section xml:id="fourier-3">
         <title>Convergence of classical Fourier series</title>
+        <p>We now seek to establish that classical Fourier series are expansions in a complete orthonormal sequence (see <xref ref="def-orthogonal-system"/>).</p>
+
+        <theorem xml:id="thm-fourier-basis">
+            <p>The sequence given by
+                <me>
+                    e_n(x) = \frac{1}{\sqrt{2\pi}} e^{i n x}, \hspace{1cm} x \in (-\pi, \pi)
+                </me>
+                is a complete orthonormal sequence in <m>L^2(-\pi, \pi)</m>.
+            </p>
+        </theorem>
+
+        <proof>
+            <p>That the functions <m>e_n(x)</m> are an orthonormal system in the standard inner product in <m>L^2(-\pi, \pi)</m> is left as an exercise.</p>
+
+            <p>We seek to invoke <xref ref="thm-hilbert-span"/> to claim that <m>(e_n)</m> is complete by arguing that 
+                <me>\cl \spn \{e_n: n \in \Z\} = L^2(-\pi, \pi).</me> 
+                To perform this trick, we'll actually work on a easier question by way of a result typically proved in graduate analysis that by necessity will have to be a black box. We claim that functions in <m>L^2(-\pi, \pi)</m> can be approximated uniformly by continuous <m>2\pi</m>-periodic functions - that is, the set of functions consisting of restrictions of <m>2\pi</m>-continuous functions to <m>(-\pi, \pi)</m> is a dense subspace of <m>L^2(-\pi,\pi)</m>. Essentially then, the argument will be that any continuous function in <m>L^2(-\pi, \pi)</m> can be approximated uniformly by linear combinations of <m>e_n</m> and any <m>L^2</m> function can be approximated by continuous functions, which the standard setup for a triangle inequality argument.
+            </p>
+
+            <p>So choose an arbitrary <m>2\pi</m>-continuous function <m>f: (-\pi, \pi)\to \R</m>. To show that <m>f\in \cl \spn \{e_n\}</m>, we need to find a sequence of functions in <m>\spn \{e_n\}</m> converging to <m>f</m>. Define the <m>m</m>th Fourier polynomial
+                <me>
+                    f_m = \sum_{n=-m}^m \ip{f}{e_n} e_n.
+                </me>
+                By construction, <m>f_m</m> is in the linear span of <m>(e_n)</m>, and it would suffice to prove that <m>f_m \to f</m>. However, in order to set up the application of the <xref ref="def-fejer-kernel">Fejer kernel</xref> results we established in the previous chapter, we'll work with the <url href="Cesàro summation">Cesàro sum</url>
+                <me>
+                    F_m = \frac{1}{m+1} (f_0 + f_1 + \cdots + f_m),
+                </me>
+                and show that <m>F_m \to f</m> (this is also sufficient, as each <m>F_m \in \spn\{e_n\}</m>).
+            </p>
+
+
+        </proof>
     </section>
 
     <section xml:id="fourier-4">

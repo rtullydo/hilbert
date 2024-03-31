@@ -6,9 +6,7 @@
 
         <definition xml:id="def-orthogonal-system">
             <p>Vectors in an inner product space are <term>orthogonal</term>, denoted <m>x \perp y</m>, if <m>\ip{x}{y} = 0</m>.</p>
-            <p> A family <m>(e_\alpha)_{\alpha \in A}</m> in <m>V - \{0\}</m> is called an <term>orthogonal system</term> if <m>e_\alpha \perp e_\beta</m> when <m>\alpha \neq \beta</m>. If further, <m>\norm{e_\alpha} = 1</m> for all <m>\alpha \in A</m>, then <m>(e_\alpha)_\alpha</m> is called an <term>orthonormal system</term>.</p>
-
-            <p>An orthonormal system is called an <term>orthonormal sequence</term> if it can be indexed by <m>\mathbb{N}</m>.</p>
+            <p> A family <m>(e_\alpha)_{\alpha \in A}</m> in <m>V - \{0\}</m> is called an <term>orthogonal system</term> if <m>e_\alpha \perp e_\beta</m> when <m>\alpha \neq \beta</m>. If further, <m>\norm{e_\alpha} = 1</m> for all <m>\alpha \in A</m>, then <m>(e_\alpha)_\alpha</m> is called an <term>orthonormal system</term>. An orthonormal system is called an <term>orthonormal sequence</term> if it can be indexed by <m>\mathbb{N}</m>.</p>
         </definition>
 
         <p>Make note: we have <em>not</em> defined what it means to be a basis yet in the context of Hilbert spaces - that remains to be developed later in this chapter. Note also that a system index by <m>\mathbb{Z}</m> can be reindexed in terms of <m>\mathbb{N}</m>, and so we can take a typical orthonormal system to be indexed by <m>\mathbb{N}</m> without loss of generality.</p>
