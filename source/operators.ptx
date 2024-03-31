@@ -2,7 +2,7 @@
     <section><title>Linear operators</title>
         <p>Linear operators are first encountered by students in calculus and differential equations, though not always with that name. Consider the problem
             <me>
-                y' = f(x)
+                y^\prime = f(x)
             </me>
         which can be written
             <me>
@@ -47,6 +47,10 @@
         <me>
             \norm{Tx} \leq \norm{T}\norm{x} \text{ (why?)}
         </me> </p>
+
+        <example><title>the zero operator</title>
+            <p>Let <m>V, W</m> be normed spaces. The map that sends every element of <m>V</m> to the zero element in <m>W</m> is a bounded operator of norm <m>0</m>.</p>
+        </example>
 
         <example><title>a multiplication operator</title>
             <p>Choose a function <m>f \in C[a, b]</m> and define the operator <m>M_f</m> on <m>L^2[a,b]</m> by <me>(M_f x)(t) = f(t)x(t).</me> It should be immediately clear that <m>M_f</m> is linear. Recalling the norms on <m>C[a,b]</m> and <m>L^2</m>, for any <m>x\in L^2[a,b]</m> we get
