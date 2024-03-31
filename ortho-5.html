@@ -249,14 +249,14 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="hilbert-6.html" class="internal"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a></div>
+<div class="toc-title-box"><a href="spaces.html" class="internal"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Limits</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-2.html" class="internal"><span class="codenumber">4.2</span> <span class="title"><span class="process-math">\(L^2[a,b]\)</span></span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The closest point property</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Limits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-2.html" class="internal"><span class="codenumber">4.2</span> <span class="title"><span class="process-math">\(L^2[a,b]\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The closest point property</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="hilbert-4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="hilbert-4.html#hilbert-4-2" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-title-box"><a href="spaces-4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="spaces-4.html#spaces-4-2" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -388,7 +388,7 @@ E = \{f \in L^2(0,1): f(t) = 0 \text{ for } t \in (0, \frac{1}{2})\}.
 </h3>
 <div class="para" id="thm-hilbert-decomp-1">Let <span class="process-math">\(E\)</span> be a closed linear subspace of a Hilbert space <span class="process-math">\(\hilbert\text{,}\)</span> and suppose that <span class="process-math">\(x \in \hilbert\text{.}\)</span> Then there exists <span class="process-math">\(y \in E\)</span> and <span class="process-math">\(z \in E^\perp\)</span> so that <span class="process-math">\(x = y + z\text{.}\)</span>
 </div></article><details id="ortho-5-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-5-16-1">
-<div class="para">The main idea of the proof is to take <span class="process-math">\(y\)</span> to be the closest point to <span class="process-math">\(x\)</span> in  <span class="process-math">\(E\text{.}\)</span> That is, following <a href="hilbert-3.html#thm-closest-point" class="xref" data-knowl="./knowl/xref/thm-closest-point.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.2: Closest point property">Theorem 4.3.2</a>, <span class="process-math">\(y\)</span> is the point in <span class="process-math">\(E\)</span> so that <span class="process-math">\(\norm{x - y} \leq \norm{x - v}\)</span> for all <span class="process-math">\(v \in E\text{.}\)</span> Now define <span class="process-math">\(z = x - y\)</span> so that <span class="process-math">\(x = y + z\text{.}\)</span> Now, for any <span class="process-math">\(v \in E\text{,}\)</span> we know that <span class="process-math">\(y + v \in E\)</span> and so since <span class="process-math">\(y\)</span> is the closest point to <span class="process-math">\(x\text{,}\)</span> we have</div>
+<div class="para">The main idea of the proof is to take <span class="process-math">\(y\)</span> to be the closest point to <span class="process-math">\(x\)</span> in  <span class="process-math">\(E\text{.}\)</span> That is, following <a href="spaces-3.html#thm-closest-point" class="xref" data-knowl="./knowl/xref/thm-closest-point.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.2: Closest point property">Theorem 4.3.2</a>, <span class="process-math">\(y\)</span> is the point in <span class="process-math">\(E\)</span> so that <span class="process-math">\(\norm{x - y} \leq \norm{x - v}\)</span> for all <span class="process-math">\(v \in E\text{.}\)</span> Now define <span class="process-math">\(z = x - y\)</span> so that <span class="process-math">\(x = y + z\text{.}\)</span> Now, for any <span class="process-math">\(v \in E\text{,}\)</span> we know that <span class="process-math">\(y + v \in E\)</span> and so since <span class="process-math">\(y\)</span> is the closest point to <span class="process-math">\(x\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-closest-point.html ./knowl/xref/lemma-norm-ortho.html">
 \begin{equation*}
 \norm{z} = \norm{x - y} \leq \norm{x - (y + m)}.

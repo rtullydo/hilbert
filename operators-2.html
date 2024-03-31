@@ -249,14 +249,14 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="hilbert-6.html" class="internal"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a></div>
+<div class="toc-title-box"><a href="spaces.html" class="internal"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Limits</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-2.html" class="internal"><span class="codenumber">4.2</span> <span class="title"><span class="process-math">\(L^2[a,b]\)</span></span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The closest point property</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Limits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-2.html" class="internal"><span class="codenumber">4.2</span> <span class="title"><span class="process-math">\(L^2[a,b]\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The closest point property</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="hilbert-4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="hilbert-4.html#hilbert-4-2" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-title-box"><a href="spaces-4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="spaces-4.html#spaces-4-2" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -307,7 +307,7 @@ window.MathJax = {
 <div class="para">Linear operators are first encountered by students in calculus and differential equations, though not always with that name. Consider the problem</div>
 <div class="displaymath process-math">
 \begin{equation*}
-y' = f(x)
+y^\prime = f(x)
 \end{equation*}
 </div>
 <div class="para">which can be written</div>
@@ -374,8 +374,11 @@ T(ax + by) = aT(x) + bT(y),
 </div>
 </div>
 <details id="operators-2-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">a multiplication operator.</span>
-</h3></summary><article class="example example-like knowl__content"> <div class="para logical" id="operators-2-10-2">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">the zero operator.</span>
+</h3></summary><article class="example example-like knowl__content"> <div class="para" id="operators-2-10-2">Let <span class="process-math">\(V, W\)</span> be normed spaces. The map that sends every element of <span class="process-math">\(V\)</span> to the zero element in <span class="process-math">\(W\)</span> is a bounded operator of norm <span class="process-math">\(0\text{.}\)</span>
+</div></article></details><details id="operators-2-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">a multiplication operator.</span>
+</h3></summary><article class="example example-like knowl__content"> <div class="para logical" id="operators-2-11-2">
 <div class="para">Choose a function <span class="process-math">\(f \in C[a, b]\)</span> and define the operator <span class="process-math">\(M_f\)</span> on <span class="process-math">\(L^2[a,b]\)</span> by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -383,7 +386,7 @@ T(ax + by) = aT(x) + bT(y),
 \end{equation*}
 </div>
 <div class="para">It should be immediately clear that <span class="process-math">\(M_f\)</span> is linear. Recalling the norms on <span class="process-math">\(C[a,b]\)</span> and <span class="process-math">\(L^2\text{,}\)</span> for any <span class="process-math">\(x\in L^2[a,b]\)</span> we get</div>
-<div class="displaymath process-math" id="operators-2-10-2-9">
+<div class="displaymath process-math" id="operators-2-11-2-9">
 \begin{align*}
 \norm{Mx}^2 \amp= \int_a^b \abs{f}^2 \abs{x}^2 \, dt \\
 \amp\leq \sup_{t \in [a, b]}\abs{f(t)} \int_a^b \abs{x}^2 \, dt\\
@@ -391,9 +394,9 @@ T(ax + by) = aT(x) + bT(y),
 \end{align*}
 </div>
 <div class="para">Then <span class="process-math">\(M_f\)</span> is a bounded operator and <span class="process-math">\(\norm{M} \leq \norm{f}_\infty\text{.}\)</span> It turns out to be the case that (usefully) <span class="process-math">\(\norm{M} = \norm{f}_\infty\text{.}\)</span> (Can you prove it?)</div>
-</div></article></details><details id="operators-2-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">an integral operator.</span>
-</h3></summary><article class="example example-like knowl__content"> <div class="para logical" id="operators-2-11-2">
+</div></article></details><details id="operators-2-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">an integral operator.</span>
+</h3></summary><article class="example example-like knowl__content"> <div class="para logical" id="operators-2-12-2">
 <div class="para">For real numbers <span class="process-math">\(a, b, c, d\text{,}\)</span> let <span class="process-math">\(k:[a,b]\times [c,d] \to \C\)</span> be a continuous map, and define <span class="process-math">\(K:L^2[a,b] \to L^2[c,d]\)</span> by</div>
 <div class="displaymath process-math">
 \begin{equation*}

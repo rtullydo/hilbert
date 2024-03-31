@@ -919,9 +919,9 @@ var ptx_lunr_docs = [
   "body": "Prove that every finite dimensional subspace of a normed space is closed. "
 },
 {
-  "id": "hilbert-1",
+  "id": "spaces-1",
   "level": "1",
-  "url": "hilbert-1.html",
+  "url": "spaces-1.html",
   "type": "Section",
   "number": "4.1",
   "title": "Limits",
@@ -930,7 +930,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-cauchy-seq",
   "level": "2",
-  "url": "hilbert-1.html#def-cauchy-seq",
+  "url": "spaces-1.html#def-cauchy-seq",
   "type": "Definition",
   "number": "4.1.1",
   "title": "",
@@ -939,25 +939,25 @@ var ptx_lunr_docs = [
 {
   "id": "thm-ell2-complete",
   "level": "2",
-  "url": "hilbert-1.html#thm-ell2-complete",
+  "url": "spaces-1.html#thm-ell2-complete",
   "type": "Theorem",
   "number": "4.1.2",
   "title": "",
   "body": " The space is a complete metric space with the metric induced by the inner product .  "
 },
 {
-  "id": "hilbert-1-11",
+  "id": "spaces-1-11",
   "level": "2",
-  "url": "hilbert-1.html#hilbert-1-11",
+  "url": "spaces-1.html#spaces-1-11",
   "type": "Proof",
   "number": "4.1.1",
   "title": "",
   "body": " We need to show that any Cauchy sequence in is convergent to another sequence. First, we propose a candidate for the limit of a Cauchy sequence of vectors in . To do so, we'll need to take advantage of the fact that vectors in are themselves sequences.  Consider the array we can construct by arranging the vectors as rows -   We are going to argue that the column sequences in the array above are convergent. Consider the -th column sequence . Choose Because is a Cauchy sequence of vectors, there exists some so that implies that . But since and each term in the sum is positive, we get when . This shows that is a Cauchy sequence in , which is a complete metric space, and so for some limit as . Let be the sequence of column limits. This is our candidate limit in for the sequence of vectors .  Let us show that . To do so, we will show that is in for some and use the vector space structure of . Let be given. Since is Cauchy, there exists so that for all . Noting again that the terms are positive, it is clear that for , We previously showed that the sequences converge to , so taking a limit as on the left-hand side of the inequalty gives This statement holds for all , and so letting tend to gives us which is to say that . Having shown that is in , we note that , which concludes this step of the proof.  The final step is to argue that the sequence . In the previous step, we showed that for a given , there exists so that implies that . Thus, converges to the sequence . Since every Cauchy sequence converges to a limit in , we conclude that is a complete metric space.  "
 },
 {
-  "id": "hilbert-1-12",
+  "id": "spaces-1-12",
   "level": "2",
-  "url": "hilbert-1.html#hilbert-1-12",
+  "url": "spaces-1.html#spaces-1-12",
   "type": "Checkpoint",
   "number": "4.1.3",
   "title": "",
@@ -966,7 +966,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-hilbert-space",
   "level": "2",
-  "url": "hilbert-1.html#def-hilbert-space",
+  "url": "spaces-1.html#def-hilbert-space",
   "type": "Definition",
   "number": "4.1.4",
   "title": "",
@@ -975,34 +975,34 @@ var ptx_lunr_docs = [
 {
   "id": "def-banach-space",
   "level": "2",
-  "url": "hilbert-1.html#def-banach-space",
+  "url": "spaces-1.html#def-banach-space",
   "type": "Definition",
   "number": "4.1.5",
   "title": "",
   "body": " A Banach space is a normed space which is complete with respect to the metric induced by its norm.  "
 },
 {
-  "id": "hilbert-2",
+  "id": "spaces-2",
   "level": "1",
-  "url": "hilbert-2.html",
+  "url": "spaces-2.html",
   "type": "Section",
   "number": "4.2",
   "title": "<span class=\"process-math\">\\(L^2[a,b]\\)<\/span>",
   "body": " We saw in the previous section that is an inner product space that is not complete. This is unfortunate, as the continuous functions are the foundation of approximation and analysis. The inner product is a natural analogue of the inner product in , considering the extension of sums to integral. It seems a shame to forgo working with the inner product and the space of continuous functions. But if we want to use them, we'll need to come up with a Hilbert space that contains , which is necessarily going to involve discontinuous functions (see the example at the beginning of the previous section, or the exerise in the problem section below).  The move from to provides an analogy - moving to infinite dimensions requires that we use square-summable sequences to get a well-defined inner product. The same turns out to be true here - sums become integrals, so we will work with the square-integrable functions , which we denote . That is, consists of those functions for which the integral of is finite. The sharp-eyed reader may notice that we have not written this in mathematics as and instead used the weasel-word integrable .  At issue is how we define the integral. The Riemann integral is the familiar that we learn in elementary calculus. Many more functions on will satisfy than , and yet even this space is incomplete. (Consider the sequence of Riemann integrable functions on attained recursively by introducing an additional discontinuity at the th rational number in under some enumeration of . The limit function is the Dirichlet function defined below.) We need a better integral. The Lesbesgue integral is significantly more challenging to develop than the Riemann integral, and we will not attempt that in this course. It is enough for us to accept that a more powerful notion of integration exists so that the space of square-integrable functions is complete with respect to .   Let . is the space of Lesbesgue measureable functions which are square-integrable - that is, with pointwise operations and inner product .   The condition that be Lesbesgue measurable is not terribly restrictive. One can study and use the theory of functions in a wide variety of physical and mathematical applications without ever needing to grapple with the oddities of non-measureable functions, which are quite difficult to construct. To get an idea of how bad a function can be and still be Lesbesgue integrable, consider the Dirichlet function  which integrates to 1 in the Lesbesgue integral, while the Riemann integral runs screaming in horror.  There is one issue that needs to be addressed when defining membership in a space with an integral condition - when should we consider two functions to be equal? If we take the function and move one point, say when and when , the functions behave identically under the integral and thus in the inner product and the metric in . More precisely, if two functions differ only at a finite set of points in , then and so by (1), and must be equal in .  So how much can two functions differ and still have the same integral? We define a subset of to be a null set if for any there exists a sequence of intervals with and - that is, is a null set if it is contained in the union of a set of intervals of arbitrarily small total length. Two functions are said to be equal almost everywhere if they differ only on a null set. In the Lesbesue integral, if and are equal almost everywhere, then the integral of is zero, and so and must be regarded as equal in . This indicates that the elements of are properly considered as equivalence classes of almost everywhere equal functions. In practice, we still refer to the elements as functions and treat equality as almost everywhere equality. This viewpoint does, however, mean that functions need only be defined almost everywhere to belong to . For example, is in despite the asymptote at .  One of the more useful properties of is that the continuous functions are a dense subspace (that is, every function can be approximated by a sequence of continuous functions). A typical approach in analysis is to show that some property hold on the continuous functions and then extend the result to by approximation.   is a Hilbert space.    is a dense subspace of .   The theorem above is a consequence of measure theory, which requires the development of the Lebesgue integral to justify. We must accept the result, for the moment, on faith. The interested reader should look at Lusin's Theorem and the Tietze Extension Theorem for a taste of a standard method of proof in the general case.  "
 },
 {
-  "id": "hilbert-2-3",
+  "id": "spaces-2-3",
   "level": "2",
-  "url": "hilbert-2.html#hilbert-2-3",
+  "url": "spaces-2.html#spaces-2-3",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "square-integrable functions "
 },
 {
-  "id": "hilbert-2-4",
+  "id": "spaces-2-4",
   "level": "2",
-  "url": "hilbert-2.html#hilbert-2-4",
+  "url": "spaces-2.html#spaces-2-4",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1011,25 +1011,25 @@ var ptx_lunr_docs = [
 {
   "id": "ex-L2",
   "level": "2",
-  "url": "hilbert-2.html#ex-L2",
+  "url": "spaces-2.html#ex-L2",
   "type": "Example",
   "number": "4.2.1",
   "title": "<span class=\"process-math\">\\(L^2(a,b)\\)<\/span>.",
   "body": " Let . is the space of Lesbesgue measureable functions which are square-integrable - that is, with pointwise operations and inner product .  "
 },
 {
-  "id": "hilbert-2-8",
+  "id": "spaces-2-8",
   "level": "2",
-  "url": "hilbert-2.html#hilbert-2-8",
+  "url": "spaces-2.html#spaces-2-8",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "null set almost everywhere "
 },
 {
-  "id": "hilbert-2-9",
+  "id": "spaces-2-9",
   "level": "2",
-  "url": "hilbert-2.html#hilbert-2-9",
+  "url": "spaces-2.html#spaces-2-9",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1038,7 +1038,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-L2-closed",
   "level": "2",
-  "url": "hilbert-2.html#thm-L2-closed",
+  "url": "spaces-2.html#thm-L2-closed",
   "type": "Theorem",
   "number": "4.2.2",
   "title": "",
@@ -1047,16 +1047,16 @@ var ptx_lunr_docs = [
 {
   "id": "thm-cont-dense",
   "level": "2",
-  "url": "hilbert-2.html#thm-cont-dense",
+  "url": "spaces-2.html#thm-cont-dense",
   "type": "Theorem",
   "number": "4.2.3",
   "title": "",
   "body": " is a dense subspace of .  "
 },
 {
-  "id": "hilbert-3",
+  "id": "spaces-3",
   "level": "1",
-  "url": "hilbert-3.html",
+  "url": "spaces-3.html",
   "type": "Section",
   "number": "4.3",
   "title": "The closest point property",
@@ -1065,7 +1065,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-convex",
   "level": "2",
-  "url": "hilbert-3.html#def-convex",
+  "url": "spaces-3.html#def-convex",
   "type": "Definition",
   "number": "4.3.1",
   "title": "",
@@ -1074,34 +1074,34 @@ var ptx_lunr_docs = [
 {
   "id": "thm-closest-point",
   "level": "2",
-  "url": "hilbert-3.html#thm-closest-point",
+  "url": "spaces-3.html#thm-closest-point",
   "type": "Theorem",
   "number": "4.3.2",
   "title": "Closest point property.",
   "body": "Closest point property  Let be a non-empty closed convex set in a Hilbert space . For any , there is a unique point of which is closer to than any other point in . That is, there is a unique point such that  "
 },
 {
-  "id": "hilbert-3-8",
+  "id": "spaces-3-8",
   "level": "2",
-  "url": "hilbert-3.html#hilbert-3-8",
+  "url": "spaces-3.html#spaces-3-8",
   "type": "Proof",
   "number": "4.3.1",
   "title": "",
   "body": " The proof will consist of two parts. First, we show that the infimum of distance between and is attained. (We should recall that the infimum itself exists is a consequence of the completeness of the real numbers, e.g. Theorem 2.6 .) Second, we show that this point is unique in .  Let We assumed that was not empty, and so must be some finite number. Since the infimum is a limit point, we can construct a sequence tending to . That is, for each integer , there exists some so that We now move from a sequence in norm to a sequence in by showing that is Cauchy in - that is, we need to show that is small. We first apply to the sequences and . For any , we have The term we are trying to bound is . On rearrangement, we get Now we will use the convexity of . Since , we know that , and hence that Consequently, It follows that is a Cauchy sequence in ; for a given (you should verify). Because is a Hilbert space, Cauchy sequences converge, and so . Since is closed, . On the one hand, this means that , since is an infimum. On the other hand, we know that for all , On taking , we get . We conclude that , and so is a closest point in to .  Now we show that is the unique closest point. Suppose that there is some with . Convexity gives that , and so Applying to and gives Thus, which gives uniqueness.  "
 },
 {
-  "id": "hilbert-4",
+  "id": "spaces-4",
   "level": "1",
-  "url": "hilbert-4.html",
+  "url": "spaces-4.html",
   "type": "Section",
   "number": "4.4",
   "title": "Exercises",
   "body": " Exercises   Prove that a closed subspace of a complete metric space is complete with respect to the induced metric. Conclude that is a Banach space. (See .)  Show that the sequence in given by the graph  is Cauchy but not convergent in .  Show that the normed space of is a Banach space.  Show that that the space of continously differentiable functions taking complex values on with inner product is not a Hilbert space (use the indefinite integrals of the functions in ).  Show that is not a Hilbert space.  For which real does the function belong to ? When defined, what is ?  Prove that the open and closed (unit) balls in a normed space are convex (see ).  Prove that the closure of a convex set in a normed space is convex.  Let be the Banach space with norm Show that does not have the closest point property by finding infinitely many points in the closed convex set which are at minimal distance from the origin.  Let be a non-empty closed convex set in a Hilbert space. Show that contains a unique vector of smallest norm that that for all .   "
 },
 {
-  "id": "hilbert-4-2-1",
+  "id": "spaces-4-2-1",
   "level": "2",
-  "url": "hilbert-4.html#hilbert-4-2-1",
+  "url": "spaces-4.html#spaces-4-2-1",
   "type": "Exercise",
   "number": "4.4.1",
   "title": "",
@@ -1110,79 +1110,79 @@ var ptx_lunr_docs = [
 {
   "id": "pr-3-2",
   "level": "2",
-  "url": "hilbert-4.html#pr-3-2",
+  "url": "spaces-4.html#pr-3-2",
   "type": "Exercise",
   "number": "4.4.2",
   "title": "",
   "body": "Show that the sequence in given by the graph  is Cauchy but not convergent in . "
 },
 {
-  "id": "hilbert-4-2-3",
+  "id": "spaces-4-2-3",
   "level": "2",
-  "url": "hilbert-4.html#hilbert-4-2-3",
+  "url": "spaces-4.html#spaces-4-2-3",
   "type": "Exercise",
   "number": "4.4.3",
   "title": "",
   "body": "Show that the normed space of is a Banach space. "
 },
 {
-  "id": "hilbert-4-2-4",
+  "id": "spaces-4-2-4",
   "level": "2",
-  "url": "hilbert-4.html#hilbert-4-2-4",
+  "url": "spaces-4.html#spaces-4-2-4",
   "type": "Exercise",
   "number": "4.4.4",
   "title": "",
   "body": "Show that that the space of continously differentiable functions taking complex values on with inner product is not a Hilbert space (use the indefinite integrals of the functions in ). "
 },
 {
-  "id": "hilbert-4-2-5",
+  "id": "spaces-4-2-5",
   "level": "2",
-  "url": "hilbert-4.html#hilbert-4-2-5",
+  "url": "spaces-4.html#spaces-4-2-5",
   "type": "Exercise",
   "number": "4.4.5",
   "title": "",
   "body": "Show that is not a Hilbert space. "
 },
 {
-  "id": "hilbert-4-2-6",
+  "id": "spaces-4-2-6",
   "level": "2",
-  "url": "hilbert-4.html#hilbert-4-2-6",
+  "url": "spaces-4.html#spaces-4-2-6",
   "type": "Exercise",
   "number": "4.4.6",
   "title": "",
   "body": "For which real does the function belong to ? When defined, what is ? "
 },
 {
-  "id": "hilbert-4-2-7",
+  "id": "spaces-4-2-7",
   "level": "2",
-  "url": "hilbert-4.html#hilbert-4-2-7",
+  "url": "spaces-4.html#spaces-4-2-7",
   "type": "Exercise",
   "number": "4.4.7",
   "title": "",
   "body": "Prove that the open and closed (unit) balls in a normed space are convex (see ). "
 },
 {
-  "id": "hilbert-4-2-8",
+  "id": "spaces-4-2-8",
   "level": "2",
-  "url": "hilbert-4.html#hilbert-4-2-8",
+  "url": "spaces-4.html#spaces-4-2-8",
   "type": "Exercise",
   "number": "4.4.8",
   "title": "",
   "body": "Prove that the closure of a convex set in a normed space is convex. "
 },
 {
-  "id": "hilbert-4-2-9",
+  "id": "spaces-4-2-9",
   "level": "2",
-  "url": "hilbert-4.html#hilbert-4-2-9",
+  "url": "spaces-4.html#spaces-4-2-9",
   "type": "Exercise",
   "number": "4.4.9",
   "title": "",
   "body": "Let be the Banach space with norm Show that does not have the closest point property by finding infinitely many points in the closed convex set which are at minimal distance from the origin. "
 },
 {
-  "id": "hilbert-4-2-10",
+  "id": "spaces-4-2-10",
   "level": "2",
-  "url": "hilbert-4.html#hilbert-4-2-10",
+  "url": "spaces-4.html#spaces-4-2-10",
   "type": "Exercise",
   "number": "4.4.10",
   "title": "",
@@ -2032,7 +2032,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.1",
   "title": "Linear operators",
-  "body": "Linear operators  Linear operators are first encountered by students in calculus and differential equations, though not always with that name. Consider the problem which can be written More generally, we learn that any linear differential equation can be written in the form for the differential operator . When we encounter problems like this the first time, we learn a group of recipes that solve the equation for various classes of , functions and sets of boundary conditions.  In another set of classes, the linear algebra sequence, we learn an extensive set of tools for analyzing the matrix problem in terms of the structure of the matrix . For example, we learn that the existence of a solution depends on the columnspace of and that the structure of the solution set depends on the nullspace (or kernel, thinking of as a function) of .  This chapter will examine the relationship between the matrix situation (in finite dimensions) and the linear operator situation (in infinite dimensions). A surprising amount of structure carries from finite to infinite dimensions.   If are vector spaces over a field , a linear operator from to is a map such that for all and .   A linear operator on is a linear operator from to . (Note: these notes largely follow the same conventions as Axler's Linear Algebra Done Right. There is a difference here - Axler restricts the term operator to only the space - that is, maps from .)  If are normed spaces, we say that a linear operator is bounded if there exists a constant such that for all . For a bounded , we define the operator norm (or just norm when there is no ambiguity) of to be the non-negative number  The kernel of a linear operator is the subspace of given by . The kernel of is denoted . The range of is the subspace of given by . The range of is denoted .  can be thought of as the largest factor by which stretches any vector, though it is a supremum, not a maximum. (What does this notion mean for a square matrix?) It also the case that   a multiplication operator  Choose a function and define the operator on by It should be immediately clear that is linear. Recalling the norms on and , for any we get Then is a bounded operator and . It turns out to be the case that (usefully) . (Can you prove it?)   an integral operator  For real numbers , let be a continuous map, and define by for . is linear (as integration is). For any , the Cauchy-Schwarz inequality gives Thus is bounded and   "
+  "body": "Linear operators  Linear operators are first encountered by students in calculus and differential equations, though not always with that name. Consider the problem which can be written More generally, we learn that any linear differential equation can be written in the form for the differential operator . When we encounter problems like this the first time, we learn a group of recipes that solve the equation for various classes of , functions and sets of boundary conditions.  In another set of classes, the linear algebra sequence, we learn an extensive set of tools for analyzing the matrix problem in terms of the structure of the matrix . For example, we learn that the existence of a solution depends on the columnspace of and that the structure of the solution set depends on the nullspace (or kernel, thinking of as a function) of .  This chapter will examine the relationship between the matrix situation (in finite dimensions) and the linear operator situation (in infinite dimensions). A surprising amount of structure carries from finite to infinite dimensions.   If are vector spaces over a field , a linear operator from to is a map such that for all and .   A linear operator on is a linear operator from to . (Note: these notes largely follow the same conventions as Axler's Linear Algebra Done Right. There is a difference here - Axler restricts the term operator to only the space - that is, maps from .)  If are normed spaces, we say that a linear operator is bounded if there exists a constant such that for all . For a bounded , we define the operator norm (or just norm when there is no ambiguity) of to be the non-negative number  The kernel of a linear operator is the subspace of given by . The kernel of is denoted . The range of is the subspace of given by . The range of is denoted .  can be thought of as the largest factor by which stretches any vector, though it is a supremum, not a maximum. (What does this notion mean for a square matrix?) It also the case that   the zero operator  Let be normed spaces. The map that sends every element of to the zero element in is a bounded operator of norm .   a multiplication operator  Choose a function and define the operator on by It should be immediately clear that is linear. Recalling the norms on and , for any we get Then is a bounded operator and . It turns out to be the case that (usefully) . (Can you prove it?)   an integral operator  For real numbers , let be a continuous map, and define by for . is linear (as integration is). For any , the Cauchy-Schwarz inequality gives Thus is bounded and   "
 },
 {
   "id": "def-linear-operator",
@@ -2067,8 +2067,8 @@ var ptx_lunr_docs = [
   "url": "operators-2.html#operators-2-10",
   "type": "Example",
   "number": "8.1.2",
-  "title": "a multiplication operator.",
-  "body": "a multiplication operator  Choose a function and define the operator on by It should be immediately clear that is linear. Recalling the norms on and , for any we get Then is a bounded operator and . It turns out to be the case that (usefully) . (Can you prove it?)  "
+  "title": "the zero operator.",
+  "body": "the zero operator  Let be normed spaces. The map that sends every element of to the zero element in is a bounded operator of norm .  "
 },
 {
   "id": "operators-2-11",
@@ -2076,6 +2076,15 @@ var ptx_lunr_docs = [
   "url": "operators-2.html#operators-2-11",
   "type": "Example",
   "number": "8.1.3",
+  "title": "a multiplication operator.",
+  "body": "a multiplication operator  Choose a function and define the operator on by It should be immediately clear that is linear. Recalling the norms on and , for any we get Then is a bounded operator and . It turns out to be the case that (usefully) . (Can you prove it?)  "
+},
+{
+  "id": "operators-2-12",
+  "level": "2",
+  "url": "operators-2.html#operators-2-12",
+  "type": "Example",
+  "number": "8.1.4",
   "title": "an integral operator.",
   "body": "an integral operator  For real numbers , let be a continuous map, and define by for . is linear (as integration is). For any , the Cauchy-Schwarz inequality gives Thus is bounded and  "
 },

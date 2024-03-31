@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>The Riesz representation theorem</title>
+<title>The closest point property</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="dual-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="hilbert-9.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="dual-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="spaces-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="spaces-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
   \DeclareMathOperator{\IM}{Im}
   \DeclareMathOperator{\ess}{ess}
   \DeclareMathOperator{\intr}{int}
@@ -248,12 +248,12 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="spaces.html" class="internal"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Limits</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-2.html" class="internal"><span class="codenumber">4.2</span> <span class="title"><span class="process-math">\(L^2[a,b]\)</span></span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The closest point property</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="spaces-3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The closest point property</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="spaces-4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="spaces-4.html#spaces-4-2" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
@@ -286,11 +286,11 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="hilbert-9.html" class="internal"><span class="codenumber">7</span> <span class="title">Dual spaces</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear functionals</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
@@ -300,82 +300,97 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="dual-2"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.2</span><span class="space"> </span><span class="title">The Riesz representation theorem</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="spaces-3"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.3</span><span class="space"> </span><span class="title">The closest point property</span>
 </h2>
-<div class="para" id="dual-2-2">In the case of Hilbert space, we recover the characterization of linear functionals as inner products against a representative vector. This powerful idea is one of the central tools of Hilbert space theory.</div>
-<article class="theorem theorem-like" id="dual-2-3"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">(Riesz-Fréchet).</span>
+<div class="para" id="spaces-3-2">One of the most useful ideas in linear algebra is projecting onto subspaces - if <span class="process-math">\(v \in \R^n\)</span> and <span class="process-math">\(U \subseteq \R^n\)</span> is a subspace, then <span class="process-math">\(\proj_U v\)</span> is the closest point in <span class="process-math">\(U\)</span> to <span class="process-math">\(v\)</span> in the sense that the orthogonal distance from <span class="process-math">\(v\)</span> to <span class="process-math">\(U\)</span> is minimized (this is also called least squares approximation).</div>
+<div class="para" id="spaces-3-3">The same idea holds true in Hilbert space and applies to vectors that are functions. This fact has deep consequences - that functions can be understood through the geometry of vectors is the soul of modern approaches to functional analysis.</div>
+<article class="definition definition-like" id="def-convex"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="dual-2-3-2">
-<div class="para">Let <span class="process-math">\(\hilbert\)</span> be a Hilbert space and let <span class="process-math">\(F\)</span> be a continuous linear functional on <span class="process-math">\(\hilbert\text{.}\)</span> There exists a unique vector <span class="process-math">\(y \in \hilbert\)</span> so that</div>
+<div class="para" id="def-convex-1">A subset <span class="process-math">\(A\)</span> of a real or complex vector space is <dfn class="terminology">convex</dfn> if, for all <span class="process-math">\(a, b \in A\)</span> and all <span class="process-math">\(0 \lt t \lt 1\text{,}\)</span> the point <span class="process-math">\(ta + (1-t)b \in A\text{.}\)</span>
+</div></article><div class="para" id="spaces-3-5">We should think of convex sets <span class="process-math">\(A\)</span> as those that contain the line segments <span class="process-math">\(\{ta + (1-t)b: t \in [0,1]\}\)</span> between all points <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> in <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="para" id="spaces-3-6">First, we show that the closest point property holds - that a given vector <span class="process-math">\(v \in V\)</span> has a unique closest point in any appropriately “flat” set <span class="process-math">\(A\)</span> in <span class="process-math">\(V\)</span> (like a linear subspace). (Compare the proof below with the standard approach in finite dimensions, e.g. in S. Axler’s Linear Algebra Done Right (4th ed.), Chapter 6C).</div>
+<article class="theorem theorem-like" id="thm-closest-point"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Closest point property.</span>
+</h3>
+<div class="para logical" id="thm-closest-point-2">
+<div class="para">Let <span class="process-math">\(A\)</span> be a non-empty closed convex set in a Hilbert space <span class="process-math">\(\hilbert\text{.}\)</span> For any <span class="process-math">\(x \in \hilbert\text{,}\)</span> there is a unique point of <span class="process-math">\(A\)</span> which is closer to <span class="process-math">\(x\)</span> than any other point in <span class="process-math">\(A\text{.}\)</span> That is, there is a unique point <span class="process-math">\(y \in A\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-F(x) = \ip{x}{y}
+\norm{x - y} = \inf_{a \in A} \norm{x - a}.
 \end{equation*}
 </div>
-<div class="para">for all <span class="process-math">\(x \in \hilbert\text{.}\)</span> Moreover, <span class="process-math">\(\norm{y} = \norm{F}\text{.}\)</span> (<span class="process-math">\(y\)</span> is sometimes called the representative vector for <span class="process-math">\(F\text{.}\)</span>)</div>
-</div></article><details id="dual-2-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="dual-2-4-1">
-<div class="para">We should first observe that if we can find such a <span class="process-math">\(y\text{,}\)</span> <a href="inner-1.html#thm-innerproduct" class="xref" data-knowl="./knowl/xref/thm-innerproduct.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.4">Theorem 2.1.4</a> guarantees that it will be unique, as for all <span class="process-math">\(x\in \hilbert\text{,}\)</span> we would have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-innerproduct.html">
+</div></article><details id="spaces-3-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="spaces-3-8-1">The proof will consist of two parts. First, we show that the infimum of distance between <span class="process-math">\(x\)</span> and <span class="process-math">\(A\)</span> is attained. (We should recall that the infimum itself exists is a consequence of the completeness of the real numbers, e.g.<a class="external" href="https://www.math.ucdavis.edu/~hunter/m125b/ch2.pdf" target="_blank">Theorem 2.6</a><details class="ptx-footnote" aria-live="polite" id="spaces-3-8-1-4"><summary class="ptx-footnote__number" title="Footnote 4.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="spaces-3-8-1-4"><code class="code-inline tex2jax_ignore">www.math.ucdavis.edu/~hunter/m125b/ch2.pdf</code></div></details>.) Second, we show that this point is unique in <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para logical" id="spaces-3-8-2">
+<div class="para">Let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-parallelogram.html">
 \begin{equation*}
-\ip{x}{y} = F(x) = \ip{x}{y'}.
+M = \inf_{a\in A} \norm{x-a}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="dual-2-4-2">
-<div class="para">If <span class="process-math">\(F\)</span> is the functional that sends every vector to 0, then we can take <span class="process-math">\(y = 0\text{.}\)</span> So suppose that <span class="process-math">\(F\)</span> is not the zero functional. In that case, the kernel of <span class="process-math">\(F\text{,}\)</span> which we denote by <span class="process-math">\(M\)</span> is a proper closed subspace of <span class="process-math">\(\hilbert\text{.}\)</span> Then by<a href="ortho-5.html#thm-hilbert-decomp" class="xref" data-knowl="./knowl/xref/thm-hilbert-decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.5">Theorem 5.5.5</a> we can decompose <span class="process-math">\(\hilbert\)</span> as <span class="process-math">\(\hilbert = M \oplus M^\perp\)</span> with <span class="process-math">\(M^\perp \neq \{0\}\text{.}\)</span> Now choose a non-zero element <span class="process-math">\(z \in M^\perp\text{.}\)</span> We can assume that <span class="process-math">\(F(z) = 1\)</span> by normalizing by a scalar.  Now, for any <span class="process-math">\(x \in \hilbert\text{,}\)</span> decompose <span class="process-math">\(x\)</span> into</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
+<div class="para">We assumed that <span class="process-math">\(A\)</span> was not empty, and so <span class="process-math">\(m\)</span> must be some finite number. Since the infimum is a limit point, we can construct a sequence <span class="process-math">\(\norm{x - y_n}\)</span> tending to <span class="process-math">\(\norm{x - a}\text{.}\)</span> That is, for each integer <span class="process-math">\(n\text{,}\)</span> there exists some <span class="process-math">\(y_n\)</span> so that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-parallelogram.html">
 \begin{equation*}
-x = (x - F(x)z) + F(x)z),
+\norm{x - y_n}^2 \lt M^2 + \frac{1}{n}.
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(F(x)z \in M^\perp\)</span> and so <span class="process-math">\(x - F(x)z \in M\text{.}\)</span> Now, take the inner product of these vectors with <span class="process-math">\(z\text{.}\)</span> The result is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html" id="dual-2-4-2-19">
+<div class="para">We now move from a sequence in norm to a sequence in <span class="process-math">\(A\)</span> by showing that <span class="process-math">\(y_n\)</span> is Cauchy in <span class="process-math">\(A\)</span> - that is, we need to show that <span class="process-math">\(\norm{y_n - y_m}\)</span> is small. We first apply <a href="inner-2.html#thm-parallelogram" class="xref" data-knowl="./knowl/xref/thm-parallelogram.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.8: Parallelogram identity">Theorem 2.2.8</a> to the sequences <span class="process-math">\(x - y_n\)</span> and <span class="process-math">\(x - y_m\text{.}\)</span> For any <span class="process-math">\(m,n \in \mathbb{N}\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-parallelogram.html" id="spaces-3-8-2-17">
 \begin{align*}
-\ip{x}{z} \amp= \ip{(x - F(x)z) + F(x)z)}{z}\\
-\amp= \ip{x - F(x)z}{z} + \ip{F(x)z}{z}\\
-\amp= \ip{F(x)z}{z}
+\amp\norm{(x - y_n) - (x - y_m)}^2 + \norm{(x - y_n)+(x - y_m)}^2\\
+\amp= 2 \norm{x - y_n}^2 + 2\norm{x - y_m}^2\\
+\amp\lt 4M^2 + 2\left(\frac{1}{n} + \frac{1}{m}\right).
 \end{align*}
 </div>
-<div class="para">since <span class="process-math">\(z \perp M\text{.}\)</span> Then we get, for all <span class="process-math">\(x \in \hilbert\text{,}\)</span> that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
+<div class="para">The term we are trying to bound is <span class="process-math">\(\norm{(x - y_n) - (x - y_m)} = \norm{y_n - y_m}\text{.}\)</span> On rearrangement, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-parallelogram.html" id="spaces-3-8-2-19">
+\begin{align*}
+\norm{y_n - y_m}^2 \amp\lt 4M^2 + 2\left(\frac{1}{n} + \frac{1}{n}\right) - \norm{2x - y_n - y_m}^2\\
+\amp= 4M^2 + 2\left(\frac{1}{n} + \frac{1}{n}\right) - 4\norm{x - \frac{y_n - y_m}{2}}^2
+\end{align*}
+</div>
+<div class="para">Now we will use the convexity of <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(y_n, y_m \in A\text{,}\)</span> we know that <span class="process-math">\(\frac{1}{2} y_n + \frac{1}{2} y_m =\frac{y_n + y_m}{2} \in A\text{,}\)</span> and hence that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-parallelogram.html">
 \begin{equation*}
-\ip{x}{z} = F(x)\norm{z}^2.
+M^2 = \inf_{a \in A} \norm{x - a}^2 \leq \norm{x - \frac{y_n + y_n}{2}}^2.
 \end{equation*}
 </div>
-<div class="para">Now, let <span class="process-math">\(y = z/\norm{z}^2\text{.}\)</span> Taking the inner product with <span class="process-math">\(x\text{,}\)</span> we compute</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
+<div class="para">Consequently,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-parallelogram.html" id="spaces-3-8-2-24">
+\begin{align*}
+\norm{y_n - y_m}^2 \amp\leq 4M^2 + 2\left(\frac{1}{n} + \frac{1}{m} - 4M^2\right)\\
+\amp = 2\left(\frac{1}{n} + \frac{1}{m}\right).
+\end{align*}
+</div>
+<div class="para">It follows that <span class="process-math">\((y_n)\)</span> is a Cauchy sequence in <span class="process-math">\(A\text{;}\)</span> for a given <span class="process-math">\(\eps &gt; 0\)</span> (you should verify). Because <span class="process-math">\(\hilbert\)</span> is a Hilbert space, Cauchy sequences converge, and so <span class="process-math">\(y_n \to y \in \hilbert\text{.}\)</span> Since <span class="process-math">\(A\)</span> is closed, <span class="process-math">\(y \in A\text{.}\)</span> On the one hand, this means that <span class="process-math">\(\norm{x - y} \geq M\text{,}\)</span> since <span class="process-math">\(M\)</span> is an infimum. On the other hand, we know that for all <span class="process-math">\(n\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-parallelogram.html">
 \begin{equation*}
-\ip{x}{y} = \ip{x}{\frac{z}{\norm{z}^2}} = \frac{1}{\norm{z}^2} F(x)\norm{z}^2 = F(x).
+\norm{x - y_n}^2 \leq M^2 + \frac{1}{n}.
 \end{equation*}
 </div>
-<div class="para">This shows that the representing vector for <span class="process-math">\(F\)</span> exists.</div>
-</div> <div class="para logical" id="dual-2-4-3">
-<div class="para">Now, we want to show that <span class="process-math">\(\norm{y} = \norm{F}\text{.}\)</span> For any <span class="process-math">\(\norm{x} \leq 1\text{,}\)</span> the Cauchy-Schwarz inequality (<a href="inner-2.html#thm-cauchy-schwarz" class="xref" data-knowl="./knowl/xref/thm-cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.4">Theorem 2.2.4</a>) gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cauchy-schwarz.html">
+<div class="para">On taking <span class="process-math">\(n \to \infty\text{,}\)</span> we get <span class="process-math">\(\norm{x - y} \leq M^2\text{.}\)</span> We conclude that <span class="process-math">\(\norm{x - y} = M\text{,}\)</span> and so <span class="process-math">\(y\)</span> is a closest point in <span class="process-math">\(A\)</span> to <span class="process-math">\(x\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="spaces-3-8-3">
+<div class="para">Now we show that <span class="process-math">\(y\)</span> is the <em class="emphasis">unique</em> closest point. Suppose that there is some <span class="process-math">\(w \in A\)</span> with <span class="process-math">\(\norm{x - w} = M\text{.}\)</span> Convexity gives that <span class="process-math">\(\frac{y + w}{2} \in A\text{,}\)</span> and so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-parallelogram.html">
 \begin{equation*}
-\abs{F(x)} = \abs{\ip{x}{y}} \leq \norm{x}\norm{y} \leq \norm{y}.
+\norm{x - \frac{y + w}{2}} \geq M.
 \end{equation*}
 </div>
-<div class="para">On the other hand, choosing the specific unit vector <span class="process-math">\(x = \frac{y}{\norm{y}}\)</span> gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cauchy-schwarz.html">
-\begin{equation*}
-\norm{F} \geq \abs{F(x)} = \frac{\abs{F(y)}}{\norm{y}} = \abs{\ip{y}{y}}/\norm{y} = \norm{y};
-\end{equation*}
+<div class="para">Applying <a href="inner-2.html#thm-parallelogram" class="xref" data-knowl="./knowl/xref/thm-parallelogram.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.8: Parallelogram identity">Theorem 2.2.8</a> to <span class="process-math">\(x-w\)</span> and <span class="process-math">\(x - y\)</span> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-parallelogram.html" id="spaces-3-8-3-10">
+\begin{align*}
+\norm{y-w}^2 \amp= 2\norm{x-w}^2 + 2\norm{x-y}^2 - 4\norm{x - \frac{y + w}{2}}^2\\
+\amp \leq 2M^2 + 2M^2 - 4M^2 = 0.
+\end{align*}
 </div>
-<div class="para">that is, <span class="process-math">\(\norm{F} \geq \norm{y}\text{.}\)</span> We conclude that <span class="process-math">\(\norm{F} = \norm{y}\text{,}\)</span> which completes the proof.</div>
-</div></article></details><div class="para logical" id="dual-2-5">
-<div class="para">It is worth pointing out that the Riesz representation theorem gives an explicit map <span class="process-math">\(T: \hilbert \to \hilbert\ad\)</span> via</div>
-<div class="displaymath process-math">
-\begin{equation*}
-Ty = \ip{\cdot}{y}
-\end{equation*}
-</div>
-<div class="para">that is both surjective and isometric. <span class="process-math">\(T\)</span> is also <dfn class="terminology">antilinear</dfn> or <dfn class="terminology">conjugate linear</dfn> in the sense that <span class="process-math">\(T(ax + by) = \cc{a}x + \cc{b}{y}\text{.}\)</span> Given the existence of <span class="process-math">\(T\text{,}\)</span> Hilbert spaces are in some sense their own dual spaces, in the same way that <span class="process-math">\(\R^n\)</span> is self-dual. (That is to say, Hilbert spaces are in some strong sense the correct notion of “<span class="process-math">\(\R^\infty\)</span>”).</div>
-</div>
-<div class="para" id="dual-2-6">We’re arrived at one of the major differences between inner product spaces and normed spaces. While the Riesz representation theorem tells us essentially everything about the continuous linear functionals on a Hilbert space, questions turn out to be significantly more complicated in the realm of Banach space. N. Young points out the following, seemingly easy question - given <span class="process-math">\(x, y\)</span> distinct elements in a normed space <span class="process-math">\(E\text{,}\)</span> does there exist a linear functional that “separates points”; that is, can we find a functional <span class="process-math">\(F\)</span> on <span class="process-math">\(E\)</span> so that <span class="process-math">\(F(x) \neq F(y)\text{?}\)</span> In Hilbert space, the answer is immediate: yes, because <span class="process-math">\(F = \ip{\cdot}{x - y}\)</span> will do the job. In a general normed space, the answer is much more subtle and requires the central theorem of functional analysis, the <a class="external" href="https://en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem" target="_blank">Hahn-Banach theorem</a><details class="ptx-footnote" aria-live="polite" id="dual-2-6-9"><summary class="ptx-footnote__number" title="Footnote 7.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="dual-2-6-9"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem</code></div></details>, which is well beyond the scope of these notes and typically introduced in a first course in functional analysis (see e.g. <a class="external" href="https://www.springer.com/gp/book/9780387972459" target="_blank">Conway 2007</a><details class="ptx-footnote" aria-live="polite" id="dual-2-6-11"><summary class="ptx-footnote__number" title="Footnote 7.2.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="dual-2-6-11"><code class="code-inline tex2jax_ignore">www.springer.com/gp/book/9780387972459</code></div></details>.).</div></section></div>
+<div class="para">Thus, <span class="process-math">\(y=w\)</span> which gives uniqueness.</div>
+</div></article></details></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="dual-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="dual-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="spaces-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="spaces-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

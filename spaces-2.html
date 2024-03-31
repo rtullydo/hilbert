@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>The Riesz representation theorem</title>
+<title>L^2[a,b]</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="dual-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="hilbert-9.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="dual-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="spaces-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="spaces-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
   \DeclareMathOperator{\IM}{Im}
   \DeclareMathOperator{\ess}{ess}
   \DeclareMathOperator{\intr}{int}
@@ -248,11 +248,11 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="spaces.html" class="internal"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Limits</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-2.html" class="internal"><span class="codenumber">4.2</span> <span class="title"><span class="process-math">\(L^2[a,b]\)</span></span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="spaces-2.html" class="internal"><span class="codenumber">4.2</span> <span class="title"><span class="process-math">\(L^2[a,b]\)</span></span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The closest point property</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="spaces-4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div>
@@ -286,11 +286,11 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="hilbert-9.html" class="internal"><span class="codenumber">7</span> <span class="title">Dual spaces</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear functionals</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
@@ -300,82 +300,70 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="dual-2"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.2</span><span class="space"> </span><span class="title">The Riesz representation theorem</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="spaces-2"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.2</span><span class="space"> </span><span class="title"><span class="process-math">\(L^2[a,b]\)</span></span>
 </h2>
-<div class="para" id="dual-2-2">In the case of Hilbert space, we recover the characterization of linear functionals as inner products against a representative vector. This powerful idea is one of the central tools of Hilbert space theory.</div>
-<article class="theorem theorem-like" id="dual-2-3"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">(Riesz-Fréchet).</span>
+<div class="para" id="spaces-2-2">We saw in the previous section that <span class="process-math">\(C[0,1]\)</span> is an inner product space that is not complete. This is unfortunate, as the continuous functions are the foundation of approximation and analysis. The inner product <a href="inner-1.html#eq-C-ip" class="xref" data-knowl="./knowl/xref/eq-C-ip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.1">(2.1.1)</a> is a natural analogue of the inner product in <span class="process-math">\(\C^n\text{,}\)</span> considering the extension of sums to integral. It seems a shame to forgo working with the inner product and the space of continuous functions. But if we want to use them, we’ll need to come up with a Hilbert space that contains <span class="process-math">\(C[0,1]\text{,}\)</span> which is necessarily going to involve discontinuous functions (see the example at the beginning of the previous section, or the exerise in the problem section below).</div>
+<div class="para" id="spaces-2-3">The move from <span class="process-math">\(\C^n\)</span> to <span class="process-math">\(\ell^2\)</span> provides an analogy - moving to infinite dimensions requires that we use square-summable sequences to get a well-defined inner product. The same turns out to be true here - sums become integrals, so we will work with the <dfn class="terminology">square-integrable functions</dfn>, which we denote <span class="process-math">\(L^2[0,1]\text{.}\)</span> That is, <span class="process-math">\(L^2\)</span> consists of those functions <span class="process-math">\(f\)</span> for which the integral of <span class="process-math">\(\abs{f}^2\)</span> is finite. The sharp-eyed reader may notice that we have not written this in mathematics as <span class="process-math">\(\int_0^1 \abs{f}^2 \, \dd t\)</span> and instead used the weasel-word “integrable”.</div>
+<div class="para logical" id="spaces-2-4">
+<div class="para">At issue is how we define the integral. The Riemann integral is the familiar <span class="process-math">\(\int f \, \dd x\)</span> that we learn in elementary calculus. Many more functions <span class="process-math">\(f\)</span> on <span class="process-math">\([0,1]\)</span> will satisfy</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-C-ip.html">
+\begin{equation*}
+\int_0^1 \abs{f}^2 \dd t \lt \infty,
+\end{equation*}
+</div>
+<div class="para">than <span class="process-math">\(C[0,1]\text{,}\)</span> and yet even this space is incomplete. (Consider the sequence of Riemann integrable functions <span class="process-math">\(f_n\)</span> on <span class="process-math">\([0,1]\)</span> attained recursively by introducing an additional discontinuity at the <span class="process-math">\(n\)</span>th rational number in <span class="process-math">\([0,1]\)</span> under some enumeration of <span class="process-math">\(\mathbb{Q}\text{.}\)</span> The limit function is the Dirichlet function <span class="process-math">\(s(t)\)</span> defined below.) We need a better integral. The <dfn class="terminology"><a class="external" href="https://en.wikipedia.org/wiki/Lebesgue_integration" target="_blank">Lesbesgue integral</a><details class="ptx-footnote" aria-live="polite" id="spaces-2-4-12-2"><summary class="ptx-footnote__number" title="Footnote 4.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="spaces-2-4-12-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Lebesgue_integration</code></div></details></dfn> is significantly more challenging to develop than the Riemann integral, and we will not attempt that in this course. It is enough for us to accept that a more powerful notion of integration exists so that the space of square-integrable functions is complete with respect to <a href="inner-1.html#eq-C-ip" class="xref" data-knowl="./knowl/xref/eq-C-ip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.1">(2.1.1)</a>.</div>
+</div>
+<details id="ex-L2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(L^2(a,b)\)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"> <div class="para logical" id="ex-L2-2">
+<div class="para">Let <span class="process-math">\(-\infty\leq a \lt b \leq \infty\text{.}\)</span> <span class="process-math">\(L^2(a,b)\)</span> is the space of Lesbesgue measureable functions <span class="process-math">\(f:(a,b)\to \C\)</span> which are square-integrable - that is,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-C-ip.html">
+\begin{equation*}
+\int_a^b \abs{f}^2 \, \dd t \infty,
+\end{equation*}
+</div>
+<div class="para">with pointwise operations and inner product <a href="inner-1.html#eq-C-ip" class="xref" data-knowl="./knowl/xref/eq-C-ip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.1">(2.1.1)</a>.</div>
+</div></article></details><div class="para logical" id="spaces-2-6">
+<div class="para">The condition that <span class="process-math">\(f\)</span> be Lesbesgue measurable is not terribly restrictive. One can study and use the theory of <span class="process-math">\(L^2\)</span> functions in a wide variety of physical and mathematical applications without ever needing to grapple with the oddities of non-measureable functions, which are quite difficult to construct. To get an idea of how bad a function can be and still be Lesbesgue integrable, consider the <a class="external" href="https://en.wikipedia.org/wiki/Dirichlet_function" target="_blank">Dirichlet function</a><details class="ptx-footnote" aria-live="polite" id="spaces-2-6-4"><summary class="ptx-footnote__number" title="Footnote 4.2.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="spaces-2-6-4"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Dirichlet_function</code></div></details>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s(t) = \left\{
+\begin{array}{ll}
+1 \amp \text{ if } t \in [0,1]-\mathbb{Q} \\
+0 \amp \text{ if } t \in [0,1]\cap \mathbb{Q}
+\end{array}
+\right.
+\end{equation*}
+</div>
+<div class="para">which integrates to 1 in the Lesbesgue integral, while the Riemann integral runs screaming in horror.</div>
+</div>
+<div class="para logical" id="spaces-2-7">
+<div class="para">There is one issue that needs to be addressed when defining membership in a space with an integral condition - when should we consider two functions to be equal? If we take the function <span class="process-math">\(f(t) = t\)</span> and move one point, say <span class="process-math">\(g(t) = t\)</span> when <span class="process-math">\(t \neq \frac{1}{2}\)</span> and <span class="process-math">\(g(t) = 0\)</span> when  <span class="process-math">\(t = \frac{1}{2}\text{,}\)</span> the functions behave identically under the integral and thus in the inner product and the metric in <span class="process-math">\(L^2\text{.}\)</span> More precisely, if two functions differ only at a finite set of points in <span class="process-math">\((a,b)\text{,}\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-norm.html">
+\begin{equation*}
+\norm{f - g}^2 = \int_a^b \abs{f - g}^2 \, \dd t = 0
+\end{equation*}
+</div>
+<div class="para">and so by <a href="norm-1.html#def-norm" class="xref" data-knowl="./knowl/xref/def-norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.3">Definition 3.1.3</a> (1), <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> must be equal in <span class="process-math">\(L^2\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="spaces-2-8">So how much can two functions differ and still have the same integral? We define a subset <span class="process-math">\(N\)</span> of <span class="process-math">\(\R\)</span> to be a <dfn class="terminology">null set</dfn> if for any <span class="process-math">\(\eps &gt; 0\)</span> there exists a sequence of intervals <span class="process-math">\((a_n, b_n)\)</span> with <span class="process-math">\(E \subseteq \cup_n (a_n, b_n)\)</span> and <span class="process-math">\(\sum_n (b_n - a_n) \lt \eps\)</span> - that is, <span class="process-math">\(E\)</span> is a null set if it is contained in the union of a set of intervals of arbitrarily small total length. Two functions are said to be equal <dfn class="terminology">almost everywhere</dfn> if they differ only on a null set. In the Lesbesue integral, if <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are equal almost everywhere, then the integral of <span class="process-math">\(\abs{f - g}^2\)</span> is zero, and so <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> must be regarded as equal in <span class="process-math">\(L^2\text{.}\)</span> This indicates that the elements of <span class="process-math">\(L^2\)</span> are properly considered as <em class="emphasis">equivalence classes</em> of almost everywhere equal functions. In practice, we still refer to the elements as functions and treat equality as almost everywhere equality. This viewpoint does, however, mean that functions need only be defined almost everywhere to belong to <span class="process-math">\(L^2\text{.}\)</span> For example, <span class="process-math">\(f(t) = \frac{1}{\sqrt[4]{\abs{t}}}\)</span> is in <span class="process-math">\(L^2[-1,1]\)</span> despite the asymptote at <span class="process-math">\(t = 0\text{.}\)</span>
+</div>
+<div class="para" id="spaces-2-9">One of the more useful properties of <span class="process-math">\(L^2[a,b]\)</span> is that the continuous functions <span class="process-math">\(C[a,b]\)</span> are a <dfn class="terminology">dense</dfn> subspace (that is, every <span class="process-math">\(L^2\)</span> function can be approximated by a sequence of continuous functions). A typical approach in analysis is to show that some property hold on the continuous functions and then extend the result to <span class="process-math">\(L^2\)</span> by approximation.</div>
+<article class="theorem theorem-like" id="thm-L2-closed"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="dual-2-3-2">
-<div class="para">Let <span class="process-math">\(\hilbert\)</span> be a Hilbert space and let <span class="process-math">\(F\)</span> be a continuous linear functional on <span class="process-math">\(\hilbert\text{.}\)</span> There exists a unique vector <span class="process-math">\(y \in \hilbert\)</span> so that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-F(x) = \ip{x}{y}
-\end{equation*}
-</div>
-<div class="para">for all <span class="process-math">\(x \in \hilbert\text{.}\)</span> Moreover, <span class="process-math">\(\norm{y} = \norm{F}\text{.}\)</span> (<span class="process-math">\(y\)</span> is sometimes called the representative vector for <span class="process-math">\(F\text{.}\)</span>)</div>
-</div></article><details id="dual-2-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="dual-2-4-1">
-<div class="para">We should first observe that if we can find such a <span class="process-math">\(y\text{,}\)</span> <a href="inner-1.html#thm-innerproduct" class="xref" data-knowl="./knowl/xref/thm-innerproduct.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.4">Theorem 2.1.4</a> guarantees that it will be unique, as for all <span class="process-math">\(x\in \hilbert\text{,}\)</span> we would have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-innerproduct.html">
-\begin{equation*}
-\ip{x}{y} = F(x) = \ip{x}{y'}.
-\end{equation*}
-</div>
-</div> <div class="para logical" id="dual-2-4-2">
-<div class="para">If <span class="process-math">\(F\)</span> is the functional that sends every vector to 0, then we can take <span class="process-math">\(y = 0\text{.}\)</span> So suppose that <span class="process-math">\(F\)</span> is not the zero functional. In that case, the kernel of <span class="process-math">\(F\text{,}\)</span> which we denote by <span class="process-math">\(M\)</span> is a proper closed subspace of <span class="process-math">\(\hilbert\text{.}\)</span> Then by<a href="ortho-5.html#thm-hilbert-decomp" class="xref" data-knowl="./knowl/xref/thm-hilbert-decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.5">Theorem 5.5.5</a> we can decompose <span class="process-math">\(\hilbert\)</span> as <span class="process-math">\(\hilbert = M \oplus M^\perp\)</span> with <span class="process-math">\(M^\perp \neq \{0\}\text{.}\)</span> Now choose a non-zero element <span class="process-math">\(z \in M^\perp\text{.}\)</span> We can assume that <span class="process-math">\(F(z) = 1\)</span> by normalizing by a scalar.  Now, for any <span class="process-math">\(x \in \hilbert\text{,}\)</span> decompose <span class="process-math">\(x\)</span> into</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
-\begin{equation*}
-x = (x - F(x)z) + F(x)z),
-\end{equation*}
-</div>
-<div class="para">where <span class="process-math">\(F(x)z \in M^\perp\)</span> and so <span class="process-math">\(x - F(x)z \in M\text{.}\)</span> Now, take the inner product of these vectors with <span class="process-math">\(z\text{.}\)</span> The result is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html" id="dual-2-4-2-19">
-\begin{align*}
-\ip{x}{z} \amp= \ip{(x - F(x)z) + F(x)z)}{z}\\
-\amp= \ip{x - F(x)z}{z} + \ip{F(x)z}{z}\\
-\amp= \ip{F(x)z}{z}
-\end{align*}
-</div>
-<div class="para">since <span class="process-math">\(z \perp M\text{.}\)</span> Then we get, for all <span class="process-math">\(x \in \hilbert\text{,}\)</span> that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
-\begin{equation*}
-\ip{x}{z} = F(x)\norm{z}^2.
-\end{equation*}
-</div>
-<div class="para">Now, let <span class="process-math">\(y = z/\norm{z}^2\text{.}\)</span> Taking the inner product with <span class="process-math">\(x\text{,}\)</span> we compute</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
-\begin{equation*}
-\ip{x}{y} = \ip{x}{\frac{z}{\norm{z}^2}} = \frac{1}{\norm{z}^2} F(x)\norm{z}^2 = F(x).
-\end{equation*}
-</div>
-<div class="para">This shows that the representing vector for <span class="process-math">\(F\)</span> exists.</div>
-</div> <div class="para logical" id="dual-2-4-3">
-<div class="para">Now, we want to show that <span class="process-math">\(\norm{y} = \norm{F}\text{.}\)</span> For any <span class="process-math">\(\norm{x} \leq 1\text{,}\)</span> the Cauchy-Schwarz inequality (<a href="inner-2.html#thm-cauchy-schwarz" class="xref" data-knowl="./knowl/xref/thm-cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.4">Theorem 2.2.4</a>) gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cauchy-schwarz.html">
-\begin{equation*}
-\abs{F(x)} = \abs{\ip{x}{y}} \leq \norm{x}\norm{y} \leq \norm{y}.
-\end{equation*}
-</div>
-<div class="para">On the other hand, choosing the specific unit vector <span class="process-math">\(x = \frac{y}{\norm{y}}\)</span> gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cauchy-schwarz.html">
-\begin{equation*}
-\norm{F} \geq \abs{F(x)} = \frac{\abs{F(y)}}{\norm{y}} = \abs{\ip{y}{y}}/\norm{y} = \norm{y};
-\end{equation*}
-</div>
-<div class="para">that is, <span class="process-math">\(\norm{F} \geq \norm{y}\text{.}\)</span> We conclude that <span class="process-math">\(\norm{F} = \norm{y}\text{,}\)</span> which completes the proof.</div>
-</div></article></details><div class="para logical" id="dual-2-5">
-<div class="para">It is worth pointing out that the Riesz representation theorem gives an explicit map <span class="process-math">\(T: \hilbert \to \hilbert\ad\)</span> via</div>
-<div class="displaymath process-math">
-\begin{equation*}
-Ty = \ip{\cdot}{y}
-\end{equation*}
-</div>
-<div class="para">that is both surjective and isometric. <span class="process-math">\(T\)</span> is also <dfn class="terminology">antilinear</dfn> or <dfn class="terminology">conjugate linear</dfn> in the sense that <span class="process-math">\(T(ax + by) = \cc{a}x + \cc{b}{y}\text{.}\)</span> Given the existence of <span class="process-math">\(T\text{,}\)</span> Hilbert spaces are in some sense their own dual spaces, in the same way that <span class="process-math">\(\R^n\)</span> is self-dual. (That is to say, Hilbert spaces are in some strong sense the correct notion of “<span class="process-math">\(\R^\infty\)</span>”).</div>
-</div>
-<div class="para" id="dual-2-6">We’re arrived at one of the major differences between inner product spaces and normed spaces. While the Riesz representation theorem tells us essentially everything about the continuous linear functionals on a Hilbert space, questions turn out to be significantly more complicated in the realm of Banach space. N. Young points out the following, seemingly easy question - given <span class="process-math">\(x, y\)</span> distinct elements in a normed space <span class="process-math">\(E\text{,}\)</span> does there exist a linear functional that “separates points”; that is, can we find a functional <span class="process-math">\(F\)</span> on <span class="process-math">\(E\)</span> so that <span class="process-math">\(F(x) \neq F(y)\text{?}\)</span> In Hilbert space, the answer is immediate: yes, because <span class="process-math">\(F = \ip{\cdot}{x - y}\)</span> will do the job. In a general normed space, the answer is much more subtle and requires the central theorem of functional analysis, the <a class="external" href="https://en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem" target="_blank">Hahn-Banach theorem</a><details class="ptx-footnote" aria-live="polite" id="dual-2-6-9"><summary class="ptx-footnote__number" title="Footnote 7.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="dual-2-6-9"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem</code></div></details>, which is well beyond the scope of these notes and typically introduced in a first course in functional analysis (see e.g. <a class="external" href="https://www.springer.com/gp/book/9780387972459" target="_blank">Conway 2007</a><details class="ptx-footnote" aria-live="polite" id="dual-2-6-11"><summary class="ptx-footnote__number" title="Footnote 7.2.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="dual-2-6-11"><code class="code-inline tex2jax_ignore">www.springer.com/gp/book/9780387972459</code></div></details>.).</div></section></div>
+<div class="para" id="thm-L2-closed-1">
+<span class="process-math">\(L^2[a,b]\)</span> is a Hilbert space.</div></article><article class="theorem theorem-like" id="thm-cont-dense"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-cont-dense-1">
+<span class="process-math">\(C[a,b]\)</span> is a dense subspace of <span class="process-math">\(L^2[a,b]\text{.}\)</span>
+</div></article><div class="para" id="spaces-2-12">The theorem above is a consequence of measure theory, which requires the development of the Lebesgue integral to justify. We must accept the result, for the moment, on faith. The interested reader should look at <a class="external" href="https://en.wikipedia.org/wiki/Lusin%27s_theorem" target="_blank">Lusin’s Theorem</a><details class="ptx-footnote" aria-live="polite" id="spaces-2-12-2"><summary class="ptx-footnote__number" title="Footnote 4.2.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="spaces-2-12-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Lusin%27s_theorem</code></div></details> and the <a class="external" href="https://en.wikipedia.org/wiki/Tietze_extension_theorem" target="_blank">Tietze Extension Theorem</a><details class="ptx-footnote" aria-live="polite" id="spaces-2-12-4"><summary class="ptx-footnote__number" title="Footnote 4.2.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="spaces-2-12-4"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Tietze_extension_theorem</code></div></details> for a taste of a standard method of proof in the general case.</div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="dual-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="dual-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="spaces-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="spaces-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

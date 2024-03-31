@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>The Riesz representation theorem</title>
+<title>Limits</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="dual-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="hilbert-9.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="dual-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="spaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="spaces-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
   \DeclareMathOperator{\IM}{Im}
   \DeclareMathOperator{\ess}{ess}
   \DeclareMathOperator{\intr}{int}
@@ -248,10 +248,10 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="spaces.html" class="internal"><span class="codenumber">4</span> <span class="title">Hilbert and Banach spaces</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Limits</span></a></div></li>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="spaces-1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Limits</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-2.html" class="internal"><span class="codenumber">4.2</span> <span class="title"><span class="process-math">\(L^2[a,b]\)</span></span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="spaces-3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The closest point property</span></a></div></li>
 <li class="toc-item toc-section">
@@ -286,11 +286,11 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="hilbert-9.html" class="internal"><span class="codenumber">7</span> <span class="title">Dual spaces</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear functionals</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
@@ -300,82 +300,93 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="dual-2"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.2</span><span class="space"> </span><span class="title">The Riesz representation theorem</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="spaces-1"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.1</span><span class="space"> </span><span class="title">Limits</span>
 </h2>
-<div class="para" id="dual-2-2">In the case of Hilbert space, we recover the characterization of linear functionals as inner products against a representative vector. This powerful idea is one of the central tools of Hilbert space theory.</div>
-<article class="theorem theorem-like" id="dual-2-3"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">(Riesz-Fréchet).</span>
+<div class="para" id="spaces-1-2">With the inner product given by <a href="inner-1.html#eq-ell2-ip" class="xref" data-knowl="./knowl/xref/eq-ell2-ip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.2">(2.1.2)</a>, the space <span class="process-math">\(\ell^2\)</span> of sequences of square summable functions acts much like <span class="process-math">\(\C^n\text{.}\)</span> We can extend this analogy further. In Euclidean space, a sequence that looks convergent is convergent. (This shows up in theorems like "Cauchy sequences are convergent", e.g., and falls into a larger category we might refer to in a silly but accurate manner as a “duck theorem” - if it quacks like a duck, then...). Much of our intuition from real analysis is based on this property. Spaces on which sequences converge to points outside the space are very difficult to do analysis on! (Consider trying to do calculus on the rational numbers, for example.)</div>
+<div class="para" id="spaces-1-3">On the other hand, recall the space we defined in <span class="process-math">\(\ell_0\)</span> <a href="norm-2.html#def-ell0" class="xref" data-knowl="./knowl/xref/def-ell0.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.2.2">Definition 3.2.2</a>. In <a href="norm-2.html#ex-ell0" class="xref" data-knowl="./knowl/xref/ex-ell0.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.2.1">Example 3.2.1</a>, we constructed a sequence of vectors in <span class="process-math">\(\ell_0\)</span> that converged in <span class="process-math">\(\ell^2\)</span> but not in <span class="process-math">\(\ell_0\text{.}\)</span> That is, if we restricted our attention to the inner product space <span class="process-math">\(\ell_0\text{,}\)</span> we could not perform any analysis using limits, because we might leave the space.</div>
+<div class="para logical" id="spaces-1-4">
+<div class="para">As our ultimate interest is in examining function spaces, we can also consider an example in <span class="process-math">\(C[0,1]\text{.}\)</span> A natural norm on <span class="process-math">\(C[0,1]\)</span> is induced by the inner product <a href="inner-1.html#eq-C-ip" class="xref" data-knowl="./knowl/xref/eq-C-ip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.1">(2.1.1)</a>, so that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-C-ip.html">
+\begin{equation*}
+\norm{f} = \int_0^1 \abs{f(x)}^2 \, dx.
+\end{equation*}
+</div>
+<div class="para">With respect the norm above, consider the sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-C-ip.html">
+\begin{equation*}
+f_k(x) = \min ((2x)^k, 1).
+\end{equation*}
+</div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/spaces-1-5.svg" role="img" class="contained"></div>
+<div class="para" id="spaces-1-6">It isn’t difficult to show that the elements in this sequence of functions grow arbitrarily close as <span class="process-math">\(k \to \infty\)</span> with respect to <span class="process-math">\(\norm{\cdot}\text{.}\)</span> It should also be clear from the figure above that this sequence of continuous functions is approaching a discontinuous function in the limit. (What is it?) That is, <span class="process-math">\(C[0,1]\)</span> is evidently not closed with respect to <span class="process-math">\(\norm{\cdot}\text{.}\)</span>
+</div>
+<div class="para" id="spaces-1-7">We would very much like to work in spaces where limits make sense. So we’ll introduce some machinery that will guarantee that this is the case.</div>
+<article class="definition definition-like" id="def-cauchy-seq"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="dual-2-3-2">
-<div class="para">Let <span class="process-math">\(\hilbert\)</span> be a Hilbert space and let <span class="process-math">\(F\)</span> be a continuous linear functional on <span class="process-math">\(\hilbert\text{.}\)</span> There exists a unique vector <span class="process-math">\(y \in \hilbert\)</span> so that</div>
+<div class="para" id="def-cauchy-seq-1">Let <span class="process-math">\((M, d)\)</span> be a metric space with distance function <span class="process-math">\(d\text{.}\)</span> A sequence <span class="process-math">\((x^k)\)</span> in <span class="process-math">\(M\)</span> is called a <dfn class="terminology">Cauchy sequence</dfn> if for every <span class="process-math">\(\eps &gt; 0\text{,}\)</span> there exists an integer <span class="process-math">\(K\)</span> so that <span class="process-math">\(k, l &gt; K\)</span> implies that <span class="process-math">\(d(x^k, x^l) \lt \eps\text{.}\)</span>
+</div> <div class="para" id="def-cauchy-seq-2">If every Cauchy sequence in <span class="process-math">\(M\)</span> converges to a limit in <span class="process-math">\(M\text{,}\)</span> then <span class="process-math">\(M\)</span> is called a <dfn class="terminology">complete metric space</dfn>.</div></article><div class="para" id="spaces-1-9">Some metric spaces come complete. The prototypical space is <span class="process-math">\(\R\text{,}\)</span> where the result that Cauchy sequences are convergent is a standard test question in real analysis. (Can you prove it?). Completeness of <span class="process-math">\(\R\)</span> implies completeness of <span class="process-math">\(\C\text{.}\)</span> (Do it.) More complicated spaces take more work.  We’ve already seen examples of spaces that are not complete.</div>
+<article class="theorem theorem-like" id="thm-ell2-complete"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-ell2-complete-1">The space <span class="process-math">\(\ell^2\)</span> is a complete metric space with the metric induced by the inner product <a href="inner-1.html#eq-ell2-ip" class="xref" data-knowl="./knowl/xref/eq-ell2-ip.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.2">(2.1.2)</a>.</div></article><details id="spaces-1-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="spaces-1-11-1">We need to show that any Cauchy sequence in <span class="process-math">\(\ell^2\)</span> is convergent to another <span class="process-math">\(\ell^2\)</span> sequence. First, we propose a candidate for the limit of a Cauchy sequence of vectors in <span class="process-math">\(\ell^2\text{.}\)</span> To do so, we’ll need to take advantage of the fact that vectors in <span class="process-math">\(\ell^2\)</span> are themselves sequences.</div> <div class="para logical" id="spaces-1-11-2">
+<div class="para">Consider the array we can construct by arranging the vectors <span class="process-math">\(x^k\)</span> as rows -</div>
 <div class="displaymath process-math">
 \begin{equation*}
-F(x) = \ip{x}{y}
+\begin{array}{cccccc}
+x^1 \amp = \amp (x^1_1, \amp x^1_2, \amp x^1_3, \amp \ldots)\\
+x^2 \amp = \amp (x^2_1, \amp x^2_2, \amp x^2_3, \amp \ldots)\\
+x^3 \amp = \amp (x^3_1, \amp x^3_2, \amp x^3_3, \amp \ldots)\\
+\vdots \amp \amp \vdots \amp \vdots \amp \vdots \amp \vdots \amp \\ \hline
+(x^k) \amp \amp (x^k_1) \amp (x^k_2) \amp (x^k_3) \amp 
+\end{array}
 \end{equation*}
 </div>
-<div class="para">for all <span class="process-math">\(x \in \hilbert\text{.}\)</span> Moreover, <span class="process-math">\(\norm{y} = \norm{F}\text{.}\)</span> (<span class="process-math">\(y\)</span> is sometimes called the representative vector for <span class="process-math">\(F\text{.}\)</span>)</div>
-</div></article><details id="dual-2-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="dual-2-4-1">
-<div class="para">We should first observe that if we can find such a <span class="process-math">\(y\text{,}\)</span> <a href="inner-1.html#thm-innerproduct" class="xref" data-knowl="./knowl/xref/thm-innerproduct.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.4">Theorem 2.1.4</a> guarantees that it will be unique, as for all <span class="process-math">\(x\in \hilbert\text{,}\)</span> we would have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-innerproduct.html">
-\begin{equation*}
-\ip{x}{y} = F(x) = \ip{x}{y'}.
-\end{equation*}
-</div>
-</div> <div class="para logical" id="dual-2-4-2">
-<div class="para">If <span class="process-math">\(F\)</span> is the functional that sends every vector to 0, then we can take <span class="process-math">\(y = 0\text{.}\)</span> So suppose that <span class="process-math">\(F\)</span> is not the zero functional. In that case, the kernel of <span class="process-math">\(F\text{,}\)</span> which we denote by <span class="process-math">\(M\)</span> is a proper closed subspace of <span class="process-math">\(\hilbert\text{.}\)</span> Then by<a href="ortho-5.html#thm-hilbert-decomp" class="xref" data-knowl="./knowl/xref/thm-hilbert-decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.5">Theorem 5.5.5</a> we can decompose <span class="process-math">\(\hilbert\)</span> as <span class="process-math">\(\hilbert = M \oplus M^\perp\)</span> with <span class="process-math">\(M^\perp \neq \{0\}\text{.}\)</span> Now choose a non-zero element <span class="process-math">\(z \in M^\perp\text{.}\)</span> We can assume that <span class="process-math">\(F(z) = 1\)</span> by normalizing by a scalar.  Now, for any <span class="process-math">\(x \in \hilbert\text{,}\)</span> decompose <span class="process-math">\(x\)</span> into</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
-\begin{equation*}
-x = (x - F(x)z) + F(x)z),
-\end{equation*}
-</div>
-<div class="para">where <span class="process-math">\(F(x)z \in M^\perp\)</span> and so <span class="process-math">\(x - F(x)z \in M\text{.}\)</span> Now, take the inner product of these vectors with <span class="process-math">\(z\text{.}\)</span> The result is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html" id="dual-2-4-2-19">
-\begin{align*}
-\ip{x}{z} \amp= \ip{(x - F(x)z) + F(x)z)}{z}\\
-\amp= \ip{x - F(x)z}{z} + \ip{F(x)z}{z}\\
-\amp= \ip{F(x)z}{z}
-\end{align*}
-</div>
-<div class="para">since <span class="process-math">\(z \perp M\text{.}\)</span> Then we get, for all <span class="process-math">\(x \in \hilbert\text{,}\)</span> that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
-\begin{equation*}
-\ip{x}{z} = F(x)\norm{z}^2.
-\end{equation*}
-</div>
-<div class="para">Now, let <span class="process-math">\(y = z/\norm{z}^2\text{.}\)</span> Taking the inner product with <span class="process-math">\(x\text{,}\)</span> we compute</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
-\begin{equation*}
-\ip{x}{y} = \ip{x}{\frac{z}{\norm{z}^2}} = \frac{1}{\norm{z}^2} F(x)\norm{z}^2 = F(x).
-\end{equation*}
-</div>
-<div class="para">This shows that the representing vector for <span class="process-math">\(F\)</span> exists.</div>
-</div> <div class="para logical" id="dual-2-4-3">
-<div class="para">Now, we want to show that <span class="process-math">\(\norm{y} = \norm{F}\text{.}\)</span> For any <span class="process-math">\(\norm{x} \leq 1\text{,}\)</span> the Cauchy-Schwarz inequality (<a href="inner-2.html#thm-cauchy-schwarz" class="xref" data-knowl="./knowl/xref/thm-cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.4">Theorem 2.2.4</a>) gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cauchy-schwarz.html">
-\begin{equation*}
-\abs{F(x)} = \abs{\ip{x}{y}} \leq \norm{x}\norm{y} \leq \norm{y}.
-\end{equation*}
-</div>
-<div class="para">On the other hand, choosing the specific unit vector <span class="process-math">\(x = \frac{y}{\norm{y}}\)</span> gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cauchy-schwarz.html">
-\begin{equation*}
-\norm{F} \geq \abs{F(x)} = \frac{\abs{F(y)}}{\norm{y}} = \abs{\ip{y}{y}}/\norm{y} = \norm{y};
-\end{equation*}
-</div>
-<div class="para">that is, <span class="process-math">\(\norm{F} \geq \norm{y}\text{.}\)</span> We conclude that <span class="process-math">\(\norm{F} = \norm{y}\text{,}\)</span> which completes the proof.</div>
-</div></article></details><div class="para logical" id="dual-2-5">
-<div class="para">It is worth pointing out that the Riesz representation theorem gives an explicit map <span class="process-math">\(T: \hilbert \to \hilbert\ad\)</span> via</div>
+</div> <div class="para logical" id="spaces-1-11-3">
+<div class="para">We are going to argue that the column sequences in the array above are convergent. Consider the <span class="process-math">\(j\)</span>-th column sequence <span class="process-math">\((x^k_j)\text{.}\)</span> Choose <span class="process-math">\(\eps &gt; 0.\)</span> Because <span class="process-math">\(x^k\)</span> is a Cauchy sequence of vectors, there exists some <span class="process-math">\(K\)</span> so that <span class="process-math">\(k, l &gt; K\)</span> implies that <span class="process-math">\(\norm{x^k - x^l} \lt \eps\text{.}\)</span> But since</div>
 <div class="displaymath process-math">
 \begin{equation*}
-Ty = \ip{\cdot}{y}
+\norm{x^k - x^l} = \left(\sum \abs{x_i^k - x_i^l}^2\right)^{1/2} \lt \eps
 \end{equation*}
 </div>
-<div class="para">that is both surjective and isometric. <span class="process-math">\(T\)</span> is also <dfn class="terminology">antilinear</dfn> or <dfn class="terminology">conjugate linear</dfn> in the sense that <span class="process-math">\(T(ax + by) = \cc{a}x + \cc{b}{y}\text{.}\)</span> Given the existence of <span class="process-math">\(T\text{,}\)</span> Hilbert spaces are in some sense their own dual spaces, in the same way that <span class="process-math">\(\R^n\)</span> is self-dual. (That is to say, Hilbert spaces are in some strong sense the correct notion of “<span class="process-math">\(\R^\infty\)</span>”).</div>
+<div class="para">and each term in the sum is positive, we get <span class="process-math">\(\abs{x^k_j - x^l_j} \lt \eps\)</span> when <span class="process-math">\(k, l &gt; K\text{.}\)</span> This shows that <span class="process-math">\((x^k_j)\)</span> is a Cauchy sequence in <span class="process-math">\(\C\text{,}\)</span> which is a complete metric space, and so <span class="process-math">\((x^k_j) \to y_j\)</span> for some limit <span class="process-math">\(y_j \in \C\)</span> as <span class="process-math">\(j \to \infty\text{.}\)</span> Let <span class="process-math">\(y = (y_j)\)</span> be the sequence of column limits. This is our candidate limit in <span class="process-math">\(\ell^2\)</span> for the sequence of vectors <span class="process-math">\(x^k\text{.}\)</span>
 </div>
-<div class="para" id="dual-2-6">We’re arrived at one of the major differences between inner product spaces and normed spaces. While the Riesz representation theorem tells us essentially everything about the continuous linear functionals on a Hilbert space, questions turn out to be significantly more complicated in the realm of Banach space. N. Young points out the following, seemingly easy question - given <span class="process-math">\(x, y\)</span> distinct elements in a normed space <span class="process-math">\(E\text{,}\)</span> does there exist a linear functional that “separates points”; that is, can we find a functional <span class="process-math">\(F\)</span> on <span class="process-math">\(E\)</span> so that <span class="process-math">\(F(x) \neq F(y)\text{?}\)</span> In Hilbert space, the answer is immediate: yes, because <span class="process-math">\(F = \ip{\cdot}{x - y}\)</span> will do the job. In a general normed space, the answer is much more subtle and requires the central theorem of functional analysis, the <a class="external" href="https://en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem" target="_blank">Hahn-Banach theorem</a><details class="ptx-footnote" aria-live="polite" id="dual-2-6-9"><summary class="ptx-footnote__number" title="Footnote 7.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="dual-2-6-9"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem</code></div></details>, which is well beyond the scope of these notes and typically introduced in a first course in functional analysis (see e.g. <a class="external" href="https://www.springer.com/gp/book/9780387972459" target="_blank">Conway 2007</a><details class="ptx-footnote" aria-live="polite" id="dual-2-6-11"><summary class="ptx-footnote__number" title="Footnote 7.2.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="dual-2-6-11"><code class="code-inline tex2jax_ignore">www.springer.com/gp/book/9780387972459</code></div></details>.).</div></section></div>
+</div> <div class="para logical" id="spaces-1-11-4">
+<div class="para">Let us show that <span class="process-math">\(y \in \ell^2\text{.}\)</span> To do so, we will show that <span class="process-math">\(x^k - y\)</span> is in <span class="process-math">\(\ell^2\)</span> for some <span class="process-math">\(k\)</span> and use the vector space structure of <span class="process-math">\(\ell^2\text{.}\)</span> Let <span class="process-math">\(\eps &gt; 0\)</span> be given. Since <span class="process-math">\(x^k\)</span> is Cauchy, there exists <span class="process-math">\(K\)</span> so that <span class="process-math">\(\norm{x^k - x^l} \lt \eps\)</span> for all <span class="process-math">\(k, l &gt; K\text{.}\)</span> Noting again that the terms are positive, it is clear that for <span class="process-math">\(k, l &gt; K\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i=1}^N \abs{x_i^k - x_i^l}^2 \leq \sum_{i=1}^{\infty} \abs{x_i^k - x_i^l}^2 \leq \eps^2.
+\end{equation*}
+</div>
+<div class="para">We previously showed that the sequences <span class="process-math">\(x_i^l\)</span> converge to <span class="process-math">\(y_i\text{,}\)</span> so taking a limit as <span class="process-math">\(l \to \infty\)</span> on the left-hand side of the inequalty gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i=1}^N \abs{x_i^k - y_i}^2 \leq \eps^2.
+\end{equation*}
+</div>
+<div class="para">This statement holds for all <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> and so letting <span class="process-math">\(N\)</span> tend to <span class="process-math">\(\infty\)</span> gives us</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i=1}^\infty \abs{x_i^k - y_i}^2 \leq \eps^2,
+\end{equation*}
+</div>
+<div class="para">which is to say that <span class="process-math">\(\norm{x^k - y} \lt \eps\text{.}\)</span> Having shown that <span class="process-math">\(x^k - y\)</span> is in <span class="process-math">\(\ell^2\text{,}\)</span> we note that <span class="process-math">\(y = x^k - (x^k - y) \in \ell^2\text{,}\)</span> which concludes this step of the proof.</div>
+</div> <div class="para" id="spaces-1-11-5">The final step is to argue that the sequence <span class="process-math">\(x^k \to y\text{.}\)</span> In the previous step, we showed that for a given <span class="process-math">\(\eps\text{,}\)</span> there exists <span class="process-math">\(K\)</span> so that <span class="process-math">\(k &gt; K\)</span> implies that <span class="process-math">\(\norm{x^k - y} \lt \eps\text{.}\)</span> Thus, <span class="process-math">\(x^k\)</span> converges to the <span class="process-math">\(\ell^2\)</span> sequence <span class="process-math">\(y\text{.}\)</span> Since every Cauchy sequence converges to a limit in <span class="process-math">\(\ell^2\text{,}\)</span> we conclude that <span class="process-math">\(\ell^2\)</span> is a complete metric space.</div></article></details><details id="spaces-1-12" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="spaces-1-12-1">Show that <span class="process-math">\(\ell^\infty\text{,}\)</span> the space of bounded sequences of complex numbers with the supremum norm is complete.</div></article></details><div class="para" id="spaces-1-13">We are now (finally) ready to define Hilbert spaces. The distinction between Hilbert spaces and inner product spaces is important to keep in mind.</div>
+<article class="definition definition-like" id="def-hilbert-space"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-hilbert-space-1">A <dfn class="terminology">Hilbert space</dfn> is an inner product space which is a complete metric space with respect to the metric induced by its inner product.</div></article><article class="definition definition-like" id="def-banach-space"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-banach-space-1">A <dfn class="terminology">Banach space</dfn> is a normed space which is complete with respect to the metric induced by its norm.</div></article><div class="para" id="spaces-1-16">As inner products induce norms, every Hilbert space is a Banach space. The converse statement is not true. Examples abound of complete normed spaces in which the parallelogram rule fails to hold (and thus there can exist no inner product that induces the norm.) In fact, our results to now show that <span class="process-math">\(\ell^\infty\)</span> is an example of a Banach space that is not a Hilbert space. Banach spaces are an area of wide interest in mathematics, but the lack of an inner product makes the structure much more delicate to parse. The central spaces of functional analysis are Hilbert spaces, where the inner product gives useful geometry not available in the more general setting of Banach spaces.</div>
+<div class="para" id="spaces-1-17">We’ll continue by looking at perhaps the single most important Hilbert space of functions.</div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="dual-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="dual-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="spaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="spaces-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
