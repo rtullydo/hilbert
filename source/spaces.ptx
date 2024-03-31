@@ -1,6 +1,6 @@
-<chapter><title>Hilbert and Banach spaces</title>
+<chapter xml:id="spaces"><title>Hilbert and Banach spaces</title>
 
-    <section xml:id="hilbert-1">
+    <section xml:id="spaces-1">
         <title>Limits</title>
 
         <p>With the inner product given by <xref ref="eq-ell2-ip"/>, the space <m>\ell^2</m> of sequences of square summable functions acts much like <m>\C^n</m>. We can extend this analogy further. In Euclidean space, a sequence that looks convergent is convergent. (This shows up in theorems like "Cauchy sequences are convergent", e.g., and falls into a larger category we might refer to in a silly but accurate manner as a <q>duck theorem</q> - if it quacks like a duck, then...). Much of our intuition from real analysis is based on this property. Spaces on which sequences converge to points outside the space are very difficult to do analysis on! (Consider trying to do calculus on the rational numbers, for example.)</p>
@@ -102,7 +102,7 @@
         <p>We'll continue by looking at perhaps the single most important Hilbert space of functions.</p>
     </section>
 
-    <section xml:id="hilbert-2"><title><m>L^2[a,b]</m></title>
+    <section xml:id="spaces-2"><title><m>L^2[a,b]</m></title>
         <p>We saw in the previous section that <m>C[0,1]</m> is an inner product space that is not complete. This is unfortunate, as the continuous functions are the foundation of approximation and analysis. The inner product <xref ref="eq-C-ip"/> is a natural analogue of the inner product in <m>\C^n</m>, considering the extension of sums to integral. It seems a shame to forgo working with the inner product and the space of continuous functions. But if we want to use them, we'll need to come up with a Hilbert space that contains <m>C[0,1]</m>, which is necessarily going to involve discontinuous functions (see the example at the beginning of the previous section, or the exerise in the problem section below).</p>
 
         <p>The move from <m>\C^n</m> to <m>\ell^2</m> provides an analogy - moving to infinite dimensions requires that we use square-summable sequences to get a well-defined inner product. The same turns out to be true here - sums become integrals, so we will work with the <term>square-integrable functions</term>, which we denote <m>L^2[0,1]</m>. That is, <m>L^2</m> consists of those functions <m>f</m> for which the integral of <m>\abs{f}^2</m> is finite. The sharp-eyed reader may notice that we have not written this in mathematics as <m>\int_0^1 \abs{f}^2 \, \dd t</m> and instead used the weasel-word <q>integrable</q>.</p>
@@ -153,7 +153,7 @@
         <p>The theorem above is a consequence of measure theory, which requires the development of the Lebesgue integral to justify. We must accept the result, for the moment, on faith. The interested reader should look at <url href="https://en.wikipedia.org/wiki/Lusin%27s_theorem">Lusin's Theorem</url> and the <url href="https://en.wikipedia.org/wiki/Tietze_extension_theorem">Tietze Extension Theorem</url> for a taste of a standard method of proof in the general case.</p>
     </section>
 
-    <section xml:id="hilbert-3"><title>The closest point property</title>
+    <section xml:id="spaces-3"><title>The closest point property</title>
         <p>One of the most useful ideas in linear algebra is projecting onto subspaces - if <m>v \in \R^n</m> and <m>U \subseteq \R^n</m> is a subspace, then <m>\proj_U v</m> is the closest point in <m>U</m> to <m>v</m> in the sense that the orthogonal distance from <m>v</m> to <m>U</m> is minimized (this is also called least squares approximation).</p>
 
         <p>The same idea holds true in Hilbert space and applies to vectors that are functions. This fact has deep consequences - that functions can be understood through the geometry of vectors is the soul of modern approaches to functional analysis. </p>
@@ -220,7 +220,7 @@
         </proof>
     </section>
 
-    <section xml:id="hilbert-4">
+    <section xml:id="spaces-4">
         <title>Exercises</title>
         <exercises>
             <exercise>

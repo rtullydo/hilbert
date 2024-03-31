@@ -141,7 +141,7 @@
       <xi:include href="intro.ptx" />
       <xi:include href="inner.ptx" />
       <xi:include href="norm.ptx"/>
-      <xi:include href="hilbert-banach.ptx"/>
+      <xi:include href="spaces.ptx"/>
       <xi:include href="orthogonal.ptx"/>
       <xi:include href="fourier.ptx"/>
       <xi:include href="dual.ptx"/>
