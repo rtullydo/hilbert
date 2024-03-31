@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Preface",
   "number": "",
   "title": "Preface",
-  "body": " This text is inspired by and adapts the general shape of the excellent Introduction to Hilbert Space by Nicholas Young. The reader is encouraged to track down a copy - Professor Young's exposition and in particular his presentation of the context and historical development of Hilbert spaces is an outstanding introduction to the origins and applications of the field. I do not attempt to recreate his deep historical knowledge nor his wide perspective on mathematics here.  Hilbert space theory is a natural bridge between undergraduate and graduate mathematical perspectives. It extends the ideas of finite dimensional linear algebra, blends in ideas from real and complex analysis, and points to a very active area of research in algebra. To get the most out of this text, the reader will need to be familiar with (or be willing to learn) ideas from real and complex analysis (e.g. uniform convergence of sequences of functions, analyticity in the complex plane), linear algebra (e.g. the spectral theorem for symmetric matrices), and basic point-set topology (e.g. metrics).  Of course the study and use of Hilbert spaces of functions goes well beyond what can be addressed in this text. A reader in need of an advanced course in linear algebra flavored with functional analysis should work through Axler's Linear Algebra Done Right . Axler has also recently published Measure, Integration, and Real Analysis , which covers the basics of functional analysis up to the spectral theorem for compact operators. The reader is also encouraged to work through Halmos's Introduction to Hilbert Space and the Theory of Spectral Multiplicity and especially the Hilbert space problem book , which treat more advanced topics than we consider here. My own path into the study of functional analysis ran through J. B. Conway's A Course in Functional Analysis and P. Lax's Functional Analysis . A reader interested in pursuing research in a modern flavor of Hilbert space theory might look to Pick interpolation and Hilbert function spaces and Operator Analysis by J. Agler, J. E. McCarthy, and N. J. Young (the same N. Young we pay homage to here). For the interaction of finite dimensional Hilbert spaces (i.e. matrices) and function theory, the reader should seek out Bhatia's excellent Matrix Analysis .  Another area of research arises not from studying the spaces but instead the maps that act on them. In this way, Hilbert space theory provides the foundation for the study of linear operators on infinte dimensional spaces. There is a major fork in the road here; one branch, concerned with single or classes of related operators and functions becomes operator theory . The study of the algebraic properties of the class of all operators on some space is the beginning of operator algebra . Both fields are vibrant and active.  "
+  "body": " This text is inspired by and adapts the general shape of the excellent Introduction to Hilbert Space by Nicholas Young. The reader is encouraged to track down a copy - Professor Young's exposition and in particular his presentation of the context and historical development of Hilbert spaces is an outstanding introduction to the origins and applications of the field. I do not attempt to recreate his deep historical knowledge nor his wide perspective on mathematics here. The other classical textbook on Hilbert spaces for undergraduates that I draw on is Kreyszig's Introductory Functional Analysis with Applications .  Hilbert space theory is a natural bridge between undergraduate and graduate mathematical perspectives. It extends the ideas of finite dimensional linear algebra, blends in ideas from real and complex analysis, and points to a very active area of research in algebra. To get the most out of this text, the reader will need to be familiar with (or be willing to learn) ideas from real and complex analysis (e.g. uniform convergence of sequences of functions, analyticity in the complex plane), linear algebra (e.g. the spectral theorem for symmetric matrices), and basic point-set topology (e.g. metrics).  Of course the study and use of Hilbert spaces of functions goes well beyond what can be addressed in this text. A reader in need of an advanced course in linear algebra flavored with functional analysis should work through Axler's Linear Algebra Done Right . Axler has also recently published Measure, Integration, and Real Analysis , which covers the basics of functional analysis up to the spectral theorem for compact operators. The reader is also encouraged to work through Halmos's Introduction to Hilbert Space and the Theory of Spectral Multiplicity and especially the Hilbert space problem book , which treat more advanced topics than we consider here. My own path into the study of functional analysis ran through J. B. Conway's A Course in Functional Analysis and P. Lax's Functional Analysis . A reader interested in pursuing research in a modern flavor of Hilbert space theory might look to Pick interpolation and Hilbert function spaces and Operator Analysis by J. Agler, J. E. McCarthy, and N. J. Young (the same N. Young we pay homage to here). For the interaction of finite dimensional Hilbert spaces (i.e. matrices) and function theory, the reader should seek out Bhatia's excellent Matrix Analysis .  Another area of research arises not from studying the spaces but instead the maps that act on them. In this way, Hilbert space theory provides the foundation for the study of linear operators on infinte dimensional spaces. There is a major fork in the road here; one branch, concerned with single or classes of related operators and functions becomes operator theory . The study of the algebraic properties of the class of all operators on some space is the beginning of operator algebra . Both fields are vibrant and active.  "
 },
 {
   "id": "sec-intro-1",
@@ -1195,7 +1195,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Geometry in Hilbert space",
-  "body": " Geometry in Hilbert space  As we discussed in the introductory chapter, , one of the key ideas of finite dimensional linear algebra is to use a basis for a vector space to move back and forth between the vectors themselves (say ) and their coordinate representations with respect to those bases. This move lets us consider a vector space of dimension as essentially just a renaming of Euclidean space . We are now ready to try to capture this geometry in the context of Hilbert space.   Vectors in an inner product space are orthogonal , denoted , if .  A family in is called an orthogonal system if when . If further, for all , then is called an orthonormal system .  An orthonormal system is called an orthonormal sequence if it can be indexed by .   Make note: we have not defined what it means to be a basis yet in the context of Hilbert spaces - that remains to be developed later in this chapter. Note also that a system index by can be reindexed in terms of , and so we can take a typical orthonormal system to be indexed by without loss of generality.   In the standard basis vectors constitute an orthonormal system; so does any subset of them.  In , the standard unit vectors form an orthonormal sequence, where has a 1 in the th position and 0s elsewhere.  In , one orthonormal sequence is given by in the inner product . An alternative orthonormal sequence in is given by the family of functions    These families form the beginnings of Fourier analysis , which motivates the following definition. (Compare to .)   If is an orthonormal sequence in a Hilbert space then for any , the inner product is the th Fourier coefficent of with respect to . The Fourier series of with respect to is the series   At this point, this is only a formal sum in a formal definition. We want to understand the extent to which orthogonal systems can play the role of coordinate systems in finite dimensions, with the ultimate idea of working in coordinates. First, given our definition of orthogonality, we can generalize the Pythagorean theorem.   If is a (finite) orthogonal system in an inner product space, then   Prove .  The basic properties of orthogonal expansions are mainly derived from the following geometric identity. Note that it applies to finite orthonormal systems.   Let be an orthonormal system in an inner product space , let and suppose that . Then where .    By , Then    Now suppose that and the orthonormal system are fixed. Varying on the expression will trace out the linear span of the (as it runs through all linear combinations). Since are fixed, implies that quantity is minimized when for (killing the middle term). This gives the following theorem.   Let be an orthonormal system in an inner product space and let . The closest point of to is and the distance from to is given by   We finish with a corollary that resembles (and recovers) the orthonormal expansion of a vector in .   If then   In let for all . Show that is an orthonormal system in and show that the polynomial of degree 1 which is closest to the function is given by . What is ?  "
+  "body": " Geometry in Hilbert space  As we discussed in the introductory chapter, , one of the key ideas of finite dimensional linear algebra is to use a basis for a vector space to move back and forth between the vectors themselves (say ) and their coordinate representations with respect to those bases. This move lets us consider a vector space of dimension as essentially just a renaming of Euclidean space . We are now ready to try to capture this geometry in the context of Hilbert space.   Vectors in an inner product space are orthogonal , denoted , if .  A family in is called an orthogonal system if when . If further, for all , then is called an orthonormal system . An orthonormal system is called an orthonormal sequence if it can be indexed by .   Make note: we have not defined what it means to be a basis yet in the context of Hilbert spaces - that remains to be developed later in this chapter. Note also that a system index by can be reindexed in terms of , and so we can take a typical orthonormal system to be indexed by without loss of generality.   In the standard basis vectors constitute an orthonormal system; so does any subset of them.  In , the standard unit vectors form an orthonormal sequence, where has a 1 in the th position and 0s elsewhere.  In , one orthonormal sequence is given by in the inner product . An alternative orthonormal sequence in is given by the family of functions    These families form the beginnings of Fourier analysis , which motivates the following definition. (Compare to .)   If is an orthonormal sequence in a Hilbert space then for any , the inner product is the th Fourier coefficent of with respect to . The Fourier series of with respect to is the series   At this point, this is only a formal sum in a formal definition. We want to understand the extent to which orthogonal systems can play the role of coordinate systems in finite dimensions, with the ultimate idea of working in coordinates. First, given our definition of orthogonality, we can generalize the Pythagorean theorem.   If is a (finite) orthogonal system in an inner product space, then   Prove .  The basic properties of orthogonal expansions are mainly derived from the following geometric identity. Note that it applies to finite orthonormal systems.   Let be an orthonormal system in an inner product space , let and suppose that . Then where .    By , Then    Now suppose that and the orthonormal system are fixed. Varying on the expression will trace out the linear span of the (as it runs through all linear combinations). Since are fixed, implies that quantity is minimized when for (killing the middle term). This gives the following theorem.   Let be an orthonormal system in an inner product space and let . The closest point of to is and the distance from to is given by   We finish with a corollary that resembles (and recovers) the orthonormal expansion of a vector in .   If then   In let for all . Show that is an orthonormal system in and show that the polynomial of degree 1 which is closest to the function is given by . What is ?  "
 },
 {
   "id": "def-orthogonal-system",
@@ -1204,7 +1204,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "5.1.1",
   "title": "",
-  "body": " Vectors in an inner product space are orthogonal , denoted , if .  A family in is called an orthogonal system if when . If further, for all , then is called an orthonormal system .  An orthonormal system is called an orthonormal sequence if it can be indexed by .  "
+  "body": " Vectors in an inner product space are orthogonal , denoted , if .  A family in is called an orthogonal system if when . If further, for all , then is called an orthonormal system . An orthonormal system is called an orthonormal sequence if it can be indexed by .  "
 },
 {
   "id": "hilbert-7-2-5",
@@ -1807,7 +1807,25 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.3",
   "title": "Convergence of classical Fourier series",
-  "body": " Convergence of classical Fourier series  "
+  "body": " Convergence of classical Fourier series  We now seek to establish that classical Fourier series are expansions in a complete orthonormal sequence (see ).   The sequence given by is a complete orthonormal sequence in .    That the functions are an orthonormal system in the standard inner product in is left as an exercise.  We seek to invoke to claim that is complete by arguing that To perform this trick, we'll actually work on a easier question by way of a result typically proved in graduate analysis that by necessity will have to be a black box. We claim that functions in can be approximated uniformly by continuous -periodic functions - that is, the set of functions consisting of restrictions of -continuous functions to is a dense subspace of . Essentially then, the argument will be that any continuous function in can be approximated uniformly by linear combinations of and any function can be approximated by continuous functions, which the standard setup for a triangle inequality argument.  So choose an arbitrary -continuous function . To show that , we need to find a sequence of functions in converging to . Define the th Fourier polynomial By construction, is in the linear span of , and it would suffice to prove that . However, in order to set up the application of the Fejer kernel results we established in the previous chapter, we'll work with the Cesàro sum  and show that (this is also sufficient, as each ).   "
+},
+{
+  "id": "thm-fourier-basis",
+  "level": "2",
+  "url": "fourier-3.html#thm-fourier-basis",
+  "type": "Theorem",
+  "number": "6.3.1",
+  "title": "",
+  "body": " The sequence given by is a complete orthonormal sequence in .  "
+},
+{
+  "id": "fourier-3-4",
+  "level": "2",
+  "url": "fourier-3.html#fourier-3-4",
+  "type": "Proof",
+  "number": "6.3.1",
+  "title": "",
+  "body": " That the functions are an orthonormal system in the standard inner product in is left as an exercise.  We seek to invoke to claim that is complete by arguing that To perform this trick, we'll actually work on a easier question by way of a result typically proved in graduate analysis that by necessity will have to be a black box. We claim that functions in can be approximated uniformly by continuous -periodic functions - that is, the set of functions consisting of restrictions of -continuous functions to is a dense subspace of . Essentially then, the argument will be that any continuous function in can be approximated uniformly by linear combinations of and any function can be approximated by continuous functions, which the standard setup for a triangle inequality argument.  So choose an arbitrary -continuous function . To show that , we need to find a sequence of functions in converging to . Define the th Fourier polynomial By construction, is in the linear span of , and it would suffice to prove that . However, in order to set up the application of the Fejer kernel results we established in the previous chapter, we'll work with the Cesàro sum  and show that (this is also sufficient, as each ).  "
 },
 {
   "id": "fourier-4",
@@ -2089,40 +2107,49 @@ var ptx_lunr_docs = [
   "body": "an integral operator  For real numbers , let be a continuous map, and define by for . is linear (as integration is). For any , the Cauchy-Schwarz inequality gives Thus is bounded and  "
 },
 {
-  "id": "hilbert-11",
+  "id": "hilbert-11-2",
   "level": "1",
-  "url": "hilbert-11.html",
-  "type": "Chapter",
-  "number": "9",
-  "title": "Appendix: Results from analysis",
-  "body": "Appendix: Results from analysis  Heine-Borel  A closed and bounded set in or is compact.    Let be metric spaces. Let . If is continuous, then compact implies that is compact.    Suppose that is a non-empty compact set in a metric space and that is continuous. Then attains its infimum and supremum on - that is, has both a minimum and maximum on .   "
+  "url": "hilbert-11-2.html",
+  "type": "Section",
+  "number": "9.1",
+  "title": "Results from real analysis",
+  "body": "Results from real analysis  Heine-Borel  A closed and bounded set in or is compact.    Let be metric spaces. Let . If is continuous, then compact implies that is compact.    Suppose that is a non-empty compact set in a metric space and that is continuous. Then attains its infimum and supremum on - that is, has both a minimum and maximum on .   "
 },
 {
   "id": "thm-heine-borel",
   "level": "2",
-  "url": "hilbert-11.html#thm-heine-borel",
+  "url": "hilbert-11-2.html#thm-heine-borel",
   "type": "Theorem",
-  "number": "9.0.1",
+  "number": "9.1.1",
   "title": "Heine-Borel.",
   "body": "Heine-Borel  A closed and bounded set in or is compact.  "
 },
 {
   "id": "thm-cont-comp",
   "level": "2",
-  "url": "hilbert-11.html#thm-cont-comp",
+  "url": "hilbert-11-2.html#thm-cont-comp",
   "type": "Theorem",
-  "number": "9.0.2",
+  "number": "9.1.2",
   "title": "",
   "body": " Let be metric spaces. Let . If is continuous, then compact implies that is compact.  "
 },
 {
   "id": "thm-comp-inf",
   "level": "2",
-  "url": "hilbert-11.html#thm-comp-inf",
+  "url": "hilbert-11-2.html#thm-comp-inf",
   "type": "Theorem",
-  "number": "9.0.3",
+  "number": "9.1.3",
   "title": "",
   "body": " Suppose that is a non-empty compact set in a metric space and that is continuous. Then attains its infimum and supremum on - that is, has both a minimum and maximum on .  "
+},
+{
+  "id": "hilbert-11-3",
+  "level": "1",
+  "url": "hilbert-11-3.html",
+  "type": "Section",
+  "number": "9.2",
+  "title": "Results from complex analysis",
+  "body": "Results from complex analysis  Eventually necessary things will go here.  "
 }
 ]
 

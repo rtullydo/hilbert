@@ -298,11 +298,54 @@ window.MathJax = {
 <div class="toc-title-box"><a href="operators.html" class="internal"><span class="codenumber">8</span> <span class="title">Linear operators</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Linear operators</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-11-2.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Results from real analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-11-3.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Results from complex analysis</span></a></div></li>
+</ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="fourier-3"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">6.3</span><span class="space"> </span><span class="title">Convergence of classical Fourier series</span>
-</h2></section></div>
+</h2>
+<div class="para" id="fourier-3-2">We now seek to establish that classical Fourier series are expansions in a complete orthonormal sequence (see <a href="hilbert-7-2.html#def-orthogonal-system" class="xref" data-knowl="./knowl/xref/def-orthogonal-system.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.1.1">Definition 5.1.1</a>).</div>
+<article class="theorem theorem-like" id="thm-fourier-basis"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="thm-fourier-basis-1">
+<div class="para">The sequence given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e_n(x) = \frac{1}{\sqrt{2\pi}} e^{i n x}, \hspace{1cm} x \in (-\pi, \pi)
+\end{equation*}
+</div>
+<div class="para">is a complete orthonormal sequence in <span class="process-math">\(L^2(-\pi, \pi)\text{.}\)</span>
+</div>
+</div></article><details id="fourier-3-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="fourier-3-4-1">That the functions <span class="process-math">\(e_n(x)\)</span> are an orthonormal system in the standard inner product in <span class="process-math">\(L^2(-\pi, \pi)\)</span> is left as an exercise.</div> <div class="para logical" id="fourier-3-4-2">
+<div class="para">We seek to invoke <a href="ortho-4.html#thm-hilbert-span" class="xref" data-knowl="./knowl/xref/thm-hilbert-span.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.3">Theorem 5.4.3</a> to claim that <span class="process-math">\((e_n)\)</span> is complete by arguing that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-span.html">
+\begin{equation*}
+\cl \spn \{e_n: n \in \Z\} = L^2(-\pi, \pi).
+\end{equation*}
+</div>
+<div class="para">To perform this trick, we’ll actually work on a easier question by way of a result typically proved in graduate analysis that by necessity will have to be a black box. We claim that functions in <span class="process-math">\(L^2(-\pi, \pi)\)</span> can be approximated uniformly by continuous <span class="process-math">\(2\pi\)</span>-periodic functions - that is, the set of functions consisting of restrictions of <span class="process-math">\(2\pi\)</span>-continuous functions to <span class="process-math">\((-\pi, \pi)\)</span> is a dense subspace of <span class="process-math">\(L^2(-\pi,\pi)\text{.}\)</span> Essentially then, the argument will be that any continuous function in <span class="process-math">\(L^2(-\pi, \pi)\)</span> can be approximated uniformly by linear combinations of <span class="process-math">\(e_n\)</span> and any <span class="process-math">\(L^2\)</span> function can be approximated by continuous functions, which the standard setup for a triangle inequality argument.</div>
+</div> <div class="para logical" id="fourier-3-4-3">
+<div class="para">So choose an arbitrary <span class="process-math">\(2\pi\)</span>-continuous function <span class="process-math">\(f: (-\pi, \pi)\to \R\text{.}\)</span> To show that <span class="process-math">\(f\in \cl \spn \{e_n\}\text{,}\)</span> we need to find a sequence of functions in <span class="process-math">\(\spn \{e_n\}\)</span> converging to <span class="process-math">\(f\text{.}\)</span> Define the <span class="process-math">\(m\)</span>th Fourier polynomial</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-fejer-kernel.html">
+\begin{equation*}
+f_m = \sum_{n=-m}^m \ip{f}{e_n} e_n.
+\end{equation*}
+</div>
+<div class="para">By construction, <span class="process-math">\(f_m\)</span> is in the linear span of <span class="process-math">\((e_n)\text{,}\)</span> and it would suffice to prove that <span class="process-math">\(f_m \to f\text{.}\)</span> However, in order to set up the application of the <a href="fourier-2.html#def-fejer-kernel" class="xref" data-knowl="./knowl/xref/def-fejer-kernel.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.2.1">Fejer kernel 6.2.1</a> results we established in the previous chapter, we’ll work with the <a class="external" href="Ces%C3%A0ro%20summation" target="_blank">Cesàro sum</a><details class="ptx-footnote" aria-live="polite" id="fourier-3-4-3-13"><summary class="ptx-footnote__number" title="Footnote 6.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="fourier-3-4-3-13"><code class="code-inline tex2jax_ignore">Cesàro summation</code></div></details>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-fejer-kernel.html">
+\begin{equation*}
+F_m = \frac{1}{m+1} (f_0 + f_1 + \cdots + f_m),
+\end{equation*}
+</div>
+<div class="para">and show that <span class="process-math">\(F_m \to f\)</span> (this is also sufficient, as each <span class="process-math">\(F_m \in \spn\{e_n\}\)</span>).</div>
+</div></article></details></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="fourier-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="fourier-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
