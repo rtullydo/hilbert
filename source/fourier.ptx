@@ -108,7 +108,7 @@
                     <li><me>K_m(t) \geq 0, \hspace{1cm} \forall t \in \R, m \in \mathbb{Z}^{\geq 0}</me>;</li>
                     <li>
                         <me>
-                            \int_{-\pi}^{\pi} K_m(t) = 2\pi, \hspace{1cm} \forall m \in \mathbb{Z}^{\geq 0};
+                            \int_{-\pi}^{\pi} K_m(t)\, dt = 2\pi, \hspace{1cm} \forall m \in \mathbb{Z}^{\geq 0};
                         </me>
                     </li>
                     <li>For all <m>\delta</m> with <m>0 \lt \delta \lt \pi</m>, 
@@ -191,6 +191,59 @@
                 </me>
                 and show that <m>F_m \to f</m> (this is also sufficient, as each <m>F_m \in \spn\{e_n\}</m>).
             </p>
+
+            <p>In <m>L^2(-\pi,\pi)</m>, the inner product <m>\ip{f}{en}</m> is given by
+                <me>    
+                    \ip{f, e_n} = \frac{1}{\sqrt{2\pi}} \int_\pi^\pi f(x) e^{-inx}\, dx
+                </me>
+                and so for the Fourier polynomial <m>f_m</m>, we have
+                <md>
+                    <mrow>f_m(y) \amp= \sum_{n=-m}^m \ip{f}{e_n} e_n(y)</mrow>
+                    <mrow>\amp= \frac{1}{2\pi} \sum_{n=-m}^{m} \left(\int_{-\pi}^\pi f(x) e^{-inx}\, dx\right)e^{iny}</mrow>
+                    <mrow>\amp= \frac{1}{2\pi} \int_{-\pi}^\pi f(x) \sum_{n=-m}^m e^{in(y-x)}\, dx.</mrow>
+                </md>
+                Plugging this into our averaged function <m>F_m</m>, we get
+                <md>
+                    <mrow>F_m(y) \amp= \frac{1}{m+1} \sum_{j=0}^m f_j(y)</mrow>
+                    <mrow>\amp= \frac{1}{m+1} \sum_{j=0}^m \frac{1}{2\pi} \int_{-\pi}^\pi f(x) \sum_{n=-m}^m e^{in(y-x)}\, dx</mrow>
+                    <mrow>\amp= \frac{1}{2\pi} \int_{-\pi}^\pi f(x) \left(\frac{1}{m+1} \sum_{j=0}^m \sum_{n=-j}^j e^{in(y-x)}\right)\, dx.</mrow>
+                    <mrow>\amp= \frac{1}{2\pi} \int_{-\pi}^\pi f(x) K_m(y-x)\, dx,</mrow>
+                </md>
+                    where <m>K_m(y-x)</m> is the <xref ref="def-fejer-kernel"> Fejér kernel</xref>.
+            </p>
+
+            <p>We're all set up to apply the technical lemmas. Essentially, the idea is going to be to show that <m>F_m \to f</m>. We'll start by constructing an integral form of this difference to study. Let <m>y \in [-\pi, \pi]</m>. By <xref ref="lemma-fejer-analytic"/>, the substitution <m>t = y-x</m> gives
+                <me>
+                    \int_{y-\pi}^{y-\pi} K_m(y-x)\, dx = 2\pi,
+                </me>
+            which gives
+                <me>
+                     f(y) \int_{y-\pi}^{y-\pi} K_m(y-x)\, dx = f(y) 2\pi,
+                </me>
+            or more usefully, 
+                <men xml:id="eq-fourier-1">
+                    f(y) =\frac{1}{2\pi} \int_{y - \pi}^{y+\pi} f(x) K_m(y-x)\, dx.
+                </men>
+            Since <m>K_m</m> is <m>2\pi</m>-periodic, and <m>f</m> is <m>2\pi</m>-periodic, so is the function <m>f(x)K_m(y-x)</m> for a fixed <m>y</m>. Once consequence is that the integral of <m>f(x)K_m(y-x)</m> will evaluate to the same quantity on any interval of length <m>2\pi</m>, and so in particular, we can write
+                <men xml:id="eq-fourier-2">
+                    F_m(y) = \frac{1}{2\pi} \int_{y - \pi}^{y+\pi} f(x) K_m(y-x)\, dx.
+                </men>
+            Subtracting <xref ref="eq-fourier-1"/> from <xref ref="eq-fourier-2"/> gives the estimate
+                <men xml:id="eq-fourier-3">
+                    F_m(y) - f(y) = \frac{1}{2\pi} \int_{y-\pi}^{y + \pi} (f(x) - f(y)) K_m(y - x)\, dx,
+                </men>
+                and now we can see what the game is. We will show that this difference is uniformly small for a large enough <m>N \in \mathbb{N}</m>.</p>
+
+            <p>Let <m>\eps \gt 0</m> be given. Since <m>f</m> is continuous on <m>[-\pi,\pi]</m>, it is also bounded, say by <m>M</m> so that <m>\abs{f(x)} \leq M</m> for all <m>x\in \R</m> (since <m>f</m> is <m>2\pi</m>-periodic). Because it is continuous on a compact set, <m>f</m> is also uniformly continuous. So choose <m>\delta \gt 0</m> such that <m>y \in [-\pi,\pi]</m> and <m>\abs{y - x} \lt \delta</m> give
+            <me>
+                \abs{f(x) - f(y)} \lt \frac{\eps}{2}.
+            </me>
+            So when <m>y</m> is near <m>x</m>, <m>F_m</m> and <m>f</m> are close. What if <m>x, y</m> are far apart? By <xref ref="lemma-fejer-analytic"/>, for our given <m>\delta</m>, we can find <m>N \in \mathbb{N}</m> such that
+                <me>   
+                    \int_{-\pi}^{-\delta} + \int_{\delta}^\pi K_m(t) \, dt \lt \frac{\pi \eps}{2M}.
+                </me>
+            </p>
+
 
 
         </proof>

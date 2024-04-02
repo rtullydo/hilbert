@@ -33,11 +33,12 @@
             </p>
         </definition> 
 
-        <p>Our focus is going to be on the analysis of inner product spaces of functions. But many spaces of functions can be equipped with metrics that do not arise from inner products. We've already seen <m>C[a,b]</m>, the space of continuous functions on <m>[a,b]</m>, which is an inner product space with inner product <xref ref="eq-C-ip"/>. Another natural notion of distance in this space is to measure the maximum modulus of the pointwise distace between the functions:
+        <p>Our focus is going to be on the analysis of inner product spaces of functions. But many spaces of functions can be equipped with metrics that do not arise from inner products. We've already seen <m>C[a,b]</m>, the space of continuous functions on <m>[a,b]</m>, which is an inner product space with inner product <xref ref="eq-C-ip"/>. Another natural notion of distance in this space is to measure the maximum modulus of the pointwise distance between the functions:
         <me>
             d_{\sup}(f,g) = \sup_{[a,b]} \abs{f(x) - g(x)}.
         </me> 
-        This is the metric that corresponds to <url href="https://en.wikipedia.org/wiki/Uniform_convergence">uniform convergence</url> of sequences of functions in <m>C[a,b]</m> and thus is natural and useful. However, the open sets in this metric do not coincide with the open sets in the inner product topology. In fact, there is no inner product on <m>C[a,b]</m> that corresponds to the maximum modulus metric. </p>
+        This is the metric that corresponds to <url href="https://en.wikipedia.org/wiki/Uniform_convergence">uniform convergence</url> of sequences of functions in <m>C[a,b]</m> and thus is natural and useful. However, the open sets in this metric do not coincide with the open sets in the inner product topology. In fact, there is no inner product on <m>C[a,b]</m> that corresponds to the maximum modulus metric.</p>
+
 
         <p>Because we are ultimately interested in analysis involving vector spaces of functions, we will need to consider a broader range of metrics than those strictly arising from inner products. We wish to replicate the properties that a norm inherits from inner product as seen in <xref ref="thm-norm"/> and in <xref ref="thm-triangle"/>. (These are the properties that make it possible do to analysis!)</p>
 
