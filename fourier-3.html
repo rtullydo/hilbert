@@ -345,6 +345,77 @@ F_m = \frac{1}{m+1} (f_0 + f_1 + \cdots + f_m),
 \end{equation*}
 </div>
 <div class="para">and show that <span class="process-math">\(F_m \to f\)</span> (this is also sufficient, as each <span class="process-math">\(F_m \in \spn\{e_n\}\)</span>).</div>
+</div> <div class="para logical" id="fourier-3-4-4">
+<div class="para">In <span class="process-math">\(L^2(-\pi,\pi)\text{,}\)</span> the inner product <span class="process-math">\(\ip{f}{en}\)</span> is given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-fejer-kernel.html">
+\begin{equation*}
+\ip{f, e_n} = \frac{1}{\sqrt{2\pi}} \int_\pi^\pi f(x) e^{-inx}\, dx
+\end{equation*}
+</div>
+<div class="para">and so for the Fourier polynomial <span class="process-math">\(f_m\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-fejer-kernel.html" id="fourier-3-4-4-5">
+\begin{align*}
+f_m(y) \amp= \sum_{n=-m}^m \ip{f}{e_n} e_n(y)\\
+\amp= \frac{1}{2\pi} \sum_{n=-m}^{m} \left(\int_{-\pi}^\pi f(x) e^{-inx}\, dx\right)e^{iny}\\
+\amp= \frac{1}{2\pi} \int_{-\pi}^\pi f(x) \sum_{n=-m}^m e^{in(y-x)}\, dx.
+\end{align*}
+</div>
+<div class="para">Plugging this into our averaged function <span class="process-math">\(F_m\text{,}\)</span> we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-fejer-kernel.html" id="fourier-3-4-4-7">
+\begin{align*}
+F_m(y) \amp= \frac{1}{m+1} \sum_{j=0}^m f_j(y)\\
+\amp= \frac{1}{m+1} \sum_{j=0}^m \frac{1}{2\pi} \int_{-\pi}^\pi f(x) \sum_{n=-m}^m e^{in(y-x)}\, dx\\
+\amp= \frac{1}{2\pi} \int_{-\pi}^\pi f(x) \left(\frac{1}{m+1} \sum_{j=0}^m \sum_{n=-j}^j e^{in(y-x)}\right)\, dx.\\
+\amp= \frac{1}{2\pi} \int_{-\pi}^\pi f(x) K_m(y-x)\, dx,
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(K_m(y-x)\)</span> is the <a href="fourier-2.html#def-fejer-kernel" class="xref" data-knowl="./knowl/xref/def-fejer-kernel.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.2.1">Fejér kernel 6.2.1</a>.</div>
+</div> <div class="para logical" id="fourier-3-4-5">
+<div class="para">We’re all set up to apply the technical lemmas. Essentially, the idea is going to be to show that <span class="process-math">\(F_m \to f\text{.}\)</span> We’ll start by constructing an integral form of this difference to study. Let <span class="process-math">\(y \in [-\pi, \pi]\text{.}\)</span> By <a href="fourier-2.html#lemma-fejer-analytic" class="xref" data-knowl="./knowl/xref/lemma-fejer-analytic.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.2.3">Lemma 6.2.3</a>, the substitution <span class="process-math">\(t = y-x\)</span> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html ./knowl/xref/eq-fourier-1.html ./knowl/xref/eq-fourier-2.html">
+\begin{equation*}
+\int_{y-\pi}^{y-\pi} K_m(y-x)\, dx = 2\pi,
+\end{equation*}
+</div>
+<div class="para">which gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html ./knowl/xref/eq-fourier-1.html ./knowl/xref/eq-fourier-2.html">
+\begin{equation*}
+f(y) \int_{y-\pi}^{y-\pi} K_m(y-x)\, dx = f(y) 2\pi,
+\end{equation*}
+</div>
+<div class="para">or more usefully,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html ./knowl/xref/eq-fourier-1.html ./knowl/xref/eq-fourier-2.html" id="eq-fourier-1">
+\begin{equation}
+f(y) =\frac{1}{2\pi} \int_{y - \pi}^{y+\pi} f(x) K_m(y-x)\, dx.\tag{6.3.1}
+\end{equation}
+</div>
+<div class="para">Since <span class="process-math">\(K_m\)</span> is <span class="process-math">\(2\pi\)</span>-periodic, and <span class="process-math">\(f\)</span> is <span class="process-math">\(2\pi\)</span>-periodic, so is the function <span class="process-math">\(f(x)K_m(y-x)\)</span> for a fixed <span class="process-math">\(y\text{.}\)</span> Once consequence is that the integral of <span class="process-math">\(f(x)K_m(y-x)\)</span> will evaluate to the same quantity on any interval of length <span class="process-math">\(2\pi\text{,}\)</span> and so in particular, we can write</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html ./knowl/xref/eq-fourier-1.html ./knowl/xref/eq-fourier-2.html" id="eq-fourier-2">
+\begin{equation}
+F_m(y) = \frac{1}{2\pi} \int_{y - \pi}^{y+\pi} f(x) K_m(y-x)\, dx.\tag{6.3.2}
+\end{equation}
+</div>
+<div class="para">Subtracting <a href="fourier-3.html#eq-fourier-1" class="xref" data-knowl="./knowl/xref/eq-fourier-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.1">(6.3.1)</a> from <a href="fourier-3.html#eq-fourier-2" class="xref" data-knowl="./knowl/xref/eq-fourier-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.2">(6.3.2)</a> gives the estimate</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html ./knowl/xref/eq-fourier-1.html ./knowl/xref/eq-fourier-2.html" id="eq-fourier-3">
+\begin{equation}
+F_m(y) - f(y) = \frac{1}{2\pi} \int_{y-\pi}^{y + \pi} (f(x) - f(y)) K_m(y - x)\, dx,\tag{6.3.3}
+\end{equation}
+</div>
+<div class="para">and now we can see what the game is. We will show that this difference is uniformly small for a large enough <span class="process-math">\(N \in \mathbb{N}\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="fourier-3-4-6">
+<div class="para">Let <span class="process-math">\(\eps \gt 0\)</span> be given. Since <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([-\pi,\pi]\text{,}\)</span> it is also bounded, say by <span class="process-math">\(M\)</span> so that <span class="process-math">\(\abs{f(x)} \leq M\)</span> for all <span class="process-math">\(x\in \R\)</span> (since <span class="process-math">\(f\)</span> is <span class="process-math">\(2\pi\)</span>-periodic). Because it is continuous on a compact set, <span class="process-math">\(f\)</span> is also uniformly continuous. So choose <span class="process-math">\(\delta \gt 0\)</span> such that <span class="process-math">\(y \in [-\pi,\pi]\)</span> and <span class="process-math">\(\abs{y - x} \lt \delta\)</span> give</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html">
+\begin{equation*}
+\abs{f(x) - f(y)} \lt \frac{\eps}{2}.
+\end{equation*}
+</div>
+<div class="para">So when <span class="process-math">\(y\)</span> is near <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(F_m\)</span> and <span class="process-math">\(f\)</span> are close. What if <span class="process-math">\(x, y\)</span> are far apart? By <a href="fourier-2.html#lemma-fejer-analytic" class="xref" data-knowl="./knowl/xref/lemma-fejer-analytic.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.2.3">Lemma 6.2.3</a>, for our given <span class="process-math">\(\delta\text{,}\)</span> we can find <span class="process-math">\(N \in \mathbb{N}\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html">
+\begin{equation*}
+\int_{-\pi}^{-\delta} + \int_{\delta}^\pi K_m(t) \, dt \lt \frac{\pi \eps}{2M}.
+\end{equation*}
+</div>
 </div></article></details></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="fourier-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="fourier-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
