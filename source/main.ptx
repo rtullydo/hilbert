@@ -3,6 +3,7 @@
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude">
 
     <docinfo>
+          <directories external="../external" />
         <macros>
         \DeclareMathOperator{\RE}{Re}
           \DeclareMathOperator{\IM}{Im}

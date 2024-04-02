@@ -58,7 +58,7 @@
                     x^1 \amp = \amp (x^1_1, \amp x^1_2, \amp x^1_3, \amp \ldots)\\
                     x^2 \amp = \amp (x^2_1, \amp x^2_2, \amp x^2_3, \amp \ldots)\\
                     x^3 \amp = \amp (x^3_1, \amp x^3_2, \amp x^3_3, \amp \ldots)\\
-                    \vdots \amp \amp \vdots \amp \vdots \amp \vdots \amp \vdots \amp \\ \hline
+                    \vdots \amp \vdots \amp \vdots \amp \vdots \amp \vdots \amp \\ \hline
                     (x^k) \amp \amp (x^k_1) \amp (x^k_2) \amp (x^k_3) \amp 
                     \end{array}
                 </me>
@@ -228,7 +228,7 @@
             </exercise>
             <exercise xml:id="pr-3-2">
                 <p>Show that the sequence <m>(f_n)</m> in <m>C[0,1]</m> given by the graph
-                <image width="60%" source="../external/fig-3-2.png">
+                <image width="60%" source="images/fig-3-2.png">
                 </image>
                 is Cauchy but not convergent in <m>C[0,1]</m>.</p>
             </exercise>
