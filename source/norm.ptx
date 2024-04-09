@@ -162,7 +162,7 @@
             <md>
                 <mrow>\norm{cx - ky} \amp \leq  \abs{c-k}\norm{x} + \abs{k}\norm{x - y}</mrow>
                 <mrow> \amp \leq \frac{\eps}{2(1 + \norm{x})} \norm{x} + (1+ \abs{c})\frac{\eps}{2(1 + \abs{c})}</mrow>
-                <mrow>\amp = \eps.</mrow>
+                <mrow>\amp \lt \eps.</mrow>
             </md>
             </p>
 
