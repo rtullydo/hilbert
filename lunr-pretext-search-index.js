@@ -223,7 +223,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Inner products and <span class=\"process-math\">\\(\\ell^2\\)<\/span>",
-  "body": "Inner products and  Recall that the inner product on is the familiar expression where . How can this be extended to infinite dimensions?   For a general complex vector space , an inner product is a map satisfying the following properties for all and scalars :  ;  ;  ;  if .   An inner product space is a pair consisting of a complex vector space and an inner product on . An inner product space is can also be called a pre-Hilbert space .   Show that the map defines an inner product on , the complex vector space of all continuous complex-valued functions on the the interval with pointwise addition and scalar multiplication.  Recall that the trace of a square matrix is the sum of its diagonal entries. Show that the map is an inner product on the vector space of matrices with complex entries, where denotes the conjugate transpose.  The basic properties in can be used to derive the following statements, which show that a complex inner product is linear in the first argument and conjugate linear in the second.   Let be an inner product space. For any and ,  ;   ;  if for all , then .      (1): By ,   Parts 2, 3 are left as an exercise.  (4): If , then Assuming that this statement holds for all means that it holds for . But then , so by (4), it must be that and so .    To extend the notion from to an infinite dimensional analogue of infinite vectors , we might naively propose the inner product though this leaves the question of what space should go with this definition. One major concern is that an infinite sum need not converge, and we would certainly prefer that the inner product be defined on the vectors that we apply it to. We can't use the obvious idea, which is to consider the space , since it is easy to find many pairs of poorly behaved vectors. (For example, if , then .)  One solution is to ensure that the sequence of coordinates in vectors that we work with are very well behaved in infinite sums. A very nice subspace of is little l-two , denoted .   is the complex vector space of all complex sequences which are square summable and equipped with componentwise addition and scalar multiplication; that is,  is an inner product space with the inner product given by   "
+  "body": "Inner products and  Recall that the inner product on is the familiar expression where . How can this be extended to infinite dimensions?   For a general complex vector space , an inner product is a map satisfying the following properties for all and scalars :  ;  ;  ;  if .   An inner product space is a pair consisting of a complex vector space and an inner product on . An inner product space is can also be called a pre-Hilbert space .   Show that the map defines an inner product on , the complex vector space of all continuous complex-valued functions on the the interval with pointwise addition and scalar multiplication.  Recall that the trace of a square matrix is the sum of its diagonal entries. Show that the map is an inner product on the vector space of matrices with complex entries, where denotes the conjugate transpose.  The basic properties in can be used to derive the following statements, which show that a complex inner product is linear in the first argument and conjugate linear in the second.   Let be an inner product space. For any and ,  ;   ;  if for all , then .      (1): By ,   Parts 2, 3 are left as an exercise.  (4): If , then Assuming that this statement holds for all means that it holds for . But then , so by (4), it must be that and so .   Prove part (2) and part (3) of .  To extend the notion from to an infinite dimensional analogue of infinite vectors , we might naively propose the inner product though this leaves the question of what space should go with this definition. One major concern is that an infinite sum need not converge, and we would certainly prefer that the inner product be defined on the vectors that we apply it to. We can't use the obvious idea, which is to consider the space , since it is easy to find many pairs of poorly behaved vectors. (For example, if , then .)  One solution is to ensure that the sequence of coordinates in vectors that we work with are very well behaved in infinite sums. A very nice subspace of is little l-two , denoted .   is the complex vector space of all complex sequences which are square summable and equipped with componentwise addition and scalar multiplication; that is,  is an inner product space with the inner product given by   "
 },
 {
   "id": "def-innerproduct",
@@ -286,7 +286,7 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "2.1.5",
   "title": "",
-  "body": ""
+  "body": "Prove part (2) and part (3) of . "
 },
 {
   "id": "inner-1-12",
@@ -538,7 +538,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Norms",
-  "body": "Norms  When we think about basic notions of open sets in Euclidean space , we typically consider open balls - that is, sets of the form using the standard norm Euclidean norm to define the notion of distance.  Of course, there are other ways to measure the distance between vectors that are consistent with the properties that we associate with metrics. The metric used will change the elements that fall into a ball of radius centered at . For example, on , we can define the taxicab metric    Describe the sets   We formalize the notion of metric in the following definition.   Let be a set. A metric is a map which satisfies for all   ;  if and only if ;  ;  for all .     Our focus is going to be on the analysis of inner product spaces of functions. But many spaces of functions can be equipped with metrics that do not arise from inner products. We've already seen , the space of continuous functions on , which is an inner product space with inner product . Another natural notion of distance in this space is to measure the maximum modulus of the pointwise distance between the functions: This is the metric that corresponds to uniform convergence of sequences of functions in and thus is natural and useful. However, the open sets in this metric do not coincide with the open sets in the inner product topology. In fact, there is no inner product on that corresponds to the maximum modulus metric.  Because we are ultimately interested in analysis involving vector spaces of functions, we will need to consider a broader range of metrics than those strictly arising from inner products. We wish to replicate the properties that a norm inherits from inner product as seen in and in . (These are the properties that make it possible do to analysis!)   Let be a real or complex vector space. A norm on is a map which satisfies  if ;  for all and ;  for all .   A normed space is a pair where is a real or complex vector space and is a norm.   We should observe that setting into property (2) above gives that in a normed space.  Show that the supremum norm  on the complex vector space of all continuous complex valued functions on defined by satisfies conditions 1-3 in .  In the same way that inner products give rise to norms, norms give rise to metrics.   In a normed space , the (distance) function induced by the norm and defined by is a translation-invariant metric.  To say that a metric is translation-invariant is to say that for any .   We will show that satisifes the four properties of  (1): From (1), we have when .  (2):   (3):   (4): From (3), we have for all ,  That is translation invariant is straightforward and left as an exercise.   What we've developed so far gives a hierarchy of structured spaces, each category enveloping the previous; inner product spaces are normed spaces, and normed spaces are metric spaces. We can go one step further and consider more generally linear spaces that have a toplogy but not necessarily a metric. These spaces are called topological vector spaces , which are foundationally important in their own right, but well beyond the scope of this text. If you continue on your journey into Hilbert space theory, you'll meet them in functional analysis.  Analysis, particularly at the undergraduate level, can be lampooned as the art of reducing a problem to the triangle inequality and then taking limits. Even this gentle mockery includes a major mathematical idea - namely, that absolute values (and more generally norms) are well-behaved under limits. That is, in normed spaces the basic operators are continuous in the sense that small changes in input objects result in small changes in norm.   In a normed space , the map is continuous.    Exercise.    In a normed space , the algebraic operations on are continuous. That is, the maps where denotes the scalar field, are continuous in the respective product topologies.    We will show that scalar multiplication is continuous at an arbitrary point . For any , we have  Choose Recall that we want to show that all nearby points have norm within of . We'll choose neighborhoods of and in the following way: Then is an open neighborhood of . For , we know by construction that Then by , we have   The remaining part of the proof is similar and left as an exercise.   Finally, we note that (unsurprisingly), inner products are continuous on inner product spaces.   In an inner product space , the inner product is continuous. That is, the map is continuous in the product topology.   The proof is similar to the proof of and is left as an exercise.  "
+  "body": "Norms  When we think about basic notions of open sets in Euclidean space , we typically consider open balls - that is, sets of the form using the standard norm Euclidean norm to define the notion of distance.  Of course, there are other ways to measure the distance between vectors that are consistent with the properties that we associate with metrics. The metric used will change the elements that fall into a ball of radius centered at . For example, on , we can define the taxicab metric    Describe the sets   We formalize the notion of metric in the following definition.   Let be a set. A metric is a map which satisfies for all   ;  if and only if ;  ;  for all .     Our focus is going to be on the analysis of inner product spaces of functions. But many spaces of functions can be equipped with metrics that do not arise from inner products. We've already seen , the space of continuous functions on , which is an inner product space with inner product . Another natural notion of distance in this space is to measure the maximum modulus of the pointwise distance between the functions: This is the metric that corresponds to uniform convergence of sequences of functions in and thus is natural and useful. However, the open sets in this metric do not coincide with the open sets in the inner product topology. In fact, there is no inner product on that corresponds to the maximum modulus metric.  Because we are ultimately interested in analysis involving vector spaces of functions, we will need to consider a broader range of metrics than those strictly arising from inner products. We wish to replicate the properties that a norm inherits from inner product as seen in and in . (These are the properties that make it possible do to analysis!)   Let be a real or complex vector space. A norm on is a map which satisfies  if ;  for all and ;  for all .   A normed space is a pair where is a real or complex vector space and is a norm.   We should observe that setting into property (2) above gives that in a normed space.  Show that the supremum norm  on the complex vector space of all continuous complex valued functions on defined by satisfies conditions 1-3 in .  A topology on a set is a collection of sets , called open sets that satisfy the following axioms:  The empty set and are in .  An arbitrary union of members of belongs to .  A finite intersetion of members of belongs to .  The topology that we're most used to in analysis is the topology that is generated by open Euclidean balls (such as open intervals in for example). Topologies of sets, particularly those arising from metrics, are important in analysis, because they determine which functions are continuous and which sequences converge. For example, recall that a function on is continuous if and only if for every open set , we have is open. Likewise, we define a convergent sequence by saying that for any epsilon ball about the limit , we have that the tail where is contained in the ball.  In the same way that inner products give rise to norms, norms give rise to metrics.   In a normed space , the (distance) function induced by the norm and defined by is a translation-invariant metric.  To say that a metric is translation-invariant is to say that for any .   We will show that satisifes the four properties of  (1): From (1), we have when .  (2):   (3):   (4): From (3), we have for all ,  That is translation invariant is straightforward and left as an exercise.   In finite dimensions, this isn't all that interesting, as we also have that the open sets determined by a norm on a normed space are all the same, regardless of the norms. Norms on a normed space are called equivalent if there exist constants such that for all , that is, every open neighborhood with respect to the metric induced by both contains and is contained by an open neighborhood in , and so all convergent sequences in one of the norms is also convergent in the other. For a finite dimensional vector space, all norms are equivalent. In infinite dimensions, things are more interesting.  Consider the vector space . Prove that the sup-norm of example and the norm induced by the inner product are not equivalent. Hint: it is enough to exhibit a sequence that converges in one of the induced metrics but not the other.  What we've developed so far gives a hierarchy of structured spaces, each category enveloping the previous; inner product spaces are normed spaces, and normed spaces are metric spaces. We can go one step further and consider more generally linear spaces that have a toplogy but not necessarily a metric. These spaces are called topological vector spaces , which are foundationally important in their own right, but well beyond the scope of this text. If you continue on your journey into Hilbert space theory, you'll meet them in functional analysis.  Analysis, particularly at the undergraduate level, can be lampooned as the art of reducing a problem to the triangle inequality and then taking limits. Even this gentle mockery includes a major mathematical idea - namely, that absolute values (and more generally norms) are well-behaved under limits. That is, in normed spaces the basic operators are continuous in the sense that small changes in input objects result in small changes in norm.   In a normed space , the map is continuous.    Exercise.    In a normed space , the algebraic operations on are continuous. That is, the maps where denotes the scalar field, are continuous in the respective product topologies.    We will show that scalar multiplication is continuous at an arbitrary point . For any , we have  Choose Recall that we want to show that all nearby points have norm within of . We'll choose neighborhoods of and in the following way: Then is an open neighborhood of . For , we know by construction that Then by , we have   The remaining part of the proof is similar and left as an exercise.   Finally, we note that (unsurprisingly), inner products are continuous on inner product spaces.   In an inner product space , the inner product is continuous. That is, the map is continuous in the product topology.   The proof is similar to the proof of and is left as an exercise.  "
 },
 {
   "id": "norm-1-2",
@@ -595,6 +595,15 @@ var ptx_lunr_docs = [
   "body": "Show that the supremum norm  on the complex vector space of all continuous complex valued functions on defined by satisfies conditions 1-3 in . "
 },
 {
+  "id": "norm-1-12",
+  "level": "2",
+  "url": "norm-1.html#norm-1-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "topology open sets "
+},
+{
   "id": "thm-metric",
   "level": "2",
   "url": "norm-1.html#thm-metric",
@@ -604,27 +613,45 @@ var ptx_lunr_docs = [
   "body": " In a normed space , the (distance) function induced by the norm and defined by is a translation-invariant metric.  To say that a metric is translation-invariant is to say that for any .  "
 },
 {
-  "id": "norm-1-14",
+  "id": "norm-1-15",
   "level": "2",
-  "url": "norm-1.html#norm-1-14",
+  "url": "norm-1.html#norm-1-15",
   "type": "Proof",
   "number": "3.1.1",
   "title": "",
   "body": "We will show that satisifes the four properties of  (1): From (1), we have when .  (2):   (3):   (4): From (3), we have for all ,  That is translation invariant is straightforward and left as an exercise.  "
 },
 {
-  "id": "norm-1-15",
+  "id": "norm-1-16",
   "level": "2",
-  "url": "norm-1.html#norm-1-15",
+  "url": "norm-1.html#norm-1-16",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "equivalent "
+},
+{
+  "id": "norm-1-17",
+  "level": "2",
+  "url": "norm-1.html#norm-1-17",
+  "type": "Checkpoint",
+  "number": "3.1.6",
+  "title": "",
+  "body": "Consider the vector space . Prove that the sup-norm of example and the norm induced by the inner product are not equivalent. Hint: it is enough to exhibit a sequence that converges in one of the induced metrics but not the other. "
+},
+{
+  "id": "norm-1-18",
+  "level": "2",
+  "url": "norm-1.html#norm-1-18",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "topological vector spaces "
 },
 {
-  "id": "norm-1-16",
+  "id": "norm-1-19",
   "level": "2",
-  "url": "norm-1.html#norm-1-16",
+  "url": "norm-1.html#norm-1-19",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -635,14 +662,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "norm-1.html#thm-norm-cont",
   "type": "Theorem",
-  "number": "3.1.6",
+  "number": "3.1.7",
   "title": "",
   "body": " In a normed space , the map is continuous.  "
 },
 {
-  "id": "norm-1-18",
+  "id": "norm-1-21",
   "level": "2",
-  "url": "norm-1.html#norm-1-18",
+  "url": "norm-1.html#norm-1-21",
   "type": "Proof",
   "number": "3.1.2",
   "title": "",
@@ -653,14 +680,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "norm-1.html#thm-algop-cont",
   "type": "Theorem",
-  "number": "3.1.7",
+  "number": "3.1.8",
   "title": "",
   "body": " In a normed space , the algebraic operations on are continuous. That is, the maps where denotes the scalar field, are continuous in the respective product topologies.  "
 },
 {
-  "id": "norm-1-20",
+  "id": "norm-1-23",
   "level": "2",
-  "url": "norm-1.html#norm-1-20",
+  "url": "norm-1.html#norm-1-23",
   "type": "Proof",
   "number": "3.1.3",
   "title": "",
@@ -671,7 +698,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "norm-1.html#thm-ip-cont",
   "type": "Theorem",
-  "number": "3.1.8",
+  "number": "3.1.9",
   "title": "",
   "body": " In an inner product space , the inner product is continuous. That is, the map is continuous in the product topology.  "
 },
