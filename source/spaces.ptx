@@ -33,6 +33,7 @@
             </latex-image>
         </image>
 
+
         <p>It isn't difficult to show that the elements in this sequence of functions grow arbitrarily close as <m>k \to \infty</m> with respect to <m>\norm{\cdot}</m>. It should also be clear from the figure above that this sequence of continuous functions is approaching a discontinuous function in the limit. (What is it?) That is, <m>C[0,1]</m> is evidently not closed with respect to <m>\norm{\cdot}</m>.</p>
 
         <p>We would very much like to work in spaces where limits make sense. So we'll introduce some machinery that will guarantee that this is the case.</p>
@@ -226,18 +227,17 @@
             <exercise>
                 <p>Prove that a closed subspace of a complete metric space is complete with respect to the induced metric. Conclude that <m>(c_0, \norm{\cdot}_\infty)</m> is a Banach space. (See <xref ref="ex-norm-c0"/>.)</p>
             </exercise>
-            <exercise xml:id="pr-3-2">
-                <p>Show that the sequence <m>(f_n)</m> in <m>C[0,1]</m> given by the graph
-                <image width="60%" source="images/fig-3-2.png">
-                </image>
+<!--             <exercise xml:id="pr-3-2">
+                <p>Show that the sequence <m>(f_n)</m> in <m>C[0,1]</m> given by 
+
                 is Cauchy but not convergent in <m>C[0,1]</m>.</p>
-            </exercise>
+            </exercise> -->
             <exercise>
                 <p>Show that the normed space <m>C(X), \norm{\cdot}_\infty</m> of <xref ref="ex-CX"/> is a Banach space.</p>
             </exercise>
-            <exercise>
+            <!-- <exercise>
                 <p>Show that that the space <m>W[a,b]</m> of continously differentiable functions taking complex values on <m>[a,b]</m> with inner product <xref ref="eq-W-ip"/> is not a Hilbert space (use the indefinite integrals of the functions in <xref ref="pr-3-2"/>).</p>
-            </exercise>
+            </exercise> -->
             <exercise>
                 <p>Show that <m>RH^2</m> is not a Hilbert space.</p>
             </exercise>

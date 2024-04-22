@@ -11,7 +11,7 @@
             <ol>
                 <li><m>\ip{x}{y} = \cc{\ip{y}{x}}</m>;</li>
                 <li><m>c\ip{x}{y} = \ip{cx}{y}</m>;</li>
-                <li><m>\ip{x + y}{z} = \ip{x,z} + \ip{y}{z}</m>;</li>
+                <li><m>\ip{x + y}{z} = \ip{x}{z} + \ip{y}{z}</m>;</li>
                 <li><m>\ip{x}{x} > 0</m> if <m>x \neq 0</m>.</li>
             </ol></p>
             <p>An <term>inner product space</term> is a pair consisting of a complex vector space <m>V</m> and an inner product <m>\ip{\cdot}{\cdot}</m> on <m>V</m>. <p>An inner product space is can also be called a <q>pre-Hilbert space</q>.</p></p>
