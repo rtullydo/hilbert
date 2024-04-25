@@ -380,7 +380,7 @@
             Exercise.
         </proof>
 
-        Elements in an orthgonal complement of a subspace are precisely those that satisfy a sort of <q>least distance</q> property - that is, perturbing <m>x</m> by any vector in <m>E</m> doesn't get you any closed to <m>E</m>. This leads to a nice norm characterization of the orthogonal complement.
+        <p>Elements in an orthgonal complement of a subspace are precisely those that satisfy a sort of <q>least distance</q> property - that is, perturbing <m>x</m> by any vector in <m>E</m> doesn't get you any close to <m>E</m>. This leads to a nice norm characterization of the orthogonal complement.</p>
         <lemma xml:id="lemma-norm-ortho">
             <p>Let <m>E</m> be a linear subspace of an inner produt space <m>\hilbert</m> and let <m>x</m> be a vector in <m>\hilbert</m>. Then <m>x \in E^\perp</m> if and only if 
             <men xml:id="eq-norm-ortho">
