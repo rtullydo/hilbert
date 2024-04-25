@@ -336,7 +336,8 @@ E = \{f \in L^2(0,1): f(t) = 0 \text{ for } t \in (0, \frac{1}{2})\}.
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="period">.</span>
 </h3>
 <div class="para" id="thm-perp-closed-1">For any set <span class="process-math">\(E \subset \hilbert\text{,}\)</span> the orthogonal complement <span class="process-math">\(E^\perp\)</span> is a closed linear subspace of <span class="process-math">\(\hilbert\text{.}\)</span>
-</div></article><details id="ortho-5-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content">Exercise.</article></details>“least distance”<span class="process-math">\(x\)</span><span class="process-math">\(E\)</span><span class="process-math">\(E\text{.}\)</span><article class="lemma theorem-like" id="lemma-norm-ortho"><h3 class="heading">
+</div></article><details id="ortho-5-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content">Exercise.</article></details><div class="para" id="ortho-5-8">Elements in an orthgonal complement of a subspace are precisely those that satisfy a sort of “least distance” property - that is, perturbing <span class="process-math">\(x\)</span> by any vector in <span class="process-math">\(E\)</span> doesn’t get you any closed to <span class="process-math">\(E\text{.}\)</span> This leads to a nice norm characterization of the orthogonal complement.</div>
+<article class="lemma theorem-like" id="lemma-norm-ortho"><h3 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="lemma-norm-ortho-1">
@@ -346,14 +347,14 @@ E = \{f \in L^2(0,1): f(t) = 0 \text{ for } t \in (0, \frac{1}{2})\}.
 \norm{x - y} \geq \norm{x} \text{ for all } y \in E.\tag{5.5.1}
 \end{equation}
 </div>
-</div></article><details id="ortho-5-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-5-13-1">
+</div></article><details id="ortho-5-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-5-10-1">
 <div class="para">(<span class="process-math">\(\Rightarrow\)</span>): If <span class="process-math">\(x \in E^\perp\text{,}\)</span> then for any <span class="process-math">\(y \in E\text{,}\)</span> <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are orthogonal. Then <a href="hilbert-7-2.html#thm-ortho-pythagorean" class="xref" data-knowl="./knowl/xref/thm-ortho-pythagorean.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.1.4">Theorem 5.1.4</a> gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ortho-pythagorean.html">
 \begin{equation*}
 \norm{x - y}^2 = \norm{x}^2 + \norm{y}^2 \geq \norm{x}^2.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="ortho-5-13-2">
+</div> <div class="para logical" id="ortho-5-10-2">
 <div class="para">(<span class="process-math">\(\Leftarrow)\text{:}\)</span> Now suppose that the inequality in <a href="ortho-5.html#eq-norm-ortho" class="xref" data-knowl="./knowl/xref/eq-norm-ortho.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.5.1">(5.5.1)</a> holds. Pick an arbitrary <span class="process-math">\(y \in E\)</span> and a scalar <span class="process-math">\(c \in \C\text{.}\)</span> As <span class="process-math">\(E\)</span> is a linear subspace, <span class="process-math">\(cy \in E\text{,}\)</span> and so</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-norm-ortho.html">
 \begin{equation*}
@@ -361,7 +362,7 @@ E = \{f \in L^2(0,1): f(t) = 0 \text{ for } t \in (0, \frac{1}{2})\}.
 \end{equation*}
 </div>
 <div class="para">Now we leverage inner product geometry. Notice that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-norm-ortho.html" id="ortho-5-13-2-8">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-norm-ortho.html" id="ortho-5-10-2-8">
 \begin{align*}
 \norm{ x - cy}^2 = \ip{x - cy}{\cc{x - cy}} \amp= \norm{x}^2 - \ip{x}{\cc{cy}} - \ip{cy}{\cc{x}} + \norm{cy}^2\\
 \amp= \norm{x}^2 - 2 \cc{c}\RE \ip{x}{y} + \abs{c}^2 \norm{y}^2.
@@ -388,12 +389,12 @@ E = \{f \in L^2(0,1): f(t) = 0 \text{ for } t \in (0, \frac{1}{2})\}.
 </div>
 <div class="para">for all <span class="process-math">\(t \in \R^+\text{.}\)</span> Letting <span class="process-math">\(t \to 0\text{,}\)</span> we conclude that <span class="process-math">\(x \perp y\)</span> for all <span class="process-math">\(y \in E\text{,}\)</span> and so <span class="process-math">\(x \in E^\perp\text{.}\)</span>
 </div>
-</div></article></details><div class="para" id="ortho-5-14">Now we can produce the Hilbert space analogue of decomposing a vector into orthogonal components with repect to orthogonal subspaces.</div>
+</div></article></details><div class="para" id="ortho-5-11">Now we can produce the Hilbert space analogue of decomposing a vector into orthogonal components with repect to orthogonal subspaces.</div>
 <article class="theorem theorem-like" id="thm-hilbert-decomp"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.5</span><span class="period">.</span>
 </h3>
 <div class="para" id="thm-hilbert-decomp-1">Let <span class="process-math">\(E\)</span> be a closed linear subspace of a Hilbert space <span class="process-math">\(\hilbert\text{,}\)</span> and suppose that <span class="process-math">\(x \in \hilbert\text{.}\)</span> Then there exists <span class="process-math">\(y \in E\)</span> and <span class="process-math">\(z \in E^\perp\)</span> so that <span class="process-math">\(x = y + z\text{.}\)</span>
-</div></article><details id="ortho-5-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-5-16-1">
+</div></article><details id="ortho-5-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-5-13-1">
 <div class="para">The main idea of the proof is to take <span class="process-math">\(y\)</span> to be the closest point to <span class="process-math">\(x\)</span> in  <span class="process-math">\(E\text{.}\)</span> That is, following <a href="spaces-3.html#thm-closest-point" class="xref" data-knowl="./knowl/xref/thm-closest-point.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.2: Closest point property">Theorem 4.3.2</a>, <span class="process-math">\(y\)</span> is the point in <span class="process-math">\(E\)</span> so that <span class="process-math">\(\norm{x - y} \leq \norm{x - v}\)</span> for all <span class="process-math">\(v \in E\text{.}\)</span> Now define <span class="process-math">\(z = x - y\)</span> so that <span class="process-math">\(x = y + z\text{.}\)</span> Now, for any <span class="process-math">\(v \in E\text{,}\)</span> we know that <span class="process-math">\(y + v \in E\)</span> and so since <span class="process-math">\(y\)</span> is the closest point to <span class="process-math">\(x\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-closest-point.html ./knowl/xref/lemma-norm-ortho.html">
 \begin{equation*}
@@ -412,7 +413,7 @@ E = \{f \in L^2(0,1): f(t) = 0 \text{ for } t \in (0, \frac{1}{2})\}.
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.5.6</span><span class="period">.</span>
 </h3>
 <div class="para" id="corr-perp-perp-1">If <span class="process-math">\(E\)</span> is a closed linear subspace of a Hilbert space <span class="process-math">\(\hilbert\text{,}\)</span> then <span class="process-math">\((E^\perp)^\perp = E\text{.}\)</span>
-</div></article><details id="ortho-5-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-5-18-1">
+</div></article><details id="ortho-5-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="ortho-5-15-1">
 <div class="para">Every element of <span class="process-math">\(E\)</span> is orthogonal to <span class="process-math">\(E^\perp\)</span> by definition, and so <span class="process-math">\(E \subseteq E^\perp\text{.}\)</span> On the other hand, let <span class="process-math">\(x \in (E^\perp)^\perp\text{.}\)</span> Then by <a href="ortho-5.html#thm-hilbert-decomp" class="xref" data-knowl="./knowl/xref/thm-hilbert-decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.5">Theorem 5.5.5</a>, <span class="process-math">\(x = y + z\)</span> where <span class="process-math">\(y \in E\)</span> and <span class="process-math">\(z \in E^\perp\text{.}\)</span> Because <span class="process-math">\(x \in (E^\perp)^\perp\text{,}\)</span> we have <span class="process-math">\(\ip{x}{z} = 0\text{.}\)</span> But then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
 \begin{equation*}
@@ -424,11 +425,11 @@ E = \{f \in L^2(0,1): f(t) = 0 \text{ for } t \in (0, \frac{1}{2})\}.
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.7</span><span class="period">.</span>
 </h3>
 <div class="para" id="def-direct-sum-1">Let <span class="process-math">\(E, F\)</span> be subspaces of a vector space <span class="process-math">\(V\text{.}\)</span> <span class="process-math">\(V\)</span> is the <dfn class="terminology">direct sum</dfn> of <span class="process-math">\(E\)</span> and <span class="process-math">\(F\text{,}\)</span> denoted <span class="process-math">\(V = E \oplus F\text{,}\)</span> if <span class="process-math">\(M \cap N = \{0\}\)</span> and every vector in <span class="process-math">\(V\)</span> can be written as a sum of a vector in <span class="process-math">\(E\)</span> and a vector in <span class="process-math">\(F\text{.}\)</span> If <span class="process-math">\(V\)</span> is an inner product space and <span class="process-math">\(E \perp F\)</span> (in the sense that <span class="process-math">\(\ip{x}{y} = 0\)</span> for <span class="process-math">\(x \in E, y \in F\)</span> then <span class="process-math">\(V\)</span> is the <dfn class="terminology">orthogonal direct sum</dfn> of <span class="process-math">\(E\)</span> and <span class="process-math">\(F\text{.}\)</span>
-</div></article><div class="para" id="ortho-5-20">It is immediate that for any closed linear subspace <span class="process-math">\(E\)</span> of a Hilbert space <span class="process-math">\(\hilbert\)</span> that <span class="process-math">\(\hilbert\)</span> is the orthogonal direct sum <span class="process-math">\(E \oplus E^\perp\text{.}\)</span>
+</div></article><div class="para" id="ortho-5-17">It is immediate that for any closed linear subspace <span class="process-math">\(E\)</span> of a Hilbert space <span class="process-math">\(\hilbert\)</span> that <span class="process-math">\(\hilbert\)</span> is the orthogonal direct sum <span class="process-math">\(E \oplus E^\perp\text{.}\)</span>
 </div>
-<details id="ortho-5-21" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<details id="ortho-5-18" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.5.8</span><span class="period">.</span>
-</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ortho-5-21-1">Show that <span class="process-math">\(L^2(-1,1)\)</span> can be orthongonally decomposed into the direct sum of its subspaces of even and odd functions.</div></article></details></section></div>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ortho-5-18-1">Show that <span class="process-math">\(L^2(-1,1)\)</span> can be orthongonally decomposed into the direct sum of its subspaces of even and odd functions.</div></article></details></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ortho-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ortho-ex.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

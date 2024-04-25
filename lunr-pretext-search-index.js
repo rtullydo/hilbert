@@ -1123,7 +1123,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.4",
   "title": "Exercises",
-  "body": " Exercises   Prove that a closed subspace of a complete metric space is complete with respect to the induced metric. Conclude that is a Banach space. (See .)  Show that the sequence in given by the graph  is Cauchy but not convergent in .  Show that the normed space of is a Banach space.  Show that that the space of continously differentiable functions taking complex values on with inner product is not a Hilbert space (use the indefinite integrals of the functions in ).  Show that is not a Hilbert space.  For which real does the function belong to ? When defined, what is ?  Prove that the open and closed (unit) balls in a normed space are convex (see ).  Prove that the closure of a convex set in a normed space is convex.  Let be the Banach space with norm Show that does not have the closest point property by finding infinitely many points in the closed convex set which are at minimal distance from the origin.  Let be a non-empty closed convex set in a Hilbert space. Show that contains a unique vector of smallest norm that that for all .   "
+  "body": " Exercises   Prove that a closed subspace of a complete metric space is complete with respect to the induced metric. Conclude that is a Banach space. (See .)   Show that the normed space of is a Banach space.   Show that is not a Hilbert space.  For which real does the function belong to ? When defined, what is ?  Prove that the open and closed (unit) balls in a normed space are convex (see ).  Prove that the closure of a convex set in a normed space is convex.  Let be the Banach space with norm Show that does not have the closest point property by finding infinitely many points in the closed convex set which are at minimal distance from the origin.  Let be a non-empty closed convex set in a Hilbert space. Show that contains a unique vector of smallest norm that that for all .   "
 },
 {
   "id": "spaces-4-2-1",
@@ -1135,13 +1135,13 @@ var ptx_lunr_docs = [
   "body": "Prove that a closed subspace of a complete metric space is complete with respect to the induced metric. Conclude that is a Banach space. (See .) "
 },
 {
-  "id": "pr-3-2",
+  "id": "spaces-4-2-2",
   "level": "2",
-  "url": "spaces-4.html#pr-3-2",
+  "url": "spaces-4.html#spaces-4-2-2",
   "type": "Exercise",
   "number": "4.4.2",
   "title": "",
-  "body": "Show that the sequence in given by the graph  is Cauchy but not convergent in . "
+  "body": "Show that the normed space of is a Banach space. "
 },
 {
   "id": "spaces-4-2-3",
@@ -1150,7 +1150,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.4.3",
   "title": "",
-  "body": "Show that the normed space of is a Banach space. "
+  "body": "Show that is not a Hilbert space. "
 },
 {
   "id": "spaces-4-2-4",
@@ -1159,7 +1159,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.4.4",
   "title": "",
-  "body": "Show that that the space of continously differentiable functions taking complex values on with inner product is not a Hilbert space (use the indefinite integrals of the functions in ). "
+  "body": "For which real does the function belong to ? When defined, what is ? "
 },
 {
   "id": "spaces-4-2-5",
@@ -1168,7 +1168,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.4.5",
   "title": "",
-  "body": "Show that is not a Hilbert space. "
+  "body": "Prove that the open and closed (unit) balls in a normed space are convex (see ). "
 },
 {
   "id": "spaces-4-2-6",
@@ -1177,7 +1177,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.4.6",
   "title": "",
-  "body": "For which real does the function belong to ? When defined, what is ? "
+  "body": "Prove that the closure of a convex set in a normed space is convex. "
 },
 {
   "id": "spaces-4-2-7",
@@ -1186,7 +1186,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.4.7",
   "title": "",
-  "body": "Prove that the open and closed (unit) balls in a normed space are convex (see ). "
+  "body": "Let be the Banach space with norm Show that does not have the closest point property by finding infinitely many points in the closed convex set which are at minimal distance from the origin. "
 },
 {
   "id": "spaces-4-2-8",
@@ -1194,24 +1194,6 @@ var ptx_lunr_docs = [
   "url": "spaces-4.html#spaces-4-2-8",
   "type": "Exercise",
   "number": "4.4.8",
-  "title": "",
-  "body": "Prove that the closure of a convex set in a normed space is convex. "
-},
-{
-  "id": "spaces-4-2-9",
-  "level": "2",
-  "url": "spaces-4.html#spaces-4-2-9",
-  "type": "Exercise",
-  "number": "4.4.9",
-  "title": "",
-  "body": "Let be the Banach space with norm Show that does not have the closest point property by finding infinitely many points in the closed convex set which are at minimal distance from the origin. "
-},
-{
-  "id": "spaces-4-2-10",
-  "level": "2",
-  "url": "spaces-4.html#spaces-4-2-10",
-  "type": "Exercise",
-  "number": "4.4.10",
   "title": "",
   "body": "Let be a non-empty closed convex set in a Hilbert space. Show that contains a unique vector of smallest norm that that for all . "
 },
@@ -1519,7 +1501,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.5",
   "title": "Orthogonal complements",
-  "body": "Orthogonal complements  One of the most useful properties of orthogonality in Euclidean space is to decompose the space into orthogonal subspaces - this allows vectors to be expressed uniquely as sums of components lying in each subspace, for example. (You will have done this implicitly when studying projection onto subspaces, for example.) The same geometric properties hold in Hilbert space.   The orthogonal complement of a subset of a Hilbert space is the set    Let Describe in .  It is a useful fact that orthogonal complements are always closed subspaces relative to the larger Hilbert space.   For any set , the orthogonal complement is a closed linear subspace of .   Exercise. Elements in an orthgonal complement of a subspace are precisely those that satisfy a sort of least distance property - that is, perturbing by any vector in doesn't get you any closed to . This leads to a nice norm characterization of the orthogonal complement.  Let be a linear subspace of an inner produt space and let be a vector in . Then if and only if     ( ): If , then for any , and are orthogonal. Then gives  ( : Now suppose that the inequality in holds. Pick an arbitrary and a scalar . As is a linear subspace, , and so Now we leverage inner product geometry. Notice that Combining this observation with the previous inequality and canceling the , we get for all , Now, we'll drop the real part of the inner product. Let be a unimodular constant so that (if you don't see why such a constant should exist, you should think about it). Then the inequality above holds in particular for vectors of the form where , which gives We can rearrange this into for all . Letting , we conclude that for all , and so .   Now we can produce the Hilbert space analogue of decomposing a vector into orthogonal components with repect to orthogonal subspaces.   Let be a closed linear subspace of a Hilbert space , and suppose that . Then there exists and so that .    The main idea of the proof is to take to be the closest point to in . That is, following , is the point in so that for all . Now define so that . Now, for any , we know that and so since is the closest point to , we have That is, for all , we have By , we conclude that .  An immediate consequence is that the orthogonal complement of an orthogonal complement of a closed linear subpsace is the space itself.  If is a closed linear subspace of a Hilbert space , then .    Every element of is orthogonal to by definition, and so . On the other hand, let . Then by , where and . Because , we have . But then and so . This means that and thus and . The two-way inclusion proves the claim.    Let be subspaces of a vector space . is the direct sum of and , denoted , if and every vector in can be written as a sum of a vector in and a vector in . If is an inner product space and (in the sense that for then is the orthogonal direct sum of and .   It is immediate that for any closed linear subspace of a Hilbert space that is the orthogonal direct sum .  Show that can be orthongonally decomposed into the direct sum of its subspaces of even and odd functions.  "
+  "body": "Orthogonal complements  One of the most useful properties of orthogonality in Euclidean space is to decompose the space into orthogonal subspaces - this allows vectors to be expressed uniquely as sums of components lying in each subspace, for example. (You will have done this implicitly when studying projection onto subspaces, for example.) The same geometric properties hold in Hilbert space.   The orthogonal complement of a subset of a Hilbert space is the set    Let Describe in .  It is a useful fact that orthogonal complements are always closed subspaces relative to the larger Hilbert space.   For any set , the orthogonal complement is a closed linear subspace of .   Exercise.  Elements in an orthgonal complement of a subspace are precisely those that satisfy a sort of least distance property - that is, perturbing by any vector in doesn't get you any closed to . This leads to a nice norm characterization of the orthogonal complement.   Let be a linear subspace of an inner produt space and let be a vector in . Then if and only if     ( ): If , then for any , and are orthogonal. Then gives  ( : Now suppose that the inequality in holds. Pick an arbitrary and a scalar . As is a linear subspace, , and so Now we leverage inner product geometry. Notice that Combining this observation with the previous inequality and canceling the , we get for all , Now, we'll drop the real part of the inner product. Let be a unimodular constant so that (if you don't see why such a constant should exist, you should think about it). Then the inequality above holds in particular for vectors of the form where , which gives We can rearrange this into for all . Letting , we conclude that for all , and so .   Now we can produce the Hilbert space analogue of decomposing a vector into orthogonal components with repect to orthogonal subspaces.   Let be a closed linear subspace of a Hilbert space , and suppose that . Then there exists and so that .    The main idea of the proof is to take to be the closest point to in . That is, following , is the point in so that for all . Now define so that . Now, for any , we know that and so since is the closest point to , we have That is, for all , we have By , we conclude that .  An immediate consequence is that the orthogonal complement of an orthogonal complement of a closed linear subpsace is the space itself.  If is a closed linear subspace of a Hilbert space , then .    Every element of is orthogonal to by definition, and so . On the other hand, let . Then by , where and . Because , we have . But then and so . This means that and thus and . The two-way inclusion proves the claim.    Let be subspaces of a vector space . is the direct sum of and , denoted , if and every vector in can be written as a sum of a vector in and a vector in . If is an inner product space and (in the sense that for then is the orthogonal direct sum of and .   It is immediate that for any closed linear subspace of a Hilbert space that is the orthogonal direct sum .  Show that can be orthongonally decomposed into the direct sum of its subspaces of even and odd functions.  "
 },
 {
   "id": "def-orthocomplement",
@@ -1567,9 +1549,9 @@ var ptx_lunr_docs = [
   "body": " Let be a linear subspace of an inner produt space and let be a vector in . Then if and only if   "
 },
 {
-  "id": "ortho-5-13",
+  "id": "ortho-5-10",
   "level": "2",
-  "url": "ortho-5.html#ortho-5-13",
+  "url": "ortho-5.html#ortho-5-10",
   "type": "Proof",
   "number": "5.5.2",
   "title": "",
@@ -1585,9 +1567,9 @@ var ptx_lunr_docs = [
   "body": " Let be a closed linear subspace of a Hilbert space , and suppose that . Then there exists and so that .  "
 },
 {
-  "id": "ortho-5-16",
+  "id": "ortho-5-13",
   "level": "2",
-  "url": "ortho-5.html#ortho-5-16",
+  "url": "ortho-5.html#ortho-5-13",
   "type": "Proof",
   "number": "5.5.3",
   "title": "",
@@ -1603,9 +1585,9 @@ var ptx_lunr_docs = [
   "body": " If is a closed linear subspace of a Hilbert space , then .  "
 },
 {
-  "id": "ortho-5-18",
+  "id": "ortho-5-15",
   "level": "2",
-  "url": "ortho-5.html#ortho-5-18",
+  "url": "ortho-5.html#ortho-5-15",
   "type": "Proof",
   "number": "5.5.4",
   "title": "",
@@ -1621,9 +1603,9 @@ var ptx_lunr_docs = [
   "body": " Let be subspaces of a vector space . is the direct sum of and , denoted , if and every vector in can be written as a sum of a vector in and a vector in . If is an inner product space and (in the sense that for then is the orthogonal direct sum of and .  "
 },
 {
-  "id": "ortho-5-21",
+  "id": "ortho-5-18",
   "level": "2",
-  "url": "ortho-5.html#ortho-5-21",
+  "url": "ortho-5.html#ortho-5-18",
   "type": "Checkpoint",
   "number": "5.5.8",
   "title": "",
