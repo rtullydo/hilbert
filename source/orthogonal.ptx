@@ -399,13 +399,9 @@
             <me>
                 \norm{x - cy}^2 \geq \norm{x}^2.
             </me> Now we leverage inner product geometry. Notice that 
-            <md>
-                <mrow>\norm{ x - cy}^2 = \ip{x - cy}{\cc{x - cy}} \amp= \norm{x}^2 - \ip{x}{\cc{cy}} - \ip{cy}{\cc{x}} + \norm{cy}^2</mrow>
-                <mrow>\amp= \norm{x}^2 - 2 \cc{c}\RE \ip{x}{y} + \abs{c}^2 \norm{y}^2.</mrow>
-            </md>
-            Combining this observation with the previous inequality and canceling the <m>\norm{x}^2</m>, we get for all <m>c \in \C</m>,
+            
             <me>
-                - 2 \cc{c}\RE \ip{x}{y} + \abs{c}^2 \norm{y}^2 \geq 0.
+                - 2\RE \cc{c} \ip{x}{y} + \abs{c}^2 \norm{y}^2 \geq 0.
             </me>
             Now, we'll drop the real part of the inner product. Let <m>z</m> be a unimodular constant so that <m>\cc{z}\ip{x}{y} = \abs{\ip{x}{y}}</m> (if you don't see why such a constant should exist, you should think about it). Then the inequality above holds in particular for vectors of the form <m>y = tz</m> where <m>t \in \R^+</m>, which gives
             <me>
