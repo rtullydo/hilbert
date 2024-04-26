@@ -427,10 +427,10 @@
         <proof>
             <p>The main idea of the proof is to take <m>y</m> to be the closest point to <m>x</m> in  <m>E</m>. That is, following <xref ref="thm-closest-point"/>, <m>y</m> is the point in <m>E</m> so that <m>\norm{x - y} \leq \norm{x - v}</m> for all <m>v \in E</m>. Now define <m>z = x - y</m> so that <m>x = y + z</m>. Now, for any <m>v \in E</m>, we know that <m>y + v \in E</m> and so since <m>y</m> is the closest point to <m>x</m>, we have
             <me>
-                \norm{z} = \norm{x - y} \leq \norm{x - (y + m)}.</me>
+                \norm{z} = \norm{x - y} \leq \norm{x - (y + v)}.</me>
             That is, for all <m>v \in E</m>, we have
             <me>
-            \norm {z} \leq \norm {z - m}.
+            \norm {z} \leq \norm {z - v}.
             </me>
             By <xref ref="lemma-norm-ortho"/>, we conclude that <m>z \in E^\perp</m>. </p>
         </proof>
