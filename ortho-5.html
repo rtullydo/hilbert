@@ -362,17 +362,9 @@ E = \{f \in L^2(0,1): f(t) = 0 \text{ for } t \in (0, \frac{1}{2})\}.
 \end{equation*}
 </div>
 <div class="para">Now we leverage inner product geometry. Notice that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-norm-ortho.html" id="ortho-5-10-2-8">
-\begin{align*}
-\norm{ x - cy}^2 = \ip{x - cy}{\cc{x - cy}} \amp= \norm{x}^2 - \ip{x}{\cc{cy}} - \ip{cy}{\cc{x}} + \norm{cy}^2\\
-\amp= \norm{x}^2 - 2 \cc{c}\RE \ip{x}{y} + \abs{c}^2 \norm{y}^2.
-\end{align*}
-</div>
-<div class="para">Combining this observation with the previous inequality and canceling the <span class="process-math">\(\norm{x}^2\text{,}\)</span> we get for all <span class="process-math">\(c \in \C\text{,}\)</span>
-</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-norm-ortho.html">
 \begin{equation*}
-- 2 \cc{c}\RE \ip{x}{y} + \abs{c}^2 \norm{y}^2 \geq 0.
+- 2\RE \cc{c} \ip{x}{y} + \abs{c}^2 \norm{y}^2 \geq 0.
 \end{equation*}
 </div>
 <div class="para">Now, we’ll drop the real part of the inner product. Let <span class="process-math">\(z\)</span> be a unimodular constant so that <span class="process-math">\(\cc{z}\ip{x}{y} = \abs{\ip{x}{y}}\)</span> (if you don’t see why such a constant should exist, you should think about it). Then the inequality above holds in particular for vectors of the form <span class="process-math">\(y = tz\)</span> where <span class="process-math">\(t \in \R^+\text{,}\)</span> which gives</div>
