@@ -336,7 +336,7 @@ E = \{f \in L^2(0,1): f(t) = 0 \text{ for } t \in (0, \frac{1}{2})\}.
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="period">.</span>
 </h3>
 <div class="para" id="thm-perp-closed-1">For any set <span class="process-math">\(E \subset \hilbert\text{,}\)</span> the orthogonal complement <span class="process-math">\(E^\perp\)</span> is a closed linear subspace of <span class="process-math">\(\hilbert\text{.}\)</span>
-</div></article><details id="ortho-5-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content">Exercise.</article></details><div class="para" id="ortho-5-8">Elements in an orthgonal complement of a subspace are precisely those that satisfy a sort of “least distance” property - that is, perturbing <span class="process-math">\(x\)</span> by any vector in <span class="process-math">\(E\)</span> doesn’t get you any closed to <span class="process-math">\(E\text{.}\)</span> This leads to a nice norm characterization of the orthogonal complement.</div>
+</div></article><details id="ortho-5-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content">Exercise.</article></details><div class="para" id="ortho-5-8">Elements in an orthgonal complement of a subspace are precisely those that satisfy a sort of “least distance” property - that is, perturbing <span class="process-math">\(x\)</span> by any vector in <span class="process-math">\(E\)</span> doesn’t get you any close to <span class="process-math">\(E\text{.}\)</span> This leads to a nice norm characterization of the orthogonal complement.</div>
 <article class="lemma theorem-like" id="lemma-norm-ortho"><h3 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="period">.</span>
 </h3>
@@ -398,13 +398,13 @@ E = \{f \in L^2(0,1): f(t) = 0 \text{ for } t \in (0, \frac{1}{2})\}.
 <div class="para">The main idea of the proof is to take <span class="process-math">\(y\)</span> to be the closest point to <span class="process-math">\(x\)</span> in  <span class="process-math">\(E\text{.}\)</span> That is, following <a href="spaces-3.html#thm-closest-point" class="xref" data-knowl="./knowl/xref/thm-closest-point.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.2: Closest point property">Theorem 4.3.2</a>, <span class="process-math">\(y\)</span> is the point in <span class="process-math">\(E\)</span> so that <span class="process-math">\(\norm{x - y} \leq \norm{x - v}\)</span> for all <span class="process-math">\(v \in E\text{.}\)</span> Now define <span class="process-math">\(z = x - y\)</span> so that <span class="process-math">\(x = y + z\text{.}\)</span> Now, for any <span class="process-math">\(v \in E\text{,}\)</span> we know that <span class="process-math">\(y + v \in E\)</span> and so since <span class="process-math">\(y\)</span> is the closest point to <span class="process-math">\(x\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-closest-point.html ./knowl/xref/lemma-norm-ortho.html">
 \begin{equation*}
-\norm{z} = \norm{x - y} \leq \norm{x - (y + m)}.
+\norm{z} = \norm{x - y} \leq \norm{x - (y + v)}.
 \end{equation*}
 </div>
 <div class="para">That is, for all <span class="process-math">\(v \in E\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-closest-point.html ./knowl/xref/lemma-norm-ortho.html">
 \begin{equation*}
-\norm {z} \leq \norm {z - m}.
+\norm {z} \leq \norm {z - v}.
 \end{equation*}
 </div>
 <div class="para">By <a href="ortho-5.html#lemma-norm-ortho" class="xref" data-knowl="./knowl/xref/lemma-norm-ortho.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.5.4">Lemma 5.5.4</a>, we conclude that <span class="process-math">\(z \in E^\perp\text{.}\)</span>
