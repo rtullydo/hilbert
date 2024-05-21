@@ -143,6 +143,11 @@
             </me>
             where <m>A^0 = I_V</m>.</p>
         </theorem>
+
+        <theorem xml:id="thm-invertible-open">
+            <p>Let <m>E</m> be a Banach space. The set of invertible operators on <m>E</m> is an open subset of <m>\L(E)</m>.</p>
+        </theorem>
+
     </section>
 
     <section>
@@ -281,5 +286,46 @@
             </me>
             for all <m>\norm{x} = 1</m>. But then <m>\norm{A} \leq M = \sup_{\norm{x} = 1} \abs{\ip{Ax}{x}}</m>.</p>
         </proof>
+    </section>
+
+    <section>
+        <title>The spectrum</title>
+        <p>If <m>A</m> is an <m>n \times n</m> complex matrix, then <m>A</m> has at least one eigenvalue. That is, there exists <m>\la \in \C</m> such that <m>Av = \la v</m> for some non-zero vector <m>v \in \C^n</m>. The spectrum of a matrix, denoted <m>\sigma(A)</m> is the set consisting of its eigenvalues. The spectrum of a matrix is used to study its structure and behavior as a linear map. We'd like to extend the notion of spectrum to the infinite dimensional setting, so we'll take a moment to look at how we find it for matrices. In elementary linear algebra, we learn that the eigenvalues of <m>A</m> are the solutions to the equation <m>\det(A - \la I) = 0</m>. Of course what we're actually measuring with this equation is the (lack of) invertibility of the operator <m>A - \la I</m>, which we could also encode geometrically with the condition that <m>\ker (A - \la I) \neq \{0\}</m>. Since determinants aren't all that useful or easy to define in the infinite dimensional setting, we'll use these to define the spectum of an operator.</p>
+
+        <definition xml:id="def-spectrum">
+            <p>Let <m>E</m> be a Banach space and <m>A \in \L(E)</m>. The <term>spectrum</term> of <m>A</m>, denoted <m>\sigma(A)</m> is the set 
+                <me>
+                    \sigma(A) = \{\la \in \C : \la I - A \text{ is not invertible.}\}
+                </me></p>
+        </definition>
+
+        <p>Given <m>A \in \L(E)</m>, we have that <m>\sigma(A)</m> is non-empty. (Else, the map <m>\la \mapsto (\la I - A)\inv</m> would be a bounded, non-constant, entire <m>\L(E)</m>-valued map, which would violate a version of <url href="https://en.wikipedia.org/wiki/Liouville%27s_theorem_(complex_analysis)">Liouville's theorem</url>). If <m>E</m> is finite dimensional, then <m>\sigma(A)</m> consists of the eigenvalues of <m>A</m>. We can still use the term <emph>eigenvalue</emph> in the infinite dimensional setting in the exact same way as the finite case. Notice though that operators need not possess eigenvalues. For example, the shift operator <m>S</m> acting on <m>\ell^2</m> has no eigenvalues. (Exercise). On the other hand, since <m>S</m> isn't invertible, <m>0 \in \sigma(A)</m>. This illustrates the significantly more complex situation that occurs in infinite dimensions. Notice that if <m>\la</m> is an eigenvalue of <m>A</m>, then <m>\la \in \sigma(A)</m>.</p>
+
+        <p>The proof of the following result, analogous to the finite case, is left as an easy exercise.</p>
+
+        <proposition>
+            <p>If <m>A \in \L(E)</m> is a Hermitian operator on a Hilbert space <m>\hilbert</m>, and <m>\la</m> is an eigenvalue of <m>A</m>, then <m>\la \in \R</m>.</p>
+        </proposition>
+
+        <p>A useful topological property of the spectrum is that it forms a compact subset of <m>\C</m>. (In the finite dimensional case, this is apparent.)</p>
+
+        <theorem xml:id="thm-compact-spectrum">
+            <p>Let <m>E</m> be a Banach space and <m>A \in \L(E)</m>. Then <m>\sigma(A)</m> is a compact subset of <m>\C</m> and 
+            <me>
+                \sigma(A) \subseteq \{z \in \C: \abs{z} \leq \norm{A}\}.
+            </me></p>
+        </theorem>
+
+        <proof>
+            <p>Define a function <m>F: \C \to \L(E)</m> by <m>F(\la) = \la I - A</m>. For any <m>\la, \mu \in \C</m>, 
+            <md>
+                <mrow>\norm{F(\la) - F(\mu)} \amp= \norm{(\la I - A) - (\mu I - A)}</mrow>
+                <mrow>\amp = \abs{\la - \mu}</mrow>
+            </md>
+            and so <m>F</m> is Lipschitz and therefore continuous in the operator norm. Now let <m>GL(E)</m> denote the invertible elements of <m>E</m>, which is an open subset of <m>\L(E)</m> by <xref ref="thm-invertible-open"/>. Then <m>\L(E)-GL(E)</m> is closed, and by continuity so is <m>F\inv(\L(E)-GL(E)) = \sigma(A)</m>.</p>
+
+            <p>Now let <m>\la \in \C</m> with <m>\abs{\la} \gt \norm{A}</m>. Then <m>\norm{\la\inv A} \lt 1</m>, and so <m>I - \la\inv A</m> is invertible by <xref ref="thm-contraction-inverse"/>. But then <m>\la\inv(\la I - A)</m> is invertible and so must be <m>\la I - A</m>, and so <m>\la \notin \sigma(A)</m>. Then <m>\sigma(A)</m> is in the closed disk of radius <m>\norm{A}</m> and hence is bounded. As closed and bounded subsets of <m>\C</m> are compact, we have established the result. </p>
+        </proof>
+
     </section>
 </chapter>
