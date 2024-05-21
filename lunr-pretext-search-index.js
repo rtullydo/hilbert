@@ -2167,7 +2167,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.2",
   "title": "Inverses",
-  "body": " Inverses  Need to get this from notes. Big theorem here is   Suppose that . If then is invertible and where .   "
+  "body": " Inverses  Need to get this from notes. Big theorem here is   Suppose that . If then is invertible and where .    Let be a Banach space. The set of invertible operators on is an open subset of .   "
 },
 {
   "id": "thm-contraction-inverse",
@@ -2177,6 +2177,15 @@ var ptx_lunr_docs = [
   "number": "8.2.1",
   "title": "",
   "body": " Suppose that . If then is invertible and where .  "
+},
+{
+  "id": "thm-invertible-open",
+  "level": "2",
+  "url": "operators-3.html#thm-invertible-open",
+  "type": "Theorem",
+  "number": "8.2.2",
+  "title": "",
+  "body": " Let be a Banach space. The set of invertible operators on is an open subset of .  "
 },
 {
   "id": "operators-4",
@@ -2258,6 +2267,51 @@ var ptx_lunr_docs = [
   "number": "8.4.1",
   "title": "",
   "body": " As an immediate consequence of , for any , we have   In the other direction we have a bit more work to do. Let . Note that for all , we have (which one should check!). Now assume that and . Using that ), If we subtract one of these equations from the other, we get Now apply to get Suppose that . Then replacing with in the inequality gives when . Notice that when , we get and so for all . But then .  "
+},
+{
+  "id": "operators-6",
+  "level": "1",
+  "url": "operators-6.html",
+  "type": "Section",
+  "number": "8.5",
+  "title": "The spectrum",
+  "body": " The spectrum  If is an complex matrix, then has at least one eigenvalue. That is, there exists such that for some non-zero vector . The spectrum of a matrix, denoted is the set consisting of its eigenvalues. The spectrum of a matrix is used to study its structure and behavior as a linear map. We'd like to extend the notion of spectrum to the infinite dimensional setting, so we'll take a moment to look at how we find it for matrices. In elementary linear algebra, we learn that the eigenvalues of are the solutions to the equation . Of course what we're actually measuring with this equation is the (lack of) invertibility of the operator , which we could also encode geometrically with the condition that . Since determinants aren't all that useful or easy to define in the infinite dimensional setting, we'll use these to define the spectum of an operator.   Let be a Banach space and . The spectrum of , denoted is the set   Given , we have that is non-empty. (Else, the map would be a bounded, non-constant, entire -valued map, which would violate a version of Liouville's theorem ). If is finite dimensional, then consists of the eigenvalues of . We can still use the term eigenvalue in the infinite dimensional setting in the exact same way as the finite case. Notice though that operators need not possess eigenvalues. For example, the shift operator acting on has no eigenvalues. (Exercise). On the other hand, since isn't invertible, . This illustrates the significantly more complex situation that occurs in infinite dimensions. Notice that if is an eigenvalue of , then .  The proof of the following result, analogous to the finite case, is left as an easy exercise.   If is a Hermitian operator on a Hilbert space , and is an eigenvalue of , then .   A useful topological property of the spectrum is that it forms a compact subset of . (In the finite dimensional case, this is apparent.)   Let be a Banach space and . Then is a compact subset of and    Define a function by . For any , and so is Lipschitz and therefore continuous in the operator norm. Now let denote the invertible elements of , which is an open subset of by . Then is closed, and by continuity so is .  Now let with . Then , and so is invertible by . But then is invertible and so must be , and so . Then is in the closed disk of radius and hence is bounded. As closed and bounded subsets of are compact, we have established the result.   "
+},
+{
+  "id": "def-spectrum",
+  "level": "2",
+  "url": "operators-6.html#def-spectrum",
+  "type": "Definition",
+  "number": "8.5.1",
+  "title": "",
+  "body": " Let be a Banach space and . The spectrum of , denoted is the set  "
+},
+{
+  "id": "operators-6-6",
+  "level": "2",
+  "url": "operators-6.html#operators-6-6",
+  "type": "Proposition",
+  "number": "8.5.2",
+  "title": "",
+  "body": " If is a Hermitian operator on a Hilbert space , and is an eigenvalue of , then .  "
+},
+{
+  "id": "thm-compact-spectrum",
+  "level": "2",
+  "url": "operators-6.html#thm-compact-spectrum",
+  "type": "Theorem",
+  "number": "8.5.3",
+  "title": "",
+  "body": " Let be a Banach space and . Then is a compact subset of and  "
+},
+{
+  "id": "operators-6-9",
+  "level": "2",
+  "url": "operators-6.html#operators-6-9",
+  "type": "Proof",
+  "number": "8.5.1",
+  "title": "",
+  "body": " Define a function by . For any , and so is Lipschitz and therefore continuous in the operator norm. Now let denote the invertible elements of , which is an open subset of by . Then is closed, and by continuity so is .  Now let with . Then , and so is invertible by . But then is invertible and so must be , and so . Then is in the closed disk of radius and hence is bounded. As closed and bounded subsets of are compact, we have established the result.  "
 },
 {
   "id": "hilbert-11-2",
