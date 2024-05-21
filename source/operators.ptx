@@ -101,6 +101,185 @@
             <p>Let <m>V, W</m> be normed spaces. Then <m>\L(V, W)</m> is a normed space with respect to the operator norm. Furthermore, if <m>W</m> is a Banach space, then so is <m>\L(V, W)</m>.</p>
         </theorem>
 
+        <p>For compatible operators, we can work with compositions. We'll use the usual operator notation <m>BA</m> to mean <m>B \circ A</m> where <m>A: U \to V</m> and <m>B: V \to W</m>. So <m>BAx = B(Ax)</m>. The norms act in the manner you might suspect.</p>
 
+        <theorem xml:id="thm-composition-norm">
+            <p>Let <m>U, V, W</m> be vector spaces. If <m>A \in \L(U, V)</m> and <m>B \in \L(V, W)</m>, then <m>BA \in \L(U, W)</m> and 
+            <me>
+                \norm{AB} \leq \norm{A}\norm{B}.
+            </me>
+                </p>
+        </theorem>
+
+        <proof>
+            <p>The operator <m>BA</m> inherits linearity from <m>A</m> and <m>B</m> and continuity as a composition of continuous functions. To see the inequality with the norms, for any <m>x \in U</m>, 
+            <md>
+                <mrow> \norm{BAx} \amp= \norm{B(Ax)} </mrow>
+                <mrow> \amp \leq \norm{B}\norm{Ax}</mrow>
+                <mrow> \amp \leq \norm{B}\norm{A}\norm{x}.</mrow>
+            </md>
+            We've shown that
+            <me>
+                \norm{BA} \leq \norm{B}\norm{A}.
+            </me>
+            </p>
+        </proof>
+
+        <p>In the case that <m>A \in \L(V)</m>, we denote repeated compositions of <m>A</m> in power notation. Hence <m>\underbrace{AA\cdots A}_{n \text{times}} = A^n</m>. As an immediate and useful consequence of <xref ref="thm-composition-norm"/>, 
+        <me>
+            \norm{A^n} \leq \norm{A}^n.
+        </me></p>
+
+    </section>
+
+    <section>
+        <title>Inverses</title>
+        <p>Need to get this from notes. Big theorem here is</p>
+
+        <theorem xml:id="thm-contraction-inverse">
+            <p>Suppose that <m>A \in \L(V)</m>. If <m>\norm{A} \lt 1</m> then <m>I - A</m> is invertible and 
+            <me>
+                (I - A)\inv = \sum_{n=0}^\infty A^n,
+            </me>
+            where <m>A^0 = I_V</m>.</p>
+        </theorem>
+    </section>
+
+    <section>
+        <title>Adjoint operators</title>
+        <p>Restricting to our attention to <m>\C^n</m> for the moment, let <m>A</m> be an <m>m \times n</m> matrix (where we think of <m>A: \C^n \to \C^m</m>). Let <m>x \in \C^n</m> and <m>y \in \C^n</m>. Denote by <m>A\ad</m> the Hermitian transpose (or conjugate transpose) of <m>A</m> (which if course acts in the other direction <m>A: \C^m \to \C^n</m>). Then in the inner product, we get the relationship
+        <md>
+            <mrow> \ip{Ax}{y} \amp= y\ad (Ax)</mrow>
+            <mrow> \amp = (y\ad A) x </mrow>
+            <mrow> \amp= (A\ad y)\ad x</mrow>
+            <mrow> \amp=\ip{x}{A\ad y}.</mrow>
+        </md>
+        We seek to define a similar notion of the adjoint operator in the infinite dimensional case by way of the Riesz representation theorem.</p>
+
+        <theorem xml:id="thm-adjoint">
+            <p>Let <m>A \in \L(V, W)</m> where <m>V, W</m> are Hilbert spaces. There is a unique operator <m>A\ad \in \L(W, V)</m> such that <me>\ip{Ax}{y}_W = \ip{x}{A\ad y}_V</me> for all <m>x \in V, y \in W</m>.</p>
+        </theorem>
+
+        <proof>
+            <p> For any <m>y \in W</m>, the map
+                <me>
+                    x \mapsto \ip{Ax}{y}_W
+                </me>
+                is a continuous linear functional on <m>V</m>. Then <xref ref="thm-riesz-rep"/> gives the existence of a unique vector <m>z \in V</m> so that
+                <me>
+                    \ip{Ax}{y}_W = \ip{x}{z}_V
+                </me>
+                for all <m>x \in V</m>. Then we define the map <m>A\ad: W \to V</m> by
+                <me>
+                    A\ad y = z.
+                </me>
+                It remains to show that <m>A\ad</m> is a continuous linear functional.</p>
+
+                <p>To see that <m>A\ad</m> is linear, choose <m>\alpha, \beta \in \C</m> and <m>u, v \in W</m>. Then for all <m>x \in V</m>, we have 
+                <md>
+                    <mrow>\ip{x} {A\ad(\alpha u + \beta v)} \amp = \ip{Ax}{\alpha u + \beta v}</mrow>
+                    <mrow> \amp= \cc\alpha \ip{Ax}{u} + \cc\beta\ip{Ax}{v}</mrow>
+                    <mrow> \amp = \cc\alpha \ip{x}{A\ad u} + \cc\beta\ip{x}{A\ad v}</mrow>
+                    <mrow> \amp= \ip{x}{ \alpha A\ad u + \beta A\ad v}.</mrow>
+                </md>
+                Since this holds for all <m>x \in V</m>, we must have 
+                <me>
+                    A\ad(\alpha u + \beta v) =  \alpha A\ad u + \beta A\ad v.
+                </me></p>
+
+                <p>To see that <m>A\ad</m> is bounded, notice that for all <m>y \in W,</m>
+                <md>
+                    <mrow> \norm{A\ad y}^2 \amp= \ip{A\ad y}{A\ad y} </mrow>
+                    <mrow> \amp=\ip{A A\ad y}{y}</mrow>
+                    <mrow> \amp\leq \norm{A A\ad y}\norm{y}</mrow>
+                    <mrow> \amp\leq \norm{A} \norm{A\ad y}\norm{y}.</mrow>
+                </md>
+                Dividing through, we get
+                <me>
+                    \norm{A\ad y} \leq \norm{A} \norm{y}
+                </me>
+                which gives that <m>\norm{A\ad} \leq \norm{A}</m>, and so <m>A\ad</m> is bounded.</p>
+
+                <p>Uniqueness follows from the observation that if <m>A</m> had two adjoints, then for all <m>x \in V</m>, we'd have
+                <me>
+                    \ip{x}{A_1\ad y} = \ip{x}{A_2\ad y},
+                </me>
+                and so <m>A_1\ad = A_2\ad</m>.</p>
+        </proof>
+
+        <p>In matrices, <m>(A\ad)\ad = A</m>. The same is true of operators on Hilbert spaces.</p>
+
+        <theorem xml:id="thm-double-adjoint">
+            <p>Suppose that <m>V, W</m> are Hilbert spaces and <m>A \in \L(V, W)</m>. Then <m>A^{**} = A</m> and <m>\norm{A\ad} = \norm{A}</m>.</p>
+        </theorem>
+
+        <proof>
+            <p>Suppose that <m>A \in \L(V, W), B = A\ad \in \L(W, V)</m>, and <m>B\ad \in \L(V, W)</m>. We claim that <m>B\ad = A</m>. For all <m>x \in V, y \in W</m>, we have
+            <md>
+                <mrow>\ip{y}{B\ad x} \amp= \ip{By}{x}</mrow>
+                <mrow>\amp= \ip{A\ad y}{x}</mrow>
+                <mrow>\amp= \cc{\ip{x}{A\ad y}}</mrow>
+                <mrow>\amp= \cc{\ip{Ax}{y}}</mrow>
+                <mrow>\amp= \ip{y}{Ax}.</mrow>
+            </md>
+            Then <m>B\ad x = Ax</m> for all <m>x\in V</m> and so <m>B\ad = A</m>.
+            </p>
+
+            <p>To see that <m>\norm{A\ad} = \norm{A}</m>, recall that the proof of the previous theorem established that <m>\norm{A\ad} \leq \norm{A}</m>. Applying this  to <m>A^{**}</m> gives that <m>\norm{A^{**}}\leq \norm{A\ad}</m> and hence the result.</p>
+        </proof>
+    </section>
+
+    <section>
+        <title>Hermitian operators</title>
+        <p>A self-adjoint or Hermitian matrix is a complex <m>n\times n</m> matrix satisfying <m>A = A\ad</m>. Such matrices have a wealth of structural results available to describe them. For example, such matrices have real eigenvalues, can be unitarily diagonalized, and carry a partial order (called the <url href="https://en.wikipedia.org/wiki/Loewner_order">Loewner order</url>) with a notion of positivity. We're interested in developing analogous results in the infinite dimensional setting.
+        </p>
+
+        <definition xml:id="def-hermitian-operator">
+            <p>Let <m>\hilbert</m> be a Hilbert space and <m>A \in \L(\hilbert)</m>. We say that <m>A</m> is <term>Hermitian</term> (or self-adjoint) if <m>A = A\ad</m>.</p>
+        </definition>
+
+        <p>Hermitian operators have a nice expression for calculating norms.</p>
+
+        <theorem xml:id="thm-hermitian-norm">
+            <p>If <m>A</m> is a Hermitian operator on a Hilbert space <m>\hilbert</m>, then 
+            <me>
+                \norm{A} = \sup_{\norm{x} = 1} \abs{\ip{Ax}{x}}.
+            </me></p>
+        </theorem>
+
+        <proof>
+            <p>As an immediate consequence of <xref ref="thm-cauchy-schwarz"/>, for any <m>\norm{x} = 1</m>, we have
+                <me>
+                    \abs{\ip{Ax}{x}}\leq \norm{A}\norm{x}^2 = \norm{A}.
+                </me>
+            </p>
+
+            <p>In the other direction we have a bit more work to do. Let <m>M = \sup_{\norm{x} = 1} \abs{\ip{Ax}{x}}</m>. Note that for all <m>u</m>, we have <m>\abs{\ip{Au}{u}} \leq M\norm{u}^2</m> (which one should check!). Now assume that <m>\norm{x} = 1</m> and <m>\norm{y} = 1</m>. Using that <m>A\ad = A</m>),
+                <me>
+                    \ip{A(x\pm y)}{x\pm y} = \ip{Ax}{x}\pm 2 \RE \ip{Ax}{y} + \ip{Ay}{y}.
+                </me>
+            If we subtract one of these equations from the other, we get
+                <md> 
+                    <mrow>4\RE\ip{Ax}{y} \amp= \ip{A(x+y)}{x+y} - \ip{A(x-y)}{x-y}</mrow>
+                    <mrow>\amp \leq M(\norm{x + y}^2 + \norm{x-y}^2)</mrow>
+                </md>
+            Now apply <xref ref="thm-parallelogram"/> to get
+                <me>
+                    4 \RE \ip{Ax}{y} \leq 2M(\norm{x}^2 + \norm{y}^2) = 4M.
+                </me>
+            Suppose that <m>\ip{Ax}{y} = e^{it} \abs{\ip{Ax}{y}}</m>. Then replacing <m>x</m> with <m>e^{-it} x</m> in the inequality gives 
+            <me>
+                \abs{\ip{Ax}{y}} \leq M
+            </me>
+            when <m>\norm{x} = \norm{y} = 1</m>. Notice that when <m>y = Ax/\norm{Ax}</m>, we get
+            <me>
+                \norm{Ax}^2 \leq M \norm{Ax}
+            </me>
+            and so 
+            <me>
+                \norm{Ax} \leq M
+            </me>
+            for all <m>\norm{x} = 1</m>. But then <m>\norm{A} \leq M = \sup_{\norm{x} = 1} \abs{\ip{Ax}{x}}</m>.</p>
+        </proof>
     </section>
 </chapter>

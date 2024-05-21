@@ -159,7 +159,7 @@
 
         <p>In the case of Hilbert space, we recover the characterization of linear functionals as inner products against a representative vector. This powerful idea is one of the central tools of Hilbert space theory.</p>
 
-        <theorem><title>(Riesz-Fréchet)</title>
+        <theorem xml:id="thm-riesz-rep"><title>(Riesz-Fréchet)</title>
             <p>Let <m>\hilbert</m> be a Hilbert space and let <m>F</m> be a continuous linear functional on <m>\hilbert</m>. There exists a unique vector <m>y \in \hilbert</m> so that
             <me>
                 F(x) = \ip{x}{y}
