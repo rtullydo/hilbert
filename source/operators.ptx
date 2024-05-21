@@ -56,8 +56,8 @@
             <p>Choose a function <m>f \in C[a, b]</m> and define the operator <m>M_f</m> on <m>L^2[a,b]</m> by <me>(M_f x)(t) = f(t)x(t).</me> It should be immediately clear that <m>M_f</m> is linear. Recalling the norms on <m>C[a,b]</m> and <m>L^2</m>, for any <m>x\in L^2[a,b]</m> we get
             <md>
                 <mrow> \norm{Mx}^2 \amp= \int_a^b \abs{f}^2 \abs{x}^2 \, dt </mrow>
-                <mrow> \amp\leq \sup_{t \in [a, b]}\abs{f(t)} \int_a^b \abs{x}^2 \, dt</mrow>
-                <mrow>\amp = \norm{f}_\infty \norm{x}^2.</mrow>
+                <mrow> \amp\leq \sup_{t \in [a, b]}\abs{f(t)}^2 \int_a^b \abs{x}^2 \, dt</mrow>
+                <mrow>\amp = \norm{f}_\infty^2 \norm{x}^2.</mrow>
             </md>
             Then <m>M_f</m> is a bounded operator and <m>\norm{M} \leq \norm{f}_\infty</m>. It turns out to be the case that (usefully) <m>\norm{M} = \norm{f}_\infty</m>. (Can you prove it?)</p>
         </example>
@@ -76,5 +76,31 @@
                 \norm{K} \leq \left(\int_c^d \int_a^b \abs{k(t,s)}\, ds \, ds \right)^{1/2}.
             </me></p>
         </example>
+
+        <example><title>the shift operator</title>
+            <p>Consider the sequence space <m>\ell^2</m> and define the shift operator <m>S</m> on <m>\ell^2</m> by <m>S(x_1, x_2, \ldots) = (0, x_1, \ldots)</m>. Since <m>\norm{Sx} = \norm{x}</m> for all <m>x \in \ell^2</m>, we see that <m>S</m> is an isometry, which implies that <m>S</m> is bounded. The backwards shift <m>S\ad</m> is defined by <m>S(x_1, x_2, \ldots) = (x_2, x_3, \ldots)</m>. While <m>S\ad</m> is bounded and <m>\norm{S\ad} = 1</m>, it is immediate that <m>S\ad</m> is not an isometry.</p>
+        </example>
+
+        <p>As with linear functionals, continuity and boundedness are equivalent for linear operators on normed spaces.</p>
+
+        <theorem xref="thm-continuous-linear-operator">
+            <p>Let <m>V, W</m> be normed spaces, and let <m>T: V \to W</m> be a linear operator. The following are equivalent.
+            <ol>
+                <li><m>T</m> is bounded;</li>
+                <li><m>T</m> is continuous;</li>
+                <li><m>T</m> is continuous at <m>0</m>.</li>
+            </ol></p>
+        </theorem>
+
+        <p>The proof of this theorem is identical to the proof of <xref ref="thm-continuous-linear-functional"/> with absolute values replaced by norms.</p>
+
+        <p>In fact, many properties of linear functionals extend to the larger class of linear operators. For normed spaces <m>V, W</m>, we denote by <m>\L(V, W)</m> the set of bounded (and thus continuous) linear operators from <m>V \to W</m>.  Just as in the case of linear functionals, the bounded linear operators <m>\L(V, W)</m> form a vector space. If <m>V, W</m> are normed spaces, we can say more.
+        </p>
+
+        <theorem xref="thm-operators-banach-space">
+            <p>Let <m>V, W</m> be normed spaces. Then <m>\L(V, W)</m> is a normed space with respect to the operator norm. Furthermore, if <m>W</m> is a Banach space, then so is <m>\L(V, W)</m>.</p>
+        </theorem>
+
+
     </section>
 </chapter>
