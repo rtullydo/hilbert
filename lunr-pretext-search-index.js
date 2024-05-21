@@ -2017,9 +2017,9 @@ var ptx_lunr_docs = [
   "body": "The Riesz representation theorem  In the case of Hilbert space, we recover the characterization of linear functionals as inner products against a representative vector. This powerful idea is one of the central tools of Hilbert space theory.  (Riesz-Fréchet)  Let be a Hilbert space and let be a continuous linear functional on . There exists a unique vector so that for all . Moreover, . ( is sometimes called the representative vector for .)    We should first observe that if we can find such a , guarantees that it will be unique, as for all , we would have  If is the functional that sends every vector to 0, then we can take . So suppose that is not the zero functional. In that case, the kernel of , which we denote by is a proper closed subspace of . Then by we can decompose as with . Now choose a non-zero element . We can assume that by normalizing by a scalar. Now, for any , decompose into where and so . Now, take the inner product of these vectors with . The result is since . Then we get, for all , that Now, let . Taking the inner product with , we compute This shows that the representing vector for exists.  Now, we want to show that . For any , the Cauchy-Schwarz inequality ( ) gives On the other hand, choosing the specific unit vector gives that is, . We conclude that , which completes the proof.   It is worth pointing out that the Riesz representation theorem gives an explicit map via that is both surjective and isometric. is also antilinear or conjugate linear in the sense that . Given the existence of , Hilbert spaces are in some sense their own dual spaces, in the same way that is self-dual. (That is to say, Hilbert spaces are in some strong sense the correct notion of ).  We're arrived at one of the major differences between inner product spaces and normed spaces. While the Riesz representation theorem tells us essentially everything about the continuous linear functionals on a Hilbert space, questions turn out to be significantly more complicated in the realm of Banach space. N. Young points out the following, seemingly easy question - given distinct elements in a normed space , does there exist a linear functional that separates points ; that is, can we find a functional on so that ? In Hilbert space, the answer is immediate: yes, because will do the job. In a general normed space, the answer is much more subtle and requires the central theorem of functional analysis, the Hahn-Banach theorem , which is well beyond the scope of these notes and typically introduced in a first course in functional analysis (see e.g. Conway 2007 .).  "
 },
 {
-  "id": "dual-2-3",
+  "id": "thm-riesz-rep",
   "level": "2",
-  "url": "dual-2.html#dual-2-3",
+  "url": "dual-2.html#thm-riesz-rep",
   "type": "Theorem",
   "number": "7.2.1",
   "title": "(Riesz-Fréchet).",
@@ -2059,7 +2059,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.1",
   "title": "Linear operators",
-  "body": "Linear operators  Linear operators are first encountered by students in calculus and differential equations, though not always with that name. Consider the problem which can be written More generally, we learn that any linear differential equation can be written in the form for the differential operator . When we encounter problems like this the first time, we learn a group of recipes that solve the equation for various classes of , functions and sets of boundary conditions.  In another set of classes, the linear algebra sequence, we learn an extensive set of tools for analyzing the matrix problem in terms of the structure of the matrix . For example, we learn that the existence of a solution depends on the columnspace of and that the structure of the solution set depends on the nullspace (or kernel, thinking of as a function) of .  This chapter will examine the relationship between the matrix situation (in finite dimensions) and the linear operator situation (in infinite dimensions). A surprising amount of structure carries from finite to infinite dimensions.   If are vector spaces over a field , a linear operator from to is a map such that for all and .   A linear operator on is a linear operator from to . (Note: these notes largely follow the same conventions as Axler's Linear Algebra Done Right. There is a difference here - Axler restricts the term operator to only the space - that is, maps from .)  If are normed spaces, we say that a linear operator is bounded if there exists a constant such that for all . For a bounded , we define the operator norm (or just norm when there is no ambiguity) of to be the non-negative number  The kernel of a linear operator is the subspace of given by . The kernel of is denoted . The range of is the subspace of given by . The range of is denoted .  can be thought of as the largest factor by which stretches any vector, though it is a supremum, not a maximum. (What does this notion mean for a square matrix?) It also the case that   the zero operator  Let be normed spaces. The map that sends every element of to the zero element in is a bounded operator of norm .   a multiplication operator  Choose a function and define the operator on by It should be immediately clear that is linear. Recalling the norms on and , for any we get Then is a bounded operator and . It turns out to be the case that (usefully) . (Can you prove it?)   an integral operator  For real numbers , let be a continuous map, and define by for . is linear (as integration is). For any , the Cauchy-Schwarz inequality gives Thus is bounded and   "
+  "body": "Linear operators  Linear operators are first encountered by students in calculus and differential equations, though not always with that name. Consider the problem which can be written More generally, we learn that any linear differential equation can be written in the form for the differential operator . When we encounter problems like this the first time, we learn a group of recipes that solve the equation for various classes of , functions and sets of boundary conditions.  In another set of classes, the linear algebra sequence, we learn an extensive set of tools for analyzing the matrix problem in terms of the structure of the matrix . For example, we learn that the existence of a solution depends on the columnspace of and that the structure of the solution set depends on the nullspace (or kernel, thinking of as a function) of .  This chapter will examine the relationship between the matrix situation (in finite dimensions) and the linear operator situation (in infinite dimensions). A surprising amount of structure carries from finite to infinite dimensions.   If are vector spaces over a field , a linear operator from to is a map such that for all and .   A linear operator on is a linear operator from to . (Note: these notes largely follow the same conventions as Axler's Linear Algebra Done Right. There is a difference here - Axler restricts the term operator to only the space - that is, maps from .)  If are normed spaces, we say that a linear operator is bounded if there exists a constant such that for all . For a bounded , we define the operator norm (or just norm when there is no ambiguity) of to be the non-negative number  The kernel of a linear operator is the subspace of given by . The kernel of is denoted . The range of is the subspace of given by . The range of is denoted .  can be thought of as the largest factor by which stretches any vector, though it is a supremum, not a maximum. (What does this notion mean for a square matrix?) It also the case that   the zero operator  Let be normed spaces. The map that sends every element of to the zero element in is a bounded operator of norm .   a multiplication operator  Choose a function and define the operator on by It should be immediately clear that is linear. Recalling the norms on and , for any we get Then is a bounded operator and . It turns out to be the case that (usefully) . (Can you prove it?)   an integral operator  For real numbers , let be a continuous map, and define by for . is linear (as integration is). For any , the Cauchy-Schwarz inequality gives Thus is bounded and   the shift operator  Consider the sequence space and define the shift operator on by . Since for all , we see that is an isometry, which implies that is bounded. The backwards shift is defined by . While is bounded and , it is immediate that is not an isometry.   As with linear functionals, continuity and boundedness are equivalent for linear operators on normed spaces.   Let be normed spaces, and let be a linear operator. The following are equivalent.  is bounded;  is continuous;  is continuous at .    The proof of this theorem is identical to the proof of with absolute values replaced by norms.  In fact, many properties of linear functionals extend to the larger class of linear operators. For normed spaces , we denote by the set of bounded (and thus continuous) linear operators from . Just as in the case of linear functionals, the bounded linear operators form a vector space. If are normed spaces, we can say more.   Let be normed spaces. Then is a normed space with respect to the operator norm. Furthermore, if is a Banach space, then so is .   For compatible operators, we can work with compositions. We'll use the usual operator notation to mean where and . So . The norms act in the manner you might suspect.   Let be vector spaces. If and , then and     The operator inherits linearity from and and continuity as a composition of continuous functions. To see the inequality with the norms, for any , We've shown that    In the case that , we denote repeated compositions of in power notation. Hence . As an immediate and useful consequence of ,  "
 },
 {
   "id": "def-linear-operator",
@@ -2114,6 +2114,150 @@ var ptx_lunr_docs = [
   "number": "8.1.4",
   "title": "an integral operator.",
   "body": "an integral operator  For real numbers , let be a continuous map, and define by for . is linear (as integration is). For any , the Cauchy-Schwarz inequality gives Thus is bounded and  "
+},
+{
+  "id": "operators-2-13",
+  "level": "2",
+  "url": "operators-2.html#operators-2-13",
+  "type": "Example",
+  "number": "8.1.5",
+  "title": "the shift operator.",
+  "body": "the shift operator  Consider the sequence space and define the shift operator on by . Since for all , we see that is an isometry, which implies that is bounded. The backwards shift is defined by . While is bounded and , it is immediate that is not an isometry.  "
+},
+{
+  "id": "operators-2-15",
+  "level": "2",
+  "url": "operators-2.html#operators-2-15",
+  "type": "Theorem",
+  "number": "8.1.6",
+  "title": "",
+  "body": " Let be normed spaces, and let be a linear operator. The following are equivalent.  is bounded;  is continuous;  is continuous at .   "
+},
+{
+  "id": "operators-2-18",
+  "level": "2",
+  "url": "operators-2.html#operators-2-18",
+  "type": "Theorem",
+  "number": "8.1.7",
+  "title": "",
+  "body": " Let be normed spaces. Then is a normed space with respect to the operator norm. Furthermore, if is a Banach space, then so is .  "
+},
+{
+  "id": "thm-composition-norm",
+  "level": "2",
+  "url": "operators-2.html#thm-composition-norm",
+  "type": "Theorem",
+  "number": "8.1.8",
+  "title": "",
+  "body": " Let be vector spaces. If and , then and   "
+},
+{
+  "id": "operators-2-21",
+  "level": "2",
+  "url": "operators-2.html#operators-2-21",
+  "type": "Proof",
+  "number": "8.1.1",
+  "title": "",
+  "body": " The operator inherits linearity from and and continuity as a composition of continuous functions. To see the inequality with the norms, for any , We've shown that   "
+},
+{
+  "id": "operators-3",
+  "level": "1",
+  "url": "operators-3.html",
+  "type": "Section",
+  "number": "8.2",
+  "title": "Inverses",
+  "body": " Inverses  Need to get this from notes. Big theorem here is   Suppose that . If then is invertible and where .   "
+},
+{
+  "id": "thm-contraction-inverse",
+  "level": "2",
+  "url": "operators-3.html#thm-contraction-inverse",
+  "type": "Theorem",
+  "number": "8.2.1",
+  "title": "",
+  "body": " Suppose that . If then is invertible and where .  "
+},
+{
+  "id": "operators-4",
+  "level": "1",
+  "url": "operators-4.html",
+  "type": "Section",
+  "number": "8.3",
+  "title": "Adjoint operators",
+  "body": " Adjoint operators  Restricting to our attention to for the moment, let be an matrix (where we think of ). Let and . Denote by the Hermitian transpose (or conjugate transpose) of (which if course acts in the other direction ). Then in the inner product, we get the relationship We seek to define a similar notion of the adjoint operator in the infinite dimensional case by way of the Riesz representation theorem.   Let where are Hilbert spaces. There is a unique operator such that for all .    For any , the map is a continuous linear functional on . Then gives the existence of a unique vector so that for all . Then we define the map by It remains to show that is a continuous linear functional.  To see that is linear, choose and . Then for all , we have Since this holds for all , we must have  To see that is bounded, notice that for all  Dividing through, we get which gives that , and so is bounded.  Uniqueness follows from the observation that if had two adjoints, then for all , we'd have and so .   In matrices, . The same is true of operators on Hilbert spaces.   Suppose that are Hilbert spaces and . Then and .    Suppose that , and . We claim that . For all , we have Then for all and so .  To see that , recall that the proof of the previous theorem established that . Applying this to gives that and hence the result.   "
+},
+{
+  "id": "thm-adjoint",
+  "level": "2",
+  "url": "operators-4.html#thm-adjoint",
+  "type": "Theorem",
+  "number": "8.3.1",
+  "title": "",
+  "body": " Let where are Hilbert spaces. There is a unique operator such that for all .  "
+},
+{
+  "id": "operators-4-4",
+  "level": "2",
+  "url": "operators-4.html#operators-4-4",
+  "type": "Proof",
+  "number": "8.3.1",
+  "title": "",
+  "body": " For any , the map is a continuous linear functional on . Then gives the existence of a unique vector so that for all . Then we define the map by It remains to show that is a continuous linear functional.  To see that is linear, choose and . Then for all , we have Since this holds for all , we must have  To see that is bounded, notice that for all  Dividing through, we get which gives that , and so is bounded.  Uniqueness follows from the observation that if had two adjoints, then for all , we'd have and so .  "
+},
+{
+  "id": "thm-double-adjoint",
+  "level": "2",
+  "url": "operators-4.html#thm-double-adjoint",
+  "type": "Theorem",
+  "number": "8.3.2",
+  "title": "",
+  "body": " Suppose that are Hilbert spaces and . Then and .  "
+},
+{
+  "id": "operators-4-7",
+  "level": "2",
+  "url": "operators-4.html#operators-4-7",
+  "type": "Proof",
+  "number": "8.3.2",
+  "title": "",
+  "body": " Suppose that , and . We claim that . For all , we have Then for all and so .  To see that , recall that the proof of the previous theorem established that . Applying this to gives that and hence the result.  "
+},
+{
+  "id": "operators-5",
+  "level": "1",
+  "url": "operators-5.html",
+  "type": "Section",
+  "number": "8.4",
+  "title": "Hermitian operators",
+  "body": " Hermitian operators  A self-adjoint or Hermitian matrix is a complex matrix satisfying . Such matrices have a wealth of structural results available to describe them. For example, such matrices have real eigenvalues, can be unitarily diagonalized, and carry a partial order (called the Loewner order ) with a notion of positivity. We're interested in developing analogous results in the infinite dimensional setting.   Let be a Hilbert space and . We say that is Hermitian (or self-adjoint) if .   Hermitian operators have a nice expression for calculating norms.   If is a Hermitian operator on a Hilbert space , then    As an immediate consequence of , for any , we have   In the other direction we have a bit more work to do. Let . Note that for all , we have (which one should check!). Now assume that and . Using that ), If we subtract one of these equations from the other, we get Now apply to get Suppose that . Then replacing with in the inequality gives when . Notice that when , we get and so for all . But then .   "
+},
+{
+  "id": "def-hermitian-operator",
+  "level": "2",
+  "url": "operators-5.html#def-hermitian-operator",
+  "type": "Definition",
+  "number": "8.4.1",
+  "title": "",
+  "body": " Let be a Hilbert space and . We say that is Hermitian (or self-adjoint) if .  "
+},
+{
+  "id": "thm-hermitian-norm",
+  "level": "2",
+  "url": "operators-5.html#thm-hermitian-norm",
+  "type": "Theorem",
+  "number": "8.4.2",
+  "title": "",
+  "body": " If is a Hermitian operator on a Hilbert space , then  "
+},
+{
+  "id": "operators-5-6",
+  "level": "2",
+  "url": "operators-5.html#operators-5-6",
+  "type": "Proof",
+  "number": "8.4.1",
+  "title": "",
+  "body": " As an immediate consequence of , for any , we have   In the other direction we have a bit more work to do. Let . Note that for all , we have (which one should check!). Now assume that and . Using that ), If we subtract one of these equations from the other, we get Now apply to get Suppose that . Then replacing with in the inequality gives when . Notice that when , we get and so for all . But then .  "
 },
 {
   "id": "hilbert-11-2",

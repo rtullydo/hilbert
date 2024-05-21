@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="operators.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="operators.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="hilbert-11.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="operators.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="operators.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="operators-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
   \DeclareMathOperator{\IM}{Im}
   \DeclareMathOperator{\ess}{ess}
   \DeclareMathOperator{\intr}{int}
@@ -132,6 +132,7 @@ window.MathJax = {
   \newcommand{\M}{\mathcal{M}}
   \newcommand{\F}{\mathbb{F}}
   \newcommand{\N}{\mathcal{N}}
+  \newcommand{\L}{\mathcal{L}}
   \newcommand{\T}{\mathbb{T}}
   \newcommand{\W}{\mathcal{W}}
   \newcommand{\X}{\mathcal{X}}
@@ -155,7 +156,7 @@ window.MathJax = {
   \newcommand{\abs}[1]{\left\vert#1\right\vert}
   \newcommand{\set}[1]{\left\{#1\right\}}
   \newcommand{\seq}[1]{\left\lt#1\right&gt;}
-  \newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+  \newcommand{\norm}[1]{\lVert#1\rVert}
   \newcommand{\essnorm}[1]{\norm{#1}_{\ess}}
   \newcommand{\tr}{\operatorname{tr}}
   \newcommand{\ran}[1]{\operatorname{ran}#1}
@@ -296,7 +297,12 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="operators.html" class="internal"><span class="codenumber">8</span> <span class="title">Linear operators</span></a></div>
-<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Linear operators</span></a></div></li></ul>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="operators-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Linear operators</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-3.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Inverses</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-4.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Adjoint operators</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-5.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Hermitian operators</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div>
@@ -395,8 +401,8 @@ T(ax + by) = aT(x) + bT(y),
 <div class="displaymath process-math" id="operators-2-11-2-9">
 \begin{align*}
 \norm{Mx}^2 \amp= \int_a^b \abs{f}^2 \abs{x}^2 \, dt \\
-\amp\leq \sup_{t \in [a, b]}\abs{f(t)} \int_a^b \abs{x}^2 \, dt\\
-\amp = \norm{f}_\infty \norm{x}^2.
+\amp\leq \sup_{t \in [a, b]}\abs{f(t)}^2 \int_a^b \abs{x}^2 \, dt\\
+\amp = \norm{f}_\infty^2 \norm{x}^2.
 \end{align*}
 </div>
 <div class="para">Then <span class="process-math">\(M_f\)</span> is a bounded operator and <span class="process-math">\(\norm{M} \leq \norm{f}_\infty\text{.}\)</span> It turns out to be the case that (usefully) <span class="process-math">\(\norm{M} = \norm{f}_\infty\text{.}\)</span> (Can you prove it?)</div>
@@ -421,9 +427,66 @@ T(ax + by) = aT(x) + bT(y),
 \norm{K} \leq \left(\int_c^d \int_a^b \abs{k(t,s)}\, ds \, ds \right)^{1/2}.
 \end{equation*}
 </div>
-</div></article></details></section></div>
+</div></article></details><details id="operators-2-13" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">the shift operator.</span>
+</h3></summary><article class="example example-like knowl__content"> <div class="para" id="operators-2-13-2">Consider the sequence space <span class="process-math">\(\ell^2\)</span> and define the shift operator <span class="process-math">\(S\)</span> on <span class="process-math">\(\ell^2\)</span> by <span class="process-math">\(S(x_1, x_2, \ldots) = (0, x_1, \ldots)\text{.}\)</span> Since <span class="process-math">\(\norm{Sx} = \norm{x}\)</span> for all <span class="process-math">\(x \in \ell^2\text{,}\)</span> we see that <span class="process-math">\(S\)</span> is an isometry, which implies that <span class="process-math">\(S\)</span> is bounded. The backwards shift <span class="process-math">\(S\ad\)</span> is defined by <span class="process-math">\(S(x_1, x_2, \ldots) = (x_2, x_3, \ldots)\text{.}\)</span> While <span class="process-math">\(S\ad\)</span> is bounded and <span class="process-math">\(\norm{S\ad} = 1\text{,}\)</span> it is immediate that <span class="process-math">\(S\ad\)</span> is not an isometry.</div></article></details><div class="para" id="operators-2-14">As with linear functionals, continuity and boundedness are equivalent for linear operators on normed spaces.</div>
+<article class="theorem theorem-like" id="operators-2-15"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.1.6</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="operators-2-15-1">
+<div class="para">Let <span class="process-math">\(V, W\)</span> be normed spaces, and let <span class="process-math">\(T: V \to W\)</span> be a linear operator. The following are equivalent.</div>
+<ol class="decimal">
+<li id="operators-2-15-1-3-1"><div class="para" id="p-derived-operators-2-15-1-3-1">
+<span class="process-math">\(T\)</span> is bounded;</div></li>
+<li id="operators-2-15-1-3-2"><div class="para" id="p-derived-operators-2-15-1-3-2">
+<span class="process-math">\(T\)</span> is continuous;</div></li>
+<li id="operators-2-15-1-3-3"><div class="para" id="p-derived-operators-2-15-1-3-3">
+<span class="process-math">\(T\)</span> is continuous at <span class="process-math">\(0\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><div class="para" id="operators-2-16">The proof of this theorem is identical to the proof of <a href="dual-1.html#thm-continuous-linear-functional" class="xref" data-knowl="./knowl/xref/thm-continuous-linear-functional.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.7">Theorem 7.1.7</a> with absolute values replaced by norms.</div>
+<div class="para" id="operators-2-17">In fact, many properties of linear functionals extend to the larger class of linear operators. For normed spaces <span class="process-math">\(V, W\text{,}\)</span> we denote by <span class="process-math">\(\L(V, W)\)</span> the set of bounded (and thus continuous) linear operators from <span class="process-math">\(V \to W\text{.}\)</span>  Just as in the case of linear functionals, the bounded linear operators <span class="process-math">\(\L(V, W)\)</span> form a vector space. If <span class="process-math">\(V, W\)</span> are normed spaces, we can say more.</div>
+<article class="theorem theorem-like" id="operators-2-18"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.1.7</span><span class="period">.</span>
+</h3>
+<div class="para" id="operators-2-18-1">Let <span class="process-math">\(V, W\)</span> be normed spaces. Then <span class="process-math">\(\L(V, W)\)</span> is a normed space with respect to the operator norm. Furthermore, if <span class="process-math">\(W\)</span> is a Banach space, then so is <span class="process-math">\(\L(V, W)\text{.}\)</span>
+</div></article><div class="para" id="operators-2-19">For compatible operators, we can work with compositions. We’ll use the usual operator notation <span class="process-math">\(BA\)</span> to mean <span class="process-math">\(B \circ A\)</span> where <span class="process-math">\(A: U \to V\)</span> and <span class="process-math">\(B: V \to W\text{.}\)</span> So <span class="process-math">\(BAx = B(Ax)\text{.}\)</span> The norms act in the manner you might suspect.</div>
+<article class="theorem theorem-like" id="thm-composition-norm"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.1.8</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="thm-composition-norm-1">
+<div class="para">Let <span class="process-math">\(U, V, W\)</span> be vector spaces. If <span class="process-math">\(A \in \L(U, V)\)</span> and <span class="process-math">\(B \in \L(V, W)\text{,}\)</span> then <span class="process-math">\(BA \in \L(U, W)\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\norm{AB} \leq \norm{A}\norm{B}.
+\end{equation*}
+</div>
+</div></article><details id="operators-2-21" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="operators-2-21-1">
+<div class="para">The operator <span class="process-math">\(BA\)</span> inherits linearity from <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> and continuity as a composition of continuous functions. To see the inequality with the norms, for any <span class="process-math">\(x \in U\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="operators-2-21-1-5">
+\begin{align*}
+\norm{BAx} \amp= \norm{B(Ax)} \\
+\amp \leq \norm{B}\norm{Ax}\\
+\amp \leq \norm{B}\norm{A}\norm{x}.
+\end{align*}
+</div>
+<div class="para">We’ve shown that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\norm{BA} \leq \norm{B}\norm{A}.
+\end{equation*}
+</div>
+</div></article></details><div class="para logical" id="operators-2-22">
+<div class="para">In the case that <span class="process-math">\(A \in \L(V)\text{,}\)</span> we denote repeated compositions of <span class="process-math">\(A\)</span> in power notation. Hence <span class="process-math">\(\underbrace{AA\cdots A}_{n \text{times}} = A^n\text{.}\)</span> As an immediate and useful consequence of <a href="operators-2.html#thm-composition-norm" class="xref" data-knowl="./knowl/xref/thm-composition-norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.1.8">Theorem 8.1.8</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-composition-norm.html">
+\begin{equation*}
+\norm{A^n} \leq \norm{A}^n.
+\end{equation*}
+</div>
+</div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="operators.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="hilbert-11.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="operators.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="operators-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
