@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>The Riesz representation theorem</title>
+<title>Results from real analysis</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="dual-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="hilbert-9.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="dual-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="hilbert-12.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="hilbert-12.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="hilbert-12-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
   \DeclareMathOperator{\IM}{Im}
   \DeclareMathOperator{\ess}{ess}
   \DeclareMathOperator{\intr}{int}
@@ -287,11 +287,11 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="hilbert-9.html" class="internal"><span class="codenumber">7</span> <span class="title">Dual spaces</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear functionals</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
@@ -309,90 +309,30 @@ window.MathJax = {
 <div class="toc-title-box"><a href="compact.html" class="internal"><span class="codenumber">9</span> <span class="title">Compact operators</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="compact-spec.html" class="internal"><span class="codenumber">9.1</span> <span class="title">The spectral theorem for compact operators</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="hilbert-12.html" class="internal"><span class="codenumber">10</span> <span class="title">Appendix: Results from analysis</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-12-2.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Results from real analysis</span></a></div></li>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="hilbert-12-2.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Results from real analysis</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-12-3.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Results from complex analysis</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="dual-2"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.2</span><span class="space"> </span><span class="title">The Riesz representation theorem</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="hilbert-12-2"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">10.1</span><span class="space"> </span><span class="title">Results from real analysis</span>
 </h2>
-<div class="para" id="dual-2-2">In the case of Hilbert space, we recover the characterization of linear functionals as inner products against a representative vector. This powerful idea is one of the central tools of Hilbert space theory.</div>
-<article class="theorem theorem-like" id="thm-riesz-rep"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">(Riesz-Fréchet).</span>
+<article class="theorem theorem-like" id="thm-heine-borel"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">10.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Heine-Borel.</span>
 </h3>
-<div class="para logical" id="thm-riesz-rep-2">
-<div class="para">Let <span class="process-math">\(\hilbert\)</span> be a Hilbert space and let <span class="process-math">\(F\)</span> be a continuous linear functional on <span class="process-math">\(\hilbert\text{.}\)</span> There exists a unique vector <span class="process-math">\(y \in \hilbert\)</span> so that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-F(x) = \ip{x}{y}
-\end{equation*}
-</div>
-<div class="para">for all <span class="process-math">\(x \in \hilbert\text{.}\)</span> Moreover, <span class="process-math">\(\norm{y} = \norm{F}\text{.}\)</span> (<span class="process-math">\(y\)</span> is sometimes called the representative vector for <span class="process-math">\(F\text{.}\)</span>)</div>
-</div></article><details id="dual-2-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="dual-2-4-1">
-<div class="para">We should first observe that if we can find such a <span class="process-math">\(y\text{,}\)</span> <a href="inner-1.html#thm-innerproduct" class="xref" data-knowl="./knowl/xref/thm-innerproduct.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.4">Theorem 2.1.4</a> guarantees that it will be unique, as for all <span class="process-math">\(x\in \hilbert\text{,}\)</span> we would have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-innerproduct.html">
-\begin{equation*}
-\ip{x}{y} = F(x) = \ip{x}{y'}.
-\end{equation*}
-</div>
-</div> <div class="para logical" id="dual-2-4-2">
-<div class="para">If <span class="process-math">\(F\)</span> is the functional that sends every vector to 0, then we can take <span class="process-math">\(y = 0\text{.}\)</span> So suppose that <span class="process-math">\(F\)</span> is not the zero functional. In that case, the kernel of <span class="process-math">\(F\text{,}\)</span> which we denote by <span class="process-math">\(M\)</span> is a proper closed subspace of <span class="process-math">\(\hilbert\text{.}\)</span> Then by<a href="ortho-5.html#thm-hilbert-decomp" class="xref" data-knowl="./knowl/xref/thm-hilbert-decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.5">Theorem 5.5.5</a> we can decompose <span class="process-math">\(\hilbert\)</span> as <span class="process-math">\(\hilbert = M \oplus M^\perp\)</span> with <span class="process-math">\(M^\perp \neq \{0\}\text{.}\)</span> Now choose a non-zero element <span class="process-math">\(z \in M^\perp\text{.}\)</span> We can assume that <span class="process-math">\(F(z) = 1\)</span> by normalizing by a scalar.  Now, for any <span class="process-math">\(x \in \hilbert\text{,}\)</span> decompose <span class="process-math">\(x\)</span> into</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
-\begin{equation*}
-x = (x - F(x)z) + F(x)z),
-\end{equation*}
-</div>
-<div class="para">where <span class="process-math">\(F(x)z \in M^\perp\)</span> and so <span class="process-math">\(x - F(x)z \in M\text{.}\)</span> Now, take the inner product of these vectors with <span class="process-math">\(z\text{.}\)</span> The result is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html" id="dual-2-4-2-19">
-\begin{align*}
-\ip{x}{z} \amp= \ip{(x - F(x)z) + F(x)z)}{z}\\
-\amp= \ip{x - F(x)z}{z} + \ip{F(x)z}{z}\\
-\amp= \ip{F(x)z}{z}
-\end{align*}
-</div>
-<div class="para">since <span class="process-math">\(z \perp M\text{.}\)</span> Then we get, for all <span class="process-math">\(x \in \hilbert\text{,}\)</span> that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
-\begin{equation*}
-\ip{x}{z} = F(x)\norm{z}^2.
-\end{equation*}
-</div>
-<div class="para">Now, let <span class="process-math">\(y = z/\norm{z}^2\text{.}\)</span> Taking the inner product with <span class="process-math">\(x\text{,}\)</span> we compute</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
-\begin{equation*}
-\ip{x}{y} = \ip{x}{\frac{z}{\norm{z}^2}} = \frac{1}{\norm{z}^2} F(x)\norm{z}^2 = F(x).
-\end{equation*}
-</div>
-<div class="para">This shows that the representing vector for <span class="process-math">\(F\)</span> exists.</div>
-</div> <div class="para logical" id="dual-2-4-3">
-<div class="para">Now, we want to show that <span class="process-math">\(\norm{y} = \norm{F}\text{.}\)</span> For any <span class="process-math">\(\norm{x} \leq 1\text{,}\)</span> the Cauchy-Schwarz inequality (<a href="inner-2.html#thm-cauchy-schwarz" class="xref" data-knowl="./knowl/xref/thm-cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.4">Theorem 2.2.4</a>) gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cauchy-schwarz.html">
-\begin{equation*}
-\abs{F(x)} = \abs{\ip{x}{y}} \leq \norm{x}\norm{y} \leq \norm{y}.
-\end{equation*}
-</div>
-<div class="para">On the other hand, choosing the specific unit vector <span class="process-math">\(x = \frac{y}{\norm{y}}\)</span> gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cauchy-schwarz.html">
-\begin{equation*}
-\norm{F} \geq \abs{F(x)} = \frac{\abs{F(y)}}{\norm{y}} = \abs{\ip{y}{y}}/\norm{y} = \norm{y};
-\end{equation*}
-</div>
-<div class="para">that is, <span class="process-math">\(\norm{F} \geq \norm{y}\text{.}\)</span> We conclude that <span class="process-math">\(\norm{F} = \norm{y}\text{,}\)</span> which completes the proof.</div>
-</div></article></details><div class="para logical" id="dual-2-5">
-<div class="para">It is worth pointing out that the Riesz representation theorem gives an explicit map <span class="process-math">\(T: \hilbert \to \hilbert\ad\)</span> via</div>
-<div class="displaymath process-math">
-\begin{equation*}
-Ty = \ip{\cdot}{y}
-\end{equation*}
-</div>
-<div class="para">that is both surjective and isometric. <span class="process-math">\(T\)</span> is also <dfn class="terminology">antilinear</dfn> or <dfn class="terminology">conjugate linear</dfn> in the sense that <span class="process-math">\(T(ax + by) = \cc{a}x + \cc{b}{y}\text{.}\)</span> Given the existence of <span class="process-math">\(T\text{,}\)</span> Hilbert spaces are in some sense their own dual spaces, in the same way that <span class="process-math">\(\R^n\)</span> is self-dual. (That is to say, Hilbert spaces are in some strong sense the correct notion of “<span class="process-math">\(\R^\infty\)</span>”).</div>
-</div>
-<div class="para" id="dual-2-6">We’re arrived at one of the major differences between inner product spaces and normed spaces. While the Riesz representation theorem tells us essentially everything about the continuous linear functionals on a Hilbert space, questions turn out to be significantly more complicated in the realm of Banach space. N. Young points out the following, seemingly easy question - given <span class="process-math">\(x, y\)</span> distinct elements in a normed space <span class="process-math">\(E\text{,}\)</span> does there exist a linear functional that “separates points”; that is, can we find a functional <span class="process-math">\(F\)</span> on <span class="process-math">\(E\)</span> so that <span class="process-math">\(F(x) \neq F(y)\text{?}\)</span> In Hilbert space, the answer is immediate: yes, because <span class="process-math">\(F = \ip{\cdot}{x - y}\)</span> will do the job. In a general normed space, the answer is much more subtle and requires the central theorem of functional analysis, the <a class="external" href="https://en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem" target="_blank">Hahn-Banach theorem</a><details class="ptx-footnote" aria-live="polite" id="dual-2-6-9"><summary class="ptx-footnote__number" title="Footnote 7.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="dual-2-6-9"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem</code></div></details>, which is well beyond the scope of these notes and typically introduced in a first course in functional analysis (see e.g. <a class="external" href="https://www.springer.com/gp/book/9780387972459" target="_blank">Conway 2007</a><details class="ptx-footnote" aria-live="polite" id="dual-2-6-11"><summary class="ptx-footnote__number" title="Footnote 7.2.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="dual-2-6-11"><code class="code-inline tex2jax_ignore">www.springer.com/gp/book/9780387972459</code></div></details>.).</div></section></div>
+<div class="para" id="thm-heine-borel-2">A closed and bounded set in <span class="process-math">\(\R^n\)</span> or <span class="process-math">\(\C^n\)</span> is compact.</div></article><article class="theorem theorem-like" id="thm-cont-comp"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">10.1.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-cont-comp-1">Let <span class="process-math">\(\mathcal X, \mathcal R\)</span> be metric spaces. Let <span class="process-math">\(S \subseteq \mathcal X\text{.}\)</span> If <span class="process-math">\(f: S \to \mathcal R\)</span> is continuous, then <span class="process-math">\(S\)</span> compact implies that <span class="process-math">\(f(S)\)</span> is compact.</div></article><article class="theorem theorem-like" id="thm-comp-inf"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">10.1.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-comp-inf-1">Suppose that <span class="process-math">\(K\)</span> is a non-empty compact set in a metric space <span class="process-math">\(\mathcal X\)</span> and that <span class="process-math">\(f:K \to \R\)</span> is continuous. Then <span class="process-math">\(f\)</span> attains its infimum and supremum on <span class="process-math">\(K\)</span> - that is, <span class="process-math">\(f\)</span> has both a minimum and maximum on <span class="process-math">\(K\text{.}\)</span>
+</div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="dual-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="dual-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="hilbert-12.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="hilbert-12-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

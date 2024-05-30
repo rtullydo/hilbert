@@ -151,7 +151,7 @@ window.MathJax = {
   \newcommand{\Polar}{\mathcal{P}_{\s}}
   \newcommand{\Poly}{\mathcal{P}(E)}
   \newcommand{\EssD}{\mathcal{D}}
-  \newcommand{\Lop}{\mathcal{L}}
+  \newcommand{\Lop}{\mathcal{L}(\mathcal{H})}
   \newcommand{\cc}[1]{\overline{#1}}
   \newcommand{\abs}[1]{\left\vert#1\right\vert}
   \newcommand{\set}[1]{\left\{#1\right\}}
@@ -306,10 +306,14 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="hilbert-11.html" class="internal"><span class="codenumber">9</span> <span class="title">Appendix: Results from analysis</span></a></div>
+<div class="toc-title-box"><a href="compact.html" class="internal"><span class="codenumber">9</span> <span class="title">Compact operators</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="compact-spec.html" class="internal"><span class="codenumber">9.1</span> <span class="title">The spectral theorem for compact operators</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="hilbert-12.html" class="internal"><span class="codenumber">10</span> <span class="title">Appendix: Results from analysis</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-11-2.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Results from real analysis</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-11-3.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Results from complex analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-12-2.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Results from real analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-12-3.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Results from complex analysis</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -429,13 +433,13 @@ M = \left(\sum_{i=1}^n \norm{e_i}^2 \right)^{1/2}.
 f(c_1, \ldots, c_n) = \norm{\sum_{i=1}^n c_i e_i}.
 \end{equation*}
 </div>
-<div class="para">(We can think of this function as taking coordinates back to vectors in <span class="process-math">\(V\text{.}\)</span>) <span class="process-math">\(f\)</span> is a clearly a continuous function with respect to the standard topology on <span class="process-math">\(\F^n\text{.}\)</span> The <a href="hilbert-11-2.html#thm-heine-borel" class="xref" data-knowl="./knowl/xref/thm-heine-borel.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.1: Heine-Borel">Heine-Borel theorem 9.1.1</a> gives that the set</div>
+<div class="para">(We can think of this function as taking coordinates back to vectors in <span class="process-math">\(V\text{.}\)</span>) <span class="process-math">\(f\)</span> is a clearly a continuous function with respect to the standard topology on <span class="process-math">\(\F^n\text{.}\)</span> The <a href="hilbert-12-2.html#thm-heine-borel" class="xref" data-knowl="./knowl/xref/thm-heine-borel.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 10.1.1: Heine-Borel">Heine-Borel theorem 10.1.1</a> gives that the set</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-heine-borel.html ./knowl/xref/thm-comp-inf.html ./knowl/xref/def-norm.html">
 \begin{equation*}
 U = \left\{(c_1, \ldots, c_n): \sum_{i=1}^n \abs{c_i}^2 = 1\right\}
 \end{equation*}
 </div>
-<div class="para">is compact in <span class="process-math">\(\F^n\text{.}\)</span> (This set consists of the coordinates of those points <span class="process-math">\(v \in V\)</span> for which <span class="process-math">\(\rho(v) = 1\text{.}\)</span>) Thus, by <a href="hilbert-11-2.html#thm-comp-inf" class="xref" data-knowl="./knowl/xref/thm-comp-inf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.3">Theorem 9.1.3</a>, <span class="process-math">\(f\)</span> attains its infimum <span class="process-math">\(m\)</span> on <span class="process-math">\(U\text{.}\)</span> Since the <span class="process-math">\(e_i\)</span> are a basis and thus linearly independent, <span class="process-math">\(m\)</span> cannot be <span class="process-math">\(0\text{,}\)</span> and so <span class="process-math">\(m &gt; 0\text{.}\)</span> Thus, we have shown that <span class="process-math">\(\norm{v} \geq m &gt; 0\)</span> whenever <span class="process-math">\(\rho(v) = 1\text{.}\)</span> By <a href="norm-1.html#def-norm" class="xref" data-knowl="./knowl/xref/def-norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.3">Definition 3.1.3</a> (2), we conclude that</div>
+<div class="para">is compact in <span class="process-math">\(\F^n\text{.}\)</span> (This set consists of the coordinates of those points <span class="process-math">\(v \in V\)</span> for which <span class="process-math">\(\rho(v) = 1\text{.}\)</span>) Thus, by <a href="hilbert-12-2.html#thm-comp-inf" class="xref" data-knowl="./knowl/xref/thm-comp-inf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 10.1.3">Theorem 10.1.3</a>, <span class="process-math">\(f\)</span> attains its infimum <span class="process-math">\(m\)</span> on <span class="process-math">\(U\text{.}\)</span> Since the <span class="process-math">\(e_i\)</span> are a basis and thus linearly independent, <span class="process-math">\(m\)</span> cannot be <span class="process-math">\(0\text{,}\)</span> and so <span class="process-math">\(m &gt; 0\text{.}\)</span> Thus, we have shown that <span class="process-math">\(\norm{v} \geq m &gt; 0\)</span> whenever <span class="process-math">\(\rho(v) = 1\text{.}\)</span> By <a href="norm-1.html#def-norm" class="xref" data-knowl="./knowl/xref/def-norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.3">Definition 3.1.3</a> (2), we conclude that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-heine-borel.html ./knowl/xref/thm-comp-inf.html ./knowl/xref/def-norm.html">
 \begin{equation*}
 \norm{v} \geq m \rho(v) \hspace{.1in} \text{ for all } v \in V.
@@ -446,7 +450,7 @@ U = \left\{(c_1, \ldots, c_n): \sum_{i=1}^n \abs{c_i}^2 = 1\right\}
 <article class="corollary theorem-like" id="thm-norm-heine"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.2.9</span><span class="period">.</span>
 </h3>
-<div class="para" id="thm-norm-heine-1">Closed and bounded sets in a finite dimensional normed space are compact.</div></article><details id="norm-2-23" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="norm-2-23-1">Let <span class="process-math">\((V, \norm{\cdot})\)</span> be a finite-dimensional normed space. Suppose that <span class="process-math">\(K \subseteq V\)</span> is closed and bounded. Then, since <span class="process-math">\(\rho(x) \leq \frac{1}{m} \norm{v}\)</span> for all <span class="process-math">\(v \in V\text{,}\)</span> <span class="process-math">\(K\)</span> is also <span class="process-math">\(\rho\)</span>-bounded. Because <span class="process-math">\(\norm{\cdot}\)</span> and <span class="process-math">\(\rho\)</span> are equivalent norms, they determine the same topology, and so <span class="process-math">\(K\)</span> is also <span class="process-math">\(\rho\)</span>-closed. Thus, in the Euclidean space <span class="process-math">\((V, \rho)\text{,}\)</span> <span class="process-math">\(K\)</span> is closed and bounded and thus compact by the <a href="hilbert-11-2.html#thm-heine-borel" class="xref" data-knowl="./knowl/xref/thm-heine-borel.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.1: Heine-Borel">Heine-Borel theorem 9.1.1</a>.</div></article></details></section></div>
+<div class="para" id="thm-norm-heine-1">Closed and bounded sets in a finite dimensional normed space are compact.</div></article><details id="norm-2-23" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="norm-2-23-1">Let <span class="process-math">\((V, \norm{\cdot})\)</span> be a finite-dimensional normed space. Suppose that <span class="process-math">\(K \subseteq V\)</span> is closed and bounded. Then, since <span class="process-math">\(\rho(x) \leq \frac{1}{m} \norm{v}\)</span> for all <span class="process-math">\(v \in V\text{,}\)</span> <span class="process-math">\(K\)</span> is also <span class="process-math">\(\rho\)</span>-bounded. Because <span class="process-math">\(\norm{\cdot}\)</span> and <span class="process-math">\(\rho\)</span> are equivalent norms, they determine the same topology, and so <span class="process-math">\(K\)</span> is also <span class="process-math">\(\rho\)</span>-closed. Thus, in the Euclidean space <span class="process-math">\((V, \rho)\text{,}\)</span> <span class="process-math">\(K\)</span> is closed and bounded and thus compact by the <a href="hilbert-12-2.html#thm-heine-borel" class="xref" data-knowl="./knowl/xref/thm-heine-borel.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 10.1.1: Heine-Borel">Heine-Borel theorem 10.1.1</a>.</div></article></details></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="norm-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="norm-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

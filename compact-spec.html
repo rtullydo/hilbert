@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>The Riesz representation theorem</title>
+<title>The spectral theorem for compact operators</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="dual-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="hilbert-9.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="dual-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="compact.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="compact.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="hilbert-12.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
   \DeclareMathOperator{\IM}{Im}
   \DeclareMathOperator{\ess}{ess}
   \DeclareMathOperator{\intr}{int}
@@ -287,11 +287,11 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="hilbert-9.html" class="internal"><span class="codenumber">7</span> <span class="title">Dual spaces</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Linear functionals</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Riesz representation theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="dual-3.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
@@ -305,9 +305,9 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="operators-6.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The spectrum</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="compact.html" class="internal"><span class="codenumber">9</span> <span class="title">Compact operators</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="compact-spec.html" class="internal"><span class="codenumber">9.1</span> <span class="title">The spectral theorem for compact operators</span></a></div></li></ul>
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="compact-spec.html" class="internal"><span class="codenumber">9.1</span> <span class="title">The spectral theorem for compact operators</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="hilbert-12.html" class="internal"><span class="codenumber">10</span> <span class="title">Appendix: Results from analysis</span></a></div>
@@ -317,82 +317,136 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="dual-2"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.2</span><span class="space"> </span><span class="title">The Riesz representation theorem</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="compact-spec"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">9.1</span><span class="space"> </span><span class="title">The spectral theorem for compact operators</span>
 </h2>
-<div class="para" id="dual-2-2">In the case of Hilbert space, we recover the characterization of linear functionals as inner products against a representative vector. This powerful idea is one of the central tools of Hilbert space theory.</div>
-<article class="theorem theorem-like" id="thm-riesz-rep"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">(Riesz-Fréchet).</span>
+<div class="para" id="compact-spec-2">Note: work in progress.</div>
+<div class="para" id="compact-spec-3">Now let us assemble the players.</div>
+<article class="theorem theorem-like" id="thm-eigenvalue-exists"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="thm-riesz-rep-2">
-<div class="para">Let <span class="process-math">\(\hilbert\)</span> be a Hilbert space and let <span class="process-math">\(F\)</span> be a continuous linear functional on <span class="process-math">\(\hilbert\text{.}\)</span> There exists a unique vector <span class="process-math">\(y \in \hilbert\)</span> so that</div>
+<div class="para" id="thm-eigenvalue-exists-1">Let <span class="process-math">\(\hilbert\)</span> be a Hilbert space and suppose that <span class="process-math">\(K \in \Lop\)</span> is a self-adjoint compact operator. Then <span class="process-math">\(K\)</span> has an eigenvalue <span class="process-math">\(\la\)</span> so that <span class="process-math">\(\la = \pm \norm{K}\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="thm-eigenvectors-orthogonal"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-eigenvectors-orthogonal-1">Let <span class="process-math">\(\hilbert\)</span> be a Hilbert space and suppose that <span class="process-math">\(A \in \Lop\)</span> is a self-adjoint operator. Then all of the eigenvalues of <span class="process-math">\(A\)</span> are real, and eigenvalues associated to distinct eigenvectors are orthogonal.</div></article><article class="theorem theorem-like" id="thm-eigenvalues-compact"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-eigenvalues-compact-1">Let <span class="process-math">\(\hilbert\)</span> be a Hilbert space and suppose that <span class="process-math">\(K \in \Lop\)</span> is a compact operator. Then the eigenvalues of <span class="process-math">\(K\)</span> are a finite set of real numbers, or the eigenvalues of <span class="process-math">\(K\)</span> are a countable sequence of real numbers tending to <span class="process-math">\(0\text{.}\)</span>
+</div></article><article class="lemma theorem-like" id="lemma-invariant-adjoint"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">9.1.4</span><span class="period">.</span>
+</h3>
+<div class="para" id="lemma-invariant-adjoint-1">Let <span class="process-math">\(\M\)</span> be a closed linear subspace of a Hilbert space <span class="process-math">\(\hilbert\)</span> and <span class="process-math">\(\M\)</span> be invariant under <span class="process-math">\(T \in \Lop\)</span> (that is, <span class="process-math">\(T\M \subseteq \M\)</span>). Then <span class="process-math">\(\M^\perp\)</span> is invariant under <span class="process-math">\(T\ad\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="thm-hilbert-closed-subspaces"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.5</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-hilbert-closed-subspaces-1">Suppose that <span class="process-math">\(\M\)</span> is a closed linear subspace <span class="process-math">\(\M\)</span> of a Hilbert space <span class="process-math">\(\hilbert\text{.}\)</span> Then <span class="process-math">\(\M\)</span> is a Hilbert space.</div></article><details id="compact-spec-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="compact-spec-9-1">The space <span class="process-math">\(M\)</span> inherits the inner product space structure from <span class="process-math">\(\hilbert\text{,}\)</span> so we need only show completeness. Suppose that <span class="process-math">\((x_n)\)</span> is a Cauchy sequence in <span class="process-math">\(\M\text{.}\)</span> Then <span class="process-math">\((x_n)\)</span> is also a Cauchy sequence of vectors in <span class="process-math">\(\hilbert\text{.}\)</span> As <span class="process-math">\(\hilbert\)</span> is complete, <span class="process-math">\(x_n \to x\)</span> for some <span class="process-math">\(x \in \hilbert\text{.}\)</span> As <span class="process-math">\(\M\)</span> is closed, <span class="process-math">\(x \in \M\text{.}\)</span> Thus, Cauchy sequences in <span class="process-math">\(\M\)</span> converge in <span class="process-math">\(\M\)</span> and so <span class="process-math">\(\M\)</span> is complete and hence a Hilbert space.</div></article></details><div class="para" id="compact-spec-10">Just as we can restrict the domain of a function on <span class="process-math">\(\R\)</span> to smaller subsets (typically some kind of smaller interval), we can restrict operators on Hilbert spaces. To preserve structure, we typically restrict an operator to a subspace.</div>
+<article class="definition definition-like" id="def-restriction-operator"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">9.1.6</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-restriction-operator-1">
+<div class="para">Suppose that <span class="process-math">\(A \in \Lop\)</span> where <span class="process-math">\(\hilbert\)</span> is a Hilbert space and that <span class="process-math">\(\M\)</span> is a linear subspace of <span class="process-math">\(\hilbert\text{.}\)</span> The <dfn class="terminology">restriction of <span class="process-math">\(A\)</span> to <span class="process-math">\(\M\)</span></dfn>, denoted <span class="process-math">\(A|_\M: \M \to \hilbert\)</span> is defined by</div>
 <div class="displaymath process-math">
 \begin{equation*}
-F(x) = \ip{x}{y}
+A|_\M v = A v.
 \end{equation*}
 </div>
-<div class="para">for all <span class="process-math">\(x \in \hilbert\text{.}\)</span> Moreover, <span class="process-math">\(\norm{y} = \norm{F}\text{.}\)</span> (<span class="process-math">\(y\)</span> is sometimes called the representative vector for <span class="process-math">\(F\text{.}\)</span>)</div>
-</div></article><details id="dual-2-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="dual-2-4-1">
-<div class="para">We should first observe that if we can find such a <span class="process-math">\(y\text{,}\)</span> <a href="inner-1.html#thm-innerproduct" class="xref" data-knowl="./knowl/xref/thm-innerproduct.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.4">Theorem 2.1.4</a> guarantees that it will be unique, as for all <span class="process-math">\(x\in \hilbert\text{,}\)</span> we would have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-innerproduct.html">
-\begin{equation*}
-\ip{x}{y} = F(x) = \ip{x}{y'}.
-\end{equation*}
+</div></article><div class="para" id="compact-spec-12">We are now prepared to prove the spectral theorem for compact self-adjoint operators.</div>
+<article class="theorem theorem-like" id="thm-spectral-theorem-compact-hermitian"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Spectral theorem for compact Hermitian operators.</span>
+</h3>
+<div class="para logical" id="thm-spectral-theorem-compact-hermitian-2">
+<div class="para">Let <span class="process-math">\(K\)</span> be a compact, self-adjoint operator on a Hilbert space <span class="process-math">\(\hilbert\text{.}\)</span> There exists a finite or infinite orthonormal sequence <span class="process-math">\((e_n)\)</span> of eigenvectors of <span class="process-math">\(K\)</span> with corresponding real eigenvalues <span class="process-math">\((\la_n)\)</span> such that for all <span class="process-math">\(x \in \hilbert\text{,}\)</span>
 </div>
-</div> <div class="para logical" id="dual-2-4-2">
-<div class="para">If <span class="process-math">\(F\)</span> is the functional that sends every vector to 0, then we can take <span class="process-math">\(y = 0\text{.}\)</span> So suppose that <span class="process-math">\(F\)</span> is not the zero functional. In that case, the kernel of <span class="process-math">\(F\text{,}\)</span> which we denote by <span class="process-math">\(M\)</span> is a proper closed subspace of <span class="process-math">\(\hilbert\text{.}\)</span> Then by<a href="ortho-5.html#thm-hilbert-decomp" class="xref" data-knowl="./knowl/xref/thm-hilbert-decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.5">Theorem 5.5.5</a> we can decompose <span class="process-math">\(\hilbert\)</span> as <span class="process-math">\(\hilbert = M \oplus M^\perp\)</span> with <span class="process-math">\(M^\perp \neq \{0\}\text{.}\)</span> Now choose a non-zero element <span class="process-math">\(z \in M^\perp\text{.}\)</span> We can assume that <span class="process-math">\(F(z) = 1\)</span> by normalizing by a scalar.  Now, for any <span class="process-math">\(x \in \hilbert\text{,}\)</span> decompose <span class="process-math">\(x\)</span> into</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
-\begin{equation*}
-x = (x - F(x)z) + F(x)z),
-\end{equation*}
-</div>
-<div class="para">where <span class="process-math">\(F(x)z \in M^\perp\)</span> and so <span class="process-math">\(x - F(x)z \in M\text{.}\)</span> Now, take the inner product of these vectors with <span class="process-math">\(z\text{.}\)</span> The result is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html" id="dual-2-4-2-19">
-\begin{align*}
-\ip{x}{z} \amp= \ip{(x - F(x)z) + F(x)z)}{z}\\
-\amp= \ip{x - F(x)z}{z} + \ip{F(x)z}{z}\\
-\amp= \ip{F(x)z}{z}
-\end{align*}
-</div>
-<div class="para">since <span class="process-math">\(z \perp M\text{.}\)</span> Then we get, for all <span class="process-math">\(x \in \hilbert\text{,}\)</span> that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
-\begin{equation*}
-\ip{x}{z} = F(x)\norm{z}^2.
-\end{equation*}
-</div>
-<div class="para">Now, let <span class="process-math">\(y = z/\norm{z}^2\text{.}\)</span> Taking the inner product with <span class="process-math">\(x\text{,}\)</span> we compute</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-decomp.html">
-\begin{equation*}
-\ip{x}{y} = \ip{x}{\frac{z}{\norm{z}^2}} = \frac{1}{\norm{z}^2} F(x)\norm{z}^2 = F(x).
-\end{equation*}
-</div>
-<div class="para">This shows that the representing vector for <span class="process-math">\(F\)</span> exists.</div>
-</div> <div class="para logical" id="dual-2-4-3">
-<div class="para">Now, we want to show that <span class="process-math">\(\norm{y} = \norm{F}\text{.}\)</span> For any <span class="process-math">\(\norm{x} \leq 1\text{,}\)</span> the Cauchy-Schwarz inequality (<a href="inner-2.html#thm-cauchy-schwarz" class="xref" data-knowl="./knowl/xref/thm-cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.4">Theorem 2.2.4</a>) gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cauchy-schwarz.html">
-\begin{equation*}
-\abs{F(x)} = \abs{\ip{x}{y}} \leq \norm{x}\norm{y} \leq \norm{y}.
-\end{equation*}
-</div>
-<div class="para">On the other hand, choosing the specific unit vector <span class="process-math">\(x = \frac{y}{\norm{y}}\)</span> gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cauchy-schwarz.html">
-\begin{equation*}
-\norm{F} \geq \abs{F(x)} = \frac{\abs{F(y)}}{\norm{y}} = \abs{\ip{y}{y}}/\norm{y} = \norm{y};
-\end{equation*}
-</div>
-<div class="para">that is, <span class="process-math">\(\norm{F} \geq \norm{y}\text{.}\)</span> We conclude that <span class="process-math">\(\norm{F} = \norm{y}\text{,}\)</span> which completes the proof.</div>
-</div></article></details><div class="para logical" id="dual-2-5">
-<div class="para">It is worth pointing out that the Riesz representation theorem gives an explicit map <span class="process-math">\(T: \hilbert \to \hilbert\ad\)</span> via</div>
 <div class="displaymath process-math">
 \begin{equation*}
-Ty = \ip{\cdot}{y}
+Kx = \sum_{i} \la_i \ip{x}{v_i} v_i.
 \end{equation*}
 </div>
-<div class="para">that is both surjective and isometric. <span class="process-math">\(T\)</span> is also <dfn class="terminology">antilinear</dfn> or <dfn class="terminology">conjugate linear</dfn> in the sense that <span class="process-math">\(T(ax + by) = \cc{a}x + \cc{b}{y}\text{.}\)</span> Given the existence of <span class="process-math">\(T\text{,}\)</span> Hilbert spaces are in some sense their own dual spaces, in the same way that <span class="process-math">\(\R^n\)</span> is self-dual. (That is to say, Hilbert spaces are in some strong sense the correct notion of “<span class="process-math">\(\R^\infty\)</span>”).</div>
+</div></article><details id="compact-spec-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="compact-spec-14-1">The eigenvalues of <span class="process-math">\(K\)</span> are real and a finite set or a sequence tending to 0 by <a href="compact-spec.html#thm-eigenvalues-compact" class="xref" data-knowl="./knowl/xref/thm-eigenvalues-compact.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.3">Theorem 9.1.3</a>.</div> <div class="para" id="compact-spec-14-2">We will construct a collection of eigenpairs of <span class="process-math">\(K\)</span> by induction. By <a href="compact-spec.html#thm-eigenvalue-exists" class="xref" data-knowl="./knowl/xref/thm-eigenvalue-exists.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.1">Theorem 9.1.1</a>, we know that <span class="process-math">\(K\)</span> has an eigenvalue <span class="process-math">\(\la_1 = \pm \norm{K}\text{,}\)</span> for which we can pick a unit eigenvector <span class="process-math">\(v_1\text{.}\)</span>
+</div> <div class="para logical" id="compact-spec-14-3">
+<div class="para">Let <span class="process-math">\(\hilbert_2 = \spn\{v_1\}^\perp\text{.}\)</span> Since <span class="process-math">\(\spn\{v_1\}\)</span> is invariant under <span class="process-math">\(K\text{,}\)</span> as <span class="process-math">\(K(cv_1) = cKv_1 = c\la v_1\text{,}\)</span> by <a href="compact-spec.html#lemma-invariant-adjoint" class="xref" data-knowl="./knowl/xref/lemma-invariant-adjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 9.1.4">Lemma 9.1.4</a>, we have that <span class="process-math">\(\hilbert_2\)</span> is invariant under <span class="process-math">\(K\ad\)</span> and hence is also invariant under <span class="process-math">\(K\)</span> by self-adjointness. By <a href="ortho-5.html#thm-perp-closed" class="xref" data-knowl="./knowl/xref/thm-perp-closed.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.3">Theorem 5.5.3</a>, <span class="process-math">\(\hilbert_2\)</span> is closed, and so a Hilbert space by <a href="compact-spec.html#thm-hilbert-closed-subspaces" class="xref" data-knowl="./knowl/xref/thm-hilbert-closed-subspaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.5">Theorem 9.1.5</a>. Now let <span class="process-math">\(K_2 = K|_{\hilbert_2}\text{.}\)</span> Then <span class="process-math">\(K_2\)</span> maps <span class="process-math">\(\hilbert_2\)</span> to <span class="process-math">\(\hilbert_2\text{.}\)</span> <span class="process-math">\(K_2\)</span> is a bounded linear compact operator because it is the restriction of a bounded, linear, compact operator. To see that <span class="process-math">\(K_2\)</span> is self-adjoint, pick <span class="process-math">\(x \in \hilbert\)</span> and note that for all <span class="process-math">\(y \in \hilbert_2\text{,}\)</span>
 </div>
-<div class="para" id="dual-2-6">We’re arrived at one of the major differences between inner product spaces and normed spaces. While the Riesz representation theorem tells us essentially everything about the continuous linear functionals on a Hilbert space, questions turn out to be significantly more complicated in the realm of Banach space. N. Young points out the following, seemingly easy question - given <span class="process-math">\(x, y\)</span> distinct elements in a normed space <span class="process-math">\(E\text{,}\)</span> does there exist a linear functional that “separates points”; that is, can we find a functional <span class="process-math">\(F\)</span> on <span class="process-math">\(E\)</span> so that <span class="process-math">\(F(x) \neq F(y)\text{?}\)</span> In Hilbert space, the answer is immediate: yes, because <span class="process-math">\(F = \ip{\cdot}{x - y}\)</span> will do the job. In a general normed space, the answer is much more subtle and requires the central theorem of functional analysis, the <a class="external" href="https://en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem" target="_blank">Hahn-Banach theorem</a><details class="ptx-footnote" aria-live="polite" id="dual-2-6-9"><summary class="ptx-footnote__number" title="Footnote 7.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="dual-2-6-9"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem</code></div></details>, which is well beyond the scope of these notes and typically introduced in a first course in functional analysis (see e.g. <a class="external" href="https://www.springer.com/gp/book/9780387972459" target="_blank">Conway 2007</a><details class="ptx-footnote" aria-live="polite" id="dual-2-6-11"><summary class="ptx-footnote__number" title="Footnote 7.2.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="dual-2-6-11"><code class="code-inline tex2jax_ignore">www.springer.com/gp/book/9780387972459</code></div></details>.).</div></section></div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-invariant-adjoint.html ./knowl/xref/thm-perp-closed.html ./knowl/xref/thm-hilbert-closed-subspaces.html ./knowl/xref/thm-innerproduct.html">
+\begin{equation*}
+\ip{K_2\ad x}{y} = \ip{x}{K_2 y} = \ip{x}{Ky} = \ip{Kx}{y}.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(Kx \in \hilbert_2\)</span> and this expression holds for all <span class="process-math">\(y \in \hilbert_2\text{,}\)</span> by <a href="inner-1.html#thm-innerproduct" class="xref" data-knowl="./knowl/xref/thm-innerproduct.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.4">Theorem 2.1.4</a>, we get that <span class="process-math">\(K_2\ad x = K x\text{.}\)</span> As <span class="process-math">\(x\)</span> was arbitrary, this holds for all <span class="process-math">\(x \in \hilbert\text{,}\)</span> and so <span class="process-math">\(K_2 \ad\)</span> must also be the restriction of <span class="process-math">\(K\)</span> to <span class="process-math">\(\hilbert_2\text{.}\)</span> Thus, <span class="process-math">\(K_2 = K_2\ad\text{.}\)</span>
+</div>
+</div> <div class="para" id="compact-spec-14-4">Since <span class="process-math">\(K_2\)</span> is a compact self-adjoint operator on the Hilbert space <span class="process-math">\(\hilbert_2\text{,}\)</span> it must have an eigenvalue <span class="process-math">\(\la_2 = \pm \norm{K_2}\)</span> and we can chose an associated unit eigenvector <span class="process-math">\(v_2 \in \hilbert_2\text{.}\)</span> Note that since <span class="process-math">\(K v_2 = K_2 v_2 = \la_2 v_2\text{,}\)</span> we see that <span class="process-math">\(\la_2\)</span> is an eigenvalue of <span class="process-math">\(K\)</span> with associated eigenvector <span class="process-math">\(v_2\text{.}\)</span> Note further that <span class="process-math">\(v_1 \perp v_2\)</span> as <span class="process-math">\(v_2 \in \spn\{v_1\}^\perp\text{.}\)</span>
+</div> <div class="para" id="compact-spec-14-5">Now suppose that proceeding this way, we have constructed a set of mutually orthogonal unit eigenvectors <span class="process-math">\(v_1, \ldots, v_n\)</span> with corresponding eigenvalues <span class="process-math">\(\la_1, \ldots, \la_n\)</span> with <span class="process-math">\(\la_j = \pm \norm{K_j}\text{,}\)</span> where <span class="process-math">\(K_1 = K\)</span> and <span class="process-math">\(K_j\)</span> is the restriction of <span class="process-math">\(K\)</span> to <span class="process-math">\(\spn\{v_1, \ldots, v_{j-1}\}^\perp.\)</span> for <span class="process-math">\(j = 2, \ldots, n\text{.}\)</span> Letting <span class="process-math">\(\hilbert_{n+1}\)</span> be the Hilbert space <span class="process-math">\(\spn\{v_1, \ldots, v_n\}^\perp\)</span> and <span class="process-math">\(K_{n+1}\)</span> the restriction of <span class="process-math">\(K\)</span> to <span class="process-math">\(\hilbert_{n+1}\text{,}\)</span> we can follow the same argument to conclude that <span class="process-math">\(K_{n+1}\)</span> has an eigenvalue <span class="process-math">\(\la_{n+1} = \pm \norm{K_{n+1}}\)</span> and an associated unit eigenvector <span class="process-math">\(v_{n+1}\)</span> which are also an eigenpair for <span class="process-math">\(K\text{.}\)</span> Continue the process as long as <span class="process-math">\(\norm{K_n} \neq 0\text{.}\)</span>
+</div> <div class="para logical" id="compact-spec-14-6">
+<div class="para">If the process terminates at <span class="process-math">\(K_n = 0\text{,}\)</span> then <span class="process-math">\(x \in \hilbert\)</span> gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x - \sum_{j=1}^{n-1} \ip{x}{v_j} v_j \in \hilbert_n
+\end{equation*}
+</div>
+<div class="para">(since <span class="process-math">\(\ip{x - \sum_{j=1}^{n-1} \ip{x}{v_j} v_j}{v_i} = \ip{x}{v_i} - \ip{x}{v_i} = 0\)</span>), and so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K_n(x - \sum_{j=1}^{n-1} \ip{x}{v_j} v_j) = 0.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(K_n = K\)</span> on <span class="process-math">\(\hilbert_n\text{,}\)</span> this means that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K(x - \sum_{j=1}^{n-1} \ip{x}{v_j} v_j) = 0
+\end{equation*}
+</div>
+<div class="para">and so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Kx = \sum_{j=1}^{n-1} \ip{x}{v_j} Kv_j = \sum_{j=1}^{n-1} \la_j \ip{x}{v_j}v_j.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="compact-spec-14-7">
+<div class="para">If on the other hand the process does not terminate as <span class="process-math">\(\norm{K_n} \neq 0\)</span> for all <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> then consider the sequence of vectors <span class="process-math">\(y_n\)</span> defined by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ortho-pythagorean.html ./knowl/xref/thm-eigenvalues-compact.html">
+\begin{equation*}
+y_n = x - \sum_{j=1}^{n-1} \ip{x}{v_j} v_j.
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(y_n \in \hilbert_n = \spn\{v_1, \ldots v_n\}\perp\text{.}\)</span> Then write <span class="process-math">\(x\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ortho-pythagorean.html ./knowl/xref/thm-eigenvalues-compact.html">
+\begin{equation*}
+x = \underbrace{y_n}_{\in \spn\{v_1, \ldots, v_n\}^\perp}  + \underbrace{\sum_{j=1}^{n-1} \ip{x}{v_j} v_j}_{\in \spn\{v_1, \ldots, v_n\}}.
+\end{equation*}
+</div>
+<div class="para">Then <a href="hilbert-7-2.html#thm-ortho-pythagorean" class="xref" data-knowl="./knowl/xref/thm-ortho-pythagorean.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.1.4">Theorem 5.1.4</a> gives that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ortho-pythagorean.html ./knowl/xref/thm-eigenvalues-compact.html">
+\begin{equation*}
+\norm{x}^2 = \norm{y_n}^2 + \sum_{j=1}^{n-1} \abs{\ip{x}{v_j}}^2
+\end{equation*}
+</div>
+<div class="para">which implies that <span class="process-math">\(\norm{y_n} \leq \norm{x}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ortho-pythagorean.html ./knowl/xref/thm-eigenvalues-compact.html">
+\begin{equation*}
+\norm{Ky_n} = \norm{K_n y_n} \leq \norm{K_n} \norm{y_n} \leq \abs{\la_n} \norm{x}.
+\end{equation*}
+</div>
+<div class="para">Of course, since <span class="process-math">\(y_n = x - \sum_{j=1}^{n-1} \ip{x}{v_j} v_j\text{,}\)</span> this means that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ortho-pythagorean.html ./knowl/xref/thm-eigenvalues-compact.html">
+\begin{equation*}
+\norm{Kx - \sum_{j=1}^{n-1}\la_j \ip{x}{v_j}v_j} \leq \abs{\la_n}\norm{x}.
+\end{equation*}
+</div>
+<div class="para">Since the set <span class="process-math">\(\{\la_n\}\)</span> is infinite, by <a href="compact-spec.html#thm-eigenvalues-compact" class="xref" data-knowl="./knowl/xref/thm-eigenvalues-compact.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.3">Theorem 9.1.3</a> it must tend to 0, so that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ortho-pythagorean.html ./knowl/xref/thm-eigenvalues-compact.html">
+\begin{equation*}
+\sum_{j=1}^{n-1} \la_j \ip{x}{v_j} v_j \to Kx \text{ as } n \to \infty \text{ for all } x \in \hilbert.
+\end{equation*}
+</div>
+<div class="para">In other words,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ortho-pythagorean.html ./knowl/xref/thm-eigenvalues-compact.html">
+\begin{equation*}
+Kx = \sum_{j=1}^\infty \la_j \ip{x}{v_j} v_j.
+\end{equation*}
+</div>
+</div></article></details></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="dual-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="dual-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="compact.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="hilbert-12.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

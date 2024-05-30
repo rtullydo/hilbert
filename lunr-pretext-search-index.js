@@ -2275,7 +2275,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.5",
   "title": "The spectrum",
-  "body": " The spectrum  If is an complex matrix, then has at least one eigenvalue. That is, there exists such that for some non-zero vector . The spectrum of a matrix, denoted is the set consisting of its eigenvalues. The spectrum of a matrix is used to study its structure and behavior as a linear map. We'd like to extend the notion of spectrum to the infinite dimensional setting, so we'll take a moment to look at how we find it for matrices. In elementary linear algebra, we learn that the eigenvalues of are the solutions to the equation . Of course what we're actually measuring with this equation is the (lack of) invertibility of the operator , which we could also encode geometrically with the condition that . Since determinants aren't all that useful or easy to define in the infinite dimensional setting, we'll use these to define the spectum of an operator.   Let be a Banach space and . The spectrum of , denoted is the set   Given , we have that is non-empty. (Else, the map would be a bounded, non-constant, entire -valued map, which would violate a version of Liouville's theorem ). If is finite dimensional, then consists of the eigenvalues of . We can still use the term eigenvalue in the infinite dimensional setting in the exact same way as the finite case. Notice though that operators need not possess eigenvalues. For example, the shift operator acting on has no eigenvalues. (Exercise). On the other hand, since isn't invertible, . This illustrates the significantly more complex situation that occurs in infinite dimensions. Notice that if is an eigenvalue of , then .  The proof of the following result, analogous to the finite case, is left as an easy exercise.   If is a Hermitian operator on a Hilbert space , and is an eigenvalue of , then .   A useful topological property of the spectrum is that it forms a compact subset of . (In the finite dimensional case, this is apparent.)   Let be a Banach space and . Then is a compact subset of and    Define a function by . For any , and so is Lipschitz and therefore continuous in the operator norm. Now let denote the invertible elements of , which is an open subset of by . Then is closed, and by continuity so is .  Now let with . Then , and so is invertible by . But then is invertible and so must be , and so . Then is in the closed disk of radius and hence is bounded. As closed and bounded subsets of are compact, we have established the result.   "
+  "body": " The spectrum  If is an complex matrix, then has at least one eigenvalue. That is, there exists such that for some non-zero vector . The spectrum of a matrix, denoted is the set consisting of its eigenvalues. The spectrum of a matrix is used to study its structure and behavior as a linear map. We'd like to extend the notion of spectrum to the infinite dimensional setting, so we'll take a moment to look at how we find it for matrices. In elementary linear algebra, we learn that the eigenvalues of are the solutions to the equation . Of course what we're actually measuring with this equation is the (lack of) invertibility of the operator , which we could also encode geometrically with the condition that . Since determinants aren't all that useful or easy to define in the infinite dimensional setting, we'll use these to define the spectum of an operator.   Let be a Banach space and . The spectrum of , denoted is the set   Given , we have that is non-empty. (Else, the map would be a bounded, non-constant, entire -valued map, which would violate a version of Liouville's theorem ). If is finite dimensional, then consists of the eigenvalues of . We can still use the term eigenvalue in the infinite dimensional setting in the exact same way as the finite case. Notice though that operators need not possess eigenvalues. For example, the shift operator acting on has no eigenvalues. (Exercise). On the other hand, since isn't invertible, . This illustrates the significantly more complex situation that occurs in infinite dimensions. Notice that if is an eigenvalue of , then .  The proof of the following result, analogous to the finite case, is left as an easy exercise.   If is a Hermitian operator on a Hilbert space , and is an eigenvalue of , then .   A useful topological property of the spectrum is that it forms a compact subset of . (In the finite dimensional case, this is apparent.)   Let be a Banach space and . Then is a compact subset of and    Define a function by . For any , and so is Lipschitz and therefore continuous in the operator norm. Now let denote the invertible elements of , which is an open subset of by . Then is closed, and by continuity so is .  Now let with . Then , and so is invertible by . But then is invertible and so must be , and so . Then is in the closed disk of radius and hence is bounded. As closed and bounded subsets of are compact, we have established the result.   We are now prepared to prove the spectral theorem for compact self-adjoint operators.   Let be a compact, self-adjoint operator on a Hilbert space . There exists a finite or infinite orthonormal sequence of eigenvectors of with corresponding real eigenvalues such that for all ,    "
 },
 {
   "id": "def-spectrum",
@@ -2314,47 +2314,146 @@ var ptx_lunr_docs = [
   "body": " Define a function by . For any , and so is Lipschitz and therefore continuous in the operator norm. Now let denote the invertible elements of , which is an open subset of by . Then is closed, and by continuity so is .  Now let with . Then , and so is invertible by . But then is invertible and so must be , and so . Then is in the closed disk of radius and hence is bounded. As closed and bounded subsets of are compact, we have established the result.  "
 },
 {
-  "id": "hilbert-11-2",
+  "id": "thm-spectral-theorem-compact-hermitian",
+  "level": "2",
+  "url": "operators-6.html#thm-spectral-theorem-compact-hermitian",
+  "type": "Theorem",
+  "number": "8.5.4",
+  "title": "",
+  "body": " Let be a compact, self-adjoint operator on a Hilbert space . There exists a finite or infinite orthonormal sequence of eigenvectors of with corresponding real eigenvalues such that for all ,   "
+},
+{
+  "id": "compact-spec",
   "level": "1",
-  "url": "hilbert-11-2.html",
+  "url": "compact-spec.html",
   "type": "Section",
   "number": "9.1",
+  "title": "The spectral theorem for compact operators",
+  "body": " The spectral theorem for compact operators  Note: work in progress.  Now let us assemble the players.   Let be a Hilbert space and suppose that is a self-adjoint compact operator. Then has an eigenvalue so that .    Let be a Hilbert space and suppose that is a self-adjoint operator. Then all of the eigenvalues of are real, and eigenvalues associated to distinct eigenvectors are orthogonal.    Let be a Hilbert space and suppose that is a compact operator. Then the eigenvalues of are a finite set of real numbers, or the eigenvalues of are a countable sequence of real numbers tending to .    Let be a closed linear subspace of a Hilbert space and be invariant under (that is, ). Then is invariant under .    Suppose that is a closed linear subspace of a Hilbert space . Then is a Hilbert space.    The space inherits the inner product space structure from , so we need only show completeness. Suppose that is a Cauchy sequence in . Then is also a Cauchy sequence of vectors in . As is complete, for some . As is closed, . Thus, Cauchy sequences in converge in and so is complete and hence a Hilbert space.   Just as we can restrict the domain of a function on to smaller subsets (typically some kind of smaller interval), we can restrict operators on Hilbert spaces. To preserve structure, we typically restrict an operator to a subspace.   Suppose that where is a Hilbert space and that is a linear subspace of . The restriction of to , denoted is defined by   We are now prepared to prove the spectral theorem for compact self-adjoint operators.  Spectral theorem for compact Hermitian operators  Let be a compact, self-adjoint operator on a Hilbert space . There exists a finite or infinite orthonormal sequence of eigenvectors of with corresponding real eigenvalues such that for all ,     The eigenvalues of are real and a finite set or a sequence tending to 0 by .  We will construct a collection of eigenpairs of by induction. By , we know that has an eigenvalue , for which we can pick a unit eigenvector .  Let . Since is invariant under , as , by , we have that is invariant under and hence is also invariant under by self-adjointness. By , is closed, and so a Hilbert space by . Now let . Then maps to . is a bounded linear compact operator because it is the restriction of a bounded, linear, compact operator. To see that is self-adjoint, pick and note that for all , Since and this expression holds for all , by , we get that . As was arbitrary, this holds for all , and so must also be the restriction of to . Thus, .  Since is a compact self-adjoint operator on the Hilbert space , it must have an eigenvalue and we can chose an associated unit eigenvector . Note that since , we see that is an eigenvalue of with associated eigenvector . Note further that as .  Now suppose that proceeding this way, we have constructed a set of mutually orthogonal unit eigenvectors with corresponding eigenvalues with , where and is the restriction of to for . Letting be the Hilbert space and the restriction of to , we can follow the same argument to conclude that has an eigenvalue and an associated unit eigenvector which are also an eigenpair for . Continue the process as long as .  If the process terminates at , then gives (since ), and so Since on , this means that and so  If on the other hand the process does not terminate as for all , then consider the sequence of vectors defined by Then . Then write as Then gives that which implies that . Then Of course, since , this means that Since the set is infinite, by it must tend to 0, so that In other words,    "
+},
+{
+  "id": "thm-eigenvalue-exists",
+  "level": "2",
+  "url": "compact-spec.html#thm-eigenvalue-exists",
+  "type": "Theorem",
+  "number": "9.1.1",
+  "title": "",
+  "body": " Let be a Hilbert space and suppose that is a self-adjoint compact operator. Then has an eigenvalue so that .  "
+},
+{
+  "id": "thm-eigenvectors-orthogonal",
+  "level": "2",
+  "url": "compact-spec.html#thm-eigenvectors-orthogonal",
+  "type": "Theorem",
+  "number": "9.1.2",
+  "title": "",
+  "body": " Let be a Hilbert space and suppose that is a self-adjoint operator. Then all of the eigenvalues of are real, and eigenvalues associated to distinct eigenvectors are orthogonal.  "
+},
+{
+  "id": "thm-eigenvalues-compact",
+  "level": "2",
+  "url": "compact-spec.html#thm-eigenvalues-compact",
+  "type": "Theorem",
+  "number": "9.1.3",
+  "title": "",
+  "body": " Let be a Hilbert space and suppose that is a compact operator. Then the eigenvalues of are a finite set of real numbers, or the eigenvalues of are a countable sequence of real numbers tending to .  "
+},
+{
+  "id": "lemma-invariant-adjoint",
+  "level": "2",
+  "url": "compact-spec.html#lemma-invariant-adjoint",
+  "type": "Lemma",
+  "number": "9.1.4",
+  "title": "",
+  "body": " Let be a closed linear subspace of a Hilbert space and be invariant under (that is, ). Then is invariant under .  "
+},
+{
+  "id": "thm-hilbert-closed-subspaces",
+  "level": "2",
+  "url": "compact-spec.html#thm-hilbert-closed-subspaces",
+  "type": "Theorem",
+  "number": "9.1.5",
+  "title": "",
+  "body": " Suppose that is a closed linear subspace of a Hilbert space . Then is a Hilbert space.  "
+},
+{
+  "id": "compact-spec-9",
+  "level": "2",
+  "url": "compact-spec.html#compact-spec-9",
+  "type": "Proof",
+  "number": "9.1.1",
+  "title": "",
+  "body": " The space inherits the inner product space structure from , so we need only show completeness. Suppose that is a Cauchy sequence in . Then is also a Cauchy sequence of vectors in . As is complete, for some . As is closed, . Thus, Cauchy sequences in converge in and so is complete and hence a Hilbert space.  "
+},
+{
+  "id": "def-restriction-operator",
+  "level": "2",
+  "url": "compact-spec.html#def-restriction-operator",
+  "type": "Definition",
+  "number": "9.1.6",
+  "title": "",
+  "body": " Suppose that where is a Hilbert space and that is a linear subspace of . The restriction of to , denoted is defined by  "
+},
+{
+  "id": "thm-spectral-theorem-compact-hermitian",
+  "level": "2",
+  "url": "compact-spec.html#thm-spectral-theorem-compact-hermitian",
+  "type": "Theorem",
+  "number": "9.1.7",
+  "title": "Spectral theorem for compact Hermitian operators.",
+  "body": "Spectral theorem for compact Hermitian operators  Let be a compact, self-adjoint operator on a Hilbert space . There exists a finite or infinite orthonormal sequence of eigenvectors of with corresponding real eigenvalues such that for all ,   "
+},
+{
+  "id": "compact-spec-14",
+  "level": "2",
+  "url": "compact-spec.html#compact-spec-14",
+  "type": "Proof",
+  "number": "9.1.2",
+  "title": "",
+  "body": " The eigenvalues of are real and a finite set or a sequence tending to 0 by .  We will construct a collection of eigenpairs of by induction. By , we know that has an eigenvalue , for which we can pick a unit eigenvector .  Let . Since is invariant under , as , by , we have that is invariant under and hence is also invariant under by self-adjointness. By , is closed, and so a Hilbert space by . Now let . Then maps to . is a bounded linear compact operator because it is the restriction of a bounded, linear, compact operator. To see that is self-adjoint, pick and note that for all , Since and this expression holds for all , by , we get that . As was arbitrary, this holds for all , and so must also be the restriction of to . Thus, .  Since is a compact self-adjoint operator on the Hilbert space , it must have an eigenvalue and we can chose an associated unit eigenvector . Note that since , we see that is an eigenvalue of with associated eigenvector . Note further that as .  Now suppose that proceeding this way, we have constructed a set of mutually orthogonal unit eigenvectors with corresponding eigenvalues with , where and is the restriction of to for . Letting be the Hilbert space and the restriction of to , we can follow the same argument to conclude that has an eigenvalue and an associated unit eigenvector which are also an eigenpair for . Continue the process as long as .  If the process terminates at , then gives (since ), and so Since on , this means that and so  If on the other hand the process does not terminate as for all , then consider the sequence of vectors defined by Then . Then write as Then gives that which implies that . Then Of course, since , this means that Since the set is infinite, by it must tend to 0, so that In other words,   "
+},
+{
+  "id": "hilbert-12-2",
+  "level": "1",
+  "url": "hilbert-12-2.html",
+  "type": "Section",
+  "number": "10.1",
   "title": "Results from real analysis",
   "body": "Results from real analysis  Heine-Borel  A closed and bounded set in or is compact.    Let be metric spaces. Let . If is continuous, then compact implies that is compact.    Suppose that is a non-empty compact set in a metric space and that is continuous. Then attains its infimum and supremum on - that is, has both a minimum and maximum on .   "
 },
 {
   "id": "thm-heine-borel",
   "level": "2",
-  "url": "hilbert-11-2.html#thm-heine-borel",
+  "url": "hilbert-12-2.html#thm-heine-borel",
   "type": "Theorem",
-  "number": "9.1.1",
+  "number": "10.1.1",
   "title": "Heine-Borel.",
   "body": "Heine-Borel  A closed and bounded set in or is compact.  "
 },
 {
   "id": "thm-cont-comp",
   "level": "2",
-  "url": "hilbert-11-2.html#thm-cont-comp",
+  "url": "hilbert-12-2.html#thm-cont-comp",
   "type": "Theorem",
-  "number": "9.1.2",
+  "number": "10.1.2",
   "title": "",
   "body": " Let be metric spaces. Let . If is continuous, then compact implies that is compact.  "
 },
 {
   "id": "thm-comp-inf",
   "level": "2",
-  "url": "hilbert-11-2.html#thm-comp-inf",
+  "url": "hilbert-12-2.html#thm-comp-inf",
   "type": "Theorem",
-  "number": "9.1.3",
+  "number": "10.1.3",
   "title": "",
   "body": " Suppose that is a non-empty compact set in a metric space and that is continuous. Then attains its infimum and supremum on - that is, has both a minimum and maximum on .  "
 },
 {
-  "id": "hilbert-11-3",
+  "id": "hilbert-12-3",
   "level": "1",
-  "url": "hilbert-11-3.html",
+  "url": "hilbert-12-3.html",
   "type": "Section",
-  "number": "9.2",
+  "number": "10.2",
   "title": "Results from complex analysis",
   "body": "Results from complex analysis  Eventually necessary things will go here.  "
 }
