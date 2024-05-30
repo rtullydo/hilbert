@@ -30,7 +30,7 @@
           \newcommand{\M}{\mathcal{M}}
           \newcommand{\F}{\mathbb{F}}
           \newcommand{\N}{\mathcal{N}}
-          \newcommand{\L}{\mathcal{L}}
+          \renewcommand{\L}{\mathcal{L}}
           \newcommand{\T}{\mathbb{T}}
           \newcommand{\W}{\mathcal{W}}
           \newcommand{\X}{\mathcal{X}}

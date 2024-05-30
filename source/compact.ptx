@@ -30,7 +30,7 @@
         </theorem>
 
         <proof>
-            <p>The space <m>M</m> inherits the inner product space structure from <m>\hilbert</m>, so we need only show completeness. Suppose that <m>(x_n)</m> is a Cauchy sequence in <m>\M</m>. Then <m>(x_n)</m> is also a Cauchy sequence of vectors in <m>\hilbert</m>. As <m>\hilbert</m> is complete, <m>x_n \to x</m> for some <m>x \in \hilbert</m>. As <m>\M</m> is closed, <m>x \in \M</m>. Thus, Cauchy sequences in <m>\M</m> converge in <m>\M</m> and so <m>\M</m> is complete and hence a Hilbert space.</p>
+            <p>The space <m>\M</m> inherits the inner product space structure from <m>\hilbert</m>, so we need only show completeness. Suppose that <m>(x_n)</m> is a Cauchy sequence in <m>\M</m>. Then <m>(x_n)</m> is also a Cauchy sequence of vectors in <m>\hilbert</m>. As <m>\hilbert</m> is complete, <m>x_n \to x</m> for some <m>x \in \hilbert</m>. As <m>\M</m> is closed, <m>x \in \M</m>. Thus, Cauchy sequences in <m>\M</m> converge in <m>\M</m> and so <m>\M</m> is complete and hence a Hilbert space.</p>
         </proof>
 
         <p>Just as we can restrict the domain of a function on <m>\R</m> to smaller subsets (typically some kind of smaller interval), we can restrict operators on Hilbert spaces. To preserve structure, we typically restrict an operator to a subspace.</p>
@@ -45,7 +45,7 @@
         <p>We are now prepared to prove the spectral theorem for compact self-adjoint operators.</p>
 
         <theorem xml:id="thm-spectral-theorem-compact-hermitian"><title>Spectral theorem for compact Hermitian operators</title>
-            <p>Let <m>K</m> be a compact, self-adjoint operator on a Hilbert space <m>\hilbert</m>. There exists a finite or infinite orthonormal sequence <m>(e_n)</m> of eigenvectors of <m>K</m> with corresponding real eigenvalues <m>(\la_n)</m> such that for all <m>x \in \hilbert</m>, 
+            <p>Let <m>K</m> be a compact, self-adjoint operator on a Hilbert space <m>\hilbert</m>. There exists a finite or infinite orthonormal sequence <m>(v_n)</m> of eigenvectors of <m>K</m> with corresponding real eigenvalues <m>(\la_n)</m> such that for all <m>x \in \hilbert</m>, 
                 <me>
                     Kx = \sum_{i} \la_i \ip{x}{v_i} v_i.
                 </me>
@@ -115,6 +115,39 @@
                     Kx = \sum_{j=1}^\infty \la_j \ip{x}{v_j} v_j.
                 </me>
             </p>
+        </proof>
+
+        <p>One element of the spectral theorem that we appear to be missing in our case is that in finite dimensions is that the columns of the unitary matrix <m>U</m> form an orthonormal basis for <m>\C^n</m>. Since compact operators can only have countably many eigenvalues, it seems that our only hope of a similar result is restrict our attention to separable Hilbert spaces.</p>
+
+        <corollary xml:id="thm-spectral-basis">
+            <p>Let <m>K</m> be a compact self-adjoint operator on a separable Hilbert space <m>\hilbert</m>. Then there exists a complete orthonormal sequence <m>(e_n)</m> of eigenvectors of <m>K</m> and for any <m>x \in \hilbert</m>, 
+                <me>
+                    Kx = \sum_n \la_n \ip{x}{e_n} e_n.
+                </me>
+            </p>
+        </corollary>
+
+        <proof>
+            <p>By <xref ref="thm-spectral-theorem-compact-hermitian"/>, there is a finite or countably infinite sequence <m>(v_n)</m> in <m>\hilbert</m> such that 
+                <me>
+                    Kx = \sum_n \la_n \ip{x}{v_n} v_n.
+                </me>
+            As any term corresponding to <m>\la_n = 0</m> contributes nothing to the sum, we can assume that <m>\la_n \neq 0</m> for all <m>n \in \mathbb{N}</m>. Now let us consider the kernel of <m>K</m>. As <m>\ker K</m> is a closed linear subspace of <m>\hilbert</m>, it is also a separable Hilbert space. Let <m>(w_m)</m> be a complete orthonormal sequence in <m>\ker K</m>. Each <m>w_m</m> is an eigenvector for <m>K</m> corresponding to <m>\la = 0</m>. By <xref ref="thm-eigenvectors-orthogonal"/>, because <m>\la_n \neq 0</m> by assumption, it must be that <m>v_n \perp w_m</m> for all <m>n, m \in \mathbb{N}</m>. Then <m>\{v_n\}\cup\{w_m\}</m> is an orthonormal sequence in <m>\hilbert</m>. It remains to show that this set is a basis for <m>\hilbert</m>.</p>
+
+            <p>Let <m>x \in \hilbert</m>. Since <m>Kx = \sum_n \la_n \ip{x}{v_n} v_n</m>,
+                <me>
+                    K(x - \sum_n \la_n \ip{x}{v_n} v_n) = 0,
+                </me>
+            and so <m>x - \sum_n \la_n \ip{x}{v_n} v_n \in \ker K</m>, and so we can expand it in terms of the basis <m>(w_m)</m> to get
+                <me>
+                    x - \sum_n \la_n \ip{x}{v_n} v_n \in \ker K = \sum_m \ip{x}{w_m} w_m
+                </me>
+            which implies that 
+                <me>
+                    x = \sum_n \la_n \ip{x}{v_n} v_n \in \ker K + \sum_m \ip{x}{w_m} w_m.
+                </me>
+            That is, <m>\{v_n\} \cup \{w_m\}</m> is a basis for <m>\hilbert</m>. Since the set is countable, we can index it by <m>\mathbb{N}</m> as <m>(e_n)</m>.
+                </p>
         </proof>
     </section>
 
