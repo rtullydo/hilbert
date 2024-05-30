@@ -49,7 +49,7 @@
           \newcommand{\Polar}{\mathcal{P}_{\s}}
           \newcommand{\Poly}{\mathcal{P}(E)}
           \newcommand{\EssD}{\mathcal{D}}
-          \newcommand{\Lop}{\mathcal{L}}
+          \newcommand{\Lop}{\mathcal{L}(\mathcal{H})}
           \newcommand{\cc}[1]{\overline{#1}}
           \newcommand{\abs}[1]{\left\vert#1\right\vert}
           \newcommand{\set}[1]{\left\{#1\right\}}
@@ -147,6 +147,7 @@
       <xi:include href="fourier.ptx"/>
       <xi:include href="dual.ptx"/>
       <xi:include href="operators.ptx"/>
+      <xi:include href="compact.ptx"/>
       <xi:include href="analysis.ptx"/>
 
 

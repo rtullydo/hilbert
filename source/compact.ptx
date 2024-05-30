@@ -1,0 +1,122 @@
+<chapter xml:id="compact"><title>Compact operators</title>
+
+    <section xml:id="compact-spec">
+        <title>The spectral theorem for compact operators</title>
+
+       <p>Note: work in progress.</p>
+
+       <p>Now let us assemble the players.</p>
+
+        <theorem xml:id="thm-eigenvalue-exists">
+            <p>Let <m>\hilbert</m> be a Hilbert space and suppose that <m>K \in \Lop</m> is a self-adjoint compact operator. Then <m>K</m> has an eigenvalue <m>\la</m> so that <m>\la = \pm \norm{K}</m>.</p>
+        </theorem>
+
+        <theorem xml:id="thm-eigenvectors-orthogonal">
+            <p>Let <m>\hilbert</m> be a Hilbert space and suppose that <m>A \in \Lop</m> is a self-adjoint operator. Then all of the eigenvalues of <m>A</m> are real, and eigenvalues associated to distinct eigenvectors are orthogonal.</p>
+        </theorem>
+
+        <theorem xml:id="thm-eigenvalues-compact">
+            <p>Let <m>\hilbert</m> be a Hilbert space and suppose that <m>K \in \Lop</m> is a compact operator. Then the eigenvalues of <m>K</m> are a finite set of real numbers, or the eigenvalues of <m>K</m> are a countable sequence of real numbers tending to <m>0</m>.</p>
+        </theorem>
+
+   
+
+        <lemma xml:id="lemma-invariant-adjoint">
+            <p>Let <m>\M</m> be a closed linear subspace of a Hilbert space <m>\hilbert</m> and <m>\M</m> be invariant under <m>T \in \Lop</m> (that is, <m>T\M \subseteq \M</m>). Then <m>\M^\perp</m> is invariant under <m>T\ad</m>.</p>
+        </lemma>
+
+        <theorem xml:id="thm-hilbert-closed-subspaces">
+            <p>Suppose that <m>\M</m> is a closed linear subspace <m>\M</m> of a Hilbert space <m>\hilbert</m>. Then <m>\M</m> is a Hilbert space.</p>
+        </theorem>
+
+        <proof>
+            <p>The space <m>M</m> inherits the inner product space structure from <m>\hilbert</m>, so we need only show completeness. Suppose that <m>(x_n)</m> is a Cauchy sequence in <m>\M</m>. Then <m>(x_n)</m> is also a Cauchy sequence of vectors in <m>\hilbert</m>. As <m>\hilbert</m> is complete, <m>x_n \to x</m> for some <m>x \in \hilbert</m>. As <m>\M</m> is closed, <m>x \in \M</m>. Thus, Cauchy sequences in <m>\M</m> converge in <m>\M</m> and so <m>\M</m> is complete and hence a Hilbert space.</p>
+        </proof>
+
+        <p>Just as we can restrict the domain of a function on <m>\R</m> to smaller subsets (typically some kind of smaller interval), we can restrict operators on Hilbert spaces. To preserve structure, we typically restrict an operator to a subspace.</p>
+
+        <definition xml:id="def-restriction-operator">
+            <p>Suppose that <m>A \in \Lop</m> where <m>\hilbert</m> is a Hilbert space and that <m>\M</m> is a linear subspace of <m>\hilbert</m>. The <term>restriction of <m>A</m> to <m>\M</m></term>, denoted <m>A|_\M: \M \to \hilbert</m> is defined by
+            <me>
+                A|_\M v = A v.
+            </me></p>
+        </definition>
+
+        <p>We are now prepared to prove the spectral theorem for compact self-adjoint operators.</p>
+
+        <theorem xml:id="thm-spectral-theorem-compact-hermitian"><title>Spectral theorem for compact Hermitian operators</title>
+            <p>Let <m>K</m> be a compact, self-adjoint operator on a Hilbert space <m>\hilbert</m>. There exists a finite or infinite orthonormal sequence <m>(e_n)</m> of eigenvectors of <m>K</m> with corresponding real eigenvalues <m>(\la_n)</m> such that for all <m>x \in \hilbert</m>, 
+                <me>
+                    Kx = \sum_{i} \la_i \ip{x}{v_i} v_i.
+                </me>
+            </p>
+        </theorem>
+
+        <proof>
+            <p>The eigenvalues of <m>K</m> are real and a finite set or a sequence tending to 0 by <xref ref="thm-eigenvalues-compact"/>.</p>
+
+            <p>We will construct a collection of eigenpairs of <m>K</m> by induction. By <xref ref="thm-eigenvalue-exists"/>, we know that <m>K</m> has an eigenvalue <m>\la_1 = \pm \norm{K}</m>, for which we can pick a unit eigenvector <m>v_1</m>.</p>
+
+            <p> Let <m>\hilbert_2 = \spn\{v_1\}^\perp</m>. Since <m>\spn\{v_1\}</m> is invariant under <m>K</m>, as <m>K(cv_1) = cKv_1 = c\la v_1</m>, by <xref ref="lemma-invariant-adjoint"/>, we have that <m>\hilbert_2</m> is invariant under <m>K\ad</m> and hence is also invariant under <m>K</m> by self-adjointness. By <xref ref="thm-perp-closed"/>, <m>\hilbert_2</m> is closed, and so a Hilbert space by <xref ref="thm-hilbert-closed-subspaces"/>. Now let <m>K_2 = K|_{\hilbert_2}</m>. Then <m>K_2</m> maps <m>\hilbert_2</m> to <m>\hilbert_2</m>. <m>K_2</m> is a bounded linear compact operator because it is the restriction of a bounded, linear, compact operator. To see that <m>K_2</m> is self-adjoint, pick <m>x \in \hilbert</m> and note that for all <m>y \in \hilbert_2</m>, 
+                <me>
+                    \ip{K_2\ad x}{y} = \ip{x}{K_2 y} = \ip{x}{Ky} = \ip{Kx}{y}.
+                </me>
+            Since <m>Kx \in \hilbert_2</m> and this expression holds for all <m>y \in \hilbert_2</m>, by <xref ref="thm-innerproduct"/>, we get that <m>K_2\ad x = K x</m>. As <m>x</m> was arbitrary, this holds for all <m>x \in \hilbert</m>, and so <m>K_2 \ad</m> must also be the restriction of <m>K</m> to <m>\hilbert_2</m>. Thus, <m>K_2 = K_2\ad</m>. 
+            </p>
+
+            <p>Since <m>K_2</m> is a compact self-adjoint operator on the Hilbert space <m>\hilbert_2</m>, it must have an eigenvalue <m>\la_2 = \pm \norm{K_2}</m> and we can chose an associated unit eigenvector <m>v_2 \in \hilbert_2</m>. Note that since <m>K v_2 = K_2 v_2 = \la_2 v_2</m>, we see that <m>\la_2</m> is an eigenvalue of <m>K</m> with associated eigenvector <m>v_2</m>. Note further that <m>v_1 \perp v_2</m> as <m>v_2 \in \spn\{v_1\}^\perp</m>.</p>
+
+            <p>Now suppose that proceeding this way, we have constructed a set of mutually orthogonal unit eigenvectors <m>v_1, \ldots, v_n</m> with corresponding eigenvalues <m>\la_1, \ldots, \la_n</m> with <m>\la_j = \pm \norm{K_j}</m>, where <m>K_1 = K</m> and <m>K_j</m> is the restriction of <m>K</m> to <m>\spn\{v_1, \ldots, v_{j-1}\}^\perp.</m> for <m> j = 2, \ldots, n</m>. Letting <m>\hilbert_{n+1}</m> be the Hilbert space <m>\spn\{v_1, \ldots, v_n\}^\perp</m> and <m>K_{n+1}</m> the restriction of <m>K</m> to <m>\hilbert_{n+1}</m>, we can follow the same argument to conclude that <m>K_{n+1}</m> has an eigenvalue <m>\la_{n+1} = \pm \norm{K_{n+1}}</m> and an associated unit eigenvector <m>v_{n+1}</m> which are also an eigenpair for <m>K</m>. Continue the process as long as <m>\norm{K_n} \neq 0</m>.</p>
+
+            <p>If the process terminates at <m>K_n = 0</m>, then <m>x \in \hilbert</m> gives
+                <me>
+                    x - \sum_{j=1}^{n-1} \ip{x}{v_j} v_j \in \hilbert_n
+                </me>
+                (since <m>\ip{x - \sum_{j=1}^{n-1} \ip{x}{v_j} v_j}{v_i} = \ip{x}{v_i} - \ip{x}{v_i} = 0</m>),
+                and so 
+                <me>
+                    K_n(x - \sum_{j=1}^{n-1} \ip{x}{v_j} v_j) = 0.
+                </me>
+                Since <m>K_n = K</m> on <m>\hilbert_n</m>, this means that 
+                <me>
+                    K(x - \sum_{j=1}^{n-1} \ip{x}{v_j} v_j) = 0
+                </me>
+                and so
+                <me>
+                    Kx = \sum_{j=1}^{n-1} \ip{x}{v_j} Kv_j = \sum_{j=1}^{n-1} \la_j \ip{x}{v_j}v_j.
+                </me></p>
+
+            <p>If on the other hand the process does not terminate as <m>\norm{K_n} \neq 0</m> for all <m>n \in \mathbb{N}</m>, then consider the sequence of vectors <m>y_n</m> defined by 
+                <me>
+                    y_n = x - \sum_{j=1}^{n-1} \ip{x}{v_j} v_j.
+                </me>
+            Then <m>y_n \in \hilbert_n = \spn\{v_1, \ldots v_n\}\perp</m>. Then write <m>x</m> as 
+                <me>
+                    x = \underbrace{y_n}_{\in \spn\{v_1, \ldots, v_n\}^\perp}  + \underbrace{\sum_{j=1}^{n-1} \ip{x}{v_j} v_j}_{\in \spn\{v_1, \ldots, v_n\}}.
+                </me>
+                Then <xref ref="thm-ortho-pythagorean"/> gives that
+                <me>
+                    \norm{x}^2 = \norm{y_n}^2 + \sum_{j=1}^{n-1} \abs{\ip{x}{v_j}}^2
+                </me>
+                which implies that <m>\norm{y_n} \leq \norm{x}</m>. Then
+                <me>
+                    \norm{Ky_n} = \norm{K_n y_n} \leq \norm{K_n} \norm{y_n} \leq \abs{\la_n} \norm{x}.
+                </me>
+                Of course, since <m>y_n = x - \sum_{j=1}^{n-1} \ip{x}{v_j} v_j</m>, this means that
+                <me>
+                    \norm{Kx - \sum_{j=1}^{n-1}\la_j \ip{x}{v_j}v_j} \leq \abs{\la_n}\norm{x}.
+                </me>
+            Since the set <m>\{\la_n\}</m> is infinite, by <xref ref="thm-eigenvalues-compact"/> it must tend to 0, so that 
+                <me>
+                    \sum_{j=1}^{n-1} \la_j \ip{x}{v_j} v_j \to Kx \text{ as } n \to \infty \text{ for all } x \in \hilbert.
+                </me>
+            In other words,
+                <me>
+                    Kx = \sum_{j=1}^\infty \la_j \ip{x}{v_j} v_j.
+                </me>
+            </p>
+        </proof>
+    </section>
+
+
+</chapter>
