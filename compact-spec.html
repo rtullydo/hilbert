@@ -132,7 +132,7 @@ window.MathJax = {
   \newcommand{\M}{\mathcal{M}}
   \newcommand{\F}{\mathbb{F}}
   \newcommand{\N}{\mathcal{N}}
-  \newcommand{\L}{\mathcal{L}}
+  \renewcommand{\L}{\mathcal{L}}
   \newcommand{\T}{\mathbb{T}}
   \newcommand{\W}{\mathcal{W}}
   \newcommand{\X}{\mathcal{X}}
@@ -340,7 +340,7 @@ window.MathJax = {
 </div></article><article class="theorem theorem-like" id="thm-hilbert-closed-subspaces"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.5</span><span class="period">.</span>
 </h3>
-<div class="para" id="thm-hilbert-closed-subspaces-1">Suppose that <span class="process-math">\(\M\)</span> is a closed linear subspace <span class="process-math">\(\M\)</span> of a Hilbert space <span class="process-math">\(\hilbert\text{.}\)</span> Then <span class="process-math">\(\M\)</span> is a Hilbert space.</div></article><details id="compact-spec-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="compact-spec-9-1">The space <span class="process-math">\(M\)</span> inherits the inner product space structure from <span class="process-math">\(\hilbert\text{,}\)</span> so we need only show completeness. Suppose that <span class="process-math">\((x_n)\)</span> is a Cauchy sequence in <span class="process-math">\(\M\text{.}\)</span> Then <span class="process-math">\((x_n)\)</span> is also a Cauchy sequence of vectors in <span class="process-math">\(\hilbert\text{.}\)</span> As <span class="process-math">\(\hilbert\)</span> is complete, <span class="process-math">\(x_n \to x\)</span> for some <span class="process-math">\(x \in \hilbert\text{.}\)</span> As <span class="process-math">\(\M\)</span> is closed, <span class="process-math">\(x \in \M\text{.}\)</span> Thus, Cauchy sequences in <span class="process-math">\(\M\)</span> converge in <span class="process-math">\(\M\)</span> and so <span class="process-math">\(\M\)</span> is complete and hence a Hilbert space.</div></article></details><div class="para" id="compact-spec-10">Just as we can restrict the domain of a function on <span class="process-math">\(\R\)</span> to smaller subsets (typically some kind of smaller interval), we can restrict operators on Hilbert spaces. To preserve structure, we typically restrict an operator to a subspace.</div>
+<div class="para" id="thm-hilbert-closed-subspaces-1">Suppose that <span class="process-math">\(\M\)</span> is a closed linear subspace <span class="process-math">\(\M\)</span> of a Hilbert space <span class="process-math">\(\hilbert\text{.}\)</span> Then <span class="process-math">\(\M\)</span> is a Hilbert space.</div></article><details id="compact-spec-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="compact-spec-9-1">The space <span class="process-math">\(\M\)</span> inherits the inner product space structure from <span class="process-math">\(\hilbert\text{,}\)</span> so we need only show completeness. Suppose that <span class="process-math">\((x_n)\)</span> is a Cauchy sequence in <span class="process-math">\(\M\text{.}\)</span> Then <span class="process-math">\((x_n)\)</span> is also a Cauchy sequence of vectors in <span class="process-math">\(\hilbert\text{.}\)</span> As <span class="process-math">\(\hilbert\)</span> is complete, <span class="process-math">\(x_n \to x\)</span> for some <span class="process-math">\(x \in \hilbert\text{.}\)</span> As <span class="process-math">\(\M\)</span> is closed, <span class="process-math">\(x \in \M\text{.}\)</span> Thus, Cauchy sequences in <span class="process-math">\(\M\)</span> converge in <span class="process-math">\(\M\)</span> and so <span class="process-math">\(\M\)</span> is complete and hence a Hilbert space.</div></article></details><div class="para" id="compact-spec-10">Just as we can restrict the domain of a function on <span class="process-math">\(\R\)</span> to smaller subsets (typically some kind of smaller interval), we can restrict operators on Hilbert spaces. To preserve structure, we typically restrict an operator to a subspace.</div>
 <article class="definition definition-like" id="def-restriction-operator"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">9.1.6</span><span class="period">.</span>
 </h3>
@@ -356,7 +356,7 @@ A|_\M v = A v.
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Spectral theorem for compact Hermitian operators.</span>
 </h3>
 <div class="para logical" id="thm-spectral-theorem-compact-hermitian-2">
-<div class="para">Let <span class="process-math">\(K\)</span> be a compact, self-adjoint operator on a Hilbert space <span class="process-math">\(\hilbert\text{.}\)</span> There exists a finite or infinite orthonormal sequence <span class="process-math">\((e_n)\)</span> of eigenvectors of <span class="process-math">\(K\)</span> with corresponding real eigenvalues <span class="process-math">\((\la_n)\)</span> such that for all <span class="process-math">\(x \in \hilbert\text{,}\)</span>
+<div class="para">Let <span class="process-math">\(K\)</span> be a compact, self-adjoint operator on a Hilbert space <span class="process-math">\(\hilbert\text{.}\)</span> There exists a finite or infinite orthonormal sequence <span class="process-math">\((v_n)\)</span> of eigenvectors of <span class="process-math">\(K\)</span> with corresponding real eigenvalues <span class="process-math">\((\la_n)\)</span> such that for all <span class="process-math">\(x \in \hilbert\text{,}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -443,6 +443,49 @@ x = \underbrace{y_n}_{\in \spn\{v_1, \ldots, v_n\}^\perp}  + \underbrace{\sum_{j
 \begin{equation*}
 Kx = \sum_{j=1}^\infty \la_j \ip{x}{v_j} v_j.
 \end{equation*}
+</div>
+</div></article></details><div class="para" id="compact-spec-15">One element of the spectral theorem that we appear to be missing in our case is that in finite dimensions is that the columns of the unitary matrix <span class="process-math">\(U\)</span> form an orthonormal basis for <span class="process-math">\(\C^n\text{.}\)</span> Since compact operators can only have countably many eigenvalues, it seems that our only hope of a similar result is restrict our attention to separable Hilbert spaces.</div>
+<article class="corollary theorem-like" id="thm-spectral-basis"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">9.1.8</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="thm-spectral-basis-1">
+<div class="para">Let <span class="process-math">\(K\)</span> be a compact self-adjoint operator on a separable Hilbert space <span class="process-math">\(\hilbert\text{.}\)</span> Then there exists a complete orthonormal sequence <span class="process-math">\((e_n)\)</span> of eigenvectors of <span class="process-math">\(K\)</span> and for any <span class="process-math">\(x \in \hilbert\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Kx = \sum_n \la_n \ip{x}{e_n} e_n.
+\end{equation*}
+</div>
+</div></article><details id="compact-spec-17" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="compact-spec-17-1">
+<div class="para">By <a href="operators-6.html#thm-spectral-theorem-compact-hermitian" class="xref" data-knowl="./knowl/xref/thm-spectral-theorem-compact-hermitian.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.5.4">Theorem 8.5.4</a>, there is a finite or countably infinite sequence <span class="process-math">\((v_n)\)</span> in <span class="process-math">\(\hilbert\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-spectral-theorem-compact-hermitian.html ./knowl/xref/thm-eigenvectors-orthogonal.html">
+\begin{equation*}
+Kx = \sum_n \la_n \ip{x}{v_n} v_n.
+\end{equation*}
+</div>
+<div class="para">As any term corresponding to <span class="process-math">\(\la_n = 0\)</span> contributes nothing to the sum, we can assume that <span class="process-math">\(\la_n \neq 0\)</span> for all <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span> Now let us consider the kernel of <span class="process-math">\(K\text{.}\)</span> As <span class="process-math">\(\ker K\)</span> is a closed linear subspace of <span class="process-math">\(\hilbert\text{,}\)</span> it is also a separable Hilbert space. Let <span class="process-math">\((w_m)\)</span> be a complete orthonormal sequence in <span class="process-math">\(\ker K\text{.}\)</span> Each <span class="process-math">\(w_m\)</span> is an eigenvector for <span class="process-math">\(K\)</span> corresponding to <span class="process-math">\(\la = 0\text{.}\)</span> By <a href="compact-spec.html#thm-eigenvectors-orthogonal" class="xref" data-knowl="./knowl/xref/thm-eigenvectors-orthogonal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.2">Theorem 9.1.2</a>, because <span class="process-math">\(\la_n \neq 0\)</span> by assumption, it must be that <span class="process-math">\(v_n \perp w_m\)</span> for all <span class="process-math">\(n, m \in \mathbb{N}\text{.}\)</span> Then <span class="process-math">\(\{v_n\}\cup\{w_m\}\)</span> is an orthonormal sequence in <span class="process-math">\(\hilbert\text{.}\)</span> It remains to show that this set is a basis for <span class="process-math">\(\hilbert\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="compact-spec-17-2">
+<div class="para">Let <span class="process-math">\(x \in \hilbert\text{.}\)</span> Since <span class="process-math">\(Kx = \sum_n \la_n \ip{x}{v_n} v_n\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K(x - \sum_n \la_n \ip{x}{v_n} v_n) = 0,
+\end{equation*}
+</div>
+<div class="para">and so <span class="process-math">\(x - \sum_n \la_n \ip{x}{v_n} v_n \in \ker K\text{,}\)</span> and so we can expand it in terms of the basis <span class="process-math">\((w_m)\)</span> to get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x - \sum_n \la_n \ip{x}{v_n} v_n \in \ker K = \sum_m \ip{x}{w_m} w_m
+\end{equation*}
+</div>
+<div class="para">which implies that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x = \sum_n \la_n \ip{x}{v_n} v_n \in \ker K + \sum_m \ip{x}{w_m} w_m.
+\end{equation*}
+</div>
+<div class="para">That is, <span class="process-math">\(\{v_n\} \cup \{w_m\}\)</span> is a basis for <span class="process-math">\(\hilbert\text{.}\)</span> Since the set is countable, we can index it by <span class="process-math">\(\mathbb{N}\)</span> as <span class="process-math">\((e_n)\text{.}\)</span>
 </div>
 </div></article></details></section></div>
 <div class="ptx-content-footer">
