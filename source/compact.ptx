@@ -16,7 +16,7 @@
         </theorem>
 
         <theorem xml:id="thm-eigenvalues-compact">
-            <p>Let <m>\hilbert</m> be a Hilbert space and suppose that <m>K \in \Lop</m> is a compact operator. Then the eigenvalues of <m>K</m> are a finite set of real numbers, or the eigenvalues of <m>K</m> are a countable sequence of real numbers tending to <m>0</m>.</p>
+            <p>Let <m>\hilbert</m> be a Hilbert space and suppose that <m>K \in \Lop</m> is a compact self-adjoint operator. Then the eigenvalues of <m>K</m> are a finite set of real numbers, or the eigenvalues of <m>K</m> are a countable sequence of real numbers tending to <m>0</m>.</p>
         </theorem>
 
    
