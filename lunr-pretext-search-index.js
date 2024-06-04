@@ -2431,47 +2431,200 @@ var ptx_lunr_docs = [
   "body": " By , there is a finite or countably infinite sequence in such that As any term corresponding to contributes nothing to the sum, we can assume that for all . Now let us consider the kernel of . As is a closed linear subspace of , it is also a separable Hilbert space. Let be a complete orthonormal sequence in . Each is an eigenvector for corresponding to . By , because by assumption, it must be that for all . Then is an orthonormal sequence in . It remains to show that this set is a basis for .  Let . Since , and so , and so we can expand it in terms of the basis to get which implies that That is, is a basis for . Since the set is countable, we can index it by as .  "
 },
 {
-  "id": "hilbert-12-2",
+  "id": "positive-intro",
   "level": "1",
-  "url": "hilbert-12-2.html",
+  "url": "positive-intro.html",
   "type": "Section",
   "number": "10.1",
+  "title": "Positive matrices",
+  "body": "Positive matrices  We're now going to look at the notion of positive operators inside . In , non-negative elements have the property that there exist non-negative real numbers such that . We usually call .  In , suppose that is a matrix so that for all . Such matrices are called positive , and we denote this by . Then so for all , we have that , which implies that . Because self-adjoint matrices have unitary dialgonalizations and real eigenvalues, the positivity condition implies that all of the eigenvalues of are non-negative (as .) So if , then there exist a unitary matrix and a diagonal matrix with real non-negative entries on the diagonal so that . Now construct the matrix Then , and . We call the matrix the square root of and denote it .  We can use the same sort of ideas to define and identify positive operators, which turn out to play a key role in operator theory. We will (hopefully) try to use these ideas to solve a classical problem in function theory, the Nevanlinna-Pick interpolation problem.  Nevanlinna-Pick problem  Let denote the complex unit disk. Given points and in , when does there exist an analytic function so that for all and where the norm is the sup-norm on the disk.   Analytic functions of norm 1 on the disk are called the Schur class .  "
+},
+{
+  "id": "positive-intro-3",
+  "level": "2",
+  "url": "positive-intro.html#positive-intro-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "positive "
+},
+{
+  "id": "positive-intro-5",
+  "level": "2",
+  "url": "positive-intro.html#positive-intro-5",
+  "type": "Question",
+  "number": "10.1.1",
+  "title": "Nevanlinna-Pick problem.",
+  "body": "Nevanlinna-Pick problem  Let denote the complex unit disk. Given points and in , when does there exist an analytic function so that for all and where the norm is the sup-norm on the disk.  "
+},
+{
+  "id": "positive-intro-6",
+  "level": "2",
+  "url": "positive-intro.html#positive-intro-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Schur class "
+},
+{
+  "id": "positive-3",
+  "level": "1",
+  "url": "positive-3.html",
+  "type": "Section",
+  "number": "10.2",
+  "title": "Positive operators in <span class=\"process-math\">\\(\\Lop\\)<\/span>",
+  "body": "Positive operators in  We'll start with a definition similar to the matrix case.   An operator is called positive and we write if for all , we have .    For , the following are equivalent.   and  for some Hilbert space and .  for some .    The proof of this theorem can be found, for example, in Conway. In finite dimensions, this theorem is proved in Axler as Theorem 7.39. While the so that isn't unique, there is a unique positive square root, for which we say if and .  The next part of this discussion follows Agler, McCarthy, and Young's Operator Analysis . The theorem to follow is called by them the fundamental fact, as it will allow us to change frame back and forth from analysis estimates to the alebraic property of positivity.   If are Hilbert spaces, then if and only if .       Let . Then if for all , then .    Exercise.   We also get a nice characterization of isometries.   An operator is called an isometry if for all .    Let . Then is an isometry if and only if    Modify the proof of and invoke at the appropriate moment.   "
+},
+{
+  "id": "def-positive-operator",
+  "level": "2",
+  "url": "positive-3.html#def-positive-operator",
+  "type": "Definition",
+  "number": "10.2.1",
+  "title": "",
+  "body": " An operator is called positive and we write if for all , we have .  "
+},
+{
+  "id": "thm-positive-operator-properties",
+  "level": "2",
+  "url": "positive-3.html#thm-positive-operator-properties",
+  "type": "Theorem",
+  "number": "10.2.2",
+  "title": "",
+  "body": " For , the following are equivalent.   and  for some Hilbert space and .  for some .   "
+},
+{
+  "id": "thm-fundamental",
+  "level": "2",
+  "url": "positive-3.html#thm-fundamental",
+  "type": "Theorem",
+  "number": "10.2.3",
+  "title": "",
+  "body": " If are Hilbert spaces, then if and only if .  "
+},
+{
+  "id": "positive-3-8",
+  "level": "2",
+  "url": "positive-3.html#positive-3-8",
+  "type": "Proof",
+  "number": "10.2.1",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "lemma-operator-ip-zero",
+  "level": "2",
+  "url": "positive-3.html#lemma-operator-ip-zero",
+  "type": "Lemma",
+  "number": "10.2.4",
+  "title": "",
+  "body": " Let . Then if for all , then .  "
+},
+{
+  "id": "positive-3-10",
+  "level": "2",
+  "url": "positive-3.html#positive-3-10",
+  "type": "Proof",
+  "number": "10.2.2",
+  "title": "",
+  "body": " Exercise.  "
+},
+{
+  "id": "positive-3-12",
+  "level": "2",
+  "url": "positive-3.html#positive-3-12",
+  "type": "Definition",
+  "number": "10.2.5",
+  "title": "",
+  "body": " An operator is called an isometry if for all .  "
+},
+{
+  "id": "lemma-operator-isometry",
+  "level": "2",
+  "url": "positive-3.html#lemma-operator-isometry",
+  "type": "Lemma",
+  "number": "10.2.6",
+  "title": "",
+  "body": " Let . Then is an isometry if and only if  "
+},
+{
+  "id": "positive-3-14",
+  "level": "2",
+  "url": "positive-3.html#positive-3-14",
+  "type": "Proof",
+  "number": "10.2.3",
+  "title": "",
+  "body": " Modify the proof of and invoke at the appropriate moment.  "
+},
+{
+  "id": "positive-4",
+  "level": "1",
+  "url": "positive-4.html",
+  "type": "Section",
+  "number": "10.3",
+  "title": "<span class=\"process-math\">\\(H^2\\)<\/span> and <span class=\"process-math\">\\(H^\\infty(\\D)\\)<\/span>",
+  "body": "and  We'll now set up a classically important and fun space of functions derived from   The Hardy space  is the space of functions    We should note that there is a more standard setup for involving extending continuous functions off of the unit circle. The inner product on is given by under which is a Hilbert space. In fact, the Hardy space is more.   The Szegő kernel is the function   The Szegő kernel has the interesting property that it represents evaluation of a function in the inner product. That is, for , We will not prove this here, but it will be used extensively. Encoding function evaluation at a point as an inner product is a very powerful idea.  "
+},
+{
+  "id": "def-hardy-space",
+  "level": "2",
+  "url": "positive-4.html#def-hardy-space",
+  "type": "Definition",
+  "number": "10.3.1",
+  "title": "",
+  "body": " The Hardy space  is the space of functions   "
+},
+{
+  "id": "def-szego",
+  "level": "2",
+  "url": "positive-4.html#def-szego",
+  "type": "Definition",
+  "number": "10.3.2",
+  "title": "",
+  "body": " The Szegő kernel is the function  "
+},
+{
+  "id": "hilbert-13-2",
+  "level": "1",
+  "url": "hilbert-13-2.html",
+  "type": "Section",
+  "number": "11.1",
   "title": "Results from real analysis",
   "body": "Results from real analysis  Heine-Borel  A closed and bounded set in or is compact.    Let be metric spaces. Let . If is continuous, then compact implies that is compact.    Suppose that is a non-empty compact set in a metric space and that is continuous. Then attains its infimum and supremum on - that is, has both a minimum and maximum on .   "
 },
 {
   "id": "thm-heine-borel",
   "level": "2",
-  "url": "hilbert-12-2.html#thm-heine-borel",
+  "url": "hilbert-13-2.html#thm-heine-borel",
   "type": "Theorem",
-  "number": "10.1.1",
+  "number": "11.1.1",
   "title": "Heine-Borel.",
   "body": "Heine-Borel  A closed and bounded set in or is compact.  "
 },
 {
   "id": "thm-cont-comp",
   "level": "2",
-  "url": "hilbert-12-2.html#thm-cont-comp",
+  "url": "hilbert-13-2.html#thm-cont-comp",
   "type": "Theorem",
-  "number": "10.1.2",
+  "number": "11.1.2",
   "title": "",
   "body": " Let be metric spaces. Let . If is continuous, then compact implies that is compact.  "
 },
 {
   "id": "thm-comp-inf",
   "level": "2",
-  "url": "hilbert-12-2.html#thm-comp-inf",
+  "url": "hilbert-13-2.html#thm-comp-inf",
   "type": "Theorem",
-  "number": "10.1.3",
+  "number": "11.1.3",
   "title": "",
   "body": " Suppose that is a non-empty compact set in a metric space and that is continuous. Then attains its infimum and supremum on - that is, has both a minimum and maximum on .  "
 },
 {
-  "id": "hilbert-12-3",
+  "id": "hilbert-13-3",
   "level": "1",
-  "url": "hilbert-12-3.html",
+  "url": "hilbert-13-3.html",
   "type": "Section",
-  "number": "10.2",
+  "number": "11.2",
   "title": "Results from complex analysis",
   "body": "Results from complex analysis  Eventually necessary things will go here.  "
 }
