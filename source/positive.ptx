@@ -1,0 +1,114 @@
+<chapter xml:id="positive"><title>Positive operators</title>
+
+    <section xml:id="positive-intro"><title>Positive matrices</title>
+        <p>We're now going to look at the notion of positive operators inside <m>\Lop</m>. In <m>\R</m>, non-negative elements <m>a\geq 0</m> have the property that there exist non-negative real numbers <m>b</m> such that <m>b^2 = a</m>. We usually call <m>b = \sqrt{a}</m>.</p>
+
+        <p>In <m>M_n(\C)</m>, suppose that <m>A</m> is a matrix so that <m>\ip{Ax}{x} \geq 0</m> for all <m>x \in \C^n</m>. Such matrices are called <term>positive</term>, and we denote this by <m>A \geq 0</m>. Then
+        <me>
+            \ip{Ax}{x} = \cc{\ip{x}{Ax}} = \ip{A\ad x}{x}
+        </me>
+        so for all <m>x \in \C^n</m>, we have that <m>\ip{(A - A\ad)x}{x} \geq 0</m>, which implies that <m>A = A\ad</m>. Because self-adjoint matrices have unitary dialgonalizations and real eigenvalues, the positivity condition implies that all of the eigenvalues of <m>A</m> are non-negative (as <m>\ip{Av}{v} = \ip{\la v}{v} = \la \geq 0</m>.) So if <m>A \geq 0</m>, then there exist a unitary matrix <m>U</m> and a diagonal matrix <m>D</m> with real non-negative entries <m>\la_i</m> on the diagonal so that <m> A = U\ad D U</m>. Now construct the matrix 
+            <me>
+                B = U\ad \bpm \sqrt{\la_1} \amp \amp \amp \\ \amp \sqrt{\la_2} \amp \amp \\ \amp \amp \ddots \amp \\ \amp \amp \amp \sqrt{\la_n} \epm U.
+            </me>
+        Then <m>B^2 = A</m>, and <m>B \geq 0</m>. We call the matrix <m>B</m> the square root of <m>A</m> and denote it <m>B = \sqrt{A}</m>.
+        </p>
+
+        <p>We can use the same sort of ideas to define and identify positive operators, which turn out to play a key role in operator theory. We will (hopefully) try to use these ideas to solve a classical problem in function theory, the Nevanlinna-Pick interpolation problem.</p>
+
+        <question><title>Nevanlinna-Pick problem</title>
+            <p>Let <m>\D</m> denote the complex unit disk. Given points <m>\la_1, \ldots, \la_n</m> and <m>z_1, \ldots, z_n</m> in <m>\D</m>, when does there exist an analytic function <m>f</m> so that <m>f(\la_i) = z_i</m> for all <m>i</m> and <m>\norm{f} \leq 1.</m> where the norm is the sup-norm on the disk.</p>
+        </question>
+
+        <p>Analytic functions of norm 1 on the disk are called the <term>Schur class</term>.</p>
+    </section>
+
+    <section><title>Positive operators in <m>\Lop</m></title>
+        <p>We'll start with a definition similar to the matrix case.</p>
+
+        <definition xml:id="def-positive-operator">
+            <p>An operator <m>T \in \Lop</m> is called <term>positive</term> and we write <m>T \geq 0</m> if for all <m>u \in \hilbert</m>, we have <m>\ip{Tu}{u} \geq 0</m>.</p>
+        </definition>
+
+        <theorem xml:id="thm-positive-operator-properties">
+            <p>For <m>T \in \Lop</m>, the following are equivalent.
+            <ol>
+                <li><m>T \geq 0.</m></li>
+                <li><m>T\ad = T</m> and <m>\sigma(A) \subseteq \{x \in \R: x \geq 0\}.</m></li>
+                <li><m>T = X\ad X</m> for some Hilbert space <m>\mathcal{K}</m> and <m>X \in \mathcal{L}(\hilbert, \mathcal{K})</m>.</li>
+                <li><m>T = X^2</m> for some <m>X \in \Lop</m>.</li>
+            </ol></p>
+        </theorem>
+
+        <p>The proof of this theorem can be found, for example, in Conway. In finite dimensions, this theorem is proved in Axler as Theorem 7.39. While the <m>X</m> so that <m>X^2 = T</m> isn't unique, there <em>is</em> a unique positive square root, for which we say <m>A = \sqrt{T}</m> if <m>A \geq 0</m> and <m>A^2 = T</m>.</p>
+
+        <p>The next part of this discussion follows Agler, McCarthy, and Young's <em>Operator Analysis</em>. The theorem to follow is called by them the fundamental fact, as it will allow us to change frame back and forth from analysis estimates to the alebraic property of positivity.</p>
+
+        <theorem xml:id="thm-fundamental">
+            <p>If <m>\hilbert, \K</m> are Hilbert spaces, then <m>\norm{T} \leq 1</m> if and only if <m>1 - T\ad T \geq 0</m>.</p>
+        </theorem>
+
+        <proof>
+            <p><md>
+                <mrow>\norm{T} \leq 1 \amp\iff \norm{x}^2 \geq \norm{Tx}^2 \,\, \forall x \in \hilbert</mrow>
+                <mrow>\amp\iff \ip{x}{x} \geq \ip{Tx}{Tx} \,\, \forall x \in \hilbert</mrow>
+                <mrow>\amp\iff \ip{(1 - T\ad T)x}{x} \geq 0 \,\, \forall x \in \hilbert</mrow>
+                <mrow> \amp\iff 1- T\ad T \geq 0</mrow>
+            </md></p>
+        </proof>
+
+        <lemma xml:id="lemma-operator-ip-zero">
+            <p>Let <m>T \in \Lop</m>. Then if <m>\ip{Tx}{x} = 0</m> for all <m>x \in \hilbert</m>, then <m>A = 0</m>.</p>
+        </lemma>
+
+        <proof>
+            <p>Exercise.</p>
+        </proof>
+
+        <p>We also get a nice characterization of isometries.</p>
+
+        <definition>
+            <p>An operator <m>T \in \Lop</m> is called an <term>isometry</term> if <m>\norm{Tx} = \norm{x}</m> for all <m>x \in \hilbert</m>.</p>
+        </definition>
+
+        <lemma xml:id="lemma-operator-isometry">
+            <p>Let <m>T \in \Lop</m>. Then <m>T</m> is an isometry if and only if <m>1 - T\ad T = 0</m></p>
+        </lemma>
+
+        <proof>
+            <p>Modify the proof of <xref ref="thm-fundamental"/> and invoke <xref ref="lemma-operator-ip-zero"/> at the appropriate moment.</p>
+        </proof>
+
+    </section>
+
+    <section><title><m>H^2</m> and <m>H^\infty(\D)</m></title>
+        <p>We'll now set up a classically important and fun space of functions derived from <m>\ell^2</m></p>
+
+        <definition xml:id="def-hardy-space">
+            <p>The <term>Hardy space</term> <m>H^2</m> is the space of functions 
+                <me>
+                    f(z) = \sum_{n=0}^\infty a_n z^n \text{ where } (a_n) \in \ell^2.
+                </me>
+            </p>
+        </definition>
+
+        <p>We should note that there is a more standard setup for <m>H^2</m> involving extending continuous <m>L^2</m> functions off of the unit circle. The inner product on <m>H^2</m> is given by
+            <me>
+                \ip{f}{g}_{H^2} = \ip{\sum a_n z^n}{\sum b_n z^n} = \sum a_i \cc{b_i},
+            </me>
+        under which <m>H^2</m> is a Hilbert space. In fact, the Hardy space is more.
+        </p>
+
+        <definition xml:id="def-szego">
+            <p>The <term>Szegő kernel</term> is the function <me>s_\la(z) = \frac{1}{1 - \cc{\la}z}.</me></p>
+        </definition>
+
+        <p>The Szegő kernel <m>s_\la</m> has the interesting property that it represents evaluation of a function in the <m>H^2</m> inner product. That is, for <m>f \in H^2</m>, 
+            <me>
+                f(\la) = \ip{f}{s_\la}.
+            </me>
+        We will not prove this here, but it will be used extensively. Encoding function evaluation at a point as an inner product is a very powerful idea.</p>
+
+
+    </section>
+</chapter>

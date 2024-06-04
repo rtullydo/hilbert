@@ -148,7 +148,9 @@
       <xi:include href="dual.ptx"/>
       <xi:include href="operators.ptx"/>
       <xi:include href="compact.ptx"/>
+      <xi:include href="positive.ptx"/>
       <xi:include href="analysis.ptx"/>
+
 
 
 
