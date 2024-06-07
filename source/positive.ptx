@@ -16,7 +16,7 @@
 
         <p>We can use the same sort of ideas to define and identify positive operators, which turn out to play a key role in operator theory. We will (hopefully) try to use these ideas to solve a classical problem in function theory, the Nevanlinna-Pick interpolation problem.</p>
 
-        <question><title>Nevanlinna-Pick problem</title>
+        <question xml:id="q-nev-pick"><title>Nevanlinna-Pick problem</title>
             <p>Let <m>\D</m> denote the complex unit disk. Given points <m>\la_1, \ldots, \la_n</m> and <m>z_1, \ldots, z_n</m> in <m>\D</m>, when does there exist an analytic function <m>f</m> so that <m>f(\la_i) = z_i</m> for all <m>i</m> and <m>\norm{f} \leq 1.</m> where the norm is the sup-norm on the disk.</p>
         </question>
 
@@ -108,6 +108,46 @@
                 f(\la) = \ip{f}{s_\la}.
             </me>
         We will not prove this here, but it will be used extensively. Encoding function evaluation at a point as an inner product is a very powerful idea.</p>
+
+        <p>Along with the Hardy space, we also consider the space of bounded analytic functions on the disk <m>\D</m>, which is denoted by <m>H^\infty(\D)</m>. This space is a Banach algebra under the supremum norm on the disk. The unit ball in <m>H^\infty</m> is the Schur class, which is going to provide the connection between <xref ref="q-nev-pick"/> and operators by way of the observation that <m>H^\infty(\D)</m> is a space of multipliers on <m>H^2</m>.</p>
+
+        <lemma xml:id="lemma-schur-multi-op">
+            <p>Let <m>\ph \in H^\infty(\D)</m>. then <m>\ph f \in H^2</m> when <m>f \in H^2</m>. That is, for <m>\ph in H^\infty(\D)</m>, the operator <m>M_\ph :H^2 \to h^2</m> defined by <m>M_\ph f = \ph f</m> is in <m>\mathcal{L}(H^2)</m>. Furthermore, <m>\norm{M_\ph} \leq \norm{\ph}</m>.</p>
+        </lemma>
+
+        <p>The connection between the operator <m>M_\ph</m> and the function <m>\ph</m> is provided by the Szegő kernel. In particular, the Szegő kernel <m>s_\la</m> is an eigenvector for the adjoint of <m>M_\ph</m>.</p>
+
+        <lemma xml:id="lemma-szego-adjoint">
+            <p>If <m>\ph \in H^\infty(\D)</m> and <m>\la \in \D</m>, then 
+                <me>
+                    M_\ph\ad = \cc{\ph(\la)} s_\la.
+                </me>
+            </p>
+        </lemma>
+
+        <proof>
+            <p>Pick <m>\ph \in H^\infty(\D)</m> and <m>\la \in \D</m>. If <m>f\in H^2</m>,
+                <md>
+                    <mrow>\ip{f}{M_\ph\ad s_\la} \amp= \ip{M_\ph f}{s_\la}</mrow>
+                    <mrow>\amp = \ip{\ph f}{s_\la}</mrow>
+                    <mrow>\amp = \ph(\la) f(\la)</mrow>
+                    <mrow>\amp = \ph(\la) \ip{f}{s_\la}</mrow>
+                    <mrow>\amp = \ip{f}{\cc{\ph(\la)}s_\la}.</mrow>
+                </md>
+            Since this holds for all <m>f \in H^2</m>, we conclude that <m>M_\ph s_\la = \cc{\ph(\la)}s_\la</m>.
+            </p>
+        </proof>
+
+        <p>In fact we can say more.</p>
+
+        <lemma xml:id="lemma-szego-only-evec">
+            <p>If <m>\la \in D</m>, then 
+                <me>
+                    \ker(\cc\la - M_z\ad) = \C s_\la.
+                </me>
+            </p>
+        </lemma>
+
 
 
     </section>
