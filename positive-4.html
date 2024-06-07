@@ -368,7 +368,51 @@ f(\la) = \ip{f}{s_\la}.
 \end{equation*}
 </div>
 <div class="para">We will not prove this here, but it will be used extensively. Encoding function evaluation at a point as an inner product is a very powerful idea.</div>
-</div></section></div>
+</div>
+<div class="para" id="positive-4-7">Along with the Hardy space, we also consider the space of bounded analytic functions on the disk <span class="process-math">\(\D\text{,}\)</span> which is denoted by <span class="process-math">\(H^\infty(\D)\text{.}\)</span> This space is a Banach algebra under the supremum norm on the disk. The unit ball in <span class="process-math">\(H^\infty\)</span> is the Schur class, which is going to provide the connection between <a href="positive-intro.html#q-nev-pick" class="xref" data-knowl="./knowl/xref/q-nev-pick.html" data-reveal-label="Reveal" data-close-label="Close" title="Question 10.1.1: Nevanlinna-Pick problem">Question 10.1.1</a> and operators by way of the observation that <span class="process-math">\(H^\infty(\D)\)</span> is a space of multipliers on <span class="process-math">\(H^2\text{.}\)</span>
+</div>
+<article class="lemma theorem-like" id="lemma-schur-multi-op"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">10.3.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="lemma-schur-multi-op-1">Let <span class="process-math">\(\ph \in H^\infty(\D)\text{.}\)</span> then <span class="process-math">\(\ph f \in H^2\)</span> when <span class="process-math">\(f \in H^2\text{.}\)</span> That is, for <span class="process-math">\(\ph in H^\infty(\D)\text{,}\)</span> the operator <span class="process-math">\(M_\ph :H^2 \to h^2\)</span> defined by <span class="process-math">\(M_\ph f = \ph f\)</span> is in <span class="process-math">\(\mathcal{L}(H^2)\text{.}\)</span> Furthermore, <span class="process-math">\(\norm{M_\ph} \leq \norm{\ph}\text{.}\)</span>
+</div></article><div class="para" id="positive-4-9">The connection between the operator <span class="process-math">\(M_\ph\)</span> and the function <span class="process-math">\(\ph\)</span> is provided by the Szegő kernel. In particular, the Szegő kernel <span class="process-math">\(s_\la\)</span> is an eigenvector for the adjoint of <span class="process-math">\(M_\ph\text{.}\)</span>
+</div>
+<article class="lemma theorem-like" id="lemma-szego-adjoint"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">10.3.4</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="lemma-szego-adjoint-1">
+<div class="para">If <span class="process-math">\(\ph \in H^\infty(\D)\)</span> and <span class="process-math">\(\la \in \D\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M_\ph\ad = \cc{\ph(\la)} s_\la.
+\end{equation*}
+</div>
+</div></article><details id="positive-4-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="positive-4-11-1">
+<div class="para">Pick <span class="process-math">\(\ph \in H^\infty(\D)\)</span> and <span class="process-math">\(\la \in \D\text{.}\)</span> If <span class="process-math">\(f\in H^2\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="positive-4-11-1-4">
+\begin{align*}
+\ip{f}{M_\ph\ad s_\la} \amp= \ip{M_\ph f}{s_\la}\\
+\amp = \ip{\ph f}{s_\la}\\
+\amp = \ph(\la) f(\la)\\
+\amp = \ph(\la) \ip{f}{s_\la}\\
+\amp = \ip{f}{\cc{\ph(\la)}s_\la}.
+\end{align*}
+</div>
+<div class="para">Since this holds for all <span class="process-math">\(f \in H^2\text{,}\)</span> we conclude that <span class="process-math">\(M_\ph s_\la = \cc{\ph(\la)}s_\la\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="positive-4-12">In fact we can say more.</div>
+<article class="lemma theorem-like" id="lemma-szego-only-evec"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">10.3.5</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="lemma-szego-only-evec-1">
+<div class="para">If <span class="process-math">\(\la \in D\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ker(\cc\la - M_z\ad) = \C s_\la.
+\end{equation*}
+</div>
+</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="positive-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="hilbert-13.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -2449,9 +2449,9 @@ var ptx_lunr_docs = [
   "body": "positive "
 },
 {
-  "id": "positive-intro-5",
+  "id": "q-nev-pick",
   "level": "2",
-  "url": "positive-intro.html#positive-intro-5",
+  "url": "positive-intro.html#q-nev-pick",
   "type": "Question",
   "number": "10.1.1",
   "title": "Nevanlinna-Pick problem.",
@@ -2563,7 +2563,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "10.3",
   "title": "<span class=\"process-math\">\\(H^2\\)<\/span> and <span class=\"process-math\">\\(H^\\infty(\\D)\\)<\/span>",
-  "body": "and  We'll now set up a classically important and fun space of functions derived from   The Hardy space  is the space of functions    We should note that there is a more standard setup for involving extending continuous functions off of the unit circle. The inner product on is given by under which is a Hilbert space. In fact, the Hardy space is more.   The Szegő kernel is the function   The Szegő kernel has the interesting property that it represents evaluation of a function in the inner product. That is, for , We will not prove this here, but it will be used extensively. Encoding function evaluation at a point as an inner product is a very powerful idea.  "
+  "body": "and  We'll now set up a classically important and fun space of functions derived from   The Hardy space  is the space of functions    We should note that there is a more standard setup for involving extending continuous functions off of the unit circle. The inner product on is given by under which is a Hilbert space. In fact, the Hardy space is more.   The Szegő kernel is the function   The Szegő kernel has the interesting property that it represents evaluation of a function in the inner product. That is, for , We will not prove this here, but it will be used extensively. Encoding function evaluation at a point as an inner product is a very powerful idea.  Along with the Hardy space, we also consider the space of bounded analytic functions on the disk , which is denoted by . This space is a Banach algebra under the supremum norm on the disk. The unit ball in is the Schur class, which is going to provide the connection between and operators by way of the observation that is a space of multipliers on .   Let . then when . That is, for , the operator defined by is in . Furthermore, .   The connection between the operator and the function is provided by the Szegő kernel. In particular, the Szegő kernel is an eigenvector for the adjoint of .   If and , then     Pick and . If , Since this holds for all , we conclude that .   In fact we can say more.   If , then    "
 },
 {
   "id": "def-hardy-space",
@@ -2582,6 +2582,42 @@ var ptx_lunr_docs = [
   "number": "10.3.2",
   "title": "",
   "body": " The Szegő kernel is the function  "
+},
+{
+  "id": "lemma-schur-multi-op",
+  "level": "2",
+  "url": "positive-4.html#lemma-schur-multi-op",
+  "type": "Lemma",
+  "number": "10.3.3",
+  "title": "",
+  "body": " Let . then when . That is, for , the operator defined by is in . Furthermore, .  "
+},
+{
+  "id": "lemma-szego-adjoint",
+  "level": "2",
+  "url": "positive-4.html#lemma-szego-adjoint",
+  "type": "Lemma",
+  "number": "10.3.4",
+  "title": "",
+  "body": " If and , then   "
+},
+{
+  "id": "positive-4-11",
+  "level": "2",
+  "url": "positive-4.html#positive-4-11",
+  "type": "Proof",
+  "number": "10.3.1",
+  "title": "",
+  "body": " Pick and . If , Since this holds for all , we conclude that .  "
+},
+{
+  "id": "lemma-szego-only-evec",
+  "level": "2",
+  "url": "positive-4.html#lemma-szego-only-evec",
+  "type": "Lemma",
+  "number": "10.3.5",
+  "title": "",
+  "body": " If , then   "
 },
 {
   "id": "hilbert-13-2",
