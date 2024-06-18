@@ -327,15 +327,5 @@
             <p>Now let <m>\la \in \C</m> with <m>\abs{\la} \gt \norm{A}</m>. Then <m>\norm{\la\inv A} \lt 1</m>, and so <m>I - \la\inv A</m> is invertible by <xref ref="thm-contraction-inverse"/>. But then <m>\la\inv(\la I - A)</m> is invertible and so must be <m>\la I - A</m>, and so <m>\la \notin \sigma(A)</m>. Then <m>\sigma(A)</m> is in the closed disk of radius <m>\norm{A}</m> and hence is bounded. As closed and bounded subsets of <m>\C</m> are compact, we have established the result. </p>
         </proof>
 
-        <p>We are now prepared to prove the spectral theorem for compact self-adjoint operators.</p>
-
-        <theorem xml:id="thm-spectral-theorem-compact-hermitian">
-            <p>Let <m>K</m> be a compact, self-adjoint operator on a Hilbert space <m>\hilbert</m>. There exists a finite or infinite orthonormal sequence <m>(e_n)</m> of eigenvectors of <m>K</m> with corresponding real eigenvalues <m>(\la_n)</m> such that for all <m>x \in \hilbert</m>, 
-                <me>
-                    Kx = \sum_{i} \la_i \ip{x}{e_i} e_i.
-                </me>
-            </p>
-        </theorem>
-
     </section>
 </chapter>
