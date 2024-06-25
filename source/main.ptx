@@ -22,6 +22,7 @@
           \newcommand{\eps}{\varepsilon}
           \newcommand{\To}{\longrightarrow}
           \newcommand{\hilbert}{\mathcal{H}}
+          \newcommand{\HH}{\mathcal{H}}
           \newcommand{\s}{\mathcal{S}_2}
           \newcommand{\A}{\mathcal{A}}
           \newcommand\h{\mathcal{H}}
@@ -67,7 +68,6 @@
           \newcommand{\invad}{^{-1 \ast}}
           \newcommand\Pick{\mathcal P}
           \newcommand\Ha{\mathbb{H}}
-          \newcommand{\HH}{\Ha\times\Ha}
           \newcommand\Htau{\mathbb{H}(\tau)}
           \newcommand{\vp}{\varphi}
           \newcommand{\ph}{\varphi}
@@ -150,6 +150,7 @@
       <xi:include href="compact.ptx"/>
       <xi:include href="positive.ptx"/>
       <xi:include href="analysis.ptx"/>
+      <xi:include href="spectral.ptx"/>
 
 
 

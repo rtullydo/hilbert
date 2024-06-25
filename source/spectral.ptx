@@ -1,0 +1,41 @@
+<chapter xml:id="spectral"><title>Spectral theory</title>
+
+    <section xml:id="spectral-1">
+        <title>Banach algebra stuff</title>
+        <p>Note: developing a discussion of the GNS construction and full spectral theorem.</p>
+
+        <p>Here be the Axiom of Choice.</p>
+
+        <theorem xml:id="thm-zorn"><title>Zorn's Lemma</title>
+            <p>If every totally ordered subset of a partially ordered set has an upper bound, then the partially ordered set has a maximal element.</p>
+        </theorem>
+
+        <definition xml:id="def-banach-algebra">
+            <p>A Banach algebra is an algebra <m>\A</m> (for us over <m>\C</m>) with a norm <m>\norm{\cdot}</m> that makes <m>\A</m> a Banach space and 
+            <me>
+                \norm{ab} \leq \norm{a}\norm{b}
+            </me>
+            for all <m>a,b \in \A</m>.</p>
+        </definition>
+
+        <p>We'll assume that our Banach algebras have unit.</p>
+
+        <p>The idea of a Banach algebra is to make sure that the multiplication structure is compatible with the norm (i.e. the multiplication should be continuous). Banach algebras are a natural sort of idea - thinking of matrices as representing linear transformations, matrix multiplication (on square matrices) represents composition. It turns out that for a Hilbert space <m>\HH</m>, the space <m>\B(\HH)</m> of bounded linear operators on <m>\HH</m> is a Banach algebra with the multiplication operation given by composition of maps.</p>
+
+        <p>As in classical complex analysis, we can define a notion of analytic functions taking values in a Banach space <m>\L</m> - a function <m>f</m> is analytic on a domain <m>D \subset \C</m> if <m>f</m> can be expanded as a power series in a neighborhood of every point <m>\la \in D</m>.</p>
+
+        <theorem xml:id="thm-resolvent-analytic">
+            <p>Let <m>A \in \L</m>. Then the resolvent set <m>\rho(A)</m> is an open subset of <m>\C</m>. The <term>resolvent</term> map <m>A \mapsto \la I - A</m> is an analytic function of <m>\la</m> on <m>\rho(A)</m>.</p>
+        </theorem>
+
+        <proof>
+            <p>This is a consequence of the fact that the invertible elements are an open subset of a Banach algebra.</p>
+        </proof>
+
+
+
+
+    </section>
+
+
+</chapter>

@@ -137,15 +137,36 @@
         <p>Need to get this from notes. Big theorem here is</p>
 
         <theorem xml:id="thm-contraction-inverse">
-            <p>Suppose that <m>A \in \L(V)</m>. If <m>\norm{A} \lt 1</m> then <m>I - A</m> is invertible and 
+            <p>Let <m>\L</m> be a Banach space. Suppose that <m>A \in \L</m>. If <m>\norm{A} \lt 1</m> then <m>I - A</m> is invertible and 
             <me>
                 (I - A)\inv = \sum_{n=0}^\infty A^n,
             </me>
             where <m>A^0 = I_V</m>.</p>
         </theorem>
 
+        <proof>
+            <p>Suppose that <m>\norm{A} \lt 1</m>. Then the sequence
+            <me>
+                S_N = \sum_{n = 0}^N A^n
+            </me>
+            is Cauchy, and since <m>\L(\HH)</m> is a Banach space, it converges to
+            <me>
+                S = \sum_{n=0}^\infty A^n.
+            </me>
+            Then by computation (and appropriate application of limiting arguments),
+            <me>
+                A S = A \sum_{n=0}^\infty A^n = \sum_{n=1}^\infty A^n = S - I.
+            </me>
+            Thus,
+            <me> S(I - A) = S - AS - I</me>
+            and so
+            <me>
+                S = (I - A)\inv.
+            </me></p>
+        </proof>
+
         <theorem xml:id="thm-invertible-open">
-            <p>Let <m>E</m> be a Banach space. The set of invertible operators on <m>E</m> is an open subset of <m>\L(E)</m>.</p>
+            <p>Let <m>\L</m> be a Banach space. The set of invertible operators in <m>\L</m> is an open subset of <m>\L</m>.</p>
         </theorem>
 
     </section>
@@ -298,6 +319,11 @@
                     \sigma(A) = \{\la \in \C : \la I - A \text{ is not invertible.}\}
                 </me></p>
         </definition>
+
+        <definition xml:id="def-resolvent">
+            <p>The <term>resolvent set</term> of <m>A \in \L(\HH)</m>, denoted <m>\rho(A)</m>, is the set of complex numbers <m>\la</m> so that <m>\la I - A</m> is invertible.</p>
+        </definition>
+
 
         <p>Given <m>A \in \L(E)</m>, we have that <m>\sigma(A)</m> is non-empty. (Else, the map <m>\la \mapsto (\la I - A)\inv</m> would be a bounded, non-constant, entire <m>\L(E)</m>-valued map, which would violate a version of <url href="https://en.wikipedia.org/wiki/Liouville%27s_theorem_(complex_analysis)">Liouville's theorem</url>). If <m>E</m> is finite dimensional, then <m>\sigma(A)</m> consists of the eigenvalues of <m>A</m>. We can still use the term <emph>eigenvalue</emph> in the infinite dimensional setting in the exact same way as the finite case. Notice though that operators need not possess eigenvalues. For example, the shift operator <m>S</m> acting on <m>\ell^2</m> has no eigenvalues. (Exercise). On the other hand, since <m>S</m> isn't invertible, <m>0 \in \sigma(A)</m>. This illustrates the significantly more complex situation that occurs in infinite dimensions. Notice that if <m>\la</m> is an eigenvalue of <m>A</m>, then <m>\la \in \sigma(A)</m>.</p>
 
