@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Convergence of classical Fourier series</title>
+<title>Banach algebra stuff</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="fourier-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="hilbert-8.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="fourier-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="spectral.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="spectral.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\RE}{Re}
   \DeclareMathOperator{\IM}{Im}
   \DeclareMathOperator{\ess}{ess}
   \DeclareMathOperator{\intr}{int}
@@ -275,12 +275,12 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="hilbert-8.html" class="internal"><span class="codenumber">6</span> <span class="title">Fourier Series</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Convolution</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">The Fejér kernel</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="fourier-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Convergence of classical Fourier series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="fourier-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Convergence of classical Fourier series</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="fourier-4.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="fourier-4.html#fourier-4-2" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
@@ -324,124 +324,42 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-13-3.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Results from complex analysis</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="spectral.html" class="internal"><span class="codenumber">12</span> <span class="title">Spectral theory</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="spectral-1.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Banach algebra stuff</span></a></div></li></ul>
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="spectral-1.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Banach algebra stuff</span></a></div></li></ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="fourier-3"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">6.3</span><span class="space"> </span><span class="title">Convergence of classical Fourier series</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="spectral-1"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">12.1</span><span class="space"> </span><span class="title">Banach algebra stuff</span>
 </h2>
-<div class="para" id="fourier-3-2">We now seek to establish that classical Fourier series are expansions in a complete orthonormal sequence (see <a href="hilbert-7-2.html#def-orthogonal-system" class="xref" data-knowl="./knowl/xref/def-orthogonal-system.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.1.1">Definition 5.1.1</a>).</div>
-<article class="theorem theorem-like" id="thm-fourier-basis"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span>
+<div class="para" id="spectral-1-2">Note: developing a discussion of the GNS construction and full spectral theorem.</div>
+<div class="para" id="spectral-1-3">Here be the Axiom of Choice.</div>
+<article class="theorem theorem-like" id="thm-zorn"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">12.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Zorn’s Lemma.</span>
 </h3>
-<div class="para logical" id="thm-fourier-basis-1">
-<div class="para">The sequence given by</div>
+<div class="para" id="thm-zorn-2">If every totally ordered subset of a partially ordered set has an upper bound, then the partially ordered set has a maximal element.</div></article><article class="definition definition-like" id="def-banach-algebra"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.1.2</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-banach-algebra-1">
+<div class="para">A Banach algebra is an algebra <span class="process-math">\(\A\)</span> (for us over <span class="process-math">\(\C\)</span>) with a norm <span class="process-math">\(\norm{\cdot}\)</span> that makes <span class="process-math">\(\A\)</span> a Banach space and</div>
 <div class="displaymath process-math">
 \begin{equation*}
-e_n(x) = \frac{1}{\sqrt{2\pi}} e^{i n x}, \hspace{1cm} x \in (-\pi, \pi)
+\norm{ab} \leq \norm{a}\norm{b}
 \end{equation*}
 </div>
-<div class="para">is a complete orthonormal sequence in <span class="process-math">\(L^2(-\pi, \pi)\text{.}\)</span>
+<div class="para">for all <span class="process-math">\(a,b \in \A\text{.}\)</span>
 </div>
-</div></article><details id="fourier-3-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="fourier-3-4-1">That the functions <span class="process-math">\(e_n(x)\)</span> are an orthonormal system in the standard inner product in <span class="process-math">\(L^2(-\pi, \pi)\)</span> is left as an exercise.</div> <div class="para logical" id="fourier-3-4-2">
-<div class="para">We seek to invoke <a href="ortho-4.html#thm-hilbert-span" class="xref" data-knowl="./knowl/xref/thm-hilbert-span.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.3">Theorem 5.4.3</a> to claim that <span class="process-math">\((e_n)\)</span> is complete by arguing that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-hilbert-span.html">
-\begin{equation*}
-\cl \spn \{e_n: n \in \Z\} = L^2(-\pi, \pi).
-\end{equation*}
+</div></article><div class="para" id="spectral-1-6">We’ll assume that our Banach algebras have unit.</div>
+<div class="para" id="spectral-1-7">The idea of a Banach algebra is to make sure that the multiplication structure is compatible with the norm (i.e. the multiplication should be continuous). Banach algebras are a natural sort of idea - thinking of matrices as representing linear transformations, matrix multiplication (on square matrices) represents composition. It turns out that for a Hilbert space <span class="process-math">\(\HH\text{,}\)</span> the space <span class="process-math">\(\B(\HH)\)</span> of bounded linear operators on <span class="process-math">\(\HH\)</span> is a Banach algebra with the multiplication operation given by composition of maps.</div>
+<div class="para" id="spectral-1-8">As in classical complex analysis, we can define a notion of analytic functions taking values in a Banach space <span class="process-math">\(\L\)</span> - a function <span class="process-math">\(f\)</span> is analytic on a domain <span class="process-math">\(D \subset \C\)</span> if <span class="process-math">\(f\)</span> can be expanded as a power series in a neighborhood of every point <span class="process-math">\(\la \in D\text{.}\)</span>
 </div>
-<div class="para">To perform this trick, we’ll actually work on a easier question by way of a result typically proved in graduate analysis that by necessity will have to be a black box. We claim that functions in <span class="process-math">\(L^2(-\pi, \pi)\)</span> can be approximated uniformly by continuous <span class="process-math">\(2\pi\)</span>-periodic functions - that is, the set of functions consisting of restrictions of <span class="process-math">\(2\pi\)</span>-continuous functions to <span class="process-math">\((-\pi, \pi)\)</span> is a dense subspace of <span class="process-math">\(L^2(-\pi,\pi)\text{.}\)</span> Essentially then, the argument will be that any continuous function in <span class="process-math">\(L^2(-\pi, \pi)\)</span> can be approximated uniformly by linear combinations of <span class="process-math">\(e_n\)</span> and any <span class="process-math">\(L^2\)</span> function can be approximated by continuous functions, which the standard setup for a triangle inequality argument.</div>
-</div> <div class="para logical" id="fourier-3-4-3">
-<div class="para">So choose an arbitrary <span class="process-math">\(2\pi\)</span>-continuous function <span class="process-math">\(f: (-\pi, \pi)\to \R\text{.}\)</span> To show that <span class="process-math">\(f\in \cl \spn \{e_n\}\text{,}\)</span> we need to find a sequence of functions in <span class="process-math">\(\spn \{e_n\}\)</span> converging to <span class="process-math">\(f\text{.}\)</span> Define the <span class="process-math">\(m\)</span>th Fourier polynomial</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-fejer-kernel.html">
-\begin{equation*}
-f_m = \sum_{n=-m}^m \ip{f}{e_n} e_n.
-\end{equation*}
-</div>
-<div class="para">By construction, <span class="process-math">\(f_m\)</span> is in the linear span of <span class="process-math">\((e_n)\text{,}\)</span> and it would suffice to prove that <span class="process-math">\(f_m \to f\text{.}\)</span> However, in order to set up the application of the <a href="fourier-2.html#def-fejer-kernel" class="xref" data-knowl="./knowl/xref/def-fejer-kernel.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.2.1">Fejer kernel 6.2.1</a> results we established in the previous chapter, we’ll work with the <a class="external" href="https://en.wikipedia.org/wiki/Ces%C3%A0ro_summation" target="_blank">Cesàro sum</a><details class="ptx-footnote" aria-live="polite" id="fourier-3-4-3-13"><summary class="ptx-footnote__number" title="Footnote 6.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="fourier-3-4-3-13"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Ces%C3%A0ro_summation</code></div></details>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-fejer-kernel.html">
-\begin{equation*}
-F_m = \frac{1}{m+1} (f_0 + f_1 + \cdots + f_m),
-\end{equation*}
-</div>
-<div class="para">and show that <span class="process-math">\(F_m \to f\)</span> (this is also sufficient, as each <span class="process-math">\(F_m \in \spn\{e_n\}\)</span>).</div>
-</div> <div class="para logical" id="fourier-3-4-4">
-<div class="para">In <span class="process-math">\(L^2(-\pi,\pi)\text{,}\)</span> the inner product <span class="process-math">\(\ip{f}{en}\)</span> is given by</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-fejer-kernel.html">
-\begin{equation*}
-\ip{f, e_n} = \frac{1}{\sqrt{2\pi}} \int_\pi^\pi f(x) e^{-inx}\, dx
-\end{equation*}
-</div>
-<div class="para">and so for the Fourier polynomial <span class="process-math">\(f_m\text{,}\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-fejer-kernel.html" id="fourier-3-4-4-5">
-\begin{align*}
-f_m(y) \amp= \sum_{n=-m}^m \ip{f}{e_n} e_n(y)\\
-\amp= \frac{1}{2\pi} \sum_{n=-m}^{m} \left(\int_{-\pi}^\pi f(x) e^{-inx}\, dx\right)e^{iny}\\
-\amp= \frac{1}{2\pi} \int_{-\pi}^\pi f(x) \sum_{n=-m}^m e^{in(y-x)}\, dx.
-\end{align*}
-</div>
-<div class="para">Plugging this into our averaged function <span class="process-math">\(F_m\text{,}\)</span> we get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-fejer-kernel.html" id="fourier-3-4-4-7">
-\begin{align*}
-F_m(y) \amp= \frac{1}{m+1} \sum_{j=0}^m f_j(y)\\
-\amp= \frac{1}{m+1} \sum_{j=0}^m \frac{1}{2\pi} \int_{-\pi}^\pi f(x) \sum_{n=-m}^m e^{in(y-x)}\, dx\\
-\amp= \frac{1}{2\pi} \int_{-\pi}^\pi f(x) \left(\frac{1}{m+1} \sum_{j=0}^m \sum_{n=-j}^j e^{in(y-x)}\right)\, dx.\\
-\amp= \frac{1}{2\pi} \int_{-\pi}^\pi f(x) K_m(y-x)\, dx,
-\end{align*}
-</div>
-<div class="para">where <span class="process-math">\(K_m(y-x)\)</span> is the <a href="fourier-2.html#def-fejer-kernel" class="xref" data-knowl="./knowl/xref/def-fejer-kernel.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.2.1">Fejér kernel 6.2.1</a>.</div>
-</div> <div class="para logical" id="fourier-3-4-5">
-<div class="para">We’re all set up to apply the technical lemmas. Essentially, the idea is going to be to show that <span class="process-math">\(F_m \to f\text{.}\)</span> We’ll start by constructing an integral form of this difference to study. Let <span class="process-math">\(y \in [-\pi, \pi]\text{.}\)</span> By <a href="fourier-2.html#lemma-fejer-analytic" class="xref" data-knowl="./knowl/xref/lemma-fejer-analytic.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.2.3">Lemma 6.2.3</a>, the substitution <span class="process-math">\(t = y-x\)</span> gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html ./knowl/xref/eq-fourier-1.html ./knowl/xref/eq-fourier-2.html">
-\begin{equation*}
-\int_{y-\pi}^{y-\pi} K_m(y-x)\, dx = 2\pi,
-\end{equation*}
-</div>
-<div class="para">which gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html ./knowl/xref/eq-fourier-1.html ./knowl/xref/eq-fourier-2.html">
-\begin{equation*}
-f(y) \int_{y-\pi}^{y-\pi} K_m(y-x)\, dx = f(y) 2\pi,
-\end{equation*}
-</div>
-<div class="para">or more usefully,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html ./knowl/xref/eq-fourier-1.html ./knowl/xref/eq-fourier-2.html" id="eq-fourier-1">
-\begin{equation}
-f(y) =\frac{1}{2\pi} \int_{y - \pi}^{y+\pi} f(x) K_m(y-x)\, dx.\tag{6.3.1}
-\end{equation}
-</div>
-<div class="para">Since <span class="process-math">\(K_m\)</span> is <span class="process-math">\(2\pi\)</span>-periodic, and <span class="process-math">\(f\)</span> is <span class="process-math">\(2\pi\)</span>-periodic, so is the function <span class="process-math">\(f(x)K_m(y-x)\)</span> for a fixed <span class="process-math">\(y\text{.}\)</span> Once consequence is that the integral of <span class="process-math">\(f(x)K_m(y-x)\)</span> will evaluate to the same quantity on any interval of length <span class="process-math">\(2\pi\text{,}\)</span> and so in particular, we can write</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html ./knowl/xref/eq-fourier-1.html ./knowl/xref/eq-fourier-2.html" id="eq-fourier-2">
-\begin{equation}
-F_m(y) = \frac{1}{2\pi} \int_{y - \pi}^{y+\pi} f(x) K_m(y-x)\, dx.\tag{6.3.2}
-\end{equation}
-</div>
-<div class="para">Subtracting <a href="fourier-3.html#eq-fourier-1" class="xref" data-knowl="./knowl/xref/eq-fourier-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.1">(6.3.1)</a> from <a href="fourier-3.html#eq-fourier-2" class="xref" data-knowl="./knowl/xref/eq-fourier-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.2">(6.3.2)</a> gives the estimate</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html ./knowl/xref/eq-fourier-1.html ./knowl/xref/eq-fourier-2.html" id="eq-fourier-3">
-\begin{equation}
-F_m(y) - f(y) = \frac{1}{2\pi} \int_{y-\pi}^{y + \pi} (f(x) - f(y)) K_m(y - x)\, dx,\tag{6.3.3}
-\end{equation}
-</div>
-<div class="para">and now we can see what the game is. We will show that this difference is uniformly small for a large enough <span class="process-math">\(N \in \mathbb{N}\text{.}\)</span>
-</div>
-</div> <div class="para logical" id="fourier-3-4-6">
-<div class="para">Let <span class="process-math">\(\eps \gt 0\)</span> be given. Since <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([-\pi,\pi]\text{,}\)</span> it is also bounded, say by <span class="process-math">\(M\)</span> so that <span class="process-math">\(\abs{f(x)} \leq M\)</span> for all <span class="process-math">\(x\in \R\)</span> (since <span class="process-math">\(f\)</span> is <span class="process-math">\(2\pi\)</span>-periodic). Because it is continuous on a compact set, <span class="process-math">\(f\)</span> is also uniformly continuous. So choose <span class="process-math">\(\delta \gt 0\)</span> such that <span class="process-math">\(y \in [-\pi,\pi]\)</span> and <span class="process-math">\(\abs{y - x} \lt \delta\)</span> give</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html">
-\begin{equation*}
-\abs{f(x) - f(y)} \lt \frac{\eps}{2}.
-\end{equation*}
-</div>
-<div class="para">So when <span class="process-math">\(y\)</span> is near <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(F_m\)</span> and <span class="process-math">\(f\)</span> are close. What if <span class="process-math">\(x, y\)</span> are far apart? By <a href="fourier-2.html#lemma-fejer-analytic" class="xref" data-knowl="./knowl/xref/lemma-fejer-analytic.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.2.3">Lemma 6.2.3</a>, for our given <span class="process-math">\(\delta\text{,}\)</span> we can find <span class="process-math">\(N \in \mathbb{N}\)</span> such that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-fejer-analytic.html">
-\begin{equation*}
-\int_{-\pi}^{-\delta} + \int_{\delta}^\pi K_m(t) \, dt \lt \frac{\pi \eps}{2M}.
-\end{equation*}
-</div>
-</div></article></details></section></div>
+<article class="theorem theorem-like" id="thm-resolvent-analytic"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">12.1.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-resolvent-analytic-1">Let <span class="process-math">\(A \in \L\text{.}\)</span> Then the resolvent set <span class="process-math">\(\rho(A)\)</span> is an open subset of <span class="process-math">\(\C\text{.}\)</span> The <dfn class="terminology">resolvent</dfn> map <span class="process-math">\(A \mapsto \la I - A\)</span> is an analytic function of <span class="process-math">\(\la\)</span> on <span class="process-math">\(\rho(A)\text{.}\)</span>
+</div></article><details id="spectral-1-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="spectral-1-10-1">This is a consequence of the fact that the invertible elements are an open subset of a Banach algebra.</div></article></details></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="fourier-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="fourier-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="spectral.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

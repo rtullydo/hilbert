@@ -124,6 +124,7 @@ window.MathJax = {
   \newcommand{\eps}{\varepsilon}
   \newcommand{\To}{\longrightarrow}
   \newcommand{\hilbert}{\mathcal{H}}
+  \newcommand{\HH}{\mathcal{H}}
   \newcommand{\s}{\mathcal{S}_2}
   \newcommand{\A}{\mathcal{A}}
   \newcommand\h{\mathcal{H}}
@@ -169,7 +170,6 @@ window.MathJax = {
   \newcommand{\invad}{^{-1 \ast}}
   \newcommand\Pick{\mathcal P}
   \newcommand\Ha{\mathbb{H}}
-  \newcommand{\HH}{\Ha\times\Ha}
   \newcommand\Htau{\mathbb{H}(\tau)}
   \newcommand{\vp}{\varphi}
   \newcommand{\ph}{\varphi}
@@ -324,6 +324,10 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-13-3.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Results from complex analysis</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="spectral.html" class="internal"><span class="codenumber">12</span> <span class="title">Spectral theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="spectral-1.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Banach algebra stuff</span></a></div></li></ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="compact-spec"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">9.1</span><span class="space"> </span><span class="title">The spectral theorem for compact operators</span>
@@ -465,7 +469,7 @@ Kx = \sum_n \la_n \ip{x}{e_n} e_n.
 \end{equation*}
 </div>
 </div></article><details id="compact-spec-17" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="compact-spec-17-1">
-<div class="para">By <a href="operators-6.html#thm-spectral-theorem-compact-hermitian" class="xref" data-knowl="./knowl/xref/thm-spectral-theorem-compact-hermitian.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.5.4">Theorem 8.5.4</a>, there is a finite or countably infinite sequence <span class="process-math">\((v_n)\)</span> in <span class="process-math">\(\hilbert\)</span> such that</div>
+<div class="para">By <a href="compact-spec.html#thm-spectral-theorem-compact-hermitian" class="xref" data-knowl="./knowl/xref/thm-spectral-theorem-compact-hermitian.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.7: Spectral theorem for compact Hermitian operators">Theorem 9.1.7</a>, there is a finite or countably infinite sequence <span class="process-math">\((v_n)\)</span> in <span class="process-math">\(\hilbert\)</span> such that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-spectral-theorem-compact-hermitian.html ./knowl/xref/thm-eigenvectors-orthogonal.html">
 \begin{equation*}
 Kx = \sum_n \la_n \ip{x}{v_n} v_n.

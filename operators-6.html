@@ -124,6 +124,7 @@ window.MathJax = {
   \newcommand{\eps}{\varepsilon}
   \newcommand{\To}{\longrightarrow}
   \newcommand{\hilbert}{\mathcal{H}}
+  \newcommand{\HH}{\mathcal{H}}
   \newcommand{\s}{\mathcal{S}_2}
   \newcommand{\A}{\mathcal{A}}
   \newcommand\h{\mathcal{H}}
@@ -169,7 +170,6 @@ window.MathJax = {
   \newcommand{\invad}{^{-1 \ast}}
   \newcommand\Pick{\mathcal P}
   \newcommand\Ha{\mathbb{H}}
-  \newcommand{\HH}{\Ha\times\Ha}
   \newcommand\Htau{\mathbb{H}(\tau)}
   \newcommand{\vp}{\varphi}
   \newcommand{\ph}{\varphi}
@@ -324,6 +324,10 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-13-3.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Results from complex analysis</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="spectral.html" class="internal"><span class="codenumber">12</span> <span class="title">Spectral theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="spectral-1.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Banach algebra stuff</span></a></div></li></ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="operators-6"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">8.5</span><span class="space"> </span><span class="title">The spectrum</span>
@@ -339,16 +343,19 @@ window.MathJax = {
 \sigma(A) = \{\la \in \C : \la I - A \text{ is not invertible.}\}
 \end{equation*}
 </div>
-</div></article><div class="para" id="operators-6-4">Given <span class="process-math">\(A \in \L(E)\text{,}\)</span> we have that <span class="process-math">\(\sigma(A)\)</span> is non-empty. (Else, the map <span class="process-math">\(\la \mapsto (\la I - A)\inv\)</span> would be a bounded, non-constant, entire <span class="process-math">\(\L(E)\)</span>-valued map, which would violate a version of <a class="external" href="https://en.wikipedia.org/wiki/Liouville%27s_theorem_(complex_analysis)" target="_blank">Liouville’s theorem</a><details class="ptx-footnote" aria-live="polite" id="operators-6-4-6"><summary class="ptx-footnote__number" title="Footnote 8.5.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="operators-6-4-6"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Liouville%27s_theorem_(complex_analysis)</code></div></details>). If <span class="process-math">\(E\)</span> is finite dimensional, then <span class="process-math">\(\sigma(A)\)</span> consists of the eigenvalues of <span class="process-math">\(A\text{.}\)</span> We can still use the term eigenvalue in the infinite dimensional setting in the exact same way as the finite case. Notice though that operators need not possess eigenvalues. For example, the shift operator <span class="process-math">\(S\)</span> acting on <span class="process-math">\(\ell^2\)</span> has no eigenvalues. (Exercise). On the other hand, since <span class="process-math">\(S\)</span> isn’t invertible, <span class="process-math">\(0 \in \sigma(A)\text{.}\)</span> This illustrates the significantly more complex situation that occurs in infinite dimensions. Notice that if <span class="process-math">\(\la\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\la \in \sigma(A)\text{.}\)</span>
-</div>
-<div class="para" id="operators-6-5">The proof of the following result, analogous to the finite case, is left as an easy exercise.</div>
-<article class="proposition theorem-like" id="operators-6-6"><h3 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">8.5.2</span><span class="period">.</span>
+</div></article><article class="definition definition-like" id="def-resolvent"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.5.2</span><span class="period">.</span>
 </h3>
-<div class="para" id="operators-6-6-1">If <span class="process-math">\(A \in \L(E)\)</span> is a Hermitian operator on a Hilbert space <span class="process-math">\(\hilbert\text{,}\)</span> and <span class="process-math">\(\la\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\la \in \R\text{.}\)</span>
-</div></article><div class="para" id="operators-6-7">A useful topological property of the spectrum is that it forms a compact subset of <span class="process-math">\(\C\text{.}\)</span> (In the finite dimensional case, this is apparent.)</div>
+<div class="para" id="def-resolvent-1">The <dfn class="terminology">resolvent set</dfn> of <span class="process-math">\(A \in \L(\HH)\text{,}\)</span> denoted <span class="process-math">\(\rho(A)\text{,}\)</span> is the set of complex numbers <span class="process-math">\(\la\)</span> so that <span class="process-math">\(\la I - A\)</span> is invertible.</div></article><div class="para" id="operators-6-5">Given <span class="process-math">\(A \in \L(E)\text{,}\)</span> we have that <span class="process-math">\(\sigma(A)\)</span> is non-empty. (Else, the map <span class="process-math">\(\la \mapsto (\la I - A)\inv\)</span> would be a bounded, non-constant, entire <span class="process-math">\(\L(E)\)</span>-valued map, which would violate a version of <a class="external" href="https://en.wikipedia.org/wiki/Liouville%27s_theorem_(complex_analysis)" target="_blank">Liouville’s theorem</a><details class="ptx-footnote" aria-live="polite" id="operators-6-5-6"><summary class="ptx-footnote__number" title="Footnote 8.5.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="operators-6-5-6"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Liouville%27s_theorem_(complex_analysis)</code></div></details>). If <span class="process-math">\(E\)</span> is finite dimensional, then <span class="process-math">\(\sigma(A)\)</span> consists of the eigenvalues of <span class="process-math">\(A\text{.}\)</span> We can still use the term eigenvalue in the infinite dimensional setting in the exact same way as the finite case. Notice though that operators need not possess eigenvalues. For example, the shift operator <span class="process-math">\(S\)</span> acting on <span class="process-math">\(\ell^2\)</span> has no eigenvalues. (Exercise). On the other hand, since <span class="process-math">\(S\)</span> isn’t invertible, <span class="process-math">\(0 \in \sigma(A)\text{.}\)</span> This illustrates the significantly more complex situation that occurs in infinite dimensions. Notice that if <span class="process-math">\(\la\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\la \in \sigma(A)\text{.}\)</span>
+</div>
+<div class="para" id="operators-6-6">The proof of the following result, analogous to the finite case, is left as an easy exercise.</div>
+<article class="proposition theorem-like" id="operators-6-7"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">8.5.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="operators-6-7-1">If <span class="process-math">\(A \in \L(E)\)</span> is a Hermitian operator on a Hilbert space <span class="process-math">\(\hilbert\text{,}\)</span> and <span class="process-math">\(\la\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\la \in \R\text{.}\)</span>
+</div></article><div class="para" id="operators-6-8">A useful topological property of the spectrum is that it forms a compact subset of <span class="process-math">\(\C\text{.}\)</span> (In the finite dimensional case, this is apparent.)</div>
 <article class="theorem theorem-like" id="thm-compact-spectrum"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.5.3</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.5.4</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="thm-compact-spectrum-1">
 <div class="para">Let <span class="process-math">\(E\)</span> be a Banach space and <span class="process-math">\(A \in \L(E)\text{.}\)</span> Then <span class="process-math">\(\sigma(A)\)</span> is a compact subset of <span class="process-math">\(\C\)</span> and</div>
@@ -357,10 +364,10 @@ window.MathJax = {
 \sigma(A) \subseteq \{z \in \C: \abs{z} \leq \norm{A}\}.
 \end{equation*}
 </div>
-</div></article><details id="operators-6-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="operators-6-9-1">
+</div></article><details id="operators-6-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="operators-6-10-1">
 <div class="para">Define a function <span class="process-math">\(F: \C \to \L(E)\)</span> by <span class="process-math">\(F(\la) = \la I - A\text{.}\)</span> For any <span class="process-math">\(\la, \mu \in \C\text{,}\)</span>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-invertible-open.html" id="operators-6-9-1-4">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-invertible-open.html" id="operators-6-10-1-4">
 \begin{align*}
 \norm{F(\la) - F(\mu)} \amp= \norm{(\la I - A) - (\mu I - A)}\\
 \amp = \abs{\la - \mu}
@@ -368,19 +375,7 @@ window.MathJax = {
 </div>
 <div class="para">and so <span class="process-math">\(F\)</span> is Lipschitz and therefore continuous in the operator norm. Now let <span class="process-math">\(GL(E)\)</span> denote the invertible elements of <span class="process-math">\(E\text{,}\)</span> which is an open subset of <span class="process-math">\(\L(E)\)</span> by <a href="operators-3.html#thm-invertible-open" class="xref" data-knowl="./knowl/xref/thm-invertible-open.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.2.2">Theorem 8.2.2</a>. Then <span class="process-math">\(\L(E)-GL(E)\)</span> is closed, and by continuity so is <span class="process-math">\(F\inv(\L(E)-GL(E)) = \sigma(A)\text{.}\)</span>
 </div>
-</div> <div class="para" id="operators-6-9-2">Now let <span class="process-math">\(\la \in \C\)</span> with <span class="process-math">\(\abs{\la} \gt \norm{A}\text{.}\)</span> Then <span class="process-math">\(\norm{\la\inv A} \lt 1\text{,}\)</span> and so <span class="process-math">\(I - \la\inv A\)</span> is invertible by <a href="operators-3.html#thm-contraction-inverse" class="xref" data-knowl="./knowl/xref/thm-contraction-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.2.1">Theorem 8.2.1</a>. But then <span class="process-math">\(\la\inv(\la I - A)\)</span> is invertible and so must be <span class="process-math">\(\la I - A\text{,}\)</span> and so <span class="process-math">\(\la \notin \sigma(A)\text{.}\)</span> Then <span class="process-math">\(\sigma(A)\)</span> is in the closed disk of radius <span class="process-math">\(\norm{A}\)</span> and hence is bounded. As closed and bounded subsets of <span class="process-math">\(\C\)</span> are compact, we have established the result.</div></article></details><div class="para" id="operators-6-10">We are now prepared to prove the spectral theorem for compact self-adjoint operators.</div>
-<article class="theorem theorem-like" id="thm-spectral-theorem-compact-hermitian"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.5.4</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="thm-spectral-theorem-compact-hermitian-1">
-<div class="para">Let <span class="process-math">\(K\)</span> be a compact, self-adjoint operator on a Hilbert space <span class="process-math">\(\hilbert\text{.}\)</span> There exists a finite or infinite orthonormal sequence <span class="process-math">\((e_n)\)</span> of eigenvectors of <span class="process-math">\(K\)</span> with corresponding real eigenvalues <span class="process-math">\((\la_n)\)</span> such that for all <span class="process-math">\(x \in \hilbert\text{,}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-Kx = \sum_{i} \la_i \ip{x}{e_i} e_i.
-\end{equation*}
-</div>
-</div></article></section></div>
+</div> <div class="para" id="operators-6-10-2">Now let <span class="process-math">\(\la \in \C\)</span> with <span class="process-math">\(\abs{\la} \gt \norm{A}\text{.}\)</span> Then <span class="process-math">\(\norm{\la\inv A} \lt 1\text{,}\)</span> and so <span class="process-math">\(I - \la\inv A\)</span> is invertible by <a href="operators-3.html#thm-contraction-inverse" class="xref" data-knowl="./knowl/xref/thm-contraction-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.2.1">Theorem 8.2.1</a>. But then <span class="process-math">\(\la\inv(\la I - A)\)</span> is invertible and so must be <span class="process-math">\(\la I - A\text{,}\)</span> and so <span class="process-math">\(\la \notin \sigma(A)\text{.}\)</span> Then <span class="process-math">\(\sigma(A)\)</span> is in the closed disk of radius <span class="process-math">\(\norm{A}\)</span> and hence is bounded. As closed and bounded subsets of <span class="process-math">\(\C\)</span> are compact, we have established the result.</div></article></details></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="operators-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="compact.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

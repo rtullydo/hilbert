@@ -124,6 +124,7 @@ window.MathJax = {
   \newcommand{\eps}{\varepsilon}
   \newcommand{\To}{\longrightarrow}
   \newcommand{\hilbert}{\mathcal{H}}
+  \newcommand{\HH}{\mathcal{H}}
   \newcommand{\s}{\mathcal{S}_2}
   \newcommand{\A}{\mathcal{A}}
   \newcommand\h{\mathcal{H}}
@@ -169,7 +170,6 @@ window.MathJax = {
   \newcommand{\invad}{^{-1 \ast}}
   \newcommand\Pick{\mathcal P}
   \newcommand\Ha{\mathbb{H}}
-  \newcommand{\HH}{\Ha\times\Ha}
   \newcommand\Htau{\mathbb{H}(\tau)}
   \newcommand{\vp}{\varphi}
   \newcommand{\ph}{\varphi}
@@ -324,6 +324,10 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="hilbert-13-3.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Results from complex analysis</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="spectral.html" class="internal"><span class="codenumber">12</span> <span class="title">Spectral theory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="spectral-1.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Banach algebra stuff</span></a></div></li></ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="operators-3"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">8.2</span><span class="space"> </span><span class="title">Inverses</span>
@@ -333,7 +337,7 @@ window.MathJax = {
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.2.1</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="thm-contraction-inverse-1">
-<div class="para">Suppose that <span class="process-math">\(A \in \L(V)\text{.}\)</span> If <span class="process-math">\(\norm{A} \lt 1\)</span> then <span class="process-math">\(I - A\)</span> is invertible and</div>
+<div class="para">Let <span class="process-math">\(\L\)</span> be a Banach space. Suppose that <span class="process-math">\(A \in \L\text{.}\)</span> If <span class="process-math">\(\norm{A} \lt 1\)</span> then <span class="process-math">\(I - A\)</span> is invertible and</div>
 <div class="displaymath process-math">
 \begin{equation*}
 (I - A)\inv = \sum_{n=0}^\infty A^n,
@@ -341,10 +345,41 @@ window.MathJax = {
 </div>
 <div class="para">where <span class="process-math">\(A^0 = I_V\text{.}\)</span>
 </div>
-</div></article><article class="theorem theorem-like" id="thm-invertible-open"><h3 class="heading">
+</div></article><details id="operators-3-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="operators-3-4-1">
+<div class="para">Suppose that <span class="process-math">\(\norm{A} \lt 1\text{.}\)</span> Then the sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_N = \sum_{n = 0}^N A^n
+\end{equation*}
+</div>
+<div class="para">is Cauchy, and since <span class="process-math">\(\L(\HH)\)</span> is a Banach space, it converges to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S = \sum_{n=0}^\infty A^n.
+\end{equation*}
+</div>
+<div class="para">Then by computation (and appropriate application of limiting arguments),</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A S = A \sum_{n=0}^\infty A^n = \sum_{n=1}^\infty A^n = S - I.
+\end{equation*}
+</div>
+<div class="para">Thus,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S(I - A) = S - AS - I
+\end{equation*}
+</div>
+<div class="para">and so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S = (I - A)\inv.
+\end{equation*}
+</div>
+</div></article></details><article class="theorem theorem-like" id="thm-invertible-open"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.2.2</span><span class="period">.</span>
 </h3>
-<div class="para" id="thm-invertible-open-1">Let <span class="process-math">\(E\)</span> be a Banach space. The set of invertible operators on <span class="process-math">\(E\)</span> is an open subset of <span class="process-math">\(\L(E)\text{.}\)</span>
+<div class="para" id="thm-invertible-open-1">Let <span class="process-math">\(\L\)</span> be a Banach space. The set of invertible operators in <span class="process-math">\(\L\)</span> is an open subset of <span class="process-math">\(\L\text{.}\)</span>
 </div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="operators-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="operators-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

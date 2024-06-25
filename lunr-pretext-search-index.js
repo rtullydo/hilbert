@@ -2167,7 +2167,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.2",
   "title": "Inverses",
-  "body": " Inverses  Need to get this from notes. Big theorem here is   Suppose that . If then is invertible and where .    Let be a Banach space. The set of invertible operators on is an open subset of .   "
+  "body": " Inverses  Need to get this from notes. Big theorem here is   Let be a Banach space. Suppose that . If then is invertible and where .    Suppose that . Then the sequence is Cauchy, and since is a Banach space, it converges to Then by computation (and appropriate application of limiting arguments), Thus, and so    Let be a Banach space. The set of invertible operators in is an open subset of .   "
 },
 {
   "id": "thm-contraction-inverse",
@@ -2176,7 +2176,16 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "8.2.1",
   "title": "",
-  "body": " Suppose that . If then is invertible and where .  "
+  "body": " Let be a Banach space. Suppose that . If then is invertible and where .  "
+},
+{
+  "id": "operators-3-4",
+  "level": "2",
+  "url": "operators-3.html#operators-3-4",
+  "type": "Proof",
+  "number": "8.2.1",
+  "title": "",
+  "body": " Suppose that . Then the sequence is Cauchy, and since is a Banach space, it converges to Then by computation (and appropriate application of limiting arguments), Thus, and so  "
 },
 {
   "id": "thm-invertible-open",
@@ -2185,7 +2194,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "8.2.2",
   "title": "",
-  "body": " Let be a Banach space. The set of invertible operators on is an open subset of .  "
+  "body": " Let be a Banach space. The set of invertible operators in is an open subset of .  "
 },
 {
   "id": "operators-4",
@@ -2275,7 +2284,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.5",
   "title": "The spectrum",
-  "body": " The spectrum  If is an complex matrix, then has at least one eigenvalue. That is, there exists such that for some non-zero vector . The spectrum of a matrix, denoted is the set consisting of its eigenvalues. The spectrum of a matrix is used to study its structure and behavior as a linear map. We'd like to extend the notion of spectrum to the infinite dimensional setting, so we'll take a moment to look at how we find it for matrices. In elementary linear algebra, we learn that the eigenvalues of are the solutions to the equation . Of course what we're actually measuring with this equation is the (lack of) invertibility of the operator , which we could also encode geometrically with the condition that . Since determinants aren't all that useful or easy to define in the infinite dimensional setting, we'll use these to define the spectum of an operator.   Let be a Banach space and . The spectrum of , denoted is the set   Given , we have that is non-empty. (Else, the map would be a bounded, non-constant, entire -valued map, which would violate a version of Liouville's theorem ). If is finite dimensional, then consists of the eigenvalues of . We can still use the term eigenvalue in the infinite dimensional setting in the exact same way as the finite case. Notice though that operators need not possess eigenvalues. For example, the shift operator acting on has no eigenvalues. (Exercise). On the other hand, since isn't invertible, . This illustrates the significantly more complex situation that occurs in infinite dimensions. Notice that if is an eigenvalue of , then .  The proof of the following result, analogous to the finite case, is left as an easy exercise.   If is a Hermitian operator on a Hilbert space , and is an eigenvalue of , then .   A useful topological property of the spectrum is that it forms a compact subset of . (In the finite dimensional case, this is apparent.)   Let be a Banach space and . Then is a compact subset of and    Define a function by . For any , and so is Lipschitz and therefore continuous in the operator norm. Now let denote the invertible elements of , which is an open subset of by . Then is closed, and by continuity so is .  Now let with . Then , and so is invertible by . But then is invertible and so must be , and so . Then is in the closed disk of radius and hence is bounded. As closed and bounded subsets of are compact, we have established the result.   We are now prepared to prove the spectral theorem for compact self-adjoint operators.   Let be a compact, self-adjoint operator on a Hilbert space . There exists a finite or infinite orthonormal sequence of eigenvectors of with corresponding real eigenvalues such that for all ,    "
+  "body": " The spectrum  If is an complex matrix, then has at least one eigenvalue. That is, there exists such that for some non-zero vector . The spectrum of a matrix, denoted is the set consisting of its eigenvalues. The spectrum of a matrix is used to study its structure and behavior as a linear map. We'd like to extend the notion of spectrum to the infinite dimensional setting, so we'll take a moment to look at how we find it for matrices. In elementary linear algebra, we learn that the eigenvalues of are the solutions to the equation . Of course what we're actually measuring with this equation is the (lack of) invertibility of the operator , which we could also encode geometrically with the condition that . Since determinants aren't all that useful or easy to define in the infinite dimensional setting, we'll use these to define the spectum of an operator.   Let be a Banach space and . The spectrum of , denoted is the set    The resolvent set of , denoted , is the set of complex numbers so that is invertible.   Given , we have that is non-empty. (Else, the map would be a bounded, non-constant, entire -valued map, which would violate a version of Liouville's theorem ). If is finite dimensional, then consists of the eigenvalues of . We can still use the term eigenvalue in the infinite dimensional setting in the exact same way as the finite case. Notice though that operators need not possess eigenvalues. For example, the shift operator acting on has no eigenvalues. (Exercise). On the other hand, since isn't invertible, . This illustrates the significantly more complex situation that occurs in infinite dimensions. Notice that if is an eigenvalue of , then .  The proof of the following result, analogous to the finite case, is left as an easy exercise.   If is a Hermitian operator on a Hilbert space , and is an eigenvalue of , then .   A useful topological property of the spectrum is that it forms a compact subset of . (In the finite dimensional case, this is apparent.)   Let be a Banach space and . Then is a compact subset of and    Define a function by . For any , and so is Lipschitz and therefore continuous in the operator norm. Now let denote the invertible elements of , which is an open subset of by . Then is closed, and by continuity so is .  Now let with . Then , and so is invertible by . But then is invertible and so must be , and so . Then is in the closed disk of radius and hence is bounded. As closed and bounded subsets of are compact, we have established the result.   "
 },
 {
   "id": "def-spectrum",
@@ -2287,11 +2296,20 @@ var ptx_lunr_docs = [
   "body": " Let be a Banach space and . The spectrum of , denoted is the set  "
 },
 {
-  "id": "operators-6-6",
+  "id": "def-resolvent",
   "level": "2",
-  "url": "operators-6.html#operators-6-6",
-  "type": "Proposition",
+  "url": "operators-6.html#def-resolvent",
+  "type": "Definition",
   "number": "8.5.2",
+  "title": "",
+  "body": " The resolvent set of , denoted , is the set of complex numbers so that is invertible.  "
+},
+{
+  "id": "operators-6-7",
+  "level": "2",
+  "url": "operators-6.html#operators-6-7",
+  "type": "Proposition",
+  "number": "8.5.3",
   "title": "",
   "body": " If is a Hermitian operator on a Hilbert space , and is an eigenvalue of , then .  "
 },
@@ -2300,27 +2318,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "operators-6.html#thm-compact-spectrum",
   "type": "Theorem",
-  "number": "8.5.3",
+  "number": "8.5.4",
   "title": "",
   "body": " Let be a Banach space and . Then is a compact subset of and  "
 },
 {
-  "id": "operators-6-9",
+  "id": "operators-6-10",
   "level": "2",
-  "url": "operators-6.html#operators-6-9",
+  "url": "operators-6.html#operators-6-10",
   "type": "Proof",
   "number": "8.5.1",
   "title": "",
   "body": " Define a function by . For any , and so is Lipschitz and therefore continuous in the operator norm. Now let denote the invertible elements of , which is an open subset of by . Then is closed, and by continuity so is .  Now let with . Then , and so is invertible by . But then is invertible and so must be , and so . Then is in the closed disk of radius and hence is bounded. As closed and bounded subsets of are compact, we have established the result.  "
-},
-{
-  "id": "thm-spectral-theorem-compact-hermitian",
-  "level": "2",
-  "url": "operators-6.html#thm-spectral-theorem-compact-hermitian",
-  "type": "Theorem",
-  "number": "8.5.4",
-  "title": "",
-  "body": " Let be a compact, self-adjoint operator on a Hilbert space . There exists a finite or infinite orthonormal sequence of eigenvectors of with corresponding real eigenvalues such that for all ,   "
 },
 {
   "id": "compact-spec",
@@ -2663,6 +2672,51 @@ var ptx_lunr_docs = [
   "number": "11.2",
   "title": "Results from complex analysis",
   "body": "Results from complex analysis  Eventually necessary things will go here.  "
+},
+{
+  "id": "spectral-1",
+  "level": "1",
+  "url": "spectral-1.html",
+  "type": "Section",
+  "number": "12.1",
+  "title": "Banach algebra stuff",
+  "body": " Banach algebra stuff  Note: developing a discussion of the GNS construction and full spectral theorem.  Here be the Axiom of Choice.  Zorn's Lemma  If every totally ordered subset of a partially ordered set has an upper bound, then the partially ordered set has a maximal element.    A Banach algebra is an algebra (for us over ) with a norm that makes a Banach space and for all .   We'll assume that our Banach algebras have unit.  The idea of a Banach algebra is to make sure that the multiplication structure is compatible with the norm (i.e. the multiplication should be continuous). Banach algebras are a natural sort of idea - thinking of matrices as representing linear transformations, matrix multiplication (on square matrices) represents composition. It turns out that for a Hilbert space , the space of bounded linear operators on is a Banach algebra with the multiplication operation given by composition of maps.  As in classical complex analysis, we can define a notion of analytic functions taking values in a Banach space - a function is analytic on a domain if can be expanded as a power series in a neighborhood of every point .   Let . Then the resolvent set is an open subset of . The resolvent map is an analytic function of on .    This is a consequence of the fact that the invertible elements are an open subset of a Banach algebra.   "
+},
+{
+  "id": "thm-zorn",
+  "level": "2",
+  "url": "spectral-1.html#thm-zorn",
+  "type": "Theorem",
+  "number": "12.1.1",
+  "title": "Zorn’s Lemma.",
+  "body": "Zorn's Lemma  If every totally ordered subset of a partially ordered set has an upper bound, then the partially ordered set has a maximal element.  "
+},
+{
+  "id": "def-banach-algebra",
+  "level": "2",
+  "url": "spectral-1.html#def-banach-algebra",
+  "type": "Definition",
+  "number": "12.1.2",
+  "title": "",
+  "body": " A Banach algebra is an algebra (for us over ) with a norm that makes a Banach space and for all .  "
+},
+{
+  "id": "thm-resolvent-analytic",
+  "level": "2",
+  "url": "spectral-1.html#thm-resolvent-analytic",
+  "type": "Theorem",
+  "number": "12.1.3",
+  "title": "",
+  "body": " Let . Then the resolvent set is an open subset of . The resolvent map is an analytic function of on .  "
+},
+{
+  "id": "spectral-1-10",
+  "level": "2",
+  "url": "spectral-1.html#spectral-1-10",
+  "type": "Proof",
+  "number": "12.1.1",
+  "title": "",
+  "body": " This is a consequence of the fact that the invertible elements are an open subset of a Banach algebra.  "
 }
 ]
 
