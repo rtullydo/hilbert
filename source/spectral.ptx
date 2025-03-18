@@ -32,8 +32,33 @@
             <p>This is a consequence of the fact that the invertible elements are an open subset of a Banach algebra.</p>
         </proof>
 
+    </section>
+
+    <section xml:id="spectral-1-1">
+        <title>Spectrum in a Banach algebra</title>
+
+        <p>The following theorem is a generalization of <xref ref="thm-compact-spectrum"/>.</p>
+
+        <theorem xml:id="thm-nonempty-spectrum">
+            <p>If <m>\A</m> is a Banach algebra over <m>\C</m> with identity, then for any <m>a \in \A</m>, the spectrum <m>\sigma(a)</m> is a non-empty compact subset of <m>\C</m>.</p>
+        </theorem>
+    </section>
+
+    <section xml:id="spectral-2">
+        <title>Gelfand transforms</title>
+        <p>I'm not sure the best way to do this, so I'll start sketching. Expanding on Conway and Lax I think.</p>
+
+        <p>While Banach algebras arise from analytic considerations, there are fruitful connections to be considered by viewing them algebraically (shocking, I know). Best start by looking at some (algebra) homomorphisms and using them to build a parallel structure.</p>
 
 
+
+        <definition xml:id="def-division-algebra">
+            <p>An algebra <m>\A</m> is a <term>division algebra</term> if every non-zero <m>a \in \A</m> has a multiplicative inverse.</p>
+        </definition>
+
+        <theorem xml:id="thm-gelfand-mazur">
+            <p>If <m>\A</m> is a Banach algebra that is also a division ring, then <m>A = \C</m> in the sense that <m>\A \equiv \{\la 1: \la \in \C\}</m>.</p>
+        </theorem>
 
     </section>
 
